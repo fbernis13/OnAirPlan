@@ -325,3 +325,8 @@ html, body { overflow-x: clip; }
   .prog-layout:not(.rail-open) { grid-template-columns: minmax(0, 1fr); }
   .prog-layout:not(.rail-open) .cycle-rail { display: none; }
 }
+
+/* Objectifs tractions / pompes : un résultat par cycle */
+.obj-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .4rem; text-align: center; }
+.obj-grid > div { display: grid; gap: .1rem; background: var(--surface-2, transparent); border: 1px solid var(--line); border-radius: .5rem; padding: .35rem .2rem; }
+.obj-grid strong { font-size: 1.2rem; }

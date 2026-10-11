@@ -12,7 +12,7 @@
 let BIB = null, CAR = null;
 let MUSCLES = {}, EXERCISES = {}, VIDEOS = {}, CATALOG = { movements: [] }, MOVES = [], MOVE_BY_ID = {};
 let MACHINE_PAIRS = [], PAIR_OF = {};
-let CYCLES = [], SESSION_TYPES = {}, SESSIONS = [], SESSION_BY_ID = {}, BENCHMARKS = [], PROGRAM_RULES = [], USAGE = {};
+let CYCLES = [], SESSION_TYPES = {}, SESSIONS = [], SESSION_BY_ID = {}, BENCHMARKS = [], OBJECTIVES = [], PROGRAM_RULES = [], USAGE = {};
 const DATA_LS = { bib: 'onair-bibliotheque', car: 'onair-carnet', snaps: 'onair-sauvegardes' };
 /* base : version d'origine (fichier du site ou copie intégrée) ; source : d'où vient la version active */
 const DATA = { base: { bib: null, car: null }, source: { bib: 'intégrée', car: 'intégrée' } };
@@ -51,7 +51,7 @@ function applyData(bib, car) {
   PAIR_OF = {}; MACHINE_PAIRS.forEach(p => { if (!PAIR_OF[p.guidee]) PAIR_OF[p.guidee] = p; if (!PAIR_OF[p.hammer]) PAIR_OF[p.hammer] = p; });
   CYCLES = car.cycles || []; SESSION_TYPES = car.sessionTypes || {}; SESSIONS = car.sessions || [];
   SESSION_BY_ID = Object.fromEntries(SESSIONS.map(s => [s.id, s]));
-  BENCHMARKS = car.benchmarks || []; PROGRAM_RULES = car.rules || [];
+  BENCHMARKS = car.benchmarks || []; OBJECTIVES = car.objectives || []; PROGRAM_RULES = car.rules || [];
   const u = {}; const add = (k, sid, where) => { (u[k] = u[k] || []).push({ sid, where }); };
   SESSIONS.forEach(s => {
     s.warmup.forEach(l => (l.x || []).forEach(k => add(k, s.id, 'mise en route')));

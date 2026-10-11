@@ -68,6 +68,7 @@
  "rules": [
   "Signaux d’arrêt : douleur inhabituelle, fourmillements ou engourdissement. On arrête l’exercice et on passe à une variante plus légère.",
   "Base CrossFit : mouvements poly-articulaires d’abord. Sur chaque cycle, on vérifie l’équilibre des groupes musculaires ; l’isolation ne sert qu’à rattraper un groupe en retard (aux cycles 3 et 4 : leg curl pour les ischios, seul travail de flexion du genou).",
+  "Deux objectifs suivis sur tout le programme : tractions strictes et pompes. Test au début de chaque S2, puis travail spécifique en S1 (pompes), S2 et S3 (tractions). Les résultats s’affichent dans l’onglet Progression.",
   "Si une séance a été trop dure (RPE > 8 au cycle 1-2, ou courbatures plus de 3 jours), garde les mêmes charges à la séance suivante.",
   "Si tout est facile, augmente de 2,5 à 5 kg sur le haut du corps et de 5 à 10 kg sur le bas du corps d’un cycle à l’autre.",
   "Ordre type dans un cycle : S1 → Cardio → S2 → WOD → S3, avec au moins un jour de repos après le WOD ou une séance de jambes lourde.",
@@ -85,11 +86,6 @@
    "id": "hang",
    "label": "Dead hang max",
    "unit": "s"
-  },
-  {
-   "id": "pullups",
-   "label": "Tractions strictes max",
-   "unit": "reps"
   },
   {
    "id": "squat5rm",
@@ -226,6 +222,12 @@
        "sets": 3,
        "reps": "20 s/côté",
        "rest": 45
+      },
+      {
+       "x": "pushup_par",
+       "sets": 3,
+       "reps": "8",
+       "rest": 45
       }
      ]
     }
@@ -359,6 +361,30 @@
     }
    ],
    "blocks": [
+    {
+     "l": "T",
+     "title": "Test du cycle",
+     "items": [
+      {
+       "x": "strict_pu",
+       "sets": 1,
+       "reps": "max",
+       "rest": 180,
+       "test": "pullups",
+       "label": "Test : tractions strictes max",
+       "note": "Strictes, sans kipping. Si tu n’en fais aucune, note 0 : le travail du cycle sert à y arriver."
+      },
+      {
+       "x": "pushup_par",
+       "sets": 1,
+       "reps": "max",
+       "rest": 120,
+       "test": "pushups",
+       "label": "Test : pompes max",
+       "note": "Poitrine au sol, corps gainé, sans pause."
+      }
+     ]
+    },
     {
      "l": "A",
      "items": [
@@ -653,6 +679,19 @@
        "rest": 30
       }
      ]
+    },
+    {
+     "l": "G",
+     "title": "Objectif tractions",
+     "items": [
+      {
+       "x": "neg_pu",
+       "sets": 3,
+       "reps": "3",
+       "rest": 90,
+       "note": "Descente lente et contrôlée"
+      }
+     ]
     }
    ],
    "cooldown": [
@@ -782,6 +821,12 @@
        "x": "bird_dog",
        "sets": 3,
        "reps": "10/côté",
+       "rest": 45
+      },
+      {
+       "x": "pushup_par",
+       "sets": 3,
+       "reps": "10",
        "rest": 45
       }
      ]
@@ -913,6 +958,30 @@
     }
    ],
    "blocks": [
+    {
+     "l": "T",
+     "title": "Test du cycle",
+     "items": [
+      {
+       "x": "strict_pu",
+       "sets": 1,
+       "reps": "max",
+       "rest": 180,
+       "test": "pullups",
+       "label": "Test : tractions strictes max",
+       "note": "Strictes, sans kipping. Si tu n’en fais aucune, note 0 : le travail du cycle sert à y arriver."
+      },
+      {
+       "x": "pushup_par",
+       "sets": 1,
+       "reps": "max",
+       "rest": 120,
+       "test": "pushups",
+       "label": "Test : pompes max",
+       "note": "Poitrine au sol, corps gainé, sans pause."
+      }
+     ]
+    },
     {
      "l": "A",
      "items": [
@@ -1212,6 +1281,19 @@
        "label": "Back extension au banc 45°"
       }
      ]
+    },
+    {
+     "l": "H",
+     "title": "Objectif tractions",
+     "items": [
+      {
+       "x": "strict_pu",
+       "sets": 4,
+       "reps": "2-3",
+       "rest": 90,
+       "note": "Strictes ; complète en négatives si besoin"
+      }
+     ]
     }
    ],
    "cooldown": [
@@ -1325,6 +1407,12 @@
        "x": "russian_twist",
        "sets": 3,
        "reps": "20",
+       "rest": 45
+      },
+      {
+       "x": "pushup_par",
+       "sets": 3,
+       "reps": "12",
        "rest": 45
       }
      ]
@@ -1446,6 +1534,30 @@
     }
    ],
    "blocks": [
+    {
+     "l": "T",
+     "title": "Test du cycle",
+     "items": [
+      {
+       "x": "strict_pu",
+       "sets": 1,
+       "reps": "max",
+       "rest": 180,
+       "test": "pullups",
+       "label": "Test : tractions strictes max",
+       "note": "Strictes, sans kipping. Si tu n’en fais aucune, note 0 : le travail du cycle sert à y arriver."
+      },
+      {
+       "x": "pushup_par",
+       "sets": 1,
+       "reps": "max",
+       "rest": 120,
+       "test": "pushups",
+       "label": "Test : pompes max",
+       "note": "Poitrine au sol, corps gainé, sans pause."
+      }
+     ]
+    },
     {
      "l": "A",
      "items": [
@@ -1770,6 +1882,19 @@
       }
      ],
      "type": "superset"
+    },
+    {
+     "l": "G",
+     "title": "Objectif tractions",
+     "items": [
+      {
+       "x": "strict_pu",
+       "sets": 4,
+       "reps": "4",
+       "rest": 90,
+       "note": "Ajoute une répétition dès que les 4 séries passent"
+      }
+     ]
     }
    ],
    "cooldown": [
@@ -1888,6 +2013,12 @@
        "sets": 3,
        "reps": "15",
        "rest": 45
+      },
+      {
+       "x": "pushup_par",
+       "sets": 3,
+       "reps": "15",
+       "rest": 45
       }
      ]
     }
@@ -2000,6 +2131,30 @@
     }
    ],
    "blocks": [
+    {
+     "l": "T",
+     "title": "Test du cycle",
+     "items": [
+      {
+       "x": "strict_pu",
+       "sets": 1,
+       "reps": "max",
+       "rest": 180,
+       "test": "pullups",
+       "label": "Test : tractions strictes max",
+       "note": "Strictes, sans kipping. Si tu n’en fais aucune, note 0 : le travail du cycle sert à y arriver."
+      },
+      {
+       "x": "pushup_par",
+       "sets": 1,
+       "reps": "max",
+       "rest": 120,
+       "test": "pushups",
+       "label": "Test : pompes max",
+       "note": "Poitrine au sol, corps gainé, sans pause."
+      }
+     ]
+    },
     {
      "l": "A",
      "items": [
@@ -2327,6 +2482,19 @@
       }
      ],
      "type": "superset"
+    },
+    {
+     "l": "G",
+     "title": "Objectif tractions",
+     "items": [
+      {
+       "x": "strict_pu",
+       "sets": 6,
+       "reps": "3",
+       "rest": 60,
+       "note": "EMOM : 3 strictes au début de chaque minute, lesté si facile"
+      }
+     ]
     }
    ],
    "cooldown": [
@@ -2341,6 +2509,22 @@
     }
    ],
    "goal": "Trouver un 3-5RM au soulevé de terre, reprendre le power clean, et des portés lourds."
+  }
+ ],
+ "objectives": [
+  {
+   "id": "pullups",
+   "label": "Tractions strictes",
+   "unit": "répétitions",
+   "ex": "strict_pu",
+   "how": "Test au début de chaque S2 : une série, bras tendus en bas, menton au-dessus de la barre, sans kipping."
+  },
+  {
+   "id": "pushups",
+   "label": "Pompes",
+   "unit": "répétitions",
+   "ex": "pushup_par",
+   "how": "Test au début de chaque S2, 3 min après les tractions : une série, poitrine au sol, corps gainé, sans pause en haut."
   }
  ]
 }

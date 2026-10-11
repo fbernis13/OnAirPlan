@@ -2188,6 +2188,22 @@
     "quad",
     "epa"
    ]
+  },
+  "neg_pu": {
+   "fr": "Tractions négatives (descente 5 s)",
+   "en": "Negative Pull-up",
+   "mv": "strict-pull-up",
+   "kind": "force",
+   "unit": "reps",
+   "load": false,
+   "p": [
+    "dos"
+   ],
+   "s": [
+    "bic",
+    "abs"
+   ],
+   "variant": "Saute ou monte sur une box pour avoir le menton au-dessus de la barre, puis descends en 5 secondes jusqu’aux bras tendus."
   }
  },
  "videos": {

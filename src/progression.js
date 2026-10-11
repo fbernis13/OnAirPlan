@@ -145,6 +145,28 @@ function benchAuto(id) {
   if (id === 'row2k') return { c1: '', c4: setRes('c4-ca', 'B0') };
   return { c1: '', c4: '' };
 }
+/* Objectifs suivis sur tout le programme : résultat du test de chaque cycle (première série notée) */
+function objectiveResults(o) {
+  return CYCLES.map(c => {
+    let v = '';
+    SESSIONS.filter(s => s.cycle === c.n).forEach(s => s.blocks.forEach(bl => (bl.items || []).forEach((it, i) => {
+      if (it.test !== o.id || v !== '') return;
+      const e = ((S.logs[s.id] || {}).ex || {})[itemKey(bl, i)]; const st = e && e.sets && e.sets[0];
+      if (st && st.reps !== '' && st.reps != null && (st.done || e.done)) v = Number(st.reps);
+    })));
+    return { n: c.n, v };
+  });
+}
+function viewObjectives() {
+  if (!OBJECTIVES.length) return '';
+  return `<h2>Objectifs</h2><div class="stack">${OBJECTIVES.map(o => {
+    const r = objectiveResults(o); const got = r.filter(x => x.v !== ''); const first = got[0], last = got[got.length - 1];
+    const delta = got.length > 1 ? last.v - first.v : null;
+    return `<div class="card stack"><div class="row"><strong class="grow">${esc(o.label)}</strong>${delta !== null ? `<span class="pill">${delta >= 0 ? '+' : ''}${delta} depuis le cycle ${first.n}</span>` : ''}</div>
+      <div class="obj-grid">${r.map(x => `<div><span class="faint small">Cycle ${x.n}</span><strong class="num">${x.v === '' ? '—' : x.v}</strong></div>`).join('')}</div>
+      ${sparkline(got.map(x => x.v))}
+      <p class="small muted" style="margin:0">${esc(o.how)}</p></div>`; }).join('')}</div>`;
+}
 function sparkline(vals) {
   if (vals.length < 2) return '';
   const W = 300, H = 42, pad = 5; const mn = Math.min(...vals), mx = Math.max(...vals); const span = mx - mn || 1;
@@ -161,7 +183,7 @@ function viewProgression() {
       <div class="progressbar" style="margin-top:.4rem"><i style="width:${d / 5 * 100}%"></i></div>
       <div class="row" style="margin-top:.5rem">${ss.map(s => `<button class="slot ${sessionStatus(s.id)}" data-act="open-session" data-id="${s.id}" style="border:0;cursor:pointer" aria-label="${esc(sessLabel(s))}">${esc(SESSION_TYPES[s.slot].label)}</button>`).join('')}</div></div>`;
   });
-  h += `</div>
+  h += `</div>${viewObjectives()}
   <h2>Repères</h2><p class="small muted">Section « Suivi » du programme. Les cases se remplissent seules quand le score est noté dans la séance correspondante ; tu peux aussi les saisir ici.</p>
   <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Repère</th><th>Cycle 1</th><th>Cycle 4</th></tr></thead><tbody>
   ${BENCHMARKS.map(b => { const v = S.bench[b.id] || {}; const auto = benchAuto(b.id);
