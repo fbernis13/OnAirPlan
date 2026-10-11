@@ -179,7 +179,7 @@
    "variant": "Version sur avant-bras."
   },
   "plank_fist": {
-   "fr": "Planche sur les poings ou sur haltères",
+   "fr": "Planche bras tendus",
    "en": "Plank Hold",
    "mv": "plank-hold",
    "kind": "gainage",
@@ -191,8 +191,7 @@
    "s": [
     "epa",
     "tri"
-   ],
-   "variant": "Appui sur les poings ou les haltères pour épargner les poignets."
+   ]
   },
   "deadbug": {
    "fr": "Dead bug",
@@ -372,7 +371,7 @@
    "variant": "Début en genoux à la poitrine (Knees to Chest)."
   },
   "shoulder_taps": {
-   "fr": "Planche avec touchers d’épaule, sur les poings",
+   "fr": "Planche avec touchers d’épaule",
    "en": "Plank Shoulder Taps",
    "mv": null,
    "vid": [
@@ -490,7 +489,7 @@
    ]
   },
   "latpull": {
-   "fr": "Tirage poitrine prise neutre",
+   "fr": "Tirage poitrine",
    "en": "Lat Pulldown",
    "mv": null,
    "vid": [
@@ -507,7 +506,7 @@
    ]
   },
   "db_seat_press": {
-   "fr": "Développé épaules haltères assis, prise neutre",
+   "fr": "Développé épaules haltères assis",
    "en": "Seated Dumbbell Shoulder Press",
    "mv": null,
    "vid": [
@@ -669,7 +668,7 @@
    ]
   },
   "pushup_par": {
-   "fr": "Pompes sur parallettes ou haltères",
+   "fr": "Pompes",
    "en": "Push-up",
    "mv": "push-up",
    "kind": "force",
@@ -682,8 +681,7 @@
     "tri",
     "epa",
     "abs"
-   ],
-   "variant": "Appui sur parallettes ou haltères (poignets neutres)."
+   ]
   },
   "ez_curl": {
    "fr": "Curl biceps barre EZ",
@@ -974,7 +972,7 @@
    "off": "Avant-bras et prise (non suivis) ; trapèzes comptés dans « Dos »"
   },
   "bird_dog": {
-   "fr": "Bird dog, mains sur poings",
+   "fr": "Bird dog",
    "en": "Bird Dog",
    "mv": null,
    "vid": [
@@ -1456,7 +1454,7 @@
    ]
   },
   "burpee": {
-   "fr": "Burpees sur les poings ou sur haltères",
+   "fr": "Burpees",
    "en": "Burpee",
    "mv": "burpee",
    "kind": "wod",
@@ -1471,8 +1469,7 @@
     "epa",
     "abs",
     "fess"
-   ],
-   "variant": "Appui sur les poings ou sur haltères, pas main à plat."
+   ]
   },
   "thruster": {
    "fr": "Thrusters (barre ou haltères)",
@@ -1854,7 +1851,7 @@
    "kind": "mob"
   },
   "st_forearm": {
-   "fr": "Étirement des avant-bras (doux, sans forcer sur la cicatrice)",
+   "fr": "Étirement des avant-bras",
    "en": "Forearm Stretch",
    "mv": null,
    "vid": [
@@ -1986,8 +1983,7 @@
    ],
    "s": [
     "bic"
-   ],
-   "variant": "Poignées indépendantes : garde une prise neutre si la machine le permet."
+   ]
   },
   "dip_hs": {
    "mv": null,
@@ -2041,7 +2037,7 @@
    "s": [
     "isch"
    ],
-   "variant": "Aucune réception : la barre monte sous le menton puis redescend. Sangles possibles pour soulager la prise."
+   "variant": "Aucune réception : la barre monte sous le menton puis redescend."
   },
   "db_hang_clean": {
    "fr": "Hang clean haltères",
@@ -2060,7 +2056,7 @@
     "bic",
     "abs"
    ],
-   "variant": "Prise neutre possible : les haltères se posent sur les épaules, le poignet plie moins qu’avec la barre. Ce n’est pas un travail isolé des ischios, c’est une extension de hanche explosive."
+   "variant": "Les haltères se posent sur les épaules. Extension de hanche explosive."
   },
   "db_oh_triceps": {
    "fr": "Extension triceps haltères au-dessus de la tête, assis",
@@ -2076,7 +2072,7 @@
     "tri"
    ],
    "s": [],
-   "variant": "Un haltère dans chaque main, paumes face à face (prise neutre), dos appuyé. Coudes vers le plafond, on descend derrière la tête sans forcer le poignet."
+   "variant": "Un haltère dans chaque main, dos appuyé. Coudes vers le plafond, on descend derrière la tête."
   },
   "db_rear_fly": {
    "fr": "Oiseau haltères, buste appuyé sur banc incliné",

@@ -118,10 +118,7 @@ function viewSession(sid) {
   <div class="card stack">
     <div class="grid2">
       <label class="fld">RPE global (1-10)<input type="number" inputmode="decimal" min="1" max="10" step="0.5" id="f-rpe-${sid}" data-in="srpe" data-sid="${sid}" value="${esc(L.rpe || '')}"></label>
-      <label class="fld">Poignets<select id="f-wrist-${sid}" data-in="swrist" data-sid="${sid}">
-        ${['', 'RAS', 'Gêne', 'Fourmillements'].map(o => `<option value="${o}" ${L.wrist === o ? 'selected' : ''}>${o || 'Non renseigné'}</option>`).join('')}</select></label>
     </div>
-    ${L.wrist === 'Fourmillements' ? `<div class="callout"><strong>Signal d’arrêt.</strong> Passe à une variante sans prise (machine, sangles, avant-bras). Si ça persiste, parles-en au chirurgien ou au kiné.</div>` : ''}
     ${commentField('scomment', sid, '', L.comment, 'Commentaire de séance')}
   </div>`;
   const idx = SESSIONS.indexOf(s); const prev = SESSIONS[idx - 1], nxt = SESSIONS[idx + 1];
@@ -203,7 +200,7 @@ function exoCard(s, bl, it, i) {
         ${videoBlock(eff, uid)}
         ${d.mv ? `<button class="btn small ghost" data-act="open-move" data-id="${d.mv}" style="justify-self:start">Fiche ${esc(MOVE_BY_ID[d.mv] ? MOVE_BY_ID[d.mv].name : d.en)}</button>` : ''}
         ${commentField('ecomment', s.id, key, E && E.comment, 'Commentaire', `data-bi="${bl.l}" data-i="${i}"`)}
-        <label class="fld">Variante appliquée (allègement, gêne au poignet…)
+        <label class="fld">Variante appliquée (allègement, remplacement…)
           <select id="f-swap-${uid}" data-in="swap" data-sid="${s.id}" data-key="${key}" data-bi="${bl.l}" data-i="${i}">
             <option value="">Exercice prévu : ${esc(itemLabel(it))}</option>
             ${swapOpts.map(([k, v]) => `<option value="${k}" ${E && E.swap === k ? 'selected' : ''}>${esc(v.fr)}</option>`).join('')}
@@ -236,7 +233,7 @@ function setRow(sid, key, it, d, st, si) {
 function commentField(kind, sid, key, val, label, extra) {
   const id = `c-${kind}-${sid}-${key}`;
   return `<label class="fld">${esc(label)}
-    <textarea id="${id}" data-in="${kind}" data-sid="${sid}" data-key="${esc(key)}" data-bl="${esc(key)}" ${extra || ''} placeholder="Sensations, poignets, réglages de machine…">${esc(val || '')}</textarea></label>
+    <textarea id="${id}" data-in="${kind}" data-sid="${sid}" data-key="${esc(key)}" data-bl="${esc(key)}" ${extra || ''} placeholder="Sensations, réglages de machine…">${esc(val || '')}</textarea></label>
     <button class="btn small ghost" data-act="dictate" data-target="${id}" style="justify-self:start">${IC.mic} Dicter</button>`;
 }
 

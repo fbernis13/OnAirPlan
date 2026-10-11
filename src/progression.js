@@ -161,8 +161,6 @@ function viewProgression() {
       <div class="progressbar" style="margin-top:.4rem"><i style="width:${d / 5 * 100}%"></i></div>
       <div class="row" style="margin-top:.5rem">${ss.map(s => `<button class="slot ${sessionStatus(s.id)}" data-act="open-session" data-id="${s.id}" style="border:0;cursor:pointer" aria-label="${esc(sessLabel(s))}">${esc(SESSION_TYPES[s.slot].label)}</button>`).join('')}</div></div>`;
   });
-  const wrists = SESSIONS.map(s => (S.logs[s.id] || {}).wrist).filter(Boolean);
-  if (wrists.length) h += `<p class="small muted">Poignets notés : ${['RAS', 'Gêne', 'Fourmillements'].map(k => `${k} ${wrists.filter(x => x === k).length}`).join(' · ')}</p>`;
   h += `</div>
   <h2>Repères</h2><p class="small muted">Section « Suivi » du programme. Les cases se remplissent seules quand le score est noté dans la séance correspondante ; tu peux aussi les saisir ici.</p>
   <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Repère</th><th>Cycle 1</th><th>Cycle 4</th></tr></thead><tbody>

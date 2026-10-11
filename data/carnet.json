@@ -26,7 +26,7 @@
    "name": "Développement",
    "intensity": "RPE 7-8, 2 RIR",
    "scheme": "4-5 × 6-8",
-   "goal": "Monter en charge sur les mouvements de base, réintroduire la gymnastique stricte et un peu d’haltérophilie légère si les poignets le permettent.",
+   "goal": "Monter en charge sur les mouvements de base, réintroduire la gymnastique stricte et un peu d’haltérophilie légère.",
    "hang": "Dead hang 3 × 30-40 s, puis active hang · Tractions strictes (élastique léger si besoin)"
   },
   {
@@ -66,14 +66,12 @@
   }
  },
  "rules": [
-  "Signaux d’arrêt : fourmillements, engourdissement des doigts, douleur sur la cicatrice ou dans la paume. On arrête l’exercice et on passe à une variante sans prise (machine, sangles, avant-bras). Si ça persiste, on en parle au chirurgien ou au kiné.",
+  "Signaux d’arrêt : douleur inhabituelle, fourmillements ou engourdissement. On arrête l’exercice et on passe à une variante plus légère.",
   "Base CrossFit : mouvements poly-articulaires d’abord. Sur chaque cycle, on vérifie l’équilibre des groupes musculaires ; l’isolation ne sert qu’à rattraper un groupe en retard (aux cycles 3 et 4 : leg curl pour les ischios, seul travail de flexion du genou).",
   "Si une séance a été trop dure (RPE > 8 au cycle 1-2, ou courbatures plus de 3 jours), garde les mêmes charges à la séance suivante.",
   "Si tout est facile, augmente de 2,5 à 5 kg sur le haut du corps et de 5 à 10 kg sur le bas du corps d’un cycle à l’autre.",
-  "En cas de gêne au poignet, prends la version machine, sangles ou appui sur avant-bras de l’exercice et poursuis la séance.",
   "Ordre type dans un cycle : S1 → Cardio → S2 → WOD → S3, avec au moins un jour de repos après le WOD ou une séance de jambes lourde.",
   "3 à 4 séances par semaine. Si tu enchaînes deux jours, mets le cardio entre deux renforcements.",
-  "Poignets : prise neutre aux cycles 1-2, appuis au sol sur poings ou parallettes, gainage sur avant-bras au cycle 1, sangles autorisées, pas de série à l’échec. Le front rack revient au cycle 3.",
   "Step-up plutôt que box jump, et course sur tapis limitée au cycle 1.",
   "Après le cycle 4, prévois une semaine plus légère avant le bloc suivant."
  ],
@@ -158,7 +156,7 @@
        "sets": 3,
        "reps": "12",
        "rest": 90,
-       "note": "Kettlebell tenue par les cornes, poignets neutres"
+       "note": "Kettlebell tenue par les cornes"
       }
      ]
     },
@@ -190,8 +188,7 @@
        "x": "db_deadlift",
        "sets": 3,
        "reps": "12",
-       "rest": 75,
-       "note": "Prise neutre, sangles si la prise gêne"
+       "rest": 75
       }
      ]
     },
@@ -353,9 +350,8 @@
      ]
     },
     {
-     "t": "Routine poignets, rotations d’épaules avec élastique, dislocations au bâton, 10 band pull-aparts, dead hang 3 × 10-15 s",
+     "t": "Rotations d’épaules avec élastique, dislocations au bâton, 10 band pull-aparts, dead hang 3 × 10-15 s",
      "x": [
-      "wrist_routine",
       "shoulder_band",
       "band_pull",
       "dead_hang"
@@ -370,8 +366,7 @@
        "x": "iso_chest",
        "sets": 3,
        "reps": "12",
-       "rest": 90,
-       "note": "Poignées neutres si possible"
+       "rest": 90
       }
      ]
     },
@@ -426,8 +421,7 @@
        "x": "pushup_par",
        "sets": 3,
        "reps": "8-12",
-       "rest": 60,
-       "note": "Sur parallettes ou haltères, poignets neutres"
+       "rest": 60
       }
      ]
     }
@@ -438,7 +432,7 @@
      "x": []
     },
     {
-     "t": "Étirements pectoraux contre le mur, dorsaux, triceps, avant-bras (doucement, sans forcer sur la cicatrice)",
+     "t": "Étirements pectoraux contre le mur, dorsaux, triceps, avant-bras",
      "x": [
       "st_pec",
       "st_lat",
@@ -447,7 +441,7 @@
      ]
     }
    ],
-   "goal": "Reprendre pousser et tirer avec des prises neutres (machines Hammer, haltères) pour protéger le poignet opéré, et recommencer la suspension à la barre en volume court."
+   "goal": "Reprendre pousser et tirer (machines Hammer, haltères) et recommencer la suspension à la barre en volume court."
   },
   {
    "id": "c1-wod",
@@ -464,9 +458,8 @@
      ]
     },
     {
-     "t": "Routine poignets, 2 tours de 5 deadlifts kettlebell légers + 5 goblet squats + 5 step-ups",
+     "t": "2 tours de 5 deadlifts kettlebell légers + 5 goblet squats + 5 step-ups",
      "x": [
-      "wrist_routine",
       "kb_dl",
       "goblet",
       "stepup"
@@ -573,9 +566,8 @@
      ]
     },
     {
-     "t": "Routine poignets, good mornings au bâton, cat-cow, ponts fessiers, hip hinge au mur, 1 série légère de soulevé de terre roumain",
+     "t": "Good mornings au bâton, cat-cow, ponts fessiers, hip hinge au mur, 1 série légère de soulevé de terre roumain",
      "x": [
-      "wrist_routine",
       "gm_stick",
       "cat_cow",
       "glute_bridge",
@@ -592,7 +584,6 @@
        "sets": 3,
        "reps": "12",
        "rest": 90,
-       "note": "Sangles possibles",
        "benchmark": "deadlift"
       }
      ]
@@ -659,8 +650,7 @@
        "x": "bird_dog",
        "sets": 3,
        "reps": "8/côté",
-       "rest": 30,
-       "note": "Mains sur poings"
+       "rest": 30
       }
      ]
     }
@@ -680,7 +670,7 @@
      ]
     }
    ],
-   "goal": "Réactiver la chaîne postérieure (ischios, fessiers, lombaires) et le dos, et tester la prise sur les portés. Sangles autorisées, charges légères."
+   "goal": "Réactiver la chaîne postérieure (ischios, fessiers, lombaires) et le dos, et reprendre les portés. Charges légères."
   },
   {
    "id": "c2-r1",
@@ -712,7 +702,7 @@
        "sets": 4,
        "reps": "10",
        "rest": 120,
-       "note": "Barre haute, prise large pour soulager les poignets · RPE 7"
+       "note": "Barre haute · RPE 7"
       }
      ]
     },
@@ -813,7 +803,7 @@
      ]
     }
    ],
-   "goal": "Retour de la barre avec le back squat (prise large pour les poignets) et plus de volume sur les jambes. RPE 7, 2-3 répétitions en réserve."
+   "goal": "Retour de la barre avec le back squat et plus de volume sur les jambes. RPE 7, 2-3 répétitions en réserve."
   },
   {
    "id": "c2-ca",
@@ -914,9 +904,8 @@
      ]
     },
     {
-     "t": "Routine poignets, band pull-aparts, dead hang 3 × 20-30 s, pompes inclinées sur la barre au rack (poignets peu fléchis)",
+     "t": "Band pull-aparts, dead hang 3 × 20-30 s, pompes inclinées sur la barre au rack",
      "x": [
-      "wrist_routine",
       "band_pull",
       "dead_hang",
       "incline_pushup"
@@ -932,7 +921,7 @@
        "sets": 4,
        "reps": "10",
        "rest": 120,
-       "note": "Ou haltères si le poignet tire · RPE 7"
+       "note": "RPE 7"
       }
      ]
     },
@@ -1023,7 +1012,7 @@
      ]
     }
    ],
-   "goal": "Retour du développé couché à la barre et des tractions avec élastique. Les pompes se font sur parallettes ou haltères pour garder le poignet neutre."
+   "goal": "Retour du développé couché à la barre et des tractions avec élastique, avec pompes et dips en complément."
   },
   {
    "id": "c2-wod",
@@ -1039,10 +1028,8 @@
      ]
     },
     {
-     "t": "Routine poignets, 2 tours à vide des mouvements du WOD",
-     "x": [
-      "wrist_routine"
-     ]
+     "t": "2 tours à vide des mouvements du WOD",
+     "x": []
     }
    ],
    "blocks": [
@@ -1055,8 +1042,7 @@
        "x": "assault_wod",
        "sets": 0,
        "reps": "15 cal",
-       "rest": 0,
-       "note": "Appui sur les haltères, poignets neutres"
+       "rest": 0
       },
       {
        "x": "kb_swing_am",
@@ -1153,7 +1139,7 @@
        "sets": 4,
        "reps": "8",
        "rest": 120,
-       "note": "RPE 7 · sangles sur la dernière série si la prise lâche"
+       "note": "RPE 7"
       }
      ]
     },
@@ -1254,11 +1240,10 @@
      ]
     },
     {
-     "t": "Mobilité chevilles, hanches et poignets (test du front rack), 3 séries d’approche montantes de squat",
+     "t": "Mobilité chevilles, hanches et front rack, 3 séries d’approche montantes de squat",
      "x": [
       "ankle_mob",
-      "hip_opener",
-      "wrist_routine"
+      "hip_opener"
      ]
     }
    ],
@@ -1282,8 +1267,7 @@
        "x": "frontsquat",
        "sets": 3,
        "reps": "8",
-       "rest": 120,
-       "note": "Prise en sangles croisées ou bras croisés si le front rack gêne"
+       "rest": 120
       }
      ]
     },
@@ -1362,7 +1346,7 @@
      ]
     }
    ],
-   "goal": "Monter en charge sur le squat (5 × 6) et reprendre le front squat (prise bras croisés ou sangles si le front rack gêne). Gainage plus exigeant avec les toes-to-bar."
+   "goal": "Monter en charge sur le squat (5 × 6) et reprendre le front squat. Gainage plus exigeant avec les toes-to-bar."
   },
   {
    "id": "c3-ca",
@@ -1453,9 +1437,8 @@
      ]
     },
     {
-     "t": "Routine poignets, dead hang 3 × 30-40 s puis active hang, pompes, 2 séries légères de développé militaire",
+     "t": "Dead hang 3 × 30-40 s puis active hang, pompes, 2 séries légères de développé militaire",
      "x": [
-      "wrist_routine",
       "dead_hang",
       "active_hang",
       "incline_pushup"
@@ -1527,7 +1510,7 @@
        "sets": 3,
        "reps": "12-15",
        "rest": 0,
-       "note": "Sur parallettes, amplitude complète"
+       "note": "Amplitude complète"
       },
       {
        "x": "ringrow",
@@ -1546,7 +1529,7 @@
        "sets": 3,
        "reps": "20 m/côté",
        "rest": 60,
-       "note": "En rack ou au-dessus de la tête, poignet aligné"
+       "note": "En rack ou au-dessus de la tête"
       }
      ]
     }
@@ -1577,10 +1560,8 @@
      ]
     },
     {
-     "t": "Éducatifs de clean à la barre vide (deadlift, hang pull, hang power clean), uniquement si le poignet passe en front rack sans douleur",
-     "x": [
-      "wrist_routine"
-     ]
+     "t": "Éducatifs de clean à la barre vide (deadlift, hang pull, hang power clean)",
+     "x": []
     }
    ],
    "blocks": [
@@ -1667,7 +1648,7 @@
      ]
     }
    ],
-   "goal": "Réintroduire une haltérophilie légère (hang power clean) seulement si le poignet passe en front rack sans douleur, puis monter l’intensité des WODs."
+   "goal": "Réintroduire une haltérophilie légère (hang power clean), puis monter l’intensité des WODs."
   },
   {
    "id": "c3-r3",
@@ -1725,7 +1706,7 @@
        "sets": 4,
        "reps": "8",
        "rest": 0,
-       "label": "Tractions prise neutre ou lat pulldown lourd"
+       "label": "Tractions ou lat pulldown lourd"
       },
       {
        "x": "hipthrust",
@@ -2011,9 +1992,8 @@
      ]
     },
     {
-     "t": "Routine poignets, scapular pull-ups, dead hang 2 × 45 s, montée en charge au développé couché",
+     "t": "Scapular pull-ups, dead hang 2 × 45 s, montée en charge au développé couché",
      "x": [
-      "wrist_routine",
       "scap_pullup",
       "dead_hang"
      ]
@@ -2138,10 +2118,8 @@
      ]
     },
     {
-     "t": "Routine poignets, montée en charge sur le thruster et éducatifs à vide des mouvements",
-     "x": [
-      "wrist_routine"
-     ]
+     "t": "Montée en charge sur le thruster et éducatifs à vide des mouvements",
+     "x": []
     }
    ],
    "blocks": [
@@ -2153,7 +2131,7 @@
       {
        "x": "thruster",
        "sets": 0,
-       "reps": "barre 30-40 kg ou haltères 2 × 15 kg si le front rack gêne",
+       "reps": "barre 30-40 kg",
        "rest": 0
       },
       {
@@ -2205,7 +2183,7 @@
      "l": "E",
      "type": "wod",
      "title": "Finisher · 5 min",
-     "desc": "1 tour = 5 burpees sur les poings + 10 cal assault bike, allure constante.",
+     "desc": "1 tour = 5 burpees + 10 cal assault bike, allure constante.",
      "items": [
       {
        "x": "burpee",
@@ -2273,7 +2251,7 @@
        "sets": 5,
        "reps": "3",
        "rest": 90,
-       "note": "Léger et rapide, uniquement si le front rack est confortable"
+       "note": "Léger et rapide"
       }
      ]
     },
@@ -2362,7 +2340,7 @@
      ]
     }
    ],
-   "goal": "Trouver un 3-5RM au soulevé de terre, reprendre le power clean si le front rack est confortable, et des portés lourds."
+   "goal": "Trouver un 3-5RM au soulevé de terre, reprendre le power clean, et des portés lourds."
   }
  ]
 }
