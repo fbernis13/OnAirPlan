@@ -304,7 +304,7 @@ function stepName(t) {
 function gateRest(a, b) {
   if (!b || b.k === 'b' || b.k === 'w') return 0;
   if (a.k === 'ex' && b.k === 'ex' && a.bl === b.bl) return 0; // même superset/circuit : on enchaîne
-  if (a.k === 'wod') return b.k === 'c' ? 120 : 180;
+  if (a.k === 'wod') return b.k === 'wod' ? 900 : b.k === 'c' ? 120 : 180; // entre deux WOD : 15 min (demande de Spook)
   if (b.k === 'wod') return 120;
   if (a.k === 'w') return 60;
   if (b.k === 'c') return 60;
