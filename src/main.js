@@ -62,7 +62,7 @@ async function updateWakeLock() {
     else if (!(UI.tab === 'programme' && UI.session) && wakeLock) { await wakeLock.release(); wakeLock = null; }
   } catch (e) { wakeLock = null; }
 }
-function go(patch) { Object.assign(UI, patch); UI.playing = null; render(); window.scrollTo(0, 0); updateWakeLock(); }
+function go(patch) { if (GATE.sid && ('session' in patch || 'tab' in patch)) closeGate(false); Object.assign(UI, patch); UI.playing = null; render(); window.scrollTo(0, 0); updateWakeLock(); }
 
 document.addEventListener('click', ev => {
   unlockAudio();
@@ -131,7 +131,13 @@ document.addEventListener('click', ev => {
     UI.sheet = null; renderSheet(); return;
   }
   // Muscles
-  if (a === 'sstep') { UI.step = Object.assign({}, UI.step, { [el.dataset.sid]: +el.dataset.v }); UI.openMore = null; UI.openWarm = null; UI.exMedia = null; go({}); return; }
+  if (a === 'gate') { openGate(el.dataset.sid, +el.dataset.v); go({}); return; }
+  if (a === 'gate-go') { gateGo(); render(); return; }
+  if (a === 'gate-stop') { gateStop(); render(); return; }
+  if (a === 'gate-plus') { GATE.total += 15; if (GATE.running) GATE.endAt += 15000; else GATE.left += 15; paintGate(); return; }
+  if (a === 'gate-skip') { closeGate(true); go({}); return; }
+  if (a === 'gate-back') { closeGate(false); go({}); return; }
+  if (a === 'sstep') { if (GATE.sid) closeGate(false); UI.step = Object.assign({}, UI.step, { [el.dataset.sid]: +el.dataset.v }); UI.openMore = null; UI.openWarm = null; UI.exMedia = null; go({}); return; }
   if (a === 'jump') { const t = document.getElementById(el.dataset.target); if (t) t.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); return; }
   if (a === 'prog-cycle') { UI.progCycle = Number(el.dataset.v); UI.railOpen = false; render(); return; }
   if (a === 'exmedia') { const cur = UI.exMedia; UI.exMedia = cur && cur.uid === el.dataset.uid && cur.v === el.dataset.v ? null : { uid: el.dataset.uid, v: el.dataset.v }; UI.playing = null; render(); return; }

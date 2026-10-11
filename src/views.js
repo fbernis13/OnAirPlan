@@ -111,6 +111,7 @@ function viewSession(sid) {
   const s = SESSION_BY_ID[sid]; const L = getLog(sid, false) || {};
   const cyc = CYCLES[s.cycle - 1];
   const steps = sessionSteps(s); const n = steps.length; const cur = curStep(s, n); const S = steps[cur];
+  if (GATE.sid === sid) return gateView(s, steps);
   let h = `<div class="row sess-tools"><button class="btn rail-toggle" data-act="sess-rail" aria-expanded="${!!UI.sessRail}" aria-controls="sess-rail">${UI.sessRail ? 'Masquer les étapes' : 'Afficher étapes'}</button>
     <button class="btn rail-toggle" data-act="sess-muscles" data-sid="${sid}">Muscles</button></div>
   <p class="muted small" style="margin-top:.6rem">Cycle ${s.cycle} · ${esc(cyc.name)} · ${esc(cyc.intensity)}</p>
@@ -147,7 +148,8 @@ function viewSession(sid) {
   const idx = SESSIONS.indexOf(s); const prev = SESSIONS[idx - 1], nxt = SESSIONS[idx + 1];
   const pb = cur > 0 ? `<button class="btn" data-act="sstep" data-sid="${sid}" data-v="${cur - 1}">${IC.back} Précédent</button>`
     : prev ? `<button class="btn" data-act="open-session" data-id="${prev.id}" title="${esc(sessLabel(prev))}">${IC.back} Séance préc.</button>` : '<span></span>';
-  const nb = cur < n - 1 ? `<button class="btn primary" data-act="sstep" data-sid="${sid}" data-v="${cur + 1}">Suivant ${IC.chev}</button>`
+  const gs = cur < n - 1 ? gateRest(S, steps[cur + 1]) : 0;
+  const nb = cur < n - 1 ? `<button class="btn primary" data-act="${gs ? 'gate' : 'sstep'}" data-sid="${sid}" data-v="${cur + 1}">Suivant ${IC.chev}</button>`
     : nxt ? `<button class="btn" data-act="open-session" data-id="${nxt.id}" title="${esc(sessLabel(nxt))}">Séance suiv. ${IC.chev}</button>` : '<span></span>';
   h += `<div class="stepbar">${pb}<span class="stepn num">${cur + 1} / ${n}</span>${nb}</div>`;
   return `<div class="sess-layout${UI.sessRail ? ' rail-open' : ''}">${sessionRail(s, L, steps, cur)}<div class="sess-main">${h}</div></div>`;
@@ -286,6 +288,67 @@ function commentField(kind, sid, key, val, label, extra) {
   return `<label class="fld">${esc(label)}
     <textarea id="${id}" data-in="${kind}" data-sid="${sid}" data-key="${esc(key)}" data-bl="${esc(key)}" ${extra || ''} placeholder="Sensations, réglages de machine…">${esc(val || '')}</textarea></label>
     <button class="btn small ghost" data-act="dictate" data-target="${id}" style="justify-self:start">${IC.mic} Dicter</button>`;
+}
+
+/* ── Repos entre deux exercices : écran affiché quand on clique sur Suivant */
+const GATE = { sid: null, to: 0, total: 0, left: 0, running: false, endAt: 0, tick: null };
+function stepName(t) {
+  if (!t) return '';
+  if (t.k === 'ex') return `${t.bl.items.length > 1 ? t.bl.l + (t.i + 1) : t.bl.l} · ${itemLabel(t.it)}`;
+  if (t.k === 'wod') return t.bl.title || 'WOD';
+  return t.k === 'c' ? 'Retour au calme' : '';
+}
+// Durée de repos estimée selon la transition (0 = pas d'écran de repos)
+function gateRest(a, b) {
+  if (!b || b.k === 'b' || b.k === 'w') return 0;
+  if (a.k === 'ex' && b.k === 'ex' && a.bl === b.bl) return 0; // même superset/circuit : on enchaîne
+  if (a.k === 'wod') return b.k === 'c' ? 120 : 180;
+  if (b.k === 'wod') return 120;
+  if (a.k === 'w') return 60;
+  if (b.k === 'c') return 60;
+  const r = Math.max(...b.bl.items.map(o => Number(o.rest) || 0));
+  return r >= 120 || /^[1-5]$/.test(String(b.it.reps)) ? 150 : 90;
+}
+function openGate(sid, to) {
+  const s = SESSION_BY_ID[sid]; const steps = sessionSteps(s); const sec = gateRest(steps[curStep(s, steps.length)], steps[to]);
+  clearInterval(GATE.tick);
+  Object.assign(GATE, { sid, to, total: sec, left: sec, running: false, endAt: 0 });
+}
+function closeGate(advance) {
+  clearInterval(GATE.tick); const { sid, to } = GATE; GATE.sid = null; GATE.running = false;
+  if (advance) UI.step = Object.assign({}, UI.step, { [sid]: to });
+}
+function gateGo() {
+  if (GATE.running) return; if (GATE.left <= 0) GATE.left = GATE.total;
+  GATE.running = true; GATE.endAt = Date.now() + GATE.left * 1000;
+  GATE.tick = setInterval(() => {
+    GATE.left = Math.max(0, (GATE.endAt - Date.now()) / 1000);
+    if (GATE.left <= 0) { beep(3); closeGate(true); go({}); return; }
+    paintGate();
+  }, 250);
+}
+function gateStop() { if (!GATE.running) return; clearInterval(GATE.tick); GATE.running = false; GATE.left = Math.max(0, (GATE.endAt - Date.now()) / 1000); }
+function paintGate() {
+  const t = document.getElementById('gate-time'); if (t) t.textContent = fmtSec(Math.ceil(GATE.left));
+  const r = document.getElementById('gate-ring'); if (r) r.style.setProperty('--p', (1 - GATE.left / GATE.total) * 100);
+}
+function gateView(s, steps) {
+  const nx = steps[GATE.to];
+  return `<p class="muted small" style="margin-top:1rem">${esc(s.title)}</p>
+  <div class="gate">
+    <div class="gate-l">Repos</div>
+    <div class="gate-ring" id="gate-ring" style="--p:${(1 - GATE.left / GATE.total) * 100}"><span id="gate-time" class="num">${fmtSec(Math.ceil(GATE.left))}</span></div>
+    <p class="gate-next">Ensuite : <strong>${esc(stepName(nx))}</strong></p>
+    <div class="gate-btns">
+      <button class="btn primary big" data-act="gate-go" ${GATE.running ? 'disabled' : ''}>${IC.play} Go</button>
+      <button class="btn big" data-act="gate-stop" ${GATE.running ? '' : 'disabled'}>${IC.pause} Stop</button>
+    </div>
+    <div class="gate-btns">
+      <button class="btn small ghost" data-act="gate-plus">+15 s</button>
+      <button class="btn small ghost" data-act="gate-skip">Passer le repos ${IC.chev}</button>
+      <button class="btn small ghost" data-act="gate-back">${IC.back} Retour</button>
+    </div>
+  </div>`;
 }
 
 /* ── Minuteur de repos */

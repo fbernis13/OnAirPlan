@@ -388,3 +388,13 @@ button.ethumb { padding: 0; border: 0; background: none; cursor: pointer; }
 .sessbtn.done .small { color: var(--ink-2); }
 .media-btns { flex-wrap: wrap; }
 .media-btns .btn { flex: 1 1 5.2rem; min-width: 0; padding-inline: .3rem; font-size: .82rem; white-space: nowrap; justify-content: center; }
+
+/* Écran de repos entre deux exercices */
+.gate { display: grid; justify-items: center; gap: .9rem; margin-top: 1rem; padding: 1.4rem 1rem; border: 1px solid var(--line); border-radius: 1rem; background: var(--surface); text-align: center; }
+.gate-l { font-family: var(--f-display); font-weight: 700; font-size: 1.1rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.gate-ring { --p: 0; width: min(62vw, 15rem); aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; background: conic-gradient(var(--accent) calc(var(--p) * 1%), var(--accent-soft) 0); }
+.gate-ring span { width: 84%; aspect-ratio: 1; border-radius: 50%; background: var(--bg); display: grid; place-items: center; font-family: var(--f-display); font-weight: 700; font-size: clamp(2.6rem, 14vw, 3.6rem); font-variant-numeric: tabular-nums; }
+.gate-next { margin: 0; overflow-wrap: anywhere; }
+.gate-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; width: 100%; }
+.gate-btns .btn.big { flex: 1 1 7rem; min-height: 3.2rem; font-size: 1.1rem; }
+.gate-btns .btn svg { width: 1.1rem; height: 1.1rem; vertical-align: -.15em; }

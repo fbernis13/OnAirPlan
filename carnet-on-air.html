@@ -393,6 +393,16 @@ button.ethumb { padding: 0; border: 0; background: none; cursor: pointer; }
 .sessbtn.done .small { color: var(--ink-2); }
 .media-btns { flex-wrap: wrap; }
 .media-btns .btn { flex: 1 1 5.2rem; min-width: 0; padding-inline: .3rem; font-size: .82rem; white-space: nowrap; justify-content: center; }
+
+/* Écran de repos entre deux exercices */
+.gate { display: grid; justify-items: center; gap: .9rem; margin-top: 1rem; padding: 1.4rem 1rem; border: 1px solid var(--line); border-radius: 1rem; background: var(--surface); text-align: center; }
+.gate-l { font-family: var(--f-display); font-weight: 700; font-size: 1.1rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.gate-ring { --p: 0; width: min(62vw, 15rem); aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; background: conic-gradient(var(--accent) calc(var(--p) * 1%), var(--accent-soft) 0); }
+.gate-ring span { width: 84%; aspect-ratio: 1; border-radius: 50%; background: var(--bg); display: grid; place-items: center; font-family: var(--f-display); font-weight: 700; font-size: clamp(2.6rem, 14vw, 3.6rem); font-variant-numeric: tabular-nums; }
+.gate-next { margin: 0; overflow-wrap: anywhere; }
+.gate-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: .5rem; width: 100%; }
+.gate-btns .btn.big { flex: 1 1 7rem; min-height: 3.2rem; font-size: 1.1rem; }
+.gate-btns .btn svg { width: 1.1rem; height: 1.1rem; vertical-align: -.15em; }
 </style>
 <div id="app" class="app"></div>
 <script>
@@ -1376,6 +1386,7 @@ function viewSession(sid) {
   const s = SESSION_BY_ID[sid]; const L = getLog(sid, false) || {};
   const cyc = CYCLES[s.cycle - 1];
   const steps = sessionSteps(s); const n = steps.length; const cur = curStep(s, n); const S = steps[cur];
+  if (GATE.sid === sid) return gateView(s, steps);
   let h = `<div class="row sess-tools"><button class="btn rail-toggle" data-act="sess-rail" aria-expanded="${!!UI.sessRail}" aria-controls="sess-rail">${UI.sessRail ? 'Masquer les étapes' : 'Afficher étapes'}</button>
     <button class="btn rail-toggle" data-act="sess-muscles" data-sid="${sid}">Muscles</button></div>
   <p class="muted small" style="margin-top:.6rem">Cycle ${s.cycle} · ${esc(cyc.name)} · ${esc(cyc.intensity)}</p>
@@ -1412,7 +1423,8 @@ function viewSession(sid) {
   const idx = SESSIONS.indexOf(s); const prev = SESSIONS[idx - 1], nxt = SESSIONS[idx + 1];
   const pb = cur > 0 ? `<button class="btn" data-act="sstep" data-sid="${sid}" data-v="${cur - 1}">${IC.back} Précédent</button>`
     : prev ? `<button class="btn" data-act="open-session" data-id="${prev.id}" title="${esc(sessLabel(prev))}">${IC.back} Séance préc.</button>` : '<span></span>';
-  const nb = cur < n - 1 ? `<button class="btn primary" data-act="sstep" data-sid="${sid}" data-v="${cur + 1}">Suivant ${IC.chev}</button>`
+  const gs = cur < n - 1 ? gateRest(S, steps[cur + 1]) : 0;
+  const nb = cur < n - 1 ? `<button class="btn primary" data-act="${gs ? 'gate' : 'sstep'}" data-sid="${sid}" data-v="${cur + 1}">Suivant ${IC.chev}</button>`
     : nxt ? `<button class="btn" data-act="open-session" data-id="${nxt.id}" title="${esc(sessLabel(nxt))}">Séance suiv. ${IC.chev}</button>` : '<span></span>';
   h += `<div class="stepbar">${pb}<span class="stepn num">${cur + 1} / ${n}</span>${nb}</div>`;
   return `<div class="sess-layout${UI.sessRail ? ' rail-open' : ''}">${sessionRail(s, L, steps, cur)}<div class="sess-main">${h}</div></div>`;
@@ -1551,6 +1563,67 @@ function commentField(kind, sid, key, val, label, extra) {
   return `<label class="fld">${esc(label)}
     <textarea id="${id}" data-in="${kind}" data-sid="${sid}" data-key="${esc(key)}" data-bl="${esc(key)}" ${extra || ''} placeholder="Sensations, réglages de machine…">${esc(val || '')}</textarea></label>
     <button class="btn small ghost" data-act="dictate" data-target="${id}" style="justify-self:start">${IC.mic} Dicter</button>`;
+}
+
+/* ── Repos entre deux exercices : écran affiché quand on clique sur Suivant */
+const GATE = { sid: null, to: 0, total: 0, left: 0, running: false, endAt: 0, tick: null };
+function stepName(t) {
+  if (!t) return '';
+  if (t.k === 'ex') return `${t.bl.items.length > 1 ? t.bl.l + (t.i + 1) : t.bl.l} · ${itemLabel(t.it)}`;
+  if (t.k === 'wod') return t.bl.title || 'WOD';
+  return t.k === 'c' ? 'Retour au calme' : '';
+}
+// Durée de repos estimée selon la transition (0 = pas d'écran de repos)
+function gateRest(a, b) {
+  if (!b || b.k === 'b' || b.k === 'w') return 0;
+  if (a.k === 'ex' && b.k === 'ex' && a.bl === b.bl) return 0; // même superset/circuit : on enchaîne
+  if (a.k === 'wod') return b.k === 'c' ? 120 : 180;
+  if (b.k === 'wod') return 120;
+  if (a.k === 'w') return 60;
+  if (b.k === 'c') return 60;
+  const r = Math.max(...b.bl.items.map(o => Number(o.rest) || 0));
+  return r >= 120 || /^[1-5]$/.test(String(b.it.reps)) ? 150 : 90;
+}
+function openGate(sid, to) {
+  const s = SESSION_BY_ID[sid]; const steps = sessionSteps(s); const sec = gateRest(steps[curStep(s, steps.length)], steps[to]);
+  clearInterval(GATE.tick);
+  Object.assign(GATE, { sid, to, total: sec, left: sec, running: false, endAt: 0 });
+}
+function closeGate(advance) {
+  clearInterval(GATE.tick); const { sid, to } = GATE; GATE.sid = null; GATE.running = false;
+  if (advance) UI.step = Object.assign({}, UI.step, { [sid]: to });
+}
+function gateGo() {
+  if (GATE.running) return; if (GATE.left <= 0) GATE.left = GATE.total;
+  GATE.running = true; GATE.endAt = Date.now() + GATE.left * 1000;
+  GATE.tick = setInterval(() => {
+    GATE.left = Math.max(0, (GATE.endAt - Date.now()) / 1000);
+    if (GATE.left <= 0) { beep(3); closeGate(true); go({}); return; }
+    paintGate();
+  }, 250);
+}
+function gateStop() { if (!GATE.running) return; clearInterval(GATE.tick); GATE.running = false; GATE.left = Math.max(0, (GATE.endAt - Date.now()) / 1000); }
+function paintGate() {
+  const t = document.getElementById('gate-time'); if (t) t.textContent = fmtSec(Math.ceil(GATE.left));
+  const r = document.getElementById('gate-ring'); if (r) r.style.setProperty('--p', (1 - GATE.left / GATE.total) * 100);
+}
+function gateView(s, steps) {
+  const nx = steps[GATE.to];
+  return `<p class="muted small" style="margin-top:1rem">${esc(s.title)}</p>
+  <div class="gate">
+    <div class="gate-l">Repos</div>
+    <div class="gate-ring" id="gate-ring" style="--p:${(1 - GATE.left / GATE.total) * 100}"><span id="gate-time" class="num">${fmtSec(Math.ceil(GATE.left))}</span></div>
+    <p class="gate-next">Ensuite : <strong>${esc(stepName(nx))}</strong></p>
+    <div class="gate-btns">
+      <button class="btn primary big" data-act="gate-go" ${GATE.running ? 'disabled' : ''}>${IC.play} Go</button>
+      <button class="btn big" data-act="gate-stop" ${GATE.running ? '' : 'disabled'}>${IC.pause} Stop</button>
+    </div>
+    <div class="gate-btns">
+      <button class="btn small ghost" data-act="gate-plus">+15 s</button>
+      <button class="btn small ghost" data-act="gate-skip">Passer le repos ${IC.chev}</button>
+      <button class="btn small ghost" data-act="gate-back">${IC.back} Retour</button>
+    </div>
+  </div>`;
 }
 
 /* ── Minuteur de repos */
@@ -2222,7 +2295,7 @@ async function updateWakeLock() {
     else if (!(UI.tab === 'programme' && UI.session) && wakeLock) { await wakeLock.release(); wakeLock = null; }
   } catch (e) { wakeLock = null; }
 }
-function go(patch) { Object.assign(UI, patch); UI.playing = null; render(); window.scrollTo(0, 0); updateWakeLock(); }
+function go(patch) { if (GATE.sid && ('session' in patch || 'tab' in patch)) closeGate(false); Object.assign(UI, patch); UI.playing = null; render(); window.scrollTo(0, 0); updateWakeLock(); }
 
 document.addEventListener('click', ev => {
   unlockAudio();
@@ -2291,7 +2364,13 @@ document.addEventListener('click', ev => {
     UI.sheet = null; renderSheet(); return;
   }
   // Muscles
-  if (a === 'sstep') { UI.step = Object.assign({}, UI.step, { [el.dataset.sid]: +el.dataset.v }); UI.openMore = null; UI.openWarm = null; UI.exMedia = null; go({}); return; }
+  if (a === 'gate') { openGate(el.dataset.sid, +el.dataset.v); go({}); return; }
+  if (a === 'gate-go') { gateGo(); render(); return; }
+  if (a === 'gate-stop') { gateStop(); render(); return; }
+  if (a === 'gate-plus') { GATE.total += 15; if (GATE.running) GATE.endAt += 15000; else GATE.left += 15; paintGate(); return; }
+  if (a === 'gate-skip') { closeGate(true); go({}); return; }
+  if (a === 'gate-back') { closeGate(false); go({}); return; }
+  if (a === 'sstep') { if (GATE.sid) closeGate(false); UI.step = Object.assign({}, UI.step, { [el.dataset.sid]: +el.dataset.v }); UI.openMore = null; UI.openWarm = null; UI.exMedia = null; go({}); return; }
   if (a === 'jump') { const t = document.getElementById(el.dataset.target); if (t) t.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); return; }
   if (a === 'prog-cycle') { UI.progCycle = Number(el.dataset.v); UI.railOpen = false; render(); return; }
   if (a === 'exmedia') { const cur = UI.exMedia; UI.exMedia = cur && cur.uid === el.dataset.uid && cur.v === el.dataset.v ? null : { uid: el.dataset.uid, v: el.dataset.v }; UI.playing = null; render(); return; }
