@@ -22,7 +22,7 @@ users_js = 'const AUTH_USERS = ' + json.dumps(users, ensure_ascii=False, separat
 supa = json.loads((here / 'config' / 'supabase.json').read_text(encoding='utf-8'))
 supa_on = bool(supa.get('url') and supa.get('anonKey'))
 site_js = users_js + ('const SUPA_CONFIG = ' + json.dumps(supa, ensure_ascii=False, separators=(',', ':')) + ';\n' if supa_on else '')
-supa_tag = '<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>\n' if supa_on else ''
+supa_tag = '<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.0/dist/umd/supabase.js"></script>\n' if supa_on else ''
 def page_body(extra=''):
     return BODY.replace('<script>\n', '<script>\n' + extra, 1)
 css = (src / 'style.css').read_text(encoding='utf-8')
