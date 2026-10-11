@@ -207,9 +207,9 @@
      "rounds": 3,
      "items": [
       {
-       "x": "plank_fa",
+       "x": "situp",
        "sets": 3,
-       "reps": "30 s",
+       "reps": "15",
        "rest": 0
       },
       {
@@ -219,9 +219,9 @@
        "rest": 0
       },
       {
-       "x": "side_plank",
+       "x": "russian_twist",
        "sets": 3,
-       "reps": "20 s/côté",
+       "reps": "20",
        "rest": 45
       },
       {
@@ -246,11 +246,10 @@
        "note": "Avant du pied sur une marche, haltères en main, 2 s en haut"
       },
       {
-       "x": "lsit",
+       "x": "vup",
        "sets": 3,
-       "reps": "10-15 s",
-       "rest": 45,
-       "note": "Genoux pliés (tuck) si L-sit jambes tendues trop dur"
+       "reps": "10",
+       "rest": 45
       }
      ]
     }
@@ -573,9 +572,9 @@
        "rest": 0
       },
       {
-       "x": "plank_wod",
+       "x": "situp",
        "sets": 0,
-       "reps": "30 s",
+       "reps": "15",
        "rest": 0
       }
      ]
@@ -716,9 +715,9 @@
      "l": "F",
      "items": [
       {
-       "x": "bird_dog",
+       "x": "situp",
        "sets": 3,
-       "reps": "8/côté",
+       "reps": "15",
        "rest": 30
       }
      ]
@@ -864,8 +863,7 @@
        "x": "rope_su",
        "sets": 4,
        "reps": "50",
-       "rest": 45,
-       "note": "Ou 20 double unders si la technique est là"
+       "rest": 45
       }
      ]
     },
@@ -876,9 +874,9 @@
      "rounds": 3,
      "items": [
       {
-       "x": "plank_fist",
+       "x": "vup",
        "sets": 3,
-       "reps": "40 s",
+       "reps": "12",
        "rest": 0
       },
       {
@@ -889,9 +887,9 @@
        "note": "Genoux pliés si besoin"
       },
       {
-       "x": "bird_dog",
+       "x": "situp",
        "sets": 3,
-       "reps": "10/côté",
+       "reps": "20",
        "rest": 45
       },
       {
@@ -916,11 +914,10 @@
        "note": "Avant du pied sur une marche, haltères en main, 2 s en haut"
       },
       {
-       "x": "lsit",
+       "x": "k2e",
        "sets": 3,
-       "reps": "10-15 s",
-       "rest": 45,
-       "note": "Genoux pliés (tuck) si L-sit jambes tendues trop dur"
+       "reps": "8",
+       "rest": 45
       }
      ]
     }
@@ -1277,7 +1274,7 @@
       {
        "x": "single_under",
        "sets": 0,
-       "reps": "50 (ou 25 double unders)",
+       "reps": "50",
        "rest": 0
       }
      ]
@@ -1538,9 +1535,9 @@
        "note": "Genoux à la poitrine au début"
       },
       {
-       "x": "shoulder_taps",
+       "x": "situp",
        "sets": 3,
-       "reps": "10/côté",
+       "reps": "20",
        "rest": 0
       },
       {
@@ -1571,11 +1568,10 @@
        "note": "Avant du pied sur une marche, haltères en main, 2 s en haut"
       },
       {
-       "x": "lsit",
+       "x": "vup",
        "sets": 3,
-       "reps": "15-20 s",
-       "rest": 45,
-       "note": "Genoux pliés (tuck) si L-sit jambes tendues trop dur"
+       "reps": "12",
+       "rest": 45
       }
      ]
     }
@@ -1926,9 +1922,9 @@
        "rest": 0
       },
       {
-       "x": "double_under",
+       "x": "single_under",
        "sets": 0,
-       "reps": "30 (ou 60 single unders)",
+       "reps": "60",
        "rest": 0
       }
      ]
@@ -2193,8 +2189,7 @@
        "x": "rope_su",
        "sets": 4,
        "reps": "50",
-       "rest": 45,
-       "note": "Ou 30 double unders"
+       "rest": 45
       }
      ]
     },
@@ -2211,9 +2206,9 @@
        "rest": 0
       },
       {
-       "x": "lsit",
+       "x": "vup",
        "sets": 3,
-       "reps": "15 s",
+       "reps": "15",
        "rest": 0
       },
       {

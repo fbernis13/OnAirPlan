@@ -2988,7 +2988,7 @@
    ]
   },
   "rope_su": {
-   "fr": "Corde à sauter (single ou double unders)",
+   "fr": "Corde à sauter (single unders)",
    "en": "Jump Rope",
    "mv": "single-under",
    "kind": "force",
@@ -3099,6 +3099,48 @@
     "source": "free-exercise-db (domaine public, Unlicense)",
     "note": "machine abducteurs assis (Nautilus)"
    }
+  },
+  "situp": {
+   "fr": "Sit-up AbMat",
+   "en": "AbMat Sit-up",
+   "mv": "abmat-sit-up",
+   "kind": "gainage",
+   "unit": "reps",
+   "load": false,
+   "p": [
+    "abs"
+   ],
+   "s": [
+    "flex"
+   ]
+  },
+  "vup": {
+   "fr": "V-up",
+   "en": "V-up",
+   "mv": "v-up",
+   "kind": "gainage",
+   "unit": "reps",
+   "load": false,
+   "p": [
+    "abs",
+    "flex"
+   ],
+   "s": []
+  },
+  "k2e": {
+   "fr": "Knees-to-elbow (genoux aux coudes, suspendu)",
+   "en": "Knees to Elbow",
+   "mv": "knees-to-elbow",
+   "kind": "gainage",
+   "unit": "reps",
+   "load": false,
+   "p": [
+    "abs",
+    "flex"
+   ],
+   "s": [
+    "dos"
+   ]
   }
  },
  "videos": {
