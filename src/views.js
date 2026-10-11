@@ -211,7 +211,8 @@ function exoCard(s, bl, it, i) {
 }
 function setRow(sid, key, it, d, st, si) {
   const id = `${sid}-${key}-${si}`; const a = `data-sid="${sid}" data-key="${key}" data-si="${si}" data-bi="${key.replace(/\d+$/, '')}" data-i="${key.match(/\d+$/)[0]}"`;
-  const ph = prefill(it); d = Object.assign({}, d, { unit: itemUnit(it) });
+  /* unité de l'exercice réellement fait (variante comprise), sauf si la séance la précise */
+  const u = it.unit || d.unit; const ph = u === exDef(it.x).unit ? prefill(it) : ''; d = Object.assign({}, d, { unit: u });
   let main;
   if (d.unit === 'time') {
     const on = HOLD.uid === id;
