@@ -379,6 +379,12 @@ body:has(.timer) .stepbar { bottom: calc(var(--nav-h) + env(safe-area-inset-bott
 .tbimg { object-fit: cover; background: #fff; }
 figure.bigthumb { margin: .4rem 0 .8rem; }
 figure.bigthumb figcaption { margin-top: .3rem; }
+.media-btns { gap: .4rem; margin: .1rem 0; }
+.media-btns .btn svg { width: 1rem; height: 1rem; margin-right: .3rem; }
+.media-panel { margin: .2rem 0 .3rem; }
+.media-panel .bigthumb { max-width: none; margin: 0; }
+button.ethumb { padding: 0; border: 0; background: none; cursor: pointer; }
+.hello { margin: 1rem 0 0; font-size: 1.5rem; }
 </style>
 <div id="app" class="app"></div>
 <script>
@@ -572,7 +578,8 @@ const IC = {
   plus: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>',
   minus: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14"/></svg>',
   ext: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>',
-  video: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>'
+  video: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>',
+  image: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5-8 8"/></svg>'
 };
 
 let toastTimer;
@@ -933,7 +940,7 @@ window.addEventListener('online', () => { if (Server.on) scheduleServer(300); })
    filtre l'accès à l'écran mais ne protège pas les fichiers publiés avec la page. */
 const AUTH = { user: null, cookie: 'onair_session' };
 const authEnabled = () => serverConfigured() || (typeof AUTH_USERS !== 'undefined' && AUTH_USERS && Array.isArray(AUTH_USERS.users));
-const userName = () => { const l = (AUTH.user && AUTH.user.login) || ''; const n = l.includes('@') ? l.split('@')[0] : l; return n.charAt(0).toUpperCase() + n.slice(1); };
+const userName = () => { const l = (AUTH.user && AUTH.user.login) || ''; const pr = typeof SUPA_CONFIG !== 'undefined' && SUPA_CONFIG && SUPA_CONFIG.prenoms; if (pr && pr[l.toLowerCase()]) return pr[l.toLowerCase()]; const n = l.includes('@') ? l.split('@')[0] : l; return n.charAt(0).toUpperCase() + n.slice(1); };
 const isAdmin = () => !authEnabled() || (AUTH.user && AUTH.user.role === 'admin');
 
 function readSessionCookie() {
@@ -1292,10 +1299,10 @@ function videoBlock(k, ctx) {
 function viewProgramme() {
   const doneCount = SESSIONS.filter(s => sessionStatus(s.id) === 'done').length;
   const next = SESSIONS.find(s => sessionStatus(s.id) !== 'done');
-  let h = `<div class="card" style="margin-top:1rem">
+  let h = `${AUTH.user ? `<h2 class="hello">Bonjour ${esc(userName())}</h2>` : ''}<div class="card" style="margin-top:${AUTH.user ? '.5rem' : '1rem'}">
     <div class="row"><div class="grow"><div class="faint small" style="font-weight:700;text-transform:uppercase;letter-spacing:.08em">${esc(PROGRAMS[programId()].label)} · Salle On Air</div>
     <div style="font-family:var(--f-display);font-size:1.5rem;font-weight:700;line-height:1.15"><span class="num">${doneCount}</span> / ${SESSIONS.length} séances terminées</div></div></div>
-    <div class="progressbar" style="margin:.5rem 0"><i style="width:${doneCount / 20 * 100}%"></i></div>
+    <div class="progressbar" style="margin:.5rem 0"><i style="width:${doneCount / SESSIONS.length * 100}%"></i></div>
     ${next ? `<button class="btn primary" data-act="open-session" data-id="${next.id}" style="width:100%;margin-top:.3rem">${sessionStatus(next.id) === 'started' ? 'Reprendre' : 'Prochaine séance'} : ${esc(sessLabel(next))}, ${esc(next.title)}</button>` : '<p class="muted">Programme terminé. Prévois une semaine plus légère avant le prochain bloc.</p>'}
   </div>
   ${MACHINE_PAIRS.length ? (() => { const used = MACHINE_PAIRS.filter(p => S.machines[p.id]); const all = v => MACHINE_PAIRS.every(p => S.machines[p.id] === v);
@@ -1450,11 +1457,12 @@ function exoCard(s, bl, it, i) {
   const uid = s.id + ':' + key;
   const swapOpts = swapList(it.x);
   return `<div class="exo anchor ${E && E.done ? 'done' : ''} ${E && E.skipped ? 'skipped' : ''}" id="exo-${uid}">
-    <div class="exo-title">${hasExThumb(eff) && !pair ? `<span class="ethumb">${exThumb(eff)}</span>` : ''}<div class="grow">
+    <div class="exo-title">${hasExThumb(eff) && !pair ? `<button class="ethumb" data-act="exmedia" data-uid="${esc(uid)}" data-v="image" aria-label="Voir l’image">${exThumb(eff)}</button>` : ''}<div class="grow">
       <div class="exo-name">${esc(eff !== it.x ? d.fr : itemLabel(it))}</div>
       <div class="exo-en">${esc(d.en)}${E && E.swap ? ` · variante de ${esc(itemLabel(it))}` : ''}</div>
     </div><div class="presc num">${presc(it)}</div></div>
     ${pair ? machinePicker(pair, side, s.cycle, `data-sid="${s.id}" data-key="${key}" data-bi="${bl.l}" data-i="${i}"`) : ''}
+    ${mediaBar(eff, uid)}
     ${muscleLine(d)}
     ${it.note ? `<div class="small muted">${esc(it.note)}</div>` : ''}
     ${(it.variant || d.variant) ? `<div class="variant">${esc(it.variant || d.variant)}</div>` : ''}
@@ -1466,9 +1474,8 @@ function exoCard(s, bl, it, i) {
       <button class="btn small ghost" data-act="delset" data-sid="${s.id}" data-key="${key}" data-bi="${bl.l}" data-i="${i}" ${sets.length <= 1 ? 'disabled' : ''}>${IC.minus} Série</button>
       <button class="btn small ${E && E.done ? 'primary' : ''}" data-act="exdone" data-sid="${s.id}" data-key="${key}" data-bi="${bl.l}" data-i="${i}">${E && E.done ? IC.check + ' Terminé' : 'Terminé'}</button>
     </div>
-    <details class="more" ${UI.openMore === uid ? 'open' : ''} data-uid="${esc(uid)}"><summary>${IC.chev} Vidéo, commentaire, variante</summary>
+    <details class="more" ${UI.openMore === uid ? 'open' : ''} data-uid="${esc(uid)}"><summary>${IC.chev} Commentaire, variante</summary>
       <div class="stack">
-        ${videoBlock(eff, uid)}
         ${d.mv ? `<button class="btn small ghost" data-act="open-move" data-id="${d.mv}" style="justify-self:start">Fiche ${esc(MOVE_BY_ID[d.mv] ? MOVE_BY_ID[d.mv].name : d.en)}</button>` : ''}
         ${commentField('ecomment', s.id, key, E && E.comment, 'Commentaire', `data-bi="${bl.l}" data-i="${i}"`)}
         <label class="fld">Variante appliquée (allègement, remplacement…)
@@ -1479,6 +1486,15 @@ function exoCard(s, bl, it, i) {
         <button class="btn small ghost" data-act="skip" data-sid="${s.id}" data-key="${key}" data-bi="${bl.l}" data-i="${i}" style="justify-self:start">${E && E.skipped ? 'Rétablir l’exercice' : 'Exercice non réalisé'}</button>
       </div></details>
   </div>`;
+}
+/* Boutons Vidéo et Image d'un exercice, et le panneau ouvert */
+function mediaBar(k, uid) {
+  const open = UI.exMedia && UI.exMedia.uid === uid ? UI.exMedia.v : null; const nv = videosFor(k).length; const im = exImg(k);
+  const btn = (v, label, icon) => `<button class="btn small ${open === v ? 'primary' : ''}" data-act="exmedia" data-uid="${esc(uid)}" data-v="${v}" aria-pressed="${open === v}">${icon}${label}</button>`;
+  let panel = '';
+  if (open === 'video') panel = videoBlock(k, uid);
+  if (open === 'image') panel = `<figure class="bigthumb">${exThumb(k)}${im && im.file ? `<figcaption class="small faint">${im.note ? esc(im.note) + ' · ' : ''}Photo ${esc(im.source || '')}</figcaption>` : '<figcaption class="small faint">Dessin du mouvement (pas de photo pour cet exercice)</figcaption>'}</figure>`;
+  return `<div class="row media-btns">${btn('video', nv ? `Vidéo${nv > 1 ? 's (' + nv + ')' : ''}` : 'Vidéo', IC.video)}${btn('image', 'Image', IC.image)}</div>${panel ? `<div class="media-panel">${panel}</div>` : ''}`;
 }
 /* Variantes possibles : tous les exercices de travail, triés par ordre alphabétique */
 function swapList(x) {
@@ -2256,9 +2272,10 @@ document.addEventListener('click', ev => {
     UI.sheet = null; renderSheet(); return;
   }
   // Muscles
-  if (a === 'sstep') { UI.step = Object.assign({}, UI.step, { [el.dataset.sid]: +el.dataset.v }); UI.openMore = null; UI.openWarm = null; go({}); return; }
+  if (a === 'sstep') { UI.step = Object.assign({}, UI.step, { [el.dataset.sid]: +el.dataset.v }); UI.openMore = null; UI.openWarm = null; UI.exMedia = null; go({}); return; }
   if (a === 'jump') { const t = document.getElementById(el.dataset.target); if (t) t.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); return; }
   if (a === 'prog-cycle') { UI.progCycle = Number(el.dataset.v); UI.railOpen = false; render(); return; }
+  if (a === 'exmedia') { const cur = UI.exMedia; UI.exMedia = cur && cur.uid === el.dataset.uid && cur.v === el.dataset.v ? null : { uid: el.dataset.uid, v: el.dataset.v }; UI.playing = null; render(); return; }
   if (a === 'sess-rail') { UI.sessRail = !UI.sessRail; render(); return; }
   if (a === 'rail-toggle') { UI.railOpen = !UI.railOpen; render(); return; }
   if (a === 'mus-scope') { UI.musScope = el.dataset.v; render(); return; }

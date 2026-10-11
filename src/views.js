@@ -46,10 +46,10 @@ function videoBlock(k, ctx) {
 function viewProgramme() {
   const doneCount = SESSIONS.filter(s => sessionStatus(s.id) === 'done').length;
   const next = SESSIONS.find(s => sessionStatus(s.id) !== 'done');
-  let h = `<div class="card" style="margin-top:1rem">
+  let h = `${AUTH.user ? `<h2 class="hello">Bonjour ${esc(userName())}</h2>` : ''}<div class="card" style="margin-top:${AUTH.user ? '.5rem' : '1rem'}">
     <div class="row"><div class="grow"><div class="faint small" style="font-weight:700;text-transform:uppercase;letter-spacing:.08em">${esc(PROGRAMS[programId()].label)} · Salle On Air</div>
     <div style="font-family:var(--f-display);font-size:1.5rem;font-weight:700;line-height:1.15"><span class="num">${doneCount}</span> / ${SESSIONS.length} séances terminées</div></div></div>
-    <div class="progressbar" style="margin:.5rem 0"><i style="width:${doneCount / 20 * 100}%"></i></div>
+    <div class="progressbar" style="margin:.5rem 0"><i style="width:${doneCount / SESSIONS.length * 100}%"></i></div>
     ${next ? `<button class="btn primary" data-act="open-session" data-id="${next.id}" style="width:100%;margin-top:.3rem">${sessionStatus(next.id) === 'started' ? 'Reprendre' : 'Prochaine séance'} : ${esc(sessLabel(next))}, ${esc(next.title)}</button>` : '<p class="muted">Programme terminé. Prévois une semaine plus légère avant le prochain bloc.</p>'}
   </div>
   ${MACHINE_PAIRS.length ? (() => { const used = MACHINE_PAIRS.filter(p => S.machines[p.id]); const all = v => MACHINE_PAIRS.every(p => S.machines[p.id] === v);
@@ -204,11 +204,12 @@ function exoCard(s, bl, it, i) {
   const uid = s.id + ':' + key;
   const swapOpts = swapList(it.x);
   return `<div class="exo anchor ${E && E.done ? 'done' : ''} ${E && E.skipped ? 'skipped' : ''}" id="exo-${uid}">
-    <div class="exo-title">${hasExThumb(eff) && !pair ? `<span class="ethumb">${exThumb(eff)}</span>` : ''}<div class="grow">
+    <div class="exo-title">${hasExThumb(eff) && !pair ? `<button class="ethumb" data-act="exmedia" data-uid="${esc(uid)}" data-v="image" aria-label="Voir l’image">${exThumb(eff)}</button>` : ''}<div class="grow">
       <div class="exo-name">${esc(eff !== it.x ? d.fr : itemLabel(it))}</div>
       <div class="exo-en">${esc(d.en)}${E && E.swap ? ` · variante de ${esc(itemLabel(it))}` : ''}</div>
     </div><div class="presc num">${presc(it)}</div></div>
     ${pair ? machinePicker(pair, side, s.cycle, `data-sid="${s.id}" data-key="${key}" data-bi="${bl.l}" data-i="${i}"`) : ''}
+    ${mediaBar(eff, uid)}
     ${muscleLine(d)}
     ${it.note ? `<div class="small muted">${esc(it.note)}</div>` : ''}
     ${(it.variant || d.variant) ? `<div class="variant">${esc(it.variant || d.variant)}</div>` : ''}
@@ -220,9 +221,8 @@ function exoCard(s, bl, it, i) {
       <button class="btn small ghost" data-act="delset" data-sid="${s.id}" data-key="${key}" data-bi="${bl.l}" data-i="${i}" ${sets.length <= 1 ? 'disabled' : ''}>${IC.minus} Série</button>
       <button class="btn small ${E && E.done ? 'primary' : ''}" data-act="exdone" data-sid="${s.id}" data-key="${key}" data-bi="${bl.l}" data-i="${i}">${E && E.done ? IC.check + ' Terminé' : 'Terminé'}</button>
     </div>
-    <details class="more" ${UI.openMore === uid ? 'open' : ''} data-uid="${esc(uid)}"><summary>${IC.chev} Vidéo, commentaire, variante</summary>
+    <details class="more" ${UI.openMore === uid ? 'open' : ''} data-uid="${esc(uid)}"><summary>${IC.chev} Commentaire, variante</summary>
       <div class="stack">
-        ${videoBlock(eff, uid)}
         ${d.mv ? `<button class="btn small ghost" data-act="open-move" data-id="${d.mv}" style="justify-self:start">Fiche ${esc(MOVE_BY_ID[d.mv] ? MOVE_BY_ID[d.mv].name : d.en)}</button>` : ''}
         ${commentField('ecomment', s.id, key, E && E.comment, 'Commentaire', `data-bi="${bl.l}" data-i="${i}"`)}
         <label class="fld">Variante appliquée (allègement, remplacement…)
@@ -233,6 +233,15 @@ function exoCard(s, bl, it, i) {
         <button class="btn small ghost" data-act="skip" data-sid="${s.id}" data-key="${key}" data-bi="${bl.l}" data-i="${i}" style="justify-self:start">${E && E.skipped ? 'Rétablir l’exercice' : 'Exercice non réalisé'}</button>
       </div></details>
   </div>`;
+}
+/* Boutons Vidéo et Image d'un exercice, et le panneau ouvert */
+function mediaBar(k, uid) {
+  const open = UI.exMedia && UI.exMedia.uid === uid ? UI.exMedia.v : null; const nv = videosFor(k).length; const im = exImg(k);
+  const btn = (v, label, icon) => `<button class="btn small ${open === v ? 'primary' : ''}" data-act="exmedia" data-uid="${esc(uid)}" data-v="${v}" aria-pressed="${open === v}">${icon}${label}</button>`;
+  let panel = '';
+  if (open === 'video') panel = videoBlock(k, uid);
+  if (open === 'image') panel = `<figure class="bigthumb">${exThumb(k)}${im && im.file ? `<figcaption class="small faint">${im.note ? esc(im.note) + ' · ' : ''}Photo ${esc(im.source || '')}</figcaption>` : '<figcaption class="small faint">Dessin du mouvement (pas de photo pour cet exercice)</figcaption>'}</figure>`;
+  return `<div class="row media-btns">${btn('video', nv ? `Vidéo${nv > 1 ? 's (' + nv + ')' : ''}` : 'Vidéo', IC.video)}${btn('image', 'Image', IC.image)}</div>${panel ? `<div class="media-panel">${panel}</div>` : ''}`;
 }
 /* Variantes possibles : tous les exercices de travail, triés par ordre alphabétique */
 function swapList(x) {

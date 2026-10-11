@@ -5,7 +5,7 @@
    filtre l'accès à l'écran mais ne protège pas les fichiers publiés avec la page. */
 const AUTH = { user: null, cookie: 'onair_session' };
 const authEnabled = () => serverConfigured() || (typeof AUTH_USERS !== 'undefined' && AUTH_USERS && Array.isArray(AUTH_USERS.users));
-const userName = () => { const l = (AUTH.user && AUTH.user.login) || ''; const n = l.includes('@') ? l.split('@')[0] : l; return n.charAt(0).toUpperCase() + n.slice(1); };
+const userName = () => { const l = (AUTH.user && AUTH.user.login) || ''; const pr = typeof SUPA_CONFIG !== 'undefined' && SUPA_CONFIG && SUPA_CONFIG.prenoms; if (pr && pr[l.toLowerCase()]) return pr[l.toLowerCase()]; const n = l.includes('@') ? l.split('@')[0] : l; return n.charAt(0).toUpperCase() + n.slice(1); };
 const isAdmin = () => !authEnabled() || (AUTH.user && AUTH.user.role === 'admin');
 
 function readSessionCookie() {

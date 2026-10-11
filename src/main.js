@@ -129,9 +129,10 @@ document.addEventListener('click', ev => {
     UI.sheet = null; renderSheet(); return;
   }
   // Muscles
-  if (a === 'sstep') { UI.step = Object.assign({}, UI.step, { [el.dataset.sid]: +el.dataset.v }); UI.openMore = null; UI.openWarm = null; go({}); return; }
+  if (a === 'sstep') { UI.step = Object.assign({}, UI.step, { [el.dataset.sid]: +el.dataset.v }); UI.openMore = null; UI.openWarm = null; UI.exMedia = null; go({}); return; }
   if (a === 'jump') { const t = document.getElementById(el.dataset.target); if (t) t.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); return; }
   if (a === 'prog-cycle') { UI.progCycle = Number(el.dataset.v); UI.railOpen = false; render(); return; }
+  if (a === 'exmedia') { const cur = UI.exMedia; UI.exMedia = cur && cur.uid === el.dataset.uid && cur.v === el.dataset.v ? null : { uid: el.dataset.uid, v: el.dataset.v }; UI.playing = null; render(); return; }
   if (a === 'sess-rail') { UI.sessRail = !UI.sessRail; render(); return; }
   if (a === 'rail-toggle') { UI.railOpen = !UI.railOpen; render(); return; }
   if (a === 'mus-scope') { UI.musScope = el.dataset.v; render(); return; }

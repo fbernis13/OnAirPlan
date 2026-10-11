@@ -375,3 +375,9 @@ body:has(.timer) .stepbar { bottom: calc(var(--nav-h) + env(safe-area-inset-bott
 .tbimg { object-fit: cover; background: #fff; }
 figure.bigthumb { margin: .4rem 0 .8rem; }
 figure.bigthumb figcaption { margin-top: .3rem; }
+.media-btns { gap: .4rem; margin: .1rem 0; }
+.media-btns .btn svg { width: 1rem; height: 1rem; margin-right: .3rem; }
+.media-panel { margin: .2rem 0 .3rem; }
+.media-panel .bigthumb { max-width: none; margin: 0; }
+button.ethumb { padding: 0; border: 0; background: none; cursor: pointer; }
+.hello { margin: 1rem 0 0; font-size: 1.5rem; }
