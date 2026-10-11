@@ -876,7 +876,12 @@ function viewLogin(msg) {
       const c = serverClient(); if (!c) return viewLogin('Le serveur ne répond pas. Vérifie ta connexion internet.');
       const email = loginToEmail(login); if (!email) { await new Promise(r => setTimeout(r, 600)); return viewLogin('Identifiant ou mot de passe incorrect.'); }
       const { data, error } = await c.auth.signInWithPassword({ email, password: pw });
-      if (error || !data || !data.user) return viewLogin(error && /fetch|network/i.test(error.message || '') ? 'Le serveur ne répond pas. Vérifie ta connexion internet.' : 'Identifiant ou mot de passe incorrect.');
+      if (error || !data || !data.user) {
+        const m = (error && (error.code || error.message)) || '';
+        return viewLogin(/fetch|network/i.test(m) ? 'Le serveur ne répond pas. Vérifie ta connexion internet.'
+          : /not_confirmed|not confirmed/i.test(m) ? 'Ce compte n’est pas encore confirmé dans Supabase (Authentication > Users).'
+          : 'Identifiant ou mot de passe incorrect.');
+      }
       return serverSignedIn(c, data.user);
     }
     const u = AUTH_USERS.users.find(x => x.login.toLowerCase() === login);
