@@ -427,7 +427,7 @@
        "rest": 0
       },
       {
-       "x": "rope_pd",
+       "x": "db_oh_triceps",
        "sets": 3,
        "reps": "15",
        "rest": 60
@@ -438,7 +438,7 @@
      "l": "F",
      "items": [
       {
-       "x": "face_pull",
+       "x": "db_rear_fly",
        "sets": 3,
        "reps": "15",
        "rest": 60
@@ -812,7 +812,7 @@
        "note": "Genoux pliés si besoin"
       },
       {
-       "x": "pallof",
+       "x": "bird_dog",
        "sets": 3,
        "reps": "10/côté",
        "rest": 45
@@ -1568,11 +1568,10 @@
      "l": "F",
      "items": [
       {
-       "x": "face_pull",
+       "x": "db_rear_fly",
        "sets": 3,
        "reps": "15",
-       "rest": 60,
-       "label": "Face pull"
+       "rest": 60
       }
      ]
     }
@@ -2108,11 +2107,10 @@
        "label": "Curl marteau"
       },
       {
-       "x": "rope_pd",
+       "x": "db_oh_triceps",
        "sets": 3,
        "reps": "12",
-       "rest": 60,
-       "label": "Extension triceps poulie"
+       "rest": 60
       }
      ]
     },
@@ -2129,11 +2127,10 @@
        "label": "Élévations latérales"
       },
       {
-       "x": "face_pull",
+       "x": "db_rear_fly",
        "sets": 3,
        "reps": "12",
-       "rest": 60,
-       "label": "Face pull"
+       "rest": 60
       }
      ]
     }

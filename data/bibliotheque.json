@@ -2061,6 +2061,40 @@
     "abs"
    ],
    "variant": "Prise neutre possible : les haltères se posent sur les épaules, le poignet plie moins qu’avec la barre. Ce n’est pas un travail isolé des ischios, c’est une extension de hanche explosive."
+  },
+  "db_oh_triceps": {
+   "fr": "Extension triceps haltères au-dessus de la tête, assis",
+   "en": "Seated Dumbbell Overhead Triceps Extension",
+   "mv": null,
+   "vid": [
+    "db_oh_triceps"
+   ],
+   "kind": "force",
+   "unit": "reps",
+   "load": true,
+   "p": [
+    "tri"
+   ],
+   "s": [],
+   "variant": "Un haltère dans chaque main, paumes face à face (prise neutre), dos appuyé. Coudes vers le plafond, on descend derrière la tête sans forcer le poignet."
+  },
+  "db_rear_fly": {
+   "fr": "Oiseau haltères, buste appuyé sur banc incliné",
+   "en": "Chest-Supported Dumbbell Rear Delt Fly",
+   "mv": null,
+   "vid": [
+    "db_rear_fly"
+   ],
+   "kind": "force",
+   "unit": "reps",
+   "load": true,
+   "p": [
+    "epa"
+   ],
+   "s": [
+    "dos"
+   ],
+   "variant": "Banc à 30-45°, poitrine appuyée, paumes face à face, coudes légèrement fléchis. On ouvre les bras en serrant les omoplates, charge légère."
   }
  },
  "videos": {
@@ -2895,6 +2929,28 @@
    "provider": "YouTube",
    "url": "https://www.youtube.com/watch?v=sqNwDkUU_Ps",
    "thumbnailUrl": "https://i.ytimg.com/vi/sqNwDkUU_Ps/hqdefault.jpg",
+   "checkedAt": "2026-10-11",
+   "foundVia": "Recherche YouTube (titre et chaîne relevés dans les résultats)"
+  },
+  "db_oh_triceps": {
+   "videoId": "dxdr8iSRLA8",
+   "title": "Dumbbell Seated Overhead Tricep Extension - OPEX Exercise Library",
+   "author": "OPEX Fitness",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=dxdr8iSRLA8",
+   "thumbnailUrl": "https://i.ytimg.com/vi/dxdr8iSRLA8/hqdefault.jpg",
+   "checkedAt": "2026-10-11",
+   "foundVia": "Recherche YouTube (titre et chaîne relevés dans les résultats)"
+  },
+  "db_rear_fly": {
+   "videoId": "iCbVhDNpG-Y",
+   "title": "DB Chest Supported Rear Delt Fly",
+   "author": "Functional AF",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=iCbVhDNpG-Y",
+   "thumbnailUrl": "https://i.ytimg.com/vi/iCbVhDNpG-Y/hqdefault.jpg",
    "checkedAt": "2026-10-11",
    "foundVia": "Recherche YouTube (titre et chaîne relevés dans les résultats)"
   }
