@@ -4,10 +4,12 @@
 <meta name="theme-color" content="#0B6C76">
 <meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Carnet On Air">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.0/dist/umd/supabase.js"></script>
 </head><body>
 <title>Carnet On Air</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiByeD0iMTQiIGZpbGw9IiMwQjZDNzYiLz48cGF0aCBkPSJNMjAuNSAzM0MxNyAyMiAyMCAxMyAzMiAxM3MxNSA5IDExLjUgMjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSI1LjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPjxwYXRoIGQ9Ik0xNS41IDQwYTE2LjUgMTYuNSAwIDEgMSAzMC40IDguOUw0NCA1MkgyMGwtMS45LTMuMUExNi40IDE2LjQgMCAwIDEgMTUuNSA0MHoiIGZpbGw9IiNmZmYiLz48cGF0aCBkPSJNMjUgNDQgMzIgMzdsNyA3IiBmaWxsPSJub25lIiBzdHJva2U9IiMwQjZDNzYiIHN0cm9rZS13aWR0aD0iNC41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4K">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap">
 <style>
@@ -52,6 +54,7 @@ a { color: var(--accent); }
 /* ── Structure */
 .app { max-width: 46rem; margin: 0 auto; padding-inline: 16px; padding-block: 0 calc(var(--nav-h) + 6rem + env(safe-area-inset-bottom, 0px)); }
 .topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--bg); display: flex; align-items: center; gap: .5rem; padding-block: .6rem; margin-inline: -16px; padding-inline: 16px; border-bottom: 1px solid var(--line); }
+.logo { width: 1.9rem; height: 1.9rem; flex: none; display: block; }
 .topbar h1 { font-family: var(--f-display); font-weight: 700; font-size: 1.35rem; letter-spacing: .01em; margin: 0; flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-wrap: balance; }
 .topbar .sub { color: var(--ink-3); font-weight: 500; }
 .iconbtn { border: 1px solid var(--line); background: var(--surface); border-radius: .6rem; min-width: 2.5rem; height: 2.5rem; display: inline-grid; place-items: center; cursor: pointer; padding: 0 .5rem; }
@@ -982,7 +985,7 @@ async function checkPassword(u, pw) {
 }
 function viewLogin(msg) {
   document.getElementById('app').innerHTML = `<div class="login"><form class="card stack" id="login-form" autocomplete="on">
-    <h1 style="margin:0">Carnet On Air</h1>
+    <h1 style="margin:0;display:flex;align-items:center;gap:.5rem">${LOGO}Carnet On Air</h1>
     <p class="small muted" style="margin:0">Connecte-toi pour ouvrir ton carnet.</p>
     <label class="fld">Identifiant<input id="login-user" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" required></label>
     <label class="fld">Mot de passe<input id="login-pw" name="password" type="password" autocomplete="current-password" required></label>
@@ -2168,6 +2171,8 @@ function confirmImport() {
 }
 
 /* Carnet On Air : rendu, navigation, événements. */
+// Logo : kettlebell avec flèche de progression, aux couleurs du thème du compte
+const LOGO = '<svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="var(--accent)"/><path d="M20.5 33C17 22 20 13 32 13s15 9 11.5 20" fill="none" stroke="var(--accent-ink)" stroke-width="5.5" stroke-linecap="round"/><path d="M15.5 40a16.5 16.5 0 1 1 30.4 8.9L44 52H20l-1.9-3.1A16.4 16.4 0 0 1 15.5 40z" fill="var(--accent-ink)"/><path d="M25 44 32 37l7 7" fill="none" stroke="var(--accent)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const TABS = [
   ['programme', 'Programme', IC.list], ['progression', 'Progression', IC.chart], ['exercices', 'Exercices', IC.dumbbell],
   ['mouvements', 'Mouvements', IC.book], ['sauvegarde', 'Sauvegarde', IC.save]
@@ -2197,7 +2202,7 @@ function render() {
   const active = document.activeElement; const activeId = active && active.id; const selStart = active && active.selectionStart;
   root.innerHTML = `<header class="topbar">
       ${hasBack() ? `<button class="iconbtn" data-act="back" aria-label="Retour">${IC.back}</button>` : ''}
-      <h1>${esc(currentTitle())}</h1>${AUTH.user ? `<span class="userpill" title="Compte connecté">${esc(userName())}</span>` : ''}
+      ${hasBack() ? '' : LOGO}<h1>${esc(currentTitle())}</h1>${AUTH.user ? `<span class="userpill" title="Compte connecté">${esc(userName())}</span>` : ''}
       <span id="syncdot" class="sync-dot ${UI.sync === 'cloud' ? 'cloud' : UI.sync === 'pending' ? 'pending' : ''}" title="${UI.sync === 'cloud' ? 'Enregistré dans ton compte' : 'Enregistré sur cet appareil'}"></span>
       <button class="iconbtn" data-act="settings" aria-label="Affichage">${IC.gear}</button>
     </header>

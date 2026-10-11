@@ -1,4 +1,6 @@
 /* Carnet On Air : rendu, navigation, événements. */
+// Logo : kettlebell avec flèche de progression, aux couleurs du thème du compte
+const LOGO = '<svg class="logo" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="var(--accent)"/><path d="M20.5 33C17 22 20 13 32 13s15 9 11.5 20" fill="none" stroke="var(--accent-ink)" stroke-width="5.5" stroke-linecap="round"/><path d="M15.5 40a16.5 16.5 0 1 1 30.4 8.9L44 52H20l-1.9-3.1A16.4 16.4 0 0 1 15.5 40z" fill="var(--accent-ink)"/><path d="M25 44 32 37l7 7" fill="none" stroke="var(--accent)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const TABS = [
   ['programme', 'Programme', IC.list], ['progression', 'Progression', IC.chart], ['exercices', 'Exercices', IC.dumbbell],
   ['mouvements', 'Mouvements', IC.book], ['sauvegarde', 'Sauvegarde', IC.save]
@@ -28,7 +30,7 @@ function render() {
   const active = document.activeElement; const activeId = active && active.id; const selStart = active && active.selectionStart;
   root.innerHTML = `<header class="topbar">
       ${hasBack() ? `<button class="iconbtn" data-act="back" aria-label="Retour">${IC.back}</button>` : ''}
-      <h1>${esc(currentTitle())}</h1>${AUTH.user ? `<span class="userpill" title="Compte connecté">${esc(userName())}</span>` : ''}
+      ${hasBack() ? '' : LOGO}<h1>${esc(currentTitle())}</h1>${AUTH.user ? `<span class="userpill" title="Compte connecté">${esc(userName())}</span>` : ''}
       <span id="syncdot" class="sync-dot ${UI.sync === 'cloud' ? 'cloud' : UI.sync === 'pending' ? 'pending' : ''}" title="${UI.sync === 'cloud' ? 'Enregistré dans ton compte' : 'Enregistré sur cet appareil'}"></span>
       <button class="iconbtn" data-act="settings" aria-label="Affichage">${IC.gear}</button>
     </header>

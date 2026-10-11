@@ -29,7 +29,7 @@ async function checkPassword(u, pw) {
 }
 function viewLogin(msg) {
   document.getElementById('app').innerHTML = `<div class="login"><form class="card stack" id="login-form" autocomplete="on">
-    <h1 style="margin:0">Carnet On Air</h1>
+    <h1 style="margin:0;display:flex;align-items:center;gap:.5rem">${LOGO}Carnet On Air</h1>
     <p class="small muted" style="margin:0">Connecte-toi pour ouvrir ton carnet.</p>
     <label class="fld">Identifiant<input id="login-user" name="username" autocomplete="username" autocapitalize="none" spellcheck="false" required></label>
     <label class="fld">Mot de passe<input id="login-pw" name="password" type="password" autocomplete="current-password" required></label>

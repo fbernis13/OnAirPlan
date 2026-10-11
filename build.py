@@ -31,7 +31,8 @@ supa_tag = '<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.11
 def page_body(extra=''):
     return BODY.replace('<script>\n', '<script>\n' + extra, 1)
 css = (src / 'style.css').read_text(encoding='utf-8')
-BODY = f'''<title>Carnet On Air</title>
+ICON = 'data:image/svg+xml;base64,' + __import__('base64').b64encode((here / 'logo.svg').read_bytes()).decode()
+BODY = f'''<title>Carnet On Air</title>\n<link rel="icon" type="image/svg+xml" href="{ICON}">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap">
 <style>
@@ -47,6 +48,7 @@ page = f'''<!doctype html>
 <meta name="theme-color" content="#0B6C76">
 <meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Carnet On Air">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>:root{{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}}body{{margin:0}}img{{max-width:100%}}[hidden]{{display:none!important}}</style>
 {supa_tag}</head><body>
 {page_body(site_js)}</body></html>
