@@ -995,7 +995,7 @@
        "x": "chest_press",
        "sets": 4,
        "reps": "10",
-       "rest": 90,
+       "rest": 75,
        "note": "Poignées à hauteur de poitrine, coudes un peu sous les épaules"
       }
      ]
@@ -1007,7 +1007,7 @@
        "x": "latpull",
        "sets": 4,
        "reps": "10",
-       "rest": 90,
+       "rest": 75,
        "note": "Tire la barre vers le haut de la poitrine, buste droit"
       }
      ]
@@ -1019,7 +1019,7 @@
        "x": "seated_row",
        "sets": 4,
        "reps": "10",
-       "rest": 90,
+       "rest": 75,
        "note": "Omoplates serrées en fin de mouvement"
       }
      ]
@@ -1031,7 +1031,7 @@
        "x": "shoulder_mach",
        "sets": 3,
        "reps": "10",
-       "rest": 90
+       "rest": 75
       }
      ]
     },
@@ -1040,7 +1040,7 @@
      "items": [
       {
        "x": "lat_raise",
-       "sets": 3,
+       "sets": 2,
        "reps": "12-15",
        "rest": 60
       }
@@ -1053,7 +1053,7 @@
        "x": "dip_assist",
        "sets": 3,
        "reps": "10",
-       "rest": 90
+       "rest": 75
       }
      ]
     },
@@ -1152,7 +1152,7 @@
        "x": "presse",
        "sets": 4,
        "reps": "10",
-       "rest": 90,
+       "rest": 75,
        "note": "Pieds largeur des hanches, descends jusqu’à 90° aux genoux"
       }
      ]
@@ -1164,7 +1164,7 @@
        "x": "legcurl_l",
        "sets": 4,
        "reps": "10",
-       "rest": 90
+       "rest": 75
       }
      ]
     },
@@ -1175,7 +1175,7 @@
        "x": "legext",
        "sets": 4,
        "reps": "10",
-       "rest": 90
+       "rest": 75
       }
      ]
     },
@@ -1186,7 +1186,7 @@
        "x": "hipthrust",
        "sets": 4,
        "reps": "10",
-       "rest": 90,
+       "rest": 75,
        "note": "Charge légère au départ, pause d’une seconde en haut"
       }
      ]
@@ -1194,17 +1194,17 @@
     {
      "l": "F",
      "type": "superset",
-     "rounds": 3,
+     "rounds": 2,
      "items": [
       {
        "x": "abductor",
-       "sets": 3,
+       "sets": 2,
        "reps": "10",
        "rest": 0
       },
       {
        "x": "adductor",
-       "sets": 3,
+       "sets": 2,
        "reps": "10",
        "rest": 60
       }
@@ -1296,7 +1296,7 @@
        "x": "goblet",
        "sets": 4,
        "reps": "10",
-       "rest": 90,
+       "rest": 75,
        "note": "Kettlebell ou haltère contre la poitrine, descends sous contrôle"
       }
      ]
@@ -1316,7 +1316,7 @@
        "x": "seated_row",
        "sets": 4,
        "reps": "10",
-       "rest": 90
+       "rest": 75
       }
      ]
     },
@@ -1327,7 +1327,7 @@
        "x": "db_rdl",
        "sets": 4,
        "reps": "10",
-       "rest": 90,
+       "rest": 75,
        "note": "Dos plat, la charge glisse le long des cuisses"
       }
      ]
@@ -1339,7 +1339,7 @@
        "x": "latpull",
        "sets": 4,
        "reps": "10",
-       "rest": 90
+       "rest": 75
       }
      ]
     },
@@ -1350,31 +1350,12 @@
        "x": "stepup",
        "sets": 4,
        "reps": "10/jambe",
-       "rest": 90
+       "rest": 75
       }
      ]
     },
     {
      "l": "G",
-     "type": "superset",
-     "rounds": 3,
-     "items": [
-      {
-       "x": "hammer_curl",
-       "sets": 3,
-       "reps": "12",
-       "rest": 0
-      },
-      {
-       "x": "calf_mach",
-       "sets": 3,
-       "reps": "15",
-       "rest": 45
-      }
-     ]
-    },
-    {
-     "l": "H",
      "type": "circuit",
      "rounds": 3,
      "items": [
@@ -1448,7 +1429,7 @@
        "x": "chest_press",
        "sets": 4,
        "reps": "8-10",
-       "rest": 90,
+       "rest": 75,
        "note": "Poignées à hauteur de poitrine, coudes un peu sous les épaules"
       }
      ]
@@ -1460,7 +1441,7 @@
        "x": "latpull",
        "sets": 4,
        "reps": "8-10",
-       "rest": 90,
+       "rest": 75,
        "note": "Tire la barre vers le haut de la poitrine, buste droit"
       }
      ]
@@ -1472,7 +1453,7 @@
        "x": "seated_row",
        "sets": 4,
        "reps": "8-10",
-       "rest": 90,
+       "rest": 75,
        "note": "Omoplates serrées en fin de mouvement"
       }
      ]
@@ -1484,7 +1465,7 @@
        "x": "shoulder_mach",
        "sets": 3,
        "reps": "8-10",
-       "rest": 90
+       "rest": 75
       }
      ]
     },
@@ -1493,7 +1474,7 @@
      "items": [
       {
        "x": "lat_raise",
-       "sets": 3,
+       "sets": 2,
        "reps": "12-15",
        "rest": 60
       }
@@ -1506,7 +1487,7 @@
        "x": "dip_assist",
        "sets": 3,
        "reps": "8-10",
-       "rest": 90
+       "rest": 75
       }
      ]
     },
@@ -1605,7 +1586,7 @@
        "x": "presse",
        "sets": 4,
        "reps": "8-10",
-       "rest": 90,
+       "rest": 75,
        "note": "Pieds largeur des hanches, descends jusqu’à 90° aux genoux"
       }
      ]
@@ -1617,7 +1598,7 @@
        "x": "legcurl_l",
        "sets": 4,
        "reps": "8-10",
-       "rest": 90
+       "rest": 75
       }
      ]
     },
@@ -1628,7 +1609,7 @@
        "x": "legext",
        "sets": 4,
        "reps": "8-10",
-       "rest": 90
+       "rest": 75
       }
      ]
     },
@@ -1639,7 +1620,7 @@
        "x": "hipthrust",
        "sets": 4,
        "reps": "8-10",
-       "rest": 90,
+       "rest": 75,
        "note": "Charge légère au départ, pause d’une seconde en haut"
       }
      ]
@@ -1647,17 +1628,17 @@
     {
      "l": "F",
      "type": "superset",
-     "rounds": 3,
+     "rounds": 2,
      "items": [
       {
        "x": "abductor",
-       "sets": 3,
+       "sets": 2,
        "reps": "8-10",
        "rest": 0
       },
       {
        "x": "adductor",
-       "sets": 3,
+       "sets": 2,
        "reps": "8-10",
        "rest": 60
       }
@@ -1749,7 +1730,7 @@
        "x": "goblet",
        "sets": 4,
        "reps": "8-10",
-       "rest": 90,
+       "rest": 75,
        "note": "Kettlebell ou haltère contre la poitrine, descends sous contrôle"
       }
      ]
@@ -1769,7 +1750,7 @@
        "x": "seated_row",
        "sets": 4,
        "reps": "8-10",
-       "rest": 90
+       "rest": 75
       }
      ]
     },
@@ -1780,7 +1761,7 @@
        "x": "db_rdl",
        "sets": 4,
        "reps": "8-10",
-       "rest": 90,
+       "rest": 75,
        "note": "Dos plat, la charge glisse le long des cuisses"
       }
      ]
@@ -1792,7 +1773,7 @@
        "x": "latpull",
        "sets": 4,
        "reps": "8-10",
-       "rest": 90
+       "rest": 75
       }
      ]
     },
@@ -1803,31 +1784,12 @@
        "x": "stepup",
        "sets": 4,
        "reps": "8-10/jambe",
-       "rest": 90
+       "rest": 75
       }
      ]
     },
     {
      "l": "G",
-     "type": "superset",
-     "rounds": 3,
-     "items": [
-      {
-       "x": "hammer_curl",
-       "sets": 3,
-       "reps": "12",
-       "rest": 0
-      },
-      {
-       "x": "calf_mach",
-       "sets": 3,
-       "reps": "15",
-       "rest": 45
-      }
-     ]
-    },
-    {
-     "l": "H",
      "type": "circuit",
      "rounds": 3,
      "items": [

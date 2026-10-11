@@ -124,7 +124,7 @@ function blockSeconds(bl) {
 }
 function sessionMinutes(s) {
   let t = 0;
-  if (s.warmup.length) t += (minIn(s.warmTitle) || 10) * 60;
+  if (s.warmup.length) t += (minIn(s.warmTitle) || (s.warmTitle ? 2 : 10)) * 60; // titre sans durée : simple rappel avant les machines
   s.blocks.forEach(bl => { t += blockSeconds(bl) + (bl.type === 'wod' ? 120 : 0); }); // le repos de la dernière série sert de transition ; 2 min pour installer un WOD
   if (s.cooldown.length) t += (minIn(s.coolTitle) || 5) * 60;
   return Math.max(5, Math.round(t / 300) * 5);
