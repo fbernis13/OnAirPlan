@@ -122,10 +122,11 @@
      "l": "D",
      "items": [
       {
-       "x": "shoulder_mach",
+       "x": "seated_row",
        "sets": 3,
        "reps": "15",
-       "rest": 60
+       "rest": 60,
+       "note": "Omoplates serrées en fin de mouvement"
       }
      ]
     },
@@ -133,11 +134,10 @@
      "l": "E",
      "items": [
       {
-       "x": "seated_row",
+       "x": "shoulder_mach",
        "sets": 3,
        "reps": "15",
-       "rest": 60,
-       "note": "Omoplates serrées en fin de mouvement"
+       "rest": 60
       }
      ]
     },
@@ -291,13 +291,13 @@
      "rounds": 3,
      "items": [
       {
-       "x": "adductor",
+       "x": "abductor",
        "sets": 3,
        "reps": "15",
        "rest": 0
       },
       {
-       "x": "abductor",
+       "x": "adductor",
        "sets": 3,
        "reps": "15",
        "rest": 60
@@ -440,7 +440,7 @@
      "l": "F",
      "items": [
       {
-       "x": "presse",
+       "x": "legcurl_s",
        "sets": 3,
        "reps": "15",
        "rest": 60
@@ -449,12 +449,20 @@
     },
     {
      "l": "G",
+     "type": "superset",
+     "rounds": 3,
      "items": [
       {
-       "x": "shoulder_mach",
+       "x": "hammer_curl",
        "sets": 3,
        "reps": "12",
-       "rest": 60
+       "rest": 0
+      },
+      {
+       "x": "calf_mach",
+       "sets": 3,
+       "reps": "15",
+       "rest": 45
       }
      ]
     },
@@ -554,10 +562,11 @@
      "l": "D",
      "items": [
       {
-       "x": "shoulder_mach",
+       "x": "seated_row",
        "sets": 3,
        "reps": "12",
-       "rest": 75
+       "rest": 75,
+       "note": "Omoplates serrées en fin de mouvement"
       }
      ]
     },
@@ -565,11 +574,10 @@
      "l": "E",
      "items": [
       {
-       "x": "seated_row",
+       "x": "shoulder_mach",
        "sets": 3,
        "reps": "12",
-       "rest": 75,
-       "note": "Omoplates serrées en fin de mouvement"
+       "rest": 75
       }
      ]
     },
@@ -734,13 +742,13 @@
      "rounds": 3,
      "items": [
       {
-       "x": "adductor",
+       "x": "abductor",
        "sets": 3,
        "reps": "12",
        "rest": 0
       },
       {
-       "x": "abductor",
+       "x": "adductor",
        "sets": 3,
        "reps": "12",
        "rest": 60
@@ -893,12 +901,20 @@
     },
     {
      "l": "G",
+     "type": "superset",
+     "rounds": 3,
      "items": [
       {
-       "x": "shoulder_mach",
+       "x": "hammer_curl",
        "sets": 3,
        "reps": "12",
-       "rest": 75
+       "rest": 0
+      },
+      {
+       "x": "calf_mach",
+       "sets": 3,
+       "reps": "15",
+       "rest": 45
       }
      ]
     },
@@ -998,17 +1014,6 @@
      "l": "D",
      "items": [
       {
-       "x": "shoulder_mach",
-       "sets": 4,
-       "reps": "10",
-       "rest": 90
-      }
-     ]
-    },
-    {
-     "l": "E",
-     "items": [
-      {
        "x": "seated_row",
        "sets": 4,
        "reps": "10",
@@ -1018,7 +1023,29 @@
      ]
     },
     {
+     "l": "E",
+     "items": [
+      {
+       "x": "shoulder_mach",
+       "sets": 3,
+       "reps": "10",
+       "rest": 90
+      }
+     ]
+    },
+    {
      "l": "F",
+     "items": [
+      {
+       "x": "lat_raise",
+       "sets": 3,
+       "reps": "12-15",
+       "rest": 60
+      }
+     ]
+    },
+    {
+     "l": "G",
      "items": [
       {
        "x": "dip_assist",
@@ -1029,7 +1056,7 @@
      ]
     },
     {
-     "l": "G",
+     "l": "H",
      "type": "superset",
      "rounds": 3,
      "items": [
@@ -1048,7 +1075,7 @@
      ]
     },
     {
-     "l": "H",
+     "l": "I",
      "type": "circuit",
      "rounds": 3,
      "items": [
@@ -1167,13 +1194,13 @@
      "rounds": 3,
      "items": [
       {
-       "x": "adductor",
+       "x": "abductor",
        "sets": 3,
        "reps": "10",
        "rest": 0
       },
       {
-       "x": "abductor",
+       "x": "adductor",
        "sets": 3,
        "reps": "10",
        "rest": 60
@@ -1326,6 +1353,25 @@
     },
     {
      "l": "G",
+     "type": "superset",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "hammer_curl",
+       "sets": 3,
+       "reps": "12",
+       "rest": 0
+      },
+      {
+       "x": "calf_mach",
+       "sets": 3,
+       "reps": "15",
+       "rest": 45
+      }
+     ]
+    },
+    {
+     "l": "H",
      "type": "circuit",
      "rounds": 3,
      "items": [
@@ -1420,17 +1466,6 @@
      "l": "D",
      "items": [
       {
-       "x": "shoulder_mach",
-       "sets": 4,
-       "reps": "8-10",
-       "rest": 90
-      }
-     ]
-    },
-    {
-     "l": "E",
-     "items": [
-      {
        "x": "seated_row",
        "sets": 4,
        "reps": "8-10",
@@ -1440,7 +1475,29 @@
      ]
     },
     {
+     "l": "E",
+     "items": [
+      {
+       "x": "shoulder_mach",
+       "sets": 3,
+       "reps": "8-10",
+       "rest": 90
+      }
+     ]
+    },
+    {
      "l": "F",
+     "items": [
+      {
+       "x": "lat_raise",
+       "sets": 3,
+       "reps": "12-15",
+       "rest": 60
+      }
+     ]
+    },
+    {
+     "l": "G",
      "items": [
       {
        "x": "dip_assist",
@@ -1451,7 +1508,7 @@
      ]
     },
     {
-     "l": "G",
+     "l": "H",
      "type": "superset",
      "rounds": 3,
      "items": [
@@ -1470,7 +1527,7 @@
      ]
     },
     {
-     "l": "H",
+     "l": "I",
      "type": "circuit",
      "rounds": 3,
      "items": [
@@ -1589,13 +1646,13 @@
      "rounds": 3,
      "items": [
       {
-       "x": "adductor",
+       "x": "abductor",
        "sets": 3,
        "reps": "8-10",
        "rest": 0
       },
       {
-       "x": "abductor",
+       "x": "adductor",
        "sets": 3,
        "reps": "8-10",
        "rest": 60
@@ -1748,6 +1805,25 @@
     },
     {
      "l": "G",
+     "type": "superset",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "hammer_curl",
+       "sets": 3,
+       "reps": "12",
+       "rest": 0
+      },
+      {
+       "x": "calf_mach",
+       "sets": 3,
+       "reps": "15",
+       "rest": 45
+      }
+     ]
+    },
+    {
+     "l": "H",
      "type": "circuit",
      "rounds": 3,
      "items": [
