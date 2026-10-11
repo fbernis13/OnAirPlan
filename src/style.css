@@ -428,3 +428,6 @@ button.ethumb { padding: 0; border: 0; background: none; cursor: pointer; }
 .holdbtns button { border: 1px solid var(--line); background: var(--amber-soft); color: var(--amber); border-radius: .45rem; min-height: 2rem; cursor: pointer; display: grid; place-items: center; }
 .holdbtns button svg { width: 1rem; height: 1rem; }
 .holdbtns.on button[data-act=hold-go] { background: var(--amber); color: var(--surface); }
+
+.dur-line { margin: .1rem 0 0; color: var(--ink-2); }
+.dur-line strong { color: var(--accent); }

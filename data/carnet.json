@@ -279,22 +279,7 @@
    "slot": "CA",
    "title": "Endurance fondamentale (zone 2)",
    "intro": "Allure où tu peux parler en phrases complètes (environ 65-75 % de la FC max).",
-   "warmup": [
-    {
-     "t": "5 min tapis en marche rapide",
-     "x": [
-      "incline_walk"
-     ]
-    },
-    {
-     "t": "5 min mobilité hanches et chevilles : balancés de jambes, fentes dynamiques, ouverture de hanche",
-     "x": [
-      "leg_swings",
-      "hip_opener",
-      "ankle_mob"
-     ]
-    }
-   ],
+   "warmup": [],
    "blocks": [
     {
      "l": "A",
@@ -302,7 +287,7 @@
       {
        "x": "incline_walk",
        "sets": 1,
-       "reps": "20 min",
+       "reps": "15 min",
        "rest": 0,
        "note": "Pente 8 à 12 %, comme en rando"
       }
@@ -310,6 +295,18 @@
     },
     {
      "l": "B",
+     "items": [
+      {
+       "x": "skierg",
+       "sets": 1,
+       "reps": "15 min",
+       "rest": 0,
+       "note": "Zone 2, tirage ample en poussant avec les jambes"
+      }
+     ]
+    },
+    {
+     "l": "C",
      "items": [
       {
        "x": "bike",
@@ -320,7 +317,7 @@
      ]
     },
     {
-     "l": "C",
+     "l": "D",
      "items": [
       {
        "x": "rower",
@@ -332,7 +329,7 @@
      ]
     },
     {
-     "l": "D",
+     "l": "E",
      "items": [
       {
        "x": "stairs",
@@ -945,22 +942,7 @@
    "cycle": 2,
    "slot": "CA",
    "title": "Zone 2 + fartlek",
-   "warmup": [
-    {
-     "t": "5 min rameur facile",
-     "x": [
-      "rower"
-     ]
-    },
-    {
-     "t": "Mobilité hanches, thoraciques et chevilles",
-     "x": [
-      "hip_opener",
-      "cat_cow",
-      "ankle_mob"
-     ]
-    }
-   ],
+   "warmup": [],
    "blocks": [
     {
      "l": "A",
@@ -1599,21 +1581,7 @@
    "cycle": 3,
    "slot": "CA",
    "title": "Fractionné au seuil",
-   "warmup": [
-    {
-     "t": "5 min vélo progressif",
-     "x": [
-      "bike"
-     ]
-    },
-    {
-     "t": "Mobilité, 3 accélérations de 15 s sur le rameur",
-     "x": [
-      "hip_opener",
-      "rower"
-     ]
-    }
-   ],
+   "warmup": [],
    "blocks": [
     {
      "l": "A",
@@ -2256,21 +2224,7 @@
    "cycle": 4,
    "slot": "CA",
    "title": "VO2 + endurance",
-   "warmup": [
-    {
-     "t": "5 min rameur progressif",
-     "x": [
-      "rower"
-     ]
-    },
-    {
-     "t": "Mobilité, 3 accélérations de 10 s sur l’assault bike",
-     "x": [
-      "hip_opener",
-      "assault"
-     ]
-    }
-   ],
+   "warmup": [],
    "blocks": [
     {
      "l": "A",

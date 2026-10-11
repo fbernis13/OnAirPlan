@@ -72,7 +72,7 @@ function viewProgramme() {
       <div class="stack">${ss.map((s, i) => { const st = sessionStatus(s.id); const L = S.logs[s.id];
         return `<button class="listbtn sessbtn ${st}" data-act="open-session" data-id="${s.id}">
           <span class="slot ${st}">${i + 1}</span>
-          <span class="grow"><span class="t">Séance ${i + 1} · ${esc(SESSION_TYPES[s.slot].label)}</span><br><span class="small muted">${esc(s.title)}</span><br><span class="small faint">${st === 'done' ? 'Terminée' : st === 'started' ? 'En cours' : 'À faire'}${L && L.date ? ' · ' + fmtDate(L.date) : ''}</span></span>
+          <span class="grow"><span class="t">Séance ${i + 1} · ${esc(SESSION_TYPES[s.slot].label)}</span><br><span class="small muted">${esc(s.title)}</span><br><span class="small faint">≈ ${fmtDur(sessionMinutes(s))} · ${st === 'done' ? 'Terminée' : st === 'started' ? 'En cours' : 'À faire'}${L && L.date ? ' · ' + fmtDate(L.date) : ''}</span></span>
           <span class="chev">${IC.chev}</span></button>`; }).join('')}</div>
       <details class="more" style="margin-top:.7rem"><summary>${IC.chev} Objectif du cycle</summary>
         <p class="muted small">${esc(c.goal)}</p>${c.hang ? `<p class="faint small">Suspension : ${esc(c.hang)}</p>` : ''}</details>
@@ -96,8 +96,42 @@ function presc(it) {
   return `${it.sets} × ${esc(it.reps)}`;
 }
 /* Étapes d'une séance : échauffement, chaque exercice ou WOD, retour au calme, bilan */
+/* ── Durée estimée d'une séance (minutes), arrondie à 5 min */
+function minIn(t) { const m = String(t || '').match(/(\d+)(?:\s*-\s*(\d+))?\s*min/i); return m ? (m[2] ? (+m[1] + +m[2]) / 2 : +m[1]) : 0; }
+function itemSeconds(it) {
+  const r = String(it.reps || ''); const sets = it.sets || 1; const rest = Number(it.rest) || 0;
+  const iv = r.match(/(\d+)\s*s[^/]*\/\s*(\d+)\s*s/); if (iv) return sets * (+iv[1] + +iv[2]);
+  const mn = minIn(r); if (mn) return sets * mn * 60 + (sets - 1) * rest;
+  const km = r.replace(/\s/g, '').match(/^(\d+)m$/); const d = exDef(it.x);
+  if (km && (it.unit || d.unit) === 'min') return +km[1] / 250 * 60; // rameur : ~2 min / 500 m
+  const sec = r.match(/(\d+)\s*s\b/); const work = sec ? +sec[1] * (/côté/.test(r) ? 2 : 1) : 45;
+  return sets * (work + rest);
+}
+function blockSeconds(bl) {
+  if (bl.type === 'rest' || bl.type === 'wod' || (!bl.items.length)) {
+    const t = (bl.title || '') + ' ' + (bl.desc || '');
+    const cap = t.match(/cap\s*(\d+)\s*min/i); const m = cap ? +cap[1] : minIn(bl.title) || minIn(bl.desc);
+    if (m) return m * 60;
+    if (/AMRAP\s*(\d+)/i.test(t)) return +t.match(/AMRAP\s*(\d+)/i)[1] * 60;
+    if (bl.type === 'rest') return 300;
+  }
+  if (bl.title && minIn(bl.title) && !bl.rounds) return minIn(bl.title) * 60;
+  if (bl.rounds && bl.items.length > 1) {
+    const one = bl.items.reduce((a, it) => a + itemSeconds(Object.assign({}, it, { sets: 1 })), 0);
+    return bl.rounds * one;
+  }
+  return bl.items.reduce((a, it) => a + itemSeconds(it), 0);
+}
+function sessionMinutes(s) {
+  let t = 0;
+  if (s.warmup.length) t += (minIn(s.warmTitle) || 10) * 60;
+  s.blocks.forEach(bl => { t += blockSeconds(bl) + (bl.type === 'wod' ? 120 : 0); }); // le repos de la dernière série sert de transition ; 2 min pour installer un WOD
+  if (s.cooldown.length) t += (minIn(s.coolTitle) || 5) * 60;
+  return Math.max(5, Math.round(t / 300) * 5);
+}
+function fmtDur(m) { return m >= 60 ? `${Math.floor(m / 60)} h ${String(m % 60).padStart(2, '0')}` : `${m} min`; }
 function sessionSteps(s) {
-  const st = [{ k: 'w' }]; let pre = '';
+  const st = [{ k: 'w', s }]; let pre = '';
   s.blocks.forEach(bl => {
     if (bl.type === 'rest') { pre = bl.title; return; }
     if (bl.type === 'wod') { st.push({ k: 'wod', bl, pre }); pre = ''; return; }
@@ -115,14 +149,15 @@ function viewSession(sid) {
   let h = `<div class="row sess-tools"><button class="btn rail-toggle" data-act="sess-rail" aria-expanded="${!!UI.sessRail}" aria-controls="sess-rail">${UI.sessRail ? 'Masquer les étapes' : 'Afficher étapes'}</button>
     <button class="btn rail-toggle" data-act="sess-muscles" data-sid="${sid}">Muscles</button></div>
   <p class="muted small" style="margin-top:.6rem">Cycle ${s.cycle} · ${esc(cyc.name)} · ${esc(cyc.intensity)}</p>
-  <h2 style="margin-top:.2rem">${esc(s.title)}</h2>`;
+  <h2 style="margin-top:.2rem">${esc(s.title)}</h2>
+  <p class="dur-line">${IC.clock || ''}Durée totale ≈ <strong>${fmtDur(sessionMinutes(s))}</strong></p>`;
   if (S.k === 'w') {
     h += `<div class="goal"><div class="goal-l">But de la séance</div><p>${esc(s.goal || '')}</p>${s.intro ? `<p class="muted small">${esc(s.intro)}</p>` : ''}</div>
   <div class="grid2" style="margin-top:.6rem">
     <label class="fld">Date de réalisation<input type="date" id="f-date-${sid}" data-in="sdate" data-sid="${sid}" value="${esc(L.date || '')}"></label>
     <label class="fld">État<button class="btn ${L.done ? 'primary' : ''}" data-act="sdone" data-sid="${sid}">${L.done ? IC.check + ' Séance terminée' : 'Marquer terminée'}</button></label>
   </div>
-  <h3 id="sec-w" class="anchor">${esc(s.warmTitle || 'Mise en route · 10 min')}</h3>${warmList(s.warmup, sid + ':w')}`;
+  ${s.warmup.length ? `<h3 id="sec-w" class="anchor">${esc(s.warmTitle || 'Mise en route · 10 min')}</h3>${warmList(s.warmup, sid + ':w')}` : ''}`;
   } else if (S.k === 'wod') {
     if (S.pre) h += `<div class="restline">${esc(S.pre)}</div>`;
     h += wodBlock(s, S.bl);
@@ -306,7 +341,7 @@ function gateRest(a, b) {
   if (a.k === 'ex' && b.k === 'ex' && a.bl === b.bl) return 0; // même superset/circuit : on enchaîne
   if (a.k === 'wod') return b.k === 'wod' ? 900 : b.k === 'c' ? 120 : 180; // entre deux WOD : 15 min (demande de Spook)
   // après l'échauffement : 1 min pour s'installer, rien si l'on enchaîne sur le cardio (il fait partie de l'échauffement)
-  if (a.k === 'w') return b.k === 'ex' && (b.it.unit || exDef(b.it.x).unit) === 'min' ? 0 : 60;
+  if (a.k === 'w') return !a.s.warmup.length ? 0 : b.k === 'ex' && (b.it.unit || exDef(b.it.x).unit) === 'min' ? 0 : 60;
   if (b.k === 'wod') return 120;
   if (b.k === 'c') return 60;
   const r = Math.max(...b.bl.items.map(o => Number(o.rest) || 0));
