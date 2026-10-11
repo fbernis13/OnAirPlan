@@ -95,38 +95,60 @@ function presc(it) {
   if (itemUnit(it) === 'min' && it.sets === 1) return esc(it.reps);
   return `${it.sets} × ${esc(it.reps)}`;
 }
+/* Étapes d'une séance : échauffement, chaque exercice ou WOD, retour au calme, bilan */
+function sessionSteps(s) {
+  const st = [{ k: 'w' }]; let pre = '';
+  s.blocks.forEach(bl => {
+    if (bl.type === 'rest') { pre = bl.title; return; }
+    if (bl.type === 'wod') { st.push({ k: 'wod', bl, pre }); pre = ''; return; }
+    bl.items.forEach((it, i) => { st.push({ k: 'ex', bl, it, i, pre: i === 0 ? pre : '' }); }); pre = '';
+  });
+  st.push({ k: 'c' }, { k: 'b' });
+  return st;
+}
+function curStep(s, n) { const v = (UI.step || {})[s.id] || 0; return Math.min(Math.max(0, v), n - 1); }
 function viewSession(sid) {
   const s = SESSION_BY_ID[sid]; const L = getLog(sid, false) || {};
   const cyc = CYCLES[s.cycle - 1];
+  const steps = sessionSteps(s); const n = steps.length; const cur = curStep(s, n); const S = steps[cur];
   let h = `<p class="muted small" style="margin-top:.8rem">Cycle ${s.cycle} · ${esc(cyc.name)} · ${esc(cyc.intensity)}</p>
-  <h2 style="margin-top:.2rem">${esc(s.title)}</h2>
-  <div class="goal"><div class="goal-l">But de la séance</div><p>${esc(s.goal || '')}</p>${s.intro ? `<p class="muted small">${esc(s.intro)}</p>` : ''}</div>
+  <h2 style="margin-top:.2rem">${esc(s.title)}</h2>`;
+  if (S.k === 'w') {
+    h += `<div class="goal"><div class="goal-l">But de la séance</div><p>${esc(s.goal || '')}</p>${s.intro ? `<p class="muted small">${esc(s.intro)}</p>` : ''}</div>
   <div class="grid2" style="margin-top:.6rem">
     <label class="fld">Date de réalisation<input type="date" id="f-date-${sid}" data-in="sdate" data-sid="${sid}" value="${esc(L.date || '')}"></label>
     <label class="fld">État<button class="btn ${L.done ? 'primary' : ''}" data-act="sdone" data-sid="${sid}">${L.done ? IC.check + ' Séance terminée' : 'Marquer terminée'}</button></label>
   </div>
   <h3 id="sec-w" class="anchor">Mise en route · 10 min</h3>${warmList(s.warmup, sid + ':w')}`;
-  s.blocks.forEach((bl, bi) => {
-    if (bl.type === 'rest') { h += `<div class="restline">${esc(bl.title)}</div>`; return; }
-    if (bl.type === 'wod') { h += wodBlock(s, bl); return; }
+  } else if (S.k === 'wod') {
+    if (S.pre) h += `<div class="restline">${esc(S.pre)}</div>`;
+    h += wodBlock(s, S.bl);
+  } else if (S.k === 'ex') {
+    const bl = S.bl;
+    if (S.pre) h += `<div class="restline">${esc(S.pre)}</div>`;
     const rounds = bl.rounds ? `${bl.type === 'superset' ? 'Superset' : 'Circuit'}, ${bl.rounds} tours` : '';
-    h += `<div class="blockhead"><span class="letter">${esc(bl.l)}</span>${bl.title || rounds ? `<span class="bt">${esc(bl.title || '')}${bl.title && rounds ? ' · ' : ''}${esc(rounds)}</span>` : ''}</div>`;
-    bl.items.forEach((it, i) => { h += exoCard(s, bl, it, i); });
-  });
-  h += `<h3 id="sec-c" class="anchor">Retour au calme · 5 min</h3>${warmList(s.cooldown, sid + ':c')}
-  <h3 id="sec-b" class="anchor">Bilan de la séance</h3>
+    h += `<div class="blockhead"><span class="letter">${esc(bl.items.length > 1 ? bl.l + (S.i + 1) : bl.l)}</span>${bl.title || rounds ? `<span class="bt">${esc(bl.title || '')}${bl.title && rounds ? ' · ' : ''}${esc(rounds)}</span>` : ''}</div>`;
+    if (bl.items.length > 1) h += `<p class="small muted stepwith">Enchaîné avec ${bl.items.map((o, j) => j === S.i ? '' : `<button class="linkbtn" data-act="sstep" data-sid="${sid}" data-v="${cur - S.i + j}">${esc(bl.l + (j + 1))} ${esc(itemLabel(o))}</button>`).filter(Boolean).join(', ')}</p>`;
+    h += exoCard(s, bl, S.it, S.i);
+  } else if (S.k === 'c') {
+    h += `<h3 id="sec-c" class="anchor">Retour au calme · 5 min</h3>${warmList(s.cooldown, sid + ':c')}`;
+  } else {
+    h += `<h3 id="sec-b" class="anchor">Bilan de la séance</h3>
   <div class="card stack">
     <div class="grid2">
       <label class="fld">RPE global (1-10)<input type="number" inputmode="decimal" min="1" max="10" step="0.5" id="f-rpe-${sid}" data-in="srpe" data-sid="${sid}" value="${esc(L.rpe || '')}"></label>
+      <label class="fld">État<button class="btn ${L.done ? 'primary' : ''}" data-act="sdone" data-sid="${sid}">${L.done ? IC.check + ' Séance terminée' : 'Marquer terminée'}</button></label>
     </div>
     ${commentField('scomment', sid, '', L.comment, 'Commentaire de séance')}
   </div>`;
+  }
   const idx = SESSIONS.indexOf(s); const prev = SESSIONS[idx - 1], nxt = SESSIONS[idx + 1];
-  const rail = sessionRail(s, L);
-  h += `<div class="row" style="margin-top:1rem">
-    ${prev ? `<button class="btn grow" data-act="open-session" data-id="${prev.id}">${IC.back} ${esc(sessLabel(prev))}</button>` : '<span class="grow"></span>'}
-    ${nxt ? `<button class="btn grow" data-act="open-session" data-id="${nxt.id}">${esc(sessLabel(nxt))} ${IC.chev}</button>` : '<span class="grow"></span>'}</div>`;
-  return `<div class="sess-layout">${rail}<div class="sess-main">${h}</div></div>`;
+  const pb = cur > 0 ? `<button class="btn" data-act="sstep" data-sid="${sid}" data-v="${cur - 1}">${IC.back} Précédent</button>`
+    : prev ? `<button class="btn" data-act="open-session" data-id="${prev.id}" title="${esc(sessLabel(prev))}">${IC.back} Séance préc.</button>` : '<span></span>';
+  const nb = cur < n - 1 ? `<button class="btn primary" data-act="sstep" data-sid="${sid}" data-v="${cur + 1}">Suivant ${IC.chev}</button>`
+    : nxt ? `<button class="btn" data-act="open-session" data-id="${nxt.id}" title="${esc(sessLabel(nxt))}">Séance suiv. ${IC.chev}</button>` : '<span></span>';
+  h += `<div class="stepbar">${pb}<span class="stepn num">${cur + 1} / ${n}</span>${nb}</div>`;
+  return `<div class="sess-layout">${sessionRail(s, L, steps, cur)}<div class="sess-main">${h}</div></div>`;
 }
 function muscleLine(d) {
   if (d.kind === 'mob') return '';
@@ -135,16 +157,17 @@ function muscleLine(d) {
   const lbl = d.kind === 'tech' ? 'Technique' : d.kind === 'cardio' ? 'Cardio' : 'Principal';
   return `<div class="mline">${P ? `<span class="mlbl">${lbl}</span>${P}` : ''}${Sx ? `<span class="mlbl">Secondaire</span>${Sx}` : ''}${!P && !Sx ? `<span class="mlbl">Hors groupes suivis</span>` : ''}${d.off ? `<span class="mnote">${esc(d.off)}</span>` : ''}</div>`;
 }
-function sessionRail(s, L) {
-  const items = [{ act: 'sess-muscles', t: 'Muscles', title: 'Répartition musculaire de la séance' }, { id: 'sec-w', t: 'Échauf.', title: 'Mise en route', done: false }];
-  s.blocks.forEach(bl => {
-    if (bl.type === 'rest') return;
-    if (bl.type === 'wod') { const W = ((L.wod || {})[bl.l]) || {}; items.push({ id: `wod-${s.id}-${bl.l}`, t: bl.l, sub: 'WOD', title: bl.title, done: !!W.done }); return; }
-    bl.items.forEach((it, i) => { const E = (L.ex || {})[itemKey(bl, i)];
-      items.push({ id: `exo-${s.id}:${itemKey(bl, i)}`, t: bl.items.length > 1 ? bl.l + (i + 1) : bl.l, sub: shortName(plannedEx(it, E, s.cycle) !== it.x ? exDef(plannedEx(it, E, s.cycle)).fr : itemLabel(it)), title: itemLabel(it), done: !!(E && E.done), skip: !!(E && E.skipped) }); });
+function sessionRail(s, L, steps, cur) {
+  const items = [{ act: 'sess-muscles', t: 'Muscles', title: 'Répartition musculaire de la séance' }];
+  steps.forEach((S, v) => {
+    if (S.k === 'w') items.push({ v, t: 'Échauf.', title: 'Mise en route' });
+    else if (S.k === 'wod') { const W = ((L.wod || {})[S.bl.l]) || {}; items.push({ v, t: S.bl.l, sub: 'WOD', title: S.bl.title, done: !!W.done }); }
+    else if (S.k === 'ex') { const bl = S.bl, it = S.it, i = S.i; const E = (L.ex || {})[itemKey(bl, i)];
+      items.push({ v, t: bl.items.length > 1 ? bl.l + (i + 1) : bl.l, sub: shortName(plannedEx(it, E, s.cycle) !== it.x ? exDef(plannedEx(it, E, s.cycle)).fr : itemLabel(it)), title: itemLabel(it), done: !!(E && E.done), skip: !!(E && E.skipped) }); }
+    else if (S.k === 'c') items.push({ v, t: 'Calme', title: 'Retour au calme' });
+    else items.push({ v, t: 'Bilan', title: 'Bilan de la séance', done: !!L.done });
   });
-  items.push({ id: 'sec-c', t: 'Calme', title: 'Retour au calme' }, { id: 'sec-b', t: 'Bilan', title: 'Bilan de la séance', done: !!L.done });
-  return `<nav class="sess-rail" aria-label="Exercices de la séance">${items.map(x => x.act ? `<button data-act="${x.act}" data-sid="${s.id}" class="musbtn" title="${esc(x.title)}" aria-label="${esc(x.title)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="4.5" r="2.2"/><path d="M6 8.5h12M12 8.5v6M12 14.5l-3.5 7M12 14.5l3.5 7"/></svg><span class="rs">${esc(x.t)}</span></button>` : `<button data-act="jump" data-target="${esc(x.id)}" class="${x.done ? 'done' : ''} ${x.skip ? 'skip' : ''}" title="${esc(x.title)}" aria-label="${esc(x.title)}"><span class="rl">${esc(x.t)}</span>${x.sub ? `<span class="rs">${esc(x.sub)}</span>` : ''}</button>`).join('')}</nav>`;
+  return `<nav class="sess-rail" aria-label="Étapes de la séance">${items.map(x => x.act ? `<button data-act="${x.act}" data-sid="${s.id}" class="musbtn" title="${esc(x.title)}" aria-label="${esc(x.title)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="4.5" r="2.2"/><path d="M6 8.5h12M12 8.5v6M12 14.5l-3.5 7M12 14.5l3.5 7"/></svg><span class="rs">${esc(x.t)}</span></button>` : `<button data-act="sstep" data-sid="${s.id}" data-v="${x.v}" class="${x.done ? 'done' : ''} ${x.skip ? 'skip' : ''} ${x.v === cur ? 'active' : ''}" ${x.v === cur ? 'aria-current="step"' : ''} title="${esc(x.title)}" aria-label="${esc(x.title)}"><span class="rl">${esc(x.t)}</span>${x.sub ? `<span class="rs">${esc(x.sub)}</span>` : ''}</button>`).join('')}</nav>`;
 }
 function shortName(n) { const w = String(n).replace(/[(),·]/g, ' ').split(/\s+/).filter(x => x && !/^(de|du|des|à|la|le|les|sur|au|aux|et|ou|un|en|avec)$/i.test(x)); return w.slice(0, 2).join(' '); }
 function warmList(lines, ctx) {

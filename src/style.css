@@ -343,3 +343,11 @@ html, body { overflow-x: clip; }
 }
 :root[data-accent="rose"][data-theme="dark"] { --bg: #161013; --surface: #21171C; --surface-2: #2C1F25; --surface-3: #3A2A31; --line: #3A2A31; --accent: #F28AB5; --accent-ink: #2A0716; --accent-soft: #3E1A2A; --accent-line: #8C3C5F; }
 :root[data-accent="bleu"][data-theme="dark"] { --bg: #0E1218; --surface: #161C25; --surface-2: #1E2632; --surface-3: #2A3443; --line: #2A3443; --accent: #7FB0F5; --accent-ink: #071A33; --accent-soft: #182B45; --accent-line: #345C93; }
+
+/* ── Séance pas à pas */
+.stepbar { position: sticky; bottom: calc(var(--nav-h) + env(safe-area-inset-bottom, 0px)); z-index: 15; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: .3rem .5rem; margin: 1rem 0 0; padding: .35rem 0 .55rem; background: var(--bg); border-top: 1px solid var(--line); }
+body:has(.timer) .stepbar { bottom: calc(var(--nav-h) + env(safe-area-inset-bottom, 0px) + 4.6rem); }
+.stepbar .btn { min-width: 0; width: 100%; white-space: normal; line-height: 1.15; text-align: center; justify-content: center; padding-inline: .4rem; }
+.stepn { grid-column: 1 / -1; order: -1; text-align: center; font-weight: 700; color: var(--ink-3); font-size: .78rem; }
+.stepwith { margin: .2rem 0 .5rem; }
+.linkbtn { background: none; border: 0; padding: 0; color: var(--accent); font: inherit; font-weight: 600; text-decoration: underline; cursor: pointer; }

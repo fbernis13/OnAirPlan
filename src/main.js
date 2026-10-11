@@ -124,6 +124,7 @@ document.addEventListener('click', ev => {
     UI.sheet = null; renderSheet(); return;
   }
   // Muscles
+  if (a === 'sstep') { UI.step = Object.assign({}, UI.step, { [el.dataset.sid]: +el.dataset.v }); UI.openMore = null; UI.openWarm = null; go({}); return; }
   if (a === 'jump') { const t = document.getElementById(el.dataset.target); if (t) t.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); return; }
   if (a === 'prog-cycle') { UI.progCycle = Number(el.dataset.v); UI.railOpen = false; render(); return; }
   if (a === 'rail-toggle') { UI.railOpen = !UI.railOpen; render(); return; }
@@ -190,12 +191,9 @@ document.addEventListener('toggle', ev => {
 }, true);
 function updateRailActive() {
   const rail = document.querySelector('.sess-rail'); if (!rail) return;
-  const btns = [...rail.querySelectorAll('button[data-target]')]; let cur = btns[0];
-  btns.forEach(b => { const t = document.getElementById(b.dataset.target); if (t && t.getBoundingClientRect().top < 140) cur = b; });
-  btns.forEach(b => b.classList.toggle('active', b === cur));
+  const cur = rail.querySelector('button.active');
   if (cur && rail.scrollHeight > rail.clientHeight) { const r = cur.getBoundingClientRect(), rr = rail.getBoundingClientRect(); if (r.top < rr.top || r.bottom > rr.bottom) cur.scrollIntoView({ block: 'nearest' }); }
 }
-let railRaf = 0; window.addEventListener('scroll', () => { if (railRaf) return; railRaf = requestAnimationFrame(() => { railRaf = 0; updateRailActive(); }); }, { passive: true });
 document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') updateWakeLock(); });
 
 /* ── Démarrage */
