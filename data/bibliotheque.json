@@ -5,7 +5,8 @@
  "updatedAt": "2026-10-11",
  "notes": [
   "Groupes musculaires principaux et secondaires : conventions du carnet, pas une mesure.",
-  "Vidéos hors catalogue relevées le 2026-10-11 dans les résultats de recherche YouTube (identifiant, titre et chaîne exacts)."
+  "Vidéos hors catalogue relevées le 2026-10-11 dans les résultats de recherche YouTube (identifiant, titre et chaîne exacts).",
+  "Paires machine guidée / Hammer Strength (chargée de disques) : machinePairs. Le choix est enregistré dans la progression ; sans choix, le carnet garde la machine prévue par le programme. Adducteurs, poulies et hack squat n’ont pas de paire."
  ],
  "muscles": {
   "pec": "Pectoraux",
@@ -1890,6 +1891,143 @@
     "stretch_adductor"
    ],
    "kind": "mob"
+  },
+  "presse_hs": {
+   "mv": null,
+   "kind": "force",
+   "unit": "reps",
+   "load": true,
+   "fr": "Presse à cuisses Hammer (chargée de disques)",
+   "en": "Hammer Strength Linear Leg Press",
+   "vid": [
+    "presse_hs"
+   ],
+   "p": [
+    "quad",
+    "fess"
+   ],
+   "s": [
+    "isch"
+   ]
+  },
+  "legext_hs": {
+   "mv": null,
+   "kind": "force",
+   "unit": "reps",
+   "load": true,
+   "fr": "Leg extension Hammer iso-latéral",
+   "en": "Hammer Strength Iso-Lateral Leg Extension",
+   "vid": [
+    "legext_hs"
+   ],
+   "p": [
+    "quad"
+   ],
+   "s": []
+  },
+  "legcurl_hs": {
+   "mv": null,
+   "kind": "force",
+   "unit": "reps",
+   "load": true,
+   "fr": "Leg curl Hammer iso-latéral",
+   "en": "Hammer Strength Iso-Lateral Leg Curl",
+   "vid": [
+    "legcurl_hs"
+   ],
+   "p": [
+    "isch"
+   ],
+   "s": [
+    "mol"
+   ],
+   "variant": "Sur cette machine, on travaille à genoux, une jambe après l’autre."
+  },
+  "calf_hs": {
+   "mv": null,
+   "kind": "force",
+   "unit": "reps",
+   "load": true,
+   "fr": "Mollets assis Hammer",
+   "en": "Hammer Strength Seated Calf Raise",
+   "vid": [
+    "calf_hs"
+   ],
+   "p": [
+    "mol"
+   ],
+   "s": [],
+   "variant": "Version assise : sollicite surtout le soléaire, la partie profonde du mollet."
+  },
+  "calf_press_hs": {
+   "mv": null,
+   "kind": "force",
+   "unit": "reps",
+   "load": true,
+   "fr": "Mollets à la presse Hammer",
+   "en": "Calf Raise on Hammer Strength Leg Press",
+   "vid": [
+    "calf_press_hs"
+   ],
+   "p": [
+    "mol"
+   ],
+   "s": []
+  },
+  "latpull_hs": {
+   "mv": null,
+   "kind": "force",
+   "unit": "reps",
+   "load": true,
+   "fr": "Tirage vertical Hammer iso-latéral",
+   "en": "Hammer Strength Iso-Lateral Front Lat Pulldown",
+   "vid": [
+    "latpull_hs"
+   ],
+   "p": [
+    "dos"
+   ],
+   "s": [
+    "bic"
+   ],
+   "variant": "Poignées indépendantes : garde une prise neutre si la machine le permet."
+  },
+  "dip_hs": {
+   "mv": null,
+   "kind": "force",
+   "unit": "reps",
+   "load": true,
+   "fr": "Dips assis Hammer",
+   "en": "Hammer Strength Seated Dip",
+   "vid": [
+    "dip_hs"
+   ],
+   "p": [
+    "tri",
+    "pec"
+   ],
+   "s": [
+    "epa"
+   ],
+   "variant": "Chargé de disques, assis : tu pousses une charge au lieu d’alléger ton poids de corps."
+  },
+  "chest_press": {
+   "mv": null,
+   "kind": "force",
+   "unit": "reps",
+   "load": true,
+   "fr": "Développé assis machine guidée",
+   "en": "Machine Chest Press",
+   "vid": [
+    "chest_press"
+   ],
+   "p": [
+    "pec"
+   ],
+   "s": [
+    "tri",
+    "epa"
+   ]
   }
  },
  "videos": {
@@ -2636,6 +2774,94 @@
    "provider": "YouTube",
    "url": "https://www.youtube.com/watch?v=veIjxnWBskw",
    "thumbnailUrl": "https://i.ytimg.com/vi/veIjxnWBskw/hqdefault.jpg",
+   "checkedAt": "2026-10-11",
+   "foundVia": "Recherche YouTube (titre et chaîne relevés dans les résultats)"
+  },
+  "presse_hs": {
+   "videoId": "Xv-FPPjt4iQ",
+   "title": "Linear Leg Press | Hammer Strength Plate Loaded",
+   "author": "Life Fitness / Hammer Strength",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=Xv-FPPjt4iQ",
+   "thumbnailUrl": "https://i.ytimg.com/vi/Xv-FPPjt4iQ/hqdefault.jpg",
+   "checkedAt": "2026-10-11",
+   "foundVia": "Recherche YouTube (titre et chaîne relevés dans les résultats)"
+  },
+  "legext_hs": {
+   "videoId": "b1qPDBWUQ-8",
+   "title": "Iso-Lateral Leg Extension | Hammer Strength Plate Loaded",
+   "author": "Life Fitness / Hammer Strength",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=b1qPDBWUQ-8",
+   "thumbnailUrl": "https://i.ytimg.com/vi/b1qPDBWUQ-8/hqdefault.jpg",
+   "checkedAt": "2026-10-11",
+   "foundVia": "Recherche YouTube (titre et chaîne relevés dans les résultats)"
+  },
+  "legcurl_hs": {
+   "videoId": "fJxkgOrvCuc",
+   "title": "Iso-Lateral Leg Curl | Hammer Strength Plate Loaded",
+   "author": "Life Fitness / Hammer Strength",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=fJxkgOrvCuc",
+   "thumbnailUrl": "https://i.ytimg.com/vi/fJxkgOrvCuc/hqdefault.jpg",
+   "checkedAt": "2026-10-11",
+   "foundVia": "Recherche YouTube (titre et chaîne relevés dans les résultats)"
+  },
+  "calf_hs": {
+   "videoId": "UoYD9G2zSMo",
+   "title": "Seated Calf - Plate Loaded - Hammer Strength",
+   "author": "Hammer Strength",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=UoYD9G2zSMo",
+   "thumbnailUrl": "https://i.ytimg.com/vi/UoYD9G2zSMo/hqdefault.jpg",
+   "checkedAt": "2026-10-11",
+   "foundVia": "Recherche YouTube (titre et chaîne relevés dans les résultats)"
+  },
+  "calf_press_hs": {
+   "videoId": "6WNC2WUDPHo",
+   "title": "Calf Raisers on a Hammer Strength Leg Press",
+   "author": "Optimal Health on Purpose",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=6WNC2WUDPHo",
+   "thumbnailUrl": "https://i.ytimg.com/vi/6WNC2WUDPHo/hqdefault.jpg",
+   "checkedAt": "2026-10-11",
+   "foundVia": "Recherche YouTube (titre et chaîne relevés dans les résultats)"
+  },
+  "latpull_hs": {
+   "videoId": "WcTbf3RI3Q8",
+   "title": "Iso-Lateral Front Lat Pulldown | Hammer Strength Plate Loaded",
+   "author": "Life Fitness / Hammer Strength",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=WcTbf3RI3Q8",
+   "thumbnailUrl": "https://i.ytimg.com/vi/WcTbf3RI3Q8/hqdefault.jpg",
+   "checkedAt": "2026-10-11",
+   "foundVia": "Recherche YouTube (titre et chaîne relevés dans les résultats)"
+  },
+  "dip_hs": {
+   "videoId": "_gAO5z8kpC0",
+   "title": "Seated Dip | Hammer Strength Plate Loaded",
+   "author": "Life Fitness / Hammer Strength",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=_gAO5z8kpC0",
+   "thumbnailUrl": "https://i.ytimg.com/vi/_gAO5z8kpC0/hqdefault.jpg",
+   "checkedAt": "2026-10-11",
+   "foundVia": "Recherche YouTube (titre et chaîne relevés dans les résultats)"
+  },
+  "chest_press": {
+   "videoId": "sqNwDkUU_Ps",
+   "title": "How To Use The Chest Press Machine",
+   "author": "PureGym",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=sqNwDkUU_Ps",
+   "thumbnailUrl": "https://i.ytimg.com/vi/sqNwDkUU_Ps/hqdefault.jpg",
    "checkedAt": "2026-10-11",
    "foundVia": "Recherche YouTube (titre et chaîne relevés dans les résultats)"
   }
@@ -11166,5 +11392,67 @@
   "fileType": "hybrid.movements",
   "selectionVersion": 1,
   "savedAt": "2026-10-09T09:26:20.006Z"
- }
+ },
+ "machinePairs": [
+  {
+   "id": "presse",
+   "label": "Presse à cuisses",
+   "guidee": "presse",
+   "hammer": "presse_hs"
+  },
+  {
+   "id": "legext",
+   "label": "Leg extension",
+   "guidee": "legext",
+   "hammer": "legext_hs"
+  },
+  {
+   "id": "legcurl_l",
+   "label": "Leg curl allongé",
+   "guidee": "legcurl_l",
+   "hammer": "legcurl_hs"
+  },
+  {
+   "id": "legcurl_s",
+   "label": "Leg curl assis",
+   "guidee": "legcurl_s",
+   "hammer": "legcurl_hs"
+  },
+  {
+   "id": "calf_mach",
+   "label": "Mollets",
+   "guidee": "calf_mach",
+   "hammer": "calf_hs"
+  },
+  {
+   "id": "calf_press",
+   "label": "Mollets à la presse",
+   "guidee": "calf_press",
+   "hammer": "calf_press_hs"
+  },
+  {
+   "id": "latpull",
+   "label": "Tirage vertical",
+   "guidee": "latpull",
+   "hammer": "latpull_hs"
+  },
+  {
+   "id": "row",
+   "label": "Rowing assis",
+   "guidee": "seated_row",
+   "hammer": "iso_row"
+  },
+  {
+   "id": "chest",
+   "label": "Développé assis",
+   "guidee": "chest_press",
+   "hammer": "iso_chest"
+  },
+  {
+   "id": "dip",
+   "label": "Dips",
+   "guidee": "dip_assist",
+   "hammer": "dip_hs"
+  }
+ ]
 }

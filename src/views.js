@@ -49,6 +49,11 @@ function viewProgramme() {
     <div class="progressbar" style="margin:.5rem 0"><i style="width:${doneCount / 20 * 100}%"></i></div>
     ${next ? `<button class="btn primary" data-act="open-session" data-id="${next.id}" style="width:100%;margin-top:.3rem">${sessionStatus(next.id) === 'started' ? 'Reprendre' : 'Prochaine séance'} : ${esc(sessLabel(next))}, ${esc(next.title)}</button>` : '<p class="muted">Programme terminé. Prévois une semaine plus légère avant le prochain bloc.</p>'}
   </div>
+  ${MACHINE_PAIRS.length ? (() => { const used = MACHINE_PAIRS.filter(p => S.machines[p.id]); const all = v => MACHINE_PAIRS.every(p => S.machines[p.id] === v);
+    const cur = !used.length ? 'plan' : all('hammer') ? 'hammer' : all('guidee') ? 'guidee' : 'mix';
+    return `<div class="card stack" style="margin-top:.8rem"><div class="row"><strong class="grow">Machines</strong>${cur === 'mix' ? '<span class="pill">choix par exercice</span>' : ''}</div>
+      <div class="seg" role="group" aria-label="Machines pour tout le programme">${[['plan', 'Comme prévu'], ['guidee', 'Tout guidé'], ['hammer', 'Tout Hammer']].map(([v, l]) => `<button data-act="machine-all" data-v="${v}" aria-pressed="${cur === v}">${l}</button>`).join('')}</div>
+      <p class="small muted" style="margin:0">S’applique à ${MACHINE_PAIRS.length} machines. Tu peux aussi choisir exercice par exercice dans la séance. Le choix est enregistré avec ta progression.</p></div>`; })() : ''}
   <details class="more" style="margin-top:.8rem"><summary>${IC.chev} Principes et signaux d’arrêt</summary>
     <div class="card stack small">${PROGRAM_RULES.map(r => `<p style="margin:0">${esc(r)}</p>`).join('')}</div></details>`;
   const curC = UI.progCycle || (next ? next.cycle : 4);
@@ -127,7 +132,7 @@ function sessionRail(s, L) {
     if (bl.type === 'rest') return;
     if (bl.type === 'wod') { const W = ((L.wod || {})[bl.l]) || {}; items.push({ id: `wod-${s.id}-${bl.l}`, t: bl.l, sub: 'WOD', title: bl.title, done: !!W.done }); return; }
     bl.items.forEach((it, i) => { const E = (L.ex || {})[itemKey(bl, i)];
-      items.push({ id: `exo-${s.id}:${itemKey(bl, i)}`, t: bl.items.length > 1 ? bl.l + (i + 1) : bl.l, sub: shortName(E && E.swap ? exDef(E.swap).fr : itemLabel(it)), title: itemLabel(it), done: !!(E && E.done), skip: !!(E && E.skipped) }); });
+      items.push({ id: `exo-${s.id}:${itemKey(bl, i)}`, t: bl.items.length > 1 ? bl.l + (i + 1) : bl.l, sub: shortName(plannedEx(it, E) !== it.x ? exDef(plannedEx(it, E)).fr : itemLabel(it)), title: itemLabel(it), done: !!(E && E.done), skip: !!(E && E.skipped) }); });
   });
   items.push({ id: 'sec-c', t: 'Calme', title: 'Retour au calme' }, { id: 'sec-b', t: 'Bilan', title: 'Bilan de la séance', done: !!L.done });
   return `<nav class="sess-rail" aria-label="Exercices de la séance">${items.map(x => x.act ? `<button data-act="${x.act}" data-sid="${s.id}" class="musbtn" title="${esc(x.title)}" aria-label="${esc(x.title)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="4.5" r="2.2"/><path d="M6 8.5h12M12 8.5v6M12 14.5l-3.5 7M12 14.5l3.5 7"/></svg><span class="rs">${esc(x.t)}</span></button>` : `<button data-act="jump" data-target="${esc(x.id)}" class="${x.done ? 'done' : ''} ${x.skip ? 'skip' : ''}" title="${esc(x.title)}" aria-label="${esc(x.title)}"><span class="rl">${esc(x.t)}</span>${x.sub ? `<span class="rs">${esc(x.sub)}</span>` : ''}</button>`).join('')}</nav>`;
@@ -158,16 +163,18 @@ function wodBlock(s, bl) {
 }
 function exoCard(s, bl, it, i) {
   const key = itemKey(bl, i); const E = getExLog(s.id, key, it, false);
-  const eff = (E && E.swap) || it.x; const d = exDef(eff); const orig = exDef(it.x);
+  const eff = plannedEx(it, E); const d = exDef(eff); const orig = exDef(it.x); const pair = !(E && E.swap) && PAIR_OF[it.x];
+  const side = pair ? (eff === pair.hammer ? 'hammer' : eff === pair.guidee ? 'guidee' : '') : '';
   const sets = E ? E.sets : Array.from({ length: Math.max(1, it.sets || 1) }, () => ({}));
   const hist = exHistory(eff).filter(hh => hh.sid !== s.id); const last = hist[hist.length - 1];
   const uid = s.id + ':' + key;
   const swapOpts = Object.entries(EXERCISES).filter(([k, v]) => v.kind !== 'mob' && v.kind !== 'wod' && k !== it.x);
   return `<div class="exo anchor ${E && E.done ? 'done' : ''} ${E && E.skipped ? 'skipped' : ''}" id="exo-${uid}">
     <div class="exo-title"><div class="grow">
-      <div class="exo-name">${esc(E && E.swap ? d.fr : itemLabel(it))}</div>
+      <div class="exo-name">${esc(eff !== it.x ? d.fr : itemLabel(it))}</div>
       <div class="exo-en">${esc(d.en)}${E && E.swap ? ` · variante de ${esc(itemLabel(it))}` : ''}</div>
     </div><div class="presc num">${presc(it)}</div></div>
+    ${pair ? `<div class="seg machine-seg" role="group" aria-label="Type de machine">${[['guidee', 'Machine guidée'], ['hammer', 'Hammer']].map(([v, l]) => `<button data-act="machine" data-pair="${pair.id}" data-v="${v}" data-sid="${s.id}" data-key="${key}" data-bi="${bl.l}" data-i="${i}" aria-pressed="${side === v}">${l}</button>`).join('')}</div>` : ''}
     ${muscleLine(d)}
     ${it.note ? `<div class="small muted">${esc(it.note)}</div>` : ''}
     ${(it.variant || d.variant) ? `<div class="variant">${esc(it.variant || d.variant)}</div>` : ''}

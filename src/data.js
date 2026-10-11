@@ -11,6 +11,7 @@
 
 let BIB = null, CAR = null;
 let MUSCLES = {}, EXERCISES = {}, VIDEOS = {}, CATALOG = { movements: [] }, MOVES = [], MOVE_BY_ID = {};
+let MACHINE_PAIRS = [], PAIR_OF = {};
 let CYCLES = [], SESSION_TYPES = {}, SESSIONS = [], SESSION_BY_ID = {}, BENCHMARKS = [], PROGRAM_RULES = [], USAGE = {};
 const DATA_LS = { bib: 'onair-bibliotheque', car: 'onair-carnet', snaps: 'onair-sauvegardes' };
 /* base : version d'origine (fichier du site ou copie intégrée) ; source : d'où vient la version active */
@@ -46,6 +47,8 @@ function applyData(bib, car) {
   MUSCLES = bib.muscles || {}; EXERCISES = bib.exercises || {}; VIDEOS = bib.videos || {};
   CATALOG = bib.catalogue || { movements: [] }; MOVES = CATALOG.movements || [];
   MOVE_BY_ID = Object.fromEntries(MOVES.map(m => [m.id, m]));
+  MACHINE_PAIRS = (bib.machinePairs || []).filter(p => EXERCISES[p.guidee] && EXERCISES[p.hammer]);
+  PAIR_OF = {}; MACHINE_PAIRS.forEach(p => { if (!PAIR_OF[p.guidee]) PAIR_OF[p.guidee] = p; if (!PAIR_OF[p.hammer]) PAIR_OF[p.hammer] = p; });
   CYCLES = car.cycles || []; SESSION_TYPES = car.sessionTypes || {}; SESSIONS = car.sessions || [];
   SESSION_BY_ID = Object.fromEntries(SESSIONS.map(s => [s.id, s]));
   BENCHMARKS = car.benchmarks || []; PROGRAM_RULES = car.rules || [];
@@ -115,7 +118,7 @@ function docCarnet() { return Object.assign(JSON.parse(JSON.stringify(CAR)), { e
 function docProgression(st) {
   st = st || S;
   return { fileType: 'onair.progression', version: 1, exportedAt: new Date().toISOString(), carnet: CAR && CAR.title,
-    settings: st.settings, prefs: st.prefs, bench: st.bench, logs: st.logs };
+    settings: st.settings, prefs: st.prefs, machines: st.machines || {}, bench: st.bench, logs: st.logs };
 }
 function progressionToState(d) {
   /* accepte aussi l'ancien export { fileType: 'onair.carnet', data: { v: 1, … } } */
@@ -123,7 +126,7 @@ function progressionToState(d) {
   if (!src) return null;
   const st = blankState();
   st.settings = Object.assign(st.settings, src.settings || {});
-  st.prefs = src.prefs || {}; st.bench = src.bench || {}; st.logs = src.logs || {};
+  st.prefs = src.prefs || {}; st.machines = src.machines || {}; st.bench = src.bench || {}; st.logs = src.logs || {};
   return st;
 }
 function isLegacyProgression(d) { return d && d.fileType === 'onair.carnet' && d.data && d.data.v === 1; }

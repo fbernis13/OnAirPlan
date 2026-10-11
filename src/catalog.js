@@ -106,7 +106,7 @@ function viewMove(id) {
 const DOC_INFO = {
   bib: { file: 'bibliotheque', title: 'Bibliothèque de mouvements', what: () => `${Object.keys(EXERCISES).length} exercices, ${MOVES.length} fiches du catalogue, ${Object.keys(VIDEOS).length} vidéos vérifiées` },
   car: { file: 'carnet', title: 'Carnet de séances', what: () => `${CYCLES.length} cycles, ${SESSIONS.length} séances, ${BENCHMARKS.length} repères` },
-  progression: { file: 'progression', title: 'Ma progression', what: () => { const n = Object.keys(S.logs).length, p = Object.keys(S.prefs).length; return `${n} séance${n > 1 ? 's' : ''} notée${n > 1 ? 's' : ''}, ${Object.keys(S.bench).length} repère${Object.keys(S.bench).length > 1 ? 's' : ''}, ${p} préférence${p > 1 ? 's' : ''}`; } }
+  progression: { file: 'progression', title: 'Ma progression', what: () => { const n = Object.keys(S.logs).length, p = Object.keys(S.prefs).length; return `${n} séance${n > 1 ? 's' : ''} notée${n > 1 ? 's' : ''}, ${Object.keys(S.bench).length} repère${Object.keys(S.bench).length > 1 ? 's' : ''}, ${p} préférence${p > 1 ? 's' : ''}, ${Object.keys(S.machines || {}).length} choix de machine`; } }
 };
 function docText(kind) {
   const d = kind === 'bib' ? docBibliotheque() : kind === 'car' ? docCarnet() : kind === 'progression' ? docProgression()

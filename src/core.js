@@ -4,7 +4,7 @@ const PREF_LABELS = { keep: 'Conserver', aside: 'Mettre de côté', practice: '�
 const PREF_ORDER = ['keep', 'aside', 'practice', 'warmup', 'alternative'];
 
 function blankState() {
-  return { v: 1, settings: { theme: 'system', size: 100, sound: true }, prefs: {}, bench: {}, logs: {}, metaAt: 0 };
+  return { v: 1, settings: { theme: 'system', size: 100, sound: true }, prefs: {}, machines: {}, bench: {}, logs: {}, metaAt: 0 };
 }
 let S = blankState();
 const UI = { tab: 'programme', session: null, exo: null, move: null, musScope: 'prog', musSession: 'c1-r1', musAdj: true, musSel: null, exFilter: '', mvFilter: '', mvPref: 'all', mvCat: 'all', sheet: null, sync: 'local', toast: null };
@@ -29,7 +29,7 @@ function markDirty(docId) {
   if (Cloud.col) { setSync('pending'); clearTimeout(Cloud.timer); Cloud.timer = setTimeout(flushCloud, 1500); }
 }
 function docBody(docId) {
-  if (docId === 'meta') return { kind: 'meta', settings: S.settings, prefs: S.prefs, bench: S.bench, updatedAt: S.metaAt || Date.now() };
+  if (docId === 'meta') return { kind: 'meta', settings: S.settings, prefs: S.prefs, machines: S.machines, bench: S.bench, updatedAt: S.metaAt || Date.now() };
   if (docId.startsWith('snap-')) { const x = SNAPS.find(z => 'snap-' + z.id === docId); return x ? { kind: 'snap', id: x.id, at: x.at, label: x.label, progression: x.progression, updatedAt: x.at } : null; }
   const id = docId.slice(4); const L = S.logs[id];
   return L ? { kind: 'log', session: id, log: L, updatedAt: L.updatedAt || Date.now() } : null;
@@ -66,7 +66,7 @@ async function initCloud() {
     snap.docs.forEach(d => {
       const b = d.data(); if (!b) return; remoteIds.add(d.id);
       if (d.id === 'meta') {
-        if ((b.updatedAt || 0) > (S.metaAt || 0)) { S.settings = Object.assign(S.settings, b.settings || {}); S.prefs = b.prefs || {}; S.bench = b.bench || {}; S.metaAt = b.updatedAt; }
+        if ((b.updatedAt || 0) > (S.metaAt || 0)) { S.settings = Object.assign(S.settings, b.settings || {}); S.prefs = b.prefs || {}; S.machines = b.machines || {}; S.bench = b.bench || {}; S.metaAt = b.updatedAt; }
         else if ((b.updatedAt || 0) < (S.metaAt || 0)) Cloud.dirty.add('meta');
       } else if (d.id.startsWith('log-') && b.log) {
         const id = d.id.slice(4); const local = S.logs[id];
@@ -102,6 +102,9 @@ const firstNum = s => { const m = String(s).replace(',', '.').match(/\d+(\.\d+)?
 const fmtSec = s => { s = Math.max(0, Math.round(s)); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); };
 function exDef(k) { return EXERCISES[k] || { fr: k, en: '', kind: 'force', unit: 'reps', p: [], s: [] }; }
 function sessLabel(s) { return `C${s.cycle} · ${SESSION_TYPES[s.slot].label}`; }
+/* Machine guidée ou Hammer : choix enregistré dans la progression, sinon la machine prévue */
+function machineEx(k) { const p = PAIR_OF[k]; const c = p && S.machines && S.machines[p.id]; return c ? p[c] : k; }
+function plannedEx(it, E) { return (E && (E.swap || E.machine)) || machineEx(it.x); }
 function itemKey(bl, i) { return bl.l + i; }
 function itemLabel(it) { return it.label || exDef(it.x).fr; }
 
@@ -133,7 +136,7 @@ function exHistory(x) {
     const L = S.logs[s.id]; if (!L) return;
     s.blocks.forEach(bl => (bl.items || []).forEach((it, i) => {
       const e = L.ex && L.ex[itemKey(bl, i)]; if (!e) return;
-      const eff = e.swap || it.x; if (eff !== x) return;
+      const eff = e.swap || e.machine || it.x; if (eff !== x) return;
       const sets = (e.sets || []).filter(st => st.done || st.load || st.reps || st.dur);
       if (sets.length) out.push({ sid: s.id, date: L.date, label: itemLabel(it), sets, comment: e.comment });
     }));

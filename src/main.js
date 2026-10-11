@@ -45,7 +45,7 @@ function refOf(el) {
 function writeSet(ref, f, v) {
   const r = ref.it ? ref : Object.assign(ref, refOf({ dataset: { sid: ref.sid, bi: ref.bi, i: ref.i } }));
   const E = getExLog(r.sid, r.key, r.it, true); if (!E.sets[r.si]) return;
-  E.sets[r.si][f] = v; markStarted(r.sid); touchLog(r.sid);
+  E.sets[r.si][f] = v; if (!E.swap && PAIR_OF[r.it.x] && !E.machine) E.machine = machineEx(r.it.x); markStarted(r.sid); touchLog(r.sid);
 }
 
 let wakeLock = null;
@@ -132,6 +132,10 @@ document.addEventListener('click', ev => {
   if (a === 'mv-pref') { UI.mvPref = el.dataset.v; render(); return; }
   if (a === 'set-pref') { S.prefs[el.dataset.id] = el.dataset.v; touchMeta(); render(); return; }
   // Sauvegarde
+  if (a === 'machine') { const p = MACHINE_PAIRS.find(x => x.id === el.dataset.pair); if (!p) return; S.machines[p.id] = el.dataset.v; touchMeta();
+    if (el.dataset.sid) { const r = refOf(el); const E = getExLog(r.sid, r.key, r.it, false); if (E && !E.swap) { E.machine = p[el.dataset.v]; touchLog(r.sid); } }
+    render(); showToast(el.dataset.v === 'hammer' ? 'Hammer retenu pour ' + p.label.toLowerCase() : 'Machine guidée retenue pour ' + p.label.toLowerCase()); return; }
+  if (a === 'machine-all') { const v = el.dataset.v; MACHINE_PAIRS.forEach(p => { if (v === 'plan') delete S.machines[p.id]; else S.machines[p.id] = v; }); touchMeta(); render(); return; }
   if (a === 'logout') { logout(); return; }
   if (a === 'export-doc') { exportDoc(el.dataset.v); return; }
   if (a === 'copy-export') { const ta = document.getElementById('f-exporttext'); const t = ta ? ta.value : ''; const fallback = () => { if (ta) { ta.focus(); ta.select(); } showToast('Texte sélectionné : copie-le'); };
