@@ -1,6 +1,7 @@
 {
  "fileType": "onair.carnet",
  "version": 2,
+ "id": "crossfit",
  "title": "Programme de reprise – Salle On Air",
  "source": "programme-reprise-on-air.md",
  "updatedAt": "2026-10-11",

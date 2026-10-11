@@ -15,7 +15,17 @@ let MACHINE_PAIRS = [], PAIR_OF = {};
 let CYCLES = [], SESSION_TYPES = {}, SESSIONS = [], SESSION_BY_ID = {}, BENCHMARKS = [], OBJECTIVES = [], PROGRAM_RULES = [], USAGE = {};
 const DATA_LS = { bib: 'onair-bibliotheque', car: 'onair-carnet', snaps: 'onair-sauvegardes' };
 /* base : version d'origine (fichier du site ou copie intégrée) ; source : d'où vient la version active */
-const DATA = { base: { bib: null, car: null }, source: { bib: 'intégrée', car: 'intégrée' } };
+/* Programmes disponibles : un fichier carnet chacun. Le programme d'un compte vient de son choix
+   dans les réglages, sinon de SUPA_CONFIG.programmes (identifiant → programme), sinon CrossFit. */
+const PROGRAMS = { crossfit: { file: 'carnet.json', label: 'Reprise CrossFit' }, forme: { file: 'carnet-forme.json', label: 'Remise en forme machines' } };
+function programId() {
+  const cars = typeof EMBED_CARS !== 'undefined' ? EMBED_CARS : {};
+  const s = typeof S !== 'undefined' && S && S.settings && S.settings.programme; if (s && cars[s]) return s;
+  const login = typeof AUTH !== 'undefined' && AUTH.user && AUTH.user.login;
+  const m = (typeof SUPA_CONFIG !== 'undefined' && SUPA_CONFIG && SUPA_CONFIG.programmes) || {};
+  return login && m[login] && cars[m[login]] ? m[login] : 'crossfit';
+}
+const DATA = { base: { bib: null, car: null, cars: {} }, source: { bib: 'intégrée', car: 'intégrée' } };
 
 function checkBib(d) {
   if (!d || d.fileType !== 'onair.bibliotheque') return 'ce n’est pas une bibliothèque de mouvements';
@@ -49,6 +59,9 @@ function applyData(bib, car) {
   MOVE_BY_ID = Object.fromEntries(MOVES.map(m => [m.id, m]));
   MACHINE_PAIRS = (bib.machinePairs || []).filter(p => EXERCISES[p.guidee] && EXERCISES[p.hammer]);
   PAIR_OF = {}; MACHINE_PAIRS.forEach(p => { if (!PAIR_OF[p.guidee]) PAIR_OF[p.guidee] = p; if (!PAIR_OF[p.hammer]) PAIR_OF[p.hammer] = p; });
+  const used = new Set(); (car.sessions || []).forEach(x => (x.blocks || []).forEach(bl => (bl.items || []).forEach(it => used.add(it.x))));
+  MACHINE_PAIRS = MACHINE_PAIRS.filter(p => used.has(p.guidee) || used.has(p.hammer));
+  PAIR_OF = {}; MACHINE_PAIRS.forEach(p => { if (!PAIR_OF[p.guidee]) PAIR_OF[p.guidee] = p; if (!PAIR_OF[p.hammer]) PAIR_OF[p.hammer] = p; });
   CYCLES = car.cycles || []; SESSION_TYPES = car.sessionTypes || {}; SESSIONS = car.sessions || [];
   SESSION_BY_ID = Object.fromEntries(SESSIONS.map(s => [s.id, s]));
   BENCHMARKS = car.benchmarks || []; OBJECTIVES = car.objectives || []; PROGRAM_RULES = car.rules || [];
@@ -77,13 +90,15 @@ function writeLS(key, v) {
 /* Démarrage synchrone : copie intégrée, puis version importée gardée sur l'appareil */
 function initData() {
   DATA.base.bib = typeof EMBED_BIB !== 'undefined' ? EMBED_BIB : null;
-  DATA.base.car = typeof EMBED_CAR !== 'undefined' ? EMBED_CAR : null;
+  DATA.base.cars = Object.assign({}, typeof EMBED_CARS !== 'undefined' ? EMBED_CARS : {});
   pickData();
 }
 function pickData() {
   const ob = readLS(DATA_LS.bib), oc = readLS(DATA_LS.car);
   const bib = ob && !checkBib(ob) ? ob : DATA.base.bib;
-  const car = oc && !checkCar(oc, bib) ? oc : DATA.base.car;
+  const pid = programId(); DATA.base.car = DATA.base.cars[pid] || DATA.base.cars.crossfit || null;
+  /* un carnet importé ne remplace que le programme dont il porte l'identifiant */
+  const car = oc && !checkCar(oc, bib) && (oc.id || 'crossfit') === pid ? oc : DATA.base.car;
   DATA.source.bib = bib === ob ? (typeof Server !== 'undefined' && Server.on ? 'serveur' : 'importée') : DATA.source.baseBib || 'intégrée';
   DATA.source.car = car === oc ? (typeof Server !== 'undefined' && Server.on ? 'serveur' : 'importé') : DATA.source.baseCar || 'intégré';
   applyData(bib, car);
@@ -96,11 +111,12 @@ async function refreshDataFiles() {
     try { const r = await fetch('data/' + name, { cache: 'no-cache', signal: ctl.signal }); return r.ok ? await r.json() : null; }
     catch (e) { return null; } finally { clearTimeout(t); }
   };
-  const [b, c] = await Promise.all([get('bibliotheque.json'), get('carnet.json')]);
+  const pid = programId();
+  const [b, c] = await Promise.all([get('bibliotheque.json'), get(PROGRAMS[pid].file)]);
   let changed = false;
   if (b && !checkBib(b) && JSON.stringify(b) !== JSON.stringify(DATA.base.bib)) { DATA.base.bib = b; changed = true; }
   if (b && !checkBib(b)) DATA.source.baseBib = 'fichier du site';
-  if (c && !checkCar(c, DATA.base.bib) && JSON.stringify(c) !== JSON.stringify(DATA.base.car)) { DATA.base.car = c; changed = true; }
+  if (c && !checkCar(c, DATA.base.bib) && JSON.stringify(c) !== JSON.stringify(DATA.base.cars[pid])) { DATA.base.cars[pid] = c; changed = true; }
   if (c && !checkCar(c, DATA.base.bib)) DATA.source.baseCar = 'fichier du site';
   pickData();
   return changed;

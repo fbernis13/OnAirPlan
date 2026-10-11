@@ -94,6 +94,15 @@ function applySettings() {
   const r = document.documentElement;
   if (S.settings.theme === 'light' || S.settings.theme === 'dark') r.setAttribute('data-theme', S.settings.theme); else r.removeAttribute('data-theme');
   r.style.setProperty('--fs', (S.settings.size || 100) + '%');
+  const acc = accentOf(); if (acc && acc !== 'sarcelle') r.setAttribute('data-accent', acc); else r.removeAttribute('data-accent');
+}
+/* Couleur du carnet : choix du compte, sinon SUPA_CONFIG.couleurs (identifiant → couleur), sinon sarcelle */
+const ACCENTS = [['sarcelle', 'Sarcelle'], ['rose', 'Rose'], ['bleu', 'Bleu']];
+function accentOf() {
+  if (S.settings.accent) return S.settings.accent;
+  const login = typeof AUTH !== 'undefined' && AUTH.user && AUTH.user.login;
+  const m = (typeof SUPA_CONFIG !== 'undefined' && SUPA_CONFIG && SUPA_CONFIG.couleurs) || {};
+  return (login && m[login]) || 'sarcelle';
 }
 
 /* ── Utilitaires */

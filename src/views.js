@@ -44,7 +44,7 @@ function viewProgramme() {
   const doneCount = SESSIONS.filter(s => sessionStatus(s.id) === 'done').length;
   const next = SESSIONS.find(s => sessionStatus(s.id) !== 'done');
   let h = `<div class="card" style="margin-top:1rem">
-    <div class="row"><div class="grow"><div class="faint small" style="font-weight:700;text-transform:uppercase;letter-spacing:.08em">Reprise · Salle On Air</div>
+    <div class="row"><div class="grow"><div class="faint small" style="font-weight:700;text-transform:uppercase;letter-spacing:.08em">${esc(PROGRAMS[programId()].label)} · Salle On Air</div>
     <div style="font-family:var(--f-display);font-size:1.5rem;font-weight:700;line-height:1.15"><span class="num">${doneCount}</span> / 20 séances terminées</div></div></div>
     <div class="progressbar" style="margin:.5rem 0"><i style="width:${doneCount / 20 * 100}%"></i></div>
     ${next ? `<button class="btn primary" data-act="open-session" data-id="${next.id}" style="width:100%;margin-top:.3rem">${sessionStatus(next.id) === 'started' ? 'Reprendre' : 'Prochaine séance'} : ${esc(sessLabel(next))}, ${esc(next.title)}</button>` : '<p class="muted">Programme terminé. Prévois une semaine plus légère avant le prochain bloc.</p>'}
@@ -72,7 +72,7 @@ function viewProgramme() {
           <span class="grow"><span class="t">Séance ${i + 1} · ${esc(SESSION_TYPES[s.slot].label)}</span><br><span class="small muted">${esc(s.title)}</span><br><span class="small faint">${st === 'done' ? 'Terminée' : st === 'started' ? 'En cours' : 'À faire'}${L && L.date ? ' · ' + fmtDate(L.date) : ''}</span></span>
           <span class="chev">${IC.chev}</span></button>`; }).join('')}</div>
       <details class="more" style="margin-top:.7rem"><summary>${IC.chev} Objectif du cycle</summary>
-        <p class="muted small">${esc(c.goal)}</p><p class="faint small">Suspension : ${esc(c.hang)}</p></details>
+        <p class="muted small">${esc(c.goal)}</p>${c.hang ? `<p class="faint small">Suspension : ${esc(c.hang)}</p>` : ''}</details>
     </div></div>`;
   return h;
 }
@@ -331,8 +331,11 @@ function renderSheet() {
   } else if (UI.sheet === 'settings') {
     inner = `<h3>Affichage</h3>
       <h4>Thème</h4><div class="seg">${[['system', 'Système'], ['light', 'Clair'], ['dark', 'Sombre']].map(([v, l]) => `<button data-act="set-theme" data-v="${v}" aria-pressed="${S.settings.theme === v}">${l}</button>`).join('')}</div>
+      <h4>Couleur</h4><div class="seg">${ACCENTS.map(([v, l]) => `<button data-act="set-accent" data-v="${v}" aria-pressed="${accentOf() === v}">${l}</button>`).join('')}</div>
       <h4>Taille du texte</h4><div class="seg">${[100, 125, 150].map(v => `<button data-act="set-size" data-v="${v}" aria-pressed="${(S.settings.size || 100) === v}">${v} %</button>`).join('')}</div>
       <h4>Signal sonore du minuteur</h4><div class="seg">${[[true, 'Activé'], [false, 'Coupé']].map(([v, l]) => `<button data-act="set-sound" data-v="${v}" aria-pressed="${(S.settings.sound !== false) === v}">${l}</button>`).join('')}</div>
+      <h4>Programme</h4><div class="seg">${Object.keys(PROGRAMS).filter(k => DATA.base.cars[k]).map(k => `<button data-act="set-prog" data-v="${k}" aria-pressed="${programId() === k}">${PROGRAMS[k].label}</button>`).join('')}</div>
+      <p class="small faint" style="margin:.3rem 0 0">Tes notes de chaque programme restent séparées.</p>
       ${AUTH.user ? `<h4>Compte</h4><div class="row"><span class="grow small">Connecté : <strong>${esc(AUTH.user.login)}</strong>${AUTH.user.role === 'admin' ? ' (administrateur)' : ''}</span><button class="btn small" data-act="logout">Se déconnecter</button></div>` : ''}
       <p class="small faint" style="margin-top:.6rem">Le bip retentit quand le navigateur l’autorise, après un premier geste sur la page. Le téléphone vibre aussi s’il le permet.</p>
       <div class="row" style="margin-top:.8rem"><span class="grow"></span><button class="btn primary" data-act="sheet-close">Fermer</button></div>`;

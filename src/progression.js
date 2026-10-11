@@ -175,6 +175,16 @@ function sparkline(vals) {
   const last = pts[pts.length - 1];
   return `<svg class="spark" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true"><path class="a" d="${d} L${last[0]} ${H} L${pts[0][0]} ${H} Z"/><path class="l" d="${d}"/><circle cx="${last[0]}" cy="${last[1]}" r="3.5"/></svg>`;
 }
+function viewBenchmarks() {
+  if (!BENCHMARKS.length) return '';
+  return `  <h2>Repères</h2><p class="small muted">Section « Suivi » du programme. Les cases se remplissent seules quand le score est noté dans la séance correspondante ; tu peux aussi les saisir ici.</p>
+  <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Repère</th><th>Cycle 1</th><th>Cycle 4</th></tr></thead><tbody>
+  ${BENCHMARKS.map(b => { const v = S.bench[b.id] || {}; const auto = benchAuto(b.id);
+    return `<tr><td>${esc(b.label)}<div class="faint small">${esc(b.unit)}</div></td>
+      <td><input type="text" id="b-${b.id}-c1" data-in="bench" data-b="${b.id}" data-c="c1" value="${esc(v.c1 || '')}" placeholder="${esc(auto.c1 || b.c1hint || '')}" aria-label="${esc(b.label)} cycle 1"></td>
+      <td><input type="text" id="b-${b.id}-c4" data-in="bench" data-b="${b.id}" data-c="c4" value="${esc(v.c4 || '')}" placeholder="${esc(auto.c4 || b.c4hint || '')}" aria-label="${esc(b.label)} cycle 4"></td></tr>`; }).join('')}
+  </tbody></table></div>`;
+}
 function viewProgression() {
   let h = `<h2>Avancement</h2><div class="stack">`;
   CYCLES.forEach(c => {
@@ -184,13 +194,7 @@ function viewProgression() {
       <div class="row" style="margin-top:.5rem">${ss.map(s => `<button class="slot ${sessionStatus(s.id)}" data-act="open-session" data-id="${s.id}" style="border:0;cursor:pointer" aria-label="${esc(sessLabel(s))}">${esc(SESSION_TYPES[s.slot].label)}</button>`).join('')}</div></div>`;
   });
   h += `</div>${viewObjectives()}
-  <h2>Repères</h2><p class="small muted">Section « Suivi » du programme. Les cases se remplissent seules quand le score est noté dans la séance correspondante ; tu peux aussi les saisir ici.</p>
-  <div class="tbl-wrap"><table class="tbl"><thead><tr><th>Repère</th><th>Cycle 1</th><th>Cycle 4</th></tr></thead><tbody>
-  ${BENCHMARKS.map(b => { const v = S.bench[b.id] || {}; const auto = benchAuto(b.id);
-    return `<tr><td>${esc(b.label)}<div class="faint small">${esc(b.unit)}</div></td>
-      <td><input type="text" id="b-${b.id}-c1" data-in="bench" data-b="${b.id}" data-c="c1" value="${esc(v.c1 || '')}" placeholder="${esc(auto.c1 || b.c1hint || '')}" aria-label="${esc(b.label)} cycle 1"></td>
-      <td><input type="text" id="b-${b.id}-c4" data-in="bench" data-b="${b.id}" data-c="c4" value="${esc(v.c4 || '')}" placeholder="${esc(auto.c4 || b.c4hint || '')}" aria-label="${esc(b.label)} cycle 4"></td></tr>`; }).join('')}
-  </tbody></table></div>
+  ${viewBenchmarks()}
   <h2>Charges notées</h2>`;
   const rows = Object.keys(EXERCISES).filter(k => EXERCISES[k].load && ['force', 'gainage', 'tech'].includes(EXERCISES[k].kind)).map(k => ({ k, h: exHistory(k) })).filter(r => r.h.some(x => x.sets.some(s => Number(s.load))));
   if (!rows.length) h += `<div class="card empty">Aucune charge notée pour l’instant. Les charges saisies dans les séances apparaîtront ici, exercice par exercice.</div>`;

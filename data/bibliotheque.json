@@ -2188,6 +2188,55 @@
     "abs"
    ],
    "variant": "Saute ou monte sur une box pour avoir le menton au-dessus de la barre, puis descends en 5 secondes jusqu’aux bras tendus."
+  },
+  "shoulder_mach": {
+   "fr": "Développé épaules machine guidée",
+   "en": "Machine Shoulder Press",
+   "mv": null,
+   "vid": [
+    "shoulder_press_machine"
+   ],
+   "kind": "force",
+   "unit": "reps",
+   "load": true,
+   "p": [
+    "epa"
+   ],
+   "s": [
+    "tri"
+   ]
+  },
+  "shoulder_hs": {
+   "fr": "Développé épaules Hammer iso-latéral",
+   "en": "Iso-Lateral Shoulder Press",
+   "mv": null,
+   "vid": [
+    "iso_shoulder_press"
+   ],
+   "kind": "force",
+   "unit": "reps",
+   "load": true,
+   "p": [
+    "epa"
+   ],
+   "s": [
+    "tri"
+   ]
+  },
+  "abductor": {
+   "fr": "Abducteurs machine",
+   "en": "Hip Abductor",
+   "mv": null,
+   "vid": [
+    "hip_abductor"
+   ],
+   "kind": "force",
+   "unit": "reps",
+   "load": true,
+   "p": [
+    "fess"
+   ],
+   "s": []
   }
  },
  "videos": {
@@ -3044,6 +3093,39 @@
    "provider": "YouTube",
    "url": "https://www.youtube.com/watch?v=iCbVhDNpG-Y",
    "thumbnailUrl": "https://i.ytimg.com/vi/iCbVhDNpG-Y/hqdefault.jpg",
+   "checkedAt": "2026-10-11",
+   "foundVia": "Recherche YouTube (titre et chaîne relevés dans les résultats)"
+  },
+  "shoulder_press_machine": {
+   "videoId": "GcY6TZxfS0k",
+   "title": "How To Use The Shoulder Press Machine",
+   "author": "PureGym",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=GcY6TZxfS0k",
+   "thumbnailUrl": "https://i.ytimg.com/vi/GcY6TZxfS0k/hqdefault.jpg",
+   "checkedAt": "2026-10-11",
+   "foundVia": "Recherche YouTube (titre et chaîne relevés dans les résultats)"
+  },
+  "iso_shoulder_press": {
+   "videoId": "TBZ3m1cd2Vw",
+   "title": "Iso-Lateral Shoulder Press | Hammer Strength",
+   "author": "Life Fitness / Hammer Strength",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=TBZ3m1cd2Vw",
+   "thumbnailUrl": "https://i.ytimg.com/vi/TBZ3m1cd2Vw/hqdefault.jpg",
+   "checkedAt": "2026-10-11",
+   "foundVia": "Recherche YouTube (titre et chaîne relevés dans les résultats)"
+  },
+  "hip_abductor": {
+   "videoId": "G_8LItOiZ0Q",
+   "title": "How To Use The Seated Hip Abductor (Outer Thigh)",
+   "author": "PureGym",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=G_8LItOiZ0Q",
+   "thumbnailUrl": "https://i.ytimg.com/vi/G_8LItOiZ0Q/hqdefault.jpg",
    "checkedAt": "2026-10-11",
    "foundVia": "Recherche YouTube (titre et chaîne relevés dans les résultats)"
   }
@@ -11611,6 +11693,30 @@
    "label": "Leg curl allongé",
    "guidee": "legcurl_l",
    "hammer": "legcurl_hs"
+  },
+  {
+   "id": "legext",
+   "label": "Leg extension",
+   "guidee": "legext",
+   "hammer": "legext_hs"
+  },
+  {
+   "id": "legcurl_s",
+   "label": "Leg curl assis",
+   "guidee": "legcurl_s",
+   "hammer": "legcurl_hs"
+  },
+  {
+   "id": "calf_mach",
+   "label": "Mollets",
+   "guidee": "calf_mach",
+   "hammer": "calf_hs"
+  },
+  {
+   "id": "shoulder",
+   "label": "Développé épaules",
+   "guidee": "shoulder_mach",
+   "hammer": "shoulder_hs"
   }
  ]
 }

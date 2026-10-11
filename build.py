@@ -14,7 +14,12 @@ src = here / 'src'
 def embed(name, var):
     d = json.loads((here / 'data' / name).read_text(encoding='utf-8'))
     return f'const {var} = ' + json.dumps(d, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/') + ';\n'
-js = embed('bibliotheque.json', 'EMBED_BIB') + embed('carnet.json', 'EMBED_CAR') + ''.join(
+def embed_cars():
+    cars = {}
+    for f in sorted((here / 'data').glob('carnet*.json')):
+        d = json.loads(f.read_text(encoding='utf-8')); cars[d.get('id', 'crossfit')] = d
+    return 'const EMBED_CARS = ' + json.dumps(cars, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/') + ';\n'
+js = embed('bibliotheque.json', 'EMBED_BIB') + embed_cars() + ''.join(
     (src / f).read_text(encoding='utf-8') + '\n' for f in ['core.js', 'data.js', 'server.js', 'auth.js', 'views.js', 'progression.js', 'catalog.js', 'main.js'])
 users = json.loads((here / 'auth' / 'utilisateurs.json').read_text(encoding='utf-8'))
 users_js = 'const AUTH_USERS = ' + json.dumps(users, ensure_ascii=False, separators=(',', ':')) + ';\n'

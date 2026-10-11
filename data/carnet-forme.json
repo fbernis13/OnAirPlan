@@ -1,0 +1,2042 @@
+{
+ "fileType": "onair.carnet",
+ "version": 2,
+ "id": "forme",
+ "title": "Programme remise en forme – Salle On Air",
+ "source": "programme-remise-en-forme.md",
+ "updatedAt": "2026-10-11",
+ "cycles": [
+  {
+   "n": 1,
+   "name": "Découverte",
+   "intensity": "RPE 6, 3-4 répétitions en réserve",
+   "scheme": "3 × 15, mouvement lent et contrôlé",
+   "goal": "Apprendre les machines et les bons réglages, trouver les charges de départ. Aucune série difficile."
+  },
+  {
+   "n": 2,
+   "name": "Construction",
+   "intensity": "RPE 7, 2-3 répétitions en réserve",
+   "scheme": "3 × 12",
+   "goal": "Augmenter un peu les charges et le volume, ajouter le travail des bras."
+  },
+  {
+   "n": 3,
+   "name": "Progression",
+   "intensity": "RPE 7-8, 2 répétitions en réserve",
+   "scheme": "4 × 10",
+   "goal": "Charges plus lourdes, plus de séries. Le cardio passe aux intervalles."
+  },
+  {
+   "n": 4,
+   "name": "Consolidation",
+   "intensity": "RPE 8, 1-2 répétitions en réserve",
+   "scheme": "4 × 8-10",
+   "goal": "Consolider les charges du cycle 3 et mesurer les progrès depuis le cycle 1."
+  }
+ ],
+ "sessionTypes": {
+  "R1": {
+   "label": "S1",
+   "name": "Bas du corps + gainage",
+   "type": "force"
+  },
+  "CA": {
+   "label": "Cardio",
+   "name": "Cardio",
+   "type": "cardio"
+  },
+  "R2": {
+   "label": "S2",
+   "name": "Haut du corps",
+   "type": "force"
+  },
+  "CI": {
+   "label": "Circuit",
+   "name": "Circuit machines",
+   "type": "force"
+  },
+  "R3": {
+   "label": "S3",
+   "name": "Corps entier",
+   "type": "force"
+  }
+ },
+ "rules": [
+  "3 à 4 séances par semaine. Ordre type dans un cycle : S1 → Cardio → S2 → Circuit → S3, avec un jour de repos après deux séances d’affilée.",
+  "Chaque machine existe en version guidée ou Hammer (chargée avec des disques) : choisis dans la carte Machines ou exercice par exercice. Ton choix est enregistré.",
+  "Règle la machine avant la première série : siège, dossier, poignées. La vidéo de chaque exercice montre le réglage.",
+  "Garde toujours 1 à 3 répétitions en réserve. Quand toutes les séries passent facilement, augmente la charge d’un cran à la séance suivante.",
+  "Signaux d’arrêt : douleur articulaire, vertige ou essoufflement inhabituel. On arrête l’exercice et on reprend plus léger."
+ ],
+ "benchmarks": [],
+ "objectives": [],
+ "sessions": [
+  {
+   "id": "f1-s1",
+   "cycle": 1,
+   "slot": "R1",
+   "title": "Bas du corps + gainage",
+   "warmup": [
+    {
+     "t": "5 min vélo ou rameur, allure facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Mobilité : rotations d’épaules, balancés de jambes, 10 ponts fessiers, puis une série légère sur la première machine",
+     "x": [
+      "shoulder_band",
+      "leg_swings",
+      "glute_bridge"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "presse",
+       "sets": 3,
+       "reps": "15",
+       "rest": 60,
+       "note": "Pieds largeur des hanches, descends jusqu’à 90° aux genoux"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "legext",
+       "sets": 3,
+       "reps": "15",
+       "rest": 60
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "items": [
+      {
+       "x": "legcurl_s",
+       "sets": 3,
+       "reps": "15",
+       "rest": 60
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "type": "superset",
+     "items": [
+      {
+       "x": "adductor",
+       "sets": 3,
+       "reps": "15",
+       "rest": 0
+      },
+      {
+       "x": "abductor",
+       "sets": 3,
+       "reps": "15",
+       "rest": 60
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "items": [
+      {
+       "x": "calf_mach",
+       "sets": 3,
+       "reps": "15",
+       "rest": 60
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "type": "circuit",
+     "items": [
+      {
+       "x": "plank_fa",
+       "sets": 3,
+       "reps": "30 s",
+       "rest": 0
+      },
+      {
+       "x": "deadbug",
+       "sets": 3,
+       "reps": "10/côté",
+       "rest": 45
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "3 min de marche ou vélo très facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Étirements doux si tu en ressens le besoin (20-30 s)",
+     "x": [
+      "st_quad",
+      "st_ham",
+      "st_pec"
+     ]
+    }
+   ],
+   "goal": "Prendre ses repères sur les jambes avec les machines guidées ou Hammer, et renforcer le gainage."
+  },
+  {
+   "id": "f1-ca",
+   "cycle": 1,
+   "slot": "CA",
+   "title": "Endurance",
+   "warmup": [
+    {
+     "t": "5 min de marche rapide",
+     "x": [
+      "incline_walk"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "bike",
+       "sets": 1,
+       "reps": "20 min",
+       "rest": 0,
+       "note": "Zone 2 : tu peux parler en phrases complètes"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "incline_walk",
+       "sets": 1,
+       "reps": "10 min",
+       "rest": 0,
+       "note": "Pente 6 à 10 %"
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "Marche 3 min",
+     "x": [
+      "incline_walk"
+     ]
+    }
+   ],
+   "goal": "Améliorer le souffle sans s’épuiser."
+  },
+  {
+   "id": "f1-s2",
+   "cycle": 1,
+   "slot": "R2",
+   "title": "Haut du corps",
+   "warmup": [
+    {
+     "t": "5 min vélo ou rameur, allure facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Mobilité : rotations d’épaules, balancés de jambes, 10 ponts fessiers, puis une série légère sur la première machine",
+     "x": [
+      "shoulder_band",
+      "leg_swings",
+      "glute_bridge"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "chest_press",
+       "sets": 3,
+       "reps": "15",
+       "rest": 60,
+       "note": "Poignées à hauteur de poitrine"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "latpull",
+       "sets": 3,
+       "reps": "15",
+       "rest": 60,
+       "note": "Tire vers le haut de la poitrine, buste fixe"
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "items": [
+      {
+       "x": "shoulder_mach",
+       "sets": 3,
+       "reps": "15",
+       "rest": 60
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "items": [
+      {
+       "x": "seated_row",
+       "sets": 3,
+       "reps": "15",
+       "rest": 60,
+       "note": "Serre les omoplates en fin de mouvement"
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "items": [
+      {
+       "x": "side_plank",
+       "sets": 3,
+       "reps": "20 s/côté",
+       "rest": 45
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "3 min de marche ou vélo très facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Étirements doux si tu en ressens le besoin (20-30 s)",
+     "x": [
+      "st_quad",
+      "st_ham",
+      "st_pec"
+     ]
+    }
+   ],
+   "goal": "Prendre ses repères sur la poitrine, le dos et les épaules."
+  },
+  {
+   "id": "f1-ci",
+   "cycle": 1,
+   "slot": "CI",
+   "title": "Circuit machines",
+   "warmup": [
+    {
+     "t": "5 min vélo ou rameur, allure facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Mobilité : rotations d’épaules, balancés de jambes, 10 ponts fessiers, puis une série légère sur la première machine",
+     "x": [
+      "shoulder_band",
+      "leg_swings",
+      "glute_bridge"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "type": "circuit",
+     "title": "2 tours, 1 min de repos entre les tours",
+     "items": [
+      {
+       "x": "presse",
+       "sets": 2,
+       "reps": "12",
+       "rest": 0
+      },
+      {
+       "x": "chest_press",
+       "sets": 2,
+       "reps": "12",
+       "rest": 0
+      },
+      {
+       "x": "legcurl_s",
+       "sets": 2,
+       "reps": "12",
+       "rest": 0
+      },
+      {
+       "x": "latpull",
+       "sets": 2,
+       "reps": "12",
+       "rest": 0
+      },
+      {
+       "x": "back_ext",
+       "sets": 2,
+       "reps": "12",
+       "rest": 0
+      },
+      {
+       "x": "rower",
+       "sets": 2,
+       "reps": "1 min",
+       "rest": 60,
+       "note": "Allure soutenue"
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "3 min de marche ou vélo très facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Étirements doux si tu en ressens le besoin (20-30 s)",
+     "x": [
+      "st_quad",
+      "st_ham",
+      "st_pec"
+     ]
+    }
+   ],
+   "goal": "Enchaîner les machines sans pause pour travailler le corps entier et le cardio en même temps."
+  },
+  {
+   "id": "f1-s3",
+   "cycle": 1,
+   "slot": "R3",
+   "title": "Corps entier",
+   "warmup": [
+    {
+     "t": "5 min vélo ou rameur, allure facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Mobilité : rotations d’épaules, balancés de jambes, 10 ponts fessiers, puis une série légère sur la première machine",
+     "x": [
+      "shoulder_band",
+      "leg_swings",
+      "glute_bridge"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "goblet",
+       "sets": 3,
+       "reps": "15",
+       "rest": 60,
+       "note": "Haltère ou kettlebell contre la poitrine"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "hipthrust",
+       "sets": 3,
+       "reps": "15",
+       "rest": 60,
+       "note": "Au banc, à la machine si la salle en a une"
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "type": "superset",
+     "items": [
+      {
+       "x": "chest_press",
+       "sets": 3,
+       "reps": "15",
+       "rest": 0
+      },
+      {
+       "x": "seated_row",
+       "sets": 3,
+       "reps": "15",
+       "rest": 60
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "items": [
+      {
+       "x": "lat_raise",
+       "sets": 3,
+       "reps": "12-15",
+       "rest": 60
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "items": [
+      {
+       "x": "back_ext",
+       "sets": 3,
+       "reps": "12",
+       "rest": 60
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "type": "circuit",
+     "items": [
+      {
+       "x": "plank_fa",
+       "sets": 3,
+       "reps": "30 s",
+       "rest": 0
+      },
+      {
+       "x": "deadbug",
+       "sets": 3,
+       "reps": "10/côté",
+       "rest": 45
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "3 min de marche ou vélo très facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Étirements doux si tu en ressens le besoin (20-30 s)",
+     "x": [
+      "st_quad",
+      "st_ham",
+      "st_pec"
+     ]
+    }
+   ],
+   "goal": "Travailler tout le corps avec quelques exercices aux haltères, en complément des machines."
+  },
+  {
+   "id": "f2-s1",
+   "cycle": 2,
+   "slot": "R1",
+   "title": "Bas du corps + gainage",
+   "warmup": [
+    {
+     "t": "5 min vélo ou rameur, allure facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Mobilité : rotations d’épaules, balancés de jambes, 10 ponts fessiers, puis une série légère sur la première machine",
+     "x": [
+      "shoulder_band",
+      "leg_swings",
+      "glute_bridge"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "presse",
+       "sets": 3,
+       "reps": "12",
+       "rest": 75,
+       "note": "Pieds largeur des hanches, descends jusqu’à 90° aux genoux"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "legext",
+       "sets": 3,
+       "reps": "12",
+       "rest": 75
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "items": [
+      {
+       "x": "legcurl_s",
+       "sets": 3,
+       "reps": "12",
+       "rest": 75
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "type": "superset",
+     "items": [
+      {
+       "x": "adductor",
+       "sets": 3,
+       "reps": "12",
+       "rest": 0
+      },
+      {
+       "x": "abductor",
+       "sets": 3,
+       "reps": "12",
+       "rest": 75
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "items": [
+      {
+       "x": "calf_mach",
+       "sets": 3,
+       "reps": "15",
+       "rest": 75
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "type": "circuit",
+     "items": [
+      {
+       "x": "plank_fa",
+       "sets": 3,
+       "reps": "40 s",
+       "rest": 0
+      },
+      {
+       "x": "deadbug",
+       "sets": 3,
+       "reps": "10/côté",
+       "rest": 45
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "3 min de marche ou vélo très facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Étirements doux si tu en ressens le besoin (20-30 s)",
+     "x": [
+      "st_quad",
+      "st_ham",
+      "st_pec"
+     ]
+    }
+   ],
+   "goal": "Construire sur les jambes avec les machines guidées ou Hammer, et renforcer le gainage."
+  },
+  {
+   "id": "f2-ca",
+   "cycle": 2,
+   "slot": "CA",
+   "title": "Endurance",
+   "warmup": [
+    {
+     "t": "5 min de marche rapide",
+     "x": [
+      "incline_walk"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "bike",
+       "sets": 1,
+       "reps": "25 min",
+       "rest": 0,
+       "note": "Zone 2 : tu peux parler en phrases complètes"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "incline_walk",
+       "sets": 1,
+       "reps": "10 min",
+       "rest": 0,
+       "note": "Pente 6 à 10 %"
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "Marche 3 min",
+     "x": [
+      "incline_walk"
+     ]
+    }
+   ],
+   "goal": "Améliorer le souffle sans s’épuiser."
+  },
+  {
+   "id": "f2-s2",
+   "cycle": 2,
+   "slot": "R2",
+   "title": "Haut du corps",
+   "warmup": [
+    {
+     "t": "5 min vélo ou rameur, allure facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Mobilité : rotations d’épaules, balancés de jambes, 10 ponts fessiers, puis une série légère sur la première machine",
+     "x": [
+      "shoulder_band",
+      "leg_swings",
+      "glute_bridge"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "chest_press",
+       "sets": 3,
+       "reps": "12",
+       "rest": 75,
+       "note": "Poignées à hauteur de poitrine"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "latpull",
+       "sets": 3,
+       "reps": "12",
+       "rest": 75,
+       "note": "Tire vers le haut de la poitrine, buste fixe"
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "items": [
+      {
+       "x": "shoulder_mach",
+       "sets": 3,
+       "reps": "12",
+       "rest": 75
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "items": [
+      {
+       "x": "seated_row",
+       "sets": 3,
+       "reps": "12",
+       "rest": 75,
+       "note": "Serre les omoplates en fin de mouvement"
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "type": "superset",
+     "items": [
+      {
+       "x": "hammer_curl",
+       "sets": 3,
+       "reps": "12",
+       "rest": 0
+      },
+      {
+       "x": "rope_pd",
+       "sets": 3,
+       "reps": "12",
+       "rest": 75
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "items": [
+      {
+       "x": "side_plank",
+       "sets": 3,
+       "reps": "25 s/côté",
+       "rest": 45
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "3 min de marche ou vélo très facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Étirements doux si tu en ressens le besoin (20-30 s)",
+     "x": [
+      "st_quad",
+      "st_ham",
+      "st_pec"
+     ]
+    }
+   ],
+   "goal": "Construire sur la poitrine, le dos et les épaules, avec biceps et triceps."
+  },
+  {
+   "id": "f2-ci",
+   "cycle": 2,
+   "slot": "CI",
+   "title": "Circuit machines",
+   "warmup": [
+    {
+     "t": "5 min vélo ou rameur, allure facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Mobilité : rotations d’épaules, balancés de jambes, 10 ponts fessiers, puis une série légère sur la première machine",
+     "x": [
+      "shoulder_band",
+      "leg_swings",
+      "glute_bridge"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "type": "circuit",
+     "title": "3 tours, 1 min de repos entre les tours",
+     "items": [
+      {
+       "x": "presse",
+       "sets": 3,
+       "reps": "12",
+       "rest": 0
+      },
+      {
+       "x": "chest_press",
+       "sets": 3,
+       "reps": "12",
+       "rest": 0
+      },
+      {
+       "x": "legcurl_s",
+       "sets": 3,
+       "reps": "12",
+       "rest": 0
+      },
+      {
+       "x": "latpull",
+       "sets": 3,
+       "reps": "12",
+       "rest": 0
+      },
+      {
+       "x": "back_ext",
+       "sets": 3,
+       "reps": "12",
+       "rest": 0
+      },
+      {
+       "x": "rower",
+       "sets": 3,
+       "reps": "1 min",
+       "rest": 60,
+       "note": "Allure soutenue"
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "3 min de marche ou vélo très facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Étirements doux si tu en ressens le besoin (20-30 s)",
+     "x": [
+      "st_quad",
+      "st_ham",
+      "st_pec"
+     ]
+    }
+   ],
+   "goal": "Enchaîner les machines sans pause pour travailler le corps entier et le cardio en même temps."
+  },
+  {
+   "id": "f2-s3",
+   "cycle": 2,
+   "slot": "R3",
+   "title": "Corps entier",
+   "warmup": [
+    {
+     "t": "5 min vélo ou rameur, allure facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Mobilité : rotations d’épaules, balancés de jambes, 10 ponts fessiers, puis une série légère sur la première machine",
+     "x": [
+      "shoulder_band",
+      "leg_swings",
+      "glute_bridge"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "goblet",
+       "sets": 3,
+       "reps": "12",
+       "rest": 75,
+       "note": "Haltère ou kettlebell contre la poitrine"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "hipthrust",
+       "sets": 3,
+       "reps": "12",
+       "rest": 75,
+       "note": "Au banc, à la machine si la salle en a une"
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "type": "superset",
+     "items": [
+      {
+       "x": "chest_press",
+       "sets": 3,
+       "reps": "12",
+       "rest": 0
+      },
+      {
+       "x": "seated_row",
+       "sets": 3,
+       "reps": "12",
+       "rest": 75
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "items": [
+      {
+       "x": "lat_raise",
+       "sets": 3,
+       "reps": "12-15",
+       "rest": 75
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "items": [
+      {
+       "x": "back_ext",
+       "sets": 3,
+       "reps": "12",
+       "rest": 75
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "type": "circuit",
+     "items": [
+      {
+       "x": "plank_fa",
+       "sets": 3,
+       "reps": "40 s",
+       "rest": 0
+      },
+      {
+       "x": "deadbug",
+       "sets": 3,
+       "reps": "10/côté",
+       "rest": 45
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "3 min de marche ou vélo très facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Étirements doux si tu en ressens le besoin (20-30 s)",
+     "x": [
+      "st_quad",
+      "st_ham",
+      "st_pec"
+     ]
+    }
+   ],
+   "goal": "Travailler tout le corps avec quelques exercices aux haltères, en complément des machines."
+  },
+  {
+   "id": "f3-s1",
+   "cycle": 3,
+   "slot": "R1",
+   "title": "Bas du corps + gainage",
+   "warmup": [
+    {
+     "t": "5 min vélo ou rameur, allure facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Mobilité : rotations d’épaules, balancés de jambes, 10 ponts fessiers, puis une série légère sur la première machine",
+     "x": [
+      "shoulder_band",
+      "leg_swings",
+      "glute_bridge"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "presse",
+       "sets": 4,
+       "reps": "10",
+       "rest": 90,
+       "note": "Pieds largeur des hanches, descends jusqu’à 90° aux genoux"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "legext",
+       "sets": 4,
+       "reps": "10",
+       "rest": 90
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "items": [
+      {
+       "x": "legcurl_s",
+       "sets": 4,
+       "reps": "10",
+       "rest": 90
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "type": "superset",
+     "items": [
+      {
+       "x": "adductor",
+       "sets": 4,
+       "reps": "10",
+       "rest": 0
+      },
+      {
+       "x": "abductor",
+       "sets": 4,
+       "reps": "10",
+       "rest": 90
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "items": [
+      {
+       "x": "calf_mach",
+       "sets": 4,
+       "reps": "15",
+       "rest": 90
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "type": "circuit",
+     "items": [
+      {
+       "x": "plank_fa",
+       "sets": 3,
+       "reps": "50 s",
+       "rest": 0
+      },
+      {
+       "x": "deadbug",
+       "sets": 3,
+       "reps": "10/côté",
+       "rest": 45
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "3 min de marche ou vélo très facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Étirements doux si tu en ressens le besoin (20-30 s)",
+     "x": [
+      "st_quad",
+      "st_ham",
+      "st_pec"
+     ]
+    }
+   ],
+   "goal": "Progresser sur les jambes avec les machines guidées ou Hammer, et renforcer le gainage."
+  },
+  {
+   "id": "f3-ca",
+   "cycle": 3,
+   "slot": "CA",
+   "title": "Intervalles + endurance",
+   "warmup": [
+    {
+     "t": "5 min de marche rapide",
+     "x": [
+      "incline_walk"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "rower",
+       "sets": 6,
+       "reps": "1 min",
+       "rest": 60,
+       "note": "1 min soutenu, 1 min facile"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "incline_walk",
+       "sets": 1,
+       "reps": "15 min",
+       "rest": 0,
+       "note": "Pente 8 à 10 %, allure régulière"
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "Marche 3 min",
+     "x": [
+      "incline_walk"
+     ]
+    }
+   ],
+   "goal": "Monter le cardio avec des intervalles courts, puis finir en endurance."
+  },
+  {
+   "id": "f3-s2",
+   "cycle": 3,
+   "slot": "R2",
+   "title": "Haut du corps",
+   "warmup": [
+    {
+     "t": "5 min vélo ou rameur, allure facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Mobilité : rotations d’épaules, balancés de jambes, 10 ponts fessiers, puis une série légère sur la première machine",
+     "x": [
+      "shoulder_band",
+      "leg_swings",
+      "glute_bridge"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "chest_press",
+       "sets": 4,
+       "reps": "10",
+       "rest": 90,
+       "note": "Poignées à hauteur de poitrine"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "latpull",
+       "sets": 4,
+       "reps": "10",
+       "rest": 90,
+       "note": "Tire vers le haut de la poitrine, buste fixe"
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "items": [
+      {
+       "x": "shoulder_mach",
+       "sets": 4,
+       "reps": "10",
+       "rest": 90
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "items": [
+      {
+       "x": "seated_row",
+       "sets": 4,
+       "reps": "10",
+       "rest": 90,
+       "note": "Serre les omoplates en fin de mouvement"
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "type": "superset",
+     "items": [
+      {
+       "x": "hammer_curl",
+       "sets": 4,
+       "reps": "10",
+       "rest": 0
+      },
+      {
+       "x": "rope_pd",
+       "sets": 4,
+       "reps": "10",
+       "rest": 90
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "items": [
+      {
+       "x": "side_plank",
+       "sets": 3,
+       "reps": "30 s/côté",
+       "rest": 45
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "3 min de marche ou vélo très facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Étirements doux si tu en ressens le besoin (20-30 s)",
+     "x": [
+      "st_quad",
+      "st_ham",
+      "st_pec"
+     ]
+    }
+   ],
+   "goal": "Progresser sur la poitrine, le dos et les épaules, avec biceps et triceps."
+  },
+  {
+   "id": "f3-ci",
+   "cycle": 3,
+   "slot": "CI",
+   "title": "Circuit machines",
+   "warmup": [
+    {
+     "t": "5 min vélo ou rameur, allure facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Mobilité : rotations d’épaules, balancés de jambes, 10 ponts fessiers, puis une série légère sur la première machine",
+     "x": [
+      "shoulder_band",
+      "leg_swings",
+      "glute_bridge"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "type": "circuit",
+     "title": "3 tours, 1 min de repos entre les tours",
+     "items": [
+      {
+       "x": "presse",
+       "sets": 3,
+       "reps": "15",
+       "rest": 0
+      },
+      {
+       "x": "chest_press",
+       "sets": 3,
+       "reps": "15",
+       "rest": 0
+      },
+      {
+       "x": "legcurl_s",
+       "sets": 3,
+       "reps": "15",
+       "rest": 0
+      },
+      {
+       "x": "latpull",
+       "sets": 3,
+       "reps": "15",
+       "rest": 0
+      },
+      {
+       "x": "back_ext",
+       "sets": 3,
+       "reps": "15",
+       "rest": 0
+      },
+      {
+       "x": "rower",
+       "sets": 3,
+       "reps": "1 min",
+       "rest": 60,
+       "note": "Allure soutenue"
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "3 min de marche ou vélo très facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Étirements doux si tu en ressens le besoin (20-30 s)",
+     "x": [
+      "st_quad",
+      "st_ham",
+      "st_pec"
+     ]
+    }
+   ],
+   "goal": "Enchaîner les machines sans pause pour travailler le corps entier et le cardio en même temps."
+  },
+  {
+   "id": "f3-s3",
+   "cycle": 3,
+   "slot": "R3",
+   "title": "Corps entier",
+   "warmup": [
+    {
+     "t": "5 min vélo ou rameur, allure facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Mobilité : rotations d’épaules, balancés de jambes, 10 ponts fessiers, puis une série légère sur la première machine",
+     "x": [
+      "shoulder_band",
+      "leg_swings",
+      "glute_bridge"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "goblet",
+       "sets": 4,
+       "reps": "10",
+       "rest": 90,
+       "note": "Haltère ou kettlebell contre la poitrine"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "hipthrust",
+       "sets": 4,
+       "reps": "10",
+       "rest": 90,
+       "note": "Au banc, à la machine si la salle en a une"
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "type": "superset",
+     "items": [
+      {
+       "x": "iso_chest",
+       "sets": 4,
+       "reps": "10",
+       "rest": 0
+      },
+      {
+       "x": "seated_row",
+       "sets": 4,
+       "reps": "10",
+       "rest": 90
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "items": [
+      {
+       "x": "lat_raise",
+       "sets": 4,
+       "reps": "12-15",
+       "rest": 90
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "items": [
+      {
+       "x": "back_ext",
+       "sets": 4,
+       "reps": "12",
+       "rest": 90
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "type": "circuit",
+     "items": [
+      {
+       "x": "plank_fa",
+       "sets": 3,
+       "reps": "50 s",
+       "rest": 0
+      },
+      {
+       "x": "deadbug",
+       "sets": 3,
+       "reps": "10/côté",
+       "rest": 45
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "3 min de marche ou vélo très facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Étirements doux si tu en ressens le besoin (20-30 s)",
+     "x": [
+      "st_quad",
+      "st_ham",
+      "st_pec"
+     ]
+    }
+   ],
+   "goal": "Travailler tout le corps avec quelques exercices aux haltères, en complément des machines."
+  },
+  {
+   "id": "f4-s1",
+   "cycle": 4,
+   "slot": "R1",
+   "title": "Bas du corps + gainage",
+   "warmup": [
+    {
+     "t": "5 min vélo ou rameur, allure facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Mobilité : rotations d’épaules, balancés de jambes, 10 ponts fessiers, puis une série légère sur la première machine",
+     "x": [
+      "shoulder_band",
+      "leg_swings",
+      "glute_bridge"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "presse",
+       "sets": 4,
+       "reps": "8-10",
+       "rest": 90,
+       "note": "Pieds largeur des hanches, descends jusqu’à 90° aux genoux"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "legext",
+       "sets": 4,
+       "reps": "8-10",
+       "rest": 90
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "items": [
+      {
+       "x": "legcurl_s",
+       "sets": 4,
+       "reps": "8-10",
+       "rest": 90
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "type": "superset",
+     "items": [
+      {
+       "x": "adductor",
+       "sets": 4,
+       "reps": "8-10",
+       "rest": 0
+      },
+      {
+       "x": "abductor",
+       "sets": 4,
+       "reps": "8-10",
+       "rest": 90
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "items": [
+      {
+       "x": "calf_mach",
+       "sets": 4,
+       "reps": "15",
+       "rest": 90
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "type": "circuit",
+     "items": [
+      {
+       "x": "plank_fa",
+       "sets": 3,
+       "reps": "60 s",
+       "rest": 0
+      },
+      {
+       "x": "deadbug",
+       "sets": 3,
+       "reps": "10/côté",
+       "rest": 45
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "3 min de marche ou vélo très facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Étirements doux si tu en ressens le besoin (20-30 s)",
+     "x": [
+      "st_quad",
+      "st_ham",
+      "st_pec"
+     ]
+    }
+   ],
+   "goal": "Consolider sur les jambes avec les machines guidées ou Hammer, et renforcer le gainage."
+  },
+  {
+   "id": "f4-ca",
+   "cycle": 4,
+   "slot": "CA",
+   "title": "Intervalles + endurance",
+   "warmup": [
+    {
+     "t": "5 min de marche rapide",
+     "x": [
+      "incline_walk"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "rower",
+       "sets": 8,
+       "reps": "1 min",
+       "rest": 60,
+       "note": "1 min soutenu, 1 min facile"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "incline_walk",
+       "sets": 1,
+       "reps": "15 min",
+       "rest": 0,
+       "note": "Pente 8 à 10 %, allure régulière"
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "Marche 3 min",
+     "x": [
+      "incline_walk"
+     ]
+    }
+   ],
+   "goal": "Monter le cardio avec des intervalles courts, puis finir en endurance."
+  },
+  {
+   "id": "f4-s2",
+   "cycle": 4,
+   "slot": "R2",
+   "title": "Haut du corps",
+   "warmup": [
+    {
+     "t": "5 min vélo ou rameur, allure facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Mobilité : rotations d’épaules, balancés de jambes, 10 ponts fessiers, puis une série légère sur la première machine",
+     "x": [
+      "shoulder_band",
+      "leg_swings",
+      "glute_bridge"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "chest_press",
+       "sets": 4,
+       "reps": "8-10",
+       "rest": 90,
+       "note": "Poignées à hauteur de poitrine"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "latpull",
+       "sets": 4,
+       "reps": "8-10",
+       "rest": 90,
+       "note": "Tire vers le haut de la poitrine, buste fixe"
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "items": [
+      {
+       "x": "shoulder_mach",
+       "sets": 4,
+       "reps": "8-10",
+       "rest": 90
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "items": [
+      {
+       "x": "seated_row",
+       "sets": 4,
+       "reps": "8-10",
+       "rest": 90,
+       "note": "Serre les omoplates en fin de mouvement"
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "type": "superset",
+     "items": [
+      {
+       "x": "hammer_curl",
+       "sets": 4,
+       "reps": "8-10",
+       "rest": 0
+      },
+      {
+       "x": "rope_pd",
+       "sets": 4,
+       "reps": "8-10",
+       "rest": 90
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "items": [
+      {
+       "x": "side_plank",
+       "sets": 3,
+       "reps": "35 s/côté",
+       "rest": 45
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "3 min de marche ou vélo très facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Étirements doux si tu en ressens le besoin (20-30 s)",
+     "x": [
+      "st_quad",
+      "st_ham",
+      "st_pec"
+     ]
+    }
+   ],
+   "goal": "Consolider sur la poitrine, le dos et les épaules, avec biceps et triceps."
+  },
+  {
+   "id": "f4-ci",
+   "cycle": 4,
+   "slot": "CI",
+   "title": "Circuit machines",
+   "warmup": [
+    {
+     "t": "5 min vélo ou rameur, allure facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Mobilité : rotations d’épaules, balancés de jambes, 10 ponts fessiers, puis une série légère sur la première machine",
+     "x": [
+      "shoulder_band",
+      "leg_swings",
+      "glute_bridge"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "type": "circuit",
+     "title": "4 tours, 1 min de repos entre les tours",
+     "items": [
+      {
+       "x": "presse",
+       "sets": 4,
+       "reps": "15",
+       "rest": 0
+      },
+      {
+       "x": "chest_press",
+       "sets": 4,
+       "reps": "15",
+       "rest": 0
+      },
+      {
+       "x": "legcurl_s",
+       "sets": 4,
+       "reps": "15",
+       "rest": 0
+      },
+      {
+       "x": "latpull",
+       "sets": 4,
+       "reps": "15",
+       "rest": 0
+      },
+      {
+       "x": "back_ext",
+       "sets": 4,
+       "reps": "15",
+       "rest": 0
+      },
+      {
+       "x": "rower",
+       "sets": 4,
+       "reps": "1 min",
+       "rest": 60,
+       "note": "Allure soutenue"
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "3 min de marche ou vélo très facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Étirements doux si tu en ressens le besoin (20-30 s)",
+     "x": [
+      "st_quad",
+      "st_ham",
+      "st_pec"
+     ]
+    }
+   ],
+   "goal": "Enchaîner les machines sans pause pour travailler le corps entier et le cardio en même temps."
+  },
+  {
+   "id": "f4-s3",
+   "cycle": 4,
+   "slot": "R3",
+   "title": "Corps entier",
+   "warmup": [
+    {
+     "t": "5 min vélo ou rameur, allure facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Mobilité : rotations d’épaules, balancés de jambes, 10 ponts fessiers, puis une série légère sur la première machine",
+     "x": [
+      "shoulder_band",
+      "leg_swings",
+      "glute_bridge"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "goblet",
+       "sets": 4,
+       "reps": "8-10",
+       "rest": 90,
+       "note": "Haltère ou kettlebell contre la poitrine"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "hipthrust",
+       "sets": 4,
+       "reps": "8-10",
+       "rest": 90,
+       "note": "Au banc, à la machine si la salle en a une"
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "type": "superset",
+     "items": [
+      {
+       "x": "iso_chest",
+       "sets": 4,
+       "reps": "8-10",
+       "rest": 0
+      },
+      {
+       "x": "seated_row",
+       "sets": 4,
+       "reps": "8-10",
+       "rest": 90
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "items": [
+      {
+       "x": "lat_raise",
+       "sets": 4,
+       "reps": "12-15",
+       "rest": 90
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "items": [
+      {
+       "x": "back_ext",
+       "sets": 4,
+       "reps": "12",
+       "rest": 90
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "type": "circuit",
+     "items": [
+      {
+       "x": "plank_fa",
+       "sets": 3,
+       "reps": "60 s",
+       "rest": 0
+      },
+      {
+       "x": "deadbug",
+       "sets": 3,
+       "reps": "10/côté",
+       "rest": 45
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "3 min de marche ou vélo très facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Étirements doux si tu en ressens le besoin (20-30 s)",
+     "x": [
+      "st_quad",
+      "st_ham",
+      "st_pec"
+     ]
+    }
+   ],
+   "goal": "Travailler tout le corps avec quelques exercices aux haltères, en complément des machines."
+  }
+ ]
+}

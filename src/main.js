@@ -24,7 +24,7 @@ function render() {
   const active = document.activeElement; const activeId = active && active.id; const selStart = active && active.selectionStart;
   root.innerHTML = `<header class="topbar">
       ${hasBack() ? `<button class="iconbtn" data-act="back" aria-label="Retour">${IC.back}</button>` : ''}
-      <h1>${esc(currentTitle())}</h1>
+      <h1>${esc(currentTitle())}</h1>${AUTH.user ? `<span class="userpill" title="Compte connecté">${esc(userName())}</span>` : ''}
       <span id="syncdot" class="sync-dot ${UI.sync === 'cloud' ? 'cloud' : UI.sync === 'pending' ? 'pending' : ''}" title="${UI.sync === 'cloud' ? 'Enregistré dans ton compte' : 'Enregistré sur cet appareil'}"></span>
       <button class="iconbtn" data-act="settings" aria-label="Affichage">${IC.gear}</button>
     </header>
@@ -72,6 +72,8 @@ document.addEventListener('click', ev => {
   if (a === 'sheet-close') { stopDictation(); UI.sheet = null; renderSheet(); return; }
   if (a === 'set-theme') { S.settings.theme = el.dataset.v; applySettings(); touchMeta(); renderSheet(); return; }
   if (a === 'set-size') { S.settings.size = Number(el.dataset.v); applySettings(); touchMeta(); renderSheet(); return; }
+  if (a === 'set-accent') { S.settings.accent = el.dataset.v; applySettings(); touchMeta(); renderSheet(); return; }
+  if (a === 'set-prog') { S.settings.programme = el.dataset.v; touchMeta(); UI.session = null; UI.progCycle = null; pickData(); render(); renderSheet(); refreshDataFiles().then(c => { if (c) render(); }); return; }
   if (a === 'set-sound') { S.settings.sound = el.dataset.v === 'true'; touchMeta(); renderSheet(); if (S.settings.sound) beep(1); return; }
   if (a === 'play') { UI.playing = UI.playing === el.dataset.uid ? null : el.dataset.uid; if (EMBED_OK !== true) { const b = el.closest('.vid'); const link = b && b.querySelector('a[href*="youtube.com"]'); if (link) link.click(); return; } render(); return; }
   if (a === 'toggle-warm') { UI.openWarm = UI.openWarm === el.dataset.uid ? null : el.dataset.uid; render(); return; }
@@ -197,8 +199,8 @@ document.addEventListener('visibilitychange', () => { if (document.visibilitySta
 
 /* ── Démarrage */
 function startApp() {
-initData();
 loadLocal();
+initData();
 applySettings();
 (() => { const h = (location.hash || '').slice(1); if (TABS.some(t => t[0] === h)) UI.tab = h; })();
 render();

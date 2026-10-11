@@ -53,7 +53,7 @@ async function initServer() {
     const remoteAt = row.data ? Date.parse(row.data.updated_at) : 0;
     if (row.data && remoteAt > (S.savedAt || 0)) {
       const st = progressionToState(row.data.data);
-      if (st) { st.savedAt = remoteAt; S = st; saveLocal(); applySettings(); }
+      if (st) { st.savedAt = remoteAt; S = st; saveLocal(); applySettings(); pickData(); }
     } else if (S.savedAt) Server.prog = true;
 
     const sn = await c.from('sauvegardes').select('id,created_at,label,data').order('created_at', { ascending: false }).limit(SNAP_MAX);
