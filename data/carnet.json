@@ -40,7 +40,7 @@
  ],
  "sessionTypes": {
   "R1": {
-   "label": "R1",
+   "label": "S1",
    "name": "Jambes dominante genou + gainage",
    "type": "force"
   },
@@ -50,7 +50,7 @@
    "type": "cardio"
   },
   "R2": {
-   "label": "R2",
+   "label": "S2",
    "name": "Haut du corps pousser / tirer",
    "type": "force"
   },
@@ -60,7 +60,7 @@
    "type": "wod"
   },
   "R3": {
-   "label": "R3",
+   "label": "S3",
    "name": "Chaîne postérieure + dos + portés",
    "type": "force"
   }
@@ -70,7 +70,7 @@
   "Si une séance a été trop dure (RPE > 8 au cycle 1-2, ou courbatures plus de 3 jours), garde les mêmes charges à la séance suivante.",
   "Si tout est facile, augmente de 2,5 à 5 kg sur le haut du corps et de 5 à 10 kg sur le bas du corps d’un cycle à l’autre.",
   "En cas de gêne au poignet, prends la version machine, sangles ou appui sur avant-bras de l’exercice et poursuis la séance.",
-  "Ordre type dans un cycle : R1 → Cardio → R2 → WOD → R3, avec au moins un jour de repos après le WOD ou une séance de jambes lourde.",
+  "Ordre type dans un cycle : S1 → Cardio → S2 → WOD → S3, avec au moins un jour de repos après le WOD ou une séance de jambes lourde.",
   "3 à 4 séances par semaine. Si tu enchaînes deux jours, mets le cardio entre deux renforcements.",
   "Poignets : prise neutre aux cycles 1-2, appuis au sol sur poings ou parallettes, gainage sur avant-bras au cycle 1, sangles autorisées, pas de série à l’échec. Le front rack revient au cycle 3.",
   "Step-up plutôt que box jump, et course sur tapis limitée au cycle 1.",
