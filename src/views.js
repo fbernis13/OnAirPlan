@@ -177,7 +177,7 @@ function exoCard(s, bl, it, i) {
   const sets = E ? E.sets : Array.from({ length: Math.max(1, it.sets || 1) }, () => ({}));
   const hist = exHistory(eff).filter(hh => hh.sid !== s.id); const last = hist[hist.length - 1];
   const uid = s.id + ':' + key;
-  const swapOpts = Object.entries(EXERCISES).filter(([k, v]) => v.kind !== 'mob' && v.kind !== 'wod' && k !== it.x);
+  const swapOpts = swapList(it.x);
   return `<div class="exo anchor ${E && E.done ? 'done' : ''} ${E && E.skipped ? 'skipped' : ''}" id="exo-${uid}">
     <div class="exo-title"><div class="grow">
       <div class="exo-name">${esc(eff !== it.x ? d.fr : itemLabel(it))}</div>
@@ -201,13 +201,24 @@ function exoCard(s, bl, it, i) {
         ${d.mv ? `<button class="btn small ghost" data-act="open-move" data-id="${d.mv}" style="justify-self:start">Fiche ${esc(MOVE_BY_ID[d.mv] ? MOVE_BY_ID[d.mv].name : d.en)}</button>` : ''}
         ${commentField('ecomment', s.id, key, E && E.comment, 'Commentaire', `data-bi="${bl.l}" data-i="${i}"`)}
         <label class="fld">Variante appliquée (allègement, remplacement…)
-          <select id="f-swap-${uid}" data-in="swap" data-sid="${s.id}" data-key="${key}" data-bi="${bl.l}" data-i="${i}">
-            <option value="">Exercice prévu : ${esc(itemLabel(it))}</option>
-            ${swapOpts.map(([k, v]) => `<option value="${k}" ${E && E.swap === k ? 'selected' : ''}>${esc(v.fr)}</option>`).join('')}
+          <input type="search" id="f-swapq-${uid}" data-in="swapq" data-target="f-swap-${uid}" data-x="${esc(it.x)}" placeholder="Rechercher un exercice" autocomplete="off" enterkeyhint="search">
+          <select id="f-swap-${uid}" data-in="swap" data-sid="${s.id}" data-key="${key}" data-bi="${bl.l}" data-i="${i}" data-planned="${esc(itemLabel(it))}">
+            ${swapOptions(swapOpts, itemLabel(it), E && E.swap)}
           </select></label>
         <button class="btn small ghost" data-act="skip" data-sid="${s.id}" data-key="${key}" data-bi="${bl.l}" data-i="${i}" style="justify-self:start">${E && E.skipped ? 'Rétablir l’exercice' : 'Exercice non réalisé'}</button>
       </div></details>
   </div>`;
+}
+/* Variantes possibles : tous les exercices de travail, triés par ordre alphabétique */
+function swapList(x) {
+  return Object.entries(EXERCISES).filter(([k, v]) => v.kind !== 'mob' && v.kind !== 'wod' && k !== x)
+    .sort((a, b) => a[1].fr.localeCompare(b[1].fr, 'fr', { sensitivity: 'base' }));
+}
+const fold = t => String(t || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+function swapOptions(list, planned, cur, q) {
+  const f = fold(q); const shown = f ? list.filter(([k, v]) => fold(v.fr + ' ' + v.en).includes(f) || k === cur) : list;
+  return `<option value="">Exercice prévu : ${esc(planned)}</option>` + shown.map(([k, v]) => `<option value="${k}" ${cur === k ? 'selected' : ''}>${esc(v.fr)}</option>`).join('')
+    + (f && !shown.length ? '<option disabled>Aucun exercice trouvé</option>' : '');
 }
 function setRow(sid, key, it, d, st, si) {
   const id = `${sid}-${key}-${si}`; const a = `data-sid="${sid}" data-key="${key}" data-si="${si}" data-bi="${key.replace(/\d+$/, '')}" data-i="${key.match(/\d+$/)[0]}"`;

@@ -162,6 +162,7 @@ document.addEventListener('input', ev => {
   const el = ev.target; const k = el.dataset && el.dataset.in; if (!k) return;
   const sid = el.dataset.sid;
   if (k === 'set') { const r = refOf(el); writeSet(r, el.dataset.f, el.value === '' ? '' : (el.type === 'number' ? Number(el.value) : el.value)); return; }
+  if (k === 'swapq') { const sel = document.getElementById(el.dataset.target); if (sel) sel.innerHTML = swapOptions(swapList(el.dataset.x), sel.dataset.planned, sel.value, el.value); return; }
   if (k === 'sdate') { getLog(sid, true).date = el.value; touchLog(sid); return; }
   if (k === 'srpe') { getLog(sid, true).rpe = el.value; markStarted(sid); touchLog(sid); return; }
   if (k === 'scomment') { getLog(sid, true).comment = el.value; markStarted(sid); touchLog(sid); return; }
