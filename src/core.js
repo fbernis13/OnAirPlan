@@ -2,9 +2,6 @@
 const LS_KEY = 'carnet-onair-v1';
 const PREF_LABELS = { keep: 'Conserver', aside: 'Mettre de côté', practice: 'À travailler', warmup: 'Mise en route', alternative: 'Chercher une alternative' };
 const PREF_ORDER = ['keep', 'aside', 'practice', 'warmup', 'alternative'];
-const MOVES = (CATALOG.movements || []);
-const MOVE_BY_ID = Object.fromEntries(MOVES.map(m => [m.id, m]));
-const SESSION_BY_ID = Object.fromEntries(SESSIONS.map(s => [s.id, s]));
 
 function blankState() {
   return { v: 1, settings: { theme: 'system', size: 100, sound: true }, prefs: {}, bench: {}, logs: {}, metaAt: 0 };
@@ -33,6 +30,7 @@ function markDirty(docId) {
 }
 function docBody(docId) {
   if (docId === 'meta') return { kind: 'meta', settings: S.settings, prefs: S.prefs, bench: S.bench, updatedAt: S.metaAt || Date.now() };
+  if (docId.startsWith('snap-')) { const x = SNAPS.find(z => 'snap-' + z.id === docId); return x ? { kind: 'snap', id: x.id, at: x.at, label: x.label, progression: x.progression, updatedAt: x.at } : null; }
   const id = docId.slice(4); const L = S.logs[id];
   return L ? { kind: 'log', session: id, log: L, updatedAt: L.updatedAt || Date.now() } : null;
 }
@@ -74,10 +72,14 @@ async function initCloud() {
         const id = d.id.slice(4); const local = S.logs[id];
         if (!local || (b.updatedAt || 0) > (local.updatedAt || 0)) S.logs[id] = b.log;
         else if ((local.updatedAt || 0) > (b.updatedAt || 0)) Cloud.dirty.add(d.id);
+      } else if (d.id.startsWith('snap-') && b.progression) {
+        if (!SNAPS.some(x => x.id === b.id)) SNAPS.push({ id: b.id, at: b.at, label: b.label, progression: b.progression });
       }
     });
     if (!remoteIds.has('meta') && (S.metaAt || Object.keys(S.prefs).length || Object.keys(S.bench).length)) Cloud.dirty.add('meta');
     Object.keys(S.logs).forEach(id => { if (!remoteIds.has('log-' + id)) Cloud.dirty.add('log-' + id); });
+    SNAPS.forEach(x => { if (!remoteIds.has('snap-' + x.id)) Cloud.dirty.add('snap-' + x.id); });
+    storeSnaps();
     Cloud.db = db; Cloud.col = col;
     saveLocal(); applySettings(); setSync('cloud'); render();
     if (Cloud.dirty.size) flushCloud();

@@ -132,15 +132,19 @@ document.addEventListener('click', ev => {
   if (a === 'mv-pref') { UI.mvPref = el.dataset.v; render(); return; }
   if (a === 'set-pref') { S.prefs[el.dataset.id] = el.dataset.v; touchMeta(); render(); return; }
   // Sauvegarde
-  if (a === 'export-carnet') { offerFile(`carnet-on-air-${todayISO()}.json`, exportCarnet()); return; }
-  if (a === 'export-cat') { offerFile(`MouvementsCrossFit-${todayISO()}.json`, exportCatalogue()); return; }
+  if (a === 'logout') { logout(); return; }
+  if (a === 'export-doc') { exportDoc(el.dataset.v); return; }
   if (a === 'copy-export') { const ta = document.getElementById('f-exporttext'); const t = ta ? ta.value : ''; const fallback = () => { if (ta) { ta.focus(); ta.select(); } showToast('Texte sélectionné : copie-le'); };
     try { navigator.clipboard.writeText(t).then(() => showToast('Copié'), fallback); } catch (e) { fallback(); } return; }
   if (a === 'close-export') { UI.exportText = null; render(); return; }
   if (a === 'import-text') { const t = (document.getElementById('f-importtext') || {}).value || ''; if (t.trim()) importData(t); return; }
-  if (a === 'import-confirm') { const d = UI.pendingImport; if (d) { S = Object.assign(blankState(), d); S.metaAt = Date.now(); Object.values(S.logs).forEach(L => L.updatedAt = Date.now()); markDirty('meta'); Object.keys(S.logs).forEach(id => markDirty('log-' + id)); applySettings(); } UI.pendingImport = null; UI.sheet = null; renderSheet(); render(); showToast('Carnet importé'); return; }
-  if (a === 'reset-ask') { UI.sheet = 'reset'; renderSheet(); return; }
-  if (a === 'reset-confirm') { const ids = Object.keys(S.logs); S = blankState(); S.metaAt = Date.now(); markDirty('meta'); ids.forEach(id => markDirty('log-' + id)); applySettings(); UI.sheet = null; renderSheet(); render(); showToast('Carnet effacé'); return; }
+  if (a === 'import-confirm') { confirmImport(); UI.pendingImport = null; UI.sheet = null; renderSheet(); render(); return; }
+  if (a === 'snap-make') { makeSnapshot('Sauvegarde manuelle'); render(); showToast('Sauvegarde faite'); return; }
+  if (a === 'snap-del') { deleteSnapshot(el.dataset.v); render(); return; }
+  if (a === 'snap-restore-ask') { UI.pendingSnap = el.dataset.v; UI.sheet = 'confirm:snap'; renderSheet(); return; }
+  if (a === 'snap-restore') { const ok = restoreSnapshot(UI.pendingSnap); UI.pendingSnap = null; UI.sheet = null; renderSheet(); render(); showToast(ok ? 'Sauvegarde restaurée' : 'Sauvegarde introuvable'); return; }
+  if (a === 'reset-ask') { UI.resetWhat = el.dataset.v || 'all'; UI.sheet = 'reset'; renderSheet(); return; }
+  if (a === 'reset-confirm') { resetData(UI.resetWhat || 'all'); UI.sheet = null; renderSheet(); render(); showToast('Remise à zéro faite. Une sauvegarde permet de revenir en arrière.'); return; }
 });
 document.addEventListener('keydown', ev => {
   if ((ev.key === 'Enter' || ev.key === ' ') && ev.target.matches('g[data-act]')) { ev.preventDefault(); ev.target.dispatchEvent(new MouseEvent('click', { bubbles: true })); }
@@ -186,8 +190,13 @@ let railRaf = 0; window.addEventListener('scroll', () => { if (railRaf) return; 
 document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') updateWakeLock(); });
 
 /* ── Démarrage */
+function startApp() {
+initData();
 loadLocal();
 applySettings();
 (() => { const h = (location.hash || '').slice(1); if (TABS.some(t => t[0] === h)) UI.tab = h; })();
 render();
 initCloud();
+refreshDataFiles().then(changed => { if (changed) render(); });
+}
+authGate();

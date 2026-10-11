@@ -283,3 +283,10 @@ ul.clean li { margin: .2rem 0; }
 .goal { background: var(--surface); border: 1px solid var(--accent-line); border-left: 4px solid var(--accent); border-radius: var(--radius); padding: .65rem .8rem; margin-top: .5rem; }
 .goal p { margin: .2rem 0 0; }
 .goal-l { font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--accent); }
+.row.wrap { flex-wrap: wrap; }
+.sync-line { margin-top: .7rem; }
+.snaps { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
+.snaps li { display: flex; align-items: center; gap: .5rem; padding: .55rem 0; border-top: 1px solid var(--line); }
+.snaps li .grow { min-width: 0; }
+.login { min-height: 100dvh; display: grid; place-items: center; padding: 1rem; }
+.login form { width: min(100%, 22rem); }

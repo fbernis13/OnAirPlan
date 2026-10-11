@@ -1,0 +1,2375 @@
+{
+ "fileType": "onair.carnet",
+ "version": 2,
+ "title": "Programme de reprise – Salle On Air",
+ "source": "programme-reprise-on-air.md",
+ "updatedAt": "2026-10-11",
+ "cycles": [
+  {
+   "n": 1,
+   "name": "Reprise",
+   "intensity": "RPE 6, 3-4 RIR",
+   "scheme": "3 × 12-15, tempo contrôlé",
+   "goal": "Réhabituer tendons et articulations, retrouver les gestes, noter les charges de départ. Aucune série à l’échec.",
+   "hang": "Dead hang 3 × 10-15 s, prise large et relâchée · Ring row pieds loin, tirage poitrine machine"
+  },
+  {
+   "n": 2,
+   "name": "Construction",
+   "intensity": "RPE 7, 2-3 RIR",
+   "scheme": "4 × 10-12",
+   "goal": "Retour progressif de la barre, plus de volume, introduction de mouvements CrossFit simples.",
+   "hang": "Dead hang 3 × 20-30 s · Ring row plus horizontal, tractions avec élastique"
+  },
+  {
+   "n": 3,
+   "name": "Développement",
+   "intensity": "RPE 7-8, 2 RIR",
+   "scheme": "4-5 × 6-8",
+   "goal": "Monter en charge sur les mouvements de base, réintroduire la gymnastique stricte et un peu d’haltérophilie légère si les poignets le permettent.",
+   "hang": "Dead hang 3 × 30-40 s, puis active hang · Tractions strictes (élastique léger si besoin)"
+  },
+  {
+   "n": 4,
+   "name": "Consolidation",
+   "intensity": "RPE 8, 1-2 RIR",
+   "scheme": "5 × 5 + travail de volume",
+   "goal": "Retrouver des séances CrossFit complètes, consolider les charges et mesurer les progrès (retests).",
+   "hang": "Dead hang 2 × 45 s + scapular pull-ups · Tractions strictes, kipping léger si tout va bien"
+  }
+ ],
+ "sessionTypes": {
+  "R1": {
+   "label": "R1",
+   "name": "Jambes dominante genou + gainage",
+   "type": "force"
+  },
+  "CA": {
+   "label": "Cardio",
+   "name": "Cardio",
+   "type": "cardio"
+  },
+  "R2": {
+   "label": "R2",
+   "name": "Haut du corps pousser / tirer",
+   "type": "force"
+  },
+  "WOD": {
+   "label": "WOD",
+   "name": "WOD",
+   "type": "wod"
+  },
+  "R3": {
+   "label": "R3",
+   "name": "Chaîne postérieure + dos + portés",
+   "type": "force"
+  }
+ },
+ "rules": [
+  "Signaux d’arrêt : fourmillements, engourdissement des doigts, douleur sur la cicatrice ou dans la paume. On arrête l’exercice et on passe à une variante sans prise (machine, sangles, avant-bras). Si ça persiste, on en parle au chirurgien ou au kiné.",
+  "Si une séance a été trop dure (RPE > 8 au cycle 1-2, ou courbatures plus de 3 jours), garde les mêmes charges à la séance suivante.",
+  "Si tout est facile, augmente de 2,5 à 5 kg sur le haut du corps et de 5 à 10 kg sur le bas du corps d’un cycle à l’autre.",
+  "En cas de gêne au poignet, prends la version machine, sangles ou appui sur avant-bras de l’exercice et poursuis la séance.",
+  "Ordre type dans un cycle : R1 → Cardio → R2 → WOD → R3, avec au moins un jour de repos après le WOD ou une séance de jambes lourde."
+ ],
+ "benchmarks": [
+  {
+   "id": "amrap12",
+   "label": "AMRAP 12 (WOD C1 / retest C4)",
+   "unit": "tours + reps"
+  },
+  {
+   "id": "hang",
+   "label": "Dead hang max",
+   "unit": "s"
+  },
+  {
+   "id": "pullups",
+   "label": "Tractions strictes max",
+   "unit": "reps"
+  },
+  {
+   "id": "squat5rm",
+   "label": "Back squat",
+   "c1hint": "3 × 15 presse",
+   "c4hint": "5RM",
+   "unit": "kg"
+  },
+  {
+   "id": "deadlift",
+   "label": "Soulevé de terre",
+   "c1hint": "3 × 12 RDL haltères",
+   "c4hint": "3-5RM",
+   "unit": "kg"
+  },
+  {
+   "id": "row2k",
+   "label": "Rameur 2 000 m",
+   "unit": "mm:ss"
+  }
+ ],
+ "sessions": [
+  {
+   "id": "c1-r1",
+   "cycle": 1,
+   "slot": "R1",
+   "title": "Jambes dominante genou + gainage",
+   "warmup": [
+    {
+     "t": "5 min vélo, allure facile puis modérée",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "10 squats à l’air lents, 10 fentes arrière alternées, 10 ponts fessiers, rotations de chevilles, 1 série légère de presse",
+     "x": [
+      "air_squat",
+      "reverse_lunge",
+      "glute_bridge",
+      "ankle_mob"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "presse",
+       "sets": 3,
+       "reps": "15",
+       "rest": 90,
+       "note": "Machine guidée ou Hammer · tempo 3 s à la descente"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "goblet",
+       "sets": 3,
+       "reps": "12",
+       "rest": 90,
+       "note": "Kettlebell tenue par les cornes, poignets neutres"
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "items": [
+      {
+       "x": "stepup",
+       "sets": 3,
+       "reps": "10/jambe",
+       "rest": 60,
+       "note": "Box ~50 cm, sans charge puis haltères légers"
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "type": "superset",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "legext",
+       "sets": 3,
+       "reps": "15",
+       "rest": 0
+      },
+      {
+       "x": "legcurl_l",
+       "sets": 3,
+       "reps": "15",
+       "rest": 60
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "items": [
+      {
+       "x": "calf_mach",
+       "sets": 3,
+       "reps": "15-20",
+       "rest": 60
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "type": "circuit",
+     "title": "Gainage",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "plank_fa",
+       "sets": 3,
+       "reps": "30 s",
+       "rest": 0
+      },
+      {
+       "x": "deadbug",
+       "sets": 3,
+       "reps": "10/côté",
+       "rest": 0
+      },
+      {
+       "x": "side_plank",
+       "sets": 3,
+       "reps": "20 s/côté",
+       "rest": 45
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "Vélo très facile 2 min",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Étirements quadriceps, fessiers, mollets, psoas",
+     "x": [
+      "st_quad",
+      "st_glute",
+      "st_calf",
+      "st_hipflex"
+     ]
+    }
+   ],
+   "goal": "Réhabituer genoux et hanches au travail de jambes sur machines et charges légères, et relancer le gainage. Note tes charges de départ : elles servent de repère pour la suite. Aucune série à l’échec (3-4 répétitions en réserve)."
+  },
+  {
+   "id": "c1-ca",
+   "cycle": 1,
+   "slot": "CA",
+   "title": "Endurance fondamentale (zone 2)",
+   "intro": "Allure où tu peux parler en phrases complètes (environ 65-75 % de la FC max).",
+   "warmup": [
+    {
+     "t": "5 min tapis en marche rapide",
+     "x": [
+      "incline_walk"
+     ]
+    },
+    {
+     "t": "5 min mobilité hanches et chevilles : balancés de jambes, fentes dynamiques, ouverture de hanche",
+     "x": [
+      "leg_swings",
+      "hip_opener",
+      "ankle_mob"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "incline_walk",
+       "sets": 1,
+       "reps": "20 min",
+       "rest": 0,
+       "note": "Pente 8 à 12 %, comme en rando"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "bike",
+       "sets": 1,
+       "reps": "15 min",
+       "rest": 0
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "items": [
+      {
+       "x": "rower",
+       "sets": 1,
+       "reps": "15 min",
+       "rest": 0,
+       "note": "Cadence 20-22 coups/min, technique propre"
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "items": [
+      {
+       "x": "stairs",
+       "sets": 1,
+       "reps": "5 min",
+       "rest": 0,
+       "note": "Allure régulière"
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "Marche 2 min",
+     "x": []
+    },
+    {
+     "t": "Étirements mollets, ischios, fléchisseurs de hanche",
+     "x": [
+      "st_calf",
+      "st_ham",
+      "st_hipflex"
+     ]
+    }
+   ],
+   "goal": "Construire la base d’endurance en zone 2, en parlant en phrases complètes. La marche inclinée et l’escalier remplacent la course pour ménager les genoux au cycle 1."
+  },
+  {
+   "id": "c1-r2",
+   "cycle": 1,
+   "slot": "R2",
+   "title": "Haut du corps pousser / tirer",
+   "warmup": [
+    {
+     "t": "5 min rameur ou SkiErg facile",
+     "x": [
+      "rower",
+      "skierg"
+     ]
+    },
+    {
+     "t": "Routine poignets, rotations d’épaules avec élastique, dislocations au bâton, 10 band pull-aparts, dead hang 3 × 10-15 s",
+     "x": [
+      "wrist_routine",
+      "shoulder_band",
+      "band_pull",
+      "dead_hang"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "iso_chest",
+       "sets": 3,
+       "reps": "12",
+       "rest": 90,
+       "note": "Poignées neutres si possible"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "latpull",
+       "sets": 3,
+       "reps": "12",
+       "rest": 90
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "type": "superset",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "db_seat_press",
+       "sets": 3,
+       "reps": "12",
+       "rest": 0
+      },
+      {
+       "x": "seated_row",
+       "sets": 3,
+       "reps": "12",
+       "rest": 75
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "items": [
+      {
+       "x": "ringrow",
+       "sets": 3,
+       "reps": "10",
+       "rest": 60,
+       "note": "Corps incliné, pieds loin"
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "type": "superset",
+     "title": "Bras",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "hammer_curl",
+       "sets": 3,
+       "reps": "12",
+       "rest": 0
+      },
+      {
+       "x": "rope_pd",
+       "sets": 3,
+       "reps": "15",
+       "rest": 60
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "items": [
+      {
+       "x": "face_pull",
+       "sets": 3,
+       "reps": "15",
+       "rest": 60
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "Marche",
+     "x": []
+    },
+    {
+     "t": "Étirements pectoraux contre le mur, dorsaux, triceps, avant-bras (doucement, sans forcer sur la cicatrice)",
+     "x": [
+      "st_pec",
+      "st_lat",
+      "st_tri",
+      "st_forearm"
+     ]
+    }
+   ],
+   "goal": "Reprendre pousser et tirer avec des prises neutres (machines Hammer, haltères) pour protéger le poignet opéré, et recommencer la suspension à la barre en volume court."
+  },
+  {
+   "id": "c1-wod",
+   "cycle": 1,
+   "slot": "WOD",
+   "title": "Remise en route métabolique",
+   "warmup": [
+    {
+     "t": "5 min : 1 min rameur, 1 min vélo, 1 min SkiErg, 2 min mixte allure croissante",
+     "x": [
+      "rower",
+      "bike",
+      "skierg"
+     ]
+    },
+    {
+     "t": "Routine poignets, 2 tours de 5 deadlifts kettlebell légers + 5 goblet squats + 5 step-ups",
+     "x": [
+      "wrist_routine",
+      "kb_dl",
+      "goblet",
+      "stepup"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "type": "wod",
+     "title": "EMOM 30 min",
+     "desc": "Une station par minute, 6 tours. Effort modéré, environ 40 s de travail max.",
+     "items": [
+      {
+       "x": "rower_wod",
+       "sets": 0,
+       "reps": "10-12 cal",
+       "rest": 0
+      },
+      {
+       "x": "kb_dl",
+       "sets": 0,
+       "reps": "12 · 24 kg",
+       "rest": 0
+      },
+      {
+       "x": "goblet_wod",
+       "sets": 0,
+       "reps": "10",
+       "rest": 0
+      },
+      {
+       "x": "stepup_wod",
+       "sets": 0,
+       "reps": "12 alternés",
+       "rest": 0
+      },
+      {
+       "x": "assault_wod",
+       "sets": 0,
+       "reps": "10-12 cal",
+       "rest": 0
+      },
+      {
+       "x": "plank_wod",
+       "sets": 0,
+       "reps": "30 s",
+       "rest": 0
+      }
+     ]
+    },
+    {
+     "l": "",
+     "type": "rest",
+     "title": "Repos 5 min"
+    },
+    {
+     "l": "B",
+     "type": "wod",
+     "title": "AMRAP 12 min",
+     "benchmark": "amrap12",
+     "desc": "Ce sera le retest du cycle 4 : note ton score.",
+     "items": [
+      {
+       "x": "wallball",
+       "sets": 0,
+       "reps": "10 · balle 6-9 kg, cible basse si besoin",
+       "rest": 0
+      },
+      {
+       "x": "kb_swing_wod",
+       "sets": 0,
+       "reps": "10 · 16-20 kg",
+       "rest": 0
+      },
+      {
+       "x": "skierg_wod",
+       "sets": 0,
+       "reps": "10 cal",
+       "rest": 0
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "Marche, étirements globaux, respiration",
+     "x": []
+    }
+   ],
+   "goal": "Retrouver l’enchaînement d’un WOD à effort modéré. L’AMRAP 12 sert de référence : note ton score, il sera retesté au cycle 4."
+  },
+  {
+   "id": "c1-r3",
+   "cycle": 1,
+   "slot": "R3",
+   "title": "Chaîne postérieure + dos + portés",
+   "warmup": [
+    {
+     "t": "5 min SkiErg ou rameur",
+     "x": [
+      "skierg",
+      "rower"
+     ]
+    },
+    {
+     "t": "Routine poignets, good mornings au bâton, cat-cow, ponts fessiers, hip hinge au mur, 1 série légère de soulevé de terre roumain",
+     "x": [
+      "wrist_routine",
+      "gm_stick",
+      "cat_cow",
+      "glute_bridge",
+      "hip_hinge"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "db_rdl",
+       "sets": 3,
+       "reps": "12",
+       "rest": 90,
+       "note": "Sangles possibles"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "hipthrust",
+       "sets": 3,
+       "reps": "12",
+       "rest": 90,
+       "note": "Barre ou machine"
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "items": [
+      {
+       "x": "db_row",
+       "sets": 3,
+       "reps": "12/bras",
+       "rest": 60
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "type": "superset",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "legcurl_s",
+       "sets": 3,
+       "reps": "12",
+       "rest": 0
+      },
+      {
+       "x": "back_ext",
+       "sets": 3,
+       "reps": "12",
+       "rest": 60
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "items": [
+      {
+       "x": "shrug",
+       "sets": 3,
+       "reps": "15",
+       "rest": 60
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "items": [
+      {
+       "x": "farmer",
+       "sets": 4,
+       "reps": "20 m",
+       "rest": 60,
+       "note": "Haltères ou kettlebells légers, uniquement si la prise est confortable, sinon poids réduit"
+      }
+     ]
+    },
+    {
+     "l": "G",
+     "items": [
+      {
+       "x": "bird_dog",
+       "sets": 3,
+       "reps": "8/côté",
+       "rest": 30,
+       "note": "Mains sur poings"
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "Marche",
+     "x": []
+    },
+    {
+     "t": "Étirements ischios, fessiers, dos (posture de l’enfant), avant-bras",
+     "x": [
+      "st_ham",
+      "st_glute",
+      "child_pose",
+      "st_forearm"
+     ]
+    }
+   ],
+   "goal": "Réactiver la chaîne postérieure (ischios, fessiers, lombaires) et le dos, et tester la prise sur les portés. Sangles autorisées, charges légères."
+  },
+  {
+   "id": "c2-r1",
+   "cycle": 2,
+   "slot": "R1",
+   "title": "Jambes dominante genou + gainage",
+   "warmup": [
+    {
+     "t": "5 min assault bike facile",
+     "x": [
+      "assault"
+     ]
+    },
+    {
+     "t": "Squats à l’air, fentes marchées, mobilité chevilles au mur, 2 séries d’approche de back squat barre vide",
+     "x": [
+      "air_squat",
+      "walk_lunge",
+      "ankle_mob"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "backsquat",
+       "sets": 4,
+       "reps": "10",
+       "rest": 120,
+       "note": "Barre haute, prise large pour soulager les poignets · RPE 7"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "db_wlunge",
+       "sets": 3,
+       "reps": "10/jambe",
+       "rest": 90
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "items": [
+      {
+       "x": "hack",
+       "sets": 3,
+       "reps": "12",
+       "rest": 90
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "type": "superset",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "legext",
+       "sets": 3,
+       "reps": "12",
+       "rest": 0
+      },
+      {
+       "x": "adductor",
+       "sets": 3,
+       "reps": "15",
+       "rest": 60
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "items": [
+      {
+       "x": "calf_stand",
+       "sets": 4,
+       "reps": "12",
+       "rest": 60
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "type": "circuit",
+     "title": "Gainage",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "plank_fist",
+       "sets": 3,
+       "reps": "40 s",
+       "rest": 0
+      },
+      {
+       "x": "hollow",
+       "sets": 3,
+       "reps": "20 s",
+       "rest": 0,
+       "note": "Genoux pliés si besoin"
+      },
+      {
+       "x": "pallof",
+       "sets": 3,
+       "reps": "10/côté",
+       "rest": 45
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "Vélo très facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Étirements quadriceps, adducteurs, fessiers",
+     "x": [
+      "st_quad",
+      "st_add",
+      "st_glute"
+     ]
+    }
+   ],
+   "goal": "Retour de la barre avec le back squat (prise large pour les poignets) et plus de volume sur les jambes. RPE 7, 2-3 répétitions en réserve."
+  },
+  {
+   "id": "c2-ca",
+   "cycle": 2,
+   "slot": "CA",
+   "title": "Zone 2 + fartlek",
+   "warmup": [
+    {
+     "t": "5 min rameur facile",
+     "x": [
+      "rower"
+     ]
+    },
+    {
+     "t": "Mobilité hanches, thoraciques et chevilles",
+     "x": [
+      "hip_opener",
+      "cat_cow",
+      "ankle_mob"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "rower",
+       "sets": 1,
+       "reps": "15 min",
+       "rest": 0,
+       "note": "Zone 2"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "bike",
+       "sets": 1,
+       "reps": "20 min",
+       "rest": 0,
+       "note": "4 × (3 min allure soutenue + 2 min facile)"
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "items": [
+      {
+       "x": "incline_walk",
+       "sets": 1,
+       "reps": "15 min",
+       "rest": 0,
+       "note": "Marche inclinée 10 %, ou alternance 1 min petite course / 2 min marche si les genoux sont d’accord"
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "items": [
+      {
+       "x": "stairs",
+       "sets": 1,
+       "reps": "5 min",
+       "rest": 0
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "Marche",
+     "x": []
+    },
+    {
+     "t": "Étirements mollets, ischios, psoas",
+     "x": [
+      "st_calf",
+      "st_ham",
+      "st_hipflex"
+     ]
+    }
+   ],
+   "goal": "Garder la base en zone 2 et introduire des changements d’allure (fartlek) sur le vélo."
+  },
+  {
+   "id": "c2-r2",
+   "cycle": 2,
+   "slot": "R2",
+   "title": "Haut du corps pousser / tirer",
+   "warmup": [
+    {
+     "t": "5 min SkiErg",
+     "x": [
+      "skierg"
+     ]
+    },
+    {
+     "t": "Routine poignets, band pull-aparts, dead hang 3 × 20-30 s, pompes inclinées sur la barre au rack (poignets peu fléchis)",
+     "x": [
+      "wrist_routine",
+      "band_pull",
+      "dead_hang",
+      "incline_pushup"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "bench",
+       "sets": 4,
+       "reps": "10",
+       "rest": 120,
+       "note": "Ou haltères si le poignet tire · RPE 7"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "banded_pu",
+       "sets": 4,
+       "reps": "6-8",
+       "rest": 90
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "type": "superset",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "db_stand_press",
+       "sets": 3,
+       "reps": "10",
+       "rest": 0
+      },
+      {
+       "x": "bor",
+       "sets": 3,
+       "reps": "10",
+       "rest": 75,
+       "label": "Rowing barre penché, prise supination",
+       "variant": "Prise en supination ; la vidéo peut montrer une autre prise."
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "items": [
+      {
+       "x": "pushup_par",
+       "sets": 3,
+       "reps": "max propre",
+       "rest": 60,
+       "note": "Garder 2 répétitions en réserve"
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "type": "superset",
+     "title": "Bras",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "ez_curl",
+       "sets": 3,
+       "reps": "12",
+       "rest": 0
+      },
+      {
+       "x": "dip_assist",
+       "sets": 3,
+       "reps": "10",
+       "rest": 60
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "items": [
+      {
+       "x": "lat_raise",
+       "sets": 3,
+       "reps": "15",
+       "rest": 60
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "Étirements pectoraux, épaules, dorsaux, avant-bras",
+     "x": [
+      "st_pec",
+      "st_lat",
+      "st_forearm"
+     ]
+    }
+   ],
+   "goal": "Retour du développé couché à la barre et des tractions avec élastique. Les pompes se font sur parallettes ou haltères pour garder le poignet neutre."
+  },
+  {
+   "id": "c2-wod",
+   "cycle": 2,
+   "slot": "WOD",
+   "title": "Couplets et triplets",
+   "warmup": [
+    {
+     "t": "3 min rameur, 2 min corde à sauter (single unders) en douceur",
+     "x": [
+      "rower",
+      "single_under"
+     ]
+    },
+    {
+     "t": "Routine poignets, 2 tours à vide des mouvements du WOD",
+     "x": [
+      "wrist_routine"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "type": "wod",
+     "title": "For time, 5 tours (cap 20 min)",
+     "items": [
+      {
+       "x": "assault_wod",
+       "sets": 0,
+       "reps": "15 cal",
+       "rest": 0
+      },
+      {
+       "x": "kb_swing_am",
+       "sets": 0,
+       "reps": "12 · 16-20 kg",
+       "rest": 0
+      },
+      {
+       "x": "ringrow_wod",
+       "sets": 0,
+       "reps": "9",
+       "rest": 0
+      },
+      {
+       "x": "devil",
+       "sets": 0,
+       "reps": "6 · haltères 10-12,5 kg",
+       "rest": 0
+      }
+     ]
+    },
+    {
+     "l": "",
+     "type": "rest",
+     "title": "Repos 5 min"
+    },
+    {
+     "l": "B",
+     "type": "wod",
+     "title": "AMRAP 15 min",
+     "items": [
+      {
+       "x": "rower_wod",
+       "sets": 0,
+       "reps": "200 m",
+       "rest": 0
+      },
+      {
+       "x": "db_thruster",
+       "sets": 0,
+       "reps": "10 · 2 × 12,5 kg",
+       "rest": 0
+      },
+      {
+       "x": "box_stepover",
+       "sets": 0,
+       "reps": "10",
+       "rest": 0
+      },
+      {
+       "x": "single_under",
+       "sets": 0,
+       "reps": "50 (ou 25 double unders)",
+       "rest": 0
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "Marche, étirements globaux, respiration lente",
+     "x": []
+    }
+   ],
+   "goal": "Réintroduire des mouvements CrossFit simples en couplets et triplets (swings, devil press, thrusters haltères, corde à sauter)."
+  },
+  {
+   "id": "c2-r3",
+   "cycle": 2,
+   "slot": "R3",
+   "title": "Chaîne postérieure + dos + portés",
+   "warmup": [
+    {
+     "t": "5 min rameur",
+     "x": [
+      "rower"
+     ]
+    },
+    {
+     "t": "Mobilité hanches, hip hinge, ponts fessiers, 2 séries d’approche de soulevé de terre",
+     "x": [
+      "hip_opener",
+      "hip_hinge",
+      "glute_bridge"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "deadlift",
+       "sets": 4,
+       "reps": "8",
+       "rest": 120,
+       "note": "RPE 7 · sangles sur la dernière série si la prise lâche"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "hipthrust",
+       "sets": 3,
+       "reps": "12",
+       "rest": 90,
+       "label": "Hip thrust barre"
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "items": [
+      {
+       "x": "iso_row",
+       "sets": 3,
+       "reps": "12",
+       "rest": 75
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "type": "superset",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "good_morning",
+       "sets": 3,
+       "reps": "10",
+       "rest": 0
+      },
+      {
+       "x": "legcurl_l",
+       "sets": 3,
+       "reps": "12",
+       "rest": 60
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "items": [
+      {
+       "x": "kb_swing_ru",
+       "sets": 3,
+       "reps": "15",
+       "rest": 60
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "items": [
+      {
+       "x": "farmer",
+       "sets": 4,
+       "reps": "30 m",
+       "rest": 60,
+       "note": "Charge modérée"
+      }
+     ]
+    },
+    {
+     "l": "G",
+     "items": [
+      {
+       "x": "back_ext",
+       "sets": 3,
+       "reps": "15",
+       "rest": 45,
+       "label": "Back extension au banc 45°"
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "Étirements ischios, fessiers, lombaires, avant-bras",
+     "x": [
+      "st_ham",
+      "st_glute",
+      "child_pose",
+      "st_forearm"
+     ]
+    }
+   ],
+   "goal": "Retour du soulevé de terre à la barre (RPE 7) et plus de travail de portés pour reconstruire la prise."
+  },
+  {
+   "id": "c3-r1",
+   "cycle": 3,
+   "slot": "R1",
+   "title": "Jambes dominante genou + gainage",
+   "warmup": [
+    {
+     "t": "5 min assault bike",
+     "x": [
+      "assault"
+     ]
+    },
+    {
+     "t": "Mobilité chevilles, hanches et poignets (test du front rack), 3 séries d’approche montantes de squat",
+     "x": [
+      "ankle_mob",
+      "hip_opener",
+      "wrist_routine"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "backsquat",
+       "sets": 5,
+       "reps": "6",
+       "rest": 150,
+       "note": "RPE 7-8 · récup 2-3 min"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "frontsquat",
+       "sets": 3,
+       "reps": "8",
+       "rest": 120,
+       "note": "Prise en sangles croisées ou bras croisés si le front rack gêne"
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "items": [
+      {
+       "x": "bulgarian",
+       "sets": 3,
+       "reps": "8/jambe",
+       "rest": 90
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "type": "superset",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "legext",
+       "sets": 3,
+       "reps": "12",
+       "rest": 0
+      },
+      {
+       "x": "calf_press",
+       "sets": 3,
+       "reps": "15",
+       "rest": 60
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "type": "circuit",
+     "title": "Gainage",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "t2b",
+       "sets": 3,
+       "reps": "6-8",
+       "rest": 0,
+       "note": "Genoux à la poitrine au début"
+      },
+      {
+       "x": "shoulder_taps",
+       "sets": 3,
+       "reps": "10/côté",
+       "rest": 0
+      },
+      {
+       "x": "russian_twist",
+       "sets": 3,
+       "reps": "20",
+       "rest": 45
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "Vélo facile",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Étirements quadriceps, fessiers, adducteurs",
+     "x": [
+      "st_quad",
+      "st_glute",
+      "st_add"
+     ]
+    }
+   ],
+   "goal": "Monter en charge sur le squat (5 × 6) et tester le front squat si le front rack passe sans douleur. Gainage plus exigeant avec les toes-to-bar."
+  },
+  {
+   "id": "c3-ca",
+   "cycle": 3,
+   "slot": "CA",
+   "title": "Fractionné au seuil",
+   "warmup": [
+    {
+     "t": "5 min vélo progressif",
+     "x": [
+      "bike"
+     ]
+    },
+    {
+     "t": "Mobilité, 3 accélérations de 15 s sur le rameur",
+     "x": [
+      "hip_opener",
+      "rower"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "rower",
+       "sets": 5,
+       "reps": "4 min",
+       "rest": 120,
+       "note": "Allure soutenue mais tenable · récup 2 min facile"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "stairs",
+       "sets": 1,
+       "reps": "15 min",
+       "rest": 0,
+       "label": "Escalier ou tapis incliné",
+       "note": "Zone 2"
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "items": [
+      {
+       "x": "assault",
+       "sets": 6,
+       "reps": "20 s fort / 40 s facile",
+       "rest": 0
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "Marche",
+     "x": []
+    },
+    {
+     "t": "Étirements mollets, ischios, psoas",
+     "x": [
+      "st_calf",
+      "st_ham",
+      "st_hipflex"
+     ]
+    }
+   ],
+   "goal": "Travailler au seuil en fractionné sur le rameur et en sprints courts sur l’assault bike."
+  },
+  {
+   "id": "c3-r2",
+   "cycle": 3,
+   "slot": "R2",
+   "title": "Haut du corps pousser / tirer",
+   "warmup": [
+    {
+     "t": "5 min SkiErg",
+     "x": [
+      "skierg"
+     ]
+    },
+    {
+     "t": "Routine poignets, dead hang 3 × 30-40 s puis active hang, pompes, 2 séries légères de développé militaire",
+     "x": [
+      "wrist_routine",
+      "dead_hang",
+      "active_hang",
+      "incline_pushup"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "strict_press",
+       "sets": 5,
+       "reps": "6",
+       "rest": 120
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "strict_pu",
+       "sets": 5,
+       "reps": "5",
+       "rest": 120,
+       "note": "Élastique léger si besoin"
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "type": "superset",
+     "rounds": 4,
+     "items": [
+      {
+       "x": "incline_db",
+       "sets": 4,
+       "reps": "8",
+       "rest": 0
+      },
+      {
+       "x": "pendlay",
+       "sets": 4,
+       "reps": "8",
+       "rest": 90
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "items": [
+      {
+       "x": "dips",
+       "sets": 3,
+       "reps": "6-8",
+       "rest": 75
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "type": "superset",
+     "title": "Bras",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "incline_curl",
+       "sets": 3,
+       "reps": "10",
+       "rest": 0
+      },
+      {
+       "x": "skull",
+       "sets": 3,
+       "reps": "10",
+       "rest": 60
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "items": [
+      {
+       "x": "face_pull",
+       "sets": 3,
+       "reps": "15",
+       "rest": 60,
+       "label": "Face pull"
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "Étirements pectoraux, épaules, dorsaux, avant-bras",
+     "x": [
+      "st_pec",
+      "st_lat",
+      "st_forearm"
+     ]
+    }
+   ],
+   "goal": "Gymnastique stricte et charges plus lourdes : strict press, tractions strictes, dips. RPE 7-8, 2 répétitions en réserve."
+  },
+  {
+   "id": "c3-wod",
+   "cycle": 3,
+   "slot": "WOD",
+   "title": "Intensité et haltérophilie légère",
+   "warmup": [
+    {
+     "t": "3 min rameur + 2 min corde",
+     "x": [
+      "rower",
+      "single_under"
+     ]
+    },
+    {
+     "t": "Éducatifs de clean à la barre vide (deadlift, hang pull, hang power clean), uniquement si le poignet passe en front rack sans douleur",
+     "x": [
+      "wrist_routine"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "title": "Technique · 10 min",
+     "items": [
+      {
+       "x": "hpc",
+       "sets": 6,
+       "reps": "3",
+       "rest": 60,
+       "note": "Léger, focus vitesse et réception · sinon dumbbell hang clean"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "type": "wod",
+     "title": "For time 21-15-9 (cap 12 min)",
+     "items": [
+      {
+       "x": "wallball",
+       "sets": 0,
+       "reps": "9 kg",
+       "rest": 0
+      },
+      {
+       "x": "kb_swing_am",
+       "sets": 0,
+       "reps": "24 kg",
+       "rest": 0
+      },
+      {
+       "x": "rower_wod",
+       "sets": 0,
+       "reps": "cal",
+       "rest": 0
+      }
+     ]
+    },
+    {
+     "l": "",
+     "type": "rest",
+     "title": "Repos 5 min"
+    },
+    {
+     "l": "C",
+     "type": "wod",
+     "title": "EMOM 16 min, 4 tours",
+     "items": [
+      {
+       "x": "assault_wod",
+       "sets": 0,
+       "reps": "12 cal",
+       "rest": 0
+      },
+      {
+       "x": "db_snatch",
+       "sets": 0,
+       "reps": "8 alternés · 22,5 kg",
+       "rest": 0
+      },
+      {
+       "x": "burpee",
+       "sets": 0,
+       "reps": "10",
+       "rest": 0
+      },
+      {
+       "x": "double_under",
+       "sets": 0,
+       "reps": "30 (ou 60 single unders)",
+       "rest": 0
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "Marche, étirements globaux, avant-bras",
+     "x": [
+      "st_forearm"
+     ]
+    }
+   ],
+   "goal": "Réintroduire une haltérophilie légère (hang power clean) seulement si le poignet passe en front rack sans douleur, puis monter l’intensité des WODs."
+  },
+  {
+   "id": "c3-r3",
+   "cycle": 3,
+   "slot": "R3",
+   "title": "Chaîne postérieure + dos + portés",
+   "warmup": [
+    {
+     "t": "5 min rameur",
+     "x": [
+      "rower"
+     ]
+    },
+    {
+     "t": "Mobilité hanches, ponts fessiers, kettlebell swings légers, montée en charge sur le soulevé de terre",
+     "x": [
+      "hip_opener",
+      "glute_bridge",
+      "kb_swing_light"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "deadlift",
+       "sets": 5,
+       "reps": "5",
+       "rest": 150,
+       "label": "Soulevé de terre",
+       "note": "RPE 8 · récup 2-3 min"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "rdl",
+       "sets": 3,
+       "reps": "8",
+       "rest": 90
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "type": "superset",
+     "rounds": 4,
+     "items": [
+      {
+       "x": "latpull",
+       "sets": 4,
+       "reps": "8",
+       "rest": 0,
+       "label": "Tractions prise neutre ou lat pulldown lourd"
+      },
+      {
+       "x": "hipthrust",
+       "sets": 4,
+       "reps": "10",
+       "rest": 90,
+       "label": "Hip thrust barre"
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "items": [
+      {
+       "x": "db_row",
+       "sets": 3,
+       "reps": "10/bras",
+       "rest": 60,
+       "label": "Rowing un bras haltère lourd"
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "type": "circuit",
+     "title": "Portés",
+     "rounds": 4,
+     "items": [
+      {
+       "x": "farmer",
+       "sets": 4,
+       "reps": "30 m",
+       "rest": 0,
+       "label": "Farmer’s carry lourd"
+      },
+      {
+       "x": "suitcase",
+       "sets": 4,
+       "reps": "20 m/côté",
+       "rest": 60
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "items": [
+      {
+       "x": "superman",
+       "sets": 3,
+       "reps": "12",
+       "rest": 45,
+       "label": "Superman ou back extension lestée"
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "Étirements ischios, fessiers, dos, avant-bras",
+     "x": [
+      "st_ham",
+      "st_glute",
+      "child_pose",
+      "st_forearm"
+     ]
+    }
+   ],
+   "goal": "Monter en charge sur le soulevé de terre (5 × 5, RPE 8) et charger davantage les portés."
+  },
+  {
+   "id": "c4-r1",
+   "cycle": 4,
+   "slot": "R1",
+   "title": "Jambes dominante genou + gainage",
+   "warmup": [
+    {
+     "t": "5 min assault bike",
+     "x": [
+      "assault"
+     ]
+    },
+    {
+     "t": "Mobilité, montée progressive au back squat",
+     "x": [
+      "ankle_mob",
+      "hip_opener"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "backsquat",
+       "sets": 3,
+       "reps": "5",
+       "rest": 180,
+       "note": "Montée jusqu’à un 5RM propre (RPE 8-9), puis 2 × 5 à 90 % de ce 5RM · récup 3 min",
+       "benchmark": "squat5rm"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "frontsquat",
+       "sets": 3,
+       "reps": "6",
+       "rest": 120,
+       "note": "Front rack barre si OK"
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "items": [
+      {
+       "x": "lunge_heavy",
+       "sets": 3,
+       "reps": "8/jambe",
+       "rest": 90
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "items": [
+      {
+       "x": "pistol_box",
+       "sets": 3,
+       "reps": "5/jambe",
+       "rest": 60
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "items": [
+      {
+       "x": "calf_stand",
+       "sets": 4,
+       "reps": "12",
+       "rest": 60,
+       "label": "Mollets"
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "type": "circuit",
+     "title": "Gainage",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "t2b",
+       "sets": 3,
+       "reps": "8-10",
+       "rest": 0
+      },
+      {
+       "x": "lsit",
+       "sets": 3,
+       "reps": "15 s",
+       "rest": 0
+      },
+      {
+       "x": "hollow_rock",
+       "sets": 3,
+       "reps": "15",
+       "rest": 45
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "Vélo facile, étirements",
+     "x": [
+      "bike",
+      "st_quad",
+      "st_glute"
+     ]
+    }
+   ],
+   "goal": "Mesurer ta force au squat : 5RM propre puis séries à 90 %. Travail unilatéral (pistol sur box) et gainage complet."
+  },
+  {
+   "id": "c4-ca",
+   "cycle": 4,
+   "slot": "CA",
+   "title": "VO2 + endurance",
+   "warmup": [
+    {
+     "t": "5 min rameur progressif",
+     "x": [
+      "rower"
+     ]
+    },
+    {
+     "t": "Mobilité, 3 accélérations de 10 s sur l’assault bike",
+     "x": [
+      "hip_opener",
+      "assault"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "assault",
+       "sets": 10,
+       "reps": "30 s fort / 30 s facile",
+       "rest": 0,
+       "note": "Puis 3 min facile"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "rower",
+       "sets": 1,
+       "reps": "2 000 m",
+       "rest": 0,
+       "label": "Rameur · test 2 000 m",
+       "note": "Note ton temps, ce sera ta référence",
+       "benchmark": "row2k"
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "items": [
+      {
+       "x": "incline_walk",
+       "sets": 1,
+       "reps": "25 min",
+       "rest": 0,
+       "label": "Zone 2 au choix",
+       "note": "Tapis incliné, escalier ou course légère si les genoux l’acceptent"
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "Marche, étirements",
+     "x": [
+      "st_calf",
+      "st_ham",
+      "st_hipflex"
+     ]
+    }
+   ],
+   "goal": "Travailler la VO2 sur l’assault bike et faire le test 2 000 m au rameur, qui devient ta référence."
+  },
+  {
+   "id": "c4-r2",
+   "cycle": 4,
+   "slot": "R2",
+   "title": "Haut du corps pousser / tirer",
+   "warmup": [
+    {
+     "t": "5 min SkiErg",
+     "x": [
+      "skierg"
+     ]
+    },
+    {
+     "t": "Routine poignets, scapular pull-ups, dead hang 2 × 45 s, montée en charge au développé couché",
+     "x": [
+      "wrist_routine",
+      "scap_pullup",
+      "dead_hang"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "bench",
+       "sets": 5,
+       "reps": "5",
+       "rest": 150,
+       "label": "Développé couché",
+       "note": "RPE 8 · récup 2-3 min"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "strict_pu",
+       "sets": 5,
+       "reps": "5",
+       "rest": 120,
+       "note": "Lestées si 8 strictes faciles",
+       "benchmark": "pullups"
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "items": [
+      {
+       "x": "push_press",
+       "sets": 4,
+       "reps": "6",
+       "rest": 120
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "type": "superset",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "ring_dips",
+       "sets": 3,
+       "reps": "6-8",
+       "rest": 0
+      },
+      {
+       "x": "ringrow",
+       "sets": 3,
+       "reps": "10",
+       "rest": 75,
+       "label": "Ring row pieds surélevés"
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "type": "superset",
+     "title": "Bras",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "hammer_curl",
+       "sets": 3,
+       "reps": "10",
+       "rest": 0,
+       "label": "Curl marteau"
+      },
+      {
+       "x": "rope_pd",
+       "sets": 3,
+       "reps": "12",
+       "rest": 60,
+       "label": "Extension triceps poulie"
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "type": "superset",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "lat_raise",
+       "sets": 3,
+       "reps": "12",
+       "rest": 0,
+       "label": "Élévations latérales"
+      },
+      {
+       "x": "face_pull",
+       "sets": 3,
+       "reps": "12",
+       "rest": 60,
+       "label": "Face pull"
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "Étirements pectoraux, épaules, dorsaux, avant-bras",
+     "x": [
+      "st_pec",
+      "st_lat",
+      "st_forearm"
+     ]
+    }
+   ],
+   "goal": "Consolider les charges du haut du corps (5 × 5) et reprendre le push press. Tractions lestées si 8 strictes deviennent faciles."
+  },
+  {
+   "id": "c4-wod",
+   "cycle": 4,
+   "slot": "WOD",
+   "title": "Benchmark et retest",
+   "warmup": [
+    {
+     "t": "3 min rameur + 2 min corde",
+     "x": [
+      "rower",
+      "single_under"
+     ]
+    },
+    {
+     "t": "Routine poignets, montée en charge sur le thruster et éducatifs à vide des mouvements",
+     "x": [
+      "wrist_routine"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "type": "wod",
+     "title": "« Fran » adapté · for time 21-15-9 (cap 10 min)",
+     "items": [
+      {
+       "x": "thruster",
+       "sets": 0,
+       "reps": "barre 30-40 kg ou haltères 2 × 15 kg si le front rack gêne",
+       "rest": 0
+      },
+      {
+       "x": "pullup_wod",
+       "sets": 0,
+       "reps": "élastique si besoin",
+       "rest": 0
+      }
+     ]
+    },
+    {
+     "l": "",
+     "type": "rest",
+     "title": "Repos 6-8 min (marche, rameur très facile)"
+    },
+    {
+     "l": "B",
+     "type": "wod",
+     "title": "Retest de l’AMRAP 12 du cycle 1",
+     "benchmark": "amrap12",
+     "desc": "Mêmes charges qu’au cycle 1 pour comparer le score, ou charges augmentées si le cycle 1 était trop facile (le noter).",
+     "items": [
+      {
+       "x": "wallball",
+       "sets": 0,
+       "reps": "10",
+       "rest": 0
+      },
+      {
+       "x": "kb_swing_wod",
+       "sets": 0,
+       "reps": "10",
+       "rest": 0
+      },
+      {
+       "x": "skierg_wod",
+       "sets": 0,
+       "reps": "10 cal",
+       "rest": 0
+      }
+     ]
+    },
+    {
+     "l": "",
+     "type": "rest",
+     "title": "Repos 5 min"
+    },
+    {
+     "l": "C",
+     "type": "wod",
+     "title": "Finisher · 5 min",
+     "desc": "1 tour = 5 burpees sur les poings + 10 cal assault bike, allure constante.",
+     "items": [
+      {
+       "x": "burpee",
+       "sets": 0,
+       "reps": "5",
+       "rest": 0
+      },
+      {
+       "x": "assault_wod",
+       "sets": 0,
+       "reps": "10 cal",
+       "rest": 0
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "Marche, étirements globaux, respiration",
+     "x": []
+    }
+   ],
+   "goal": "Benchmark « Fran » adapté et retest de l’AMRAP 12 du cycle 1 pour mesurer le chemin parcouru."
+  },
+  {
+   "id": "c4-r3",
+   "cycle": 4,
+   "slot": "R3",
+   "title": "Chaîne postérieure + dos + portés",
+   "warmup": [
+    {
+     "t": "5 min rameur",
+     "x": [
+      "rower"
+     ]
+    },
+    {
+     "t": "Mobilité hanches, swings légers, montée en charge au soulevé de terre",
+     "x": [
+      "hip_opener",
+      "kb_swing_light"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "deadlift",
+       "sets": 3,
+       "reps": "5",
+       "rest": 180,
+       "label": "Soulevé de terre",
+       "note": "Montée jusqu’à un 3-5RM propre, puis 2 × 5 à 85 %",
+       "benchmark": "deadlift"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "power_clean",
+       "sets": 5,
+       "reps": "3",
+       "rest": 90,
+       "note": "Léger et rapide, uniquement si le front rack est confortable"
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "type": "superset",
+     "rounds": 4,
+     "items": [
+      {
+       "x": "bor",
+       "sets": 4,
+       "reps": "8",
+       "rest": 0
+      },
+      {
+       "x": "hipthrust",
+       "sets": 4,
+       "reps": "8",
+       "rest": 90,
+       "label": "Hip thrust lourd"
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "items": [
+      {
+       "x": "tgu",
+       "sets": 3,
+       "reps": "2/côté",
+       "rest": 60,
+       "note": "Kettlebell 12-16 kg"
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "type": "circuit",
+     "title": "Portés",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "farmer",
+       "sets": 3,
+       "reps": "40 m",
+       "rest": 0,
+       "label": "Farmer’s carry lourd"
+      },
+      {
+       "x": "kb_rack_carry",
+       "sets": 3,
+       "reps": "20 m/côté",
+       "rest": 60
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "items": [
+      {
+       "x": "back_ext",
+       "sets": 3,
+       "reps": "12",
+       "rest": 45,
+       "label": "Back extension lestée"
+      }
+     ]
+    }
+   ],
+   "cooldown": [
+    {
+     "t": "Étirements ischios, fessiers, dos, avant-bras",
+     "x": [
+      "st_ham",
+      "st_glute",
+      "child_pose",
+      "st_forearm"
+     ]
+    }
+   ],
+   "goal": "Trouver un 3-5RM au soulevé de terre, reprendre le power clean si le front rack est confortable, et des portés lourds."
+  }
+ ]
+}

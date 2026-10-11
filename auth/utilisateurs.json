@@ -1,0 +1,17 @@
+{
+ "fileType": "onair.utilisateurs",
+ "version": 1,
+ "notes": [
+  "Mots de passe stockés en PBKDF2-SHA256, jamais en clair.",
+  "Contrôle côté navigateur : il filtre l’accès à la page mais ne chiffre pas les données publiées."
+ ],
+ "users": [
+  {
+   "login": "fbernis",
+   "role": "admin",
+   "salt": "5hR63ructWO/sc7XhhCRFQ==",
+   "iterations": 310000,
+   "hash": "z6FAuTFRgNcs3Q509LVW8vA8o/YSRokZdxJ2wk5FH+Q="
+  }
+ ]
+}

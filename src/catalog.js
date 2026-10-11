@@ -2,16 +2,6 @@
 const KIND_LABELS = { force: 'Renforcement', gainage: 'Gainage', tech: 'Technique', cardio: 'Cardio', wod: 'Mouvements de WOD', mob: 'Mise en route et retour au calme' };
 const UNIT_LABELS = { reps: 'répétitions', time: 'secondes (maintien)', dist: 'mètres', cal: 'calories', min: 'minutes' };
 
-/* Où chaque exercice apparaît dans le programme */
-const USAGE = (() => {
-  const u = {}; const add = (k, sid, where) => { (u[k] = u[k] || []).push({ sid, where }); };
-  SESSIONS.forEach(s => {
-    s.warmup.forEach(l => l.x.forEach(k => add(k, s.id, 'mise en route')));
-    s.cooldown.forEach(l => l.x.forEach(k => add(k, s.id, 'retour au calme')));
-    s.blocks.forEach(b => (b.items || []).forEach(it => add(it.x, s.id, b.type === 'wod' ? 'WOD' : 'bloc ' + b.l)));
-  });
-  return u;
-})();
 
 function viewExercices() {
   const q = UI.exFilter.trim().toLowerCase();
@@ -112,65 +102,123 @@ function viewMove(id) {
   </dl>`;
 }
 
-/* ── Sauvegarde */
-function exportCarnet() {
-  return JSON.stringify({ fileType: 'onair.carnet', version: 1, exportedAt: new Date().toISOString(), program: 'programme-reprise-on-air.md', data: S }, null, 1);
+/* ── Sauvegarde : export, import, sauvegardes, restauration, remise à zéro */
+const DOC_INFO = {
+  bib: { file: 'bibliotheque', title: 'Bibliothèque de mouvements', what: () => `${Object.keys(EXERCISES).length} exercices, ${MOVES.length} fiches du catalogue, ${Object.keys(VIDEOS).length} vidéos vérifiées` },
+  car: { file: 'carnet', title: 'Carnet de séances', what: () => `${CYCLES.length} cycles, ${SESSIONS.length} séances, ${BENCHMARKS.length} repères` },
+  progression: { file: 'progression', title: 'Ma progression', what: () => { const n = Object.keys(S.logs).length, p = Object.keys(S.prefs).length; return `${n} séance${n > 1 ? 's' : ''} notée${n > 1 ? 's' : ''}, ${Object.keys(S.bench).length} repère${Object.keys(S.bench).length > 1 ? 's' : ''}, ${p} préférence${p > 1 ? 's' : ''}`; } }
+};
+function docText(kind) {
+  const d = kind === 'bib' ? docBibliotheque() : kind === 'car' ? docCarnet() : kind === 'progression' ? docProgression()
+    : { fileType: 'onair.sauvegarde', version: 1, exportedAt: new Date().toISOString(), bibliotheque: docBibliotheque(), carnet: docCarnet(), progression: docProgression() };
+  return JSON.stringify(d, null, 1);
 }
-function exportCatalogue() {
-  const c = JSON.parse(JSON.stringify(CATALOG));
-  c.movements.forEach(m => { m.selection = prefOf(m); });
-  c.savedAt = new Date().toISOString();
-  return JSON.stringify(c, null, 1);
+function exportDoc(kind) {
+  const name = (kind === 'all' ? 'onair-sauvegarde' : DOC_INFO[kind].file) + '-' + todayISO() + '.json';
+  offerFile(name, docText(kind));
 }
 async function offerFile(name, text) {
-  let dl = null;
-  try { dl = window.claude && window.claude.use ? await window.claude.use('downloads') : null; } catch (e) { dl = null; }
-  if (dl) {
-    try { await dl.save({ filename: name, data: text }); showToast('Fichier enregistré'); return; }
-    catch (e) { if (e && e.code === 'declined') return; }
+  const inClaude = !!(window.claude && typeof window.claude.use === 'function');
+  if (inClaude) {
+    let dl = null;
+    try { dl = await window.claude.use('downloads'); } catch (e) { dl = null; }
+    if (dl) {
+      try { await dl.save({ filename: name, data: text }); showToast('Fichier enregistré'); return; }
+      catch (e) { if (e && e.code === 'declined') return; }
+    }
+  } else {
+    try {
+      const url = URL.createObjectURL(new Blob([text], { type: 'application/json' }));
+      const a = document.createElement('a'); a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 2000); showToast('Fichier téléchargé : ' + name); return;
+    } catch (e) { /* on passe au texte à copier */ }
   }
   UI.exportText = { name, text }; render();
   showToast('Copie le texte ci-dessous pour le garder');
 }
+const fmtStamp = t => new Date(t).toLocaleString('fr-FR', { dateStyle: 'short', timeStyle: 'short' });
 function viewSauvegarde() {
-  const nLogs = Object.keys(S.logs).length;
-  return `<h2>Où sont mes données</h2>
+  const src = { bib: DATA.source.bib, car: DATA.source.car, progression: UI.sync === 'cloud' ? 'compte Claude et appareil' : 'cet appareil' };
+  const docCard = k => `<div class="card stack docrow">
+      <div class="row"><strong class="grow">${DOC_INFO[k].title}</strong><span class="pill">${esc(src[k])}</span></div>
+      <p class="small muted num" style="margin:0">${DOC_INFO[k].file}.json · ${DOC_INFO[k].what()}</p>
+      <div class="row wrap"><button class="btn small" data-act="export-doc" data-v="${k}">${IC.save} Exporter</button>
+        ${k === 'progression' || isAdmin() ? `<button class="btn small ghost" data-act="reset-ask" data-v="${k}">Remettre à zéro</button>` : ''}</div>
+    </div>`;
+  return `<h2>Les trois fichiers</h2>
+  <p class="small muted">L’affichage lit trois fichiers indépendants. La bibliothèque et le carnet décrivent le programme, la progression contient ce que tu notes. Chacun s’exporte, s’importe et se remet à zéro séparément.</p>
+  <div class="stack">${['bib', 'car', 'progression'].map(docCard).join('')}</div>
+  <div class="row sync-line"><span class="sync-dot ${UI.sync === 'cloud' ? 'cloud' : UI.sync === 'pending' ? 'pending' : ''}"></span>
+    <span class="small muted grow">${UI.sync === 'cloud' ? 'Progression enregistrée dans ton compte Claude, avec une copie dans ce navigateur.' : UI.sync === 'pending' ? 'Enregistrement en cours…' : 'Progression enregistrée dans ce navigateur seulement : exporte-la de temps en temps.'}</span></div>
+
+  <h2>Sauvegardes</h2>
   <div class="card stack">
-    <div class="row"><span class="sync-dot ${UI.sync === 'cloud' ? 'cloud' : UI.sync === 'pending' ? 'pending' : ''}"></span>
-      <strong class="grow">${UI.sync === 'cloud' ? 'Enregistré dans ton compte Claude' : UI.sync === 'pending' ? 'Enregistrement en cours…' : 'Enregistré sur cet appareil seulement'}</strong></div>
-    <p class="small muted" style="margin:0">${UI.sync === 'cloud' ? 'Le carnet se retrouve sur tes autres appareils quand tu ouvres cette page connecté. Une copie reste aussi dans ce navigateur.' : 'Le navigateur garde le carnet, mais il peut l’effacer (navigation privée, nettoyage). Exporte une sauvegarde de temps en temps.'}</p>
-    <p class="small faint num" style="margin:0">${nLogs} séance${nLogs > 1 ? 's' : ''} avec des notes · ${Object.keys(S.prefs).length} préférence${Object.keys(S.prefs).length > 1 ? 's' : ''} modifiée${Object.keys(S.prefs).length > 1 ? 's' : ''}</p>
+    <p class="small muted" style="margin:0">Une sauvegarde fige ta progression (et la bibliothèque ou le carnet s’ils ont été importés) pour pouvoir y revenir. Une sauvegarde automatique est faite avant chaque import, restauration ou remise à zéro. Les ${SNAP_MAX} plus récentes sont gardées.</p>
+    <button class="btn primary" data-act="snap-make" style="justify-self:start">${IC.save} Sauvegarder maintenant</button>
+    ${SNAPS.length ? `<ul class="snaps">${SNAPS.map(x => { const n = Object.keys((x.progression && x.progression.logs) || {}).length;
+      return `<li><div class="grow"><strong class="num">${fmtStamp(x.at)}</strong><div class="small muted">${esc(x.label)} · ${n} séance${n > 1 ? 's' : ''} notée${n > 1 ? 's' : ''}${x.bib ? ' · bibliothèque' : ''}${x.car ? ' · carnet' : ''}</div></div>
+        <button class="btn small" data-act="snap-restore-ask" data-v="${x.id}">Restaurer</button>
+        <button class="iconbtn" data-act="snap-del" data-v="${x.id}" aria-label="Supprimer la sauvegarde du ${fmtStamp(x.at)}">${IC.close}</button></li>`; }).join('')}</ul>`
+      : '<p class="small faint" style="margin:0">Aucune sauvegarde pour l’instant.</p>'}
   </div>
+
   <h2>Exporter</h2>
   <div class="stack">
-    <button class="btn primary" data-act="export-carnet">${IC.save} Exporter le carnet (JSON)</button>
-    <button class="btn" data-act="export-cat">${IC.save} Exporter le catalogue avec mes préférences</button>
+    <button class="btn" data-act="export-doc" data-v="all">${IC.save} Tout exporter en un fichier</button>
     ${UI.exportText ? `<div class="card stack"><label class="fld">${esc(UI.exportText.name)}<textarea id="f-exporttext" rows="6" readonly>${esc(UI.exportText.text)}</textarea></label>
       <div class="row"><button class="btn small" data-act="copy-export">Copier</button><button class="btn small ghost" data-act="close-export">Fermer</button></div></div>` : ''}
   </div>
+
   <h2>Importer</h2>
   <div class="card stack">
-    <p class="small muted" style="margin:0">Accepte une sauvegarde du carnet, ou un fichier de catalogue (MouvementsCrossFit.json) dont seules les préférences sont reprises.</p>
+    <p class="small muted" style="margin:0">Le type du fichier est reconnu tout seul : bibliothèque, carnet, progression, export complet, ou catalogue MouvementsCrossFit.json (seules ses préférences sont reprises). Tu confirmes avant tout remplacement.</p>
     <label class="btn" style="cursor:pointer">Choisir un fichier<input type="file" id="f-import" accept=".json,application/json" data-in="importfile" hidden></label>
     <label class="fld">Ou colle le contenu<textarea id="f-importtext" rows="3" placeholder="{ … }"></textarea></label>
     <button class="btn small" data-act="import-text" style="justify-self:start">Importer le texte collé</button>
   </div>
+
+  <h2>Remise à zéro</h2>
+  <div class="card stack">
+    <p class="small muted" style="margin:0">La bibliothèque et le carnet reviennent à leur version d’origine ; la progression est vidée (les réglages d’affichage restent). Une sauvegarde est faite juste avant.</p>
+    <button class="btn danger" data-act="reset-ask" data-v="${isAdmin() ? 'all' : 'progression'}" style="justify-self:start">${isAdmin() ? 'Tout remettre à zéro' : 'Vider ma progression'}</button>
+  </div>
+
   <h2>Sources</h2>
   <div class="card small stack">
-    <p style="margin:0">Programme : programme-reprise-on-air.md (4 cycles × 5 séances, salle On Air).</p>
-    <p style="margin:0">Catalogue : ${esc(CATALOG.title)}, ${MOVES.length} fiches de <a href="${esc(CATALOG.source)}" target="_blank" rel="noopener">${esc(CATALOG.source)}</a>, collecte du ${fmtDate(CATALOG.retrievedAt)}.</p>
-    ${(CATALOG.notes || []).map(n => `<p class="faint" style="margin:0">${esc(n)}</p>`).join('')}
-    <p class="faint" style="margin:0">Vidéos hors catalogue : relevées le 11/10/26 dans les résultats de recherche YouTube (identifiant, titre et chaîne exacts). Quand aucune vidéo n’a été confirmée, la fiche l’indique.</p>
-  </div>
-  <h2>Effacer</h2>
-  <button class="btn danger" data-act="reset-ask">Effacer tout le carnet</button>`;
+    <p style="margin:0">Carnet : ${esc(CAR.title || '')}${CAR.source ? ' (' + esc(CAR.source) + ')' : ''}.</p>
+    <p style="margin:0">Catalogue : ${esc(CATALOG.title || '')}, ${MOVES.length} fiches${CATALOG.source ? ` de <a href="${esc(CATALOG.source)}" target="_blank" rel="noopener">${esc(CATALOG.source)}</a>` : ''}${CATALOG.retrievedAt ? ', collecte du ' + fmtDate(CATALOG.retrievedAt) : ''}.</p>
+    ${(CATALOG.notes || []).concat(BIB.notes || []).map(n => `<p class="faint" style="margin:0">${esc(n)}</p>`).join('')}
+  </div>`;
 }
+
+/* Reconnaît le fichier, puis demande confirmation avant de remplacer quoi que ce soit */
 function importData(text) {
   let d; try { d = JSON.parse(text); } catch (e) { showToast('Fichier illisible : ce n’est pas du JSON valide.'); return; }
-  if (d && d.fileType === 'onair.carnet' && d.data && d.data.v === 1) { UI.pendingImport = d.data; UI.sheet = 'confirm:import'; renderSheet(); return; }
+  const ask = (kind, data, summary) => { UI.pendingImport = { kind, data, summary }; UI.sheet = 'confirm:import'; renderSheet(); };
+  if (!isAdmin() && d && (d.fileType === 'onair.bibliotheque' || d.fileType === 'onair.sauvegarde' || (d.fileType === 'onair.carnet' && Array.isArray(d.sessions)))) { showToast('Seul un administrateur peut remplacer la bibliothèque ou le carnet.'); return; }
+  if (d && d.fileType === 'onair.sauvegarde') {
+    const st = progressionToState(d.progression), eb = checkBib(d.bibliotheque), ec = !eb && checkCar(d.carnet, d.bibliotheque);
+    if (!st || eb || ec) { showToast('Export complet incomplet : ' + (eb || ec || 'progression illisible')); return; }
+    return ask('all', d, 'la bibliothèque, le carnet et ta progression');
+  }
+  if (d && d.fileType === 'onair.bibliotheque') { const e = checkBib(d); if (e) { showToast('Bibliothèque refusée : ' + e); return; } return ask('bib', d, 'la bibliothèque de mouvements'); }
+  if (d && d.fileType === 'onair.carnet' && Array.isArray(d.sessions)) { const e = checkCar(d, BIB); if (e) { showToast('Carnet refusé : ' + e); return; } return ask('car', d, 'le carnet de séances'); }
+  if (d && (d.fileType === 'onair.progression' || isLegacyProgression(d))) { const st = progressionToState(d); if (!st) { showToast('Progression illisible'); return; } return ask('progression', st, 'ta progression'); }
   if (d && d.fileType === 'hybrid.movements' && Array.isArray(d.movements)) {
     let n = 0; d.movements.forEach(m => { if (MOVE_BY_ID[m.id] && PREF_LABELS[m.selection || m.preference]) { S.prefs[m.id] = m.selection || m.preference; n++; } });
     touchMeta(); render(); showToast(`Préférences importées pour ${n} mouvements`); return;
   }
-  showToast('Format non reconnu : attendu un export du carnet ou un catalogue.');
+  showToast('Format non reconnu : attendu bibliotheque.json, carnet.json, progression.json ou un export complet.');
+}
+function confirmImport() {
+  const p = UI.pendingImport; if (!p) return;
+  makeSnapshot('Avant import (' + p.summary + ')');
+  let ok = true;
+  if (p.kind === 'bib') ok = setOverride('bib', p.data);
+  if (p.kind === 'car') ok = setOverride('car', p.data);
+  if (p.kind === 'progression') replaceProgression(p.data);
+  if (p.kind === 'all') { ok = setOverride('bib', p.data.bibliotheque) && setOverride('car', p.data.carnet); replaceProgression(progressionToState(p.data.progression)); }
+  const miss = missingExercises(CAR, BIB);
+  showToast(!ok ? 'Import fait, mais le navigateur n’a pas pu le garder pour la prochaine visite.'
+    : miss.length ? `Importé. ${miss.length} exercice${miss.length > 1 ? 's' : ''} du carnet absent${miss.length > 1 ? 's' : ''} de la bibliothèque.` : 'Importé');
 }

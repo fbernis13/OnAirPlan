@@ -1,16 +1,27 @@
 #!/usr/bin/env python3
 """Assemble le carnet en un seul fichier HTML.
+Les données vivent dans data/ (bibliotheque.json, carnet.json) ; la progression est
+écrite par l'application. Une copie des deux fichiers est intégrée à la page pour
+qu'elle marche hors ligne ou ouverte directement ; servie par un site, la page relit data/.
 - index.html : page autonome (GitHub Pages, ouverture directe dans un navigateur)
 - carnet-on-air.html : contenu sans squelette, pour la publication en Artifact claude.ai
+  (sans écran de connexion : l'accès y passe déjà par le compte claude.ai)
+Les comptes (auth/utilisateurs.json, mots de passe hachés) ne sont intégrés qu'à index.html.
 """
 import json, pathlib
 here = pathlib.Path(__file__).resolve().parent
 src = here / 'src'
-cat = json.loads((here / 'data' / 'MouvementsCrossFit.json').read_text(encoding='utf-8'))
-cat_js = 'const CATALOG = ' + json.dumps(cat, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/') + ';\n'
-js = cat_js + ''.join((src / f).read_text(encoding='utf-8') + '\n' for f in ['program.js', 'videos.js', 'core.js', 'views.js', 'progression.js', 'catalog.js', 'main.js'])
+def embed(name, var):
+    d = json.loads((here / 'data' / name).read_text(encoding='utf-8'))
+    return f'const {var} = ' + json.dumps(d, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/') + ';\n'
+js = embed('bibliotheque.json', 'EMBED_BIB') + embed('carnet.json', 'EMBED_CAR') + ''.join(
+    (src / f).read_text(encoding='utf-8') + '\n' for f in ['core.js', 'data.js', 'auth.js', 'views.js', 'progression.js', 'catalog.js', 'main.js'])
+users = json.loads((here / 'auth' / 'utilisateurs.json').read_text(encoding='utf-8'))
+users_js = 'const AUTH_USERS = ' + json.dumps(users, ensure_ascii=False, separators=(',', ':')) + ';\n'
+def page_body(extra=''):
+    return BODY.replace('<script>\n', '<script>\n' + extra, 1)
 css = (src / 'style.css').read_text(encoding='utf-8')
-body = f'''<title>Carnet On Air</title>
+BODY = f'''<title>Carnet On Air</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap">
 <style>
@@ -19,7 +30,7 @@ body = f'''<title>Carnet On Air</title>
 <script>
 {js}</script>
 '''
-(here / 'carnet-on-air.html').write_text(body, encoding='utf-8')
+(here / 'carnet-on-air.html').write_text(page_body(), encoding='utf-8')
 page = f'''<!doctype html>
 <html lang="fr"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -28,7 +39,7 @@ page = f'''<!doctype html>
 <meta name="apple-mobile-web-app-title" content="Carnet On Air">
 <style>:root{{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}}body{{margin:0}}img{{max-width:100%}}[hidden]{{display:none!important}}</style>
 </head><body>
-{body}</body></html>
+{page_body(users_js)}</body></html>
 '''
 (here / 'index.html').write_text(page, encoding='utf-8')
 print('ok', len(page))

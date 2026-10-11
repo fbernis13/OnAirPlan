@@ -83,7 +83,7 @@ function viewSession(sid) {
   const cyc = CYCLES[s.cycle - 1];
   let h = `<p class="muted small" style="margin-top:.8rem">Cycle ${s.cycle} · ${esc(cyc.name)} · ${esc(cyc.intensity)}</p>
   <h2 style="margin-top:.2rem">${esc(s.title)}</h2>
-  <div class="goal"><div class="goal-l">But de la séance</div><p>${esc(SESSION_GOALS[sid] || '')}</p>${s.intro ? `<p class="muted small">${esc(s.intro)}</p>` : ''}</div>
+  <div class="goal"><div class="goal-l">But de la séance</div><p>${esc(s.goal || '')}</p>${s.intro ? `<p class="muted small">${esc(s.intro)}</p>` : ''}</div>
   <div class="grid2" style="margin-top:.6rem">
     <label class="fld">Date de réalisation<input type="date" id="f-date-${sid}" data-in="sdate" data-sid="${sid}" value="${esc(L.date || '')}"></label>
     <label class="fld">État<button class="btn ${L.done ? 'primary' : ''}" data-act="sdone" data-sid="${sid}">${L.done ? IC.check + ' Séance terminée' : 'Marquer terminée'}</button></label>
@@ -317,14 +317,24 @@ function renderSheet() {
       <h4>Thème</h4><div class="seg">${[['system', 'Système'], ['light', 'Clair'], ['dark', 'Sombre']].map(([v, l]) => `<button data-act="set-theme" data-v="${v}" aria-pressed="${S.settings.theme === v}">${l}</button>`).join('')}</div>
       <h4>Taille du texte</h4><div class="seg">${[100, 125, 150].map(v => `<button data-act="set-size" data-v="${v}" aria-pressed="${(S.settings.size || 100) === v}">${v} %</button>`).join('')}</div>
       <h4>Signal sonore du minuteur</h4><div class="seg">${[[true, 'Activé'], [false, 'Coupé']].map(([v, l]) => `<button data-act="set-sound" data-v="${v}" aria-pressed="${(S.settings.sound !== false) === v}">${l}</button>`).join('')}</div>
+      ${AUTH.user ? `<h4>Compte</h4><div class="row"><span class="grow small">Connecté : <strong>${esc(AUTH.user.login)}</strong>${AUTH.user.role === 'admin' ? ' (administrateur)' : ''}</span><button class="btn small" data-act="logout">Se déconnecter</button></div>` : ''}
       <p class="small faint" style="margin-top:.6rem">Le bip retentit quand le navigateur l’autorise, après un premier geste sur la page. Le téléphone vibre aussi s’il le permet.</p>
       <div class="row" style="margin-top:.8rem"><span class="grow"></span><button class="btn primary" data-act="sheet-close">Fermer</button></div>`;
-  } else if (UI.sheet && UI.sheet.startsWith('confirm:')) {
-    inner = `<h3>Remplacer le carnet ?</h3><p>Les données de ce carnet seront remplacées par celles du fichier importé. Exporte d’abord une sauvegarde si tu as un doute.</p>
+  } else if (UI.sheet === 'confirm:import' && UI.pendingImport) {
+    inner = `<h3>Remplacer ${esc(UI.pendingImport.summary)} ?</h3><p>Le contenu actuel sera remplacé par celui du fichier. Une sauvegarde est faite juste avant : tu pourras la restaurer.</p>
       <div class="row" style="margin-top:.8rem"><span class="grow"></span><button class="btn ghost" data-act="sheet-close">Annuler</button><button class="btn danger" data-act="import-confirm">Remplacer</button></div>`;
+  } else if (UI.sheet === 'confirm:snap') {
+    const x = SNAPS.find(z => z.id === UI.pendingSnap);
+    inner = `<h3>Restaurer la sauvegarde ?</h3><p>${x ? `Tu reviens à l’état du ${esc(fmtStamp(x.at))} (${esc(x.label)}).` : ''} L’état actuel est sauvegardé juste avant.</p>
+      <div class="row" style="margin-top:.8rem"><span class="grow"></span><button class="btn ghost" data-act="sheet-close">Annuler</button><button class="btn primary" data-act="snap-restore">Restaurer</button></div>`;
   } else if (UI.sheet === 'reset') {
-    inner = `<h3>Effacer tout le carnet ?</h3><p>Toutes les séances notées, repères et préférences seront supprimés. Cette action ne peut pas être annulée.</p>
-      <div class="row" style="margin-top:.8rem"><span class="grow"></span><button class="btn ghost" data-act="sheet-close">Annuler</button><button class="btn danger" data-act="reset-confirm">Tout effacer</button></div>`;
+    const w = UI.resetWhat || 'all';
+    const t = { progression: ['Vider ta progression ?', 'Séances notées, repères et préférences de mouvements sont effacés. Les réglages d’affichage restent.'],
+      bib: ['Revenir à la bibliothèque d’origine ?', 'La bibliothèque importée est remplacée par la version d’origine.'],
+      car: ['Revenir au carnet d’origine ?', 'Le carnet importé est remplacé par la version d’origine. Tes notes restent dans la progression.'],
+      all: ['Tout remettre à zéro ?', 'Bibliothèque et carnet d’origine, progression vidée.'] }[w];
+    inner = `<h3>${t[0]}</h3><p>${t[1]} Une sauvegarde est faite juste avant : tu pourras la restaurer.</p>
+      <div class="row" style="margin-top:.8rem"><span class="grow"></span><button class="btn ghost" data-act="sheet-close">Annuler</button><button class="btn danger" data-act="reset-confirm">Remettre à zéro</button></div>`;
   }
   const keepText = document.getElementById('dict-text'); const typed = keepText ? keepText.value : null;
   el.innerHTML = `<div class="sheet" role="dialog" aria-modal="true">${inner}</div>`;
