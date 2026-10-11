@@ -186,11 +186,12 @@ function viewBenchmarks() {
   </tbody></table></div>`;
 }
 function viewProgression() {
-  let h = `<h2>Avancement</h2><div class="stack">`;
+  /* la répartition musculaire passe en premier (demande de Spook) */
+  let h = viewMuscles() + `<h2>Avancement</h2><div class="stack">`;
   CYCLES.forEach(c => {
     const ss = SESSIONS.filter(s => s.cycle === c.n); const d = ss.filter(s => sessionStatus(s.id) === 'done').length;
-    h += `<div class="card"><div class="row"><strong class="grow">Cycle ${c.n} · ${esc(c.name)}</strong><span class="num small">${d} / 5</span></div>
-      <div class="progressbar" style="margin-top:.4rem"><i style="width:${d / 5 * 100}%"></i></div>
+    h += `<div class="card"><div class="row"><strong class="grow">Cycle ${c.n} · ${esc(c.name)}</strong><span class="num small">${d} / ${ss.length}</span></div>
+      <div class="progressbar" style="margin-top:.4rem"><i style="width:${d / ss.length * 100}%"></i></div>
       <div class="row" style="margin-top:.5rem">${ss.map(s => `<button class="slot ${sessionStatus(s.id)}" data-act="open-session" data-id="${s.id}" style="border:0;cursor:pointer" aria-label="${esc(sessLabel(s))}">${esc(SESSION_TYPES[s.slot].label)}</button>`).join('')}</div></div>`;
   });
   h += `</div>${viewObjectives()}
@@ -205,7 +206,6 @@ function viewProgression() {
         <div class="row"><span class="t grow">${esc(EXERCISES[k].fr)}</span><span class="num"><strong>${lastP.max} kg</strong>${pts.length > 1 ? ` <span class="faint small">depuis ${firstP.max} kg</span>` : ''}</span></div>
         ${sparkline(pts.map(p => p.max))}
         <div class="small faint">${pts.map(p => esc(sessLabel(SESSION_BY_ID[p.sid])) + ' : ' + p.max + ' kg').join(' · ')}</div></button>`; }).join('')}</div>`;
-  h += viewMuscles();
   return h;
 }
 

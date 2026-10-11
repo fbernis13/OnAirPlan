@@ -389,7 +389,14 @@
    "img": {
     "file": "images/adductor.jpg",
     "source": "free-exercise-db (domaine public, Unlicense)"
-   }
+   },
+   "alt": [
+    "abductor",
+    "bulgarian",
+    "lunge_bw",
+    "db_wlunge",
+    "goblet"
+   ]
   },
   "hollow": {
    "fr": "Hollow hold",

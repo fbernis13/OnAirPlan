@@ -243,10 +243,17 @@ function mediaBar(k, uid) {
   if (open === 'image') panel = `<figure class="bigthumb">${exThumb(k)}${im && im.file ? `<figcaption class="small faint">${im.note ? esc(im.note) + ' · ' : ''}Photo ${esc(im.source || '')}</figcaption>` : '<figcaption class="small faint">Dessin du mouvement (pas de photo pour cet exercice)</figcaption>'}</figure>`;
   return `<div class="row media-btns">${btn('video', nv ? `Vidéo${nv > 1 ? 's (' + nv + ')' : ''}` : 'Vidéo', IC.video)}${btn('image', 'Image', IC.image)}</div>${panel ? `<div class="media-panel">${panel}</div>` : ''}`;
 }
-/* Variantes possibles : tous les exercices de travail, triés par ordre alphabétique */
+/* Variantes possibles : exercices de la même famille (renfo, gainage, cardio) qui travaillent les mêmes
+   muscles principaux (au moins la moitié en commun) ; « alt » dans la bibliothèque impose une liste. Ordre alphabétique. */
+const swapFamily = v => v.kind === 'cardio' ? 'cardio' : v.kind === 'gainage' ? 'gainage' : 'force';
 function swapList(x) {
-  return Object.entries(EXERCISES).filter(([k, v]) => v.kind !== 'mob' && v.kind !== 'wod' && k !== x)
-    .sort((a, b) => a[1].fr.localeCompare(b[1].fr, 'fr', { sensitivity: 'base' }));
+  const d = exDef(x); const fam = swapFamily(d); const P = d.p || [];
+  /* pas d'exercice à la poulie (préférence de Spook) */
+  const pool = Object.entries(EXERCISES).filter(([k, v]) => v.kind !== 'mob' && v.kind !== 'wod' && k !== x && swapFamily(v) === fam && !/poulie/i.test(v.fr));
+  if (d.alt) return pool.filter(([k]) => d.alt.includes(k)).sort((a, b) => a[1].fr.localeCompare(b[1].fr, 'fr', { sensitivity: 'base' }));
+  const close = v => { const Q = v.p || []; const common = Q.filter(g => P.includes(g)).length; return common && common / new Set(P.concat(Q)).size >= .5; };
+  const list = P.length && fam !== 'cardio' ? pool.filter(([, v]) => close(v)) : pool;
+  return list.sort((a, b) => a[1].fr.localeCompare(b[1].fr, 'fr', { sensitivity: 'base' }));
 }
 const fold = t => String(t || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 function swapOptions(list, planned, cur, q) {
