@@ -421,3 +421,10 @@ button.ethumb { padding: 0; border: 0; background: none; cursor: pointer; }
 .emom-nx { color: var(--ink-2); overflow-wrap: anywhere; }
 .emom.running { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent) inset; }
 .emom.finished { background: var(--ok-soft); border-color: var(--ok); }
+
+/* Chrono de maintien : Go / Stop / Reset sous la saisie des secondes */
+.holdcell { display: grid; gap: .3rem; min-width: 0; }
+.holdbtns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .25rem; }
+.holdbtns button { border: 1px solid var(--line); background: var(--amber-soft); color: var(--amber); border-radius: .45rem; min-height: 2rem; cursor: pointer; display: grid; place-items: center; }
+.holdbtns button svg { width: 1rem; height: 1rem; }
+.holdbtns.on button[data-act=hold-go] { background: var(--amber); color: var(--surface); }

@@ -269,7 +269,8 @@ function setRow(sid, key, it, d, st, si) {
   let main;
   if (d.unit === 'time') {
     const on = HOLD.uid === id;
-    main = `<label>Secondes<div class="stepper"><button class="holdbtn ${on ? 'on' : ''}" data-act="hold" ${a} aria-label="Chronomètre de maintien">${on ? IC.pause : IC.play}</button><input type="number" inputmode="numeric" id="s-dur-${id}" data-in="set" data-f="dur" ${a} value="${esc(on ? Math.floor(HOLD.elapsed()) : (st.dur ?? ''))}" placeholder="${ph}"><button data-act="step" data-f="dur" data-d="5" ${a} aria-label="Plus 5 secondes">+</button></div></label>`;
+    main = `<div class="holdcell"><label>Secondes<div class="stepper"><button data-act="step" data-f="dur" data-d="-5" ${a} aria-label="Moins 5 secondes">−</button><input type="number" inputmode="numeric" id="s-dur-${id}" data-in="set" data-f="dur" ${a} value="${esc(on ? Math.floor(HOLD.elapsed()) : (st.dur ?? ''))}" placeholder="${ph}"><button data-act="step" data-f="dur" data-d="5" ${a} aria-label="Plus 5 secondes">+</button></div></label>
+      <div class="holdbtns ${on ? 'on' : ''}"><button data-act="hold-go" ${a} aria-label="Go">${IC.play}</button><button data-act="hold-stop" ${a} aria-label="Stop">${IC.pause}</button><button data-act="hold-reset" ${a} aria-label="Reset">${IC.reset}</button></div></div>`;
   } else if (d.unit === 'dist') {
     main = `<label>Mètres<div class="stepper"><button data-act="step" data-f="dist" data-d="-5" ${a} aria-label="Moins 5 m">−</button><input type="number" inputmode="numeric" id="s-dist-${id}" data-in="set" data-f="dist" ${a} value="${esc(st.dist ?? '')}" placeholder="${ph}"><button data-act="step" data-f="dist" data-d="5" ${a} aria-label="Plus 5 m">+</button></div></label>`;
   } else if (d.unit === 'min') {
@@ -343,6 +344,7 @@ function gateView(s, steps) {
     <div class="gate-btns">
       <button class="btn primary big" data-act="gate-go" ${GATE.running ? 'disabled' : ''}>${IC.play} Go</button>
       <button class="btn big" data-act="gate-stop" ${GATE.running ? '' : 'disabled'}>${IC.pause} Stop</button>
+      <button class="btn big" data-act="gate-reset">${IC.reset} Reset</button>
     </div>
     <div class="gate-btns">
       <button class="btn small ghost" data-act="gate-plus">+15 s</button>
@@ -394,7 +396,7 @@ function emomBox(key, cfg) {
     <div class="recup-b">
       <button class="btn primary" data-act="emom-go" data-key="${esc(key)}">${IC.play} Go</button>
       <button class="btn" data-act="emom-stop" data-key="${esc(key)}">${IC.pause} Stop</button>
-      <button class="btn" data-act="emom-zero" data-key="${esc(key)}" aria-label="Remise à zéro">${IC.reset} RAZ</button>
+      <button class="btn" data-act="emom-zero" data-key="${esc(key)}" aria-label="Reset">${IC.reset} Reset</button>
     </div></div>`;
 }
 function emomCfg(key) {
@@ -453,7 +455,7 @@ function wtBox(sid, bl) {
     <div class="recup-b">
       <button class="btn primary" data-act="wt-go" data-key="${esc(key)}">${IC.play} Go</button>
       <button class="btn" data-act="wt-stop" data-key="${esc(key)}">${IC.pause} Stop</button>
-      <button class="btn" data-act="wt-zero" data-key="${esc(key)}" aria-label="Remise à zéro">${IC.reset} RAZ</button>
+      <button class="btn" data-act="wt-zero" data-key="${esc(key)}" aria-label="Reset">${IC.reset} Reset</button>
     </div>
     <div class="recup-b">${cfg.mode === 'amrap'
       ? `<button class="btn" data-act="wt-round" data-key="${esc(key)}">+1 tour</button><button class="btn ghost" data-act="wt-round" data-d="-1" data-key="${esc(key)}">−1</button>`
@@ -500,7 +502,7 @@ function recupBox(key, sec, label, after) {
     <div class="recup-b">
       <button class="btn primary" data-act="rest-go" data-key="${esc(key)}" data-sec="${sec}" data-label="${esc(label)}">${IC.play} Go</button>
       <button class="btn" data-act="rest-stop" data-key="${esc(key)}">${IC.pause} Stop</button>
-      <button class="btn" data-act="rest-zero" data-key="${esc(key)}" aria-label="Remise à zéro">${IC.reset} RAZ</button>
+      <button class="btn" data-act="rest-zero" data-key="${esc(key)}" aria-label="Reset">${IC.reset} Reset</button>
     </div></div>`;
 }
 function paintRecup() {
@@ -538,8 +540,9 @@ function renderTimer() {
     <span class="big">${fmtSec(Math.ceil(REST.left))}</span>
     <span class="lbl">${REST.finished ? '<strong>Repos terminé</strong>' : 'Repos'}<br>${esc(REST.label)}</span>
     <button data-act="rest-plus" aria-label="Ajouter 15 secondes">+15</button>
-    <button data-act="rest-toggle" aria-label="${REST.running ? 'Pause' : 'Reprendre'}">${REST.running ? IC.pause : IC.play}</button>
-    <button data-act="rest-reset" aria-label="Réinitialiser">${IC.reset}</button>
+    <button data-act="rest-go" data-key="${esc(REST.key || '')}" aria-label="Go">${IC.play}</button>
+    <button data-act="rest-stop" data-key="${esc(REST.key || '')}" aria-label="Stop">${IC.pause}</button>
+    <button data-act="rest-zero" data-key="${esc(REST.key || '')}" aria-label="Reset">${IC.reset}</button>
     <button data-act="rest-close" aria-label="Fermer le minuteur">${IC.close}</button>`;
 }
 
@@ -548,11 +551,11 @@ const HOLD = { uid: null, start: 0, base: 0, tick: null, target: 0, beeped: fals
 function toggleHold(ref) {
   const id = `${ref.sid}-${ref.key}-${ref.si}`;
   if (HOLD.uid === id) { // arrêt
-    const v = Math.floor(HOLD.elapsed()); clearInterval(HOLD.tick); HOLD.uid = null;
+    const v = Math.floor(HOLD.elapsed()); clearInterval(HOLD.tick); HOLD.uid = null; HOLD.paused = { id, v };
     writeSet(ref, 'dur', v); return v;
   }
   if (HOLD.uid) toggleHold(HOLD.ref);
-  HOLD.uid = id; HOLD.ref = ref; HOLD.start = Date.now(); HOLD.base = 0; HOLD.beeped = false; HOLD.target = Number(ref.target) || 0;
+  HOLD.uid = id; HOLD.ref = ref; HOLD.start = Date.now(); HOLD.base = Number(ref.from) || 0; HOLD.beeped = false; HOLD.target = Number(ref.target) || 0;
   HOLD.tick = setInterval(() => {
     const inp = document.getElementById('s-dur-' + id); const v = Math.floor(HOLD.elapsed());
     if (inp) inp.value = v;

@@ -88,7 +88,7 @@ document.addEventListener('click', ev => {
   // Séance
   if (a === 'sdone') { const L = getLog(el.dataset.sid, true); L.done = !L.done; if (L.done && !L.date) L.date = todayISO(); touchLog(el.dataset.sid); render(); if (L.done) showToast('Séance terminée'); return; }
   if (a === 'wdone') { const L = getLog(el.dataset.sid, true); markStarted(el.dataset.sid); const W = L.wod[el.dataset.bl] = L.wod[el.dataset.bl] || {}; W.done = !W.done; touchLog(el.dataset.sid); render(); return; }
-  if (a === 'step' || a === 'setdone' || a === 'hold' || a === 'addset' || a === 'delset' || a === 'exdone' || a === 'skip') {
+  if (a === 'step' || a === 'setdone' || a === 'hold' || a === 'hold-go' || a === 'hold-stop' || a === 'hold-reset' || a === 'addset' || a === 'delset' || a === 'exdone' || a === 'skip') {
     const r = refOf(el); if (!r.it) return;
     const E = getExLog(r.sid, r.key, r.it, true); markStarted(r.sid);
     const d = exDef(E.swap || r.it.x);
@@ -97,6 +97,13 @@ document.addEventListener('click', ev => {
       st[f] = Math.max(0, Math.round((cur + Number(el.dataset.d)) * 10) / 10);
       const inp = document.getElementById(`s-${f}-${r.sid}-${r.key}-${r.si}`); if (inp) inp.value = st[f];
       touchLog(r.sid); return;
+    }
+    if (a === 'hold-go' || a === 'hold-stop' || a === 'hold-reset') {
+      const id = `${r.sid}-${r.key}-${r.si}`; const on = HOLD.uid === id; const ref = { sid: r.sid, key: r.key, si: r.si, bi: el.dataset.bi, i: el.dataset.i, it: r.it, target: firstNum(r.it.reps) };
+      if (a === 'hold-go' && !on) { const st = E.sets[r.si] || {}; ref.from = HOLD.paused && HOLD.paused.id === id && Number(st.dur) === HOLD.paused.v ? HOLD.paused.v : 0; toggleHold(ref); }
+      else if (a === 'hold-stop' && on) toggleHold(HOLD.ref);
+      else if (a === 'hold-reset') { HOLD.paused = null; if (on) { clearInterval(HOLD.tick); HOLD.uid = null; } writeSet(ref, 'dur', ''); }
+      render(); return;
     }
     if (a === 'hold') { toggleHold({ sid: r.sid, key: r.key, si: r.si, bi: el.dataset.bi, i: el.dataset.i, it: r.it, target: firstNum(r.it.reps) }); render(); return; }
     if (a === 'setdone') {
@@ -125,9 +132,9 @@ document.addEventListener('click', ev => {
   if (a === 'emom-go') { emomGo(el.dataset.key); return; }
   if (a === 'emom-stop') { if (EMOM.key === el.dataset.key) emomStop(); return; }
   if (a === 'emom-zero') { if (EMOM.key === el.dataset.key) emomZero(); return; }
-  if (a === 'rest-go') { const k = el.dataset.key; if (REST.key === k && REST.total && !REST.finished) { if (!REST.running) { REST.running = true; REST.endAt = Date.now() + REST.left * 1000; runRest(); } } else startRest(+el.dataset.sec, el.dataset.label, k); renderTimer(); return; }
-  if (a === 'rest-stop') { if (REST.key === el.dataset.key && REST.running) { REST.running = false; REST.left = Math.max(0, (REST.endAt - Date.now()) / 1000); } renderTimer(); return; }
-  if (a === 'rest-zero') { if (REST.key === el.dataset.key) { clearInterval(REST.tick); REST.running = false; REST.finished = false; REST.left = REST.total; } renderTimer(); return; }
+  if (a === 'rest-go') { const k = el.dataset.key || REST.key; if (REST.key === k && REST.total && !REST.finished) { if (!REST.running) { REST.running = true; REST.endAt = Date.now() + REST.left * 1000; runRest(); } } else startRest(+el.dataset.sec || REST.total, el.dataset.label || REST.label, k); renderTimer(); return; }
+  if (a === 'rest-stop') { if (REST.key === (el.dataset.key || REST.key) && REST.running) { REST.running = false; REST.left = Math.max(0, (REST.endAt - Date.now()) / 1000); } renderTimer(); return; }
+  if (a === 'rest-zero') { if (REST.key === (el.dataset.key || REST.key)) { clearInterval(REST.tick); REST.running = false; REST.finished = false; REST.left = REST.total; } renderTimer(); return; }
   if (a === 'rest-toggle') { if (REST.finished) return; if (REST.running) { REST.running = false; REST.left = Math.max(0, (REST.endAt - Date.now()) / 1000); } else { REST.running = true; REST.endAt = Date.now() + REST.left * 1000; runRest(); } renderTimer(); return; }
   if (a === 'rest-reset') { REST.left = REST.total; REST.finished = false; REST.running = true; REST.endAt = Date.now() + REST.total * 1000; runRest(); renderTimer(); return; }
   if (a === 'rest-plus') { REST.total += 15; if (REST.finished) { REST.finished = false; REST.left = 15; REST.running = true; REST.endAt = Date.now() + 15000; runRest(); } else if (REST.running) REST.endAt += 15000; else REST.left += 15; renderTimer(); return; }
@@ -146,6 +153,7 @@ document.addEventListener('click', ev => {
   if (a === 'gate-go') { gateGo(); render(); return; }
   if (a === 'gate-stop') { gateStop(); render(); return; }
   if (a === 'gate-plus') { GATE.total += 15; if (GATE.running) GATE.endAt += 15000; else GATE.left += 15; paintGate(); return; }
+  if (a === 'gate-reset') { gateStop(); GATE.left = GATE.total; render(); return; }
   if (a === 'gate-skip') { closeGate(true); go({}); return; }
   if (a === 'gate-back') { closeGate(false); go({}); return; }
   if (a === 'sstep') { if (GATE.sid) closeGate(false); UI.step = Object.assign({}, UI.step, { [el.dataset.sid]: +el.dataset.v }); UI.openMore = null; UI.openWarm = null; UI.exMedia = null; go({}); return; }

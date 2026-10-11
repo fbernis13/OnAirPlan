@@ -436,6 +436,13 @@ button.ethumb { padding: 0; border: 0; background: none; cursor: pointer; }
 .emom-nx { color: var(--ink-2); overflow-wrap: anywhere; }
 .emom.running { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent) inset; }
 .emom.finished { background: var(--ok-soft); border-color: var(--ok); }
+
+/* Chrono de maintien : Go / Stop / Reset sous la saisie des secondes */
+.holdcell { display: grid; gap: .3rem; min-width: 0; }
+.holdbtns { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .25rem; }
+.holdbtns button { border: 1px solid var(--line); background: var(--amber-soft); color: var(--amber); border-radius: .45rem; min-height: 2rem; cursor: pointer; display: grid; place-items: center; }
+.holdbtns button svg { width: 1rem; height: 1rem; }
+.holdbtns.on button[data-act=hold-go] { background: var(--amber); color: var(--surface); }
 </style>
 <div id="app" class="app"></div>
 <script>
@@ -1579,7 +1586,8 @@ function setRow(sid, key, it, d, st, si) {
   let main;
   if (d.unit === 'time') {
     const on = HOLD.uid === id;
-    main = `<label>Secondes<div class="stepper"><button class="holdbtn ${on ? 'on' : ''}" data-act="hold" ${a} aria-label="Chronomètre de maintien">${on ? IC.pause : IC.play}</button><input type="number" inputmode="numeric" id="s-dur-${id}" data-in="set" data-f="dur" ${a} value="${esc(on ? Math.floor(HOLD.elapsed()) : (st.dur ?? ''))}" placeholder="${ph}"><button data-act="step" data-f="dur" data-d="5" ${a} aria-label="Plus 5 secondes">+</button></div></label>`;
+    main = `<div class="holdcell"><label>Secondes<div class="stepper"><button data-act="step" data-f="dur" data-d="-5" ${a} aria-label="Moins 5 secondes">−</button><input type="number" inputmode="numeric" id="s-dur-${id}" data-in="set" data-f="dur" ${a} value="${esc(on ? Math.floor(HOLD.elapsed()) : (st.dur ?? ''))}" placeholder="${ph}"><button data-act="step" data-f="dur" data-d="5" ${a} aria-label="Plus 5 secondes">+</button></div></label>
+      <div class="holdbtns ${on ? 'on' : ''}"><button data-act="hold-go" ${a} aria-label="Go">${IC.play}</button><button data-act="hold-stop" ${a} aria-label="Stop">${IC.pause}</button><button data-act="hold-reset" ${a} aria-label="Reset">${IC.reset}</button></div></div>`;
   } else if (d.unit === 'dist') {
     main = `<label>Mètres<div class="stepper"><button data-act="step" data-f="dist" data-d="-5" ${a} aria-label="Moins 5 m">−</button><input type="number" inputmode="numeric" id="s-dist-${id}" data-in="set" data-f="dist" ${a} value="${esc(st.dist ?? '')}" placeholder="${ph}"><button data-act="step" data-f="dist" data-d="5" ${a} aria-label="Plus 5 m">+</button></div></label>`;
   } else if (d.unit === 'min') {
@@ -1653,6 +1661,7 @@ function gateView(s, steps) {
     <div class="gate-btns">
       <button class="btn primary big" data-act="gate-go" ${GATE.running ? 'disabled' : ''}>${IC.play} Go</button>
       <button class="btn big" data-act="gate-stop" ${GATE.running ? '' : 'disabled'}>${IC.pause} Stop</button>
+      <button class="btn big" data-act="gate-reset">${IC.reset} Reset</button>
     </div>
     <div class="gate-btns">
       <button class="btn small ghost" data-act="gate-plus">+15 s</button>
@@ -1704,7 +1713,7 @@ function emomBox(key, cfg) {
     <div class="recup-b">
       <button class="btn primary" data-act="emom-go" data-key="${esc(key)}">${IC.play} Go</button>
       <button class="btn" data-act="emom-stop" data-key="${esc(key)}">${IC.pause} Stop</button>
-      <button class="btn" data-act="emom-zero" data-key="${esc(key)}" aria-label="Remise à zéro">${IC.reset} RAZ</button>
+      <button class="btn" data-act="emom-zero" data-key="${esc(key)}" aria-label="Reset">${IC.reset} Reset</button>
     </div></div>`;
 }
 function emomCfg(key) {
@@ -1763,7 +1772,7 @@ function wtBox(sid, bl) {
     <div class="recup-b">
       <button class="btn primary" data-act="wt-go" data-key="${esc(key)}">${IC.play} Go</button>
       <button class="btn" data-act="wt-stop" data-key="${esc(key)}">${IC.pause} Stop</button>
-      <button class="btn" data-act="wt-zero" data-key="${esc(key)}" aria-label="Remise à zéro">${IC.reset} RAZ</button>
+      <button class="btn" data-act="wt-zero" data-key="${esc(key)}" aria-label="Reset">${IC.reset} Reset</button>
     </div>
     <div class="recup-b">${cfg.mode === 'amrap'
       ? `<button class="btn" data-act="wt-round" data-key="${esc(key)}">+1 tour</button><button class="btn ghost" data-act="wt-round" data-d="-1" data-key="${esc(key)}">−1</button>`
@@ -1810,7 +1819,7 @@ function recupBox(key, sec, label, after) {
     <div class="recup-b">
       <button class="btn primary" data-act="rest-go" data-key="${esc(key)}" data-sec="${sec}" data-label="${esc(label)}">${IC.play} Go</button>
       <button class="btn" data-act="rest-stop" data-key="${esc(key)}">${IC.pause} Stop</button>
-      <button class="btn" data-act="rest-zero" data-key="${esc(key)}" aria-label="Remise à zéro">${IC.reset} RAZ</button>
+      <button class="btn" data-act="rest-zero" data-key="${esc(key)}" aria-label="Reset">${IC.reset} Reset</button>
     </div></div>`;
 }
 function paintRecup() {
@@ -1848,8 +1857,9 @@ function renderTimer() {
     <span class="big">${fmtSec(Math.ceil(REST.left))}</span>
     <span class="lbl">${REST.finished ? '<strong>Repos terminé</strong>' : 'Repos'}<br>${esc(REST.label)}</span>
     <button data-act="rest-plus" aria-label="Ajouter 15 secondes">+15</button>
-    <button data-act="rest-toggle" aria-label="${REST.running ? 'Pause' : 'Reprendre'}">${REST.running ? IC.pause : IC.play}</button>
-    <button data-act="rest-reset" aria-label="Réinitialiser">${IC.reset}</button>
+    <button data-act="rest-go" data-key="${esc(REST.key || '')}" aria-label="Go">${IC.play}</button>
+    <button data-act="rest-stop" data-key="${esc(REST.key || '')}" aria-label="Stop">${IC.pause}</button>
+    <button data-act="rest-zero" data-key="${esc(REST.key || '')}" aria-label="Reset">${IC.reset}</button>
     <button data-act="rest-close" aria-label="Fermer le minuteur">${IC.close}</button>`;
 }
 
@@ -1858,11 +1868,11 @@ const HOLD = { uid: null, start: 0, base: 0, tick: null, target: 0, beeped: fals
 function toggleHold(ref) {
   const id = `${ref.sid}-${ref.key}-${ref.si}`;
   if (HOLD.uid === id) { // arrêt
-    const v = Math.floor(HOLD.elapsed()); clearInterval(HOLD.tick); HOLD.uid = null;
+    const v = Math.floor(HOLD.elapsed()); clearInterval(HOLD.tick); HOLD.uid = null; HOLD.paused = { id, v };
     writeSet(ref, 'dur', v); return v;
   }
   if (HOLD.uid) toggleHold(HOLD.ref);
-  HOLD.uid = id; HOLD.ref = ref; HOLD.start = Date.now(); HOLD.base = 0; HOLD.beeped = false; HOLD.target = Number(ref.target) || 0;
+  HOLD.uid = id; HOLD.ref = ref; HOLD.start = Date.now(); HOLD.base = Number(ref.from) || 0; HOLD.beeped = false; HOLD.target = Number(ref.target) || 0;
   HOLD.tick = setInterval(() => {
     const inp = document.getElementById('s-dur-' + id); const v = Math.floor(HOLD.elapsed());
     if (inp) inp.value = v;
@@ -2518,7 +2528,7 @@ document.addEventListener('click', ev => {
   // Séance
   if (a === 'sdone') { const L = getLog(el.dataset.sid, true); L.done = !L.done; if (L.done && !L.date) L.date = todayISO(); touchLog(el.dataset.sid); render(); if (L.done) showToast('Séance terminée'); return; }
   if (a === 'wdone') { const L = getLog(el.dataset.sid, true); markStarted(el.dataset.sid); const W = L.wod[el.dataset.bl] = L.wod[el.dataset.bl] || {}; W.done = !W.done; touchLog(el.dataset.sid); render(); return; }
-  if (a === 'step' || a === 'setdone' || a === 'hold' || a === 'addset' || a === 'delset' || a === 'exdone' || a === 'skip') {
+  if (a === 'step' || a === 'setdone' || a === 'hold' || a === 'hold-go' || a === 'hold-stop' || a === 'hold-reset' || a === 'addset' || a === 'delset' || a === 'exdone' || a === 'skip') {
     const r = refOf(el); if (!r.it) return;
     const E = getExLog(r.sid, r.key, r.it, true); markStarted(r.sid);
     const d = exDef(E.swap || r.it.x);
@@ -2527,6 +2537,13 @@ document.addEventListener('click', ev => {
       st[f] = Math.max(0, Math.round((cur + Number(el.dataset.d)) * 10) / 10);
       const inp = document.getElementById(`s-${f}-${r.sid}-${r.key}-${r.si}`); if (inp) inp.value = st[f];
       touchLog(r.sid); return;
+    }
+    if (a === 'hold-go' || a === 'hold-stop' || a === 'hold-reset') {
+      const id = `${r.sid}-${r.key}-${r.si}`; const on = HOLD.uid === id; const ref = { sid: r.sid, key: r.key, si: r.si, bi: el.dataset.bi, i: el.dataset.i, it: r.it, target: firstNum(r.it.reps) };
+      if (a === 'hold-go' && !on) { const st = E.sets[r.si] || {}; ref.from = HOLD.paused && HOLD.paused.id === id && Number(st.dur) === HOLD.paused.v ? HOLD.paused.v : 0; toggleHold(ref); }
+      else if (a === 'hold-stop' && on) toggleHold(HOLD.ref);
+      else if (a === 'hold-reset') { HOLD.paused = null; if (on) { clearInterval(HOLD.tick); HOLD.uid = null; } writeSet(ref, 'dur', ''); }
+      render(); return;
     }
     if (a === 'hold') { toggleHold({ sid: r.sid, key: r.key, si: r.si, bi: el.dataset.bi, i: el.dataset.i, it: r.it, target: firstNum(r.it.reps) }); render(); return; }
     if (a === 'setdone') {
@@ -2555,9 +2572,9 @@ document.addEventListener('click', ev => {
   if (a === 'emom-go') { emomGo(el.dataset.key); return; }
   if (a === 'emom-stop') { if (EMOM.key === el.dataset.key) emomStop(); return; }
   if (a === 'emom-zero') { if (EMOM.key === el.dataset.key) emomZero(); return; }
-  if (a === 'rest-go') { const k = el.dataset.key; if (REST.key === k && REST.total && !REST.finished) { if (!REST.running) { REST.running = true; REST.endAt = Date.now() + REST.left * 1000; runRest(); } } else startRest(+el.dataset.sec, el.dataset.label, k); renderTimer(); return; }
-  if (a === 'rest-stop') { if (REST.key === el.dataset.key && REST.running) { REST.running = false; REST.left = Math.max(0, (REST.endAt - Date.now()) / 1000); } renderTimer(); return; }
-  if (a === 'rest-zero') { if (REST.key === el.dataset.key) { clearInterval(REST.tick); REST.running = false; REST.finished = false; REST.left = REST.total; } renderTimer(); return; }
+  if (a === 'rest-go') { const k = el.dataset.key || REST.key; if (REST.key === k && REST.total && !REST.finished) { if (!REST.running) { REST.running = true; REST.endAt = Date.now() + REST.left * 1000; runRest(); } } else startRest(+el.dataset.sec || REST.total, el.dataset.label || REST.label, k); renderTimer(); return; }
+  if (a === 'rest-stop') { if (REST.key === (el.dataset.key || REST.key) && REST.running) { REST.running = false; REST.left = Math.max(0, (REST.endAt - Date.now()) / 1000); } renderTimer(); return; }
+  if (a === 'rest-zero') { if (REST.key === (el.dataset.key || REST.key)) { clearInterval(REST.tick); REST.running = false; REST.finished = false; REST.left = REST.total; } renderTimer(); return; }
   if (a === 'rest-toggle') { if (REST.finished) return; if (REST.running) { REST.running = false; REST.left = Math.max(0, (REST.endAt - Date.now()) / 1000); } else { REST.running = true; REST.endAt = Date.now() + REST.left * 1000; runRest(); } renderTimer(); return; }
   if (a === 'rest-reset') { REST.left = REST.total; REST.finished = false; REST.running = true; REST.endAt = Date.now() + REST.total * 1000; runRest(); renderTimer(); return; }
   if (a === 'rest-plus') { REST.total += 15; if (REST.finished) { REST.finished = false; REST.left = 15; REST.running = true; REST.endAt = Date.now() + 15000; runRest(); } else if (REST.running) REST.endAt += 15000; else REST.left += 15; renderTimer(); return; }
@@ -2576,6 +2593,7 @@ document.addEventListener('click', ev => {
   if (a === 'gate-go') { gateGo(); render(); return; }
   if (a === 'gate-stop') { gateStop(); render(); return; }
   if (a === 'gate-plus') { GATE.total += 15; if (GATE.running) GATE.endAt += 15000; else GATE.left += 15; paintGate(); return; }
+  if (a === 'gate-reset') { gateStop(); GATE.left = GATE.total; render(); return; }
   if (a === 'gate-skip') { closeGate(true); go({}); return; }
   if (a === 'gate-back') { closeGate(false); go({}); return; }
   if (a === 'sstep') { if (GATE.sid) closeGate(false); UI.step = Object.assign({}, UI.step, { [el.dataset.sid]: +el.dataset.v }); UI.openMore = null; UI.openWarm = null; UI.exMedia = null; go({}); return; }
