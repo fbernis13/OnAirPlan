@@ -105,8 +105,9 @@ const fmtSec = s => { s = Math.max(0, Math.round(s)); return Math.floor(s / 60) 
 function exDef(k) { return EXERCISES[k] || { fr: k, en: '', kind: 'force', unit: 'reps', p: [], s: [] }; }
 function sessLabel(s) { return `C${s.cycle} · ${SESSION_TYPES[s.slot].label}`; }
 /* Machine guidée ou Hammer : choix enregistré dans la progression, sinon la machine prévue */
-function machineEx(k) { const p = PAIR_OF[k]; const c = p && S.machines && S.machines[p.id]; return c ? p[c] : k; }
-function plannedEx(it, E) { return (E && (E.swap || E.machine)) || machineEx(it.x); }
+function machineOk(p, v, cycle) { return !!p[v] && (v !== 'haltero' || !cycle || cycle >= (p.halteroFrom || 1)); }
+function machineEx(k, cycle) { const p = PAIR_OF[k]; const c = p && S.machines && S.machines[p.id]; return c && machineOk(p, c, cycle) ? p[c] : k; }
+function plannedEx(it, E, cycle) { return (E && (E.swap || E.machine)) || machineEx(it.x, cycle); }
 function itemKey(bl, i) { return bl.l + i; }
 function itemLabel(it) { return it.label || exDef(it.x).fr; }
 

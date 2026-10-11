@@ -18,7 +18,7 @@ function computeMuscles(sids, adjusted) {
       (bl.items || []).forEach((it, i) => {
         const E = L && L.ex ? L.ex[itemKey(bl, i)] : null;
         if (adjusted && E && E.skipped) return;
-        const eff = adjusted ? plannedEx(it, E) : machineEx(it.x); const d = exDef(eff);
+        const eff = adjusted ? plannedEx(it, E, s.cycle) : machineEx(it.x, s.cycle); const d = exDef(eff);
         const lbl = eff !== it.x ? d.fr : itemLabel(it);
         const groups = [...new Set([...(d.p || []), ...(d.s || [])])];
         if (bl.type === 'wod') { groups.forEach(g => { R[g].wod.add(sid); add(R[g].oW, lbl, 1); }); return; }

@@ -6,7 +6,7 @@
  "notes": [
   "Groupes musculaires principaux et secondaires : conventions du carnet, pas une mesure.",
   "Vidéos hors catalogue relevées le 2026-10-11 dans les résultats de recherche YouTube (identifiant, titre et chaîne exacts).",
-  "Paires machine guidée / Hammer Strength (chargée de disques) : machinePairs. Le choix est enregistré dans la progression ; sans choix, le carnet garde la machine prévue par le programme. Adducteurs, poulies et hack squat n’ont pas de paire."
+  "Paires machine guidée / Hammer Strength (chargée de disques) / haltéro : machinePairs. L’option haltéro (mouvements du catalogue sans réception en front rack : sumo deadlift high pull, hang clean haltères) n’est proposée qu’à partir du cycle indiqué (halteroFrom). Les cycles 3 et 4 du programme réintroduisent déjà front squat, hang power clean et power clean. Le choix est enregistré dans la progression ; sans choix, le carnet garde la machine prévue."
  ],
  "muscles": {
   "pec": "Pectoraux",
@@ -2028,6 +2028,42 @@
     "tri",
     "epa"
    ]
+  },
+  "sdhp": {
+   "fr": "Sumo deadlift high pull",
+   "en": "Sumo Deadlift High Pull",
+   "mv": "sumo-deadlift-high-pull",
+   "kind": "force",
+   "unit": "reps",
+   "load": true,
+   "p": [
+    "dos",
+    "epa",
+    "fess"
+   ],
+   "s": [
+    "isch"
+   ],
+   "variant": "Aucune réception : la barre monte sous le menton puis redescend. Sangles possibles pour soulager la prise."
+  },
+  "db_hang_clean": {
+   "fr": "Hang clean haltères",
+   "en": "Dumbbell Hang Clean",
+   "mv": "dumbbell-hang-clean",
+   "kind": "force",
+   "unit": "reps",
+   "load": true,
+   "p": [
+    "fess",
+    "isch",
+    "quad"
+   ],
+   "s": [
+    "epa",
+    "bic",
+    "abs"
+   ],
+   "variant": "Prise neutre possible : les haltères se posent sur les épaules, le poignet plie moins qu’avec la barre. Ce n’est pas un travail isolé des ischios, c’est une extension de hanche explosive."
   }
  },
  "videos": {
@@ -11410,13 +11446,17 @@
    "id": "legcurl_l",
    "label": "Leg curl allongé",
    "guidee": "legcurl_l",
-   "hammer": "legcurl_hs"
+   "hammer": "legcurl_hs",
+   "haltero": "db_hang_clean",
+   "halteroFrom": 2
   },
   {
    "id": "legcurl_s",
    "label": "Leg curl assis",
    "guidee": "legcurl_s",
-   "hammer": "legcurl_hs"
+   "hammer": "legcurl_hs",
+   "haltero": "db_hang_clean",
+   "halteroFrom": 2
   },
   {
    "id": "calf_mach",
@@ -11440,7 +11480,9 @@
    "id": "row",
    "label": "Rowing assis",
    "guidee": "seated_row",
-   "hammer": "iso_row"
+   "hammer": "iso_row",
+   "haltero": "sdhp",
+   "halteroFrom": 2
   },
   {
    "id": "chest",

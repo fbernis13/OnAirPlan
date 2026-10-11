@@ -298,3 +298,5 @@ ul.clean li { margin: .2rem 0; }
 .machine-pick .mthumb { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: .4rem; background: var(--surface-2); display: block; }
 .machine-pick .ml { font-weight: 700; font-size: .9em; }
 .machine-pick .mn { font-size: .78em; color: var(--ink-2); line-height: 1.25; overflow-wrap: anywhere; }
+.machine-pick.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.seg { flex-wrap: wrap; }
