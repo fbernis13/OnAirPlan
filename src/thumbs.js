@@ -33,6 +33,7 @@ function heldSvg(J, h) {
   const out = [];
   if (h === 'db') hands.forEach(w => out.push(`<rect x="${w[0] - 4.5}" y="${w[1] - 2.2}" width="9" height="4.4" rx="1.5" class="tb-iron"/>`));
   if (h === 'kb') out.push(`<path d="M${J.W[0] - 3},${J.W[1]} a3,3 0 0 1 6,0" class="tb-line"/><circle cx="${J.W[0]}" cy="${J.W[1] + 5}" r="4.6" class="tb-iron"/>`);
+  if (h === 'db1') out.push(`<rect x="${J.W[0] - 4.5}" y="${J.W[1] - 2.2}" width="9" height="4.4" rx="1.5" class="tb-iron"/>`);
   if (h === 'kb1') hands.slice(0, 1).forEach(w => out.push(`<circle cx="${w[0]}" cy="${w[1] + 3}" r="4" class="tb-iron"/>`));
   if (h === 'bb') out.push(`<circle cx="${J.W[0]}" cy="${J.W[1]}" r="8.5" class="tb-plate"/><circle cx="${J.W[0]}" cy="${J.W[1]}" r="1.6" class="tb-iron"/>`);
   if (h === 'bbS') out.push(`<circle cx="${J.S[0] - 2}" cy="${J.S[1] - 1}" r="8.5" class="tb-plate"/><circle cx="${J.S[0] - 2}" cy="${J.S[1] - 1}" r="1.6" class="tb-iron"/>`);
@@ -181,7 +182,19 @@ const THUMB_DEF = {
   run: { m: 'cardio', f: { p: [58, 46], t: 12, a: -40, b: 40, a2: 40, b2: 120, c: 50, d: -20, c2: -30, d2: -80 } }
 };
 /* Alias : même dessin que l'exercice de référence */
-Object.assign(THUMB_DEF, { hack: THUMB_DEF.hack });
+Object.assign(THUMB_DEF, {
+  hack: THUMB_DEF.hack,
+  kb_dl: Object.assign({}, THUMB_DEF.deadlift, { h: 'kb1' }),
+  kb_swing_am: { f: { p: [58, 46], t: 0, a: 150, b: 165, c: 4, d: 0 }, h: 'kb1' },
+  db_snatch: { f: { p: [58, 48], t: 6, a: 160, b: 168, a2: 10, b2: 40, c: 20, d: -20, c2: -14, d2: 0 }, h: 'db1' },
+  devil: { f: { p: [58, 46], t: 0, a: 160, b: 170, a2: 150, b2: 165, c: 4, d: 0 }, h: 'db' },
+  burpee: THUMB_DEF.pushup_par,
+  wallball: THUMB_DEF.wall_ball,
+  assault_wod: THUMB_DEF.assault, skierg_wod: THUMB_DEF.skierg, double_under: THUMB_DEF.rope_su,
+  hip_hinge: Object.assign({}, THUMB_DEF.good_morning, { h: '', eq: [['l', 18, 0, 18, G, 4]] }),
+  leg_swings: { f: { p: [56, 46], t: 0, a: 80, b: 80, c: 70, d: 0, c2: -4, d2: 0 }, eq: [['l', 96, 0, 96, G, 4]] },
+  st_pec: { f: { p: [60, 46], t: 0, a: -88, b: -88, c: 2, d: 0, c2: -2, d2: 0 }, eq: [['l', 28, 0, 28, G, 4]] }
+});
 
 function thumbSvg(k) {
   const def = THUMB_DEF[k]; if (!def) return '';
@@ -193,7 +206,7 @@ function thumbSvg(k) {
   (def.eq || []).forEach(e => { const [k, ...v] = e; if (k === 't') { add([v[0], v[1] - 9]); add([v[0] + 14, v[1]]); } else if (k === 'l') { add([v[0], v[1]]); add([v[2], v[3]]); } else if (k === 'r' || k === 'b') { add([v[0], v[1]]); add([v[0] + v[2], v[1] + v[3]]); } else if (k === 's') { add([v[0], v[1] - 10]); add([v[0] + 12, v[1] + v[2]]); } else if (k === 'c' || k === 'o' || k === 'p') { const r = k === 'p' ? 9.5 : v[2]; add([v[0] - r, v[1] - r]); add([v[0] + r, v[1] + r]); } });
   if (def.h) { add([J.W[0] - 9, J.W[1] - 11]); add([J.W[0] + 9, J.W[1] + 10]); if (def.h === 'bbS' || def.h === 'bbF') { add([J.S[0] - 11, J.S[1] - 10]); add([J.S[0] + 13, J.S[1] + 9]); } }
   ys.push(G + 1);
-  let x0 = Math.min(...xs) - 6, x1 = Math.max(...xs) + 6, y0 = Math.max(-4, Math.min(...ys) - 6), y1 = G + 3;
+  let x0 = Math.min(...xs) - 6, x1 = Math.max(...xs) + 6, y0 = Math.max(-30, Math.min(...ys) - 6), y1 = G + 3;
   let w = x1 - x0, h = y1 - y0;
   if (w / h > 4 / 3) { const nh = w * 3 / 4; y0 -= nh - h; h = nh; } else { const nw = h * 4 / 3; x0 -= (nw - w) / 2; w = nw; }
   const vb = [x0, y0, w, h].map(n => Math.round(n * 10) / 10).join(' ');

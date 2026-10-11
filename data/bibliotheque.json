@@ -3112,6 +3112,9 @@
    ],
    "s": [
     "flex"
+   ],
+   "vid": [
+    "fr_situp"
    ]
   },
   "vup": {
@@ -3125,7 +3128,10 @@
     "abs",
     "flex"
    ],
-   "s": []
+   "s": [],
+   "vid": [
+    "vup"
+   ]
   },
   "k2e": {
    "fr": "Knees-to-elbow (genoux aux coudes, suspendu)",
@@ -3140,6 +3146,9 @@
    ],
    "s": [
     "dos"
+   ],
+   "vid": [
+    "fr_k2e"
    ]
   }
  },
@@ -5660,6 +5669,35 @@
    "checkedAt": "2026-10-11",
    "lang": "fr",
    "foundVia": "Recherche YouTube en français"
+  },
+  "fr_situp": {
+   "videoId": "I8nkRGM53cI",
+   "title": "Sit-up - le tutoriel complet",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=I8nkRGM53cI",
+   "checkedAt": "2026-10-11",
+   "foundVia": "Recherche web (titre relevé dans les résultats)",
+   "lang": "fr"
+  },
+  "fr_k2e": {
+   "videoId": "IVV4WEIIh-k",
+   "title": "Knees to Elbows - Genoux aux Coudes",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=IVV4WEIIh-k",
+   "checkedAt": "2026-10-11",
+   "foundVia": "Recherche web (titre relevé dans les résultats)",
+   "lang": "fr"
+  },
+  "vup": {
+   "videoId": "5kvKmRGADlQ",
+   "title": "How to Do: V-UP",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=5kvKmRGADlQ",
+   "checkedAt": "2026-10-11",
+   "foundVia": "Recherche web (titre relevé dans les résultats)"
   }
  },
  "catalogue": {
