@@ -107,7 +107,7 @@ document.addEventListener('click', ev => {
         if (st[f] === '' || st[f] == null) st[f] = firstNum(r.it.reps);
         st.at = Date.now();
         if (E.sets.every(x => x.done)) E.done = true;
-        if (r.it.rest) startRest(r.it.rest, `${itemLabel(r.it)} · série ${r.si + 1}/${E.sets.length}`);
+        if (r.it.rest) startRest(r.it.rest, `${itemLabel(r.it)} · série ${r.si + 1}/${E.sets.length}`, r.sid + ':' + r.key);
       } else E.done = false;
       touchLog(r.sid); render(); return;
     }
@@ -117,6 +117,9 @@ document.addEventListener('click', ev => {
     if (a === 'skip') { E.skipped = !E.skipped; touchLog(r.sid); render(); return; }
   }
   // Minuteur
+  if (a === 'rest-go') { const k = el.dataset.key; if (REST.key === k && REST.total && !REST.finished) { if (!REST.running) { REST.running = true; REST.endAt = Date.now() + REST.left * 1000; runRest(); } } else startRest(+el.dataset.sec, el.dataset.label, k); renderTimer(); return; }
+  if (a === 'rest-stop') { if (REST.key === el.dataset.key && REST.running) { REST.running = false; REST.left = Math.max(0, (REST.endAt - Date.now()) / 1000); } renderTimer(); return; }
+  if (a === 'rest-zero') { if (REST.key === el.dataset.key) { clearInterval(REST.tick); REST.running = false; REST.finished = false; REST.left = REST.total; } renderTimer(); return; }
   if (a === 'rest-toggle') { if (REST.finished) return; if (REST.running) { REST.running = false; REST.left = Math.max(0, (REST.endAt - Date.now()) / 1000); } else { REST.running = true; REST.endAt = Date.now() + REST.left * 1000; runRest(); } renderTimer(); return; }
   if (a === 'rest-reset') { REST.left = REST.total; REST.finished = false; REST.running = true; REST.endAt = Date.now() + REST.total * 1000; runRest(); renderTimer(); return; }
   if (a === 'rest-plus') { REST.total += 15; if (REST.finished) { REST.finished = false; REST.left = 15; REST.running = true; REST.endAt = Date.now() + 15000; runRest(); } else if (REST.running) REST.endAt += 15000; else REST.left += 15; renderTimer(); return; }

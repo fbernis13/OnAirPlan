@@ -223,7 +223,7 @@ function exoCard(s, bl, it, i) {
     ${muscleLine(d)}
     ${it.note ? `<div class="small muted">${esc(it.note)}</div>` : ''}
     ${(it.variant || d.variant) ? `<div class="variant">${esc(it.variant || d.variant)}</div>` : ''}
-    ${it.rest ? `<div class="small faint">Récupération ${it.rest >= 60 && it.rest % 60 === 0 ? it.rest / 60 + ' min' : it.rest >= 60 ? fmtSec(it.rest) : it.rest + ' s'}${bl.type === 'superset' || bl.type === 'circuit' ? ' après ce mouvement' : ''}</div>` : ''}
+    ${it.rest ? recupBox(uid, it.rest, `${itemLabel(it)}`, bl.type === 'superset' || bl.type === 'circuit') : ''}
     ${last ? `<div class="prev">Dernière fois (${esc(sessLabel(SESSION_BY_ID[last.sid]))}${last.date ? ', ' + fmtDate(last.date) : ''}) : ${esc(setSummary(d, last.sets))}</div>` : ''}
     ${E && E.skipped ? '<div class="small faint">Exercice non réalisé.</div>' : `<div class="sets">${sets.map((st, si) => setRow(s.id, key, it, d, st, si)).join('')}</div>`}
     <div class="exo-actions">
@@ -352,10 +352,32 @@ function gateView(s, steps) {
 }
 
 /* ── Minuteur de repos */
-const REST = { total: 0, left: 0, running: false, label: '', endAt: 0, tick: null, finished: false };
-function startRest(sec, label) {
+const REST = { total: 0, left: 0, running: false, label: '', endAt: 0, tick: null, finished: false, key: null };
+function restTxt(sec) { return sec >= 60 && sec % 60 === 0 ? sec / 60 + ' min' : sec >= 60 ? fmtSec(sec) : sec + ' s'; }
+// Ligne Récupération d'un exercice, avec son minuteur Go / Stop / Remise à zéro
+function recupBox(key, sec, label, after) {
+  const mine = REST.key === key && REST.total;
+  const left = mine ? Math.ceil(REST.left) : sec;
+  return `<div class="recup ${mine && REST.running ? 'running' : ''} ${mine && REST.finished ? 'finished' : ''}" data-rest-key="${esc(key)}" role="timer">
+    <div class="recup-h"><span class="recup-l">Récupération ${esc(restTxt(sec))}${after ? ' après ce mouvement' : ''}</span><span class="recup-t num">${fmtSec(left)}</span></div>
+    <div class="recup-b">
+      <button class="btn primary" data-act="rest-go" data-key="${esc(key)}" data-sec="${sec}" data-label="${esc(label)}">${IC.play} Go</button>
+      <button class="btn" data-act="rest-stop" data-key="${esc(key)}">${IC.pause} Stop</button>
+      <button class="btn" data-act="rest-zero" data-key="${esc(key)}" aria-label="Remise à zéro">${IC.reset} RAZ</button>
+    </div></div>`;
+}
+function paintRecup() {
+  document.querySelectorAll('[data-rest-key]').forEach(b => {
+    const mine = REST.key === b.dataset.restKey && REST.total;
+    b.classList.toggle('running', !!(mine && REST.running)); b.classList.toggle('finished', !!(mine && REST.finished));
+    const t = b.querySelector('.recup-t'); const go = b.querySelector('[data-act=rest-go]');
+    if (mine && t) t.textContent = fmtSec(Math.ceil(REST.left));
+    else if (t && go) t.textContent = fmtSec(+go.dataset.sec);
+  });
+}
+function startRest(sec, label, key) {
   if (!sec) return;
-  REST.total = sec; REST.left = sec; REST.label = label; REST.finished = false; REST.running = true; REST.endAt = Date.now() + sec * 1000;
+  REST.key = key || null; REST.total = sec; REST.left = sec; REST.label = label; REST.finished = false; REST.running = true; REST.endAt = Date.now() + sec * 1000;
   runRest(); renderTimer();
 }
 function runRest() {
@@ -369,7 +391,10 @@ function runRest() {
 }
 function renderTimer() {
   let el = document.getElementById('timer');
-  if (!REST.total) { if (el) el.remove(); return; }
+  paintRecup();
+  // le minuteur du bas ne s'affiche pas si la ligne Récupération correspondante est à l'écran
+  const inline = REST.key && [...document.querySelectorAll('[data-rest-key]')].some(b => b.dataset.restKey === REST.key);
+  if (!REST.total || inline) { if (el) el.remove(); return; }
   if (!el) { el = document.createElement('div'); el.id = 'timer'; el.setAttribute('role', 'timer'); document.body.appendChild(el); }
   el.className = 'timer' + (REST.finished ? ' finished' : '');
   el.innerHTML = `<i class="bar" style="width:${(1 - REST.left / REST.total) * 100}%"></i>
