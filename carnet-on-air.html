@@ -904,6 +904,14 @@ function viewLogin(msg) {
 }
 async function serverSignedIn(c, user) {
   const role = await serverRole(c, user.id);
+  /* autre compte que le dernier connecté sur cet appareil : on efface ses notes locales
+     pour qu'elles ne partent jamais dans la progression du nouveau compte */
+  const last = readLS(SERVER_LS);
+  if (last && last.id !== user.id) {
+    [LS_KEY, DATA_LS.snaps].forEach(k => writeLS(k, null));
+    rememberServerUser({ id: user.id, email: user.email, login: loginOf(user.email), role });
+    return location.reload();
+  }
   Server.user = { id: user.id, email: user.email };
   AUTH.user = { login: loginOf(user.email), role, server: true };
   rememberServerUser({ id: user.id, email: user.email, login: AUTH.user.login, role });
