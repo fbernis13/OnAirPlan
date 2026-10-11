@@ -183,10 +183,11 @@
        "rest": 0
       },
       {
-       "x": "bird_dog",
+       "x": "superman",
        "sets": 3,
-       "reps": "8/côté",
-       "rest": 45
+       "reps": "10",
+       "rest": 45,
+       "note": "Tiens 2 s en haut, regard vers le sol"
       }
      ]
     }
@@ -634,10 +635,11 @@
        "rest": 0
       },
       {
-       "x": "bird_dog",
+       "x": "superman",
        "sets": 3,
-       "reps": "8/côté",
-       "rest": 45
+       "reps": "10",
+       "rest": 45,
+       "note": "Tiens 2 s en haut, regard vers le sol"
       }
      ]
     }
@@ -1086,10 +1088,11 @@
        "rest": 0
       },
       {
-       "x": "bird_dog",
+       "x": "superman",
        "sets": 3,
-       "reps": "8/côté",
-       "rest": 45
+       "reps": "10",
+       "rest": 45,
+       "note": "Tiens 2 s en haut, regard vers le sol"
       }
      ]
     }
@@ -1538,10 +1541,11 @@
        "rest": 0
       },
       {
-       "x": "bird_dog",
+       "x": "superman",
        "sets": 3,
-       "reps": "8/côté",
-       "rest": 45
+       "reps": "10",
+       "rest": 45,
+       "note": "Tiens 2 s en haut, regard vers le sol"
       }
      ]
     }
