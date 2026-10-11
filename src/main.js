@@ -123,7 +123,8 @@ document.addEventListener('click', ev => {
   }
   // Muscles
   if (a === 'jump') { const t = document.getElementById(el.dataset.target); if (t) t.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); return; }
-  if (a === 'prog-cycle') { UI.progCycle = Number(el.dataset.v); render(); return; }
+  if (a === 'prog-cycle') { UI.progCycle = Number(el.dataset.v); UI.railOpen = false; render(); return; }
+  if (a === 'rail-toggle') { UI.railOpen = !UI.railOpen; render(); return; }
   if (a === 'mus-scope') { UI.musScope = el.dataset.v; render(); return; }
   if (a === 'mus-adj') { UI.musAdj = el.dataset.v === '1'; if (UI.sheet && UI.sheet.startsWith('muscles:')) renderSheet(); else render(); return; }
   if (a === 'mus-sel') { const g = el.dataset.g; UI.musSel = g && UI.musSel !== g ? g : null; if (UI.sheet && UI.sheet.startsWith('muscles:')) renderSheet(); else render(); return; }

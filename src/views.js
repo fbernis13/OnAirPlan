@@ -60,11 +60,11 @@ function viewProgramme() {
   const curC = UI.progCycle || (next ? next.cycle : 4);
   const c = CYCLES[curC - 1];
   const ss = SESSIONS.filter(s => s.cycle === c.n);
-  h += `<div class="prog-layout">
-    <nav class="cycle-rail" aria-label="Cycles">${CYCLES.map(cc => { const dd = SESSIONS.filter(s => s.cycle === cc.n && sessionStatus(s.id) === 'done').length;
+  h += `<div class="prog-layout${UI.railOpen ? ' rail-open' : ''}">
+    <nav class="cycle-rail" id="cycle-rail" aria-label="Cycles">${CYCLES.map(cc => { const dd = SESSIONS.filter(s => s.cycle === cc.n && sessionStatus(s.id) === 'done').length;
       return `<button data-act="prog-cycle" data-v="${cc.n}" aria-pressed="${cc.n === curC}"><span class="cn">Cycle ${cc.n}</span><span class="cl">${esc(cc.name)}</span><span class="cd num">${dd}/5</span></button>`; }).join('')}</nav>
     <div class="prog-main">
-      <div class="row"><h2 style="margin:0" class="grow">${esc(c.name)}</h2></div>
+      <div class="row"><button class="btn rail-toggle" data-act="rail-toggle" aria-expanded="${!!UI.railOpen}" aria-controls="cycle-rail">${UI.railOpen ? 'Masquer' : 'Cycle ' + c.n + ' / ' + CYCLES.length + ' ▾'}</button><h2 style="margin:0" class="grow">${esc(c.name)}</h2></div>
       <div class="row" style="margin:.3rem 0"><span class="pill">${esc(c.intensity)}</span><span class="pill">${esc(c.scheme)}</span></div>
       <div class="stack">${ss.map((s, i) => { const st = sessionStatus(s.id); const L = S.logs[s.id];
         return `<button class="listbtn sessbtn" data-act="open-session" data-id="${s.id}">
