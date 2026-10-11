@@ -318,13 +318,11 @@ nav.tabs button { min-width: 0; font-size: min(.72rem, 12px); }
 nav.tabs button span { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 html, body { overflow-x: clip; }
 
-/* Colonne des cycles : masquée sur téléphone, rouverte par le bouton « Cycle n » ; elle se referme après un choix */
-.rail-toggle { display: none; padding: .35rem .7rem; font-size: .85rem; white-space: nowrap; }
-@media (max-width: 640px) {
-  .rail-toggle { display: inline-flex; }
-  .prog-layout:not(.rail-open) { grid-template-columns: minmax(0, 1fr); }
-  .prog-layout:not(.rail-open) .cycle-rail { display: none; }
-}
+/* Colonnes des cycles et des étapes : masquées par défaut, rouvertes par leur bouton ; celle des cycles se referme après un choix */
+.rail-toggle { display: inline-flex; padding: .35rem .7rem; font-size: .85rem; white-space: nowrap; }
+.prog-layout:not(.rail-open), .sess-layout:not(.rail-open) { grid-template-columns: minmax(0, 1fr); }
+.prog-layout:not(.rail-open) .cycle-rail, .sess-layout:not(.rail-open) .sess-rail { display: none; }
+.sess-tools { margin-top: .8rem; flex-wrap: wrap; }
 
 /* Objectifs tractions / pompes : un résultat par cycle */
 .obj-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: .4rem; text-align: center; }

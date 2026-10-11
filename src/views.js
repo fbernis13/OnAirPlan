@@ -65,7 +65,7 @@ function viewProgramme() {
   const ss = SESSIONS.filter(s => s.cycle === c.n);
   h += `<div class="prog-layout${UI.railOpen ? ' rail-open' : ''}">
     <nav class="cycle-rail" id="cycle-rail" aria-label="Cycles">${CYCLES.map(cc => { const dd = SESSIONS.filter(s => s.cycle === cc.n && sessionStatus(s.id) === 'done').length;
-      return `<button data-act="prog-cycle" data-v="${cc.n}" aria-pressed="${cc.n === curC}"><span class="cn">Cycle ${cc.n}</span><span class="cl">${esc(cc.name)}</span><span class="cd num">${dd}/5</span></button>`; }).join('')}</nav>
+      return `<button data-act="prog-cycle" data-v="${cc.n}" aria-pressed="${cc.n === curC}"><span class="cn">Cycle ${cc.n}</span><span class="cl">${esc(cc.name)}</span><span class="cd num">${dd}/${SESSIONS.filter(s => s.cycle === cc.n).length}</span></button>`; }).join('')}</nav>
     <div class="prog-main">
       <div class="row"><button class="btn rail-toggle" data-act="rail-toggle" aria-expanded="${!!UI.railOpen}" aria-controls="cycle-rail">${UI.railOpen ? 'Masquer' : 'Cycle ' + c.n + ' / ' + CYCLES.length + ' ▾'}</button><h2 style="margin:0" class="grow">${esc(c.name)}</h2></div>
       <div class="row" style="margin:.3rem 0"><span class="pill">${esc(c.intensity)}</span><span class="pill">${esc(c.scheme)}</span></div>
@@ -111,7 +111,9 @@ function viewSession(sid) {
   const s = SESSION_BY_ID[sid]; const L = getLog(sid, false) || {};
   const cyc = CYCLES[s.cycle - 1];
   const steps = sessionSteps(s); const n = steps.length; const cur = curStep(s, n); const S = steps[cur];
-  let h = `<p class="muted small" style="margin-top:.8rem">Cycle ${s.cycle} · ${esc(cyc.name)} · ${esc(cyc.intensity)}</p>
+  let h = `<div class="row sess-tools"><button class="btn rail-toggle" data-act="sess-rail" aria-expanded="${!!UI.sessRail}" aria-controls="sess-rail">${UI.sessRail ? 'Masquer les étapes' : 'Étapes ▾'}</button>
+    <button class="btn rail-toggle" data-act="sess-muscles" data-sid="${sid}">Muscles</button></div>
+  <p class="muted small" style="margin-top:.6rem">Cycle ${s.cycle} · ${esc(cyc.name)} · ${esc(cyc.intensity)}</p>
   <h2 style="margin-top:.2rem">${esc(s.title)}</h2>`;
   if (S.k === 'w') {
     h += `<div class="goal"><div class="goal-l">But de la séance</div><p>${esc(s.goal || '')}</p>${s.intro ? `<p class="muted small">${esc(s.intro)}</p>` : ''}</div>
@@ -148,7 +150,7 @@ function viewSession(sid) {
   const nb = cur < n - 1 ? `<button class="btn primary" data-act="sstep" data-sid="${sid}" data-v="${cur + 1}">Suivant ${IC.chev}</button>`
     : nxt ? `<button class="btn" data-act="open-session" data-id="${nxt.id}" title="${esc(sessLabel(nxt))}">Séance suiv. ${IC.chev}</button>` : '<span></span>';
   h += `<div class="stepbar">${pb}<span class="stepn num">${cur + 1} / ${n}</span>${nb}</div>`;
-  return `<div class="sess-layout">${sessionRail(s, L, steps, cur)}<div class="sess-main">${h}</div></div>`;
+  return `<div class="sess-layout${UI.sessRail ? ' rail-open' : ''}">${sessionRail(s, L, steps, cur)}<div class="sess-main">${h}</div></div>`;
 }
 function muscleLine(d) {
   if (d.kind === 'mob') return '';
@@ -167,7 +169,7 @@ function sessionRail(s, L, steps, cur) {
     else if (S.k === 'c') items.push({ v, t: 'Calme', title: 'Retour au calme' });
     else items.push({ v, t: 'Bilan', title: 'Bilan de la séance', done: !!L.done });
   });
-  return `<nav class="sess-rail" aria-label="Étapes de la séance">${items.map(x => x.act ? `<button data-act="${x.act}" data-sid="${s.id}" class="musbtn" title="${esc(x.title)}" aria-label="${esc(x.title)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="4.5" r="2.2"/><path d="M6 8.5h12M12 8.5v6M12 14.5l-3.5 7M12 14.5l3.5 7"/></svg><span class="rs">${esc(x.t)}</span></button>` : `<button data-act="sstep" data-sid="${s.id}" data-v="${x.v}" class="${x.done ? 'done' : ''} ${x.skip ? 'skip' : ''} ${x.v === cur ? 'active' : ''}" ${x.v === cur ? 'aria-current="step"' : ''} title="${esc(x.title)}" aria-label="${esc(x.title)}"><span class="rl">${esc(x.t)}</span>${x.sub ? `<span class="rs">${esc(x.sub)}</span>` : ''}</button>`).join('')}</nav>`;
+  return `<nav class="sess-rail" id="sess-rail" aria-label="Étapes de la séance">${items.map(x => x.act ? `<button data-act="${x.act}" data-sid="${s.id}" class="musbtn" title="${esc(x.title)}" aria-label="${esc(x.title)}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="4.5" r="2.2"/><path d="M6 8.5h12M12 8.5v6M12 14.5l-3.5 7M12 14.5l3.5 7"/></svg><span class="rs">${esc(x.t)}</span></button>` : `<button data-act="sstep" data-sid="${s.id}" data-v="${x.v}" class="${x.done ? 'done' : ''} ${x.skip ? 'skip' : ''} ${x.v === cur ? 'active' : ''}" ${x.v === cur ? 'aria-current="step"' : ''} title="${esc(x.title)}" aria-label="${esc(x.title)}"><span class="rl">${esc(x.t)}</span>${x.sub ? `<span class="rs">${esc(x.sub)}</span>` : ''}</button>`).join('')}</nav>`;
 }
 function shortName(n) { const w = String(n).replace(/[(),·]/g, ' ').split(/\s+/).filter(x => x && !/^(de|du|des|à|la|le|les|sur|au|aux|et|ou|un|en|avec)$/i.test(x)); return w.slice(0, 2).join(' '); }
 function warmList(lines, ctx) {
