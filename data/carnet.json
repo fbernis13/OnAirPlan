@@ -2670,11 +2670,11 @@
      "l": "D",
      "items": [
       {
-       "x": "tgu",
-       "sets": 3,
-       "reps": "2/côté",
-       "rest": 60,
-       "note": "Kettlebell 12-16 kg"
+       "x": "db_snatch",
+       "sets": 4,
+       "reps": "5/côté",
+       "rest": 75,
+       "note": "Haltère 15-22,5 kg, verrouillage 1 s au-dessus de la tête"
       }
      ]
     },
