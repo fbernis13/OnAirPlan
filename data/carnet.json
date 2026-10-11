@@ -67,6 +67,7 @@
  },
  "rules": [
   "Signaux d’arrêt : fourmillements, engourdissement des doigts, douleur sur la cicatrice ou dans la paume. On arrête l’exercice et on passe à une variante sans prise (machine, sangles, avant-bras). Si ça persiste, on en parle au chirurgien ou au kiné.",
+  "Base CrossFit : mouvements poly-articulaires d’abord. Sur chaque cycle, on vérifie l’équilibre des groupes musculaires ; l’isolation ne sert qu’à rattraper un groupe en retard (aux cycles 3 et 4 : leg curl pour les ischios, seul travail de flexion du genou).",
   "Si une séance a été trop dure (RPE > 8 au cycle 1-2, ou courbatures plus de 3 jours), garde les mêmes charges à la séance suivante.",
   "Si tout est facile, augmente de 2,5 à 5 kg sur le haut du corps et de 5 à 10 kg sur le bas du corps d’un cycle à l’autre.",
   "En cas de gêne au poignet, prends la version machine, sangles ou appui sur avant-bras de l’exercice et poursuis la séance.",
@@ -179,16 +180,18 @@
      "rounds": 3,
      "items": [
       {
-       "x": "legext",
+       "x": "air_squat_f",
        "sets": 3,
        "reps": "15",
-       "rest": 0
+       "rest": 0,
+       "note": "Tempo 3 s en descente"
       },
       {
-       "x": "legcurl_l",
+       "x": "db_deadlift",
        "sets": 3,
-       "reps": "15",
-       "rest": 60
+       "reps": "12",
+       "rest": 75,
+       "note": "Prise neutre, sangles si la prise gêne"
       }
      ]
     },
@@ -196,9 +199,9 @@
      "l": "E",
      "items": [
       {
-       "x": "calf_mach",
+       "x": "lunge_bw",
        "sets": 3,
-       "reps": "15-20",
+       "reps": "10/jambe",
        "rest": 60
       }
      ]
@@ -247,7 +250,7 @@
      ]
     }
    ],
-   "goal": "Réhabituer genoux et hanches au travail de jambes sur machines et charges légères, et relancer le gainage. Note tes charges de départ : elles servent de repère pour la suite. Aucune série à l’échec (3-4 répétitions en réserve)."
+   "goal": "Réhabituer genoux et hanches au travail de jambes avec des mouvements simples (presse, goblet squat, step-up, soulevé de terre haltères) et relancer le gainage. Note tes charges de départ : elles servent de repère pour la suite. Aucune série à l’échec (3-4 répétitions en réserve)."
   },
   {
    "id": "c1-ca",
@@ -416,32 +419,15 @@
     },
     {
      "l": "E",
-     "type": "superset",
      "title": "Bras",
      "rounds": 3,
      "items": [
       {
-       "x": "hammer_curl",
+       "x": "pushup_par",
        "sets": 3,
-       "reps": "12",
-       "rest": 0
-      },
-      {
-       "x": "db_oh_triceps",
-       "sets": 3,
-       "reps": "15",
-       "rest": 60
-      }
-     ]
-    },
-    {
-     "l": "F",
-     "items": [
-      {
-       "x": "db_rear_fly",
-       "sets": 3,
-       "reps": "15",
-       "rest": 60
+       "reps": "8-12",
+       "rest": 60,
+       "note": "Sur parallettes ou haltères, poignets neutres"
       }
      ]
     }
@@ -533,12 +519,12 @@
      ]
     },
     {
-     "l": "",
+     "l": "B",
      "type": "rest",
      "title": "Repos 5 min"
     },
     {
-     "l": "B",
+     "l": "C",
      "type": "wod",
      "title": "AMRAP 12 min",
      "benchmark": "amrap12",
@@ -640,10 +626,11 @@
      "rounds": 3,
      "items": [
       {
-       "x": "legcurl_s",
+       "x": "kb_swing_ru",
        "sets": 3,
-       "reps": "12",
-       "rest": 0
+       "reps": "15",
+       "rest": 0,
+       "note": "Kettlebell légère, poignée en crochet sans serrer fort"
       },
       {
        "x": "back_ext",
@@ -657,17 +644,6 @@
      "l": "E",
      "items": [
       {
-       "x": "shrug",
-       "sets": 3,
-       "reps": "15",
-       "rest": 60
-      }
-     ]
-    },
-    {
-     "l": "F",
-     "items": [
-      {
        "x": "farmer",
        "sets": 4,
        "reps": "20 m",
@@ -677,7 +653,7 @@
      ]
     },
     {
-     "l": "G",
+     "l": "F",
      "items": [
       {
        "x": "bird_dog",
@@ -768,16 +744,16 @@
      "rounds": 3,
      "items": [
       {
-       "x": "legext",
+       "x": "db_stepover",
        "sets": 3,
-       "reps": "12",
+       "reps": "10 alternés",
        "rest": 0
       },
       {
-       "x": "adductor",
+       "x": "air_squat_f",
        "sets": 3,
-       "reps": "15",
-       "rest": 60
+       "reps": "20",
+       "rest": 75
       }
      ]
     },
@@ -785,10 +761,11 @@
      "l": "E",
      "items": [
       {
-       "x": "calf_stand",
+       "x": "rope_su",
        "sets": 4,
-       "reps": "12",
-       "rest": 60
+       "reps": "50",
+       "rest": 45,
+       "note": "Ou 20 double unders si la technique est là"
       }
      ]
     },
@@ -1010,16 +987,17 @@
      "rounds": 3,
      "items": [
       {
-       "x": "ez_curl",
-       "sets": 3,
-       "reps": "12",
-       "rest": 0
-      },
-      {
        "x": "dip_assist",
        "sets": 3,
        "reps": "10",
-       "rest": 60
+       "rest": 0
+      },
+      {
+       "x": "ringrow",
+       "sets": 3,
+       "reps": "12",
+       "rest": 60,
+       "note": "Pieds plus en avant pour durcir"
       }
      ]
     },
@@ -1027,10 +1005,10 @@
      "l": "F",
      "items": [
       {
-       "x": "lat_raise",
+       "x": "hollow",
        "sets": 3,
-       "reps": "15",
-       "rest": 60
+       "reps": "30 s",
+       "rest": 45
       }
      ]
     }
@@ -1101,12 +1079,12 @@
      ]
     },
     {
-     "l": "",
+     "l": "B",
      "type": "rest",
      "title": "Repos 5 min"
     },
     {
-     "l": "B",
+     "l": "C",
      "type": "wod",
      "title": "AMRAP 15 min",
      "items": [
@@ -1204,20 +1182,13 @@
     },
     {
      "l": "D",
-     "type": "superset",
      "rounds": 3,
      "items": [
       {
        "x": "good_morning",
        "sets": 3,
        "reps": "10",
-       "rest": 0
-      },
-      {
-       "x": "legcurl_l",
-       "sets": 3,
-       "reps": "12",
-       "rest": 60
+       "rest": 75
       }
      ]
     },
@@ -1333,16 +1304,17 @@
      "rounds": 3,
      "items": [
       {
-       "x": "legext",
+       "x": "wall_ball",
        "sets": 3,
        "reps": "12",
-       "rest": 0
+       "rest": 0,
+       "note": "Ballon 6 kg, cible 3 m"
       },
       {
-       "x": "calf_press",
+       "x": "rope_su",
        "sets": 3,
-       "reps": "15",
-       "rest": 60
+       "reps": "50",
+       "rest": 75
       }
      ]
     },
@@ -1551,16 +1523,18 @@
      "rounds": 3,
      "items": [
       {
-       "x": "incline_curl",
+       "x": "pushup_par",
        "sets": 3,
-       "reps": "10",
-       "rest": 0
+       "reps": "12-15",
+       "rest": 0,
+       "note": "Sur parallettes, amplitude complète"
       },
       {
-       "x": "skull",
+       "x": "ringrow",
        "sets": 3,
-       "reps": "10",
-       "rest": 60
+       "reps": "12",
+       "rest": 60,
+       "note": "Pieds surélevés"
       }
      ]
     },
@@ -1568,10 +1542,11 @@
      "l": "F",
      "items": [
       {
-       "x": "db_rear_fly",
+       "x": "kb_rack_carry",
        "sets": 3,
-       "reps": "15",
-       "rest": 60
+       "reps": "20 m/côté",
+       "rest": 60,
+       "note": "En rack ou au-dessus de la tête, poignet aligné"
       }
      ]
     }
@@ -1648,12 +1623,12 @@
      ]
     },
     {
-     "l": "",
+     "l": "C",
      "type": "rest",
      "title": "Repos 5 min"
     },
     {
-     "l": "C",
+     "l": "D",
      "type": "wod",
      "title": "EMOM 16 min, 4 tours",
      "items": [
@@ -1798,14 +1773,22 @@
      "l": "F",
      "items": [
       {
+       "x": "legcurl_l",
+       "sets": 3,
+       "reps": "12",
+       "rest": 0,
+       "note": "Isolation ciblée : les ischios en flexion du genou sont le groupe en retard du cycle"
+      },
+      {
        "x": "superman",
        "sets": 3,
        "reps": "12",
-       "rest": 45,
+       "rest": 60,
        "label": "Superman ou back extension lestée",
        "note": "Back extension lestée : note la charge"
       }
-     ]
+     ],
+     "type": "superset"
     }
    ],
    "cooldown": [
@@ -1893,11 +1876,11 @@
      "l": "E",
      "items": [
       {
-       "x": "calf_stand",
+       "x": "rope_su",
        "sets": 4,
-       "reps": "12",
-       "rest": 60,
-       "label": "Mollets"
+       "reps": "50",
+       "rest": 45,
+       "note": "Ou 30 double unders"
       }
      ]
     },
@@ -2100,37 +2083,31 @@
      "rounds": 3,
      "items": [
       {
-       "x": "hammer_curl",
-       "sets": 3,
-       "reps": "10",
-       "rest": 0,
-       "label": "Curl marteau"
-      },
-      {
-       "x": "db_oh_triceps",
+       "x": "pushup_par",
        "sets": 3,
        "reps": "12",
-       "rest": 60
+       "rest": 0,
+       "note": "Lestées si 15 faciles"
+      },
+      {
+       "x": "ringrow",
+       "sets": 3,
+       "reps": "12",
+       "rest": 60,
+       "note": "Pieds surélevés"
       }
      ]
     },
     {
      "l": "F",
-     "type": "superset",
      "rounds": 3,
      "items": [
       {
-       "x": "lat_raise",
+       "x": "kb_rack_carry",
        "sets": 3,
-       "reps": "12",
-       "rest": 0,
-       "label": "Élévations latérales"
-      },
-      {
-       "x": "db_rear_fly",
-       "sets": 3,
-       "reps": "12",
-       "rest": 60
+       "reps": "20 m/côté",
+       "rest": 60,
+       "note": "Kettlebell au-dessus de la tête"
       }
      ]
     }
@@ -2188,12 +2165,12 @@
      ]
     },
     {
-     "l": "",
+     "l": "B",
      "type": "rest",
      "title": "Repos 6-8 min (marche, rameur très facile)"
     },
     {
-     "l": "B",
+     "l": "C",
      "type": "wod",
      "title": "Retest de l’AMRAP 12 du cycle 1",
      "benchmark": "amrap12",
@@ -2220,12 +2197,12 @@
      ]
     },
     {
-     "l": "",
+     "l": "D",
      "type": "rest",
      "title": "Repos 5 min"
     },
     {
-     "l": "C",
+     "l": "E",
      "type": "wod",
      "title": "Finisher · 5 min",
      "desc": "1 tour = 5 burpees sur les poings + 10 cal assault bike, allure constante.",
@@ -2357,13 +2334,21 @@
      "l": "F",
      "items": [
       {
+       "x": "legcurl_l",
+       "sets": 3,
+       "reps": "10",
+       "rest": 0,
+       "note": "Isolation ciblée : ischios en flexion du genou"
+      },
+      {
        "x": "back_ext",
        "sets": 3,
        "reps": "12",
-       "rest": 45,
+       "rest": 60,
        "label": "Back extension lestée"
       }
-     ]
+     ],
+     "type": "superset"
     }
    ],
    "cooldown": [

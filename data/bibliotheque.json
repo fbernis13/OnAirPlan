@@ -2095,6 +2095,103 @@
     "dos"
    ],
    "variant": "Banc à 30-45°, poitrine appuyée, paumes face à face, coudes légèrement fléchis. On ouvre les bras en serrant les omoplates, charge légère."
+  },
+  "air_squat_f": {
+   "fr": "Air squat tempo",
+   "en": "Air Squat",
+   "mv": "air-squat",
+   "kind": "force",
+   "unit": "reps",
+   "load": false,
+   "p": [
+    "quad",
+    "fess"
+   ],
+   "s": [
+    "isch",
+    "abs"
+   ]
+  },
+  "db_deadlift": {
+   "fr": "Soulevé de terre haltères",
+   "en": "Dumbbell Deadlift",
+   "mv": "dumbbell-deadlift",
+   "kind": "force",
+   "unit": "reps",
+   "load": true,
+   "p": [
+    "fess",
+    "isch"
+   ],
+   "s": [
+    "dos",
+    "quad"
+   ]
+  },
+  "lunge_bw": {
+   "fr": "Fentes avant alternées au poids du corps",
+   "en": "Lunge",
+   "mv": "lunges",
+   "kind": "force",
+   "unit": "reps",
+   "load": false,
+   "p": [
+    "quad",
+    "fess"
+   ],
+   "s": [
+    "isch",
+    "mol"
+   ]
+  },
+  "db_stepover": {
+   "fr": "Step-over sur box avec haltères",
+   "en": "Dumbbell Box Step-over",
+   "mv": "dumbbell-box-step-over",
+   "kind": "force",
+   "unit": "reps",
+   "load": true,
+   "p": [
+    "quad",
+    "fess"
+   ],
+   "s": [
+    "isch",
+    "abs",
+    "mol"
+   ]
+  },
+  "wall_ball": {
+   "fr": "Wall ball",
+   "en": "Wall Ball",
+   "mv": "wall-ball",
+   "kind": "force",
+   "unit": "reps",
+   "load": true,
+   "p": [
+    "quad",
+    "fess",
+    "epa"
+   ],
+   "s": [
+    "abs",
+    "tri"
+   ]
+  },
+  "rope_su": {
+   "fr": "Corde à sauter (single ou double unders)",
+   "en": "Jump Rope",
+   "mv": "single-under",
+   "kind": "force",
+   "unit": "reps",
+   "load": false,
+   "p": [
+    "mol"
+   ],
+   "s": [
+    "quad",
+    "epa"
+   ]
   }
  },
  "videos": {
@@ -11490,36 +11587,6 @@
    "hammer": "presse_hs"
   },
   {
-   "id": "legext",
-   "label": "Leg extension",
-   "guidee": "legext",
-   "hammer": "legext_hs"
-  },
-  {
-   "id": "legcurl_l",
-   "label": "Leg curl allongé",
-   "guidee": "legcurl_l",
-   "hammer": "legcurl_hs"
-  },
-  {
-   "id": "legcurl_s",
-   "label": "Leg curl assis",
-   "guidee": "legcurl_s",
-   "hammer": "legcurl_hs"
-  },
-  {
-   "id": "calf_mach",
-   "label": "Mollets",
-   "guidee": "calf_mach",
-   "hammer": "calf_hs"
-  },
-  {
-   "id": "calf_press",
-   "label": "Mollets à la presse",
-   "guidee": "calf_press",
-   "hammer": "calf_press_hs"
-  },
-  {
    "id": "latpull",
    "label": "Tirage vertical",
    "guidee": "latpull",
@@ -11542,6 +11609,12 @@
    "label": "Dips",
    "guidee": "dip_assist",
    "hammer": "dip_hs"
+  },
+  {
+   "id": "legcurl_l",
+   "label": "Leg curl allongé",
+   "guidee": "legcurl_l",
+   "hammer": "legcurl_hs"
   }
  ]
 }
