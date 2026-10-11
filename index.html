@@ -394,6 +394,10 @@ figure.bigthumb figcaption { margin-top: .3rem; }
 .media-panel .bigthumb { max-width: none; margin: 0; }
 button.ethumb { padding: 0; border: 0; background: none; cursor: pointer; }
 .hello { margin: 1rem 0 0; font-size: 1.5rem; }
+/* Tuiles de séance : grand numéro, tuile verte quand la séance est terminée */
+.sessbtn .slot { min-width: 2.7rem; width: 2.7rem; height: 2.7rem; font-size: 1.45rem; }
+.sessbtn.done { background: var(--ok-soft); border-color: var(--ok); }
+.sessbtn.done .small { color: var(--ink-2); }
 </style>
 <div id="app" class="app"></div>
 <script>
@@ -1334,7 +1338,7 @@ function viewProgramme() {
       <div class="row"><button class="btn rail-toggle" data-act="rail-toggle" aria-expanded="${!!UI.railOpen}" aria-controls="cycle-rail">${UI.railOpen ? 'Masquer' : 'Cycle ' + c.n + ' / ' + CYCLES.length + ' ▾'}</button><h2 style="margin:0" class="grow">${esc(c.name)}</h2></div>
       <div class="row" style="margin:.3rem 0"><span class="pill">${esc(c.intensity)}</span><span class="pill">${esc(c.scheme)}</span></div>
       <div class="stack">${ss.map((s, i) => { const st = sessionStatus(s.id); const L = S.logs[s.id];
-        return `<button class="listbtn sessbtn" data-act="open-session" data-id="${s.id}">
+        return `<button class="listbtn sessbtn ${st}" data-act="open-session" data-id="${s.id}">
           <span class="slot ${st}">${i + 1}</span>
           <span class="grow"><span class="t">Séance ${i + 1} · ${esc(SESSION_TYPES[s.slot].label)}</span><br><span class="small muted">${esc(s.title)}</span><br><span class="small faint">${st === 'done' ? 'Terminée' : st === 'started' ? 'En cours' : 'À faire'}${L && L.date ? ' · ' + fmtDate(L.date) : ''}</span></span>
           <span class="chev">${IC.chev}</span></button>`; }).join('')}</div>

@@ -70,7 +70,7 @@ function viewProgramme() {
       <div class="row"><button class="btn rail-toggle" data-act="rail-toggle" aria-expanded="${!!UI.railOpen}" aria-controls="cycle-rail">${UI.railOpen ? 'Masquer' : 'Cycle ' + c.n + ' / ' + CYCLES.length + ' ▾'}</button><h2 style="margin:0" class="grow">${esc(c.name)}</h2></div>
       <div class="row" style="margin:.3rem 0"><span class="pill">${esc(c.intensity)}</span><span class="pill">${esc(c.scheme)}</span></div>
       <div class="stack">${ss.map((s, i) => { const st = sessionStatus(s.id); const L = S.logs[s.id];
-        return `<button class="listbtn sessbtn" data-act="open-session" data-id="${s.id}">
+        return `<button class="listbtn sessbtn ${st}" data-act="open-session" data-id="${s.id}">
           <span class="slot ${st}">${i + 1}</span>
           <span class="grow"><span class="t">Séance ${i + 1} · ${esc(SESSION_TYPES[s.slot].label)}</span><br><span class="small muted">${esc(s.title)}</span><br><span class="small faint">${st === 'done' ? 'Terminée' : st === 'started' ? 'En cours' : 'À faire'}${L && L.date ? ' · ' + fmtDate(L.date) : ''}</span></span>
           <span class="chev">${IC.chev}</span></button>`; }).join('')}</div>
