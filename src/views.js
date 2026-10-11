@@ -54,7 +54,7 @@ function viewProgramme() {
     const cur = !used.length ? 'plan' : all('hammer') ? 'hammer' : all('guidee') ? 'guidee' : allH ? 'haltero' : 'mix';
     return `<div class="card stack" style="margin-top:.8rem"><div class="row"><strong class="grow">Machines</strong>${cur === 'mix' ? '<span class="pill">choix par exercice</span>' : ''}</div>
       <div class="seg" role="group" aria-label="Machines pour tout le programme">${[['plan', 'Comme prévu'], ['guidee', 'Tout guidé'], ['hammer', 'Tout Hammer']].concat(H.length ? [['haltero', 'Haltéro']] : []).map(([v, l]) => `<button data-act="machine-all" data-v="${v}" aria-pressed="${cur === v}">${l}</button>`).join('')}</div>
-      <p class="small muted" style="margin:0">S’applique à ${MACHINE_PAIRS.length} machines.${H.length ? ` Haltéro remplace ${H.length} d’entre elles par un mouvement du catalogue à partir du cycle ${Math.min(...H.map(p => p.halteroFrom || 1))}, (mouvements sans réception en front rack) ; avant, la machine prévue reste. Les cycles 3 et 4 réintroduisent déjà front squat et power clean.` : ''} Tu peux aussi choisir exercice par exercice dans la séance. Le choix est enregistré avec ta progression.</p></div>`; })() : ''}
+      <p class="small muted" style="margin:0">S’applique à ${MACHINE_PAIRS.length} machines.${H.length ? ` Haltéro remplace ${H.length} d’entre elles par un mouvement du catalogue à partir du cycle ${Math.min(...H.map(p => p.halteroFrom || 1))} ; avant, la machine prévue reste.` : ''} Tu peux aussi choisir exercice par exercice dans la séance. Le choix est enregistré avec ta progression.</p></div>`; })() : ''}
   <details class="more" style="margin-top:.8rem"><summary>${IC.chev} Principes et signaux d’arrêt</summary>
     <div class="card stack small">${PROGRAM_RULES.map(r => `<p style="margin:0">${esc(r)}</p>`).join('')}</div></details>`;
   const curC = UI.progCycle || (next ? next.cycle : 4);
@@ -92,7 +92,7 @@ function machinePicker(pair, side, cycle, attrs) {
 function presc(it) {
   const d = exDef(it.x);
   if (!it.sets) return esc(it.reps);
-  if (d.unit === 'min' && it.sets === 1) return esc(it.reps);
+  if (itemUnit(it) === 'min' && it.sets === 1) return esc(it.reps);
   return `${it.sets} × ${esc(it.reps)}`;
 }
 function viewSession(sid) {
@@ -214,7 +214,7 @@ function exoCard(s, bl, it, i) {
 }
 function setRow(sid, key, it, d, st, si) {
   const id = `${sid}-${key}-${si}`; const a = `data-sid="${sid}" data-key="${key}" data-si="${si}" data-bi="${key.replace(/\d+$/, '')}" data-i="${key.match(/\d+$/)[0]}"`;
-  const ph = firstNum(it.reps);
+  const ph = prefill(it); d = Object.assign({}, d, { unit: itemUnit(it) });
   let main;
   if (d.unit === 'time') {
     const on = HOLD.uid === id;
@@ -227,7 +227,7 @@ function setRow(sid, key, it, d, st, si) {
     main = `<label>Reps<div class="stepper"><button data-act="step" data-f="reps" data-d="-1" ${a} aria-label="Moins une répétition">−</button><input type="number" inputmode="numeric" id="s-reps-${id}" data-in="set" data-f="reps" ${a} value="${esc(st.reps ?? '')}" placeholder="${ph}"><button data-act="step" data-f="reps" data-d="1" ${a} aria-label="Plus une répétition">+</button></div></label>`;
   }
   const second = d.unit === 'min'
-    ? `<label>Résultat<input type="text" id="s-res-${id}" data-in="set" data-f="res" ${a} value="${esc(st.res ?? '')}" placeholder="cal, m, FC"></label>`
+    ? `<label>Résultat<input type="text" id="s-res-${id}" data-in="set" data-f="res" ${a} value="${esc(st.res ?? '')}" placeholder="${esc(it.res || 'cal, m, FC')}"></label>`
     : `<label>Kg<input type="number" inputmode="decimal" step="0.5" id="s-load-${id}" data-in="set" data-f="load" ${a} value="${esc(st.load ?? '')}" placeholder="${d.load ? 'kg' : '—'}"></label>`;
   return `<div class="set ${st.done ? 'done' : ''}"><span class="idx">${si + 1}</span>${main}${second}
     <label>RPE<input type="number" inputmode="decimal" min="1" max="10" step="0.5" id="s-rpe-${id}" data-in="set" data-f="rpe" ${a} value="${esc(st.rpe ?? '')}"></label>

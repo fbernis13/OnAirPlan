@@ -300,3 +300,20 @@ ul.clean li { margin: .2rem 0; }
 .machine-pick .mn { font-size: .78em; color: var(--ink-2); line-height: 1.25; overflow-wrap: anywhere; }
 .machine-pick.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .seg { flex-wrap: wrap; }
+/* Texte agrandi (125-150 %) : rien ne doit dépasser la largeur du téléphone */
+.presc { white-space: normal; text-align: right; max-width: 48%; overflow-wrap: anywhere; }
+.pill { white-space: normal; max-width: 100%; }
+a, p, dd { overflow-wrap: anywhere; }
+.vid > * { min-width: 0; }
+.vid a { display: inline-block; max-width: 100%; }
+.mline { flex-wrap: wrap; min-width: 0; }
+.row > *, .listbtn > * { min-width: 0; }
+.prog-layout { grid-template-columns: minmax(0, 24%) minmax(0, 1fr); }
+.cycle-rail button { min-width: 0; padding-inline: .2rem; }
+.cycle-rail .cn { overflow-wrap: anywhere; }
+.sessbtn { gap: .5rem; padding-inline: .6rem; }
+.sessbtn .slot { min-width: 0; }
+nav.tabs { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+nav.tabs button { min-width: 0; font-size: min(.72rem, 12px); }
+nav.tabs button span { max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+html, body { overflow-x: clip; }

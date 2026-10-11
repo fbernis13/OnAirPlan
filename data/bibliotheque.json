@@ -6,7 +6,7 @@
  "notes": [
   "Groupes musculaires principaux et secondaires : conventions du carnet, pas une mesure.",
   "Vidéos hors catalogue relevées le 2026-10-11 dans les résultats de recherche YouTube (identifiant, titre et chaîne exacts).",
-  "Paires machine guidée / Hammer Strength (chargée de disques) / haltéro : machinePairs. L’option haltéro (mouvements du catalogue sans réception en front rack : sumo deadlift high pull, hang clean haltères) n’est proposée qu’à partir du cycle indiqué (halteroFrom). Les cycles 3 et 4 du programme réintroduisent déjà front squat, hang power clean et power clean. Le choix est enregistré dans la progression ; sans choix, le carnet garde la machine prévue."
+  "Paires machine guidée / Hammer Strength (chargée de disques) : machinePairs. Une paire peut aussi proposer une option haltéro (champs haltero et halteroFrom) quand un mouvement du catalogue remplace vraiment la machine ; aucune pour l’instant, l’haltérophilie du programme arrive aux cycles 3 et 4. Le choix est enregistré dans la progression ; sans choix, le carnet garde la machine prévue."
  ],
  "muscles": {
   "pec": "Pectoraux",
@@ -1076,9 +1076,6 @@
    "fr": "Suitcase carry (un bras)",
    "en": "Suitcase Carry",
    "mv": null,
-   "vid": [
-    "suitcase_carry"
-   ],
    "kind": "force",
    "unit": "dist",
    "load": true,
@@ -1100,7 +1097,7 @@
    ],
    "kind": "force",
    "unit": "reps",
-   "load": false,
+   "load": true,
    "p": [
     "dos"
    ],
@@ -1550,7 +1547,7 @@
    "mv": "box-step-up",
    "kind": "wod",
    "unit": "reps",
-   "load": false,
+   "load": true,
    "p": [
     "quad",
     "fess"
@@ -11446,17 +11443,13 @@
    "id": "legcurl_l",
    "label": "Leg curl allongé",
    "guidee": "legcurl_l",
-   "hammer": "legcurl_hs",
-   "haltero": "db_hang_clean",
-   "halteroFrom": 2
+   "hammer": "legcurl_hs"
   },
   {
    "id": "legcurl_s",
    "label": "Leg curl assis",
    "guidee": "legcurl_s",
-   "hammer": "legcurl_hs",
-   "haltero": "db_hang_clean",
-   "halteroFrom": 2
+   "hammer": "legcurl_hs"
   },
   {
    "id": "calf_mach",
@@ -11480,9 +11473,7 @@
    "id": "row",
    "label": "Rowing assis",
    "guidee": "seated_row",
-   "hammer": "iso_row",
-   "haltero": "sdhp",
-   "halteroFrom": 2
+   "hammer": "iso_row"
   },
   {
    "id": "chest",

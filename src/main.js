@@ -84,7 +84,7 @@ document.addEventListener('click', ev => {
     const E = getExLog(r.sid, r.key, r.it, true); markStarted(r.sid);
     const d = exDef(E.swap || r.it.x);
     if (a === 'step') {
-      const f = el.dataset.f; const st = E.sets[r.si]; const cur = st[f] !== '' && st[f] != null ? Number(st[f]) : Number(firstNum(r.it.reps)) || 0;
+      const f = el.dataset.f; const st = E.sets[r.si]; const cur = st[f] !== '' && st[f] != null ? Number(st[f]) : Number(prefill(r.it)) || 0;
       st[f] = Math.max(0, Math.round((cur + Number(el.dataset.d)) * 10) / 10);
       const inp = document.getElementById(`s-${f}-${r.sid}-${r.key}-${r.si}`); if (inp) inp.value = st[f];
       touchLog(r.sid); return;

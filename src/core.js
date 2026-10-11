@@ -100,7 +100,7 @@ function applySettings() {
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 const todayISO = () => { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0'); };
 const fmtDate = iso => { if (!iso) return ''; const [y, m, d] = iso.split('-'); return `${d}/${m}/${y.slice(2)}`; };
-const firstNum = s => { const m = String(s).replace(',', '.').match(/\d+(\.\d+)?/); return m ? Number(m[0]) : ''; };
+const firstNum = s => { const m = String(s).replace(/(\d)[\s\u202f\u00a0](?=\d{3}\b)/g, '$1').replace(',', '.').match(/\d+(\.\d+)?/); return m ? Number(m[0]) : ''; };
 const fmtSec = s => { s = Math.max(0, Math.round(s)); return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0'); };
 function exDef(k) { return EXERCISES[k] || { fr: k, en: '', kind: 'force', unit: 'reps', p: [], s: [] }; }
 function sessLabel(s) { return `C${s.cycle} · ${SESSION_TYPES[s.slot].label}`; }
@@ -108,6 +108,9 @@ function sessLabel(s) { return `C${s.cycle} · ${SESSION_TYPES[s.slot].label}`; 
 function machineOk(p, v, cycle) { return !!p[v] && (v !== 'haltero' || !cycle || cycle >= (p.halteroFrom || 1)); }
 function machineEx(k, cycle) { const p = PAIR_OF[k]; const c = p && S.machines && S.machines[p.id]; return c && machineOk(p, c, cycle) ? p[c] : k; }
 function plannedEx(it, E, cycle) { return (E && (E.swap || E.machine)) || machineEx(it.x, cycle); }
+/* Unité de saisie : celle de l'exercice, sauf si la séance la précise (intervalles en secondes, test au rameur) */
+function itemUnit(it) { return it.unit || exDef(it.x).unit; }
+function prefill(it) { return itemUnit(it) === 'min' && !/min/.test(String(it.reps)) ? '' : firstNum(it.reps); }
 function itemKey(bl, i) { return bl.l + i; }
 function itemLabel(it) { return it.label || exDef(it.x).fr; }
 
@@ -118,8 +121,8 @@ function getLog(id, create) {
 function getExLog(sid, key, it, create) {
   const L = getLog(sid, create); if (!L) return null;
   if (!L.ex[key] && create) {
-    const d = exDef(it.x); const n = Math.max(1, it.sets || 1);
-    const base = d.unit === 'time' ? { dur: firstNum(it.reps) } : d.unit === 'dist' ? { dist: firstNum(it.reps) } : d.unit === 'min' ? { min: firstNum(it.reps) } : { reps: firstNum(it.reps) };
+    const u = itemUnit(it); const n = Math.max(1, it.sets || 1); const v = prefill(it);
+    const base = u === 'time' ? { dur: v } : u === 'dist' ? { dist: v } : u === 'min' ? { min: v } : { reps: v };
     L.ex[key] = { swap: '', comment: '', done: false, skipped: false, sets: Array.from({ length: n }, () => Object.assign({ load: '', rpe: '', done: false }, base)) };
   }
   return L.ex[key];

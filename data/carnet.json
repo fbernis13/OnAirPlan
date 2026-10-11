@@ -70,7 +70,11 @@
   "Si une séance a été trop dure (RPE > 8 au cycle 1-2, ou courbatures plus de 3 jours), garde les mêmes charges à la séance suivante.",
   "Si tout est facile, augmente de 2,5 à 5 kg sur le haut du corps et de 5 à 10 kg sur le bas du corps d’un cycle à l’autre.",
   "En cas de gêne au poignet, prends la version machine, sangles ou appui sur avant-bras de l’exercice et poursuis la séance.",
-  "Ordre type dans un cycle : R1 → Cardio → R2 → WOD → R3, avec au moins un jour de repos après le WOD ou une séance de jambes lourde."
+  "Ordre type dans un cycle : R1 → Cardio → R2 → WOD → R3, avec au moins un jour de repos après le WOD ou une séance de jambes lourde.",
+  "3 à 4 séances par semaine. Si tu enchaînes deux jours, mets le cardio entre deux renforcements.",
+  "Poignets : prise neutre aux cycles 1-2, appuis au sol sur poings ou parallettes, gainage sur avant-bras au cycle 1, sangles autorisées, pas de série à l’échec. Le front rack revient au cycle 3.",
+  "Step-up plutôt que box jump, et course sur tapis limitée au cycle 1.",
+  "Après le cycle 4, prévois une semaine plus légère avant le bloc suivant."
  ],
  "benchmarks": [
   {
@@ -140,7 +144,8 @@
        "sets": 3,
        "reps": "15",
        "rest": 90,
-       "note": "Machine guidée ou Hammer · tempo 3 s à la descente"
+       "note": "Machine guidée ou Hammer · tempo 3 s à la descente",
+       "benchmark": "squat5rm"
       }
      ]
     },
@@ -601,7 +606,8 @@
        "sets": 3,
        "reps": "12",
        "rest": 90,
-       "note": "Sangles possibles"
+       "note": "Sangles possibles",
+       "benchmark": "deadlift"
       }
      ]
     },
@@ -1071,7 +1077,8 @@
        "x": "assault_wod",
        "sets": 0,
        "reps": "15 cal",
-       "rest": 0
+       "rest": 0,
+       "note": "Appui sur les haltères, poignets neutres"
       },
       {
        "x": "kb_swing_am",
@@ -1383,7 +1390,7 @@
      ]
     }
    ],
-   "goal": "Monter en charge sur le squat (5 × 6) et tester le front squat si le front rack passe sans douleur. Gainage plus exigeant avec les toes-to-bar."
+   "goal": "Monter en charge sur le squat (5 × 6) et reprendre le front squat (prise bras croisés ou sangles si le front rack gêne). Gainage plus exigeant avec les toes-to-bar."
   },
   {
    "id": "c3-ca",
@@ -1438,7 +1445,9 @@
        "x": "assault",
        "sets": 6,
        "reps": "20 s fort / 40 s facile",
-       "rest": 0
+       "rest": 0,
+       "unit": "time",
+       "note": "Une série = un effort fort, en secondes"
       }
      ]
     }
@@ -1794,7 +1803,8 @@
        "sets": 3,
        "reps": "12",
        "rest": 45,
-       "label": "Superman ou back extension lestée"
+       "label": "Superman ou back extension lestée",
+       "note": "Back extension lestée : note la charge"
       }
      ]
     }
@@ -1960,7 +1970,8 @@
        "sets": 10,
        "reps": "30 s fort / 30 s facile",
        "rest": 0,
-       "note": "Puis 3 min facile"
+       "note": "Puis 3 min facile · Une série = un effort fort, en secondes",
+       "unit": "time"
       }
      ]
     },
@@ -1974,7 +1985,8 @@
        "rest": 0,
        "label": "Rameur · test 2 000 m",
        "note": "Note ton temps, ce sera ta référence",
-       "benchmark": "row2k"
+       "benchmark": "row2k",
+       "res": "temps mm:ss"
       }
      ]
     },
@@ -2047,8 +2059,7 @@
        "sets": 5,
        "reps": "5",
        "rest": 120,
-       "note": "Lestées si 8 strictes faciles",
-       "benchmark": "pullups"
+       "note": "Lestées si 8 strictes faciles"
       }
      ]
     },
@@ -2137,7 +2148,7 @@
      ]
     }
    ],
-   "goal": "Consolider les charges du haut du corps (5 × 5) et reprendre le push press. Tractions lestées si 8 strictes deviennent faciles."
+   "goal": "Consolider les charges du haut du corps (5 × 5) et introduire le push press. Tractions lestées si 8 strictes deviennent faciles."
   },
   {
    "id": "c4-wod",
