@@ -48,6 +48,11 @@ drop policy if exists "progression: la sienne" on public.progression;
 create policy "progression: la sienne" on public.progression for all to authenticated
   using (user_id = (select auth.uid())) with check (user_id = (select auth.uid()));
 
+-- L'administrateur lit la progression de tous les comptes (export complet), sans pouvoir la modifier
+drop policy if exists "progression: admin lit tout" on public.progression;
+create policy "progression: admin lit tout" on public.progression for select to authenticated
+  using ((select public.is_admin()));
+
 drop policy if exists "sauvegardes: les siennes" on public.sauvegardes;
 create policy "sauvegardes: les siennes" on public.sauvegardes for all to authenticated
   using (user_id = (select auth.uid())) with check (user_id = (select auth.uid()));

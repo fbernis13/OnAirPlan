@@ -12,7 +12,7 @@ function viewExercices() {
     h += `<h3>${KIND_LABELS[kind]} <span class="faint num small">${ks.length}</span></h3><div class="stack">`;
     ks.forEach(k => {
       const d = EXERCISES[k]; const nv = videosFor(k).length;
-      h += `<button class="listbtn" data-act="open-exo" data-id="${k}"><span class="grow"><span class="t">${esc(d.fr)}</span><br>
+      h += `<button class="listbtn" data-act="open-exo" data-id="${k}">${hasThumb(k) ? `<span class="lthumb">${thumbSvg(k)}</span>` : ''}<span class="grow"><span class="t">${esc(d.fr)}</span><br>
         <span class="small faint">${esc(d.en)}${(d.p || []).length ? ' · ' + d.p.map(g => MUSCLES[g]).join(', ') : ''}</span></span>
         ${nv ? `<span class="pill acc">${nv} vidéo${nv > 1 ? 's' : ''}</span>` : '<span class="pill">Vidéo absente</span>'}<span class="chev">${IC.chev}</span></button>`;
     });
@@ -26,6 +26,7 @@ function viewExo(k) {
   const bySess = {}; uses.forEach(u => { (bySess[u.sid] = bySess[u.sid] || new Set()).add(u.where); });
   return `<h2 style="margin-top:1rem">${esc(d.fr)}</h2>
   <p class="exo-en" style="font-size:.95rem">${esc(d.en)}</p>
+  ${hasThumb(k) ? `<div class="bigthumb">${thumbSvg(k)}</div>` : ''}
   <dl class="kv card">
     <dt>Type</dt><dd>${KIND_LABELS[d.kind] || ''}</dd>
     ${d.unit ? `<dt>Unité</dt><dd>${UNIT_LABELS[d.unit]}</dd>` : ''}
@@ -113,9 +114,22 @@ function docText(kind) {
     : { fileType: 'onair.sauvegarde', version: 1, exportedAt: new Date().toISOString(), bibliotheque: docBibliotheque(), carnet: docCarnet(), progression: docProgression() };
   return JSON.stringify(d, null, 1);
 }
-function exportDoc(kind) {
+async function exportDoc(kind) {
   const name = (kind === 'all' ? 'onair-sauvegarde' : DOC_INFO[kind].file) + '-' + todayISO() + '.json';
-  offerFile(name, docText(kind));
+  let text = docText(kind);
+  /* l'administrateur exporte aussi la progression de chaque compte */
+  if (kind === 'all' && isAdmin() && Server.on && Server.client) {
+    const r = await allProfiles();
+    if (r) { const d = JSON.parse(text); d.profils = r; text = JSON.stringify(d, null, 1); if (r.length < 2) showToast('Seul ton profil est exporté : ajoute la règle « admin lit tout » dans Supabase.'); }
+  }
+  offerFile(name, text);
+}
+async function allProfiles() {
+  try {
+    const { data, error } = await Server.client.from('progression').select('user_id,data,updated_at');
+    if (error) throw error;
+    return (data || []).map(r => ({ compte: (r.data && r.data.compte) || (r.user_id === Server.user.id ? userName() : r.user_id), user_id: r.user_id, majLe: r.updated_at, progression: r.data }));
+  } catch (e) { showToast('Profils non récupérés : ' + (e.message || e)); return null; }
 }
 async function offerFile(name, text) {
   const inClaude = !!(window.claude && typeof window.claude.use === 'function');
@@ -165,6 +179,7 @@ function viewSauvegarde() {
   <h2>Exporter</h2>
   <div class="stack">
     <button class="btn" data-act="export-doc" data-v="all">${IC.save} Tout exporter en un fichier</button>
+    ${isAdmin() && Server.on ? '<p class="small muted" style="margin:0">Le fichier contient aussi la progression de chaque compte.</p>' : ''}
     ${UI.exportText ? `<div class="card stack"><label class="fld">${esc(UI.exportText.name)}<textarea id="f-exporttext" rows="6" readonly>${esc(UI.exportText.text)}</textarea></label>
       <div class="row"><button class="btn small" data-act="copy-export">Copier</button><button class="btn small ghost" data-act="close-export">Fermer</button></div></div>` : ''}
   </div>

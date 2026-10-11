@@ -134,6 +134,7 @@ function docCarnet() { return Object.assign(JSON.parse(JSON.stringify(CAR)), { e
 function docProgression(st) {
   st = st || S;
   return { fileType: 'onair.progression', version: 1, exportedAt: new Date().toISOString(), carnet: CAR && CAR.title,
+    compte: typeof AUTH !== 'undefined' && AUTH.user ? userName() : undefined,
     settings: st.settings, prefs: st.prefs, machines: st.machines || {}, bench: st.bench, logs: st.logs };
 }
 function progressionToState(d) {

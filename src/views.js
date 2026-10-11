@@ -77,11 +77,8 @@ function viewProgramme() {
   return h;
 }
 
-/* Choix machine guidée / Hammer, avec la miniature de la vidéo vérifiée pour reconnaître la machine */
-function machineThumb(k) {
-  const v = videosFor(k).find(x => x && x.videoId);
-  return v ? `<img class="mthumb" src="https://i.ytimg.com/vi/${esc(v.videoId)}/mqdefault.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : '';
-}
+/* Choix machine guidée / Hammer, avec le dessin de chaque machine (pile de poids ou disques) */
+function machineThumb(k) { return hasThumb(k) ? `<span class="mthumb">${thumbSvg(k)}</span>` : ''; }
 function machinePicker(pair, side, cycle, attrs) {
   const opts = [['guidee', 'Machine guidée'], ['hammer', 'Hammer'], ['haltero', 'Haltéro']].filter(([v]) => machineOk(pair, v, cycle));
   return `<div class="machine-pick${opts.length > 2 ? ' three' : ''}" role="group" aria-label="Type de machine">${opts.map(([v, l]) =>
@@ -202,7 +199,7 @@ function exoCard(s, bl, it, i) {
   const uid = s.id + ':' + key;
   const swapOpts = swapList(it.x);
   return `<div class="exo anchor ${E && E.done ? 'done' : ''} ${E && E.skipped ? 'skipped' : ''}" id="exo-${uid}">
-    <div class="exo-title"><div class="grow">
+    <div class="exo-title">${hasThumb(eff) && !pair ? `<span class="ethumb">${thumbSvg(eff)}</span>` : ''}<div class="grow">
       <div class="exo-name">${esc(eff !== it.x ? d.fr : itemLabel(it))}</div>
       <div class="exo-en">${esc(d.en)}${E && E.swap ? ` · variante de ${esc(itemLabel(it))}` : ''}</div>
     </div><div class="presc num">${presc(it)}</div></div>

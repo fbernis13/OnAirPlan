@@ -20,7 +20,7 @@ def embed_cars():
         d = json.loads(f.read_text(encoding='utf-8')); cars[d.get('id', 'crossfit')] = d
     return 'const EMBED_CARS = ' + json.dumps(cars, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/') + ';\n'
 js = embed('bibliotheque.json', 'EMBED_BIB') + embed_cars() + ''.join(
-    (src / f).read_text(encoding='utf-8') + '\n' for f in ['core.js', 'data.js', 'server.js', 'auth.js', 'views.js', 'progression.js', 'catalog.js', 'main.js'])
+    (src / f).read_text(encoding='utf-8') + '\n' for f in ['core.js', 'data.js', 'server.js', 'auth.js', 'thumbs.js', 'views.js', 'progression.js', 'catalog.js', 'main.js'])
 users = json.loads((here / 'auth' / 'utilisateurs.json').read_text(encoding='utf-8'))
 users_js = 'const AUTH_USERS = ' + json.dumps(users, ensure_ascii=False, separators=(',', ':')) + ';\n'
 # Supabase : seules l'adresse du projet et la clé publique (anon) vont dans la page ; l'accès aux données est filtré par les règles RLS

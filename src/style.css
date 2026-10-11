@@ -295,7 +295,7 @@ ul.clean li { margin: .2rem 0; }
 .machine-pick { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; margin: .45rem 0 .15rem; }
 .machine-pick button { display: flex; flex-direction: column; align-items: stretch; gap: .15rem; padding: .35rem; text-align: left; border: 1px solid var(--line); border-radius: .6rem; background: var(--surface); color: var(--ink); cursor: pointer; font: inherit; min-width: 0; }
 .machine-pick button[aria-pressed="true"] { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent) inset; background: var(--accent-soft); }
-.machine-pick .mthumb { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: .4rem; background: var(--surface-2); display: block; }
+.machine-pick .mthumb { width: 100%; display: block; }
 .machine-pick .ml { font-weight: 700; font-size: .9em; }
 .machine-pick .mn { font-size: .78em; color: var(--ink-2); line-height: 1.25; overflow-wrap: anywhere; }
 .machine-pick.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -351,3 +351,26 @@ body:has(.timer) .stepbar { bottom: calc(var(--nav-h) + env(safe-area-inset-bott
 .stepn { grid-column: 1 / -1; order: -1; text-align: center; font-weight: 700; color: var(--ink-3); font-size: .78rem; }
 .stepwith { margin: .2rem 0 .5rem; }
 .linkbtn { background: none; border: 0; padding: 0; color: var(--accent); font: inherit; font-weight: 600; text-decoration: underline; cursor: pointer; }
+
+/* ── Miniatures dessinées */
+.tb { display: block; width: 100%; aspect-ratio: 4 / 3; background: var(--surface-2); border-radius: .45rem; }
+.tb-fig path { fill: none; stroke: var(--accent); stroke-width: 5px; stroke-linecap: round; stroke-linejoin: round; }
+.tb-fig circle { fill: var(--accent); }
+.tb-back path { fill: none; stroke: color-mix(in srgb, var(--accent) 45%, var(--surface-2)); stroke-width: 4.4px; stroke-linecap: round; stroke-linejoin: round; }
+.tb-eq { fill: none; stroke: var(--ink-3); stroke-linecap: round; }
+.tb-pad { fill: var(--ink-3); opacity: .55; }
+.tb-box { fill: color-mix(in srgb, var(--ink-3) 25%, transparent); stroke: var(--ink-3); stroke-width: 1.2px; }
+.tb-stack { fill: color-mix(in srgb, var(--ink-3) 20%, transparent); stroke: var(--ink-3); stroke-width: 1.2px; }
+.tb-stackl { stroke: var(--ink-3); stroke-width: 1px; }
+.tb-plate { fill: var(--ink-2); }
+.tb-plate2 { fill: none; stroke: var(--surface-2); stroke-width: 1px; }
+.tb-iron { fill: var(--ink); }
+.tb-ball { fill: var(--amber); }
+.tb-ring { fill: none; stroke: var(--ink-2); stroke-width: 1.6px; }
+.tb-line { fill: none; stroke: var(--ink-2); stroke-width: 1.6px; }
+.tb-ground { stroke: var(--line); stroke-width: 1px; }
+.tb-txt { font-size: 10px; font-weight: 700; fill: var(--ink-3); font-family: var(--f-display); }
+
+.ethumb { flex: 0 0 22%; max-width: 4.6rem; }
+.lthumb { flex: 0 0 18%; max-width: 3.6rem; }
+.bigthumb { max-width: 16rem; margin: .4rem 0 .8rem; }
