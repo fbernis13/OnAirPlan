@@ -27,7 +27,8 @@
    "en": "Leg Press",
    "mv": null,
    "vid": [
-    "presse"
+    "presse",
+    "fr_presse"
    ],
    "kind": "force",
    "unit": "reps",
@@ -38,7 +39,12 @@
    ],
    "s": [
     "isch"
-   ]
+   ],
+   "img": {
+    "file": "images/presse.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "presse à cuisses inclinée 45°"
+   }
   },
   "goblet": {
    "fr": "Goblet squat",
@@ -53,6 +59,14 @@
    ],
    "s": [
     "abs"
+   ],
+   "img": {
+    "file": "images/goblet.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "avec kettlebell"
+   },
+   "vid": [
+    "fr_goblet"
    ]
   },
   "stepup": {
@@ -69,6 +83,14 @@
    "s": [
     "isch",
     "mol"
+   ],
+   "img": {
+    "file": "images/stepup.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "step-up sur banc avec haltères ; même mouvement que sur box"
+   },
+   "vid": [
+    "fr_stepup"
    ]
   },
   "legext": {
@@ -76,7 +98,8 @@
    "en": "Leg Extension",
    "mv": null,
    "vid": [
-    "legext"
+    "legext",
+    "fr_legext"
    ],
    "kind": "force",
    "unit": "reps",
@@ -84,14 +107,20 @@
    "p": [
     "quad"
    ],
-   "s": []
+   "s": [],
+   "img": {
+    "file": "images/legext.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Machine leg extension"
+   }
   },
   "legcurl_l": {
    "fr": "Leg curl allongé",
    "en": "Lying Leg Curl",
    "mv": null,
    "vid": [
-    "legcurl_l"
+    "legcurl_l",
+    "fr_legcurl_l"
    ],
    "kind": "force",
    "unit": "reps",
@@ -101,14 +130,19 @@
    ],
    "s": [
     "mol"
-   ]
+   ],
+   "img": {
+    "file": "images/legcurl_l.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)"
+   }
   },
   "legcurl_s": {
    "fr": "Leg curl assis",
    "en": "Seated Leg Curl",
    "mv": null,
    "vid": [
-    "legcurl_s"
+    "legcurl_s",
+    "fr_legcurl_s"
    ],
    "kind": "force",
    "unit": "reps",
@@ -116,14 +150,19 @@
    "p": [
     "isch"
    ],
-   "s": []
+   "s": [],
+   "img": {
+    "file": "images/legcurl_s.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)"
+   }
   },
   "calf_mach": {
    "fr": "Mollets à la machine",
    "en": "Calf Raise (machine)",
    "mv": null,
    "vid": [
-    "calf_standing"
+    "calf_standing",
+    "fr_calf_mach"
    ],
    "kind": "force",
    "unit": "reps",
@@ -131,14 +170,20 @@
    "p": [
     "mol"
    ],
-   "s": []
+   "s": [],
+   "img": {
+    "file": "images/calf_mach.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "mollets debout à la machine"
+   }
   },
   "calf_stand": {
    "fr": "Mollets debout",
    "en": "Standing Calf Raise",
    "mv": null,
    "vid": [
-    "calf_standing"
+    "calf_standing",
+    "fr_calf_stand"
    ],
    "kind": "force",
    "unit": "reps",
@@ -146,14 +191,20 @@
    "p": [
     "mol"
    ],
-   "s": []
+   "s": [],
+   "img": {
+    "file": "images/calf_stand.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "machine mollets debout"
+   }
   },
   "calf_press": {
    "fr": "Mollets à la presse",
    "en": "Leg Press Calf Raise",
    "mv": null,
    "vid": [
-    "calf_press"
+    "calf_press",
+    "fr_calf_press"
    ],
    "kind": "force",
    "unit": "reps",
@@ -161,7 +212,12 @@
    "p": [
     "mol"
    ],
-   "s": []
+   "s": [],
+   "img": {
+    "file": "images/calf_press.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Correspondance exacte"
+   }
   },
   "plank_fa": {
    "fr": "Planche sur avant-bras",
@@ -176,7 +232,15 @@
    "s": [
     "epa"
    ],
-   "variant": "Version sur avant-bras."
+   "variant": "Version sur avant-bras.",
+   "img": {
+    "file": "images/plank_fa.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "planche sur avant-bras"
+   },
+   "vid": [
+    "fr_plank_fa"
+   ]
   },
   "plank_fist": {
    "fr": "Planche bras tendus",
@@ -191,6 +255,9 @@
    "s": [
     "epa",
     "tri"
+   ],
+   "vid": [
+    "fr_plank_fist"
    ]
   },
   "deadbug": {
@@ -198,7 +265,8 @@
    "en": "Dead Bug",
    "mv": null,
    "vid": [
-    "deadbug"
+    "deadbug",
+    "fr_deadbug"
    ],
    "kind": "gainage",
    "unit": "reps",
@@ -208,14 +276,19 @@
    ],
    "s": [
     "flex"
-   ]
+   ],
+   "img": {
+    "file": "images/deadbug.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)"
+   }
   },
   "side_plank": {
    "fr": "Gainage latéral sur avant-bras",
    "en": "Side Plank",
    "mv": null,
    "vid": [
-    "side_plank"
+    "side_plank",
+    "fr_side_plank"
    ],
    "kind": "gainage",
    "unit": "time",
@@ -243,6 +316,14 @@
     "isch",
     "abs",
     "dos"
+   ],
+   "img": {
+    "file": "images/backsquat.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "position basse du squat barre arrière"
+   },
+   "vid": [
+    "fr_backsquat"
    ]
   },
   "db_wlunge": {
@@ -259,6 +340,14 @@
    "s": [
     "isch",
     "abs"
+   ],
+   "img": {
+    "file": "images/db_wlunge.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Fente aux haltères (pas spécifiquement marchée)."
+   },
+   "vid": [
+    "fr_db_wlunge"
    ]
   },
   "hack": {
@@ -266,7 +355,8 @@
    "en": "Hack Squat",
    "mv": null,
    "vid": [
-    "hack_squat"
+    "hack_squat",
+    "fr_hack"
    ],
    "kind": "force",
    "unit": "reps",
@@ -275,21 +365,31 @@
     "quad",
     "fess"
    ],
-   "s": []
+   "s": [],
+   "img": {
+    "file": "images/hack.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "hack squat machine"
+   }
   },
   "adductor": {
    "fr": "Adducteurs machine",
    "en": "Hip Adduction (machine)",
    "mv": null,
    "vid": [
-    "adductor"
+    "adductor",
+    "fr_adductor"
    ],
    "kind": "force",
    "unit": "reps",
    "load": true,
    "p": [],
    "s": [],
-   "off": "Adducteurs (groupe non suivi par le schéma)"
+   "off": "Adducteurs (groupe non suivi par le schéma)",
+   "img": {
+    "file": "images/adductor.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)"
+   }
   },
   "hollow": {
    "fr": "Hollow hold",
@@ -303,6 +403,9 @@
    ],
    "s": [
     "flex"
+   ],
+   "vid": [
+    "fr_hollow"
    ]
   },
   "pallof": {
@@ -310,7 +413,8 @@
    "en": "Pallof Press",
    "mv": null,
    "vid": [
-    "pallof"
+    "pallof",
+    "fr_pallof"
    ],
    "kind": "gainage",
    "unit": "reps",
@@ -320,7 +424,11 @@
    ],
    "s": [
     "epa"
-   ]
+   ],
+   "img": {
+    "file": "images/pallof.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)"
+   }
   },
   "frontsquat": {
    "fr": "Front squat",
@@ -336,6 +444,13 @@
    "s": [
     "abs",
     "dos"
+   ],
+   "img": {
+    "file": "images/frontsquat.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)"
+   },
+   "vid": [
+    "fr_frontsquat"
    ]
   },
   "bulgarian": {
@@ -351,6 +466,14 @@
    ],
    "s": [
     "isch"
+   ],
+   "img": {
+    "file": "images/bulgarian.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Pied arrière surélevé sur banc, haltères : split squat bulgare"
+   },
+   "vid": [
+    "fr_bulgarian"
    ]
   },
   "t2b": {
@@ -368,14 +491,23 @@
    "s": [
     "dos"
    ],
-   "variant": "Début en genoux à la poitrine (Knees to Chest)."
+   "variant": "Début en genoux à la poitrine (Knees to Chest).",
+   "img": {
+    "file": "images/t2b.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Hanging pike : pieds amenés jusqu'à la barre, équivalent du toes-to-bar strict"
+   },
+   "vid": [
+    "fr_t2b"
+   ]
   },
   "shoulder_taps": {
    "fr": "Planche avec touchers d’épaule",
    "en": "Plank Shoulder Taps",
    "mv": null,
    "vid": [
-    "shoulder_taps"
+    "shoulder_taps",
+    "fr_shoulder_taps"
    ],
    "kind": "gainage",
    "unit": "reps",
@@ -392,7 +524,8 @@
    "en": "Russian Twist",
    "mv": null,
    "vid": [
-    "russian_twist"
+    "russian_twist",
+    "fr_russian_twist"
    ],
    "kind": "gainage",
    "unit": "reps",
@@ -402,7 +535,12 @@
    ],
    "s": [
     "flex"
-   ]
+   ],
+   "img": {
+    "file": "images/russian_twist.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "russian twist avec disque, pieds décollés"
+   }
   },
   "lunge_heavy": {
    "fr": "Fentes marchées avec barre ou haltères lourds",
@@ -418,6 +556,14 @@
    "s": [
     "isch",
     "abs"
+   ],
+   "img": {
+    "file": "images/lunge_heavy.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "fentes marchées barre"
+   },
+   "vid": [
+    "fr_lunge_heavy"
    ]
   },
   "pistol_box": {
@@ -434,7 +580,15 @@
    "s": [
     "abs"
    ],
-   "variant": "Version assis-debout sur box, plus facile que le pistol complet de la vidéo."
+   "variant": "Version assis-debout sur box, plus facile que le pistol complet de la vidéo.",
+   "img": {
+    "file": "images/pistol_box.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Pistol squat avec kettlebell, sans box"
+   },
+   "vid": [
+    "fr_pistol_box"
+   ]
   },
   "lsit": {
    "fr": "L-sit sur parallettes",
@@ -451,14 +605,18 @@
     "tri",
     "epa"
    ],
-   "variant": "Genoux pliés autorisés."
+   "variant": "Genoux pliés autorisés.",
+   "vid": [
+    "fr_lsit"
+   ]
   },
   "hollow_rock": {
    "fr": "Hollow rock",
    "en": "Hollow Rock",
    "mv": null,
    "vid": [
-    "hollow_rock"
+    "hollow_rock",
+    "fr_hollow_rock"
    ],
    "kind": "gainage",
    "unit": "reps",
@@ -475,7 +633,8 @@
    "en": "Iso-Lateral Chest Press",
    "mv": null,
    "vid": [
-    "iso_chest_press"
+    "iso_chest_press",
+    "fr_iso_chest"
    ],
    "kind": "force",
    "unit": "reps",
@@ -486,14 +645,20 @@
    "s": [
     "tri",
     "epa"
-   ]
+   ],
+   "img": {
+    "file": "images/iso_chest.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "développé assis machine à levier chargée en disques, équivalent Hammer ; pas forcément iso-latérale"
+   }
   },
   "latpull": {
    "fr": "Tirage poitrine",
    "en": "Lat Pulldown",
    "mv": null,
    "vid": [
-    "lat_pulldown"
+    "lat_pulldown",
+    "fr_latpull"
    ],
    "kind": "force",
    "unit": "reps",
@@ -503,14 +668,19 @@
    ],
    "s": [
     "bic"
-   ]
+   ],
+   "img": {
+    "file": "images/latpull.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)"
+   }
   },
   "db_seat_press": {
    "fr": "Développé épaules haltères assis",
    "en": "Seated Dumbbell Shoulder Press",
    "mv": null,
    "vid": [
-    "db_seated_press"
+    "db_seated_press",
+    "fr_db_seat_press"
    ],
    "kind": "force",
    "unit": "reps",
@@ -520,14 +690,19 @@
    ],
    "s": [
     "tri"
-   ]
+   ],
+   "img": {
+    "file": "images/db_seat_press.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)"
+   }
   },
   "seated_row": {
    "fr": "Rowing assis machine",
    "en": "Seated Row",
    "mv": null,
    "vid": [
-    "seated_row"
+    "seated_row",
+    "fr_seated_row"
    ],
    "kind": "force",
    "unit": "reps",
@@ -538,7 +713,12 @@
    "s": [
     "bic",
     "epa"
-   ]
+   ],
+   "img": {
+    "file": "images/seated_row.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "rowing assis à la poulie basse (mouvement équivalent à la machine)"
+   }
   },
   "ringrow": {
    "fr": "Ring row",
@@ -553,6 +733,14 @@
    "s": [
     "bic",
     "abs"
+   ],
+   "img": {
+    "file": "images/ringrow.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "tirage inversé avec sangles (type TRX), équivalent aux anneaux"
+   },
+   "vid": [
+    "fr_ringrow"
    ]
   },
   "hammer_curl": {
@@ -560,7 +748,8 @@
    "en": "Hammer Curl",
    "mv": null,
    "vid": [
-    "hammer_curl"
+    "hammer_curl",
+    "fr_hammer_curl"
    ],
    "kind": "force",
    "unit": "reps",
@@ -568,14 +757,19 @@
    "p": [
     "bic"
    ],
-   "s": []
+   "s": [],
+   "img": {
+    "file": "images/hammer_curl.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)"
+   }
   },
   "rope_pd": {
    "fr": "Extension triceps à la poulie, corde",
    "en": "Triceps Rope Pushdown",
    "mv": null,
    "vid": [
-    "rope_pushdown"
+    "rope_pushdown",
+    "fr_rope_pd"
    ],
    "kind": "force",
    "unit": "reps",
@@ -583,14 +777,20 @@
    "p": [
     "tri"
    ],
-   "s": []
+   "s": [],
+   "img": {
+    "file": "images/rope_pd.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Correspondance exacte"
+   }
   },
   "face_pull": {
    "fr": "Face pull à la poulie",
    "en": "Face Pull",
    "mv": null,
    "vid": [
-    "face_pull"
+    "face_pull",
+    "fr_face_pull"
    ],
    "kind": "force",
    "unit": "reps",
@@ -600,7 +800,12 @@
    ],
    "s": [
     "dos"
-   ]
+   ],
+   "img": {
+    "file": "images/face_pull.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "correspondance exacte"
+   }
   },
   "bench": {
    "fr": "Développé couché barre",
@@ -615,6 +820,14 @@
    "s": [
     "tri",
     "epa"
+   ],
+   "img": {
+    "file": "images/bench.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "correspondance exacte"
+   },
+   "vid": [
+    "fr_bench"
    ]
   },
   "banded_pu": {
@@ -622,7 +835,8 @@
    "en": "Band-Assisted Pull-up",
    "mv": null,
    "vid": [
-    "banded_pullup"
+    "banded_pullup",
+    "fr_banded_pu"
    ],
    "kind": "force",
    "unit": "reps",
@@ -632,14 +846,20 @@
    ],
    "s": [
     "bic"
-   ]
+   ],
+   "img": {
+    "file": "images/banded_pu.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "correspondance exacte"
+   }
   },
   "db_stand_press": {
    "fr": "Développé militaire haltères debout",
    "en": "Standing Dumbbell Shoulder Press",
    "mv": null,
    "vid": [
-    "db_standing_press"
+    "db_standing_press",
+    "fr_db_stand_press"
    ],
    "kind": "force",
    "unit": "reps",
@@ -650,7 +870,12 @@
    "s": [
     "tri",
     "abs"
-   ]
+   ],
+   "img": {
+    "file": "images/db_stand_press.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Correspondance exacte"
+   }
   },
   "bor": {
    "fr": "Rowing barre penché",
@@ -665,6 +890,14 @@
    "s": [
     "bic",
     "epa"
+   ],
+   "img": {
+    "file": "images/bor.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Correspondance exacte"
+   },
+   "vid": [
+    "fr_bor"
    ]
   },
   "pushup_par": {
@@ -681,6 +914,13 @@
     "tri",
     "epa",
     "abs"
+   ],
+   "img": {
+    "file": "images/pushup_par.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)"
+   },
+   "vid": [
+    "fr_pushup_par"
    ]
   },
   "ez_curl": {
@@ -688,7 +928,8 @@
    "en": "EZ Bar Curl",
    "mv": null,
    "vid": [
-    "ez_curl"
+    "ez_curl",
+    "fr_ez_curl"
    ],
    "kind": "force",
    "unit": "reps",
@@ -696,14 +937,19 @@
    "p": [
     "bic"
    ],
-   "s": []
+   "s": [],
+   "img": {
+    "file": "images/ez_curl.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)"
+   }
   },
   "dip_assist": {
    "fr": "Dips assistés à la machine",
    "en": "Assisted Dip",
    "mv": null,
    "vid": [
-    "assisted_dip"
+    "assisted_dip",
+    "fr_dip_assist"
    ],
    "kind": "force",
    "unit": "reps",
@@ -721,7 +967,8 @@
    "en": "Lateral Raise",
    "mv": null,
    "vid": [
-    "lateral_raise"
+    "lateral_raise",
+    "fr_lat_raise"
    ],
    "kind": "force",
    "unit": "reps",
@@ -729,7 +976,11 @@
    "p": [
     "epa"
    ],
-   "s": []
+   "s": [],
+   "img": {
+    "file": "images/lat_raise.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)"
+   }
   },
   "strict_press": {
    "fr": "Développé militaire barre (strict press)",
@@ -744,6 +995,13 @@
    "s": [
     "tri",
     "abs"
+   ],
+   "img": {
+    "file": "images/strict_press.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)"
+   },
+   "vid": [
+    "fr_strict_press"
    ]
   },
   "strict_pu": {
@@ -758,6 +1016,13 @@
    ],
    "s": [
     "bic"
+   ],
+   "img": {
+    "file": "images/strict_pu.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)"
+   },
+   "vid": [
+    "fr_strict_pu"
    ]
   },
   "incline_db": {
@@ -765,7 +1030,8 @@
    "en": "Incline Dumbbell Press",
    "mv": null,
    "vid": [
-    "incline_db_press"
+    "incline_db_press",
+    "fr_incline_db"
    ],
    "kind": "force",
    "unit": "reps",
@@ -776,7 +1042,11 @@
    "s": [
     "epa",
     "tri"
-   ]
+   ],
+   "img": {
+    "file": "images/incline_db.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)"
+   }
   },
   "pendlay": {
    "fr": "Pendlay row barre",
@@ -791,6 +1061,14 @@
    "s": [
     "bic",
     "epa"
+   ],
+   "img": {
+    "file": "images/pendlay.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "rowing barre buste penché ; le Pendlay repart du sol avec le buste à l'horizontale, image proche mais pas identique"
+   },
+   "vid": [
+    "fr_pendlay"
    ]
   },
   "dips": {
@@ -806,6 +1084,14 @@
    ],
    "s": [
     "epa"
+   ],
+   "img": {
+    "file": "images/dips.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "barres parallèles (pas d'anneaux)"
+   },
+   "vid": [
+    "fr_dips"
    ]
   },
   "incline_curl": {
@@ -813,7 +1099,8 @@
    "en": "Incline Dumbbell Curl",
    "mv": null,
    "vid": [
-    "incline_curl"
+    "incline_curl",
+    "fr_incline_curl"
    ],
    "kind": "force",
    "unit": "reps",
@@ -821,14 +1108,20 @@
    "p": [
     "bic"
    ],
-   "s": []
+   "s": [],
+   "img": {
+    "file": "images/incline_curl.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "correspondance exacte"
+   }
   },
   "skull": {
    "fr": "Skull crusher barre EZ",
    "en": "Skull Crusher",
    "mv": null,
    "vid": [
-    "skull_crusher"
+    "skull_crusher",
+    "fr_skull"
    ],
    "kind": "force",
    "unit": "reps",
@@ -836,7 +1129,12 @@
    "p": [
     "tri"
    ],
-   "s": []
+   "s": [],
+   "img": {
+    "file": "images/skull.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Extension triceps allongé à la barre EZ (skull crusher). L'entrée EZ-Bar_Skullcrusher a été écartée : sa photo montre un haltère."
+   }
   },
   "push_press": {
    "fr": "Push press",
@@ -852,6 +1150,13 @@
     "tri",
     "quad",
     "fess"
+   ],
+   "img": {
+    "file": "images/push_press.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)"
+   },
+   "vid": [
+    "fr_push_press"
    ]
   },
   "ring_dips": {
@@ -868,6 +1173,13 @@
    "s": [
     "epa",
     "abs"
+   ],
+   "img": {
+    "file": "images/ring_dips.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)"
+   },
+   "vid": [
+    "fr_ring_dips"
    ]
   },
   "db_rdl": {
@@ -875,7 +1187,8 @@
    "en": "Dumbbell Romanian Deadlift",
    "mv": null,
    "vid": [
-    "db_rdl"
+    "db_rdl",
+    "fr_db_rdl"
    ],
    "kind": "force",
    "unit": "reps",
@@ -886,7 +1199,12 @@
    ],
    "s": [
     "dos"
-   ]
+   ],
+   "img": {
+    "file": "images/db_rdl.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "soulevé jambes tendues haltères, mouvement très proche du RDL"
+   }
   },
   "hipthrust": {
    "fr": "Hip thrust",
@@ -900,6 +1218,14 @@
    ],
    "s": [
     "isch"
+   ],
+   "img": {
+    "file": "images/hipthrust.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Hip thrust à la barre, dos sur banc"
+   },
+   "vid": [
+    "fr_hipthrust"
    ]
   },
   "db_row": {
@@ -907,7 +1233,8 @@
    "en": "One-Arm Dumbbell Row",
    "mv": null,
    "vid": [
-    "db_row"
+    "db_row",
+    "fr_db_row"
    ],
    "kind": "force",
    "unit": "reps",
@@ -917,14 +1244,20 @@
    ],
    "s": [
     "bic"
-   ]
+   ],
+   "img": {
+    "file": "images/db_row.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "correspondance exacte"
+   }
   },
   "back_ext": {
    "fr": "Extensions lombaires au banc à 45°",
    "en": "Back Extension",
    "mv": "back-extension",
    "vid": [
-    "back_ext_45"
+    "back_ext_45",
+    "fr_back_ext"
    ],
    "kind": "force",
    "unit": "reps",
@@ -936,14 +1269,20 @@
    "s": [
     "dos"
    ],
-   "variant": "La vidéo du catalogue montre la version au GHD ; le programme utilise le banc à 45°."
+   "variant": "La vidéo du catalogue montre la version au GHD ; le programme utilise le banc à 45°.",
+   "img": {
+    "file": "images/back_ext.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Banc à extensions lombaires à 45°."
+   }
   },
   "shrug": {
    "fr": "Shrugs aux haltères",
    "en": "Dumbbell Shrug",
    "mv": null,
    "vid": [
-    "db_shrug"
+    "db_shrug",
+    "fr_shrug"
    ],
    "kind": "force",
    "unit": "reps",
@@ -952,7 +1291,11 @@
     "dos"
    ],
    "s": [],
-   "off": "Trapèzes (comptés dans « Dos »)"
+   "off": "Trapèzes (comptés dans « Dos »)",
+   "img": {
+    "file": "images/shrug.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)"
+   }
   },
   "farmer": {
    "fr": "Farmer’s carry",
@@ -969,14 +1312,23 @@
     "fess",
     "quad"
    ],
-   "off": "Avant-bras et prise (non suivis) ; trapèzes comptés dans « Dos »"
+   "off": "Avant-bras et prise (non suivis) ; trapèzes comptés dans « Dos »",
+   "img": {
+    "file": "images/farmer.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "réalisé avec poignées farmer (strongman) au lieu d'haltères/kettlebells"
+   },
+   "vid": [
+    "fr_farmer"
+   ]
   },
   "bird_dog": {
    "fr": "Bird dog",
    "en": "Bird Dog",
    "mv": null,
    "vid": [
-    "bird_dog"
+    "bird_dog",
+    "fr_bird_dog"
    ],
    "kind": "gainage",
    "unit": "reps",
@@ -1004,6 +1356,14 @@
    "s": [
     "quad",
     "abs"
+   ],
+   "img": {
+    "file": "images/deadlift.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "correspondance exacte"
+   },
+   "vid": [
+    "fr_deadlift"
    ]
   },
   "iso_row": {
@@ -1011,7 +1371,8 @@
    "en": "Iso-Lateral Row",
    "mv": null,
    "vid": [
-    "iso_row"
+    "iso_row",
+    "fr_iso_row"
    ],
    "kind": "force",
    "unit": "reps",
@@ -1021,7 +1382,12 @@
    ],
    "s": [
     "bic"
-   ]
+   ],
+   "img": {
+    "file": "images/iso_row.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Rowing iso-latéral sur machine à leviers, type Hammer."
+   }
   },
   "good_morning": {
    "fr": "Good morning barre légère",
@@ -1036,6 +1402,14 @@
    "s": [
     "fess",
     "dos"
+   ],
+   "img": {
+    "file": "images/good_morning.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Correspondance exacte (barre)"
+   },
+   "vid": [
+    "fr_good_morning"
    ]
   },
   "kb_swing_ru": {
@@ -1053,6 +1427,9 @@
     "dos",
     "abs",
     "epa"
+   ],
+   "vid": [
+    "fr_kb_swing_ru"
    ]
   },
   "rdl": {
@@ -1068,6 +1445,13 @@
    ],
    "s": [
     "dos"
+   ],
+   "img": {
+    "file": "images/rdl.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)"
+   },
+   "vid": [
+    "fr_rdl"
    ]
   },
   "suitcase": {
@@ -1084,14 +1468,18 @@
     "dos",
     "fess"
    ],
-   "off": "Prise (non suivie)"
+   "off": "Prise (non suivie)",
+   "vid": [
+    "fr_suitcase"
+   ]
   },
   "superman": {
    "fr": "Superman",
    "en": "Superman",
    "mv": null,
    "vid": [
-    "superman"
+    "superman",
+    "fr_superman"
    ],
    "kind": "force",
    "unit": "reps",
@@ -1102,7 +1490,12 @@
    "s": [
     "fess",
     "isch"
-   ]
+   ],
+   "img": {
+    "file": "images/superman.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Correspondance exacte"
+   }
   },
   "tgu": {
    "fr": "Turkish get-up",
@@ -1119,6 +1512,14 @@
     "fess",
     "tri",
     "quad"
+   ],
+   "img": {
+    "file": "images/tgu.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Turkish get-up kettlebell (style fente) ; l'image montre la phase assise sur la main"
+   },
+   "vid": [
+    "fr_tgu"
    ]
   },
   "kb_rack_carry": {
@@ -1154,7 +1555,15 @@
     "dos",
     "epa"
    ],
-   "s": []
+   "s": [],
+   "img": {
+    "file": "images/hpc.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "entrée \"Hang Clean\" barre : montre la position hang/départ, pas la réception"
+   },
+   "vid": [
+    "fr_hpc"
+   ]
   },
   "power_clean": {
    "fr": "Power clean (ou kettlebell clean)",
@@ -1171,7 +1580,15 @@
     "dos",
     "epa"
    ],
-   "s": []
+   "s": [],
+   "img": {
+    "file": "images/power_clean.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "réception du power clean barre"
+   },
+   "vid": [
+    "fr_power_clean"
+   ]
   },
   "rower": {
    "fr": "Rameur",
@@ -1189,6 +1606,14 @@
    "s": [
     "bic",
     "abs"
+   ],
+   "img": {
+    "file": "images/rower.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Rameur Concept2"
+   },
+   "vid": [
+    "fr_rower"
    ]
   },
   "assault": {
@@ -1206,6 +1631,9 @@
     "epa",
     "dos",
     "isch"
+   ],
+   "vid": [
+    "fr_assault"
    ]
   },
   "skierg": {
@@ -1223,6 +1651,9 @@
     "abs",
     "epa",
     "fess"
+   ],
+   "vid": [
+    "fr_skierg"
    ]
   },
   "bike": {
@@ -1230,7 +1661,8 @@
    "en": "Stationary Bike",
    "mv": null,
    "vid": [
-    "upright_bike"
+    "upright_bike",
+    "fr_bike"
    ],
    "kind": "cardio",
    "unit": "min",
@@ -1242,14 +1674,20 @@
    "s": [
     "isch",
     "mol"
-   ]
+   ],
+   "img": {
+    "file": "images/bike.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Vélo d'appartement."
+   }
   },
   "incline_walk": {
    "fr": "Tapis, marche inclinée",
    "en": "Incline Treadmill Walk",
    "mv": null,
    "vid": [
-    "incline_walk"
+    "incline_walk",
+    "fr_incline_walk"
    ],
    "kind": "cardio",
    "unit": "min",
@@ -1261,14 +1699,20 @@
    ],
    "s": [
     "isch"
-   ]
+   ],
+   "img": {
+    "file": "images/incline_walk.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Marche sur tapis ; l'inclinaison n'est pas visible."
+   }
   },
   "stairs": {
    "fr": "Escalier",
    "en": "Stair Climber",
    "mv": null,
    "vid": [
-    "stair_climber"
+    "stair_climber",
+    "fr_stairs"
    ],
    "kind": "cardio",
    "unit": "min",
@@ -1280,7 +1724,12 @@
    ],
    "s": [
     "isch"
-   ]
+   ],
+   "img": {
+    "file": "images/stairs.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "stepper/escalier mécanique"
+   }
   },
   "run": {
    "fr": "Course légère",
@@ -1297,6 +1746,14 @@
    "s": [
     "fess",
     "flex"
+   ],
+   "img": {
+    "file": "images/run.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Course en extérieur"
+   },
+   "vid": [
+    "fr_run"
    ]
   },
   "kb_dl": {
@@ -1304,7 +1761,8 @@
    "en": "Kettlebell Deadlift",
    "mv": null,
    "vid": [
-    "kb_deadlift"
+    "kb_deadlift",
+    "fr_kb_dl"
    ],
    "kind": "wod",
    "unit": "reps",
@@ -1333,6 +1791,9 @@
    "s": [
     "tri",
     "abs"
+   ],
+   "vid": [
+    "fr_wallball"
    ]
   },
   "kb_swing_am": {
@@ -1350,6 +1811,9 @@
     "epa",
     "dos",
     "abs"
+   ],
+   "vid": [
+    "fr_kb_swing_am"
    ]
   },
   "devil": {
@@ -1369,6 +1833,9 @@
     "tri",
     "quad",
     "abs"
+   ],
+   "vid": [
+    "fr_devil"
    ]
   },
   "db_thruster": {
@@ -1386,6 +1853,14 @@
    "s": [
     "tri",
     "abs"
+   ],
+   "img": {
+    "file": "images/db_thruster.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "thruster aux kettlebells (même mouvement, matériel différent)"
+   },
+   "vid": [
+    "fr_db_thruster"
    ]
   },
   "box_stepover": {
@@ -1402,7 +1877,15 @@
    "s": [
     "mol"
    ],
-   "variant": "Le programme les prévoit sans haltères ; la vidéo montre la version avec haltères."
+   "variant": "Le programme les prévoit sans haltères ; la vidéo montre la version avec haltères.",
+   "img": {
+    "file": "images/box_stepover.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Step-up aux haltères sur banc : proche du step-over (montée sur box) mais sans le passage de l'autre côté."
+   },
+   "vid": [
+    "fr_box_stepover"
+   ]
   },
   "single_under": {
    "fr": "Corde à sauter (single unders)",
@@ -1417,6 +1900,14 @@
    "s": [
     "quad",
     "epa"
+   ],
+   "img": {
+    "file": "images/single_under.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "saut à la corde"
+   },
+   "vid": [
+    "fr_single_under"
    ]
   },
   "double_under": {
@@ -1433,6 +1924,9 @@
     "quad",
     "epa",
     "abs"
+   ],
+   "vid": [
+    "fr_double_under"
    ]
   },
   "db_snatch": {
@@ -1451,6 +1945,9 @@
     "quad",
     "dos",
     "abs"
+   ],
+   "vid": [
+    "fr_db_snatch"
    ]
   },
   "burpee": {
@@ -1469,6 +1966,9 @@
     "epa",
     "abs",
     "fess"
+   ],
+   "vid": [
+    "fr_burpee"
    ]
   },
   "thruster": {
@@ -1486,6 +1986,14 @@
    "s": [
     "tri",
     "abs"
+   ],
+   "img": {
+    "file": "images/thruster.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "thruster aux kettlebells (montre position basse du squat, pas la poussée au-dessus de la tête) ; même mouvement qu'avec barre/haltères"
+   },
+   "vid": [
+    "fr_thruster"
    ]
   },
   "pullup_wod": {
@@ -1493,7 +2001,8 @@
    "en": "Pull-up",
    "mv": "pull-up",
    "vid": [
-    "jumping_pullup"
+    "jumping_pullup",
+    "fr_pullup_wod"
    ],
    "kind": "wod",
    "unit": "reps",
@@ -1504,14 +2013,20 @@
    "s": [
     "bic"
    ],
-   "variant": "La vidéo du catalogue présente la traction stricte."
+   "variant": "La vidéo du catalogue présente la traction stricte.",
+   "img": {
+    "file": "images/pullup_wod.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Traction assistée avec élastique."
+   }
   },
   "ringrow_wod": {
    "fr": "Tractions avec élastique ou ring rows",
    "en": "Ring Row",
    "mv": "ring-row",
    "vid": [
-    "banded_pullup"
+    "banded_pullup",
+    "fr_ringrow_wod"
    ],
    "kind": "wod",
    "unit": "reps",
@@ -1521,7 +2036,12 @@
    ],
    "s": [
     "bic"
-   ]
+   ],
+   "img": {
+    "file": "images/ringrow_wod.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "ring row aux anneaux"
+   }
   },
   "goblet_wod": {
    "fr": "Goblet squat",
@@ -1536,6 +2056,14 @@
    ],
    "s": [
     "abs"
+   ],
+   "img": {
+    "file": "images/goblet_wod.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "avec kettlebell"
+   },
+   "vid": [
+    "fr_goblet_wod"
    ]
   },
   "stepup_wod": {
@@ -1552,6 +2080,14 @@
    "s": [
     "isch",
     "mol"
+   ],
+   "img": {
+    "file": "images/stepup_wod.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "step-up sur banc avec haltères ; même mouvement que sur box"
+   },
+   "vid": [
+    "fr_stepup_wod"
    ]
   },
   "plank_wod": {
@@ -1566,6 +2102,14 @@
    ],
    "s": [
     "epa"
+   ],
+   "img": {
+    "file": "images/plank_wod.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "planche sur avant-bras"
+   },
+   "vid": [
+    "fr_plank_wod"
    ]
   },
   "kb_swing_wod": {
@@ -1583,6 +2127,14 @@
     "dos",
     "abs",
     "epa"
+   ],
+   "img": {
+    "file": "images/kb_swing_wod.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Swing kettlebell à une main (le swing russe se fait à deux mains) ; montre la phase basse de la charnière de hanche."
+   },
+   "vid": [
+    "fr_kb_swing_wod"
    ]
   },
   "rower_wod": {
@@ -1601,6 +2153,14 @@
    "s": [
     "bic",
     "abs"
+   ],
+   "img": {
+    "file": "images/rower_wod.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Rameur Concept2"
+   },
+   "vid": [
+    "fr_rower_wod"
    ]
   },
   "assault_wod": {
@@ -1618,6 +2178,9 @@
     "epa",
     "dos",
     "isch"
+   ],
+   "vid": [
+    "fr_assault_wod"
    ]
   },
   "skierg_wod": {
@@ -1635,6 +2198,9 @@
     "abs",
     "epa",
     "fess"
+   ],
+   "vid": [
+    "fr_skierg_wod"
    ]
   },
   "wrist_routine": {
@@ -1643,7 +2209,8 @@
    "mv": null,
    "vid": [
     "tendon_glides",
-    "wrist_mobility"
+    "wrist_mobility",
+    "fr_wrist_routine"
    ],
    "kind": "mob",
    "desc": "Cercles de poignets, flexion/extension douce en appui sur une table ou un banc (pas au sol au cycle 1), glissements tendineux des doigts (poing, crochet, main à plat), 10 ouvertures/fermetures de main."
@@ -1652,47 +2219,82 @@
    "fr": "Squats à l’air",
    "en": "Air Squat",
    "mv": "air-squat",
-   "kind": "mob"
+   "kind": "mob",
+   "img": {
+    "file": "images/air_squat.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Squat au poids du corps, mains derrière la tête."
+   },
+   "vid": [
+    "fr_air_squat"
+   ]
   },
   "reverse_lunge": {
    "fr": "Fentes arrière alternées",
    "en": "Reverse Lunge",
    "mv": null,
    "vid": [
-    "reverse_lunge"
+    "reverse_lunge",
+    "fr_reverse_lunge"
    ],
-   "kind": "mob"
+   "kind": "mob",
+   "img": {
+    "file": "images/reverse_lunge.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "fente arrière avec haltères"
+   }
   },
   "walk_lunge": {
    "fr": "Fentes marchées",
    "en": "Walking Lunges",
    "mv": "walking-lunges",
-   "kind": "mob"
+   "kind": "mob",
+   "img": {
+    "file": "images/walk_lunge.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Fentes marchées au poids du corps"
+   },
+   "vid": [
+    "fr_walk_lunge"
+   ]
   },
   "glute_bridge": {
    "fr": "Ponts fessiers",
    "en": "Glute Bridge",
    "mv": null,
    "vid": [
-    "glute_bridge"
+    "glute_bridge",
+    "fr_glute_bridge"
    ],
-   "kind": "mob"
+   "kind": "mob",
+   "img": {
+    "file": "images/glute_bridge.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Pont fessier au sol"
+   }
   },
   "ankle_mob": {
    "fr": "Mobilité des chevilles (rotations, au mur)",
    "en": "Ankle Mobility",
    "mv": null,
    "vid": [
-    "ankle_mobility"
+    "ankle_mobility",
+    "fr_ankle_mob"
    ],
-   "kind": "mob"
+   "kind": "mob",
+   "img": {
+    "file": "images/ankle_mob.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "rotations de chevilles (gros plan pieds) ; ne montre pas la variante au mur"
+   }
   },
   "leg_swings": {
    "fr": "Balancés de jambes",
    "en": "Leg Swings",
    "mv": null,
    "vid": [
-    "leg_swings"
+    "leg_swings",
+    "fr_leg_swings"
    ],
    "kind": "mob"
   },
@@ -1701,74 +2303,125 @@
    "en": "Dynamic Hip Opener",
    "mv": null,
    "vid": [
-    "hip_opener"
+    "hip_opener",
+    "fr_hip_opener"
    ],
-   "kind": "mob"
+   "kind": "mob",
+   "img": {
+    "file": "images/hip_opener.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "fente avec main au sol et ouverture de hanche (World's Greatest Stretch), proche de l'ouverture de hanche en fentes dynamiques"
+   }
   },
   "shoulder_band": {
    "fr": "Rotations d’épaules à l’élastique, dislocations au bâton",
    "en": "Shoulder Dislocates",
    "mv": null,
    "vid": [
-    "shoulder_band_rot"
+    "shoulder_band_rot",
+    "fr_shoulder_band"
    ],
-   "kind": "mob"
+   "kind": "mob",
+   "img": {
+    "file": "images/shoulder_band.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "dislocations d'épaules au bâton (version bâton, pas élastique)"
+   }
   },
   "band_pull": {
    "fr": "Band pull-aparts",
    "en": "Band Pull-Apart",
    "mv": null,
    "vid": [
-    "band_pull_apart"
+    "band_pull_apart",
+    "fr_band_pull"
    ],
-   "kind": "mob"
+   "kind": "mob",
+   "img": {
+    "file": "images/band_pull.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)"
+   }
   },
   "dead_hang": {
    "fr": "Dead hang (suspension)",
    "en": "Dead Hang",
    "mv": "dead-hang",
-   "kind": "mob"
+   "kind": "mob",
+   "img": {
+    "file": "images/dead_hang.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "position de départ du scapular pull-up = suspension bras tendus (dead hang)"
+   },
+   "vid": [
+    "fr_dead_hang"
+   ]
   },
   "scap_pullup": {
    "fr": "Scapular pull-ups",
    "en": "Scapular Pull-up",
    "mv": null,
    "vid": [
-    "scap_pullup"
+    "scap_pullup",
+    "fr_scap_pullup"
    ],
-   "kind": "mob"
+   "kind": "mob",
+   "img": {
+    "file": "images/scap_pullup.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)"
+   }
   },
   "active_hang": {
    "fr": "Active hang",
    "en": "Active Hang",
    "mv": null,
    "vid": [
-    "active_hang"
+    "active_hang",
+    "fr_active_hang"
    ],
-   "kind": "mob"
+   "kind": "mob",
+   "img": {
+    "file": "images/active_hang.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Scapular pull-up : la position haute (omoplates abaissées, bras tendus) correspond à la suspension active ; pas d'entrée 'active hang' dédiée"
+   }
   },
   "gm_stick": {
    "fr": "Good mornings au bâton",
    "en": "Good Morning",
    "mv": "good-morning",
    "kind": "mob",
-   "variant": "Au bâton, sans charge."
+   "variant": "Au bâton, sans charge.",
+   "img": {
+    "file": "images/gm_stick.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Good morning à la barre chargée ; même mouvement qu'au bâton."
+   },
+   "vid": [
+    "fr_gm_stick"
+   ]
   },
   "cat_cow": {
    "fr": "Cat-cow",
    "en": "Cat-Cow",
    "mv": null,
    "vid": [
-    "cat_cow"
+    "cat_cow",
+    "fr_cat_cow"
    ],
-   "kind": "mob"
+   "kind": "mob",
+   "img": {
+    "file": "images/cat_cow.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "quadrupédie dos arrondi (phase chat)"
+   }
   },
   "hip_hinge": {
    "fr": "Hip hinge au mur",
    "en": "Hip Hinge Drill",
    "mv": null,
    "vid": [
-    "hip_hinge"
+    "hip_hinge",
+    "fr_hip_hinge"
    ],
    "kind": "mob"
   },
@@ -1777,58 +2430,97 @@
    "en": "Incline Push-up",
    "mv": null,
    "vid": [
-    "incline_pushup"
+    "incline_pushup",
+    "fr_incline_pushup"
    ],
-   "kind": "mob"
+   "kind": "mob",
+   "img": {
+    "file": "images/incline_pushup.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "mains sur une box plutôt que sur une barre au rack"
+   }
   },
   "kb_swing_light": {
    "fr": "Kettlebell swings légers",
    "en": "Russian Kettlebell Swing",
    "mv": "russian-kettlebell-swing",
-   "kind": "mob"
+   "kind": "mob",
+   "img": {
+    "file": "images/kb_swing_light.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Swing à un bras (le swing russe se fait à deux mains) ; l'image montre la phase basse en charnière de hanche"
+   },
+   "vid": [
+    "fr_kb_swing_light"
+   ]
   },
   "st_quad": {
    "fr": "Étirement des quadriceps",
    "en": "Quad Stretch",
    "mv": null,
    "vid": [
-    "stretch_quad"
+    "stretch_quad",
+    "fr_st_quad"
    ],
-   "kind": "mob"
+   "kind": "mob",
+   "img": {
+    "file": "images/st_quad.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Étirement des quadriceps allongé sur le côté."
+   }
   },
   "st_hipflex": {
    "fr": "Étirement des fléchisseurs de hanche (psoas)",
    "en": "Hip Flexor Stretch",
    "mv": null,
    "vid": [
-    "stretch_hipflexor"
+    "stretch_hipflexor",
+    "fr_st_hipflex"
    ],
-   "kind": "mob"
+   "kind": "mob",
+   "img": {
+    "file": "images/st_hipflex.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "étirement des fléchisseurs de hanche à genou"
+   }
   },
   "st_calf": {
    "fr": "Étirement des mollets",
    "en": "Calf Stretch",
    "mv": null,
    "vid": [
-    "stretch_calf"
+    "stretch_calf",
+    "fr_st_calf"
    ],
-   "kind": "mob"
+   "kind": "mob",
+   "img": {
+    "file": "images/st_calf.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "étirement des mollets mains au mur"
+   }
   },
   "st_ham": {
    "fr": "Étirement des ischios",
    "en": "Hamstring Stretch",
    "mv": null,
    "vid": [
-    "stretch_hamstring"
+    "stretch_hamstring",
+    "fr_st_ham"
    ],
-   "kind": "mob"
+   "kind": "mob",
+   "img": {
+    "file": "images/st_ham.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "étirement allongé avec sangle"
+   }
   },
   "st_pec": {
    "fr": "Étirement des pectoraux contre le mur",
    "en": "Wall Chest Stretch",
    "mv": null,
    "vid": [
-    "stretch_pec"
+    "stretch_pec",
+    "fr_st_pec"
    ],
    "kind": "mob"
   },
@@ -1837,54 +2529,89 @@
    "en": "Lat Stretch",
    "mv": null,
    "vid": [
-    "stretch_lat"
+    "stretch_lat",
+    "fr_st_lat"
    ],
-   "kind": "mob"
+   "kind": "mob",
+   "img": {
+    "file": "images/st_lat.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Étirement latéral debout, bras au-dessus de la tête (étire le grand dorsal et le flanc)."
+   }
   },
   "st_tri": {
    "fr": "Étirement des triceps",
    "en": "Triceps Stretch",
    "mv": null,
    "vid": [
-    "stretch_triceps"
+    "stretch_triceps",
+    "fr_st_tri"
    ],
-   "kind": "mob"
+   "kind": "mob",
+   "img": {
+    "file": "images/st_tri.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "correspondance exacte"
+   }
   },
   "st_forearm": {
    "fr": "Étirement des avant-bras",
    "en": "Forearm Stretch",
    "mv": null,
    "vid": [
-    "stretch_forearm"
+    "stretch_forearm",
+    "fr_st_forearm"
    ],
-   "kind": "mob"
+   "kind": "mob",
+   "img": {
+    "file": "images/st_forearm.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Étirement des avant-bras à genoux, mains au sol"
+   }
   },
   "child_pose": {
    "fr": "Posture de l’enfant (dos)",
    "en": "Child’s Pose",
    "mv": null,
    "vid": [
-    "child_pose"
+    "child_pose",
+    "fr_child_pose"
    ],
-   "kind": "mob"
+   "kind": "mob",
+   "img": {
+    "file": "images/child_pose.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)"
+   }
   },
   "st_glute": {
    "fr": "Étirement des fessiers",
    "en": "Figure-Four Glute Stretch",
    "mv": null,
    "vid": [
-    "stretch_glute"
+    "stretch_glute",
+    "fr_st_glute"
    ],
-   "kind": "mob"
+   "kind": "mob",
+   "img": {
+    "file": "images/st_glute.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "étirement fessier en figure 4 allongé"
+   }
   },
   "st_add": {
    "fr": "Étirement des adducteurs",
    "en": "Adductor Stretch",
    "mv": null,
    "vid": [
-    "stretch_adductor"
+    "stretch_adductor",
+    "fr_st_add"
    ],
-   "kind": "mob"
+   "kind": "mob",
+   "img": {
+    "file": "images/st_add.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "étirement des adducteurs allongé avec sangle, une variante parmi d'autres"
+   }
   },
   "presse_hs": {
    "mv": null,
@@ -1894,7 +2621,8 @@
    "fr": "Presse à cuisses Hammer (chargée de disques)",
    "en": "Hammer Strength Linear Leg Press",
    "vid": [
-    "presse_hs"
+    "presse_hs",
+    "fr_presse_hs"
    ],
    "p": [
     "quad",
@@ -1902,7 +2630,12 @@
    ],
    "s": [
     "isch"
-   ]
+   ],
+   "img": {
+    "file": "images/presse_hs.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "presse inclinée chargée de disques, équivalent non-Hammer"
+   }
   },
   "legext_hs": {
    "mv": null,
@@ -1912,12 +2645,18 @@
    "fr": "Leg extension Hammer iso-latéral",
    "en": "Hammer Strength Iso-Lateral Leg Extension",
    "vid": [
-    "legext_hs"
+    "legext_hs",
+    "fr_legext_hs"
    ],
    "p": [
     "quad"
    ],
-   "s": []
+   "s": [],
+   "img": {
+    "file": "images/legext_hs.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Leg extension unilatéral sur machine classique, équivalent du Hammer iso-latéral."
+   }
   },
   "legcurl_hs": {
    "mv": null,
@@ -1927,7 +2666,8 @@
    "fr": "Leg curl Hammer iso-latéral",
    "en": "Hammer Strength Iso-Lateral Leg Curl",
    "vid": [
-    "legcurl_hs"
+    "legcurl_hs",
+    "fr_legcurl_hs"
    ],
    "p": [
     "isch"
@@ -1935,7 +2675,12 @@
    "s": [
     "mol"
    ],
-   "variant": "Sur cette machine, on travaille à genoux, une jambe après l’autre."
+   "variant": "Sur cette machine, on travaille à genoux, une jambe après l’autre.",
+   "img": {
+    "file": "images/legcurl_hs.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "leg curl assis à charge guidée, pas une Hammer iso-latérale (mouvement équivalent)"
+   }
   },
   "calf_hs": {
    "mv": null,
@@ -1945,13 +2690,19 @@
    "fr": "Mollets assis Hammer",
    "en": "Hammer Strength Seated Calf Raise",
    "vid": [
-    "calf_hs"
+    "calf_hs",
+    "fr_calf_hs"
    ],
    "p": [
     "mol"
    ],
    "s": [],
-   "variant": "Version assise : sollicite surtout le soléaire, la partie profonde du mollet."
+   "variant": "Version assise : sollicite surtout le soléaire, la partie profonde du mollet.",
+   "img": {
+    "file": "images/calf_hs.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "machine mollets assis chargée en disques, équivalent de la Hammer"
+   }
   },
   "calf_press_hs": {
    "mv": null,
@@ -1961,12 +2712,18 @@
    "fr": "Mollets à la presse Hammer",
    "en": "Calf Raise on Hammer Strength Leg Press",
    "vid": [
-    "calf_press_hs"
+    "calf_press_hs",
+    "fr_calf_press_hs"
    ],
    "p": [
     "mol"
    ],
-   "s": []
+   "s": [],
+   "img": {
+    "file": "images/calf_press_hs.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Mollets à la presse à cuisses (pas forcément Hammer)."
+   }
   },
   "latpull_hs": {
    "mv": null,
@@ -1976,14 +2733,20 @@
    "fr": "Tirage vertical Hammer iso-latéral",
    "en": "Hammer Strength Iso-Lateral Front Lat Pulldown",
    "vid": [
-    "latpull_hs"
+    "latpull_hs",
+    "fr_latpull_hs"
    ],
    "p": [
     "dos"
    ],
    "s": [
     "bic"
-   ]
+   ],
+   "img": {
+    "file": "images/latpull_hs.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "tirage vertical à la poulie, pas une Hammer iso-latérale (mouvement équivalent)"
+   }
   },
   "dip_hs": {
    "mv": null,
@@ -1993,7 +2756,8 @@
    "fr": "Dips assis Hammer",
    "en": "Hammer Strength Seated Dip",
    "vid": [
-    "dip_hs"
+    "dip_hs",
+    "fr_dip_hs"
    ],
    "p": [
     "tri",
@@ -2002,7 +2766,12 @@
    "s": [
     "epa"
    ],
-   "variant": "Chargé de disques, assis : tu pousses une charge au lieu d’alléger ton poids de corps."
+   "variant": "Chargé de disques, assis : tu pousses une charge au lieu d’alléger ton poids de corps.",
+   "img": {
+    "file": "images/dip_hs.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "machine de dips assis équivalente (pas Hammer Strength précisément)"
+   }
   },
   "chest_press": {
    "mv": null,
@@ -2012,7 +2781,8 @@
    "fr": "Développé assis machine guidée",
    "en": "Machine Chest Press",
    "vid": [
-    "chest_press"
+    "chest_press",
+    "fr_chest_press"
    ],
    "p": [
     "pec"
@@ -2020,7 +2790,12 @@
    "s": [
     "tri",
     "epa"
-   ]
+   ],
+   "img": {
+    "file": "images/chest_press.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Développé assis sur machine à leviers (équivalent machine guidée)."
+   }
   },
   "sdhp": {
    "fr": "Sumo deadlift high pull",
@@ -2037,7 +2812,15 @@
    "s": [
     "isch"
    ],
-   "variant": "Aucune réception : la barre monte sous le menton puis redescend."
+   "variant": "Aucune réception : la barre monte sous le menton puis redescend.",
+   "img": {
+    "file": "images/sdhp.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "version kettlebell ; même mouvement que le SDHP à la barre"
+   },
+   "vid": [
+    "fr_sdhp"
+   ]
   },
   "db_hang_clean": {
    "fr": "Hang clean haltères",
@@ -2056,14 +2839,20 @@
     "bic",
     "abs"
    ],
-   "variant": "Les haltères se posent sur les épaules. Extension de hanche explosive."
+   "variant": "Les haltères se posent sur les épaules. Extension de hanche explosive.",
+   "img": {
+    "file": "images/db_hang_clean.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "épaulé haltères, départ haltères au niveau des genoux (position hang)"
+   }
   },
   "db_oh_triceps": {
    "fr": "Extension triceps haltères au-dessus de la tête, assis",
    "en": "Seated Dumbbell Overhead Triceps Extension",
    "mv": null,
    "vid": [
-    "db_oh_triceps"
+    "db_oh_triceps",
+    "fr_db_oh_triceps"
    ],
    "kind": "force",
    "unit": "reps",
@@ -2072,14 +2861,20 @@
     "tri"
    ],
    "s": [],
-   "variant": "Un haltère dans chaque main, dos appuyé. Coudes vers le plafond, on descend derrière la tête."
+   "variant": "Un haltère dans chaque main, dos appuyé. Coudes vers le plafond, on descend derrière la tête.",
+   "img": {
+    "file": "images/db_oh_triceps.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "un haltère tenu à deux mains derrière la tête, assis"
+   }
   },
   "db_rear_fly": {
    "fr": "Oiseau haltères, buste appuyé sur banc incliné",
    "en": "Chest-Supported Dumbbell Rear Delt Fly",
    "mv": null,
    "vid": [
-    "db_rear_fly"
+    "db_rear_fly",
+    "fr_db_rear_fly"
    ],
    "kind": "force",
    "unit": "reps",
@@ -2090,7 +2885,12 @@
    "s": [
     "dos"
    ],
-   "variant": "Banc à 30-45°, poitrine appuyée, paumes face à face, coudes légèrement fléchis. On ouvre les bras en serrant les omoplates, charge légère."
+   "variant": "Banc à 30-45°, poitrine appuyée, paumes face à face, coudes légèrement fléchis. On ouvre les bras en serrant les omoplates, charge légère.",
+   "img": {
+    "file": "images/db_rear_fly.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "oiseau haltères allongé sur banc, mais banc plat (pas incliné)"
+   }
   },
   "db_deadlift": {
    "fr": "Soulevé de terre haltères",
@@ -2106,6 +2906,9 @@
    "s": [
     "dos",
     "quad"
+   ],
+   "vid": [
+    "fr_db_deadlift"
    ]
   },
   "lunge_bw": {
@@ -2122,6 +2925,14 @@
    "s": [
     "isch",
     "mol"
+   ],
+   "img": {
+    "file": "images/lunge_bw.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "fente marchée au poids du corps (proche des fentes avant alternées)"
+   },
+   "vid": [
+    "fr_lunge_bw"
    ]
   },
   "db_stepover": {
@@ -2139,6 +2950,14 @@
     "isch",
     "abs",
     "mol"
+   ],
+   "img": {
+    "file": "images/db_stepover.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "step-up haltères sur banc, proche du step-over sur box"
+   },
+   "vid": [
+    "fr_db_stepover"
    ]
   },
   "wall_ball": {
@@ -2156,6 +2975,9 @@
    "s": [
     "abs",
     "tri"
+   ],
+   "vid": [
+    "fr_wall_ball"
    ]
   },
   "rope_su": {
@@ -2171,6 +2993,13 @@
    "s": [
     "quad",
     "epa"
+   ],
+   "img": {
+    "file": "images/rope_su.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)"
+   },
+   "vid": [
+    "fr_rope_su"
    ]
   },
   "neg_pu": {
@@ -2187,14 +3016,23 @@
     "bic",
     "abs"
    ],
-   "variant": "Saute ou monte sur une box pour avoir le menton au-dessus de la barre, puis descends en 5 secondes jusqu’aux bras tendus."
+   "variant": "Saute ou monte sur une box pour avoir le menton au-dessus de la barre, puis descends en 5 secondes jusqu’aux bras tendus.",
+   "img": {
+    "file": "images/neg_pu.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "traction classique (position haute, point de départ de la négative)"
+   },
+   "vid": [
+    "fr_neg_pu"
+   ]
   },
   "shoulder_mach": {
    "fr": "Développé épaules machine guidée",
    "en": "Machine Shoulder Press",
    "mv": null,
    "vid": [
-    "shoulder_press_machine"
+    "shoulder_press_machine",
+    "fr_shoulder_mach"
    ],
    "kind": "force",
    "unit": "reps",
@@ -2204,14 +3042,20 @@
    ],
    "s": [
     "tri"
-   ]
+   ],
+   "img": {
+    "file": "images/shoulder_mach.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "développé épaules assis machine guidée"
+   }
   },
   "shoulder_hs": {
    "fr": "Développé épaules Hammer iso-latéral",
    "en": "Iso-Lateral Shoulder Press",
    "mv": null,
    "vid": [
-    "iso_shoulder_press"
+    "iso_shoulder_press",
+    "fr_shoulder_hs"
    ],
    "kind": "force",
    "unit": "reps",
@@ -2221,14 +3065,20 @@
    ],
    "s": [
     "tri"
-   ]
+   ],
+   "img": {
+    "file": "images/shoulder_hs.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "machine à levier convergente équivalente au Hammer iso-latéral"
+   }
   },
   "abductor": {
    "fr": "Abducteurs machine",
    "en": "Hip Abductor",
    "mv": null,
    "vid": [
-    "hip_abductor"
+    "hip_abductor",
+    "fr_abductor"
    ],
    "kind": "force",
    "unit": "reps",
@@ -2236,7 +3086,12 @@
    "p": [
     "fess"
    ],
-   "s": []
+   "s": [],
+   "img": {
+    "file": "images/abductor.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "machine abducteurs assis (Nautilus)"
+   }
   }
  },
  "videos": {
@@ -3128,6 +3983,1634 @@
    "thumbnailUrl": "https://i.ytimg.com/vi/G_8LItOiZ0Q/hqdefault.jpg",
    "checkedAt": "2026-10-11",
    "foundVia": "Recherche YouTube (titre et chaîne relevés dans les résultats)"
+  },
+  "fr_abductor": {
+   "videoId": "H8y4t2Qdb_E",
+   "title": "Comment utiliser la machine ABDUCTEURS assis | Fessier tonique garanti | Machine Basic-Fit",
+   "author": "Bodykev Coaching",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=H8y4t2Qdb_E",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_active_hang": {
+   "videoId": "mkGLzts8P04",
+   "title": "-Suspension ACTIVE isométrique : Omoplates et muscles abaisseurs",
+   "author": "Antoine MH",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=mkGLzts8P04",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_adductor": {
+   "videoId": "QWUSIA06rsM",
+   "title": "Comment bien utiliser la machine adducteurs assis | Intérieur des cuisses | Basic-Fit",
+   "author": "Bodykev Coaching",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=QWUSIA06rsM",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_assault": {
+   "videoId": "2qq5tokeWUU",
+   "title": "TUTORIEL ASSAULT AIR BIKE : TECHNIQUE, RÉGLAGES + UN WOD EXPLOSIF !",
+   "author": "Jack Vanbergen",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=2qq5tokeWUU",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_assault_wod": {
+   "videoId": "2qq5tokeWUU",
+   "title": "TUTORIEL ASSAULT AIR BIKE : TECHNIQUE, RÉGLAGES + UN WOD EXPLOSIF !",
+   "author": "Jack Vanbergen",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=2qq5tokeWUU",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_backsquat": {
+   "videoId": "ZyDTYe9iL6I",
+   "title": "TUTO - Le Back Squat pour muscler le bas du corps ! 🏋🏽 I Decathlon",
+   "author": "Decathlon FR",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=ZyDTYe9iL6I",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_leg_swings": {
+   "videoId": "_JWHy86izcw",
+   "title": "Balancements de jambes avant-arrière (échauffement)",
+   "author": "Fit'distance",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=_JWHy86izcw",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_band_pull": {
+   "videoId": "MSJzslGuutU",
+   "title": "Mobilité ÉPAULE : Band pull apart",
+   "author": "Antoine MH",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=MSJzslGuutU",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_bird_dog": {
+   "videoId": "ZCrnGuPQmUM",
+   "title": "Bird Dog : erreurs, corrections et progressions",
+   "author": "Casa Del Mouv'",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=ZCrnGuPQmUM",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_box_stepover": {
+   "videoId": "yoquxWRdJO0",
+   "title": "Step-up avec haltères",
+   "author": "Fit'distance",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=yoquxWRdJO0",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français",
+   "note": "Pas de tuto FR spécifique au box step-over trouvé ; step-up haltères = même mécanique de montée sur box"
+  },
+  "fr_burpee": {
+   "videoId": "i81QzMpFnj4",
+   "title": "Burpee - le tutoriel complet",
+   "author": "WODMOOV",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=i81QzMpFnj4",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_cat_cow": {
+   "videoId": "p0HVXDeVO-8",
+   "title": "5 MIN YOGA - TUTORIEL CHAT/VACHE (CAT/COW)",
+   "author": "Sonia Nguyen",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=p0HVXDeVO-8",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_rope_su": {
+   "videoId": "BErpXNoC7AI",
+   "title": "Double-under (DU) - le tutoriel complet",
+   "author": "WODMOOV",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=BErpXNoC7AI",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français",
+   "note": "Couvre les double unders"
+  },
+  "fr_single_under": {
+   "videoId": "WMqHUCWuX7U",
+   "title": "SAUT A LA CORDE - APPRENDRE A BIEN SAUTER A LA CORDE",
+   "author": "Boxing Academy France",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=WMqHUCWuX7U",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_run": {
+   "videoId": "sCWCrDwCCVo",
+   "title": "Apprendre les bases d'une bonne foulée | Running",
+   "author": "SIKANA Français",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=sCWCrDwCCVo",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_ez_curl": {
+   "videoId": "GhPSC2l-eUM",
+   "title": "Curl biceps barre EZ - 1\" pour t'expliquer !",
+   "author": "BmD | Train With Me",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=GhPSC2l-eUM",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français",
+   "note": "Alternative vérifiée : tOp-ErB-klc (Curl barre EZ debout, GooFiit)"
+  },
+  "fr_incline_curl": {
+   "videoId": "wBvTNeXcbxQ",
+   "title": "Technique de musculation : Le curl incliné haltères",
+   "author": "Enzo TV",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=wBvTNeXcbxQ",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_hammer_curl": {
+   "videoId": "Pq_DEJr4pNs",
+   "title": "Exercice de musculation biceps : curl haltères prise marteau",
+   "author": "Fitadium",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=Pq_DEJr4pNs",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_deadbug": {
+   "videoId": "zJMNbNYYrsY",
+   "title": "Exercice du \"dead bug\"",
+   "author": "ActionSportPhysio",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=zJMNbNYYrsY",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_dead_hang": {
+   "videoId": "hDi6k3gPFlM",
+   "title": "Renforcer sa poigne avec les suspensions à la barre (Dead hang)",
+   "author": "Morgan Nutrition",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=hDi6k3gPFlM",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_kb_dl": {
+   "videoId": "7SeG6G64zCA",
+   "title": "Démonstration du mouvement : Soulevé de Terre avec Kettlebell",
+   "author": "Your House Fitness",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=7SeG6G64zCA",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_devil": {
+   "videoId": "Yv0F93Zb7EU",
+   "title": "Progression en 4 étapes au Devil Press à intégrer dans tes cours de CrossFit®",
+   "author": "The Shaker Show",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=Yv0F93Zb7EU",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_dip_hs": {
+   "videoId": "G1Ki5fKFloI",
+   "title": "FLF GYM - Machine seated Dips ou dips assis",
+   "author": "FLF Gym",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=G1Ki5fKFloI",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français",
+   "note": "cLkLzELvPQw (Dips assis Hammer Strength, FR) repéré mais oEmbed en échec"
+  },
+  "fr_dip_assist": {
+   "videoId": "O3cZDwi4dj0",
+   "title": "Triceps/Pecs : Machine à Dips assistée",
+   "author": "Heracles Gym XXL Musculation & Coaching",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=O3cZDwi4dj0",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_dips": {
+   "videoId": "AFhRwheJOkE",
+   "title": "Comment bien faire les Ring Dips ? - La Minute Coach !",
+   "author": "LEVEL addict",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=AFhRwheJOkE",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français",
+   "note": "Dips aux anneaux"
+  },
+  "fr_double_under": {
+   "videoId": "BErpXNoC7AI",
+   "title": "Double-under (DU) - le tutoriel complet",
+   "author": "WODMOOV",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=BErpXNoC7AI",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_db_snatch": {
+   "videoId": "hgZFcvUSTws",
+   "title": "DUMBBELL SNATCH - Tutoriel de CROSSFIT",
+   "author": "toutComment",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=hgZFcvUSTws",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_chest_press": {
+   "videoId": "lf8PrU9cwuk",
+   "title": "PECTORAUX : Développé assis à la machine convergente",
+   "author": "TeamSuperPhysique",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=lf8PrU9cwuk",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_bench": {
+   "videoId": "feWp7jZopI8",
+   "title": "Développé Couché : TECHNIQUE + ERREURS A EVITER (Musculation des épaules et des pectoraux)",
+   "author": "Olymp'Fit",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=feWp7jZopI8",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_iso_chest": {
+   "videoId": "lf8PrU9cwuk",
+   "title": "PECTORAUX : Développé assis à la machine convergente",
+   "author": "TeamSuperPhysique",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=lf8PrU9cwuk",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français",
+   "note": "Pas de tuto FR spécifique Hammer Strength iso-latéral ; machine convergente équivalente"
+  },
+  "fr_incline_db": {
+   "videoId": "8d4V5QGcT_A",
+   "title": "Le développé incliné aux haltères de A à Z ( + astuces et annonce événement)",
+   "author": "Enzo TV",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=8d4V5QGcT_A",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_strict_press": {
+   "videoId": "WmwFNLeuHd8",
+   "title": "DÉVELOPPÉ MILITAIRE BARRE : 5 ÉTAPES pour des épaules ENORMES",
+   "author": "Myprotein France",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=WmwFNLeuHd8",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_db_stand_press": {
+   "videoId": "yyBf3iaoVRU",
+   "title": "Exercice du développé militaire debout avec haltères",
+   "author": "AM Nutrition",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=yyBf3iaoVRU",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_db_seat_press": {
+   "videoId": "Ap7texwO3Nk",
+   "title": "[TUTO] Epaules : Développé Haltères Assis",
+   "author": "BeComplete",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=Ap7texwO3Nk",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_shoulder_hs": {
+   "videoId": "zQKR42zVrdA",
+   "title": "EPAULES : Développé épaules à la machine convergente",
+   "author": "TeamSuperPhysique",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=zQKR42zVrdA",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français",
+   "note": "Machine convergente générique, pas Hammer spécifiquement"
+  },
+  "fr_shoulder_mach": {
+   "videoId": "p6A4CWhgKXE",
+   "title": "EPAULES : Développé épaules à la machine",
+   "author": "TeamSuperPhysique",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=p6A4CWhgKXE",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_stairs": {
+   "videoId": "vwvcGjY6aLg",
+   "title": "Conquérir L'escalier Matrix De Basic-fit : Les Clés Pour Réussir !",
+   "author": "Bodykev Coaching",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=vwvcGjY6aLg",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_db_oh_triceps": {
+   "videoId": "SIUYEyyNC-A",
+   "title": "Triceps assis sur banc à un haltère au-dessus de la tête",
+   "author": "Corse Coaching",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=SIUYEyyNC-A",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français",
+   "note": "Version un haltère tenu à deux mains"
+  },
+  "fr_rope_pd": {
+   "videoId": "ADRve8qqC1U",
+   "title": "EXTENSION TRICEPS À LA CORDE : Fais-le CORRECTEMENT ! (Tuto complet)",
+   "author": "Bodykev Coaching",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=ADRve8qqC1U",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_back_ext": {
+   "videoId": "UBeEZ-ibJts",
+   "title": "Musculation des lombaires - Extensions du buste au banc",
+   "author": "Toute la musculation !",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=UBeEZ-ibJts",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_face_pull": {
+   "videoId": "4FAiPDzKRUw",
+   "title": "[TUTO] Face Pulls",
+   "author": "BeComplete",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=4FAiPDzKRUw",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_farmer": {
+   "videoId": "C-WP-tsb01c",
+   "title": "Farmer Walk avec Haltères : Execution, technique, conseils et progression",
+   "author": "15-Minute Challenge",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=C-WP-tsb01c",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_reverse_lunge": {
+   "videoId": "T-a6-369Rrg",
+   "title": "Fentes arrières : Technique, démonstration, conseils, muscles",
+   "author": "15-Minute Challenge",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=T-a6-369Rrg",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_lunge_bw": {
+   "videoId": "HH9FQpjXw7A",
+   "title": "Comment faire les FENTES : Technique et erreurs à éviter (exercice de musculation)",
+   "author": "Olymp'Fit",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=HH9FQpjXw7A",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_walk_lunge": {
+   "videoId": "L7iPmk1GThE",
+   "title": "Comment faire : FENTES MARCHÉES (walking lunges)",
+   "author": "MaxiPerformance",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=L7iPmk1GThE",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_db_wlunge": {
+   "videoId": "L7iPmk1GThE",
+   "title": "Comment faire : FENTES MARCHÉES (walking lunges)",
+   "author": "MaxiPerformance",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=L7iPmk1GThE",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_lunge_heavy": {
+   "videoId": "A67wpBRKI2Y",
+   "title": "Fentes avec barre - Guide Musculation",
+   "author": "GuideMusculation",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=A67wpBRKI2Y",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_frontsquat": {
+   "videoId": "H_d6oaCKG0U",
+   "title": "Le FRONT SQUAT : Technique et Erreurs à Éviter",
+   "author": "Myprotein France",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=H_d6oaCKG0U",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_side_plank": {
+   "videoId": "_H9lCamSHR0",
+   "title": "Comment bien faire son gainage latéral ? Tutoriel complet et progression par kiné !",
+   "author": "Casa Del Mouv'",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=_H9lCamSHR0",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_goblet": {
+   "videoId": "qdfyNNXX8l0",
+   "title": "Goblet Squat : un des meilleurs exercices jambes & fessiers avec haltère 🔥 (Tuto complet)",
+   "author": "Coach Gab",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=qdfyNNXX8l0",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_goblet_wod": {
+   "videoId": "qdfyNNXX8l0",
+   "title": "Goblet Squat : un des meilleurs exercices jambes & fessiers avec haltère 🔥 (Tuto complet)",
+   "author": "Coach Gab",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=qdfyNNXX8l0",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_good_morning": {
+   "videoId": "voohh6iX8mE",
+   "title": "Démonstration du mouvement : Le Good Morning (Technique et Musculation)",
+   "author": "Your House Fitness",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=voohh6iX8mE",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_gm_stick": {
+   "videoId": "voohh6iX8mE",
+   "title": "Démonstration du mouvement : Le Good Morning (Technique et Musculation)",
+   "author": "Your House Fitness",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=voohh6iX8mE",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français",
+   "note": "Good morning générique (pas spécifiquement au bâton)"
+  },
+  "fr_hack": {
+   "videoId": "ULTbRnMfodM",
+   "title": "Hack squat : La bonne posture pour éviter les erreurs et gagner en résultats",
+   "author": "Vibes Fitness France",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=ULTbRnMfodM",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_hpc": {
+   "videoId": "wYnBdzF9Ixk",
+   "title": "Explication du Hang power clean - MOUVEMENT",
+   "author": "BmD | Train With Me",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=wYnBdzF9Ixk",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_hip_hinge": {
+   "videoId": "U_3EfwSPYn8",
+   "title": "Leçon de Hip Hinge avec Nicolas Mariettan",
+   "author": "Trans-Faire",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=U_3EfwSPYn8",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français",
+   "note": "Leçon de hip hinge générale, pas spécifiquement la variante au mur"
+  },
+  "fr_hipthrust": {
+   "videoId": "eYXN9SW2j4I",
+   "title": "Le Hip Thrust : Exercice pour muscler les fessiers",
+   "author": "Olymp'Fit",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=eYXN9SW2j4I",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_hollow": {
+   "videoId": "G5i11cyxSL4",
+   "title": "Hollow body hold : Muscle, variante, conseils et progression",
+   "author": "15-Minute Challenge",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=G5i11cyxSL4",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_hollow_rock": {
+   "videoId": "kqL2Cs_PRxc",
+   "title": "Hollow Rock pour les abdominaux",
+   "author": "Femme Fitness",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=kqL2Cs_PRxc",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_kb_swing_am": {
+   "videoId": "txvgVmyEhJ8",
+   "title": "Kettlebell swing russe et US - le tutoriel complet",
+   "author": "WODMOOV",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=txvgVmyEhJ8",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_kb_swing_ru": {
+   "videoId": "txvgVmyEhJ8",
+   "title": "Kettlebell swing russe et US - le tutoriel complet",
+   "author": "WODMOOV",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=txvgVmyEhJ8",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_kb_swing_light": {
+   "videoId": "txvgVmyEhJ8",
+   "title": "Kettlebell swing russe et US - le tutoriel complet",
+   "author": "WODMOOV",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=txvgVmyEhJ8",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français",
+   "note": "Même vidéo que kb_swing_ru"
+  },
+  "fr_kb_swing_wod": {
+   "videoId": "txvgVmyEhJ8",
+   "title": "Kettlebell swing russe et US - le tutoriel complet",
+   "author": "WODMOOV",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=txvgVmyEhJ8",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_lsit": {
+   "videoId": "vVlV_RQLE7E",
+   "title": "Tuto L-Sit : la progression minimaliste mais ultra efficace",
+   "author": "Kalos&Sthenos",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=vVlV_RQLE7E",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_legcurl_l": {
+   "videoId": "UHGYDxCQPoc",
+   "title": "ISCHIOS-JAMBIERS : Leg curl allongé",
+   "author": "TeamSuperPhysique",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=UHGYDxCQPoc",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_legcurl_s": {
+   "videoId": "CjwlGF7pAgo",
+   "title": "Tutoriel leg curl assis / flexion de genou",
+   "author": "Debo hardtrainer",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=CjwlGF7pAgo",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_legcurl_hs": {
+   "videoId": "CjwlGF7pAgo",
+   "title": "Tutoriel leg curl assis / flexion de genou",
+   "author": "Debo hardtrainer",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=CjwlGF7pAgo",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français",
+   "note": "Leg curl assis générique, pas la machine Hammer iso-latérale"
+  },
+  "fr_legext": {
+   "videoId": "xNPZM0vkTS8",
+   "title": "LEG EXTENSION : Technique Parfaite Machine Quadriceps | Guide Complet Musculation Cuisses",
+   "author": "Coach Gab",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=xNPZM0vkTS8",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_legext_hs": {
+   "videoId": "axCZk-__AdM",
+   "title": "Comment bien réaliser le leg extension pour les quadriceps",
+   "author": "Nicolas Loi - Personal Trainer",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=axCZk-__AdM",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français",
+   "note": "Leg extension générique (pas Hammer iso-latéral)"
+  },
+  "fr_ankle_mob": {
+   "videoId": "WYX-fUqlvHw",
+   "title": "MOBILITÉ de la CHEVILLE pour le SQUAT ! (Tutoriel mobilité CrossFit)",
+   "author": "Jack Vanbergen",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=WYX-fUqlvHw",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_calf_hs": {
+   "videoId": "KQ6HYVTLV6I",
+   "title": "Extensions mollets assis à la machine - Exercice de Musculation pour les Mollets",
+   "author": "EspaceMusculation",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=KQ6HYVTLV6I",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français",
+   "note": "Machine mollets assis générique, pas spécifiquement Hammer"
+  },
+  "fr_calf_stand": {
+   "videoId": "_96rm7OKHro",
+   "title": "Extensions des mollets debout avec haltères",
+   "author": "AM Nutrition",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=_96rm7OKHro",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_calf_mach": {
+   "videoId": "yQv9y1oHitc",
+   "title": "MOLLETS : Mollets debout à la machine",
+   "author": "TeamSuperPhysique",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=yQv9y1oHitc",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_calf_press": {
+   "videoId": "xZJtQOdNbKk",
+   "title": "Musculation des mollets - Mollets à la presse à cuisses",
+   "author": "Toute la musculation !",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=xZJtQOdNbKk",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_calf_press_hs": {
+   "videoId": "xZJtQOdNbKk",
+   "title": "Musculation des mollets - Mollets à la presse à cuisses",
+   "author": "Toute la musculation !",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=xZJtQOdNbKk",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_db_rear_fly": {
+   "videoId": "e6vyx6UxDJk",
+   "title": "Musculation des épaules - Oiseau Banc Incliné",
+   "author": "Toute la musculation !",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=e6vyx6UxDJk",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_hip_opener": {
+   "videoId": "QZzwx4xk1xA",
+   "title": "Mobilité Articulaire bas du corps (ouverture de hanche)",
+   "author": "ATTRAININGFIT",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=QZzwx4xk1xA",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français",
+   "note": "Mobilité d'ouverture de hanche, pas exactement fentes dynamiques"
+  },
+  "fr_pallof": {
+   "videoId": "Pz95Wgyt9MA",
+   "title": "PALLOF PRESS : Exercice d'anti-rotation pour abdominaux et obliques dans le plan transverse",
+   "author": "Olymp'Fit",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=Pz95Wgyt9MA",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_pendlay": {
+   "videoId": "safqPH-wRPI",
+   "title": "Un dos puissant avec le pendlay row",
+   "author": "Enzo TV",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=safqPH-wRPI",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_pistol_box": {
+   "videoId": "zLNb4CbBDq4",
+   "title": "TUTO Pistol squat progression pas à pas + exos bonus",
+   "author": "Kalos&Sthenos",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=zLNb4CbBDq4",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français",
+   "note": "Progression complète du pistol, pas uniquement la version sur box"
+  },
+  "fr_shoulder_taps": {
+   "videoId": "ew6aD7hEfK8",
+   "title": "Comment faire une PLANCHE TAPE ÉPAULES?",
+   "author": "FitSquad Entrainement",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=ew6aD7hEfK8",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_plank_fist": {
+   "videoId": "z08O5IL7E_w",
+   "title": "La « planche » bras tendus",
+   "author": "Inphysiofr",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=z08O5IL7E_w",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_plank_fa": {
+   "videoId": "4HDEV8B_8KE",
+   "title": "GAINAGE PLANCHE AVANT SUR LES COUDES",
+   "author": "OSTEO ENTREPRISE",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=4HDEV8B_8KE",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_plank_wod": {
+   "videoId": "4HDEV8B_8KE",
+   "title": "GAINAGE PLANCHE AVANT SUR LES COUDES",
+   "author": "OSTEO ENTREPRISE",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=4HDEV8B_8KE",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_pushup_par": {
+   "videoId": "50Yr6Mm78u0",
+   "title": "TUTO - Comment bien faire des pompes ? 💪 | Decathlon",
+   "author": "Decathlon FR",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=50Yr6Mm78u0",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_incline_pushup": {
+   "videoId": "pH9hQDirfog",
+   "title": "Pompes inclinées | Déclinées",
+   "author": "The Move Fitness & Performance",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=pH9hQDirfog",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français",
+   "note": "Couvre aussi les pompes déclinées"
+  },
+  "fr_glute_bridge": {
+   "videoId": "9Wma4mC8wpw",
+   "title": "Comment Faire un Pont Fessier",
+   "author": "Your House Fitness",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=9Wma4mC8wpw",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_child_pose": {
+   "videoId": "W2hM6cqI6fs",
+   "title": "Apprendre la posture de l'enfant - Balasana | Apprendre le Yoga",
+   "author": "SIKANA Français",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=W2hM6cqI6fs",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_power_clean": {
+   "videoId": "Io4QsuRnhZg",
+   "title": "Power clean - le tutoriel complet",
+   "author": "WODMOOV",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=Io4QsuRnhZg",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_presse": {
+   "videoId": "WkOQLZ45v54",
+   "title": "TUTORIEL PRESSE A CUISSES et conseils",
+   "author": "Supertrainers",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=WkOQLZ45v54",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_presse_hs": {
+   "videoId": "BJkN0raau14",
+   "title": "Michael Gundill teste une presse à cuisses Hammer Strength",
+   "author": "Michael Gundill",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=BJkN0raau14",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français",
+   "note": "Test/analyse de la machine Hammer Strength plutôt que tuto pur"
+  },
+  "fr_push_press": {
+   "videoId": "GZOUImr4QdQ",
+   "title": "Le Push PRESS est souvent plus utile ! (Technique et Coaching CrossFit)",
+   "author": "Jack's Team - Strongfit & TMS",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=GZOUImr4QdQ",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_rower": {
+   "videoId": "y-JIyd_4Mpg",
+   "title": "RAMEUR (Partie 1/3) - Comment Ramer : Réglages, Posture et Technique -  Rameur CrossFit",
+   "author": "Jack Vanbergen",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=y-JIyd_4Mpg",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_rower_wod": {
+   "videoId": "y-JIyd_4Mpg",
+   "title": "RAMEUR (Partie 1/3) - Comment Ramer : Réglages, Posture et Technique -  Rameur CrossFit",
+   "author": "Jack Vanbergen",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=y-JIyd_4Mpg",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_ring_dips": {
+   "videoId": "AFhRwheJOkE",
+   "title": "Comment bien faire les Ring Dips ? - La Minute Coach !",
+   "author": "LEVEL addict",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=AFhRwheJOkE",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_ringrow": {
+   "videoId": "Lbuqpwj3z5Y",
+   "title": "Tout sur le Ring Row en Callisthénie",
+   "author": "Alexandre | Coach de callisthénie",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=Lbuqpwj3z5Y",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_shoulder_band": {
+   "videoId": "9b-X59Ota_E",
+   "title": "Ouverture d'épaules avec bâton ou élastique",
+   "author": "Adrien Barboza Coaching Sportif",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=9b-X59Ota_E",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_wrist_routine": {
+   "videoId": "DkP5kNTKYKw",
+   "title": "MOBILITÉ ET RENFORCEMENT DE POIGNETS pour le CrossFit et l'haltérophilie",
+   "author": "Jack Vanbergen",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=DkP5kNTKYKw",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_seated_row": {
+   "videoId": "Jo86APbOBUE",
+   "title": "Le rowing assis à la machine, un exercice simple et efficace pour muscler le dos",
+   "author": "ProTrainer",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=Jo86APbOBUE",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_bor": {
+   "videoId": "ogca9EFIOes",
+   "title": "Tutoriel rowing / tirage à la barre buste penché",
+   "author": "Debo hardtrainer",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=ogca9EFIOes",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_iso_row": {
+   "videoId": "aGIuygzEPzI",
+   "title": "Iso-Lateral Row prise pronation Hammer Strength – Exécution parfaite haut du dos | LPS Training",
+   "author": "ludozaa personal trainer",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=aGIuygzEPzI",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_db_row": {
+   "videoId": "2P2TyrYyTmU",
+   "title": "Rowing Haltère : Technique et erreurs à éviter (musculation du dos rowing bucheron)",
+   "author": "Olymp'Fit",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=2P2TyrYyTmU",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_russian_twist": {
+   "videoId": "ENvBFiUSqOk",
+   "title": "Russian Twist: Execution, technique, conseils et progression",
+   "author": "15-Minute Challenge",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=ENvBFiUSqOk",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_scap_pullup": {
+   "videoId": "2yLYukbWHNs",
+   "title": "Devenez plus forts aux tractions avec les \"scapular pull-ups\"",
+   "author": "Enzo TV",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=2yLYukbWHNs",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_shrug": {
+   "videoId": "iPpy-1Tws5k",
+   "title": "Shrug haltères : l'exercice parfait pour des trapèzes massifs 💪 (Tuto + démonstration)",
+   "author": "Gabriel Augusto",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=iPpy-1Tws5k",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_skierg": {
+   "videoId": "_Ueq5umA2uI",
+   "title": "COMMENT FAIRE DU SKIERG - TUTORIEL TECHNIQUE POUR LE CROSSFIT",
+   "author": "Jack Vanbergen",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=_Ueq5umA2uI",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_skierg_wod": {
+   "videoId": "_Ueq5umA2uI",
+   "title": "COMMENT FAIRE DU SKIERG - TUTORIEL TECHNIQUE POUR LE CROSSFIT",
+   "author": "Jack Vanbergen",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=_Ueq5umA2uI",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_skull": {
+   "videoId": "8zNxkhnAg4M",
+   "title": "Musculation des triceps :  Les skullcrushers",
+   "author": "Enzo TV",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=8zNxkhnAg4M",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_deadlift": {
+   "videoId": "gNdZuaYZz7E",
+   "title": "Deadlift (soulevé de terre) - le tutoriel complet",
+   "author": "WODMOOV",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=gNdZuaYZz7E",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_db_deadlift": {
+   "videoId": "vzLAZLlxU90",
+   "title": "Soulevé de terre avec haltères : Exécution, technique et conseils",
+   "author": "15-Minute Challenge",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=vzLAZLlxU90",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_db_rdl": {
+   "videoId": "hyBx3QViCw8",
+   "title": "Deadlift roumain avec haltères : Execution, technique, conseils et progression",
+   "author": "15-Minute Challenge",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=hyBx3QViCw8",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_rdl": {
+   "videoId": "9ATuKMCWKkY",
+   "title": "TUTO complet: Soulevé de terre roumain",
+   "author": "How To Be",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=9ATuKMCWKkY",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_bulgarian": {
+   "videoId": "eCJxHKDXBqk",
+   "title": "Split squat bulgare : Technique et variantes",
+   "author": "Olymp'Fit",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=eCJxHKDXBqk",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_air_squat": {
+   "videoId": "L465BEp3908",
+   "title": "Air squat - le tutoriel complet",
+   "author": "WODMOOV",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=L465BEp3908",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_db_stepover": {
+   "videoId": "yoquxWRdJO0",
+   "title": "Step-up avec haltères",
+   "author": "Fit'distance",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=yoquxWRdJO0",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français",
+   "note": "Pas de tuto FR spécifique au box step-over trouvé ; step-up haltères = même mécanique de montée sur box"
+  },
+  "fr_stepup": {
+   "videoId": "6yF-VaStT_E",
+   "title": "Comment faire un step up",
+   "author": "Mise en Forme 101",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=6yF-VaStT_E",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_stepup_wod": {
+   "videoId": "6yF-VaStT_E",
+   "title": "Comment faire un step up",
+   "author": "Mise en Forme 101",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=6yF-VaStT_E",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_suitcase": {
+   "videoId": "seaOGXq0Nig",
+   "title": "Le duo gagnant pour renforcer ton gainage : Suitcase Carry et  Windmill",
+   "author": "O'FLO",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=seaOGXq0Nig",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français",
+   "note": "Vidéo couvre aussi le windmill"
+  },
+  "fr_sdhp": {
+   "videoId": "oKs8SOAc-3Q",
+   "title": "Sumo deadlift high pull (Barre, haltères et élastique)",
+   "author": "Femme Fitness",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=oKs8SOAc-3Q",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_superman": {
+   "videoId": "1kNr9QzXzjg",
+   "title": "Eviter les douleurs lombaires et renforcer son dos grâce à l'exercice du superman",
+   "author": "Vitaliplay",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=1kNr9QzXzjg",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_incline_walk": {
+   "videoId": "7U1JO4F5VOc",
+   "title": "SI TU FAIS ÇA SUR LE TAPIS INCLINÉ, T'AS RIEN COMPRIS",
+   "author": "Maxime Clergeau - Coach transformations physiques",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=7U1JO4F5VOc",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français",
+   "note": "Short ; conseils de posture en marche inclinée"
+  },
+  "fr_db_thruster": {
+   "videoId": "MwE6XA8X_w0",
+   "title": "Thrusters haltères",
+   "author": "Maxime Clergeau - Coach transformations physiques",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=MwE6XA8X_w0",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_thruster": {
+   "videoId": "N0dtRABhraY",
+   "title": "Thruster - le tutoriel complet",
+   "author": "WODMOOV",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=N0dtRABhraY",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_latpull": {
+   "videoId": "dOukQ7QBSQs",
+   "title": "[TUTO] Tirage Vertical à la Poulie Haute",
+   "author": "BeComplete",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=dOukQ7QBSQs",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_latpull_hs": {
+   "videoId": "UgK3HRvS4co",
+   "title": "BXT50 - Tirage vertical convergent by DELAVIER",
+   "author": "LAROQ - Performance & fitness made in France",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=UgK3HRvS4co",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français",
+   "note": "Machine convergente LAROQ, pas Hammer Strength, mouvement équivalent"
+  },
+  "fr_t2b": {
+   "videoId": "eAACJyoAmww",
+   "title": "Toes to bar - le tutoriel complet",
+   "author": "WODMOOV",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=eAACJyoAmww",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_pullup_wod": {
+   "videoId": "eHtwzkUxcXU",
+   "title": "TES PREMIÈRES PULL UP EN CROSSFIT",
+   "author": "Jessica Vetter",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=eHtwzkUxcXU",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_banded_pu": {
+   "videoId": "sTx6c-QOVdo",
+   "title": "Débloquez vos premières Tractions complètes avec des bandes élastiques",
+   "author": "Forster Trainer",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=sTx6c-QOVdo",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_ringrow_wod": {
+   "videoId": "Lbuqpwj3z5Y",
+   "title": "Tout sur le Ring Row en Callisthénie",
+   "author": "Alexandre | Coach de callisthénie",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=Lbuqpwj3z5Y",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_neg_pu": {
+   "videoId": "eCzcyl54SDQ",
+   "title": "S'améliorer aux tractions partie 2 : Les tractions négatives",
+   "author": "Enzo TV",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=eCzcyl54SDQ",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_strict_pu": {
+   "videoId": "7FvO7zKB43o",
+   "title": "Strict Pull-up (traction stricte) - le tutoriel complet",
+   "author": "WODMOOV",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=7FvO7zKB43o",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_tgu": {
+   "videoId": "tci6LsVTZRo",
+   "title": "Tuto TGU : Apprendre à faire le Turkish Get Up étape par étape",
+   "author": "Olymp'Fit",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=tci6LsVTZRo",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_bike": {
+   "videoId": "IBLOutvjiNs",
+   "title": "Exercices : Comment bien utiliser un vélo d'appartement",
+   "author": "Pratiks Sports",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=IBLOutvjiNs",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_wall_ball": {
+   "videoId": "bldADcMZsWU",
+   "title": "Wall-Ball - le tutoriel complet",
+   "author": "WODMOOV",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=bldADcMZsWU",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_wallball": {
+   "videoId": "bldADcMZsWU",
+   "title": "Wall-Ball - le tutoriel complet",
+   "author": "WODMOOV",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=bldADcMZsWU",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_lat_raise": {
+   "videoId": "q_DYeb_daeY",
+   "title": "Élévations Latérales : Technique et astuces (musculation des épaules avec haltères)",
+   "author": "Olymp'Fit",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=q_DYeb_daeY",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_st_add": {
+   "videoId": "k_aYHxvB51Q",
+   "title": "Étirement des Adducteurs | (Très simple)",
+   "author": "Liebscher & Bracht | Spécialistes de la douleur",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=k_aYHxvB51Q",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_st_forearm": {
+   "videoId": "wSHOyunVW1U",
+   "title": "Étirement des muscles de l'avant-bras - Soulager et prévenir tendinite et tunnel carpien",
+   "author": "Jean-Pierre Perreault",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=wSHOyunVW1U",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_st_lat": {
+   "videoId": "DS4LklLalq8",
+   "title": "Étirement du grand dorsal",
+   "author": "Clinique Ostéopathie Structurelle",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=DS4LklLalq8",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_st_glute": {
+   "videoId": "g19IwkspP9M",
+   "title": "Étirement des fessiers - piriforme",
+   "author": "Clinique Ostéopathie Structurelle",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=g19IwkspP9M",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_st_hipflex": {
+   "videoId": "APcvYUivb0M",
+   "title": "Étirements passifs : Fléchisseurs de hanche (droit antérieur, psoas iliaque)",
+   "author": "CHU de NÎMES",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=APcvYUivb0M",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_st_ham": {
+   "videoId": "yLgXUcoJc2Y",
+   "title": "Des ischios plus SOUPLES: conseils et exercices efficaces!",
+   "author": "Denis Fortier",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=yLgXUcoJc2Y",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_st_calf": {
+   "videoId": "zzNI5vxssTI",
+   "title": "ÉTIREMENT MOLLETS : Technique Debout Contre le Mur | Soulage Instantanément les Tensions",
+   "author": "Coach Gab",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=zzNI5vxssTI",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_st_pec": {
+   "videoId": "iioxcOqlWMI",
+   "title": "ÉTIREMENT PECTORAUX : Technique Mur Bras à 90 Degrés | Corrige la Posture Voûtée",
+   "author": "Coach Gab",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=iioxcOqlWMI",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_st_quad": {
+   "videoId": "NKpre5q90wI",
+   "title": "L'étirement du QUADRICEPS expliqué par des PRO | Kinésithérapie",
+   "author": "Weasyo",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=NKpre5q90wI",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
+  },
+  "fr_st_tri": {
+   "videoId": "V8nA6t_r8JM",
+   "title": "ÉTIREMENT TRICEPS : Technique Bras Derrière la Tête | Soulage les Tensions des Bras",
+   "author": "Coach Gab",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=V8nA6t_r8JM",
+   "checkedAt": "2026-10-11",
+   "lang": "fr",
+   "foundVia": "Recherche YouTube en français"
   }
  },
  "catalogue": {

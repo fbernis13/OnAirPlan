@@ -12,7 +12,7 @@ function viewExercices() {
     h += `<h3>${KIND_LABELS[kind]} <span class="faint num small">${ks.length}</span></h3><div class="stack">`;
     ks.forEach(k => {
       const d = EXERCISES[k]; const nv = videosFor(k).length;
-      h += `<button class="listbtn" data-act="open-exo" data-id="${k}">${hasThumb(k) ? `<span class="lthumb">${thumbSvg(k)}</span>` : ''}<span class="grow"><span class="t">${esc(d.fr)}</span><br>
+      h += `<button class="listbtn" data-act="open-exo" data-id="${k}">${hasExThumb(k) ? `<span class="lthumb">${exThumb(k)}</span>` : ''}<span class="grow"><span class="t">${esc(d.fr)}</span><br>
         <span class="small faint">${esc(d.en)}${(d.p || []).length ? ' · ' + d.p.map(g => MUSCLES[g]).join(', ') : ''}</span></span>
         ${nv ? `<span class="pill acc">${nv} vidéo${nv > 1 ? 's' : ''}</span>` : '<span class="pill">Vidéo absente</span>'}<span class="chev">${IC.chev}</span></button>`;
     });
@@ -26,7 +26,7 @@ function viewExo(k) {
   const bySess = {}; uses.forEach(u => { (bySess[u.sid] = bySess[u.sid] || new Set()).add(u.where); });
   return `<h2 style="margin-top:1rem">${esc(d.fr)}</h2>
   <p class="exo-en" style="font-size:.95rem">${esc(d.en)}</p>
-  ${hasThumb(k) ? `<div class="bigthumb">${thumbSvg(k)}</div>` : ''}
+  ${hasExThumb(k) ? `<figure class="bigthumb">${exThumb(k)}${d.img ? `<figcaption class="small faint">${d.img.note ? esc(d.img.note) + ' · ' : ''}Photo ${esc(d.img.source || '')}</figcaption>` : ''}</figure>` : ''}
   <dl class="kv card">
     <dt>Type</dt><dd>${KIND_LABELS[d.kind] || ''}</dd>
     ${d.unit ? `<dt>Unité</dt><dd>${UNIT_LABELS[d.unit]}</dd>` : ''}

@@ -374,3 +374,6 @@ body:has(.timer) .stepbar { bottom: calc(var(--nav-h) + env(safe-area-inset-bott
 .ethumb { flex: 0 0 22%; max-width: 4.6rem; }
 .lthumb { flex: 0 0 18%; max-width: 3.6rem; }
 .bigthumb { max-width: 16rem; margin: .4rem 0 .8rem; }
+.tbimg { object-fit: cover; background: #fff; }
+figure.bigthumb { margin: .4rem 0 .8rem; }
+figure.bigthumb figcaption { margin-top: .3rem; }

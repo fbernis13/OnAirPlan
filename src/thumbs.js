@@ -197,3 +197,12 @@ function thumbSvg(k) {
   return `<svg class="tb" viewBox="${vb}" role="img" aria-label="${esc((EXERCISES[k] || {}).fr || k)}"><path d="M${Math.round(x0)},${G + 0.5}H${Math.round(x0 + w)}" class="tb-ground"/>${eqSvg(def.eq)}${figSvg(J, def.f)}${heldSvg(J, def.h)}</svg>`;
 }
 const hasThumb = k => !!THUMB_DEF[k];
+/* Photo de l'exercice quand elle existe (free-exercise-db, domaine public), sinon le dessin */
+const exImg = k => (EXERCISES[k] || {}).img;
+const hasExThumb = k => !!((exImg(k) || {}).file || THUMB_DEF[k]);
+function exThumb(k) {
+  const im = exImg(k);
+  if (im && im.file) return `<img class="tb tbimg" src="${esc(im.file)}" alt="${esc((EXERCISES[k] || {}).fr || k)}" loading="lazy" onerror="thumbImgFail(this,'${esc(k)}')">`;
+  return thumbSvg(k);
+}
+window.thumbImgFail = (img, k) => { const s = thumbSvg(k); if (s) img.outerHTML = s; else img.remove(); };

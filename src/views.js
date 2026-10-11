@@ -9,6 +9,8 @@ function videosFor(k) {
   const d = exDef(k); const list = [];
   if (d.mv && MOVE_BY_ID[d.mv]) (MOVE_BY_ID[d.mv].media || []).forEach(m => list.push(Object.assign({ origin: 'catalogue', checkedAt: m.metadataCheckedAt, ficheSource: m.sourceUrl, variantNote: MOVE_BY_ID[d.mv].editorialNote }, m)));
   (d.vid || []).forEach(v => { if (VIDEOS[v]) list.push(Object.assign({ origin: 'recherche' }, VIDEOS[v])); });
+  /* les vidéos en français passent en premier */
+  list.sort((a, b) => (b.lang === 'fr') - (a.lang === 'fr'));
   const seen = new Set(); return list.filter(v => !seen.has(v.videoId) && seen.add(v.videoId));
 }
 function videoCard(v, uid) {
@@ -20,7 +22,8 @@ function videoCard(v, uid) {
     </button>
     <div style="min-width:0">
       <div class="vt">${esc(v.title)}</div>
-      <div class="va">${esc(v.author || '')} · ${v.origin === 'catalogue' ? 'fiche du catalogue' : 'recherche YouTube'}, vérifiée le ${fmtDate(v.checkedAt)}</div>
+      <div class="va">${esc(v.author || '')} · ${v.lang === 'fr' ? 'en français' : v.origin === 'catalogue' ? 'fiche du catalogue' : 'recherche YouTube'}, vérifiée le ${fmtDate(v.checkedAt)}</div>
+      ${v.note ? `<div class="variant">${esc(v.note)}</div>` : ''}
       ${v.variantNote ? `<div class="variant">${esc(v.variantNote)}</div>` : ''}
       <div class="links">
         ${EMBED_OK === true ? `<button class="btn small ghost" data-act="play" data-uid="${esc(uid)}">${showEmbed ? 'Fermer' : 'Lire ici'}</button>` : ''}
@@ -78,7 +81,7 @@ function viewProgramme() {
 }
 
 /* Choix machine guidée / Hammer, avec le dessin de chaque machine (pile de poids ou disques) */
-function machineThumb(k) { return hasThumb(k) ? `<span class="mthumb">${thumbSvg(k)}</span>` : ''; }
+function machineThumb(k) { return hasExThumb(k) ? `<span class="mthumb">${exThumb(k)}</span>` : ''; }
 function machinePicker(pair, side, cycle, attrs) {
   const opts = [['guidee', 'Machine guidée'], ['hammer', 'Hammer'], ['haltero', 'Haltéro']].filter(([v]) => machineOk(pair, v, cycle));
   return `<div class="machine-pick${opts.length > 2 ? ' three' : ''}" role="group" aria-label="Type de machine">${opts.map(([v, l]) =>
@@ -199,7 +202,7 @@ function exoCard(s, bl, it, i) {
   const uid = s.id + ':' + key;
   const swapOpts = swapList(it.x);
   return `<div class="exo anchor ${E && E.done ? 'done' : ''} ${E && E.skipped ? 'skipped' : ''}" id="exo-${uid}">
-    <div class="exo-title">${hasThumb(eff) && !pair ? `<span class="ethumb">${thumbSvg(eff)}</span>` : ''}<div class="grow">
+    <div class="exo-title">${hasExThumb(eff) && !pair ? `<span class="ethumb">${exThumb(eff)}</span>` : ''}<div class="grow">
       <div class="exo-name">${esc(eff !== it.x ? d.fr : itemLabel(it))}</div>
       <div class="exo-en">${esc(d.en)}${E && E.swap ? ` · variante de ${esc(itemLabel(it))}` : ''}</div>
     </div><div class="presc num">${presc(it)}</div></div>
