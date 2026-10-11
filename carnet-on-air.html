@@ -296,6 +296,12 @@ ul.clean li { margin: .2rem 0; }
 .login { min-height: 100dvh; display: grid; place-items: center; padding: 1rem; }
 .login form { width: min(100%, 22rem); }
 .machine-seg { margin: .35rem 0 .1rem; }
+.machine-pick { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; margin: .45rem 0 .15rem; }
+.machine-pick button { display: flex; flex-direction: column; align-items: stretch; gap: .15rem; padding: .35rem; text-align: left; border: 1px solid var(--line); border-radius: .6rem; background: var(--surface); color: var(--ink); cursor: pointer; font: inherit; min-width: 0; }
+.machine-pick button[aria-pressed="true"] { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent) inset; background: var(--accent-soft); }
+.machine-pick .mthumb { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: .4rem; background: var(--surface-2); display: block; }
+.machine-pick .ml { font-weight: 700; font-size: .9em; }
+.machine-pick .mn { font-size: .78em; color: var(--ink-2); line-height: 1.25; overflow-wrap: anywhere; }
 </style>
 <div id="app" class="app"></div>
 <script>
@@ -307,7 +313,7 @@ const PREF_LABELS = { keep: 'Conserver', aside: 'Mettre de côté', practice: '�
 const PREF_ORDER = ['keep', 'aside', 'practice', 'warmup', 'alternative'];
 
 function blankState() {
-  return { v: 1, settings: { theme: 'system', size: 100, sound: true }, prefs: {}, machines: {}, bench: {}, logs: {}, metaAt: 0 };
+  return { v: 1, settings: { theme: 'system', size: 100, sound: true }, prefs: {}, machines: {}, bench: {}, logs: {}, metaAt: 0, savedAt: 0 };
 }
 let S = blankState();
 const UI = { tab: 'programme', session: null, exo: null, move: null, musScope: 'prog', musSession: 'c1-r1', musAdj: true, musSel: null, exFilter: '', mvFilter: '', mvPref: 'all', mvCat: 'all', sheet: null, sync: 'local', toast: null };
@@ -327,7 +333,9 @@ const Cloud = { db: null, col: null, dirty: new Set(), timer: null, busy: false 
 function touchMeta() { S.metaAt = Date.now(); markDirty('meta'); }
 function touchLog(id) { const L = S.logs[id]; if (L) L.updatedAt = Date.now(); markDirty('log-' + id); }
 function markDirty(docId) {
+  if (!docId.startsWith('snap-')) S.savedAt = Date.now();
   saveLocal();
+  if (typeof serverDirty === 'function') serverDirty(docId);
   Cloud.dirty.add(docId);
   if (Cloud.col) { setSync('pending'); clearTimeout(Cloud.timer); Cloud.timer = setTimeout(flushCloud, 1500); }
 }
@@ -593,8 +601,8 @@ function pickData() {
   const ob = readLS(DATA_LS.bib), oc = readLS(DATA_LS.car);
   const bib = ob && !checkBib(ob) ? ob : DATA.base.bib;
   const car = oc && !checkCar(oc, bib) ? oc : DATA.base.car;
-  DATA.source.bib = bib === ob ? 'importée' : DATA.source.baseBib || 'intégrée';
-  DATA.source.car = car === oc ? 'importé' : DATA.source.baseCar || 'intégré';
+  DATA.source.bib = bib === ob ? (typeof Server !== 'undefined' && Server.on ? 'serveur' : 'importée') : DATA.source.baseBib || 'intégrée';
+  DATA.source.car = car === oc ? (typeof Server !== 'undefined' && Server.on ? 'serveur' : 'importé') : DATA.source.baseCar || 'intégré';
   applyData(bib, car);
 }
 /* Sur un site : relit data/*.json pour que la modification d'un fichier suffise, sans reconstruire la page */
@@ -649,8 +657,10 @@ function replaceProgression(st) {
   new Set(old.concat(Object.keys(S.logs))).forEach(id => markDirty('log-' + id));
   applySettings();
 }
+/* Bibliothèque ou carnet importé : gardé sur l'appareil, et sur le serveur en version site */
+function writeDoc(kind, doc) { const ok = writeLS(DATA_LS[kind], doc); if (typeof serverDocDirty === 'function') serverDocDirty(kind); return ok; }
 function setOverride(kind, doc) {
-  const ok = writeLS(kind === 'bib' ? DATA_LS.bib : DATA_LS.car, doc);
+  const ok = writeDoc(kind, doc);
   pickData();
   return ok;
 }
@@ -676,7 +686,7 @@ function makeSnapshot(label) {
 function restoreSnapshot(id) {
   const snap = SNAPS.find(x => x.id === id); if (!snap) return false;
   makeSnapshot('Avant restauration du ' + new Date(snap.at).toLocaleString('fr-FR', { dateStyle: 'short', timeStyle: 'short' }));
-  writeLS(DATA_LS.bib, snap.bib || null); writeLS(DATA_LS.car, snap.car || null); pickData();
+  writeDoc('bib', snap.bib || null); writeDoc('car', snap.car || null); pickData();
   const st = progressionToState(snap.progression); if (st) replaceProgression(st);
   return true;
 }
@@ -685,11 +695,127 @@ function deleteSnapshot(id) { SNAPS = SNAPS.filter(x => x.id !== id); storeSnaps
 /* ── Remise à zéro : chaque cible est d'abord sauvegardée, la restauration reste possible */
 function resetData(what) {
   makeSnapshot('Avant remise à zéro (' + ({ progression: 'progression', bib: 'bibliothèque', car: 'carnet', all: 'tout' })[what] + ')');
-  if (what === 'bib' || what === 'all') writeLS(DATA_LS.bib, null);
-  if (what === 'car' || what === 'all') writeLS(DATA_LS.car, null);
+  if (what === 'bib' || what === 'all') writeDoc('bib', null);
+  if (what === 'car' || what === 'all') writeDoc('car', null);
   pickData();
   if (what === 'progression' || what === 'all') { const keep = S.settings; const st = blankState(); st.settings = keep; replaceProgression(st); }
 }
+
+/* Carnet On Air : enregistrement sur le serveur Supabase (version site).
+   Actif seulement si config/supabase.json est rempli et la bibliothèque supabase-js chargée.
+   - progression : une ligne par compte (table progression), dernière écriture gagnante ;
+   - bibliothèque et carnet partagés : table documents, modifiables par un administrateur ;
+   - sauvegardes : table sauvegardes, une ligne par point de restauration.
+   Une copie reste dans le navigateur pour fonctionner sans réseau à la salle ;
+   les modifications faites hors ligne partent au retour du réseau. */
+const Server = { on: false, client: null, user: null, timer: null, busy: false, prog: false, docs: {}, snaps: new Set() };
+const SERVER_LS = 'onair-server-user';
+const serverConfigured = () => typeof SUPA_CONFIG !== 'undefined' && !!(SUPA_CONFIG && SUPA_CONFIG.url && SUPA_CONFIG.anonKey);
+const DOC_KIND = { bib: 'bibliotheque', car: 'carnet' };
+
+function serverClient() {
+  if (Server.client) return Server.client;
+  if (!serverConfigured() || !window.supabase || typeof window.supabase.createClient !== 'function') return null;
+  Server.client = window.supabase.createClient(SUPA_CONFIG.url, SUPA_CONFIG.anonKey, { auth: { persistSession: true, autoRefreshToken: true } });
+  return Server.client;
+}
+function loginToEmail(login) {
+  const l = String(login || '').trim();
+  if (l.includes('@')) return l.toLowerCase();
+  const map = (SUPA_CONFIG && SUPA_CONFIG.logins) || {};
+  return map[l.toLowerCase()] || null;
+}
+async function serverRole(c, uid) {
+  const last = readLS(SERVER_LS); const known = last && last.id === uid ? last.role : 'membre';
+  try { const { data, error } = await c.from('roles').select('role').eq('user_id', uid).maybeSingle(); return error ? known : (data && data.role) || 'membre'; }
+  catch (e) { return known; }
+}
+function loginOf(email) {
+  const map = (SUPA_CONFIG && SUPA_CONFIG.logins) || {};
+  return Object.keys(map).find(k => map[k] === email) || email;
+}
+function rememberServerUser(u) { writeLS(SERVER_LS, u); }
+
+/* Appelé par startApp une fois le carnet affiché : récupère le serveur et fusionne */
+async function initServer() {
+  const c = Server.client; if (!c || !Server.user) return;
+  Server.on = true; setSync('pending');
+  try {
+    const docs = await c.from('documents').select('kind,data');
+    if (docs.error) throw docs.error;
+    const got = {}; (docs.data || []).forEach(d => { got[d.kind] = d.data; });
+    const b = got.bibliotheque && !checkBib(got.bibliotheque) ? got.bibliotheque : null;
+    const k = got.carnet && !checkCar(got.carnet, b || DATA.base.bib) ? got.carnet : null;
+    /* un document modifié hors ligne par un administrateur garde la priorité jusqu'à son envoi */
+    if (!('bib' in Server.docs)) writeLS(DATA_LS.bib, b);
+    if (!('car' in Server.docs)) writeLS(DATA_LS.car, k);
+    pickData();
+
+    const row = await c.from('progression').select('data,updated_at').eq('user_id', Server.user.id).maybeSingle();
+    if (row.error) throw row.error;
+    const remoteAt = row.data ? Date.parse(row.data.updated_at) : 0;
+    if (row.data && remoteAt > (S.savedAt || 0)) {
+      const st = progressionToState(row.data.data);
+      if (st) { st.savedAt = remoteAt; S = st; saveLocal(); applySettings(); }
+    } else if (S.savedAt) Server.prog = true;
+
+    const sn = await c.from('sauvegardes').select('id,created_at,label,data').order('created_at', { ascending: false }).limit(SNAP_MAX);
+    if (sn.error) throw sn.error;
+    const remote = new Set();
+    (sn.data || []).forEach(r => {
+      remote.add(r.id);
+      if (!SNAPS.some(x => x.id === r.id)) SNAPS.push(Object.assign({ id: r.id, at: Date.parse(r.created_at), label: r.label }, r.data || {}));
+    });
+    SNAPS.forEach(x => { if (!remote.has(x.id)) Server.snaps.add(x.id); });
+    storeSnaps();
+    render();
+    await flushServer();
+  } catch (e) {
+    setSync('local');
+    showToast('Serveur injoignable : tes notes restent sur cet appareil et partiront à la prochaine connexion.');
+  }
+}
+
+function serverDirty(docId) {
+  if (!Server.on) return;
+  if (docId.startsWith('snap-')) Server.snaps.add(docId.slice(5)); else Server.prog = true;
+  scheduleServer();
+}
+function serverDocDirty(kind) { if (!Server.on) return; Server.docs[kind] = true; scheduleServer(); }
+function scheduleServer(delay) { setSync('pending'); clearTimeout(Server.timer); Server.timer = setTimeout(flushServer, delay || 1200); }
+
+async function flushServer() {
+  const c = Server.client; if (!Server.on || !c || Server.busy) return;
+  Server.busy = true;
+  try {
+    for (const kind of Object.keys(Server.docs)) {
+      const doc = readLS(DATA_LS[kind]);
+      const r = doc ? await c.from('documents').upsert({ kind: DOC_KIND[kind], data: doc, updated_at: new Date().toISOString() })
+        : await c.from('documents').delete().eq('kind', DOC_KIND[kind]);
+      if (r.error) throw r.error;
+      delete Server.docs[kind];
+    }
+    if (Server.prog) {
+      Server.prog = false;
+      const r = await c.from('progression').upsert({ user_id: Server.user.id, data: docProgression(), updated_at: new Date(S.savedAt || Date.now()).toISOString() });
+      if (r.error) { Server.prog = true; throw r.error; }
+    }
+    for (const id of [...Server.snaps]) {
+      const x = SNAPS.find(z => z.id === id);
+      const r = x ? await c.from('sauvegardes').upsert({ id: x.id, user_id: Server.user.id, created_at: new Date(x.at).toISOString(), label: x.label, data: { progression: x.progression, bib: x.bib, car: x.car } })
+        : await c.from('sauvegardes').delete().eq('user_id', Server.user.id).eq('id', id);
+      if (r.error) throw r.error;
+      Server.snaps.delete(id);
+    }
+    setSync('cloud');
+  } catch (e) {
+    if (e && (e.code === '42501' || e.status === 401 || e.status === 403)) {
+      Server.docs = {}; setSync('local');
+      showToast('Le serveur a refusé l’enregistrement (droits insuffisants).');
+    } else { setSync('pending'); clearTimeout(Server.timer); Server.timer = setTimeout(flushServer, 8000); }
+  } finally { Server.busy = false; }
+}
+window.addEventListener('online', () => { if (Server.on) scheduleServer(300); });
 
 /* Carnet On Air : connexion simple pour la version publiée sur un site.
    Les comptes viennent de auth/utilisateurs.json, intégré à la construction (AUTH_USERS) :
@@ -697,7 +823,7 @@ function resetData(what) {
    session (effacé à la fermeture du navigateur). C'est un contrôle côté navigateur : il
    filtre l'accès à l'écran mais ne protège pas les fichiers publiés avec la page. */
 const AUTH = { user: null, cookie: 'onair_session' };
-const authEnabled = () => typeof AUTH_USERS !== 'undefined' && AUTH_USERS && Array.isArray(AUTH_USERS.users);
+const authEnabled = () => serverConfigured() || (typeof AUTH_USERS !== 'undefined' && AUTH_USERS && Array.isArray(AUTH_USERS.users));
 const isAdmin = () => !authEnabled() || (AUTH.user && AUTH.user.role === 'admin');
 
 function readSessionCookie() {
@@ -732,6 +858,13 @@ function viewLogin(msg) {
     ev.preventDefault();
     const login = document.getElementById('login-user').value.trim().toLowerCase(), pw = document.getElementById('login-pw').value;
     const btn = document.getElementById('login-go'); btn.disabled = true; btn.textContent = 'Vérification…';
+    if (serverConfigured()) {
+      const c = serverClient(); if (!c) return viewLogin('Le serveur ne répond pas. Vérifie ta connexion internet.');
+      const email = loginToEmail(login); if (!email) { await new Promise(r => setTimeout(r, 600)); return viewLogin('Identifiant ou mot de passe incorrect.'); }
+      const { data, error } = await c.auth.signInWithPassword({ email, password: pw });
+      if (error || !data || !data.user) return viewLogin(error && /fetch|network/i.test(error.message || '') ? 'Le serveur ne répond pas. Vérifie ta connexion internet.' : 'Identifiant ou mot de passe incorrect.');
+      return serverSignedIn(c, data.user);
+    }
     const u = AUTH_USERS.users.find(x => x.login.toLowerCase() === login);
     let ok = false;
     try { ok = !!u && await checkPassword(u, pw); } catch (e) { return viewLogin('La vérification est impossible dans ce navigateur (page non sécurisée).'); }
@@ -741,10 +874,37 @@ function viewLogin(msg) {
   });
   setTimeout(() => { const f = document.getElementById('login-user'); if (f) f.focus(); }, 0);
 }
-function logout() { writeSessionCookie(null); AUTH.user = null; location.reload(); }
+async function serverSignedIn(c, user) {
+  const role = await serverRole(c, user.id);
+  Server.user = { id: user.id, email: user.email };
+  AUTH.user = { login: loginOf(user.email), role, server: true };
+  rememberServerUser({ id: user.id, email: user.email, login: AUTH.user.login, role });
+  startApp();
+}
+async function logout() {
+  if (Server.client) {
+    try { await flushServer(); await Server.client.auth.signOut(); } catch (e) {}
+    /* les données vivent sur le serveur : on ne laisse pas de copie sur un appareil après déconnexion */
+    [LS_KEY, DATA_LS.bib, DATA_LS.car, DATA_LS.snaps, SERVER_LS].forEach(k => writeLS(k, null));
+  }
+  writeSessionCookie(null); AUTH.user = null; location.reload();
+}
 /* Point d'entrée : ouvre le carnet directement, ou l'écran de connexion */
-function authGate() {
+async function authGate() {
   if (!authEnabled()) return startApp();
+  if (serverConfigured()) {
+    const c = serverClient();
+    if (!c) {
+      /* bibliothèque Supabase non chargée (pas de réseau) : on rouvre le dernier compte connecté sur ses données locales */
+      const last = readLS(SERVER_LS);
+      if (last) { AUTH.user = { login: last.login, role: last.role, server: true }; startApp(); showToast('Hors ligne : tes notes seront envoyées au serveur au retour du réseau (recharge la page).'); return; }
+      return viewLogin('Le serveur ne répond pas. Vérifie ta connexion internet.');
+    }
+    let session = null;
+    try { session = (await c.auth.getSession()).data.session; } catch (e) { session = null; }
+    if (session && session.user) return serverSignedIn(c, session.user);
+    return viewLogin();
+  }
   const c = readSessionCookie(); const u = c && AUTH_USERS.users.find(x => x.login === c.u);
   if (u) { AUTH.user = { login: u.login, role: u.role }; return startApp(); }
   viewLogin();
@@ -826,6 +986,16 @@ function viewProgramme() {
         <p class="muted small">${esc(c.goal)}</p><p class="faint small">Suspension : ${esc(c.hang)}</p></details>
     </div></div>`;
   return h;
+}
+
+/* Choix machine guidée / Hammer, avec la miniature de la vidéo vérifiée pour reconnaître la machine */
+function machineThumb(k) {
+  const v = (exDef(k).vid || []).map(id => VIDEOS[id]).find(x => x && x.videoId);
+  return v ? `<img class="mthumb" src="https://i.ytimg.com/vi/${esc(v.videoId)}/mqdefault.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : '';
+}
+function machinePicker(pair, side, attrs) {
+  return `<div class="machine-pick" role="group" aria-label="Type de machine">${[['guidee', 'Machine guidée'], ['hammer', 'Hammer']].map(([v, l]) =>
+    `<button data-act="machine" data-pair="${pair.id}" data-v="${v}" ${attrs} aria-pressed="${side === v}">${machineThumb(pair[v])}<span class="ml">${l}</span><span class="mn">${esc(exDef(pair[v]).fr)}</span></button>`).join('')}</div>`;
 }
 
 /* ── Écran Séance */
@@ -926,7 +1096,7 @@ function exoCard(s, bl, it, i) {
       <div class="exo-name">${esc(eff !== it.x ? d.fr : itemLabel(it))}</div>
       <div class="exo-en">${esc(d.en)}${E && E.swap ? ` · variante de ${esc(itemLabel(it))}` : ''}</div>
     </div><div class="presc num">${presc(it)}</div></div>
-    ${pair ? `<div class="seg machine-seg" role="group" aria-label="Type de machine">${[['guidee', 'Machine guidée'], ['hammer', 'Hammer']].map(([v, l]) => `<button data-act="machine" data-pair="${pair.id}" data-v="${v}" data-sid="${s.id}" data-key="${key}" data-bi="${bl.l}" data-i="${i}" aria-pressed="${side === v}">${l}</button>`).join('')}</div>` : ''}
+    ${pair ? machinePicker(pair, side, `data-sid="${s.id}" data-key="${key}" data-bi="${bl.l}" data-i="${i}"`) : ''}
     ${muscleLine(d)}
     ${it.note ? `<div class="small muted">${esc(it.note)}</div>` : ''}
     ${(it.variant || d.variant) ? `<div class="variant">${esc(it.variant || d.variant)}</div>` : ''}
@@ -1458,7 +1628,7 @@ async function offerFile(name, text) {
 }
 const fmtStamp = t => new Date(t).toLocaleString('fr-FR', { dateStyle: 'short', timeStyle: 'short' });
 function viewSauvegarde() {
-  const src = { bib: DATA.source.bib, car: DATA.source.car, progression: UI.sync === 'cloud' ? 'compte Claude et appareil' : 'cet appareil' };
+  const src = { bib: DATA.source.bib, car: DATA.source.car, progression: Server.on ? 'serveur et appareil' : UI.sync === 'cloud' ? 'compte Claude et appareil' : 'cet appareil' };
   const docCard = k => `<div class="card stack docrow">
       <div class="row"><strong class="grow">${DOC_INFO[k].title}</strong><span class="pill">${esc(src[k])}</span></div>
       <p class="small muted num" style="margin:0">${DOC_INFO[k].file}.json · ${DOC_INFO[k].what()}</p>
@@ -1469,7 +1639,7 @@ function viewSauvegarde() {
   <p class="small muted">L’affichage lit trois fichiers indépendants. La bibliothèque et le carnet décrivent le programme, la progression contient ce que tu notes. Chacun s’exporte, s’importe et se remet à zéro séparément.</p>
   <div class="stack">${['bib', 'car', 'progression'].map(docCard).join('')}</div>
   <div class="row sync-line"><span class="sync-dot ${UI.sync === 'cloud' ? 'cloud' : UI.sync === 'pending' ? 'pending' : ''}"></span>
-    <span class="small muted grow">${UI.sync === 'cloud' ? 'Progression enregistrée dans ton compte Claude, avec une copie dans ce navigateur.' : UI.sync === 'pending' ? 'Enregistrement en cours…' : 'Progression enregistrée dans ce navigateur seulement : exporte-la de temps en temps.'}</span></div>
+    <span class="small muted grow">${UI.sync === 'cloud' ? (Server.on ? 'Progression enregistrée sur le serveur, avec une copie dans ce navigateur pour la salle.' : 'Progression enregistrée dans ton compte Claude, avec une copie dans ce navigateur.') : UI.sync === 'pending' ? 'Enregistrement en cours…' : 'Progression enregistrée dans ce navigateur seulement : exporte-la de temps en temps.'}</span></div>
 
   <h2>Sauvegardes</h2>
   <div class="card stack">
@@ -1746,7 +1916,7 @@ applySettings();
 (() => { const h = (location.hash || '').slice(1); if (TABS.some(t => t[0] === h)) UI.tab = h; })();
 render();
 initCloud();
-refreshDataFiles().then(changed => { if (changed) render(); });
+refreshDataFiles().then(changed => { if (changed) render(); }).then(() => initServer());
 }
 authGate();
 

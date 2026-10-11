@@ -15,9 +15,14 @@ def embed(name, var):
     d = json.loads((here / 'data' / name).read_text(encoding='utf-8'))
     return f'const {var} = ' + json.dumps(d, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/') + ';\n'
 js = embed('bibliotheque.json', 'EMBED_BIB') + embed('carnet.json', 'EMBED_CAR') + ''.join(
-    (src / f).read_text(encoding='utf-8') + '\n' for f in ['core.js', 'data.js', 'auth.js', 'views.js', 'progression.js', 'catalog.js', 'main.js'])
+    (src / f).read_text(encoding='utf-8') + '\n' for f in ['core.js', 'data.js', 'server.js', 'auth.js', 'views.js', 'progression.js', 'catalog.js', 'main.js'])
 users = json.loads((here / 'auth' / 'utilisateurs.json').read_text(encoding='utf-8'))
 users_js = 'const AUTH_USERS = ' + json.dumps(users, ensure_ascii=False, separators=(',', ':')) + ';\n'
+# Supabase : seules l'adresse du projet et la clé publique (anon) vont dans la page ; l'accès aux données est filtré par les règles RLS
+supa = json.loads((here / 'config' / 'supabase.json').read_text(encoding='utf-8'))
+supa_on = bool(supa.get('url') and supa.get('anonKey'))
+site_js = users_js + ('const SUPA_CONFIG = ' + json.dumps(supa, ensure_ascii=False, separators=(',', ':')) + ';\n' if supa_on else '')
+supa_tag = '<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>\n' if supa_on else ''
 def page_body(extra=''):
     return BODY.replace('<script>\n', '<script>\n' + extra, 1)
 css = (src / 'style.css').read_text(encoding='utf-8')
@@ -38,8 +43,8 @@ page = f'''<!doctype html>
 <meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Carnet On Air">
 <style>:root{{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}}body{{margin:0}}img{{max-width:100%}}[hidden]{{display:none!important}}</style>
-</head><body>
-{page_body(users_js)}</body></html>
+{supa_tag}</head><body>
+{page_body(site_js)}</body></html>
 '''
 (here / 'index.html').write_text(page, encoding='utf-8')
 print('ok', len(page))

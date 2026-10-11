@@ -138,7 +138,7 @@ async function offerFile(name, text) {
 }
 const fmtStamp = t => new Date(t).toLocaleString('fr-FR', { dateStyle: 'short', timeStyle: 'short' });
 function viewSauvegarde() {
-  const src = { bib: DATA.source.bib, car: DATA.source.car, progression: UI.sync === 'cloud' ? 'compte Claude et appareil' : 'cet appareil' };
+  const src = { bib: DATA.source.bib, car: DATA.source.car, progression: Server.on ? 'serveur et appareil' : UI.sync === 'cloud' ? 'compte Claude et appareil' : 'cet appareil' };
   const docCard = k => `<div class="card stack docrow">
       <div class="row"><strong class="grow">${DOC_INFO[k].title}</strong><span class="pill">${esc(src[k])}</span></div>
       <p class="small muted num" style="margin:0">${DOC_INFO[k].file}.json · ${DOC_INFO[k].what()}</p>
@@ -149,7 +149,7 @@ function viewSauvegarde() {
   <p class="small muted">L’affichage lit trois fichiers indépendants. La bibliothèque et le carnet décrivent le programme, la progression contient ce que tu notes. Chacun s’exporte, s’importe et se remet à zéro séparément.</p>
   <div class="stack">${['bib', 'car', 'progression'].map(docCard).join('')}</div>
   <div class="row sync-line"><span class="sync-dot ${UI.sync === 'cloud' ? 'cloud' : UI.sync === 'pending' ? 'pending' : ''}"></span>
-    <span class="small muted grow">${UI.sync === 'cloud' ? 'Progression enregistrée dans ton compte Claude, avec une copie dans ce navigateur.' : UI.sync === 'pending' ? 'Enregistrement en cours…' : 'Progression enregistrée dans ce navigateur seulement : exporte-la de temps en temps.'}</span></div>
+    <span class="small muted grow">${UI.sync === 'cloud' ? (Server.on ? 'Progression enregistrée sur le serveur, avec une copie dans ce navigateur pour la salle.' : 'Progression enregistrée dans ton compte Claude, avec une copie dans ce navigateur.') : UI.sync === 'pending' ? 'Enregistrement en cours…' : 'Progression enregistrée dans ce navigateur seulement : exporte-la de temps en temps.'}</span></div>
 
   <h2>Sauvegardes</h2>
   <div class="card stack">

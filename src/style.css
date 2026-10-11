@@ -292,3 +292,9 @@ ul.clean li { margin: .2rem 0; }
 .login { min-height: 100dvh; display: grid; place-items: center; padding: 1rem; }
 .login form { width: min(100%, 22rem); }
 .machine-seg { margin: .35rem 0 .1rem; }
+.machine-pick { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; margin: .45rem 0 .15rem; }
+.machine-pick button { display: flex; flex-direction: column; align-items: stretch; gap: .15rem; padding: .35rem; text-align: left; border: 1px solid var(--line); border-radius: .6rem; background: var(--surface); color: var(--ink); cursor: pointer; font: inherit; min-width: 0; }
+.machine-pick button[aria-pressed="true"] { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent) inset; background: var(--accent-soft); }
+.machine-pick .mthumb { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: .4rem; background: var(--surface-2); display: block; }
+.machine-pick .ml { font-weight: 700; font-size: .9em; }
+.machine-pick .mn { font-size: .78em; color: var(--ink-2); line-height: 1.25; overflow-wrap: anywhere; }

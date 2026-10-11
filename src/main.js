@@ -201,6 +201,6 @@ applySettings();
 (() => { const h = (location.hash || '').slice(1); if (TABS.some(t => t[0] === h)) UI.tab = h; })();
 render();
 initCloud();
-refreshDataFiles().then(changed => { if (changed) render(); });
+refreshDataFiles().then(changed => { if (changed) render(); }).then(() => initServer());
 }
 authGate();

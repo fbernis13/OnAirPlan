@@ -76,6 +76,16 @@ function viewProgramme() {
   return h;
 }
 
+/* Choix machine guidée / Hammer, avec la miniature de la vidéo vérifiée pour reconnaître la machine */
+function machineThumb(k) {
+  const v = (exDef(k).vid || []).map(id => VIDEOS[id]).find(x => x && x.videoId);
+  return v ? `<img class="mthumb" src="https://i.ytimg.com/vi/${esc(v.videoId)}/mqdefault.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : '';
+}
+function machinePicker(pair, side, attrs) {
+  return `<div class="machine-pick" role="group" aria-label="Type de machine">${[['guidee', 'Machine guidée'], ['hammer', 'Hammer']].map(([v, l]) =>
+    `<button data-act="machine" data-pair="${pair.id}" data-v="${v}" ${attrs} aria-pressed="${side === v}">${machineThumb(pair[v])}<span class="ml">${l}</span><span class="mn">${esc(exDef(pair[v]).fr)}</span></button>`).join('')}</div>`;
+}
+
 /* ── Écran Séance */
 function presc(it) {
   const d = exDef(it.x);
@@ -174,7 +184,7 @@ function exoCard(s, bl, it, i) {
       <div class="exo-name">${esc(eff !== it.x ? d.fr : itemLabel(it))}</div>
       <div class="exo-en">${esc(d.en)}${E && E.swap ? ` · variante de ${esc(itemLabel(it))}` : ''}</div>
     </div><div class="presc num">${presc(it)}</div></div>
-    ${pair ? `<div class="seg machine-seg" role="group" aria-label="Type de machine">${[['guidee', 'Machine guidée'], ['hammer', 'Hammer']].map(([v, l]) => `<button data-act="machine" data-pair="${pair.id}" data-v="${v}" data-sid="${s.id}" data-key="${key}" data-bi="${bl.l}" data-i="${i}" aria-pressed="${side === v}">${l}</button>`).join('')}</div>` : ''}
+    ${pair ? machinePicker(pair, side, `data-sid="${s.id}" data-key="${key}" data-bi="${bl.l}" data-i="${i}"`) : ''}
     ${muscleLine(d)}
     ${it.note ? `<div class="small muted">${esc(it.note)}</div>` : ''}
     ${(it.variant || d.variant) ? `<div class="variant">${esc(it.variant || d.variant)}</div>` : ''}

@@ -4,7 +4,7 @@
    session (effacé à la fermeture du navigateur). C'est un contrôle côté navigateur : il
    filtre l'accès à l'écran mais ne protège pas les fichiers publiés avec la page. */
 const AUTH = { user: null, cookie: 'onair_session' };
-const authEnabled = () => typeof AUTH_USERS !== 'undefined' && AUTH_USERS && Array.isArray(AUTH_USERS.users);
+const authEnabled = () => serverConfigured() || (typeof AUTH_USERS !== 'undefined' && AUTH_USERS && Array.isArray(AUTH_USERS.users));
 const isAdmin = () => !authEnabled() || (AUTH.user && AUTH.user.role === 'admin');
 
 function readSessionCookie() {
@@ -39,6 +39,13 @@ function viewLogin(msg) {
     ev.preventDefault();
     const login = document.getElementById('login-user').value.trim().toLowerCase(), pw = document.getElementById('login-pw').value;
     const btn = document.getElementById('login-go'); btn.disabled = true; btn.textContent = 'Vérification…';
+    if (serverConfigured()) {
+      const c = serverClient(); if (!c) return viewLogin('Le serveur ne répond pas. Vérifie ta connexion internet.');
+      const email = loginToEmail(login); if (!email) { await new Promise(r => setTimeout(r, 600)); return viewLogin('Identifiant ou mot de passe incorrect.'); }
+      const { data, error } = await c.auth.signInWithPassword({ email, password: pw });
+      if (error || !data || !data.user) return viewLogin(error && /fetch|network/i.test(error.message || '') ? 'Le serveur ne répond pas. Vérifie ta connexion internet.' : 'Identifiant ou mot de passe incorrect.');
+      return serverSignedIn(c, data.user);
+    }
     const u = AUTH_USERS.users.find(x => x.login.toLowerCase() === login);
     let ok = false;
     try { ok = !!u && await checkPassword(u, pw); } catch (e) { return viewLogin('La vérification est impossible dans ce navigateur (page non sécurisée).'); }
@@ -48,10 +55,37 @@ function viewLogin(msg) {
   });
   setTimeout(() => { const f = document.getElementById('login-user'); if (f) f.focus(); }, 0);
 }
-function logout() { writeSessionCookie(null); AUTH.user = null; location.reload(); }
+async function serverSignedIn(c, user) {
+  const role = await serverRole(c, user.id);
+  Server.user = { id: user.id, email: user.email };
+  AUTH.user = { login: loginOf(user.email), role, server: true };
+  rememberServerUser({ id: user.id, email: user.email, login: AUTH.user.login, role });
+  startApp();
+}
+async function logout() {
+  if (Server.client) {
+    try { await flushServer(); await Server.client.auth.signOut(); } catch (e) {}
+    /* les données vivent sur le serveur : on ne laisse pas de copie sur un appareil après déconnexion */
+    [LS_KEY, DATA_LS.bib, DATA_LS.car, DATA_LS.snaps, SERVER_LS].forEach(k => writeLS(k, null));
+  }
+  writeSessionCookie(null); AUTH.user = null; location.reload();
+}
 /* Point d'entrée : ouvre le carnet directement, ou l'écran de connexion */
-function authGate() {
+async function authGate() {
   if (!authEnabled()) return startApp();
+  if (serverConfigured()) {
+    const c = serverClient();
+    if (!c) {
+      /* bibliothèque Supabase non chargée (pas de réseau) : on rouvre le dernier compte connecté sur ses données locales */
+      const last = readLS(SERVER_LS);
+      if (last) { AUTH.user = { login: last.login, role: last.role, server: true }; startApp(); showToast('Hors ligne : tes notes seront envoyées au serveur au retour du réseau (recharge la page).'); return; }
+      return viewLogin('Le serveur ne répond pas. Vérifie ta connexion internet.');
+    }
+    let session = null;
+    try { session = (await c.auth.getSession()).data.session; } catch (e) { session = null; }
+    if (session && session.user) return serverSignedIn(c, session.user);
+    return viewLogin();
+  }
   const c = readSessionCookie(); const u = c && AUTH_USERS.users.find(x => x.login === c.u);
   if (u) { AUTH.user = { login: u.login, role: u.role }; return startApp(); }
   viewLogin();

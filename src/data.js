@@ -84,8 +84,8 @@ function pickData() {
   const ob = readLS(DATA_LS.bib), oc = readLS(DATA_LS.car);
   const bib = ob && !checkBib(ob) ? ob : DATA.base.bib;
   const car = oc && !checkCar(oc, bib) ? oc : DATA.base.car;
-  DATA.source.bib = bib === ob ? 'importée' : DATA.source.baseBib || 'intégrée';
-  DATA.source.car = car === oc ? 'importé' : DATA.source.baseCar || 'intégré';
+  DATA.source.bib = bib === ob ? (typeof Server !== 'undefined' && Server.on ? 'serveur' : 'importée') : DATA.source.baseBib || 'intégrée';
+  DATA.source.car = car === oc ? (typeof Server !== 'undefined' && Server.on ? 'serveur' : 'importé') : DATA.source.baseCar || 'intégré';
   applyData(bib, car);
 }
 /* Sur un site : relit data/*.json pour que la modification d'un fichier suffise, sans reconstruire la page */
@@ -140,8 +140,10 @@ function replaceProgression(st) {
   new Set(old.concat(Object.keys(S.logs))).forEach(id => markDirty('log-' + id));
   applySettings();
 }
+/* Bibliothèque ou carnet importé : gardé sur l'appareil, et sur le serveur en version site */
+function writeDoc(kind, doc) { const ok = writeLS(DATA_LS[kind], doc); if (typeof serverDocDirty === 'function') serverDocDirty(kind); return ok; }
 function setOverride(kind, doc) {
-  const ok = writeLS(kind === 'bib' ? DATA_LS.bib : DATA_LS.car, doc);
+  const ok = writeDoc(kind, doc);
   pickData();
   return ok;
 }
@@ -167,7 +169,7 @@ function makeSnapshot(label) {
 function restoreSnapshot(id) {
   const snap = SNAPS.find(x => x.id === id); if (!snap) return false;
   makeSnapshot('Avant restauration du ' + new Date(snap.at).toLocaleString('fr-FR', { dateStyle: 'short', timeStyle: 'short' }));
-  writeLS(DATA_LS.bib, snap.bib || null); writeLS(DATA_LS.car, snap.car || null); pickData();
+  writeDoc('bib', snap.bib || null); writeDoc('car', snap.car || null); pickData();
   const st = progressionToState(snap.progression); if (st) replaceProgression(st);
   return true;
 }
@@ -176,8 +178,8 @@ function deleteSnapshot(id) { SNAPS = SNAPS.filter(x => x.id !== id); storeSnaps
 /* ── Remise à zéro : chaque cible est d'abord sauvegardée, la restauration reste possible */
 function resetData(what) {
   makeSnapshot('Avant remise à zéro (' + ({ progression: 'progression', bib: 'bibliothèque', car: 'carnet', all: 'tout' })[what] + ')');
-  if (what === 'bib' || what === 'all') writeLS(DATA_LS.bib, null);
-  if (what === 'car' || what === 'all') writeLS(DATA_LS.car, null);
+  if (what === 'bib' || what === 'all') writeDoc('bib', null);
+  if (what === 'car' || what === 'all') writeDoc('car', null);
   pickData();
   if (what === 'progression' || what === 'all') { const keep = S.settings; const st = blankState(); st.settings = keep; replaceProgression(st); }
 }

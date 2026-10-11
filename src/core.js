@@ -4,7 +4,7 @@ const PREF_LABELS = { keep: 'Conserver', aside: 'Mettre de côté', practice: '�
 const PREF_ORDER = ['keep', 'aside', 'practice', 'warmup', 'alternative'];
 
 function blankState() {
-  return { v: 1, settings: { theme: 'system', size: 100, sound: true }, prefs: {}, machines: {}, bench: {}, logs: {}, metaAt: 0 };
+  return { v: 1, settings: { theme: 'system', size: 100, sound: true }, prefs: {}, machines: {}, bench: {}, logs: {}, metaAt: 0, savedAt: 0 };
 }
 let S = blankState();
 const UI = { tab: 'programme', session: null, exo: null, move: null, musScope: 'prog', musSession: 'c1-r1', musAdj: true, musSel: null, exFilter: '', mvFilter: '', mvPref: 'all', mvCat: 'all', sheet: null, sync: 'local', toast: null };
@@ -24,7 +24,9 @@ const Cloud = { db: null, col: null, dirty: new Set(), timer: null, busy: false 
 function touchMeta() { S.metaAt = Date.now(); markDirty('meta'); }
 function touchLog(id) { const L = S.logs[id]; if (L) L.updatedAt = Date.now(); markDirty('log-' + id); }
 function markDirty(docId) {
+  if (!docId.startsWith('snap-')) S.savedAt = Date.now();
   saveLocal();
+  if (typeof serverDirty === 'function') serverDirty(docId);
   Cloud.dirty.add(docId);
   if (Cloud.col) { setSync('pending'); clearTimeout(Cloud.timer); Cloud.timer = setTimeout(flushCloud, 1500); }
 }
