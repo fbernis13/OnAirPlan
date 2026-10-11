@@ -17,7 +17,9 @@ function serverClient() {
   return Server.client;
 }
 function loginToEmail(login) {
-  const l = String(login || '').trim();
+  /* clavier français : « à » tapé à la place de « @ » */
+  let l = String(login || '').trim().replace(/\s+/g, '');
+  if (!l.includes('@') && /à/.test(l) && /\.[a-z]{2,}$/i.test(l)) l = l.replace(/à(?=[^à]*$)/, '@');
   if (l.includes('@')) return l.toLowerCase();
   const map = (SUPA_CONFIG && SUPA_CONFIG.logins) || {};
   return map[l.toLowerCase()] || null;

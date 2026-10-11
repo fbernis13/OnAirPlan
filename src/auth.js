@@ -48,7 +48,9 @@ function viewLogin(msg) {
         const m = (error && (error.code || error.message)) || '';
         return viewLogin(/fetch|network/i.test(m) ? 'Le serveur ne répond pas. Vérifie ta connexion internet.'
           : /not_confirmed|not confirmed/i.test(m) ? 'Ce compte n’est pas encore confirmé dans Supabase (Authentication > Users).'
-          : 'Identifiant ou mot de passe incorrect.');
+          : /rate|too many|429/i.test(m + ' ' + ((error && error.status) || '')) ? 'Trop de tentatives : attends quelques minutes avant de réessayer.'
+          : /invalid_credentials|invalid login/i.test(m) ? 'Identifiant ou mot de passe incorrect.'
+          : 'Connexion refusée par le serveur (' + m + ').');
       }
       return serverSignedIn(c, data.user);
     }
