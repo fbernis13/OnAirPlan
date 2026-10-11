@@ -410,3 +410,14 @@ button.ethumb { padding: 0; border: 0; background: none; cursor: pointer; }
 .recup.running { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent) inset; }
 .recup.finished { background: var(--amber-soft); border-color: var(--amber); }
 .recup.finished .recup-t { color: var(--amber); }
+
+/* Minuteur EMOM */
+.emom { margin-top: .3rem; padding: .7rem; border-radius: .7rem; background: var(--accent-soft); border: 1px solid var(--accent-line); display: grid; gap: .55rem; }
+.emom-in { display: grid; gap: .3rem; }
+.emom-h { display: flex; align-items: center; justify-content: space-between; gap: .6rem; flex-wrap: wrap; font-weight: 700; }
+.emom-t { font-family: var(--f-display); font-weight: 700; font-size: 2.4rem; line-height: 1; font-variant-numeric: tabular-nums; color: var(--accent); }
+.emom-st { font-size: 1.25rem; line-height: 1.25; overflow-wrap: anywhere; }
+.emom-st .num { color: var(--accent); font-weight: 700; }
+.emom-nx { color: var(--ink-2); overflow-wrap: anywhere; }
+.emom.running { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent) inset; }
+.emom.finished { background: var(--ok-soft); border-color: var(--ok); }

@@ -539,7 +539,7 @@
      "l": "A",
      "type": "wod",
      "title": "EMOM 30 min",
-     "desc": "Une station par minute, 6 tours. Effort modéré, environ 40 s de travail max.",
+     "desc": "Une station par minute, 5 tours. Effort modéré, environ 40 s de travail max.",
      "items": [
       {
        "x": "rower_wod",

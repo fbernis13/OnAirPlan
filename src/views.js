@@ -185,6 +185,7 @@ function wodBlock(s, bl) {
   return `<div class="blockhead anchor" id="wod-${s.id}-${bl.l}"><span class="letter">${esc(bl.l)}</span><span class="bt">${esc(bl.title)}</span></div>
   <div class="card wodcard stack">
     ${bl.desc ? `<p class="muted small" style="margin:0">${esc(bl.desc)}</p>` : ''}
+    ${emomOf(bl) ? emomBox(s.id + ':' + bl.l, emomOf(bl)) : wodTimerOf(bl) ? wtBox(s.id, bl) : ''}
     <ul class="wod-items">${bl.items.map(it => `<li><strong>${esc(itemLabel(it))}</strong> <span class="faint">(${esc(exDef(it.x).en)})</span> · ${esc(it.reps)}${muscleLine(exDef(it.x))}${exDef(it.x).variant ? `<br><span class="variant">${esc(exDef(it.x).variant)}</span>` : ''}</li>`).join('')}</ul>
     <div class="chips">${bl.items.map(it => `<button class="chip" data-act="toggle-warm" data-uid="${esc(s.id + bl.l + it.x)}" aria-pressed="${UI.openWarm === s.id + bl.l + it.x}">${IC.video}${esc(exDef(it.x).en)}</button>`).join('')}</div>
     ${bl.items.filter(it => UI.openWarm === s.id + bl.l + it.x).map(it => videoBlock(it.x, s.id + bl.l)).join('')}
@@ -223,7 +224,7 @@ function exoCard(s, bl, it, i) {
     ${muscleLine(d)}
     ${it.note ? `<div class="small muted">${esc(it.note)}</div>` : ''}
     ${(it.variant || d.variant) ? `<div class="variant">${esc(it.variant || d.variant)}</div>` : ''}
-    ${it.rest ? recupBox(uid, it.rest, `${itemLabel(it)}`, bl.type === 'superset' || bl.type === 'circuit') : ''}
+    ${emomItem(it) ? emomBox(uid + ':emom', emomItem(it)) : it.rest ? recupBox(uid, it.rest, `${itemLabel(it)}`, bl.type === 'superset' || bl.type === 'circuit') : ''}
     ${last ? `<div class="prev">Dernière fois (${esc(sessLabel(SESSION_BY_ID[last.sid]))}${last.date ? ', ' + fmtDate(last.date) : ''}) : ${esc(setSummary(d, last.sets))}</div>` : ''}
     ${E && E.skipped ? '<div class="small faint">Exercice non réalisé.</div>' : `<div class="sets">${sets.map((st, si) => setRow(s.id, key, it, d, st, si)).join('')}</div>`}
     <div class="exo-actions">
@@ -349,6 +350,142 @@ function gateView(s, steps) {
       <button class="btn small ghost" data-act="gate-back">${IC.back} Retour</button>
     </div>
   </div>`;
+}
+
+/* ── Minuteur EMOM : une station par minute, avec l'exercice de chaque minute */
+// WOD dont le titre dit EMOM / E2MOM : durée prise dans le titre, stations = items dans l'ordre
+function emomOf(bl) {
+  const t = bl.title || ''; const m = t.match(/E(\d)?MOM/i); if (!m) return null;
+  const every = (+m[1] || 1) * 60; const mins = +((t.match(/(\d+)\s*min/i) || [])[1] || 0);
+  const st = bl.items.map(it => ({ name: itemLabel(it), reps: it.reps || '' }));
+  const tours = +((t.match(/(\d+)\s*tours?/i) || [])[1] || 0);
+  const total = mins ? Math.round(mins * 60 / every) : (tours || 1) * st.length;
+  return { every, total, st };
+}
+// Exercice simple noté EMOM (ex. tractions strictes) : une minute par série
+function emomItem(it) {
+  if (!/EMOM/i.test(it.note || '')) return null;
+  return { every: 60, total: it.sets || 1, st: [{ name: itemLabel(it), reps: it.reps || '' }] };
+}
+const EMOM = { key: null, cfg: null, base: 0, startAt: 0, running: false, tick: null, last: -99, done: false,
+  el() { return this.base + (this.running ? (Date.now() - this.startAt) / 1000 : 0); } };
+const EMOM_LEAD = 10; // décompte de préparation
+function emomState(key, cfg) {
+  const mine = EMOM.key === key; const t = mine ? EMOM.el() : -EMOM_LEAD;
+  const end = cfg.total * cfg.every;
+  if (mine && EMOM.done) return { phase: 'fin', left: 0, idx: cfg.total - 1 };
+  if (t < 0) return { phase: 'prep', left: -t, idx: 0 };
+  const idx = Math.min(cfg.total - 1, Math.floor(t / cfg.every));
+  return { phase: t >= end ? 'fin' : 'go', left: cfg.every - (t - idx * cfg.every), idx };
+}
+function emomInner(key, cfg) {
+  const z = emomState(key, cfg); const n = cfg.st.length;
+  const cur = cfg.st[z.idx % n]; const nx = z.idx + 1 < cfg.total ? cfg.st[(z.idx + 1) % n] : null;
+  const tours = Math.ceil(cfg.total / n);
+  const head = z.phase === 'prep' ? 'Prépare-toi' : z.phase === 'fin' ? 'EMOM terminé' : `Minute ${z.idx * cfg.every / 60 + 1} / ${cfg.total * cfg.every / 60}${n > 1 ? ` · tour ${Math.floor(z.idx / n) + 1}/${tours}` : ''}`;
+  return `<div class="emom-h"><span>${esc(head)}</span><span class="emom-t num">${fmtSec(Math.ceil(z.left))}</span></div>
+    <div class="emom-st"><strong>${esc(z.phase === 'prep' ? 'Début : ' + cur.name : cur.name)}</strong> <span class="num">${esc(cur.reps)}</span></div>
+    ${nx && z.phase !== 'fin' ? `<div class="small emom-nx">Ensuite : ${esc(nx.name)} · ${esc(nx.reps)}</div>` : ''}`;
+}
+function emomBox(key, cfg) {
+  const mine = EMOM.key === key;
+  return `<div class="emom ${mine && EMOM.running ? 'running' : ''} ${mine && EMOM.done ? 'finished' : ''}" data-emom-key="${esc(key)}" role="timer">
+    <div class="emom-in">${emomInner(key, cfg)}</div>
+    <div class="recup-b">
+      <button class="btn primary" data-act="emom-go" data-key="${esc(key)}">${IC.play} Go</button>
+      <button class="btn" data-act="emom-stop" data-key="${esc(key)}">${IC.pause} Stop</button>
+      <button class="btn" data-act="emom-zero" data-key="${esc(key)}" aria-label="Remise à zéro">${IC.reset} RAZ</button>
+    </div></div>`;
+}
+function emomCfg(key) {
+  const [sid, a, b] = key.split(':'); const s = SESSION_BY_ID[sid]; const bl = s.blocks.find(x => x.l === (b === 'emom' ? a.replace(/\d+$/, '') : a));
+  if (b !== 'emom') return emomOf(bl);
+  const it = bl.items.find((x, i) => s.id + ':' + itemKey(bl, i) + ':emom' === key); return emomItem(it);
+}
+function emomGo(key) {
+  if (EMOM.key !== key || EMOM.done) { emomZero(); EMOM.key = key; EMOM.cfg = emomCfg(key); EMOM.base = -EMOM_LEAD; EMOM.last = -99; EMOM.done = false; }
+  if (EMOM.running) return;
+  EMOM.running = true; EMOM.startAt = Date.now(); clearInterval(EMOM.tick);
+  EMOM.tick = setInterval(emomTick, 200); emomTick();
+}
+function emomTick() {
+  const c = EMOM.cfg; const t = EMOM.el(); const end = c.total * c.every;
+  if (t >= end) { EMOM.base = end; EMOM.running = false; EMOM.done = true; clearInterval(EMOM.tick); beep(3); paintEmom(); return; }
+  const idx = t < 0 ? -1 : Math.floor(t / c.every);
+  if (idx !== EMOM.last) { if (EMOM.last !== -99) beep(idx === -1 ? 1 : 2); EMOM.last = idx; }
+  paintEmom();
+}
+function emomStop() { if (!EMOM.running) return; EMOM.base = EMOM.el(); EMOM.running = false; clearInterval(EMOM.tick); paintEmom(); }
+function emomZero() { clearInterval(EMOM.tick); const k = EMOM.key; Object.assign(EMOM, { key: null, running: false, done: false, base: 0, last: -99 }); if (k) paintEmom(k); }
+function paintEmom(k) {
+  document.querySelectorAll('[data-emom-key]').forEach(b => {
+    const key = b.dataset.emomKey; if (k && key !== k && key !== EMOM.key) return;
+    const cfg = EMOM.key === key ? EMOM.cfg : emomCfg(key); const mine = EMOM.key === key;
+    b.classList.toggle('running', mine && EMOM.running); b.classList.toggle('finished', mine && EMOM.done);
+    b.querySelector('.emom-in').innerHTML = emomInner(key, cfg);
+  });
+}
+
+/* ── Minuteur AMRAP / For time / bloc chronométré */
+// amrap : compte à rebours + compteur de tours ; fortime : chrono jusqu'au cap, « Fini » note le temps
+function wodTimerOf(bl) {
+  const t = (bl.title || '') + ' ' + (bl.desc || '');
+  const am = t.match(/AMRAP\s*(\d+)/i); if (am) return { mode: 'amrap', sec: +am[1] * 60 };
+  const cap = t.match(/cap\s*(\d+)\s*min/i); if (/for time/i.test(t)) return { mode: 'fortime', sec: cap ? +cap[1] * 60 : 0 };
+  const mn = (bl.title || '').match(/(\d+)\s*min/i); if (mn) return { mode: 'amrap', sec: +mn[1] * 60 };
+  return null;
+}
+const WT = { key: null, cfg: null, base: 0, startAt: 0, running: false, tick: null, done: false, rounds: 0,
+  el() { return this.base + (this.running ? (Date.now() - this.startAt) / 1000 : 0); } };
+function wtInner(key, cfg) {
+  const mine = WT.key === key; const t = mine ? WT.el() : -EMOM_LEAD;
+  let head, val;
+  if (t < 0) { head = 'Prépare-toi'; val = -t; }
+  else if (cfg.mode === 'amrap') { head = mine && WT.done ? 'Temps écoulé' : `AMRAP · ${fmtSec(cfg.sec)}`; val = Math.max(0, cfg.sec - t); }
+  else { head = mine && WT.done ? 'Terminé en' : `For time${cfg.sec ? ` · cap ${fmtSec(cfg.sec)}` : ''}`; val = t; }
+  return `<div class="emom-h"><span>${esc(head)}</span><span class="emom-t num">${fmtSec(t < 0 ? Math.ceil(val) : cfg.mode === 'amrap' ? Math.ceil(val) : Math.floor(val))}</span></div>
+    ${cfg.mode === 'amrap' ? `<div class="emom-st">Tours : <strong class="num">${mine ? WT.rounds : 0}</strong></div>` : ''}`;
+}
+function wtBox(sid, bl) {
+  const key = sid + ':' + bl.l; const cfg = wodTimerOf(bl); const mine = WT.key === key;
+  return `<div class="emom ${mine && WT.running ? 'running' : ''} ${mine && WT.done ? 'finished' : ''}" data-wt-key="${esc(key)}" role="timer">
+    <div class="emom-in">${wtInner(key, cfg)}</div>
+    <div class="recup-b">
+      <button class="btn primary" data-act="wt-go" data-key="${esc(key)}">${IC.play} Go</button>
+      <button class="btn" data-act="wt-stop" data-key="${esc(key)}">${IC.pause} Stop</button>
+      <button class="btn" data-act="wt-zero" data-key="${esc(key)}" aria-label="Remise à zéro">${IC.reset} RAZ</button>
+    </div>
+    <div class="recup-b">${cfg.mode === 'amrap'
+      ? `<button class="btn" data-act="wt-round" data-key="${esc(key)}">+1 tour</button><button class="btn ghost" data-act="wt-round" data-d="-1" data-key="${esc(key)}">−1</button>`
+      : `<button class="btn" data-act="wt-fin" data-key="${esc(key)}">${IC.check} Fini, noter le temps</button>`}</div></div>`;
+}
+function wtCfg(key) { const [sid, l] = key.split(':'); return wodTimerOf(SESSION_BY_ID[sid].blocks.find(b => b.l === l)); }
+function wtGo(key) {
+  if (WT.key !== key || WT.done) { wtZero(); Object.assign(WT, { key, cfg: wtCfg(key), base: -EMOM_LEAD, done: false, rounds: 0, last: -1 }); }
+  if (WT.running) return;
+  WT.running = true; WT.startAt = Date.now(); clearInterval(WT.tick); WT.tick = setInterval(wtTick, 200); wtTick();
+}
+function wtTick() {
+  const t = WT.el(); const c = WT.cfg;
+  if (WT.last < 0 && t >= 0) { beep(2); WT.last = 0; }
+  if (c.sec && t >= c.sec) { WT.base = c.sec; WT.running = false; WT.done = true; clearInterval(WT.tick); beep(3); if (c.mode === 'amrap') wtScore(); }
+  paintWt();
+}
+function wtStop() { if (!WT.running) return; WT.base = WT.el(); WT.running = false; clearInterval(WT.tick); paintWt(); }
+function wtZero() { clearInterval(WT.tick); const k = WT.key; Object.assign(WT, { key: null, running: false, done: false, base: 0, rounds: 0 }); if (k) paintWt(k); }
+// Écrit le résultat dans le champ Score du bloc
+function wtScore() {
+  const [sid, l] = WT.key.split(':'); const inp = document.getElementById(`f-wod-${sid}-${l}`);
+  const v = WT.cfg.mode === 'amrap' ? `${WT.rounds} tours` : fmtSec(Math.floor(Math.max(0, WT.base)));
+  if (inp) { inp.value = v; inp.dispatchEvent(new Event('input', { bubbles: true })); }
+}
+function wtFin() { if (WT.el() < 0) return; WT.base = Math.max(0, WT.el()); WT.running = false; WT.done = true; clearInterval(WT.tick); beep(1); wtScore(); paintWt(); }
+function paintWt(k) {
+  document.querySelectorAll('[data-wt-key]').forEach(b => {
+    const key = b.dataset.wtKey; if (k && key !== k && key !== WT.key) return;
+    const mine = WT.key === key; b.classList.toggle('running', mine && WT.running); b.classList.toggle('finished', mine && WT.done);
+    b.querySelector('.emom-in').innerHTML = wtInner(key, mine ? WT.cfg : wtCfg(key));
+  });
 }
 
 /* ── Minuteur de repos */

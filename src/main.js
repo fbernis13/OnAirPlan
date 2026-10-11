@@ -117,6 +117,14 @@ document.addEventListener('click', ev => {
     if (a === 'skip') { E.skipped = !E.skipped; touchLog(r.sid); render(); return; }
   }
   // Minuteur
+  if (a === 'wt-go') { wtGo(el.dataset.key); return; }
+  if (a === 'wt-stop') { if (WT.key === el.dataset.key) wtStop(); return; }
+  if (a === 'wt-zero') { if (WT.key === el.dataset.key) wtZero(); return; }
+  if (a === 'wt-fin') { if (WT.key === el.dataset.key) wtFin(); return; }
+  if (a === 'wt-round') { if (WT.key === el.dataset.key && WT.el() >= 0) { WT.rounds = Math.max(0, WT.rounds + (+el.dataset.d || 1)); if (WT.done) wtScore(); paintWt(); } return; }
+  if (a === 'emom-go') { emomGo(el.dataset.key); return; }
+  if (a === 'emom-stop') { if (EMOM.key === el.dataset.key) emomStop(); return; }
+  if (a === 'emom-zero') { if (EMOM.key === el.dataset.key) emomZero(); return; }
   if (a === 'rest-go') { const k = el.dataset.key; if (REST.key === k && REST.total && !REST.finished) { if (!REST.running) { REST.running = true; REST.endAt = Date.now() + REST.left * 1000; runRest(); } } else startRest(+el.dataset.sec, el.dataset.label, k); renderTimer(); return; }
   if (a === 'rest-stop') { if (REST.key === el.dataset.key && REST.running) { REST.running = false; REST.left = Math.max(0, (REST.endAt - Date.now()) / 1000); } renderTimer(); return; }
   if (a === 'rest-zero') { if (REST.key === el.dataset.key) { clearInterval(REST.tick); REST.running = false; REST.finished = false; REST.left = REST.total; } renderTimer(); return; }
