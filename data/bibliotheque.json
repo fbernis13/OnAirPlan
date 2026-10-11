@@ -1372,10 +1372,10 @@
    ]
   },
   "db_thruster": {
-   "fr": "Thrusters haltères",
+   "fr": "Thruster haltères",
    "en": "Dumbbell Thruster",
    "mv": "dumbbell-thruster",
-   "kind": "wod",
+   "kind": "force",
    "unit": "reps",
    "load": true,
    "p": [
@@ -2091,22 +2091,6 @@
     "dos"
    ],
    "variant": "Banc à 30-45°, poitrine appuyée, paumes face à face, coudes légèrement fléchis. On ouvre les bras en serrant les omoplates, charge légère."
-  },
-  "air_squat_f": {
-   "fr": "Air squat tempo",
-   "en": "Air Squat",
-   "mv": "air-squat",
-   "kind": "force",
-   "unit": "reps",
-   "load": false,
-   "p": [
-    "quad",
-    "fess"
-   ],
-   "s": [
-    "isch",
-    "abs"
-   ]
   },
   "db_deadlift": {
    "fr": "Soulevé de terre haltères",

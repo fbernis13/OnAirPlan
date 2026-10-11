@@ -174,11 +174,11 @@
      "rounds": 3,
      "items": [
       {
-       "x": "air_squat_f",
+       "x": "wall_ball",
        "sets": 3,
-       "reps": "15",
+       "reps": "12",
        "rest": 0,
-       "note": "Tempo 3 s en descente"
+       "note": "Ballon 6 kg, cible 3 m"
       },
       {
        "x": "db_deadlift",
@@ -779,9 +779,10 @@
        "rest": 0
       },
       {
-       "x": "air_squat_f",
+       "x": "db_thruster",
        "sets": 3,
-       "reps": "20",
+       "reps": "10",
+       "note": "2 haltères de 12,5 à 15 kg",
        "rest": 75
       }
      ]
