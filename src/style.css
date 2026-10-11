@@ -385,3 +385,5 @@ button.ethumb { padding: 0; border: 0; background: none; cursor: pointer; }
 .sessbtn .slot { min-width: 2.7rem; width: 2.7rem; height: 2.7rem; font-size: 1.45rem; }
 .sessbtn.done { background: var(--ok-soft); border-color: var(--ok); }
 .sessbtn.done .small { color: var(--ink-2); }
+.media-btns { flex-wrap: wrap; }
+.media-btns .btn { flex: 1 1 5.2rem; min-width: 0; padding-inline: .3rem; font-size: .82rem; white-space: nowrap; justify-content: center; }

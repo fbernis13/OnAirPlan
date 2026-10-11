@@ -209,7 +209,15 @@ function exoCard(s, bl, it, i) {
       <div class="exo-en">${esc(d.en)}${E && E.swap ? ` · variante de ${esc(itemLabel(it))}` : ''}</div>
     </div><div class="presc num">${presc(it)}</div></div>
     ${pair ? machinePicker(pair, side, s.cycle, `data-sid="${s.id}" data-key="${key}" data-bi="${bl.l}" data-i="${i}"`) : ''}
-    ${mediaBar(eff, uid)}
+    ${mediaBar(eff, uid, `<div class="stack">
+        ${d.mv ? `<button class="btn small ghost" data-act="open-move" data-id="${d.mv}" style="justify-self:start">Fiche ${esc(MOVE_BY_ID[d.mv] ? MOVE_BY_ID[d.mv].name : d.en)}</button>` : ''}
+        <label class="fld">Variante appliquée (allègement, remplacement…)
+          <input type="search" id="f-swapq-${uid}" data-in="swapq" data-target="f-swap-${uid}" data-x="${esc(it.x)}" placeholder="Rechercher un exercice" autocomplete="off" enterkeyhint="search">
+          <select id="f-swap-${uid}" data-in="swap" data-sid="${s.id}" data-key="${key}" data-bi="${bl.l}" data-i="${i}" data-planned="${esc(itemLabel(it))}">
+            ${swapOptions(swapOpts, itemLabel(it), E && E.swap)}
+          </select></label>
+        <button class="btn small ghost" data-act="skip" data-sid="${s.id}" data-key="${key}" data-bi="${bl.l}" data-i="${i}" style="justify-self:start">${E && E.skipped ? 'Rétablir l’exercice' : 'Exercice non réalisé'}</button>
+      </div>`, E && (E.swap || E.skipped))}
     ${muscleLine(d)}
     ${it.note ? `<div class="small muted">${esc(it.note)}</div>` : ''}
     ${(it.variant || d.variant) ? `<div class="variant">${esc(it.variant || d.variant)}</div>` : ''}
@@ -221,27 +229,17 @@ function exoCard(s, bl, it, i) {
       <button class="btn small ghost" data-act="delset" data-sid="${s.id}" data-key="${key}" data-bi="${bl.l}" data-i="${i}" ${sets.length <= 1 ? 'disabled' : ''}>${IC.minus} Série</button>
       <button class="btn small ${E && E.done ? 'primary' : ''}" data-act="exdone" data-sid="${s.id}" data-key="${key}" data-bi="${bl.l}" data-i="${i}">${E && E.done ? IC.check + ' Terminé' : 'Terminé'}</button>
     </div>
-    <details class="more" ${UI.openMore === uid ? 'open' : ''} data-uid="${esc(uid)}"><summary>${IC.chev} Commentaire, variante</summary>
-      <div class="stack">
-        ${d.mv ? `<button class="btn small ghost" data-act="open-move" data-id="${d.mv}" style="justify-self:start">Fiche ${esc(MOVE_BY_ID[d.mv] ? MOVE_BY_ID[d.mv].name : d.en)}</button>` : ''}
-        ${commentField('ecomment', s.id, key, E && E.comment, 'Commentaire', `data-bi="${bl.l}" data-i="${i}"`)}
-        <label class="fld">Variante appliquée (allègement, remplacement…)
-          <input type="search" id="f-swapq-${uid}" data-in="swapq" data-target="f-swap-${uid}" data-x="${esc(it.x)}" placeholder="Rechercher un exercice" autocomplete="off" enterkeyhint="search">
-          <select id="f-swap-${uid}" data-in="swap" data-sid="${s.id}" data-key="${key}" data-bi="${bl.l}" data-i="${i}" data-planned="${esc(itemLabel(it))}">
-            ${swapOptions(swapOpts, itemLabel(it), E && E.swap)}
-          </select></label>
-        <button class="btn small ghost" data-act="skip" data-sid="${s.id}" data-key="${key}" data-bi="${bl.l}" data-i="${i}" style="justify-self:start">${E && E.skipped ? 'Rétablir l’exercice' : 'Exercice non réalisé'}</button>
-      </div></details>
   </div>`;
 }
-/* Boutons Vidéo et Image d'un exercice, et le panneau ouvert */
-function mediaBar(k, uid) {
+/* Boutons Vidéo, Image et Variante d'un exercice, et le panneau ouvert */
+function mediaBar(k, uid, variantPanel, variantSet) {
   const open = UI.exMedia && UI.exMedia.uid === uid ? UI.exMedia.v : null; const nv = videosFor(k).length; const im = exImg(k);
   const btn = (v, label, icon) => `<button class="btn small ${open === v ? 'primary' : ''}" data-act="exmedia" data-uid="${esc(uid)}" data-v="${v}" aria-pressed="${open === v}">${icon}${label}</button>`;
   let panel = '';
   if (open === 'video') panel = videoBlock(k, uid);
+  if (open === 'variant') panel = variantPanel || '';
   if (open === 'image') panel = `<figure class="bigthumb">${exThumb(k)}${im && im.file ? `<figcaption class="small faint">${im.note ? esc(im.note) + ' · ' : ''}Photo ${esc(im.source || '')}</figcaption>` : '<figcaption class="small faint">Dessin du mouvement (pas de photo pour cet exercice)</figcaption>'}</figure>`;
-  return `<div class="row media-btns">${btn('video', nv ? `Vidéo${nv > 1 ? 's (' + nv + ')' : ''}` : 'Vidéo', IC.video)}${btn('image', 'Image', IC.image)}</div>${panel ? `<div class="media-panel">${panel}</div>` : ''}`;
+  return `<div class="row media-btns">${btn('video', 'Vidéo', IC.video)}${btn('image', 'Image', IC.image)}${variantPanel ? btn('variant', variantSet ? 'Variante ✓' : 'Variante', IC.swap) : ''}</div>${panel ? `<div class="media-panel">${panel}</div>` : ''}`;
 }
 /* Variantes possibles : exercices de la même famille (renfo, gainage, cardio) qui travaillent les mêmes
    muscles principaux (au moins la moitié en commun) ; « alt » dans la bibliothèque impose une liste. Ordre alphabétique. */

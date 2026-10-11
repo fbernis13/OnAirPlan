@@ -231,6 +231,28 @@
        "rest": 45
       }
      ]
+    },
+    {
+     "l": "G",
+     "type": "superset",
+     "rounds": 3,
+     "title": "Mollets et fléchisseurs de hanche",
+     "items": [
+      {
+       "x": "calf_stand",
+       "sets": 3,
+       "reps": "15",
+       "rest": 0,
+       "note": "Avant du pied sur une marche, haltères en main, 2 s en haut"
+      },
+      {
+       "x": "lsit",
+       "sets": 3,
+       "reps": "10-15 s",
+       "rest": 45,
+       "note": "Genoux pliés (tuck) si L-sit jambes tendues trop dur"
+      }
+     ]
     }
    ],
    "cooldown": [
@@ -448,6 +470,26 @@
        "x": "pushup_par",
        "sets": 3,
        "reps": "8-12",
+       "rest": 60
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "type": "superset",
+     "rounds": 3,
+     "title": "Bras",
+     "items": [
+      {
+       "x": "hammer_curl",
+       "sets": 3,
+       "reps": "12",
+       "rest": 0
+      },
+      {
+       "x": "db_oh_triceps",
+       "sets": 3,
+       "reps": "12",
        "rest": 60
       }
      ]
@@ -693,6 +735,33 @@
        "note": "Descente lente et contrôlée"
       }
      ]
+    },
+    {
+     "l": "H",
+     "type": "circuit",
+     "rounds": 3,
+     "title": "Bras, mollets, fléchisseurs de hanche",
+     "items": [
+      {
+       "x": "hammer_curl",
+       "sets": 3,
+       "reps": "12",
+       "rest": 0
+      },
+      {
+       "x": "calf_stand",
+       "sets": 3,
+       "reps": "15",
+       "rest": 0
+      },
+      {
+       "x": "t2b",
+       "sets": 3,
+       "reps": "10",
+       "rest": 60,
+       "note": "Montées de genoux suspendu (genoux à la poitrine) si les toes-to-bar ne passent pas encore"
+      }
+     ]
     }
    ],
    "cooldown": [
@@ -830,6 +899,28 @@
        "sets": 3,
        "reps": "10",
        "rest": 45
+      }
+     ]
+    },
+    {
+     "l": "G",
+     "type": "superset",
+     "rounds": 3,
+     "title": "Mollets et fléchisseurs de hanche",
+     "items": [
+      {
+       "x": "calf_stand",
+       "sets": 3,
+       "reps": "15",
+       "rest": 0,
+       "note": "Avant du pied sur une marche, haltères en main, 2 s en haut"
+      },
+      {
+       "x": "lsit",
+       "sets": 3,
+       "reps": "10-15 s",
+       "rest": 45,
+       "note": "Genoux pliés (tuck) si L-sit jambes tendues trop dur"
       }
      ]
     }
@@ -1071,6 +1162,26 @@
        "rest": 45
       }
      ]
+    },
+    {
+     "l": "G",
+     "type": "superset",
+     "rounds": 3,
+     "title": "Bras",
+     "items": [
+      {
+       "x": "ez_curl",
+       "sets": 3,
+       "reps": "10",
+       "rest": 0
+      },
+      {
+       "x": "skull",
+       "sets": 3,
+       "reps": "10",
+       "rest": 60
+      }
+     ]
     }
    ],
    "cooldown": [
@@ -1296,6 +1407,33 @@
        "note": "Strictes ; complète en négatives si besoin"
       }
      ]
+    },
+    {
+     "l": "I",
+     "type": "circuit",
+     "rounds": 3,
+     "title": "Bras, mollets, fléchisseurs de hanche",
+     "items": [
+      {
+       "x": "hammer_curl",
+       "sets": 3,
+       "reps": "12",
+       "rest": 0
+      },
+      {
+       "x": "calf_stand",
+       "sets": 3,
+       "reps": "15",
+       "rest": 0
+      },
+      {
+       "x": "t2b",
+       "sets": 3,
+       "reps": "10",
+       "rest": 60,
+       "note": "Montées de genoux suspendu (genoux à la poitrine) si les toes-to-bar ne passent pas encore"
+      }
+     ]
     }
    ],
    "cooldown": [
@@ -1416,6 +1554,28 @@
        "sets": 3,
        "reps": "12",
        "rest": 45
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "type": "superset",
+     "rounds": 3,
+     "title": "Mollets et fléchisseurs de hanche",
+     "items": [
+      {
+       "x": "calf_stand",
+       "sets": 3,
+       "reps": "15",
+       "rest": 0,
+       "note": "Avant du pied sur une marche, haltères en main, 2 s en haut"
+      },
+      {
+       "x": "lsit",
+       "sets": 3,
+       "reps": "15-20 s",
+       "rest": 45,
+       "note": "Genoux pliés (tuck) si L-sit jambes tendues trop dur"
       }
      ]
     }
@@ -1644,6 +1804,26 @@
        "reps": "20 m/côté",
        "rest": 60,
        "note": "En rack ou au-dessus de la tête"
+      }
+     ]
+    },
+    {
+     "l": "G",
+     "type": "superset",
+     "rounds": 3,
+     "title": "Bras",
+     "items": [
+      {
+       "x": "incline_curl",
+       "sets": 3,
+       "reps": "10",
+       "rest": 0
+      },
+      {
+       "x": "db_oh_triceps",
+       "sets": 3,
+       "reps": "10",
+       "rest": 60
       }
      ]
     }
@@ -1897,6 +2077,32 @@
        "note": "Ajoute une répétition dès que les 4 séries passent"
       }
      ]
+    },
+    {
+     "l": "H",
+     "type": "circuit",
+     "rounds": 3,
+     "title": "Bras, mollets, fléchisseurs de hanche",
+     "items": [
+      {
+       "x": "hammer_curl",
+       "sets": 3,
+       "reps": "10",
+       "rest": 0
+      },
+      {
+       "x": "calf_stand",
+       "sets": 3,
+       "reps": "15",
+       "rest": 0
+      },
+      {
+       "x": "t2b",
+       "sets": 3,
+       "reps": "6-8",
+       "rest": 60
+      }
+     ]
     }
    ],
    "cooldown": [
@@ -2021,6 +2227,19 @@
        "sets": 3,
        "reps": "15",
        "rest": 45
+      }
+     ]
+    },
+    {
+     "l": "G",
+     "title": "Mollets",
+     "items": [
+      {
+       "x": "calf_stand",
+       "sets": 3,
+       "reps": "15",
+       "rest": 45,
+       "note": "Avant du pied sur une marche, haltères en main, 2 s en haut"
       }
      ]
     }
@@ -2245,6 +2464,26 @@
        "reps": "20 m/côté",
        "rest": 60,
        "note": "Kettlebell au-dessus de la tête"
+      }
+     ]
+    },
+    {
+     "l": "G",
+     "type": "superset",
+     "rounds": 3,
+     "title": "Bras",
+     "items": [
+      {
+       "x": "ez_curl",
+       "sets": 3,
+       "reps": "8-10",
+       "rest": 0
+      },
+      {
+       "x": "skull",
+       "sets": 3,
+       "reps": "8-10",
+       "rest": 60
       }
      ]
     }
@@ -2495,6 +2734,32 @@
        "reps": "3",
        "rest": 60,
        "note": "EMOM : 3 strictes au début de chaque minute, lesté si facile"
+      }
+     ]
+    },
+    {
+     "l": "H",
+     "type": "circuit",
+     "rounds": 3,
+     "title": "Bras, mollets, fléchisseurs de hanche",
+     "items": [
+      {
+       "x": "incline_curl",
+       "sets": 3,
+       "reps": "10",
+       "rest": 0
+      },
+      {
+       "x": "calf_stand",
+       "sets": 3,
+       "reps": "15",
+       "rest": 0
+      },
+      {
+       "x": "t2b",
+       "sets": 3,
+       "reps": "6-8",
+       "rest": 60
       }
      ]
     }
