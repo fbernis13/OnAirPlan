@@ -1357,7 +1357,7 @@ function viewSession(sid) {
   const s = SESSION_BY_ID[sid]; const L = getLog(sid, false) || {};
   const cyc = CYCLES[s.cycle - 1];
   const steps = sessionSteps(s); const n = steps.length; const cur = curStep(s, n); const S = steps[cur];
-  let h = `<div class="row sess-tools"><button class="btn rail-toggle" data-act="sess-rail" aria-expanded="${!!UI.sessRail}" aria-controls="sess-rail">${UI.sessRail ? 'Masquer les étapes' : 'Étapes ▾'}</button>
+  let h = `<div class="row sess-tools"><button class="btn rail-toggle" data-act="sess-rail" aria-expanded="${!!UI.sessRail}" aria-controls="sess-rail">${UI.sessRail ? 'Masquer les étapes' : 'Afficher étapes'}</button>
     <button class="btn rail-toggle" data-act="sess-muscles" data-sid="${sid}">Muscles</button></div>
   <p class="muted small" style="margin-top:.6rem">Cycle ${s.cycle} · ${esc(cyc.name)} · ${esc(cyc.intensity)}</p>
   <h2 style="margin-top:.2rem">${esc(s.title)}</h2>`;
