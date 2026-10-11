@@ -45,7 +45,7 @@ function viewProgramme() {
   const next = SESSIONS.find(s => sessionStatus(s.id) !== 'done');
   let h = `<div class="card" style="margin-top:1rem">
     <div class="row"><div class="grow"><div class="faint small" style="font-weight:700;text-transform:uppercase;letter-spacing:.08em">${esc(PROGRAMS[programId()].label)} · Salle On Air</div>
-    <div style="font-family:var(--f-display);font-size:1.5rem;font-weight:700;line-height:1.15"><span class="num">${doneCount}</span> / 20 séances terminées</div></div></div>
+    <div style="font-family:var(--f-display);font-size:1.5rem;font-weight:700;line-height:1.15"><span class="num">${doneCount}</span> / ${SESSIONS.length} séances terminées</div></div></div>
     <div class="progressbar" style="margin:.5rem 0"><i style="width:${doneCount / 20 * 100}%"></i></div>
     ${next ? `<button class="btn primary" data-act="open-session" data-id="${next.id}" style="width:100%;margin-top:.3rem">${sessionStatus(next.id) === 'started' ? 'Reprendre' : 'Prochaine séance'} : ${esc(sessLabel(next))}, ${esc(next.title)}</button>` : '<p class="muted">Programme terminé. Prévois une semaine plus légère avant le prochain bloc.</p>'}
   </div>
@@ -119,7 +119,7 @@ function viewSession(sid) {
     <label class="fld">Date de réalisation<input type="date" id="f-date-${sid}" data-in="sdate" data-sid="${sid}" value="${esc(L.date || '')}"></label>
     <label class="fld">État<button class="btn ${L.done ? 'primary' : ''}" data-act="sdone" data-sid="${sid}">${L.done ? IC.check + ' Séance terminée' : 'Marquer terminée'}</button></label>
   </div>
-  <h3 id="sec-w" class="anchor">Mise en route · 10 min</h3>${warmList(s.warmup, sid + ':w')}`;
+  <h3 id="sec-w" class="anchor">${esc(s.warmTitle || 'Mise en route · 10 min')}</h3>${warmList(s.warmup, sid + ':w')}`;
   } else if (S.k === 'wod') {
     if (S.pre) h += `<div class="restline">${esc(S.pre)}</div>`;
     h += wodBlock(s, S.bl);
@@ -131,7 +131,7 @@ function viewSession(sid) {
     if (bl.items.length > 1) h += `<p class="small muted stepwith">Enchaîné avec ${bl.items.map((o, j) => j === S.i ? '' : `<button class="linkbtn" data-act="sstep" data-sid="${sid}" data-v="${cur - S.i + j}">${esc(bl.l + (j + 1))} ${esc(itemLabel(o))}</button>`).filter(Boolean).join(', ')}</p>`;
     h += exoCard(s, bl, S.it, S.i);
   } else if (S.k === 'c') {
-    h += `<h3 id="sec-c" class="anchor">Retour au calme · 5 min</h3>${warmList(s.cooldown, sid + ':c')}`;
+    h += `<h3 id="sec-c" class="anchor">${esc(s.coolTitle || 'Retour au calme · 5 min')}</h3>${warmList(s.cooldown, sid + ':c')}`;
   } else {
     h += `<h3 id="sec-b" class="anchor">Bilan de la séance</h3>
   <div class="card stack">

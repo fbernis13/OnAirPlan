@@ -3,6 +3,9 @@ const TABS = [
   ['programme', 'Programme', IC.list], ['progression', 'Progression', IC.chart], ['exercices', 'Exercices', IC.dumbbell],
   ['mouvements', 'Mouvements', IC.book], ['sauvegarde', 'Sauvegarde', IC.save]
 ];
+/* Les membres (Alex, Arthur) ne voient que leur programme et leur progression */
+const MEMBER_TABS = ['programme', 'progression'];
+const visibleTabs = () => isAdmin() ? TABS : TABS.filter(x => MEMBER_TABS.includes(x[0]));
 let renderQueued = false;
 function scheduleRender() { if (renderQueued) return; renderQueued = true; requestAnimationFrame(() => { renderQueued = false; render(); }); }
 
@@ -15,6 +18,7 @@ function currentTitle() {
 function hasBack() { return (UI.tab === 'programme' && UI.session) || (UI.tab === 'exercices' && UI.exo) || (UI.tab === 'mouvements' && UI.move); }
 function render() {
   const root = document.getElementById('app');
+  if (!visibleTabs().some(x => x[0] === UI.tab)) { UI.tab = 'programme'; UI.exo = null; UI.move = null; }
   let body = '';
   if (UI.tab === 'programme') body = UI.session ? viewSession(UI.session) : viewProgramme();
   else if (UI.tab === 'progression') body = viewProgression();
@@ -32,7 +36,8 @@ function render() {
   if (activeId) { const el = document.getElementById(activeId); if (el && el !== document.activeElement && (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA')) { el.focus(); try { if (selStart != null) el.setSelectionRange(selStart, selStart); } catch (e) {} } }
   let nav = document.getElementById('tabs');
   if (!nav) { nav = document.createElement('nav'); nav.id = 'tabs'; nav.className = 'tabs'; nav.setAttribute('aria-label', 'Navigation'); document.body.appendChild(nav); }
-  nav.innerHTML = TABS.map(([id, l, ic]) => `<button data-act="tab" data-v="${id}" ${UI.tab === id ? 'aria-current="page"' : ''}>${ic}<span>${l}</span></button>`).join('');
+  const tabs = visibleTabs(); nav.style.gridTemplateColumns = `repeat(${tabs.length}, 1fr)`;
+  nav.innerHTML = tabs.map(([id, l, ic]) => `<button data-act="tab" data-v="${id}" ${UI.tab === id ? 'aria-current="page"' : ''}>${ic}<span>${l}</span></button>`).join('');
   renderTimer();
   updateRailActive();
 }
