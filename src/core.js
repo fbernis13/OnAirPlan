@@ -97,7 +97,7 @@ function applySettings() {
   const acc = accentOf(); if (acc && acc !== 'sarcelle') r.setAttribute('data-accent', acc); else r.removeAttribute('data-accent');
 }
 /* Couleur du carnet : choix du compte, sinon SUPA_CONFIG.couleurs (identifiant → couleur), sinon sarcelle */
-const ACCENTS = [['sarcelle', 'Sarcelle'], ['rose', 'Rose'], ['bleu', 'Bleu']];
+const ACCENTS = [['sarcelle', 'Sarcelle'], ['rose', 'Rose'], ['bleu', 'Bleu'], ['violet', 'Violet']];
 function accentOf() {
   if (S.settings.accent) return S.settings.accent;
   const login = typeof AUTH !== 'undefined' && AUTH.user && AUTH.user.login;
