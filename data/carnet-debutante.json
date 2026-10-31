@@ -55,7 +55,7 @@
  "rules": [
   "Un cycle = 3 séances : S1 cardio, S2 bas du corps, S3 haut du corps. Une semaine type : lundi, mercredi, vendredi, avec au moins un jour de repos entre deux séances. Compte 2 semaines par cycle, ou plus si besoin.",
   "S1 (cardio) dure environ 45 min : vélo, tapis de marche et un peu d’escalier, puis quelques minutes de gainage. S2 et S3 commencent par 10 min de cardio d’échauffement et finissent par 5 min de retour au calme. Elles durent environ 45 min.",
-  "Chaque machine existe en version guidée ou Hammer (chargée avec des disques) : au début, préfère la version guidée. Ton choix est enregistré.",
+  "Que des machines dans S2 et S3, pas de charge libre. Chaque machine existe en version guidée ou Hammer (chargée avec des disques) : au début, préfère la version guidée. Ton choix est enregistré.",
   "Règle la machine avant la première série : siège, dossier, poignées. La vidéo de chaque exercice montre le réglage. N’hésite pas à demander à un coach de la salle.",
   "Tu dois finir chaque série en pouvant en faire encore plusieurs. Quand toutes les séries passent facilement, augmente la charge d’un cran à la séance suivante. Si un cycle te paraît dur, refais-le avant de passer au suivant.",
   "Courbatures les premiers jours : c’est normal. Signaux d’arrêt : douleur articulaire, vertige ou essoufflement inhabituel. On arrête l’exercice et on reprend plus léger."
@@ -215,7 +215,7 @@
        "sets": 3,
        "reps": "15",
        "rest": 60,
-       "note": "Règle le rouleau juste au-dessus des chevilles"
+       "note": "Arrière des cuisses : règle le rouleau juste au-dessus des chevilles"
       }
      ]
     },
@@ -227,7 +227,7 @@
        "sets": 3,
        "reps": "15",
        "rest": 60,
-       "note": "Règle le siège pour que la ceinture passe sur le haut des hanches. Commence léger, pause d’une seconde en haut"
+       "note": "Fessiers : règle le siège pour que la ceinture passe sur le haut des hanches. Commence léger, pause d’une seconde en haut"
       }
      ]
     },
@@ -239,7 +239,7 @@
        "sets": 2,
        "reps": "15",
        "rest": 60,
-       "note": "Remonte sans à-coup, descends lentement"
+       "note": "Avant des cuisses : remonte sans à-coup, descends lentement"
       }
      ]
     },
@@ -247,16 +247,28 @@
      "l": "F",
      "items": [
       {
-       "x": "back_ext",
+       "x": "legcurl_l",
        "sets": 2,
-       "reps": "12",
+       "reps": "15",
        "rest": 60,
-       "note": "Bascule depuis les hanches, dos droit, remonte jusqu’à l’alignement du corps sans te cambrer"
+       "note": "Arrière des cuisses : hanches collées au banc, descends lentement"
       }
      ]
     },
     {
      "l": "G",
+     "items": [
+      {
+       "x": "abductor",
+       "sets": 2,
+       "reps": "15",
+       "rest": 60,
+       "note": "Côté des fessiers : écarte les genoux en gardant le dos contre le dossier"
+      }
+     ]
+    },
+    {
+     "l": "H",
      "items": [
       {
        "x": "calf_mach",
@@ -336,7 +348,7 @@
        "sets": 3,
        "reps": "15",
        "rest": 60,
-       "note": "Tire la barre vers le haut de la poitrine, buste droit, sans élan"
+       "note": "Tirage vertical pour le dos : tire la barre vers le haut de la poitrine, buste droit, sans élan"
       }
      ]
     },
@@ -344,20 +356,8 @@
      "l": "D",
      "items": [
       {
-       "x": "seated_row",
-       "sets": 3,
-       "reps": "15",
-       "rest": 60,
-       "note": "Dos droit, omoplates serrées en fin de mouvement"
-      }
-     ]
-    },
-    {
-     "l": "E",
-     "items": [
-      {
        "x": "shoulder_mach",
-       "sets": 2,
+       "sets": 3,
        "reps": "15",
        "rest": 60,
        "note": "Commence très léger : les épaules fatiguent vite"
@@ -365,42 +365,26 @@
      ]
     },
     {
-     "l": "F",
-     "type": "superset",
-     "rounds": 2,
+     "l": "E",
      "items": [
       {
-       "x": "lat_raise",
-       "sets": 2,
-       "reps": "12",
-       "rest": 0,
-       "note": "Petites charges, monte jusqu’à hauteur d’épaules"
-      },
-      {
-       "x": "db_rear_fly",
-       "sets": 2,
-       "reps": "12",
+       "x": "seated_row",
+       "sets": 3,
+       "reps": "15",
        "rest": 60,
-       "note": "Arrière d’épaule et haut du dos : aide la posture"
+       "note": "Pour le dos : dos droit, omoplates serrées en fin de mouvement"
       }
      ]
     },
     {
-     "l": "G",
-     "type": "superset",
-     "rounds": 2,
+     "l": "F",
      "items": [
       {
-       "x": "hammer_curl",
-       "sets": 2,
-       "reps": "12",
-       "rest": 0
-      },
-      {
-       "x": "db_oh_triceps",
-       "sets": 2,
-       "reps": "12",
-       "rest": 60
+       "x": "dip_assist",
+       "sets": 3,
+       "reps": "15",
+       "rest": 60,
+       "note": "Triceps : plus le contrepoids est lourd, plus c’est facile. Commence avec beaucoup d’assistance"
       }
      ]
     }
@@ -574,7 +558,7 @@
        "sets": 3,
        "reps": "12-15",
        "rest": 60,
-       "note": "Règle le rouleau juste au-dessus des chevilles"
+       "note": "Arrière des cuisses : règle le rouleau juste au-dessus des chevilles"
       }
      ]
     },
@@ -586,7 +570,7 @@
        "sets": 3,
        "reps": "12-15",
        "rest": 60,
-       "note": "Règle le siège pour que la ceinture passe sur le haut des hanches. Commence léger, pause d’une seconde en haut"
+       "note": "Fessiers : règle le siège pour que la ceinture passe sur le haut des hanches. Commence léger, pause d’une seconde en haut"
       }
      ]
     },
@@ -598,7 +582,7 @@
        "sets": 2,
        "reps": "12-15",
        "rest": 60,
-       "note": "Remonte sans à-coup, descends lentement"
+       "note": "Avant des cuisses : remonte sans à-coup, descends lentement"
       }
      ]
     },
@@ -606,16 +590,28 @@
      "l": "F",
      "items": [
       {
-       "x": "back_ext",
+       "x": "legcurl_l",
        "sets": 2,
-       "reps": "12",
+       "reps": "12-15",
        "rest": 60,
-       "note": "Bascule depuis les hanches, dos droit, remonte jusqu’à l’alignement du corps sans te cambrer"
+       "note": "Arrière des cuisses : hanches collées au banc, descends lentement"
       }
      ]
     },
     {
      "l": "G",
+     "items": [
+      {
+       "x": "abductor",
+       "sets": 2,
+       "reps": "12-15",
+       "rest": 60,
+       "note": "Côté des fessiers : écarte les genoux en gardant le dos contre le dossier"
+      }
+     ]
+    },
+    {
+     "l": "H",
      "items": [
       {
        "x": "calf_mach",
@@ -649,7 +645,7 @@
    "cycle": 2,
    "slot": "R1",
    "title": "Haut du corps",
-   "goal": "Monter un peu les charges ; l’arrière d’épaule soutient la posture.",
+   "goal": "Monter un peu les charges, en gardant le même travail pour pousser et pour tirer.",
    "warmTitle": "Mise en route",
    "warmup": [
     {
@@ -695,7 +691,7 @@
        "sets": 3,
        "reps": "12-15",
        "rest": 60,
-       "note": "Tire la barre vers le haut de la poitrine, buste droit, sans élan"
+       "note": "Tirage vertical pour le dos : tire la barre vers le haut de la poitrine, buste droit, sans élan"
       }
      ]
     },
@@ -703,11 +699,11 @@
      "l": "D",
      "items": [
       {
-       "x": "seated_row",
+       "x": "shoulder_mach",
        "sets": 3,
        "reps": "12-15",
        "rest": 60,
-       "note": "Dos droit, omoplates serrées en fin de mouvement"
+       "note": "Pousse sans cambrer le dos"
       }
      ]
     },
@@ -715,50 +711,23 @@
      "l": "E",
      "items": [
       {
-       "x": "shoulder_mach",
-       "sets": 2,
+       "x": "seated_row",
+       "sets": 3,
        "reps": "12-15",
-       "rest": 60
+       "rest": 60,
+       "note": "Pour le dos : dos droit, omoplates serrées en fin de mouvement"
       }
      ]
     },
     {
      "l": "F",
-     "type": "superset",
-     "rounds": 2,
      "items": [
       {
-       "x": "lat_raise",
-       "sets": 2,
-       "reps": "12",
-       "rest": 0,
-       "note": "Petites charges, monte jusqu’à hauteur d’épaules"
-      },
-      {
-       "x": "db_rear_fly",
-       "sets": 2,
-       "reps": "12",
+       "x": "dip_assist",
+       "sets": 3,
+       "reps": "12-15",
        "rest": 60,
-       "note": "Arrière d’épaule et haut du dos : aide la posture"
-      }
-     ]
-    },
-    {
-     "l": "G",
-     "type": "superset",
-     "rounds": 2,
-     "items": [
-      {
-       "x": "hammer_curl",
-       "sets": 2,
-       "reps": "12",
-       "rest": 0
-      },
-      {
-       "x": "db_oh_triceps",
-       "sets": 2,
-       "reps": "12",
-       "rest": 60
+       "note": "Triceps : plus le contrepoids est lourd, plus c’est facile. Commence avec beaucoup d’assistance"
       }
      ]
     }
@@ -932,7 +901,7 @@
        "sets": 3,
        "reps": "12",
        "rest": 60,
-       "note": "Règle le rouleau juste au-dessus des chevilles"
+       "note": "Arrière des cuisses : règle le rouleau juste au-dessus des chevilles"
       }
      ]
     },
@@ -944,7 +913,7 @@
        "sets": 3,
        "reps": "12",
        "rest": 60,
-       "note": "Règle le siège pour que la ceinture passe sur le haut des hanches. Commence léger, pause d’une seconde en haut"
+       "note": "Fessiers : règle le siège pour que la ceinture passe sur le haut des hanches. Commence léger, pause d’une seconde en haut"
       }
      ]
     },
@@ -956,7 +925,7 @@
        "sets": 2,
        "reps": "12",
        "rest": 60,
-       "note": "Remonte sans à-coup, descends lentement"
+       "note": "Avant des cuisses : remonte sans à-coup, descends lentement"
       }
      ]
     },
@@ -964,16 +933,28 @@
      "l": "F",
      "items": [
       {
-       "x": "back_ext",
+       "x": "legcurl_l",
        "sets": 2,
        "reps": "12",
        "rest": 60,
-       "note": "Bascule depuis les hanches, dos droit, remonte jusqu’à l’alignement du corps sans te cambrer"
+       "note": "Arrière des cuisses : hanches collées au banc, descends lentement"
       }
      ]
     },
     {
      "l": "G",
+     "items": [
+      {
+       "x": "abductor",
+       "sets": 2,
+       "reps": "12",
+       "rest": 60,
+       "note": "Côté des fessiers : écarte les genoux en gardant le dos contre le dossier"
+      }
+     ]
+    },
+    {
+     "l": "H",
      "items": [
       {
        "x": "calf_mach",
@@ -1053,7 +1034,7 @@
        "sets": 3,
        "reps": "12",
        "rest": 60,
-       "note": "Tire la barre vers le haut de la poitrine, buste droit, sans élan"
+       "note": "Tirage vertical pour le dos : tire la barre vers le haut de la poitrine, buste droit, sans élan"
       }
      ]
     },
@@ -1061,11 +1042,11 @@
      "l": "D",
      "items": [
       {
-       "x": "seated_row",
+       "x": "shoulder_mach",
        "sets": 3,
        "reps": "12",
        "rest": 60,
-       "note": "Dos droit, omoplates serrées en fin de mouvement"
+       "note": "Pousse sans cambrer le dos"
       }
      ]
     },
@@ -1073,50 +1054,23 @@
      "l": "E",
      "items": [
       {
-       "x": "shoulder_mach",
-       "sets": 2,
+       "x": "seated_row",
+       "sets": 3,
        "reps": "12",
-       "rest": 60
+       "rest": 60,
+       "note": "Pour le dos : dos droit, omoplates serrées en fin de mouvement"
       }
      ]
     },
     {
      "l": "F",
-     "type": "superset",
-     "rounds": 2,
      "items": [
       {
-       "x": "lat_raise",
-       "sets": 2,
-       "reps": "12",
-       "rest": 0,
-       "note": "Petites charges, monte jusqu’à hauteur d’épaules"
-      },
-      {
-       "x": "db_rear_fly",
-       "sets": 2,
+       "x": "dip_assist",
+       "sets": 3,
        "reps": "12",
        "rest": 60,
-       "note": "Arrière d’épaule et haut du dos : aide la posture"
-      }
-     ]
-    },
-    {
-     "l": "G",
-     "type": "superset",
-     "rounds": 2,
-     "items": [
-      {
-       "x": "hammer_curl",
-       "sets": 2,
-       "reps": "12",
-       "rest": 0
-      },
-      {
-       "x": "db_oh_triceps",
-       "sets": 2,
-       "reps": "12",
-       "rest": 60
+       "note": "Triceps : plus le contrepoids est lourd, plus c’est facile. Commence avec beaucoup d’assistance"
       }
      ]
     }
@@ -1290,7 +1244,7 @@
        "sets": 3,
        "reps": "10-12",
        "rest": 60,
-       "note": "Règle le rouleau juste au-dessus des chevilles"
+       "note": "Arrière des cuisses : règle le rouleau juste au-dessus des chevilles"
       }
      ]
     },
@@ -1302,7 +1256,7 @@
        "sets": 3,
        "reps": "10-12",
        "rest": 60,
-       "note": "Règle le siège pour que la ceinture passe sur le haut des hanches. Commence léger, pause d’une seconde en haut"
+       "note": "Fessiers : règle le siège pour que la ceinture passe sur le haut des hanches. Commence léger, pause d’une seconde en haut"
       }
      ]
     },
@@ -1314,7 +1268,7 @@
        "sets": 2,
        "reps": "10-12",
        "rest": 60,
-       "note": "Remonte sans à-coup, descends lentement"
+       "note": "Avant des cuisses : remonte sans à-coup, descends lentement"
       }
      ]
     },
@@ -1322,16 +1276,28 @@
      "l": "F",
      "items": [
       {
-       "x": "back_ext",
+       "x": "legcurl_l",
        "sets": 2,
-       "reps": "12",
+       "reps": "10-12",
        "rest": 60,
-       "note": "Bascule depuis les hanches, dos droit, remonte jusqu’à l’alignement du corps sans te cambrer"
+       "note": "Arrière des cuisses : hanches collées au banc, descends lentement"
       }
      ]
     },
     {
      "l": "G",
+     "items": [
+      {
+       "x": "abductor",
+       "sets": 2,
+       "reps": "10-12",
+       "rest": 60,
+       "note": "Côté des fessiers : écarte les genoux en gardant le dos contre le dossier"
+      }
+     ]
+    },
+    {
+     "l": "H",
      "items": [
       {
        "x": "calf_mach",
@@ -1411,7 +1377,7 @@
        "sets": 3,
        "reps": "10-12",
        "rest": 60,
-       "note": "Tire la barre vers le haut de la poitrine, buste droit, sans élan"
+       "note": "Tirage vertical pour le dos : tire la barre vers le haut de la poitrine, buste droit, sans élan"
       }
      ]
     },
@@ -1419,11 +1385,11 @@
      "l": "D",
      "items": [
       {
-       "x": "seated_row",
+       "x": "shoulder_mach",
        "sets": 3,
        "reps": "10-12",
        "rest": 60,
-       "note": "Dos droit, omoplates serrées en fin de mouvement"
+       "note": "Pousse sans cambrer le dos"
       }
      ]
     },
@@ -1431,50 +1397,23 @@
      "l": "E",
      "items": [
       {
-       "x": "shoulder_mach",
-       "sets": 2,
+       "x": "seated_row",
+       "sets": 3,
        "reps": "10-12",
-       "rest": 60
+       "rest": 60,
+       "note": "Pour le dos : dos droit, omoplates serrées en fin de mouvement"
       }
      ]
     },
     {
      "l": "F",
-     "type": "superset",
-     "rounds": 2,
      "items": [
       {
-       "x": "lat_raise",
-       "sets": 2,
-       "reps": "12",
-       "rest": 0,
-       "note": "Petites charges, monte jusqu’à hauteur d’épaules"
-      },
-      {
-       "x": "db_rear_fly",
-       "sets": 2,
-       "reps": "12",
+       "x": "dip_assist",
+       "sets": 3,
+       "reps": "10-12",
        "rest": 60,
-       "note": "Arrière d’épaule et haut du dos : aide la posture"
-      }
-     ]
-    },
-    {
-     "l": "G",
-     "type": "superset",
-     "rounds": 2,
-     "items": [
-      {
-       "x": "hammer_curl",
-       "sets": 2,
-       "reps": "12",
-       "rest": 0
-      },
-      {
-       "x": "db_oh_triceps",
-       "sets": 2,
-       "reps": "12",
-       "rest": 60
+       "note": "Triceps : plus le contrepoids est lourd, plus c’est facile. Commence avec beaucoup d’assistance"
       }
      ]
     }
