@@ -1248,7 +1248,12 @@
    "s": [
     "isch"
    ],
-   "vid": []
+   "vid": [],
+   "img": {
+    "file": "images/hipthrust_mach.jpg",
+    "source": "fournie par Spook",
+    "note": "Machine de hip thrust guidée"
+   }
   },
   "db_row": {
    "fr": "Rowing un bras haltère, appui sur banc",
