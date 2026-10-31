@@ -54,7 +54,7 @@
  },
  "rules": [
   "Un cycle = 3 séances : S1 cardio, S2 bas du corps, S3 haut du corps. Une semaine type : lundi, mercredi, vendredi, avec au moins un jour de repos entre deux séances. Compte 2 semaines par cycle, ou plus si besoin.",
-  "S1 (cardio) dure de 35 à 45 min. S2 et S3 commencent par 10 min de cardio d’échauffement et finissent par 5 min de retour au calme. Elles durent environ 35 min au cycle 1 et s’allongent jusqu’à une heure au cycle 4.",
+  "S1 (cardio) dure de 40 à 55 min : vélo, tapis de marche et un peu d’escalier, puis quelques minutes de gainage. S2 et S3 commencent par 10 min de cardio d’échauffement et finissent par 5 min de retour au calme. Elles durent environ 35 min au cycle 1 et s’allongent jusqu’à une heure au cycle 4.",
   "Chaque machine existe en version guidée ou Hammer (chargée avec des disques) : au début, préfère la version guidée. Ton choix est enregistré.",
   "Règle la machine avant la première série : siège, dossier, poignées. La vidéo de chaque exercice montre le réglage. N’hésite pas à demander à un coach de la salle.",
   "Tu dois finir chaque série en pouvant en faire encore plusieurs. Quand toutes les séries passent facilement, augmente la charge d’un cran à la séance suivante. Si un cycle te paraît dur, refais-le avant de passer au suivant.",
@@ -68,7 +68,7 @@
    "cycle": 1,
    "slot": "CA",
    "title": "Cardio découverte",
-   "goal": "30 min d’effort facile et continu, en parlant en phrases complètes.",
+   "goal": "30 min d’effort facile et continu en parlant en phrases complètes, découverte de l’escalier, puis un peu de gainage.",
    "warmup": [],
    "blocks": [
     {
@@ -116,6 +116,27 @@
        "reps": "3 min",
        "rest": 0,
        "note": "Découverte de l’escalier : vitesse lente, tiens les rampes légèrement"
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "type": "circuit",
+     "rounds": 2,
+     "items": [
+      {
+       "x": "plank_fa",
+       "sets": 2,
+       "reps": "20 s",
+       "rest": 0,
+       "note": "Genoux au sol si besoin au début"
+      },
+      {
+       "x": "deadbug",
+       "sets": 2,
+       "reps": "6/côté",
+       "rest": 45,
+       "note": "Le bas du dos reste plaqué au sol"
       }
      ]
     }
@@ -433,6 +454,33 @@
        "reps": "5 min",
        "rest": 0,
        "note": "Allure régulière, sans t’appuyer sur les rampes si possible"
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "type": "circuit",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "plank_fa",
+       "sets": 3,
+       "reps": "25 s",
+       "rest": 0,
+       "note": "Genoux au sol si besoin au début"
+      },
+      {
+       "x": "deadbug",
+       "sets": 3,
+       "reps": "6/côté",
+       "rest": 0,
+       "note": "Le bas du dos reste plaqué au sol"
+      },
+      {
+       "x": "side_plank",
+       "sets": 3,
+       "reps": "15 s/côté",
+       "rest": 45
       }
      ]
     }
@@ -793,6 +841,33 @@
        "reps": "5 min",
        "rest": 0,
        "note": "Allure régulière"
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "type": "circuit",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "plank_fa",
+       "sets": 3,
+       "reps": "30 s",
+       "rest": 0,
+       "note": "Genoux au sol si besoin au début"
+      },
+      {
+       "x": "deadbug",
+       "sets": 3,
+       "reps": "8/côté",
+       "rest": 0,
+       "note": "Le bas du dos reste plaqué au sol"
+      },
+      {
+       "x": "side_plank",
+       "sets": 3,
+       "reps": "15 s/côté",
+       "rest": 45
       }
      ]
     }
@@ -1184,6 +1259,33 @@
        "reps": "5 min",
        "rest": 0,
        "note": "Allure un peu plus soutenue, pour finir"
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "type": "circuit",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "plank_fa",
+       "sets": 3,
+       "reps": "35 s",
+       "rest": 0,
+       "note": "Genoux au sol si besoin au début"
+      },
+      {
+       "x": "deadbug",
+       "sets": 3,
+       "reps": "8/côté",
+       "rest": 0,
+       "note": "Le bas du dos reste plaqué au sol"
+      },
+      {
+       "x": "side_plank",
+       "sets": 3,
+       "reps": "20 s/côté",
+       "rest": 45
       }
      ]
     }
