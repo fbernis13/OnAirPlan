@@ -17,7 +17,7 @@ const DATA_LS = { bib: 'onair-bibliotheque', car: 'onair-carnet', snaps: 'onair-
 /* base : version d'origine (fichier du site ou copie intégrée) ; source : d'où vient la version active */
 /* Programmes disponibles : un fichier carnet chacun. Le programme d'un compte vient de son choix
    dans les réglages, sinon de SUPA_CONFIG.programmes (identifiant → programme), sinon CrossFit. */
-const PROGRAMS = { crossfit: { file: 'carnet.json', label: 'Reprise CrossFit' }, forme: { file: 'carnet-forme.json', label: 'Remise en forme machines' }, 'forme-f': { file: 'carnet-forme-f.json', label: 'Remise en forme machines (Alex)' } };
+const PROGRAMS = { crossfit: { file: 'carnet.json', label: 'Reprise CrossFit' }, forme: { file: 'carnet-forme.json', label: 'Remise en forme machines' }, 'forme-f': { file: 'carnet-forme-f.json', label: 'Remise en forme machines (Alex)' }, debutante: { file: 'carnet-debutante.json', label: 'Débutante machines (Maelis)' } };
 function programId() {
   const cars = typeof EMBED_CARS !== 'undefined' ? EMBED_CARS : {};
   const s = typeof S !== 'undefined' && S && S.settings && S.settings.programme; if (s && cars[s]) return s;

@@ -333,15 +333,18 @@ html, body { overflow-x: clip; }
 /* Nom du compte connecté, à côté du titre */
 .userpill { font-size: .78rem; font-weight: 700; padding: .15rem .55rem; border-radius: 999px; background: var(--surface-2); color: var(--ink-2); white-space: nowrap; max-width: 9rem; overflow: hidden; text-overflow: ellipsis; }
 
-/* Couleurs par compte : rose et bleu, en clair et en sombre */
+/* Couleurs par compte : rose, bleu et violet, en clair et en sombre */
 :root[data-accent="rose"] { --bg: #F5EEF1; --surface-2: #EEE0E6; --surface-3: #E2CDD6; --line: #DCC6CF; --accent: #B4235F; --accent-ink: #FFFFFF; --accent-soft: #F7D6E3; --accent-line: #E091B3; }
 :root[data-accent="bleu"] { --bg: #EDF0F5; --surface-2: #DFE5EE; --surface-3: #CDD7E4; --line: #C6D1DF; --accent: #1F5FBF; --accent-ink: #FFFFFF; --accent-soft: #D3E2F7; --accent-line: #8AAFE3; }
+:root[data-accent="violet"] { --bg: #F1EEF6; --surface-2: #E5DFEF; --surface-3: #D6CCE6; --line: #D0C6E0; --accent: #6A3FB5; --accent-ink: #FFFFFF; --accent-soft: #E4D9F7; --accent-line: #A98BDD; }
 @media (prefers-color-scheme: dark) {
   :root[data-accent="rose"]:not([data-theme="light"]) { --bg: #161013; --surface: #21171C; --surface-2: #2C1F25; --surface-3: #3A2A31; --line: #3A2A31; --accent: #F28AB5; --accent-ink: #2A0716; --accent-soft: #3E1A2A; --accent-line: #8C3C5F; }
   :root[data-accent="bleu"]:not([data-theme="light"]) { --bg: #0E1218; --surface: #161C25; --surface-2: #1E2632; --surface-3: #2A3443; --line: #2A3443; --accent: #7FB0F5; --accent-ink: #071A33; --accent-soft: #182B45; --accent-line: #345C93; }
+  :root[data-accent="violet"]:not([data-theme="light"]) { --bg: #120F18; --surface: #1B1724; --surface-2: #251F31; --surface-3: #332A43; --line: #332A43; --accent: #B79AF2; --accent-ink: #1A0B36; --accent-soft: #2B2045; --accent-line: #634A97; }
 }
 :root[data-accent="rose"][data-theme="dark"] { --bg: #161013; --surface: #21171C; --surface-2: #2C1F25; --surface-3: #3A2A31; --line: #3A2A31; --accent: #F28AB5; --accent-ink: #2A0716; --accent-soft: #3E1A2A; --accent-line: #8C3C5F; }
 :root[data-accent="bleu"][data-theme="dark"] { --bg: #0E1218; --surface: #161C25; --surface-2: #1E2632; --surface-3: #2A3443; --line: #2A3443; --accent: #7FB0F5; --accent-ink: #071A33; --accent-soft: #182B45; --accent-line: #345C93; }
+:root[data-accent="violet"][data-theme="dark"] { --bg: #120F18; --surface: #1B1724; --surface-2: #251F31; --surface-3: #332A43; --line: #332A43; --accent: #B79AF2; --accent-ink: #1A0B36; --accent-soft: #2B2045; --accent-line: #634A97; }
 
 /* ── Séance pas à pas */
 .stepbar { position: sticky; bottom: calc(var(--nav-h) + env(safe-area-inset-bottom, 0px)); z-index: 15; display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: .3rem .5rem; margin: 1rem 0 0; padding: .35rem 0 .55rem; background: var(--bg); border-top: 1px solid var(--line); }
