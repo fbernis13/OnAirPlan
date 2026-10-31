@@ -38,12 +38,12 @@
  "sessionTypes": {
   "CA": {
    "label": "S1",
-   "name": "Cardio",
+   "name": "Cardio + gainage",
    "type": "cardio"
   },
   "R2": {
    "label": "S2",
-   "name": "Bas du corps + gainage",
+   "name": "Bas du corps",
    "type": "force"
   },
   "R1": {
@@ -168,8 +168,8 @@
    "id": "d1-r2",
    "cycle": 1,
    "slot": "R2",
-   "title": "Bas du corps + gainage",
-   "goal": "Découvrir les machines des jambes, avec autant de travail pour l’avant (quadriceps) que pour l’arrière des cuisses (ischios). Aucune série difficile.",
+   "title": "Bas du corps",
+   "goal": "Découvrir les machines des jambes : avant des cuisses, arrière des cuisses, fessiers et mollets. Aucune série difficile.",
    "warmTitle": "Mise en route",
    "warmup": [
     {
@@ -247,32 +247,22 @@
      "l": "F",
      "items": [
       {
-       "x": "legcurl_l",
+       "x": "back_ext",
        "sets": 2,
-       "reps": "15",
+       "reps": "12",
        "rest": 60,
-       "note": "Deuxième machine des ischios : hanches collées au banc, descends lentement"
+       "note": "Bascule depuis les hanches, dos droit, remonte jusqu’à l’alignement du corps sans te cambrer"
       }
      ]
     },
     {
      "l": "G",
-     "type": "circuit",
-     "rounds": 2,
      "items": [
       {
-       "x": "situp",
+       "x": "calf_mach",
        "sets": 2,
-       "reps": "8",
-       "rest": 0,
-       "note": "Remonte en douceur sans tirer sur la nuque, mains vers les pieds"
-      },
-      {
-       "x": "side_plank",
-       "sets": 2,
-       "reps": "15 s/côté",
-       "rest": 45,
-       "note": "Genoux au sol si besoin au début"
+       "reps": "15",
+       "rest": 45
       }
      ]
     }
@@ -367,7 +357,7 @@
      "items": [
       {
        "x": "shoulder_mach",
-       "sets": 3,
+       "sets": 2,
        "reps": "15",
        "rest": 60,
        "note": "Commence très léger : les épaules fatiguent vite"
@@ -397,22 +387,20 @@
     },
     {
      "l": "G",
-     "type": "circuit",
+     "type": "superset",
      "rounds": 2,
      "items": [
       {
-       "x": "plank_fa",
+       "x": "hammer_curl",
        "sets": 2,
-       "reps": "20 s",
-       "rest": 0,
-       "note": "Genoux au sol si besoin au début"
+       "reps": "12",
+       "rest": 0
       },
       {
-       "x": "superman",
+       "x": "db_oh_triceps",
        "sets": 2,
-       "reps": "8",
-       "rest": 45,
-       "note": "Tiens 2 s en haut, regard vers le sol"
+       "reps": "12",
+       "rest": 60
       }
      ]
     }
@@ -539,7 +527,7 @@
    "id": "d2-r2",
    "cycle": 2,
    "slot": "R2",
-   "title": "Bas du corps + gainage",
+   "title": "Bas du corps",
    "goal": "Monter un peu les charges, surtout sur la presse et le hip thrust.",
    "warmTitle": "Mise en route",
    "warmup": [
@@ -618,32 +606,22 @@
      "l": "F",
      "items": [
       {
-       "x": "legcurl_l",
+       "x": "back_ext",
        "sets": 2,
-       "reps": "12-15",
+       "reps": "12",
        "rest": 60,
-       "note": "Deuxième machine des ischios : hanches collées au banc, descends lentement"
+       "note": "Bascule depuis les hanches, dos droit, remonte jusqu’à l’alignement du corps sans te cambrer"
       }
      ]
     },
     {
      "l": "G",
-     "type": "circuit",
-     "rounds": 2,
      "items": [
       {
-       "x": "situp",
+       "x": "calf_mach",
        "sets": 2,
-       "reps": "8",
-       "rest": 0,
-       "note": "Remonte en douceur sans tirer sur la nuque, mains vers les pieds"
-      },
-      {
-       "x": "side_plank",
-       "sets": 2,
-       "reps": "15 s/côté",
-       "rest": 45,
-       "note": "Genoux au sol si besoin au début"
+       "reps": "15",
+       "rest": 45
       }
      ]
     }
@@ -738,7 +716,7 @@
      "items": [
       {
        "x": "shoulder_mach",
-       "sets": 3,
+       "sets": 2,
        "reps": "12-15",
        "rest": 60
       }
@@ -767,22 +745,20 @@
     },
     {
      "l": "G",
-     "type": "circuit",
+     "type": "superset",
      "rounds": 2,
      "items": [
       {
-       "x": "plank_fa",
+       "x": "hammer_curl",
        "sets": 2,
-       "reps": "25 s",
-       "rest": 0,
-       "note": "Genoux au sol si besoin au début"
+       "reps": "12",
+       "rest": 0
       },
       {
-       "x": "superman",
+       "x": "db_oh_triceps",
        "sets": 2,
-       "reps": "10",
-       "rest": 45,
-       "note": "Tiens 2 s en haut, regard vers le sol"
+       "reps": "12",
+       "rest": 60
       }
      ]
     }
@@ -909,8 +885,8 @@
    "id": "d3-r2",
    "cycle": 3,
    "slot": "R2",
-   "title": "Bas du corps + gainage",
-   "goal": "Monter les charges d’un cran sur les cinq machines.",
+   "title": "Bas du corps",
+   "goal": "Monter les charges d’un cran sur toutes les machines.",
    "warmTitle": "Mise en route",
    "warmup": [
     {
@@ -988,32 +964,22 @@
      "l": "F",
      "items": [
       {
-       "x": "legcurl_l",
+       "x": "back_ext",
        "sets": 2,
        "reps": "12",
        "rest": 60,
-       "note": "Deuxième machine des ischios : hanches collées au banc, descends lentement"
+       "note": "Bascule depuis les hanches, dos droit, remonte jusqu’à l’alignement du corps sans te cambrer"
       }
      ]
     },
     {
      "l": "G",
-     "type": "circuit",
-     "rounds": 2,
      "items": [
       {
-       "x": "situp",
+       "x": "calf_mach",
        "sets": 2,
-       "reps": "12",
-       "rest": 0,
-       "note": "Remonte en douceur sans tirer sur la nuque, mains vers les pieds"
-      },
-      {
-       "x": "side_plank",
-       "sets": 2,
-       "reps": "20 s/côté",
-       "rest": 45,
-       "note": "Genoux au sol si besoin au début"
+       "reps": "15",
+       "rest": 45
       }
      ]
     }
@@ -1041,7 +1007,7 @@
    "cycle": 3,
    "slot": "R1",
    "title": "Haut du corps",
-   "goal": "Monter les charges d’un cran sur les quatre machines.",
+   "goal": "Monter les charges d’un cran sur toutes les machines.",
    "warmTitle": "Mise en route",
    "warmup": [
     {
@@ -1108,7 +1074,7 @@
      "items": [
       {
        "x": "shoulder_mach",
-       "sets": 3,
+       "sets": 2,
        "reps": "12",
        "rest": 60
       }
@@ -1137,22 +1103,20 @@
     },
     {
      "l": "G",
-     "type": "circuit",
+     "type": "superset",
      "rounds": 2,
      "items": [
       {
-       "x": "plank_fa",
+       "x": "hammer_curl",
        "sets": 2,
-       "reps": "30 s",
-       "rest": 0,
-       "note": "Genoux au sol si besoin au début"
+       "reps": "12",
+       "rest": 0
       },
       {
-       "x": "superman",
+       "x": "db_oh_triceps",
        "sets": 2,
-       "reps": "10",
-       "rest": 45,
-       "note": "Tiens 2 s en haut, regard vers le sol"
+       "reps": "12",
+       "rest": 60
       }
      ]
     }
@@ -1279,7 +1243,7 @@
    "id": "d4-r2",
    "cycle": 4,
    "slot": "R2",
-   "title": "Bas du corps + gainage",
+   "title": "Bas du corps",
    "goal": "Consolider les charges et comparer avec le cycle 1.",
    "warmTitle": "Mise en route",
    "warmup": [
@@ -1358,32 +1322,22 @@
      "l": "F",
      "items": [
       {
-       "x": "legcurl_l",
+       "x": "back_ext",
        "sets": 2,
-       "reps": "10-12",
+       "reps": "12",
        "rest": 60,
-       "note": "Deuxième machine des ischios : hanches collées au banc, descends lentement"
+       "note": "Bascule depuis les hanches, dos droit, remonte jusqu’à l’alignement du corps sans te cambrer"
       }
      ]
     },
     {
      "l": "G",
-     "type": "circuit",
-     "rounds": 2,
      "items": [
       {
-       "x": "situp",
+       "x": "calf_mach",
        "sets": 2,
-       "reps": "12",
-       "rest": 0,
-       "note": "Remonte en douceur sans tirer sur la nuque, mains vers les pieds"
-      },
-      {
-       "x": "side_plank",
-       "sets": 2,
-       "reps": "20 s/côté",
-       "rest": 45,
-       "note": "Genoux au sol si besoin au début"
+       "reps": "15",
+       "rest": 45
       }
      ]
     }
@@ -1478,7 +1432,7 @@
      "items": [
       {
        "x": "shoulder_mach",
-       "sets": 3,
+       "sets": 2,
        "reps": "10-12",
        "rest": 60
       }
@@ -1507,22 +1461,20 @@
     },
     {
      "l": "G",
-     "type": "circuit",
+     "type": "superset",
      "rounds": 2,
      "items": [
       {
-       "x": "plank_fa",
+       "x": "hammer_curl",
        "sets": 2,
-       "reps": "35 s",
-       "rest": 0,
-       "note": "Genoux au sol si besoin au début"
+       "reps": "12",
+       "rest": 0
       },
       {
-       "x": "superman",
+       "x": "db_oh_triceps",
        "sets": 2,
-       "reps": "10",
-       "rest": 45,
-       "note": "Tiens 2 s en haut, regard vers le sol"
+       "reps": "12",
+       "rest": 60
       }
      ]
     }
