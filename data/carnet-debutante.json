@@ -132,11 +132,11 @@
        "note": "Genoux au sol si besoin au début"
       },
       {
-       "x": "deadbug",
+       "x": "situp",
        "sets": 2,
-       "reps": "6/côté",
+       "reps": "8",
        "rest": 45,
-       "note": "Le bas du dos reste plaqué au sol"
+       "note": "Remonte en douceur sans tirer sur la nuque, mains vers les pieds"
       }
      ]
     }
@@ -249,11 +249,11 @@
      "rounds": 2,
      "items": [
       {
-       "x": "deadbug",
+       "x": "situp",
        "sets": 2,
-       "reps": "6/côté",
+       "reps": "8",
        "rest": 0,
-       "note": "Le bas du dos reste plaqué au sol"
+       "note": "Remonte en douceur sans tirer sur la nuque, mains vers les pieds"
       },
       {
        "x": "side_plank",
@@ -470,11 +470,11 @@
        "note": "Genoux au sol si besoin au début"
       },
       {
-       "x": "deadbug",
+       "x": "situp",
        "sets": 3,
-       "reps": "6/côté",
+       "reps": "8",
        "rest": 0,
-       "note": "Le bas du dos reste plaqué au sol"
+       "note": "Remonte en douceur sans tirer sur la nuque, mains vers les pieds"
       },
       {
        "x": "side_plank",
@@ -616,11 +616,11 @@
      "rounds": 3,
      "items": [
       {
-       "x": "deadbug",
+       "x": "situp",
        "sets": 3,
-       "reps": "6/côté",
+       "reps": "8",
        "rest": 0,
-       "note": "Le bas du dos reste plaqué au sol"
+       "note": "Remonte en douceur sans tirer sur la nuque, mains vers les pieds"
       },
       {
        "x": "side_plank",
@@ -857,11 +857,11 @@
        "note": "Genoux au sol si besoin au début"
       },
       {
-       "x": "deadbug",
+       "x": "situp",
        "sets": 3,
-       "reps": "8/côté",
+       "reps": "12",
        "rest": 0,
-       "note": "Le bas du dos reste plaqué au sol"
+       "note": "Remonte en douceur sans tirer sur la nuque, mains vers les pieds"
       },
       {
        "x": "side_plank",
@@ -1015,11 +1015,11 @@
      "rounds": 3,
      "items": [
       {
-       "x": "deadbug",
+       "x": "situp",
        "sets": 3,
-       "reps": "8/côté",
+       "reps": "12",
        "rest": 0,
-       "note": "Le bas du dos reste plaqué au sol"
+       "note": "Remonte en douceur sans tirer sur la nuque, mains vers les pieds"
       },
       {
        "x": "side_plank",
@@ -1275,11 +1275,11 @@
        "note": "Genoux au sol si besoin au début"
       },
       {
-       "x": "deadbug",
+       "x": "situp",
        "sets": 3,
-       "reps": "8/côté",
+       "reps": "12",
        "rest": 0,
-       "note": "Le bas du dos reste plaqué au sol"
+       "note": "Remonte en douceur sans tirer sur la nuque, mains vers les pieds"
       },
       {
        "x": "side_plank",
@@ -1433,11 +1433,11 @@
      "rounds": 3,
      "items": [
       {
-       "x": "deadbug",
+       "x": "situp",
        "sets": 3,
-       "reps": "8/côté",
+       "reps": "12",
        "rest": 0,
-       "note": "Le bas du dos reste plaqué au sol"
+       "note": "Remonte en douceur sans tirer sur la nuque, mains vers les pieds"
       },
       {
        "x": "side_plank",
