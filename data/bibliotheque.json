@@ -1298,6 +1298,22 @@
     "note": "Banc à extensions lombaires à 45°."
    }
   },
+  "lower_back_mach": {
+   "fr": "Lombaires à la machine guidée (Lower Back)",
+   "en": "Seated Back Extension Machine",
+   "mv": null,
+   "kind": "force",
+   "unit": "reps",
+   "load": true,
+   "p": [
+    "dos"
+   ],
+   "s": [
+    "fess",
+    "isch"
+   ],
+   "vid": []
+  },
   "shrug": {
    "fr": "Shrugs aux haltères",
    "en": "Dumbbell Shrug",

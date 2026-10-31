@@ -387,6 +387,18 @@
        "note": "Triceps : plus le contrepoids est lourd, plus c’est facile. Commence avec beaucoup d’assistance"
       }
      ]
+    },
+    {
+     "l": "G",
+     "items": [
+      {
+       "x": "lower_back_mach",
+       "sets": 2,
+       "reps": "15",
+       "rest": 60,
+       "note": "Bas du dos : coussin en haut du dos, pousse vers l’arrière lentement sans à-coup, revient sous contrôle. Commence très léger"
+      }
+     ]
     }
    ],
    "coolTitle": "Retour au calme · 5 min",
@@ -728,6 +740,18 @@
        "reps": "12-15",
        "rest": 60,
        "note": "Triceps : plus le contrepoids est lourd, plus c’est facile. Commence avec beaucoup d’assistance"
+      }
+     ]
+    },
+    {
+     "l": "G",
+     "items": [
+      {
+       "x": "lower_back_mach",
+       "sets": 2,
+       "reps": "12-15",
+       "rest": 60,
+       "note": "Bas du dos : coussin en haut du dos, pousse vers l’arrière lentement sans à-coup, revient sous contrôle. Commence très léger"
       }
      ]
     }
@@ -1073,6 +1097,18 @@
        "note": "Triceps : plus le contrepoids est lourd, plus c’est facile. Commence avec beaucoup d’assistance"
       }
      ]
+    },
+    {
+     "l": "G",
+     "items": [
+      {
+       "x": "lower_back_mach",
+       "sets": 2,
+       "reps": "12",
+       "rest": 60,
+       "note": "Bas du dos : coussin en haut du dos, pousse vers l’arrière lentement sans à-coup, revient sous contrôle. Commence très léger"
+      }
+     ]
     }
    ],
    "coolTitle": "Retour au calme · 5 min",
@@ -1414,6 +1450,18 @@
        "reps": "10-12",
        "rest": 60,
        "note": "Triceps : plus le contrepoids est lourd, plus c’est facile. Commence avec beaucoup d’assistance"
+      }
+     ]
+    },
+    {
+     "l": "G",
+     "items": [
+      {
+       "x": "lower_back_mach",
+       "sets": 2,
+       "reps": "10-12",
+       "rest": 60,
+       "note": "Bas du dos : coussin en haut du dos, pousse vers l’arrière lentement sans à-coup, revient sous contrôle. Commence très léger"
       }
      ]
     }
