@@ -216,11 +216,11 @@
      "l": "D",
      "items": [
       {
-       "x": "hipthrust",
+       "x": "hipthrust_mach",
        "sets": 2,
        "reps": "15",
        "rest": 60,
-       "note": "Commence sans charge ou avec un disque léger, pause d’une seconde en haut"
+       "note": "Règle le siège pour que la ceinture passe sur le haut des hanches. Commence léger, pause d’une seconde en haut"
       }
      ]
     },
@@ -560,11 +560,11 @@
      "l": "D",
      "items": [
       {
-       "x": "hipthrust",
+       "x": "hipthrust_mach",
        "sets": 3,
        "reps": "12-15",
        "rest": 60,
-       "note": "Commence sans charge ou avec un disque léger, pause d’une seconde en haut"
+       "note": "Règle le siège pour que la ceinture passe sur le haut des hanches. Commence léger, pause d’une seconde en haut"
       }
      ]
     },
@@ -947,11 +947,11 @@
      "l": "D",
      "items": [
       {
-       "x": "hipthrust",
+       "x": "hipthrust_mach",
        "sets": 3,
        "reps": "12",
        "rest": 60,
-       "note": "Commence sans charge ou avec un disque léger, pause d’une seconde en haut"
+       "note": "Règle le siège pour que la ceinture passe sur le haut des hanches. Commence léger, pause d’une seconde en haut"
       }
      ]
     },
@@ -1365,11 +1365,11 @@
      "l": "D",
      "items": [
       {
-       "x": "hipthrust",
+       "x": "hipthrust_mach",
        "sets": 3,
        "reps": "10-12",
        "rest": 60,
-       "note": "Commence sans charge ou avec un disque léger, pause d’une seconde en haut"
+       "note": "Règle le siège pour que la ceinture passe sur le haut des hanches. Commence léger, pause d’une seconde en haut"
       }
      ]
     },

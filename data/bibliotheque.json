@@ -1235,6 +1235,26 @@
     "fr_hipthrust"
    ]
   },
+  "hipthrust_mach": {
+   "fr": "Hip thrust à la machine guidée",
+   "en": "Hip Thrust Machine",
+   "mv": null,
+   "kind": "force",
+   "unit": "reps",
+   "load": true,
+   "p": [
+    "fess"
+   ],
+   "s": [
+    "isch"
+   ],
+   "img": {
+    "file": "images/hipthrust.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "Image du hip thrust à la barre : même mouvement, la machine guide la trajectoire et la charge se règle par la goupille."
+   },
+   "vid": []
+  },
   "db_row": {
    "fr": "Rowing un bras haltère, appui sur banc",
    "en": "One-Arm Dumbbell Row",
