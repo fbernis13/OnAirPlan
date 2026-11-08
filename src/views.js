@@ -46,7 +46,7 @@ function videoBlock(k, ctx) {
 function viewProgramme() {
   const doneCount = SESSIONS.filter(s => sessionStatus(s.id) === 'done').length;
   const next = SESSIONS.find(s => sessionStatus(s.id) !== 'done');
-  let h = `${AUTH.user ? `<h2 class="hello">Bonjour ${esc(userName())}</h2>` : ''}<div class="card" style="margin-top:${AUTH.user ? '.5rem' : '1rem'}">
+  let h = `${AUTH.user ? `<h2 class="hello">Bonjour ${esc(userName())}</h2>` : ''}<div class="card hero" style="margin-top:${AUTH.user ? '.5rem' : '1rem'}">
     <div class="row"><div class="grow"><div class="faint small" style="font-weight:700;text-transform:uppercase;letter-spacing:.08em">${esc(PROGRAMS[programId()].label)} · Salle On Air</div>
     <div style="font-family:var(--f-display);font-size:1.5rem;font-weight:700;line-height:1.15"><span class="num">${doneCount}</span> / ${SESSIONS.length} séances terminées</div></div></div>
     <div class="progressbar" style="margin:.5rem 0"><i style="width:${doneCount / SESSIONS.length * 100}%"></i></div>
@@ -239,22 +239,13 @@ function exoCard(s, bl, it, i) {
   const sets = E ? E.sets : Array.from({ length: Math.max(1, it.sets || 1) }, () => ({}));
   const hist = exHistory(eff).filter(hh => hh.sid !== s.id); const last = hist[hist.length - 1];
   const uid = s.id + ':' + key;
-  const swapOpts = swapList(it.x);
   return `<div class="exo anchor ${E && E.done ? 'done' : ''} ${E && E.skipped ? 'skipped' : ''}" id="exo-${uid}">
     <div class="exo-title"><div class="grow">
       <div class="exo-name">${esc(eff !== it.x ? d.fr : itemLabel(it))}</div>
       <div class="exo-en">${esc(d.en)}${E && E.swap ? ` · variante de ${esc(itemLabel(it))}` : ''}</div>
     </div><div class="presc num">${presc(it)}</div></div>
     ${pair ? machinePicker(pair, side, s.cycle, `data-sid="${s.id}" data-key="${key}" data-bi="${bl.l}" data-i="${i}"`) : ''}
-    ${mediaBar(eff, uid, `<div class="stack">
-        ${d.mv ? `<button class="btn small ghost" data-act="open-move" data-id="${d.mv}" style="justify-self:start">Fiche ${esc(MOVE_BY_ID[d.mv] ? MOVE_BY_ID[d.mv].name : d.en)}</button>` : ''}
-        <label class="fld">Variante appliquée (allègement, remplacement…)
-          <input type="search" id="f-swapq-${uid}" data-in="swapq" data-target="f-swap-${uid}" data-x="${esc(it.x)}" placeholder="Rechercher un exercice" autocomplete="off" enterkeyhint="search">
-          <select id="f-swap-${uid}" data-in="swap" data-sid="${s.id}" data-key="${key}" data-bi="${bl.l}" data-i="${i}" data-planned="${esc(itemLabel(it))}">
-            ${swapOptions(swapOpts, itemLabel(it), E && E.swap)}
-          </select></label>
-        <button class="btn small ghost" data-act="skip" data-sid="${s.id}" data-key="${key}" data-bi="${bl.l}" data-i="${i}" style="justify-self:start">${E && E.skipped ? 'Rétablir l’exercice' : 'Exercice non réalisé'}</button>
-      </div>`, E && (E.swap || E.skipped))}
+    ${mediaBar(eff, uid)}
     ${muscleLine(d)}
     ${it.note ? `<div class="small muted">${esc(it.note)}</div>` : ''}
     ${(it.variant || d.variant) ? `<div class="variant">${esc(it.variant || d.variant)}</div>` : ''}
@@ -264,6 +255,7 @@ function exoCard(s, bl, it, i) {
     <div class="exo-actions">
       <button class="btn small ghost" data-act="addset" data-sid="${s.id}" data-key="${key}" data-bi="${bl.l}" data-i="${i}">${IC.plus} Série</button>
       <button class="btn small ghost" data-act="delset" data-sid="${s.id}" data-key="${key}" data-bi="${bl.l}" data-i="${i}" ${sets.length <= 1 ? 'disabled' : ''}>${IC.minus} Série</button>
+      <button class="btn small ghost" data-act="skip" data-sid="${s.id}" data-key="${key}" data-bi="${bl.l}" data-i="${i}">${E && E.skipped ? 'Rétablir' : 'Non réalisé'}</button>
       <button class="btn small ${E && E.done ? 'primary' : ''}" data-act="exdone" data-sid="${s.id}" data-key="${key}" data-bi="${bl.l}" data-i="${i}">${E && E.done ? IC.check + ' Terminé' : 'Terminé'}</button>
     </div>
   </div>`;
