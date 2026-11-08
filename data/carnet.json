@@ -59,7 +59,7 @@
   "Entre deux exercices : environ 2 minutes, installation comprise, sans ajouter le repos de la dernière série.",
   "Quand tu atteins le haut de la fourchette sur toutes les séries, augmente la charge à la séance suivante : 2,5 à 5 kg sur le haut du corps, 5 à 10 kg sur le bas du corps.",
   "Si une séance a été trop dure (courbatures plus de 3 jours), garde les mêmes charges à la séance suivante.",
-  "Deux objectifs suivis sur tout le programme : tractions strictes et pompes, testées au début de chaque S2 après le cardio. Les résultats s’affichent dans l’onglet Progression."
+  "Objectif suivi sur tout le programme : les pompes, testées au début de chaque S2 après le cardio. Les résultats s’affichent dans l’onglet Progression."
  ],
  "benchmarks": [],
  "sessions": [
@@ -142,22 +142,21 @@
      ]
     },
     {
-     "l": "F",
      "type": "circuit",
      "title": "Core · 10 à 12 min",
-     "rounds": 2,
+     "rounds": 3,
      "items": [
       {
        "x": "situp",
-       "sets": 2,
-       "reps": "10-15",
+       "sets": 3,
+       "reps": "10",
        "rest": 0,
        "label": "Sit-up contrôlé",
        "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
       },
       {
        "x": "pallof",
-       "sets": 2,
+       "sets": 3,
        "reps": "20-30 s",
        "rest": 0,
        "unit": "time",
@@ -166,19 +165,20 @@
       },
       {
        "x": "db_side_bend",
-       "sets": 2,
+       "sets": 3,
        "reps": "10-15/côté",
        "rest": 0,
        "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
       },
       {
        "x": "plank_fa",
-       "sets": 2,
+       "sets": 3,
        "reps": "20-40 s",
        "rest": 60,
        "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
       }
-     ]
+     ],
+     "l": "F"
     },
     {
      "l": "G",
@@ -357,15 +357,6 @@
      "title": "Test du cycle",
      "items": [
       {
-       "x": "strict_pu",
-       "sets": 1,
-       "reps": "max",
-       "rest": 180,
-       "test": "pullups",
-       "label": "Test : tractions strictes max",
-       "note": "Strictes, sans kipping. Si tu n’en fais aucune, note 0."
-      },
-      {
        "x": "pushup_par",
        "sets": 1,
        "reps": "max",
@@ -467,22 +458,21 @@
      ]
     },
     {
-     "l": "I",
      "type": "circuit",
      "title": "Core · 10 à 12 min",
-     "rounds": 2,
+     "rounds": 3,
      "items": [
       {
        "x": "situp",
-       "sets": 2,
-       "reps": "10-15",
+       "sets": 3,
+       "reps": "10",
        "rest": 0,
        "label": "Sit-up contrôlé",
        "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
       },
       {
        "x": "pallof",
-       "sets": 2,
+       "sets": 3,
        "reps": "20-30 s",
        "rest": 0,
        "unit": "time",
@@ -491,19 +481,20 @@
       },
       {
        "x": "db_side_bend",
-       "sets": 2,
+       "sets": 3,
        "reps": "10-15/côté",
        "rest": 0,
        "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
       },
       {
        "x": "plank_fa",
-       "sets": 2,
+       "sets": 3,
        "reps": "20-40 s",
        "rest": 60,
        "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
       }
-     ]
+     ],
+     "l": "I"
     },
     {
      "l": "J",
@@ -627,22 +618,21 @@
      ]
     },
     {
-     "l": "F",
      "type": "circuit",
      "title": "Core · 10 à 12 min",
-     "rounds": 2,
+     "rounds": 3,
      "items": [
       {
        "x": "situp",
-       "sets": 2,
-       "reps": "10-15",
+       "sets": 3,
+       "reps": "10",
        "rest": 0,
        "label": "Sit-up contrôlé",
        "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
       },
       {
        "x": "pallof",
-       "sets": 2,
+       "sets": 3,
        "reps": "20-30 s",
        "rest": 0,
        "unit": "time",
@@ -651,19 +641,20 @@
       },
       {
        "x": "db_side_bend",
-       "sets": 2,
+       "sets": 3,
        "reps": "10-15/côté",
        "rest": 0,
        "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
       },
       {
        "x": "plank_fa",
-       "sets": 2,
+       "sets": 3,
        "reps": "20-40 s",
        "rest": 60,
        "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
       }
-     ]
+     ],
+     "l": "F"
     },
     {
      "l": "G",
@@ -842,15 +833,6 @@
      "title": "Test du cycle",
      "items": [
       {
-       "x": "strict_pu",
-       "sets": 1,
-       "reps": "max",
-       "rest": 180,
-       "test": "pullups",
-       "label": "Test : tractions strictes max",
-       "note": "Strictes, sans kipping. Si tu n’en fais aucune, note 0."
-      },
-      {
        "x": "pushup_par",
        "sets": 1,
        "reps": "max",
@@ -952,22 +934,21 @@
      ]
     },
     {
-     "l": "I",
      "type": "circuit",
      "title": "Core · 10 à 12 min",
-     "rounds": 2,
+     "rounds": 3,
      "items": [
       {
        "x": "situp",
-       "sets": 2,
-       "reps": "10-15",
+       "sets": 3,
+       "reps": "10",
        "rest": 0,
        "label": "Sit-up contrôlé",
        "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
       },
       {
        "x": "pallof",
-       "sets": 2,
+       "sets": 3,
        "reps": "20-30 s",
        "rest": 0,
        "unit": "time",
@@ -976,19 +957,20 @@
       },
       {
        "x": "db_side_bend",
-       "sets": 2,
+       "sets": 3,
        "reps": "10-15/côté",
        "rest": 0,
        "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
       },
       {
        "x": "plank_fa",
-       "sets": 2,
+       "sets": 3,
        "reps": "20-40 s",
        "rest": 60,
        "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
       }
-     ]
+     ],
+     "l": "I"
     },
     {
      "l": "J",
@@ -1112,22 +1094,21 @@
      ]
     },
     {
-     "l": "F",
      "type": "circuit",
      "title": "Core · 10 à 12 min",
-     "rounds": 2,
+     "rounds": 3,
      "items": [
       {
        "x": "situp",
-       "sets": 2,
-       "reps": "10-15",
+       "sets": 3,
+       "reps": "10",
        "rest": 0,
        "label": "Sit-up contrôlé",
        "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
       },
       {
        "x": "pallof",
-       "sets": 2,
+       "sets": 3,
        "reps": "20-30 s",
        "rest": 0,
        "unit": "time",
@@ -1136,19 +1117,20 @@
       },
       {
        "x": "db_side_bend",
-       "sets": 2,
+       "sets": 3,
        "reps": "10-15/côté",
        "rest": 0,
        "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
       },
       {
        "x": "plank_fa",
-       "sets": 2,
+       "sets": 3,
        "reps": "20-40 s",
        "rest": 60,
        "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
       }
-     ]
+     ],
+     "l": "F"
     },
     {
      "l": "G",
@@ -1327,15 +1309,6 @@
      "title": "Test du cycle",
      "items": [
       {
-       "x": "strict_pu",
-       "sets": 1,
-       "reps": "max",
-       "rest": 180,
-       "test": "pullups",
-       "label": "Test : tractions strictes max",
-       "note": "Strictes, sans kipping. Si tu n’en fais aucune, note 0."
-      },
-      {
        "x": "pushup_par",
        "sets": 1,
        "reps": "max",
@@ -1437,22 +1410,21 @@
      ]
     },
     {
-     "l": "I",
      "type": "circuit",
      "title": "Core · 10 à 12 min",
-     "rounds": 2,
+     "rounds": 3,
      "items": [
       {
        "x": "situp",
-       "sets": 2,
-       "reps": "10-15",
+       "sets": 3,
+       "reps": "10",
        "rest": 0,
        "label": "Sit-up contrôlé",
        "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
       },
       {
        "x": "pallof",
-       "sets": 2,
+       "sets": 3,
        "reps": "20-30 s",
        "rest": 0,
        "unit": "time",
@@ -1461,19 +1433,20 @@
       },
       {
        "x": "db_side_bend",
-       "sets": 2,
+       "sets": 3,
        "reps": "10-15/côté",
        "rest": 0,
        "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
       },
       {
        "x": "plank_fa",
-       "sets": 2,
+       "sets": 3,
        "reps": "20-40 s",
        "rest": 60,
        "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
       }
-     ]
+     ],
+     "l": "I"
     },
     {
      "l": "J",
@@ -1597,22 +1570,21 @@
      ]
     },
     {
-     "l": "F",
      "type": "circuit",
      "title": "Core · 10 à 12 min",
-     "rounds": 2,
+     "rounds": 3,
      "items": [
       {
        "x": "situp",
-       "sets": 2,
-       "reps": "10-15",
+       "sets": 3,
+       "reps": "10",
        "rest": 0,
        "label": "Sit-up contrôlé",
        "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
       },
       {
        "x": "pallof",
-       "sets": 2,
+       "sets": 3,
        "reps": "20-30 s",
        "rest": 0,
        "unit": "time",
@@ -1621,19 +1593,20 @@
       },
       {
        "x": "db_side_bend",
-       "sets": 2,
+       "sets": 3,
        "reps": "10-15/côté",
        "rest": 0,
        "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
       },
       {
        "x": "plank_fa",
-       "sets": 2,
+       "sets": 3,
        "reps": "20-40 s",
        "rest": 60,
        "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
       }
-     ]
+     ],
+     "l": "F"
     },
     {
      "l": "G",
@@ -1812,15 +1785,6 @@
      "title": "Test du cycle",
      "items": [
       {
-       "x": "strict_pu",
-       "sets": 1,
-       "reps": "max",
-       "rest": 180,
-       "test": "pullups",
-       "label": "Test : tractions strictes max",
-       "note": "Strictes, sans kipping. Si tu n’en fais aucune, note 0."
-      },
-      {
        "x": "pushup_par",
        "sets": 1,
        "reps": "max",
@@ -1922,22 +1886,21 @@
      ]
     },
     {
-     "l": "I",
      "type": "circuit",
      "title": "Core · 10 à 12 min",
-     "rounds": 2,
+     "rounds": 3,
      "items": [
       {
        "x": "situp",
-       "sets": 2,
-       "reps": "10-15",
+       "sets": 3,
+       "reps": "10",
        "rest": 0,
        "label": "Sit-up contrôlé",
        "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
       },
       {
        "x": "pallof",
-       "sets": 2,
+       "sets": 3,
        "reps": "20-30 s",
        "rest": 0,
        "unit": "time",
@@ -1946,19 +1909,20 @@
       },
       {
        "x": "db_side_bend",
-       "sets": 2,
+       "sets": 3,
        "reps": "10-15/côté",
        "rest": 0,
        "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
       },
       {
        "x": "plank_fa",
-       "sets": 2,
+       "sets": 3,
        "reps": "20-40 s",
        "rest": 60,
        "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
       }
-     ]
+     ],
+     "l": "I"
     },
     {
      "l": "J",
@@ -2006,18 +1970,11 @@
  ],
  "objectives": [
   {
-   "id": "pullups",
-   "label": "Tractions strictes",
-   "unit": "répétitions",
-   "ex": "strict_pu",
-   "how": "Test au début de chaque S2, après le cardio : une série, bras tendus en bas, menton au-dessus de la barre, sans kipping."
-  },
-  {
    "id": "pushups",
    "label": "Pompes",
    "unit": "répétitions",
    "ex": "pushup_par",
-   "how": "Test au début de chaque S2, 3 min après les tractions : une série, poitrine au sol, corps gainé, sans pause en haut."
+   "how": "Test au début de chaque S2, après le cardio : une série, poitrine au sol, corps gainé, sans pause en haut."
   }
  ]
 }
