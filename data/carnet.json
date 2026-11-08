@@ -142,7 +142,8 @@
      ]
     },
     {
-     "type": "superset",
+     "type": "circuit",
+     "title": "Core · 10 à 12 min",
      "rounds": 3,
      "items": [
       {
@@ -157,39 +158,30 @@
        "x": "pallof",
        "sets": 3,
        "reps": "20-30 s",
-       "rest": 45,
+       "rest": 0,
        "unit": "time",
        "label": "Pallof statique à la poulie",
        "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
-      }
-     ],
-     "l": "F",
-     "title": "Core · 10 à 12 min"
-    },
-    {
-     "l": "G",
-     "type": "circuit",
-     "title": "Core (suite)",
-     "rounds": 2,
-     "items": [
+      },
       {
        "x": "db_side_bend",
-       "sets": 2,
+       "sets": 3,
        "reps": "10-15/côté",
        "rest": 0,
        "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
       },
       {
        "x": "plank_fa",
-       "sets": 2,
+       "sets": 3,
        "reps": "20-40 s",
        "rest": 60,
        "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
       }
-     ]
+     ],
+     "l": "F"
     },
     {
-     "l": "H",
+     "l": "G",
      "title": "Finisher vélo · 6 min",
      "items": [
       {
@@ -475,7 +467,8 @@
      ]
     },
     {
-     "type": "superset",
+     "type": "circuit",
+     "title": "Core · 10 à 12 min",
      "rounds": 3,
      "items": [
       {
@@ -490,39 +483,30 @@
        "x": "pallof",
        "sets": 3,
        "reps": "20-30 s",
-       "rest": 45,
+       "rest": 0,
        "unit": "time",
        "label": "Pallof statique à la poulie",
        "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
-      }
-     ],
-     "l": "I",
-     "title": "Core · 10 à 12 min"
-    },
-    {
-     "l": "J",
-     "type": "circuit",
-     "title": "Core (suite)",
-     "rounds": 2,
-     "items": [
+      },
       {
        "x": "db_side_bend",
-       "sets": 2,
+       "sets": 3,
        "reps": "10-15/côté",
        "rest": 0,
        "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
       },
       {
        "x": "plank_fa",
-       "sets": 2,
+       "sets": 3,
        "reps": "20-40 s",
        "rest": 60,
        "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
       }
-     ]
+     ],
+     "l": "I"
     },
     {
-     "l": "K",
+     "l": "J",
      "type": "wod",
      "title": "Finisher · 3 tours",
      "rounds": 3,
@@ -643,7 +627,8 @@
      ]
     },
     {
-     "type": "superset",
+     "type": "circuit",
+     "title": "Core · 10 à 12 min",
      "rounds": 3,
      "items": [
       {
@@ -658,39 +643,30 @@
        "x": "pallof",
        "sets": 3,
        "reps": "20-30 s",
-       "rest": 45,
+       "rest": 0,
        "unit": "time",
        "label": "Pallof statique à la poulie",
        "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
-      }
-     ],
-     "l": "F",
-     "title": "Core · 10 à 12 min"
-    },
-    {
-     "l": "G",
-     "type": "circuit",
-     "title": "Core (suite)",
-     "rounds": 2,
-     "items": [
+      },
       {
        "x": "db_side_bend",
-       "sets": 2,
+       "sets": 3,
        "reps": "10-15/côté",
        "rest": 0,
        "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
       },
       {
        "x": "plank_fa",
-       "sets": 2,
+       "sets": 3,
        "reps": "20-40 s",
        "rest": 60,
        "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
       }
-     ]
+     ],
+     "l": "F"
     },
     {
-     "l": "H",
+     "l": "G",
      "title": "Finisher vélo · 6 min",
      "items": [
       {
@@ -976,7 +952,8 @@
      ]
     },
     {
-     "type": "superset",
+     "type": "circuit",
+     "title": "Core · 10 à 12 min",
      "rounds": 3,
      "items": [
       {
@@ -991,39 +968,30 @@
        "x": "pallof",
        "sets": 3,
        "reps": "20-30 s",
-       "rest": 45,
+       "rest": 0,
        "unit": "time",
        "label": "Pallof statique à la poulie",
        "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
-      }
-     ],
-     "l": "I",
-     "title": "Core · 10 à 12 min"
-    },
-    {
-     "l": "J",
-     "type": "circuit",
-     "title": "Core (suite)",
-     "rounds": 2,
-     "items": [
+      },
       {
        "x": "db_side_bend",
-       "sets": 2,
+       "sets": 3,
        "reps": "10-15/côté",
        "rest": 0,
        "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
       },
       {
        "x": "plank_fa",
-       "sets": 2,
+       "sets": 3,
        "reps": "20-40 s",
        "rest": 60,
        "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
       }
-     ]
+     ],
+     "l": "I"
     },
     {
-     "l": "K",
+     "l": "J",
      "type": "wod",
      "title": "Finisher · 3 tours",
      "rounds": 3,
@@ -1144,7 +1112,8 @@
      ]
     },
     {
-     "type": "superset",
+     "type": "circuit",
+     "title": "Core · 10 à 12 min",
      "rounds": 3,
      "items": [
       {
@@ -1159,39 +1128,30 @@
        "x": "pallof",
        "sets": 3,
        "reps": "20-30 s",
-       "rest": 45,
+       "rest": 0,
        "unit": "time",
        "label": "Pallof statique à la poulie",
        "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
-      }
-     ],
-     "l": "F",
-     "title": "Core · 10 à 12 min"
-    },
-    {
-     "l": "G",
-     "type": "circuit",
-     "title": "Core (suite)",
-     "rounds": 2,
-     "items": [
+      },
       {
        "x": "db_side_bend",
-       "sets": 2,
+       "sets": 3,
        "reps": "10-15/côté",
        "rest": 0,
        "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
       },
       {
        "x": "plank_fa",
-       "sets": 2,
+       "sets": 3,
        "reps": "20-40 s",
        "rest": 60,
        "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
       }
-     ]
+     ],
+     "l": "F"
     },
     {
-     "l": "H",
+     "l": "G",
      "title": "Finisher vélo · 6 min",
      "items": [
       {
@@ -1477,7 +1437,8 @@
      ]
     },
     {
-     "type": "superset",
+     "type": "circuit",
+     "title": "Core · 10 à 12 min",
      "rounds": 3,
      "items": [
       {
@@ -1492,39 +1453,30 @@
        "x": "pallof",
        "sets": 3,
        "reps": "20-30 s",
-       "rest": 45,
+       "rest": 0,
        "unit": "time",
        "label": "Pallof statique à la poulie",
        "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
-      }
-     ],
-     "l": "I",
-     "title": "Core · 10 à 12 min"
-    },
-    {
-     "l": "J",
-     "type": "circuit",
-     "title": "Core (suite)",
-     "rounds": 2,
-     "items": [
+      },
       {
        "x": "db_side_bend",
-       "sets": 2,
+       "sets": 3,
        "reps": "10-15/côté",
        "rest": 0,
        "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
       },
       {
        "x": "plank_fa",
-       "sets": 2,
+       "sets": 3,
        "reps": "20-40 s",
        "rest": 60,
        "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
       }
-     ]
+     ],
+     "l": "I"
     },
     {
-     "l": "K",
+     "l": "J",
      "type": "wod",
      "title": "Finisher · 3 tours",
      "rounds": 3,
@@ -1645,7 +1597,8 @@
      ]
     },
     {
-     "type": "superset",
+     "type": "circuit",
+     "title": "Core · 10 à 12 min",
      "rounds": 3,
      "items": [
       {
@@ -1660,39 +1613,30 @@
        "x": "pallof",
        "sets": 3,
        "reps": "20-30 s",
-       "rest": 45,
+       "rest": 0,
        "unit": "time",
        "label": "Pallof statique à la poulie",
        "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
-      }
-     ],
-     "l": "F",
-     "title": "Core · 10 à 12 min"
-    },
-    {
-     "l": "G",
-     "type": "circuit",
-     "title": "Core (suite)",
-     "rounds": 2,
-     "items": [
+      },
       {
        "x": "db_side_bend",
-       "sets": 2,
+       "sets": 3,
        "reps": "10-15/côté",
        "rest": 0,
        "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
       },
       {
        "x": "plank_fa",
-       "sets": 2,
+       "sets": 3,
        "reps": "20-40 s",
        "rest": 60,
        "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
       }
-     ]
+     ],
+     "l": "F"
     },
     {
-     "l": "H",
+     "l": "G",
      "title": "Finisher vélo · 6 min",
      "items": [
       {
@@ -1978,7 +1922,8 @@
      ]
     },
     {
-     "type": "superset",
+     "type": "circuit",
+     "title": "Core · 10 à 12 min",
      "rounds": 3,
      "items": [
       {
@@ -1993,39 +1938,30 @@
        "x": "pallof",
        "sets": 3,
        "reps": "20-30 s",
-       "rest": 45,
+       "rest": 0,
        "unit": "time",
        "label": "Pallof statique à la poulie",
        "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
-      }
-     ],
-     "l": "I",
-     "title": "Core · 10 à 12 min"
-    },
-    {
-     "l": "J",
-     "type": "circuit",
-     "title": "Core (suite)",
-     "rounds": 2,
-     "items": [
+      },
       {
        "x": "db_side_bend",
-       "sets": 2,
+       "sets": 3,
        "reps": "10-15/côté",
        "rest": 0,
        "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
       },
       {
        "x": "plank_fa",
-       "sets": 2,
+       "sets": 3,
        "reps": "20-40 s",
        "rest": 60,
        "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
       }
-     ]
+     ],
+     "l": "I"
     },
     {
-     "l": "K",
+     "l": "J",
      "type": "wod",
      "title": "Finisher · 3 tours",
      "rounds": 3,
