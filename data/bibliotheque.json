@@ -2,7 +2,7 @@
  "fileType": "onair.bibliotheque",
  "version": 1,
  "title": "Bibliothèque de mouvements – Carnet On Air",
- "updatedAt": "2026-11-08",
+ "updatedAt": "2026-11-08T19:33",
  "notes": [
   "Groupes musculaires principaux et secondaires : conventions du carnet, pas une mesure.",
   "Vidéos hors catalogue relevées le 2026-10-11 dans les résultats de recherche YouTube (identifiant, titre et chaîne exacts).",
@@ -788,8 +788,8 @@
    "s": [],
    "img": {
     "file": "images/rope_pd.jpg",
-    "source": "free-exercise-db (domaine public, Unlicense)",
-    "note": "Correspondance exacte"
+    "source": "Photo fournie par Spook (2026-11-08)",
+    "note": "Positions de départ et d’arrivée"
    }
   },
   "face_pull": {
@@ -3112,8 +3112,8 @@
    ],
    "img": {
     "file": "images/shoulder_mach.jpg",
-    "source": "free-exercise-db (domaine public, Unlicense)",
-    "note": "développé épaules assis machine guidée"
+    "source": "Photo fournie par Spook (2026-11-08)",
+    "note": "Développé épaules machine guidée"
    }
   },
   "shoulder_hs": {
@@ -3135,8 +3135,8 @@
    ],
    "img": {
     "file": "images/shoulder_hs.jpg",
-    "source": "free-exercise-db (domaine public, Unlicense)",
-    "note": "machine à levier convergente équivalente au Hammer iso-latéral"
+    "source": "Photo fournie par Spook (2026-11-08)",
+    "note": "Développé épaules Hammer (chargé de disques)"
    }
   },
   "abductor": {
@@ -3256,6 +3256,25 @@
    "img": {
     "file": "images/bike_recumb.jpg",
     "source": "free-exercise-db (domaine public, Unlicense)"
+   }
+  },
+  "db_curl": {
+   "fr": "Curl biceps haltères",
+   "en": "Dumbbell Biceps Curl",
+   "mv": null,
+   "vid": [
+    "fr_db_curl"
+   ],
+   "kind": "force",
+   "unit": "reps",
+   "load": true,
+   "p": [
+    "bic"
+   ],
+   "s": [],
+   "img": {
+    "file": "images/db_curl.jpg",
+    "source": "Photo fournie par Spook (2026-11-08)"
    }
   }
  },
@@ -5842,6 +5861,16 @@
    "type": "video",
    "provider": "YouTube",
    "url": "https://www.youtube.com/watch?v=ElYkuaIYfUY",
+   "checkedAt": "2026-11-08",
+   "foundVia": "Recherche web (titre relevé dans les résultats)",
+   "lang": "fr"
+  },
+  "fr_db_curl": {
+   "videoId": "u9gpe8CHfjU",
+   "title": "Curl biceps avec haltères : la bonne technique",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=u9gpe8CHfjU",
    "checkedAt": "2026-11-08",
    "foundVia": "Recherche web (titre relevé dans les résultats)",
    "lang": "fr"

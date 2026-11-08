@@ -220,7 +220,7 @@ const exImg = k => (EXERCISES[k] || {}).img;
 const hasExThumb = k => !!((exImg(k) || {}).file || THUMB_DEF[k]);
 function exThumb(k) {
   const im = exImg(k);
-  if (im && im.file) return `<img class="tb tbimg" src="${esc(im.file)}" alt="${esc((EXERCISES[k] || {}).fr || k)}" loading="lazy" onerror="thumbImgFail(this,'${esc(k)}')">`;
+  if (im && im.file) return `<img class="tb tbimg" src="${esc(im.file)}${BIB_VER ? '?v=' + esc(BIB_VER) : ''}" alt="${esc((EXERCISES[k] || {}).fr || k)}" loading="lazy" onerror="thumbImgFail(this,'${esc(k)}')">`;
   return thumbSvg(k);
 }
 window.thumbImgFail = (img, k) => { const s = thumbSvg(k); if (s) img.outerHTML = s; else img.remove(); };
