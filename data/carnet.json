@@ -58,8 +58,7 @@
   "Garde environ 2 répétitions en réserve sur les séries de travail. Les séries d’échauffement ne comptent pas.",
   "Entre deux exercices : environ 2 minutes, installation comprise, sans ajouter le repos de la dernière série.",
   "Quand tu atteins le haut de la fourchette sur toutes les séries, augmente la charge à la séance suivante : 2,5 à 5 kg sur le haut du corps, 5 à 10 kg sur le bas du corps.",
-  "Si une séance a été trop dure (courbatures plus de 3 jours), garde les mêmes charges à la séance suivante.",
-  "Objectif suivi sur tout le programme : les pompes, testées au début de chaque S2 après le cardio. Les résultats s’affichent dans l’onglet Progression."
+  "Si une séance a été trop dure (courbatures plus de 3 jours), garde les mêmes charges à la séance suivante."
  ],
  "benchmarks": [],
  "sessions": [
@@ -349,21 +348,6 @@
        "label": "Cardio au choix",
        "res": "km, cal ou FC",
        "note": "5 min faciles, puis 10 min à intensité modérée. Vélo, rameur, tapis ou escalier : choisis dans « Variante » si ce n’est pas le vélo."
-      }
-     ]
-    },
-    {
-     "l": "T",
-     "title": "Test du cycle",
-     "items": [
-      {
-       "x": "pushup_par",
-       "sets": 1,
-       "reps": "max",
-       "rest": 120,
-       "test": "pushups",
-       "label": "Test : pompes max",
-       "note": "Poitrine au sol, corps gainé, sans pause."
       }
      ]
     },
@@ -829,21 +813,6 @@
      ]
     },
     {
-     "l": "T",
-     "title": "Test du cycle",
-     "items": [
-      {
-       "x": "pushup_par",
-       "sets": 1,
-       "reps": "max",
-       "rest": 120,
-       "test": "pushups",
-       "label": "Test : pompes max",
-       "note": "Poitrine au sol, corps gainé, sans pause."
-      }
-     ]
-    },
-    {
      "l": "B",
      "items": [
       {
@@ -1301,21 +1270,6 @@
        "label": "Cardio au choix",
        "res": "km, cal ou FC",
        "note": "5 min faciles, puis 10 min à intensité modérée. Vélo, rameur, tapis ou escalier : choisis dans « Variante » si ce n’est pas le vélo."
-      }
-     ]
-    },
-    {
-     "l": "T",
-     "title": "Test du cycle",
-     "items": [
-      {
-       "x": "pushup_par",
-       "sets": 1,
-       "reps": "max",
-       "rest": 120,
-       "test": "pushups",
-       "label": "Test : pompes max",
-       "note": "Poitrine au sol, corps gainé, sans pause."
       }
      ]
     },
@@ -1781,21 +1735,6 @@
      ]
     },
     {
-     "l": "T",
-     "title": "Test du cycle",
-     "items": [
-      {
-       "x": "pushup_par",
-       "sets": 1,
-       "reps": "max",
-       "rest": 120,
-       "test": "pushups",
-       "label": "Test : pompes max",
-       "note": "Poitrine au sol, corps gainé, sans pause."
-      }
-     ]
-    },
-    {
      "l": "B",
      "items": [
       {
@@ -1968,13 +1907,5 @@
    "goal": "15 min de cardio, haut du corps complet en 40 à 45 min, 10 à 12 min de core et un finisher court. Les séries d’échauffement ne comptent pas ; entre deux exercices, environ 2 min, installation comprise."
   }
  ],
- "objectives": [
-  {
-   "id": "pushups",
-   "label": "Pompes",
-   "unit": "répétitions",
-   "ex": "pushup_par",
-   "how": "Test au début de chaque S2, après le cardio : une série, poitrine au sol, corps gainé, sans pause en haut."
-  }
- ]
+ "objectives": []
 }
