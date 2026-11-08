@@ -29,26 +29,29 @@
   color-scheme: dark;
 }
 html { font-size: var(--fs, 100%); -webkit-text-size-adjust: 100%; }
-body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 1rem; line-height: 1.45; }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 1rem; line-height: 1.45; -webkit-font-smoothing: antialiased; overscroll-behavior-y: none; }
 * { box-sizing: border-box; }
 button, input, select, textarea { font: inherit; color: inherit; }
+/* iPhone : pas de zoom au double appui ni de halo gris au toucher */
+button, a, label, select, input { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+button:active:not(:disabled) { opacity: .75; }
 a { color: var(--accent); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
 
 /* ── Structure */
-.app { max-width: 46rem; margin: 0 auto; padding-inline: 16px; padding-block: 0 calc(var(--nav-h) + 6rem + env(safe-area-inset-bottom, 0px)); }
-.topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--bg); display: flex; align-items: center; gap: .5rem; padding-block: .6rem; margin-inline: -16px; padding-inline: 16px; border-bottom: 1px solid var(--line); }
+.app { max-width: 46rem; margin: 0 auto; padding-inline: max(16px, env(safe-area-inset-left, 0px)) max(16px, env(safe-area-inset-right, 0px)); padding-block: 0 calc(var(--nav-h) + 6rem + env(safe-area-inset-bottom, 0px)); }
+.topbar { position: sticky; top: 0; z-index: 20; background: var(--bg); display: flex; align-items: center; gap: .5rem; padding-block: calc(.6rem + env(safe-area-inset-top, 0px)) .6rem; margin-inline: -16px; padding-inline: 16px; border-bottom: 1px solid var(--line); }
 .logo { width: 1.9rem; height: 1.9rem; flex: none; display: block; }
 .topbar h1 { font-family: var(--f-display); font-weight: 700; font-size: 1.35rem; letter-spacing: .01em; margin: 0; flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; text-wrap: balance; }
 .topbar .sub { color: var(--ink-3); font-weight: 500; }
-.iconbtn { border: 1px solid var(--line); background: var(--surface); border-radius: .6rem; min-width: 2.5rem; height: 2.5rem; display: inline-grid; place-items: center; cursor: pointer; padding: 0 .5rem; }
+.iconbtn { border: 1px solid var(--line); background: var(--surface); border-radius: .6rem; min-width: 2.75rem; height: 2.75rem; display: inline-grid; place-items: center; cursor: pointer; padding: 0 .5rem; }
 .iconbtn svg { width: 1.25rem; height: 1.25rem; }
 .sync-dot { width: .55rem; height: .55rem; border-radius: 50%; background: var(--ink-3); display: inline-block; }
 .sync-dot.cloud { background: var(--ok); } .sync-dot.pending { background: var(--amber); }
 
-nav.tabs { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; background: var(--surface); border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(5, 1fr); padding-bottom: env(safe-area-inset-bottom, 0px); }
-nav.tabs button { background: none; border: 0; padding: .45rem .1rem .5rem; display: grid; justify-items: center; gap: .1rem; cursor: pointer; color: var(--ink-3); font-size: .72rem; font-weight: 600; min-height: var(--nav-h); }
+nav.tabs { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; background: color-mix(in srgb, var(--surface) 88%, transparent); -webkit-backdrop-filter: saturate(1.6) blur(14px); backdrop-filter: saturate(1.6) blur(14px); border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(5, 1fr); padding: 0 env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-left, 0px); }
+nav.tabs button { background: none; border: 0; padding: .45rem .1rem .5rem; display: grid; justify-items: center; gap: .1rem; cursor: pointer; color: var(--ink-3); font-size: .75rem; font-weight: 600; min-height: var(--nav-h); }
 nav.tabs button svg { width: 1.35rem; height: 1.35rem; }
 nav.tabs button[aria-current="page"] { color: var(--accent); }
 nav.tabs button[aria-current="page"] span { text-decoration: underline; text-underline-offset: .25em; text-decoration-thickness: 2px; }
@@ -84,7 +87,7 @@ p { margin: .4rem 0; }
 .btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
 .btn.ghost { background: transparent; }
 .btn.danger { color: var(--danger); border-color: var(--danger); background: transparent; }
-.btn.small { min-height: 2.1rem; padding: .3rem .65rem; font-size: .85rem; }
+.btn.small { min-height: 2.5rem; padding: .3rem .65rem; font-size: .85rem; }
 .btn svg { width: 1.1rem; height: 1.1rem; }
 .btn:disabled { opacity: .5; cursor: default; }
 
@@ -93,7 +96,9 @@ p { margin: .4rem 0; }
 .seg button[aria-pressed="true"] { background: var(--surface); color: var(--ink); box-shadow: var(--shadow); }
 
 input[type="text"], input[type="number"], input[type="date"], input[type="search"], select, textarea {
-  background: var(--surface); border: 1px solid var(--line); border-radius: .5rem; padding: .45rem .55rem; min-height: 2.4rem; width: 100%; min-width: 0; }
+  background: var(--surface); border: 1px solid var(--line); border-radius: .5rem; padding: .45rem .55rem; min-height: 2.75rem; width: 100%; min-width: 0; }
+/* Safari iOS zoome sur un champ dont le texte fait moins de 16 px */
+input, select, textarea { font-size: max(16px, 1em); }
 textarea { min-height: 4.5rem; resize: vertical; }
 label.fld { display: grid; gap: .2rem; font-size: .8rem; color: var(--ink-2); font-weight: 600; min-width: 0; }
 .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
@@ -123,13 +128,13 @@ label.fld { display: grid; gap: .2rem; font-size: .8rem; color: var(--ink-2); fo
 .sets { display: grid; gap: .35rem; }
 .set { display: grid; grid-template-columns: 1.6rem minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, .75fr) 2.6rem; gap: .35rem; align-items: end; }
 .set .idx { font-family: var(--f-display); font-weight: 700; color: var(--ink-3); text-align: center; padding-bottom: .55rem; }
-.set label { display: grid; gap: .1rem; font-size: .66rem; color: var(--ink-3); font-weight: 700; text-transform: uppercase; letter-spacing: .04em; min-width: 0; }
+.set label { display: grid; gap: .1rem; font-size: .7rem; color: var(--ink-3); font-weight: 700; text-transform: uppercase; letter-spacing: .04em; min-width: 0; }
 .set input { text-align: center; padding-inline: .2rem; font-variant-numeric: tabular-nums; }
-.stepper { display: grid; grid-template-columns: 2rem minmax(0,1fr) 2rem; border: 1px solid var(--line); border-radius: .5rem; overflow: hidden; background: var(--surface); min-height: 2.4rem; }
+.stepper { display: grid; grid-template-columns: 2rem minmax(0,1fr) 2rem; border: 1px solid var(--line); border-radius: .5rem; overflow: hidden; background: var(--surface); min-height: 2.75rem; }
 .stepper button { border: 0; background: var(--surface-2); cursor: pointer; font-weight: 700; font-size: 1.1rem; }
-.stepper input { border: 0; border-radius: 0; min-height: 2.35rem; padding: 0 .1rem; text-align: center; min-width: 0; -moz-appearance: textfield; appearance: textfield; }
+.stepper input { border: 0; border-radius: 0; min-height: 2.7rem; padding: 0 .1rem; text-align: center; min-width: 0; -moz-appearance: textfield; appearance: textfield; }
 .stepper input::-webkit-outer-spin-button, .stepper input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
-.checkbtn { width: 2.6rem; height: 2.4rem; border-radius: .5rem; border: 1.5px solid var(--line); background: var(--surface); cursor: pointer; display: grid; place-items: center; color: var(--ink-3); }
+.checkbtn { width: 2.75rem; height: 2.75rem; border-radius: .5rem; border: 1.5px solid var(--line); background: var(--surface); cursor: pointer; display: grid; place-items: center; color: var(--ink-3); }
 .checkbtn svg { width: 1.3rem; height: 1.3rem; }
 .set.done .checkbtn { background: var(--ok); border-color: var(--ok); color: var(--surface); }
 .set.done input { background: var(--ok-soft); }
@@ -254,7 +259,7 @@ ul.clean li { margin: .2rem 0; }
 /* ── Séance : menu des exercices à gauche */
 .sess-layout { display: grid; grid-template-columns: 3.3rem minmax(0, 1fr); gap: .6rem; align-items: start; }
 .sess-main { min-width: 0; }
-.sess-rail { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 4.1rem); margin-top: .8rem; display: grid; gap: .3rem; max-height: calc(100vh - 4.1rem - var(--nav-h) - 5rem); overflow-y: auto; scrollbar-width: none; padding-bottom: .3rem; }
+.sess-rail { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 4.1rem); margin-top: .8rem; display: grid; gap: .3rem; max-height: calc(100dvh - env(safe-area-inset-top, 0px) - 4.1rem - var(--nav-h) - env(safe-area-inset-bottom, 0px) - 5rem); overflow-y: auto; scrollbar-width: none; padding-bottom: .3rem; }
 .sess-rail::-webkit-scrollbar { display: none; }
 .sess-rail button { border: 1px solid var(--line); background: var(--surface); border-radius: .5rem; padding: .3rem .15rem; cursor: pointer; display: grid; gap: .05rem; text-align: center; min-height: 2.6rem; align-content: center; }
 .sess-rail .rl { font-family: var(--f-display); font-weight: 700; font-size: .95rem; line-height: 1; }

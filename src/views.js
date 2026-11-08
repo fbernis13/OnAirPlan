@@ -80,12 +80,11 @@ function viewProgramme() {
   return h;
 }
 
-/* Choix machine guidée / Hammer, avec le dessin de chaque machine (pile de poids ou disques) */
-function machineThumb(k) { return hasExThumb(k) ? `<span class="mthumb">${exThumb(k)}</span>` : ''; }
+/* Choix machine guidée / Hammer (la photo s'ouvre avec le bouton Photo, pour alléger la page) */
 function machinePicker(pair, side, cycle, attrs) {
   const opts = [['guidee', 'Machine guidée'], ['hammer', 'Hammer'], ['haltero', 'Haltéro']].filter(([v]) => machineOk(pair, v, cycle));
   return `<div class="machine-pick${opts.length > 2 ? ' three' : ''}" role="group" aria-label="Type de machine">${opts.map(([v, l]) =>
-    `<button data-act="machine" data-pair="${pair.id}" data-v="${v}" ${attrs} aria-pressed="${side === v}">${machineThumb(pair[v])}<span class="ml">${l}</span><span class="mn">${esc(exDef(pair[v]).fr)}</span></button>`).join('')}</div>`;
+    `<button data-act="machine" data-pair="${pair.id}" data-v="${v}" ${attrs} aria-pressed="${side === v}"><span class="ml">${l}</span><span class="mn">${esc(exDef(pair[v]).fr)}</span></button>`).join('')}</div>`;
 }
 
 /* ── Écran Séance */
@@ -242,7 +241,7 @@ function exoCard(s, bl, it, i) {
   const uid = s.id + ':' + key;
   const swapOpts = swapList(it.x);
   return `<div class="exo anchor ${E && E.done ? 'done' : ''} ${E && E.skipped ? 'skipped' : ''}" id="exo-${uid}">
-    <div class="exo-title">${hasExThumb(eff) && !pair ? `<button class="ethumb" data-act="exmedia" data-uid="${esc(uid)}" data-v="image" aria-label="Voir l’image">${exThumb(eff)}</button>` : ''}<div class="grow">
+    <div class="exo-title"><div class="grow">
       <div class="exo-name">${esc(eff !== it.x ? d.fr : itemLabel(it))}</div>
       <div class="exo-en">${esc(d.en)}${E && E.swap ? ` · variante de ${esc(itemLabel(it))}` : ''}</div>
     </div><div class="presc num">${presc(it)}</div></div>
@@ -269,7 +268,7 @@ function exoCard(s, bl, it, i) {
     </div>
   </div>`;
 }
-/* Boutons Vidéo, Image et Variante d'un exercice, et le panneau ouvert */
+/* Boutons Photo, Vidéo et Variante d'un exercice, et le panneau ouvert : rien n'est chargé tant qu'on n'appuie pas */
 function mediaBar(k, uid, variantPanel, variantSet) {
   const open = UI.exMedia && UI.exMedia.uid === uid ? UI.exMedia.v : null; const nv = videosFor(k).length; const im = exImg(k);
   const btn = (v, label, icon) => `<button class="btn small ${open === v ? 'primary' : ''}" data-act="exmedia" data-uid="${esc(uid)}" data-v="${v}" aria-pressed="${open === v}">${icon}${label}</button>`;
@@ -277,7 +276,7 @@ function mediaBar(k, uid, variantPanel, variantSet) {
   if (open === 'video') panel = videoBlock(k, uid);
   if (open === 'variant') panel = variantPanel || '';
   if (open === 'image') panel = `<figure class="bigthumb">${exThumb(k)}${im && im.file ? `<figcaption class="small faint">${im.note ? esc(im.note) + ' · ' : ''}Photo ${esc(im.source || '')}</figcaption>` : '<figcaption class="small faint">Dessin du mouvement (pas de photo pour cet exercice)</figcaption>'}</figure>`;
-  return `<div class="row media-btns">${btn('video', 'Vidéo', IC.video)}${btn('image', 'Image', IC.image)}${variantPanel ? btn('variant', variantSet ? 'Variante ✓' : 'Variante', IC.swap) : ''}</div>${panel ? `<div class="media-panel">${panel}</div>` : ''}`;
+  return `<div class="row media-btns">${hasExThumb(k) ? btn('image', im && im.file ? 'Photo' : 'Dessin', IC.image) : ''}${nv ? btn('video', nv > 1 ? `Vidéos (${nv})` : 'Vidéo', IC.video) : ''}${variantPanel ? btn('variant', variantSet ? 'Variante ✓' : 'Variante', IC.swap) : ''}</div>${panel ? `<div class="media-panel">${panel}</div>` : ''}`;
 }
 /* Variantes possibles : exercices de la même famille (renfo, gainage, cardio) qui travaillent les mêmes
    muscles principaux (au moins la moitié en commun) ; « alt » dans la bibliothèque impose une liste. Ordre alphabétique. */
