@@ -135,7 +135,7 @@ function sessionSteps(s) {
   s.blocks.forEach(bl => {
     if (bl.type === 'rest') { pre = bl.title; return; }
     if (bl.type === 'wod') { st.push({ k: 'wod', bl, pre }); pre = ''; return; }
-    bl.items.forEach((it, i) => { st.push({ k: 'ex', bl, it, i, pre: i === 0 ? pre : '' }); }); pre = '';
+    bl.items.forEach((it, i) => { st.push({ k: 'ex', s, bl, it, i, pre: i === 0 ? pre : '' }); }); pre = '';
   });
   st.push({ k: 'c' }, { k: 'b' });
   return st;
@@ -344,6 +344,7 @@ function gateRest(a, b) {
   if (a.k === 'w') return !a.s.warmup.length ? 0 : b.k === 'ex' && (b.it.unit || exDef(b.it.x).unit) === 'min' ? 0 : 60;
   if (b.k === 'wod') return 120;
   if (b.k === 'c') return 60;
+  if (b.s && b.s.gate) return b.s.gate; // séance avec transition fixe entre exercices (installation comprise)
   const r = Math.max(...b.bl.items.map(o => Number(o.rest) || 0));
   return r >= 120 || /^[1-5]$/.test(String(b.it.reps)) ? 150 : 90;
 }

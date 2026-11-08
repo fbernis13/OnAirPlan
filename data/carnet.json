@@ -4,7 +4,7 @@
  "id": "crossfit",
  "title": "Programme de reprise – Salle On Air",
  "source": "programme-reprise-on-air.md",
- "updatedAt": "2026-10-11",
+ "updatedAt": "2026-11-08",
  "cycles": [
   {
    "n": 1,
@@ -52,7 +52,7 @@
   },
   "R2": {
    "label": "S2",
-   "name": "Haut du corps pousser / tirer",
+   "name": "Haut du corps + core + finisher",
    "type": "force"
   },
   "WOD": {
@@ -69,7 +69,7 @@
  "rules": [
   "Signaux d’arrêt : douleur inhabituelle, fourmillements ou engourdissement. On arrête l’exercice et on passe à une variante plus légère.",
   "Base CrossFit : mouvements poly-articulaires d’abord. Sur chaque cycle, on vérifie l’équilibre des groupes musculaires ; l’isolation ne sert qu’à rattraper un groupe en retard (aux cycles 3 et 4 : leg curl pour les ischios, seul travail de flexion du genou).",
-  "Deux objectifs suivis sur tout le programme : tractions strictes et pompes. Test au début de chaque S2, puis travail spécifique en S1 (pompes), S2 et S3 (tractions). Les résultats s’affichent dans l’onglet Progression.",
+  "Deux objectifs suivis sur tout le programme : tractions strictes et pompes. Test au début de chaque S2, puis travail spécifique en S1 (pompes) et S3 (tractions). Les résultats s’affichent dans l’onglet Progression.",
   "Si une séance a été trop dure (RPE > 8 au cycle 1-2, ou courbatures plus de 3 jours), garde les mêmes charges à la séance suivante.",
   "Si tout est facile, augmente de 2,5 à 5 kg sur le haut du corps et de 5 à 10 kg sur le bas du corps d’un cycle à l’autre.",
   "Ordre type dans un cycle : S1 → Cardio → S2 → WOD → S3, avec au moins un jour de repos après le WOD ou une séance de jambes lourde.",
@@ -361,7 +361,7 @@
    "id": "c1-r2",
    "cycle": 1,
    "slot": "R2",
-   "title": "Haut du corps pousser / tirer",
+   "title": "Haut du corps + core + finisher",
    "warmup": [
     {
      "t": "5 min rameur ou SkiErg facile",
@@ -371,7 +371,7 @@
      ]
     },
     {
-     "t": "Rotations d’épaules avec élastique, dislocations au bâton, 10 band pull-aparts, dead hang 3 × 10-15 s",
+     "t": "Rotations d’épaules avec élastique, 10 band pull-aparts, dead hang 3 × 10-15 s, 1 série légère de développé couché",
      "x": [
       "shoulder_band",
       "band_pull",
@@ -408,10 +408,12 @@
      "l": "A",
      "items": [
       {
-       "x": "iso_chest",
+       "x": "chest_press",
        "sets": 3,
-       "reps": "12",
-       "rest": 90
+       "reps": "8-12",
+       "rest": 120,
+       "label": "Développé couché haltères ou machine",
+       "note": "Machine (guidée ou Hammer) ou haltères sur banc plat"
       }
      ]
     },
@@ -419,29 +421,25 @@
      "l": "B",
      "items": [
       {
-       "x": "latpull",
+       "x": "seated_row",
        "sets": 3,
-       "reps": "12",
-       "rest": 90
+       "reps": "8-12",
+       "rest": 105,
+       "label": "Rowing assis à la poulie",
+       "note": "Récup 1 min 30 à 2 min"
       }
      ]
     },
     {
      "l": "C",
-     "type": "superset",
-     "rounds": 3,
      "items": [
       {
-       "x": "db_seat_press",
+       "x": "latpull",
        "sets": 3,
-       "reps": "12",
-       "rest": 0
-      },
-      {
-       "x": "seated_row",
-       "sets": 3,
-       "reps": "12",
-       "rest": 75
+       "reps": "8-12",
+       "rest": 105,
+       "label": "Tirage vertical",
+       "note": "Récup 1 min 30 à 2 min"
       }
      ]
     },
@@ -449,55 +447,124 @@
      "l": "D",
      "items": [
       {
-       "x": "ringrow",
-       "sets": 3,
-       "reps": "10",
-       "rest": 60,
-       "note": "Corps incliné, pieds loin"
+       "x": "shoulder_mach",
+       "sets": 2,
+       "reps": "8-12",
+       "rest": 105,
+       "label": "Développé épaules haltères ou machine",
+       "note": "Machine (guidée ou Hammer) ou haltères assis · récup 1 min 30 à 2 min"
       }
      ]
     },
     {
      "l": "E",
-     "title": "Bras",
-     "rounds": 3,
      "items": [
       {
-       "x": "pushup_par",
-       "sets": 3,
-       "reps": "8-12",
-       "rest": 60
+       "x": "lat_raise",
+       "sets": 2,
+       "reps": "12-20",
+       "rest": 75,
+       "note": "Récup 1 min à 1 min 30"
       }
      ]
     },
     {
      "l": "F",
-     "type": "superset",
-     "rounds": 3,
-     "title": "Bras",
      "items": [
       {
-       "x": "hammer_curl",
-       "sets": 3,
-       "reps": "12",
+       "x": "ez_curl",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 75,
+       "label": "Curl biceps",
+       "note": "Barre EZ ou haltères · récup 1 min à 1 min 30"
+      }
+     ]
+    },
+    {
+     "l": "G",
+     "items": [
+      {
+       "x": "rope_pd",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 75,
+       "label": "Extension triceps à la poulie",
+       "note": "Récup 1 min à 1 min 30"
+      }
+     ]
+    },
+    {
+     "l": "H",
+     "type": "circuit",
+     "title": "Core · 10 à 12 min",
+     "rounds": 2,
+     "items": [
+      {
+       "x": "situp",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 0,
+       "label": "Sit-up contrôlé",
+       "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
+      },
+      {
+       "x": "pallof",
+       "sets": 2,
+       "reps": "20-30 s",
+       "unit": "time",
+       "rest": 0,
+       "label": "Pallof statique à la poulie",
+       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
+      },
+      {
+       "x": "db_side_bend",
+       "sets": 2,
+       "reps": "10-15/côté",
+       "rest": 0,
+       "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
+      },
+      {
+       "x": "plank_fa",
+       "sets": 2,
+       "reps": "20-40 s",
+       "rest": 60,
+       "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
+      }
+     ]
+    },
+    {
+     "l": "I",
+     "type": "wod",
+     "title": "Finisher · 3 tours",
+     "rounds": 3,
+     "desc": "3 tours : corde à sauter, rameur, Assault bike, puis 60 s de récupération.",
+     "items": [
+      {
+       "x": "single_under",
+       "sets": 0,
+       "reps": "50 sauts simples",
        "rest": 0
       },
       {
-       "x": "db_oh_triceps",
-       "sets": 3,
-       "reps": "12",
-       "rest": 60
+       "x": "rower_wod",
+       "sets": 0,
+       "reps": "15 cal affichées",
+       "rest": 0
+      },
+      {
+       "x": "assault_wod",
+       "sets": 0,
+       "reps": "10 cal affichées",
+       "rest": 60,
+       "label": "Assault bike"
       }
      ]
     }
    ],
    "cooldown": [
     {
-     "t": "Marche",
-     "x": []
-    },
-    {
-     "t": "Étirements pectoraux contre le mur, dorsaux, triceps, avant-bras",
+     "t": "Étirements pectoraux, épaules, dorsaux, triceps, avant-bras",
      "x": [
       "st_pec",
       "st_lat",
@@ -506,7 +573,8 @@
      ]
     }
    ],
-   "goal": "Reprendre pousser et tirer (machines Hammer, haltères) et recommencer la suspension à la barre en volume court."
+   "goal": "Haut du corps complet en 40 à 45 min (pousser, tirer, épaules, bras), puis 10 à 12 min de core et un finisher court. Séries de travail à RPE 6 (3-4 répétitions en réserve) ; les séries d’échauffement ne comptent pas. Entre deux exercices, environ 2 min, installation comprise.",
+   "gate": 120
   },
   {
    "id": "c1-wod",
@@ -1012,20 +1080,21 @@
    "id": "c2-r2",
    "cycle": 2,
    "slot": "R2",
-   "title": "Haut du corps pousser / tirer",
+   "title": "Haut du corps + core + finisher",
    "warmup": [
     {
-     "t": "5 min SkiErg",
+     "t": "5 min rameur ou SkiErg facile",
      "x": [
+      "rower",
       "skierg"
      ]
     },
     {
-     "t": "Band pull-aparts, dead hang 3 × 20-30 s, pompes inclinées sur la barre au rack",
+     "t": "Rotations d’épaules avec élastique, 10 band pull-aparts, dead hang 3 × 20-30 s, 1 série légère de développé couché",
      "x": [
+      "shoulder_band",
       "band_pull",
-      "dead_hang",
-      "incline_pushup"
+      "dead_hang"
      ]
     }
    ],
@@ -1058,11 +1127,12 @@
      "l": "A",
      "items": [
       {
-       "x": "bench",
-       "sets": 4,
-       "reps": "10",
+       "x": "chest_press",
+       "sets": 3,
+       "reps": "8-12",
        "rest": 120,
-       "note": "RPE 7"
+       "label": "Développé couché haltères ou machine",
+       "note": "Machine (guidée ou Hammer) ou haltères sur banc plat"
       }
      ]
     },
@@ -1070,31 +1140,25 @@
      "l": "B",
      "items": [
       {
-       "x": "banded_pu",
-       "sets": 4,
-       "reps": "6-8",
-       "rest": 90
+       "x": "seated_row",
+       "sets": 3,
+       "reps": "8-12",
+       "rest": 105,
+       "label": "Rowing assis à la poulie",
+       "note": "Récup 1 min 30 à 2 min"
       }
      ]
     },
     {
      "l": "C",
-     "type": "superset",
-     "rounds": 3,
      "items": [
       {
-       "x": "db_stand_press",
+       "x": "latpull",
        "sets": 3,
-       "reps": "10",
-       "rest": 0
-      },
-      {
-       "x": "bor",
-       "sets": 3,
-       "reps": "10",
-       "rest": 75,
-       "label": "Rowing barre penché, prise supination",
-       "variant": "Prise en supination ; la vidéo peut montrer une autre prise."
+       "reps": "8-12",
+       "rest": 105,
+       "label": "Tirage vertical",
+       "note": "Récup 1 min 30 à 2 min"
       }
      ]
     },
@@ -1102,32 +1166,24 @@
      "l": "D",
      "items": [
       {
-       "x": "pushup_par",
-       "sets": 3,
-       "reps": "max propre",
-       "rest": 60,
-       "note": "Garder 2 répétitions en réserve"
+       "x": "shoulder_mach",
+       "sets": 2,
+       "reps": "8-12",
+       "rest": 105,
+       "label": "Développé épaules haltères ou machine",
+       "note": "Machine (guidée ou Hammer) ou haltères assis · récup 1 min 30 à 2 min"
       }
      ]
     },
     {
      "l": "E",
-     "type": "superset",
-     "title": "Bras",
-     "rounds": 3,
      "items": [
       {
-       "x": "dip_assist",
-       "sets": 3,
-       "reps": "10",
-       "rest": 0
-      },
-      {
-       "x": "ringrow",
-       "sets": 3,
-       "reps": "12",
-       "rest": 60,
-       "note": "Pieds plus en avant pour durcir"
+       "x": "lat_raise",
+       "sets": 2,
+       "reps": "12-20",
+       "rest": 75,
+       "note": "Récup 1 min à 1 min 30"
       }
      ]
     },
@@ -1135,45 +1191,109 @@
      "l": "F",
      "items": [
       {
-       "x": "hollow",
-       "sets": 3,
-       "reps": "30 s",
-       "rest": 45
+       "x": "ez_curl",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 75,
+       "label": "Curl biceps",
+       "note": "Barre EZ ou haltères · récup 1 min à 1 min 30"
       }
      ]
     },
     {
      "l": "G",
-     "type": "superset",
-     "rounds": 3,
-     "title": "Bras",
      "items": [
       {
-       "x": "ez_curl",
-       "sets": 3,
-       "reps": "10",
+       "x": "rope_pd",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 75,
+       "label": "Extension triceps à la poulie",
+       "note": "Récup 1 min à 1 min 30"
+      }
+     ]
+    },
+    {
+     "l": "H",
+     "type": "circuit",
+     "title": "Core · 10 à 12 min",
+     "rounds": 2,
+     "items": [
+      {
+       "x": "situp",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 0,
+       "label": "Sit-up contrôlé",
+       "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
+      },
+      {
+       "x": "pallof",
+       "sets": 2,
+       "reps": "20-30 s",
+       "unit": "time",
+       "rest": 0,
+       "label": "Pallof statique à la poulie",
+       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
+      },
+      {
+       "x": "db_side_bend",
+       "sets": 2,
+       "reps": "10-15/côté",
+       "rest": 0,
+       "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
+      },
+      {
+       "x": "plank_fa",
+       "sets": 2,
+       "reps": "20-40 s",
+       "rest": 60,
+       "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
+      }
+     ]
+    },
+    {
+     "l": "I",
+     "type": "wod",
+     "title": "Finisher · 3 tours",
+     "rounds": 3,
+     "desc": "3 tours : corde à sauter, rameur, Assault bike, puis 60 s de récupération.",
+     "items": [
+      {
+       "x": "single_under",
+       "sets": 0,
+       "reps": "50 sauts simples",
        "rest": 0
       },
       {
-       "x": "skull",
-       "sets": 3,
-       "reps": "10",
-       "rest": 60
+       "x": "rower_wod",
+       "sets": 0,
+       "reps": "15 cal affichées",
+       "rest": 0
+      },
+      {
+       "x": "assault_wod",
+       "sets": 0,
+       "reps": "10 cal affichées",
+       "rest": 60,
+       "label": "Assault bike"
       }
      ]
     }
    ],
    "cooldown": [
     {
-     "t": "Étirements pectoraux, épaules, dorsaux, avant-bras",
+     "t": "Étirements pectoraux, épaules, dorsaux, triceps, avant-bras",
      "x": [
       "st_pec",
       "st_lat",
+      "st_tri",
       "st_forearm"
      ]
     }
    ],
-   "goal": "Retour du développé couché à la barre et des tractions avec élastique, avec pompes et dips en complément."
+   "goal": "Haut du corps complet en 40 à 45 min (pousser, tirer, épaules, bras), puis 10 à 12 min de core et un finisher court. Séries de travail à RPE 7 (2-3 en réserve) ; les séries d’échauffement ne comptent pas. Entre deux exercices, environ 2 min, installation comprise.",
+   "gate": 120
   },
   {
    "id": "c2-wod",
@@ -1642,20 +1762,21 @@
    "id": "c3-r2",
    "cycle": 3,
    "slot": "R2",
-   "title": "Haut du corps pousser / tirer",
+   "title": "Haut du corps + core + finisher",
    "warmup": [
     {
-     "t": "5 min SkiErg",
+     "t": "5 min rameur ou SkiErg facile",
      "x": [
+      "rower",
       "skierg"
      ]
     },
     {
-     "t": "Dead hang 3 × 30-40 s puis active hang, pompes, 2 séries légères de développé militaire",
+     "t": "Rotations d’épaules avec élastique, 10 band pull-aparts, dead hang 3 × 30-40 s, 1 série légère de développé couché",
      "x": [
-      "dead_hang",
-      "active_hang",
-      "incline_pushup"
+      "shoulder_band",
+      "band_pull",
+      "dead_hang"
      ]
     }
    ],
@@ -1688,10 +1809,12 @@
      "l": "A",
      "items": [
       {
-       "x": "strict_press",
-       "sets": 5,
-       "reps": "6",
-       "rest": 120
+       "x": "chest_press",
+       "sets": 3,
+       "reps": "8-12",
+       "rest": 120,
+       "label": "Développé couché haltères ou machine",
+       "note": "Machine (guidée ou Hammer) ou haltères sur banc plat"
       }
      ]
     },
@@ -1699,30 +1822,25 @@
      "l": "B",
      "items": [
       {
-       "x": "strict_pu",
-       "sets": 5,
-       "reps": "5",
-       "rest": 120,
-       "note": "Élastique léger si besoin"
+       "x": "seated_row",
+       "sets": 3,
+       "reps": "8-12",
+       "rest": 105,
+       "label": "Rowing assis à la poulie",
+       "note": "Récup 1 min 30 à 2 min"
       }
      ]
     },
     {
      "l": "C",
-     "type": "superset",
-     "rounds": 4,
      "items": [
       {
-       "x": "incline_db",
-       "sets": 4,
-       "reps": "8",
-       "rest": 0
-      },
-      {
-       "x": "pendlay",
-       "sets": 4,
-       "reps": "8",
-       "rest": 90
+       "x": "latpull",
+       "sets": 3,
+       "reps": "8-12",
+       "rest": 105,
+       "label": "Tirage vertical",
+       "note": "Récup 1 min 30 à 2 min"
       }
      ]
     },
@@ -1730,32 +1848,24 @@
      "l": "D",
      "items": [
       {
-       "x": "dips",
-       "sets": 3,
-       "reps": "6-8",
-       "rest": 75
+       "x": "shoulder_mach",
+       "sets": 2,
+       "reps": "8-12",
+       "rest": 105,
+       "label": "Développé épaules haltères ou machine",
+       "note": "Machine (guidée ou Hammer) ou haltères assis · récup 1 min 30 à 2 min"
       }
      ]
     },
     {
      "l": "E",
-     "type": "superset",
-     "title": "Bras",
-     "rounds": 3,
      "items": [
       {
-       "x": "pushup_par",
-       "sets": 3,
-       "reps": "12-15",
-       "rest": 0,
-       "note": "Amplitude complète"
-      },
-      {
-       "x": "ringrow",
-       "sets": 3,
-       "reps": "12",
-       "rest": 60,
-       "note": "Pieds surélevés"
+       "x": "lat_raise",
+       "sets": 2,
+       "reps": "12-20",
+       "rest": 75,
+       "note": "Récup 1 min à 1 min 30"
       }
      ]
     },
@@ -1763,46 +1873,109 @@
      "l": "F",
      "items": [
       {
-       "x": "kb_rack_carry",
-       "sets": 3,
-       "reps": "20 m/côté",
-       "rest": 60,
-       "note": "En rack ou au-dessus de la tête"
+       "x": "ez_curl",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 75,
+       "label": "Curl biceps",
+       "note": "Barre EZ ou haltères · récup 1 min à 1 min 30"
       }
      ]
     },
     {
      "l": "G",
-     "type": "superset",
-     "rounds": 3,
-     "title": "Bras",
      "items": [
       {
-       "x": "incline_curl",
-       "sets": 3,
-       "reps": "10",
+       "x": "rope_pd",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 75,
+       "label": "Extension triceps à la poulie",
+       "note": "Récup 1 min à 1 min 30"
+      }
+     ]
+    },
+    {
+     "l": "H",
+     "type": "circuit",
+     "title": "Core · 10 à 12 min",
+     "rounds": 2,
+     "items": [
+      {
+       "x": "situp",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 0,
+       "label": "Sit-up contrôlé",
+       "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
+      },
+      {
+       "x": "pallof",
+       "sets": 2,
+       "reps": "20-30 s",
+       "unit": "time",
+       "rest": 0,
+       "label": "Pallof statique à la poulie",
+       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
+      },
+      {
+       "x": "db_side_bend",
+       "sets": 2,
+       "reps": "10-15/côté",
+       "rest": 0,
+       "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
+      },
+      {
+       "x": "plank_fa",
+       "sets": 2,
+       "reps": "20-40 s",
+       "rest": 60,
+       "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
+      }
+     ]
+    },
+    {
+     "l": "I",
+     "type": "wod",
+     "title": "Finisher · 3 tours",
+     "rounds": 3,
+     "desc": "3 tours : corde à sauter, rameur, Assault bike, puis 60 s de récupération.",
+     "items": [
+      {
+       "x": "single_under",
+       "sets": 0,
+       "reps": "50 sauts simples",
        "rest": 0
       },
       {
-       "x": "db_oh_triceps",
-       "sets": 3,
-       "reps": "10",
-       "rest": 60
+       "x": "rower_wod",
+       "sets": 0,
+       "reps": "15 cal affichées",
+       "rest": 0
+      },
+      {
+       "x": "assault_wod",
+       "sets": 0,
+       "reps": "10 cal affichées",
+       "rest": 60,
+       "label": "Assault bike"
       }
      ]
     }
    ],
    "cooldown": [
     {
-     "t": "Étirements pectoraux, épaules, dorsaux, avant-bras",
+     "t": "Étirements pectoraux, épaules, dorsaux, triceps, avant-bras",
      "x": [
       "st_pec",
       "st_lat",
+      "st_tri",
       "st_forearm"
      ]
     }
    ],
-   "goal": "Gymnastique stricte et charges plus lourdes : strict press, tractions strictes, dips. RPE 7-8, 2 répétitions en réserve."
+   "goal": "Haut du corps complet en 40 à 45 min (pousser, tirer, épaules, bras), puis 10 à 12 min de core et un finisher court. Séries de travail à RPE 7-8 (2 en réserve) ; les séries d’échauffement ne comptent pas. Entre deux exercices, environ 2 min, installation comprise.",
+   "gate": 120
   },
   {
    "id": "c3-wod",
@@ -2284,18 +2457,20 @@
    "id": "c4-r2",
    "cycle": 4,
    "slot": "R2",
-   "title": "Haut du corps pousser / tirer",
+   "title": "Haut du corps + core + finisher",
    "warmup": [
     {
-     "t": "5 min SkiErg",
+     "t": "5 min rameur ou SkiErg facile",
      "x": [
+      "rower",
       "skierg"
      ]
     },
     {
-     "t": "Scapular pull-ups, dead hang 2 × 45 s, montée en charge au développé couché",
+     "t": "Rotations d’épaules avec élastique, 10 band pull-aparts, dead hang 2 × 45 s, 1 série légère de développé couché",
      "x": [
-      "scap_pullup",
+      "shoulder_band",
+      "band_pull",
       "dead_hang"
      ]
     }
@@ -2329,12 +2504,12 @@
      "l": "A",
      "items": [
       {
-       "x": "bench",
-       "sets": 5,
-       "reps": "5",
-       "rest": 150,
-       "label": "Développé couché",
-       "note": "RPE 8 · récup 2-3 min"
+       "x": "chest_press",
+       "sets": 3,
+       "reps": "8-12",
+       "rest": 120,
+       "label": "Développé couché haltères ou machine",
+       "note": "Machine (guidée ou Hammer) ou haltères sur banc plat"
       }
      ]
     },
@@ -2342,11 +2517,12 @@
      "l": "B",
      "items": [
       {
-       "x": "strict_pu",
-       "sets": 5,
-       "reps": "5",
-       "rest": 120,
-       "note": "Lestées si 8 strictes faciles"
+       "x": "seated_row",
+       "sets": 3,
+       "reps": "8-12",
+       "rest": 105,
+       "label": "Rowing assis à la poulie",
+       "note": "Récup 1 min 30 à 2 min"
       }
      ]
     },
@@ -2354,100 +2530,147 @@
      "l": "C",
      "items": [
       {
-       "x": "push_press",
-       "sets": 4,
-       "reps": "6",
-       "rest": 120
+       "x": "latpull",
+       "sets": 3,
+       "reps": "8-12",
+       "rest": 105,
+       "label": "Tirage vertical",
+       "note": "Récup 1 min 30 à 2 min"
       }
      ]
     },
     {
      "l": "D",
-     "type": "superset",
-     "rounds": 3,
      "items": [
       {
-       "x": "ring_dips",
-       "sets": 3,
-       "reps": "6-8",
-       "rest": 0
-      },
-      {
-       "x": "ringrow",
-       "sets": 3,
-       "reps": "10",
-       "rest": 75,
-       "label": "Ring row pieds surélevés"
+       "x": "shoulder_mach",
+       "sets": 2,
+       "reps": "8-12",
+       "rest": 105,
+       "label": "Développé épaules haltères ou machine",
+       "note": "Machine (guidée ou Hammer) ou haltères assis · récup 1 min 30 à 2 min"
       }
      ]
     },
     {
      "l": "E",
-     "type": "superset",
-     "title": "Bras",
-     "rounds": 3,
      "items": [
       {
-       "x": "pushup_par",
-       "sets": 3,
-       "reps": "12",
-       "rest": 0,
-       "note": "Lestées si 15 faciles"
-      },
-      {
-       "x": "ringrow",
-       "sets": 3,
-       "reps": "12",
-       "rest": 60,
-       "note": "Pieds surélevés"
+       "x": "lat_raise",
+       "sets": 2,
+       "reps": "12-20",
+       "rest": 75,
+       "note": "Récup 1 min à 1 min 30"
       }
      ]
     },
     {
      "l": "F",
-     "rounds": 3,
      "items": [
       {
-       "x": "kb_rack_carry",
-       "sets": 3,
-       "reps": "20 m/côté",
-       "rest": 60,
-       "note": "Kettlebell au-dessus de la tête"
+       "x": "ez_curl",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 75,
+       "label": "Curl biceps",
+       "note": "Barre EZ ou haltères · récup 1 min à 1 min 30"
       }
      ]
     },
     {
      "l": "G",
-     "type": "superset",
-     "rounds": 3,
-     "title": "Bras",
      "items": [
       {
-       "x": "ez_curl",
-       "sets": 3,
-       "reps": "8-10",
+       "x": "rope_pd",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 75,
+       "label": "Extension triceps à la poulie",
+       "note": "Récup 1 min à 1 min 30"
+      }
+     ]
+    },
+    {
+     "l": "H",
+     "type": "circuit",
+     "title": "Core · 10 à 12 min",
+     "rounds": 2,
+     "items": [
+      {
+       "x": "situp",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 0,
+       "label": "Sit-up contrôlé",
+       "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
+      },
+      {
+       "x": "pallof",
+       "sets": 2,
+       "reps": "20-30 s",
+       "unit": "time",
+       "rest": 0,
+       "label": "Pallof statique à la poulie",
+       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
+      },
+      {
+       "x": "db_side_bend",
+       "sets": 2,
+       "reps": "10-15/côté",
+       "rest": 0,
+       "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
+      },
+      {
+       "x": "plank_fa",
+       "sets": 2,
+       "reps": "20-40 s",
+       "rest": 60,
+       "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
+      }
+     ]
+    },
+    {
+     "l": "I",
+     "type": "wod",
+     "title": "Finisher · 3 tours",
+     "rounds": 3,
+     "desc": "3 tours : corde à sauter, rameur, Assault bike, puis 60 s de récupération.",
+     "items": [
+      {
+       "x": "single_under",
+       "sets": 0,
+       "reps": "50 sauts simples",
        "rest": 0
       },
       {
-       "x": "skull",
-       "sets": 3,
-       "reps": "8-10",
-       "rest": 60
+       "x": "rower_wod",
+       "sets": 0,
+       "reps": "15 cal affichées",
+       "rest": 0
+      },
+      {
+       "x": "assault_wod",
+       "sets": 0,
+       "reps": "10 cal affichées",
+       "rest": 60,
+       "label": "Assault bike"
       }
      ]
     }
    ],
    "cooldown": [
     {
-     "t": "Étirements pectoraux, épaules, dorsaux, avant-bras",
+     "t": "Étirements pectoraux, épaules, dorsaux, triceps, avant-bras",
      "x": [
       "st_pec",
       "st_lat",
+      "st_tri",
       "st_forearm"
      ]
     }
    ],
-   "goal": "Consolider les charges du haut du corps (5 × 5) et introduire le push press. Tractions lestées si 8 strictes deviennent faciles."
+   "goal": "Haut du corps complet en 40 à 45 min (pousser, tirer, épaules, bras), puis 10 à 12 min de core et un finisher court. Séries de travail à RPE 8 (1-2 en réserve) ; les séries d’échauffement ne comptent pas. Entre deux exercices, environ 2 min, installation comprise.",
+   "gate": 120
   },
   {
    "id": "c4-wod",
