@@ -46,7 +46,7 @@ function videoBlock(k, ctx) {
 function viewProgramme() {
   const doneCount = SESSIONS.filter(s => sessionStatus(s.id) === 'done').length;
   const next = SESSIONS.find(s => sessionStatus(s.id) !== 'done');
-  let h = `${AUTH.user ? `<h2 class="hello">Bonjour ${esc(userName())}</h2>` : ''}<div class="card" style="margin-top:${AUTH.user ? '.5rem' : '1rem'}">
+  let h = `${AUTH.user ? `<h2 class="hello">Bonjour ${esc(userName())}</h2>` : ''}<div class="card hero" style="margin-top:${AUTH.user ? '.5rem' : '1rem'}">
     <div class="row"><div class="grow"><div class="faint small" style="font-weight:700;text-transform:uppercase;letter-spacing:.08em">${esc(PROGRAMS[programId()].label)} · Salle On Air</div>
     <div style="font-family:var(--f-display);font-size:1.5rem;font-weight:700;line-height:1.15"><span class="num">${doneCount}</span> / ${SESSIONS.length} séances terminées</div></div></div>
     <div class="progressbar" style="margin:.5rem 0"><i style="width:${doneCount / SESSIONS.length * 100}%"></i></div>

@@ -49,7 +49,7 @@ page = f'''<!doctype html>
 <meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Carnet On Air">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
-<style>:root{{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}}body{{margin:0}}img{{max-width:100%}}[hidden]{{display:none!important}}</style>
+<style>body{{margin:0}}img{{max-width:100%}}[hidden]{{display:none!important}}</style>
 {supa_tag}</head><body>
 {page_body(site_js)}</body></html>
 '''

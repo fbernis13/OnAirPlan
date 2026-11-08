@@ -5,7 +5,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Carnet On Air">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png">
-<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.0/dist/umd/supabase.js"></script>
 </head><body>
 <title>Carnet On Air</title>
@@ -455,6 +455,89 @@ button.ethumb { padding: 0; border: 0; background: none; cursor: pointer; }
 
 .dur-line { margin: .1rem 0 0; color: var(--ink-2); }
 .dur-line strong { color: var(--accent); }
+
+/* ── Look 2026 : verre dépoli, cartes arrondies sans bordure, barre d'onglets flottante, dégradés de la couleur du compte.
+   Couche ajoutée par-dessus le reste : la retirer rend l'ancien style. */
+:root { --radius: 1.15rem; --nav-gap: max(10px, env(safe-area-inset-bottom, 0px)); --nav-off: calc(var(--nav-h) + var(--nav-gap) + 8px);
+  --accent-2: color-mix(in oklab, var(--accent) 70%, #000);
+  --grad: linear-gradient(135deg, color-mix(in oklab, var(--accent) 85%, #fff) 0%, var(--accent) 45%, var(--accent-2) 100%);
+  --glass: color-mix(in srgb, var(--surface) 72%, transparent);
+  --shadow: 0 1px 1px rgb(15 25 30 / .04), 0 6px 20px -6px rgb(15 25 30 / .12);
+  --shadow-lg: 0 12px 32px -10px color-mix(in srgb, var(--accent) 55%, transparent); }
+:root[data-theme="dark"] { --shadow: 0 0 0 1px rgb(255 255 255 / .05), 0 8px 24px -8px rgb(0 0 0 / .6); --accent-2: color-mix(in oklab, var(--accent) 55%, #000); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --shadow: 0 0 0 1px rgb(255 255 255 / .05), 0 8px 24px -8px rgb(0 0 0 / .6); --accent-2: color-mix(in oklab, var(--accent) 55%, #000); } }
+body { background:
+  radial-gradient(120% 60% at 100% -10%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 60%),
+  radial-gradient(90% 50% at -10% 0%, color-mix(in srgb, var(--accent) 9%, transparent), transparent 60%),
+  var(--bg); background-attachment: fixed; min-height: 100dvh; }
+.app { padding-bottom: calc(var(--nav-off) + 6rem); }
+
+/* Barre du haut en verre */
+.topbar { background: color-mix(in srgb, var(--bg) 70%, transparent); -webkit-backdrop-filter: saturate(1.8) blur(18px); backdrop-filter: saturate(1.8) blur(18px); border-bottom: 1px solid color-mix(in srgb, var(--line) 55%, transparent); }
+.topbar h1 { font-size: 1.5rem; letter-spacing: -.005em; }
+.logo { width: 2.1rem; height: 2.1rem; border-radius: .65rem; box-shadow: var(--shadow-lg); }
+.iconbtn { border: 0; background: var(--glass); box-shadow: var(--shadow); border-radius: 999px; }
+
+/* Titres plus affirmés */
+h2 { font-size: 1.9rem; letter-spacing: -.01em; }
+.hello { font-size: 2.1rem; margin-top: 1.1rem; background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+/* Cartes : sans bordure, ombre douce */
+.card, .listbtn, .exo, .gate, .goal { border: 0; box-shadow: var(--shadow); border-radius: var(--radius); }
+.listbtn { padding: .9rem 1rem; transition: transform .15s ease, box-shadow .15s ease; }
+.listbtn:active { transform: scale(.985); }
+.exo.done { box-shadow: 0 0 0 2px var(--ok), var(--shadow); }
+.goal { background: color-mix(in srgb, var(--accent-soft) 55%, var(--surface)); border-left: 0; position: relative; overflow: hidden; padding-left: 1.05rem; }
+.goal::before { content: ""; position: absolute; inset: 0 auto 0 0; width: 4px; background: var(--grad); }
+
+/* Carte d'accueil : dégradé de la couleur du compte */
+.card.hero { background: var(--grad); color: var(--accent-ink); box-shadow: var(--shadow-lg); padding: 1.15rem; position: relative; overflow: hidden; }
+.card.hero::after { content: ""; position: absolute; right: -3.5rem; top: -3.5rem; width: 11rem; height: 11rem; border-radius: 50%; background: radial-gradient(circle, rgb(255 255 255 / .22), transparent 70%); pointer-events: none; }
+.card.hero .faint { color: color-mix(in srgb, var(--accent-ink) 75%, transparent); }
+.card.hero .progressbar { background: color-mix(in srgb, var(--accent-ink) 22%, transparent); }
+.card.hero .progressbar > i { background: var(--accent-ink); }
+.card.hero .btn.primary { background: var(--accent-ink); color: var(--accent); border: 0; box-shadow: 0 6px 18px -6px rgb(0 0 0 / .35); }
+
+/* Boutons en pilule */
+.btn { border-radius: 999px; border-color: color-mix(in srgb, var(--line) 80%, transparent); }
+.btn.primary { background: var(--grad); border: 0; box-shadow: var(--shadow-lg); }
+.btn.small { padding-inline: .85rem; }
+.seg { border-radius: 999px; padding: .25rem; background: color-mix(in srgb, var(--surface-2) 80%, transparent); }
+.seg button { border-radius: 999px; }
+.chip { border: 0; background: var(--glass); box-shadow: var(--shadow); }
+.pill.acc { background: color-mix(in srgb, var(--accent) 14%, transparent); }
+.slot { border-radius: .8rem; }
+.slot.done { background: var(--grad); color: var(--accent-ink); }
+.progressbar { height: .45rem; }
+.progressbar > i { background: var(--grad); border-radius: 999px; }
+input[type="text"], input[type="number"], input[type="date"], input[type="search"], select, textarea { border-radius: .8rem; border-color: color-mix(in srgb, var(--line) 80%, transparent); }
+input[type="search"] { border-radius: 999px; padding-inline: 1rem; background: var(--glass); border: 0; box-shadow: var(--shadow); }
+.stepper, .checkbtn { border-radius: .8rem; }
+.recup, .emom { border: 0; border-radius: 1rem; background: color-mix(in srgb, var(--accent) 12%, var(--surface)); }
+.blockhead .letter { background: var(--grad); color: var(--accent-ink); width: 1.9rem; height: 1.9rem; border-radius: .65rem; display: inline-grid; place-items: center; font-size: 1.15rem; align-self: center; }
+
+/* Barre d'onglets flottante, en verre */
+nav.tabs { left: max(12px, env(safe-area-inset-left, 0px)); right: max(12px, env(safe-area-inset-right, 0px)); bottom: var(--nav-gap); padding: .3rem; border: 1px solid color-mix(in srgb, var(--line) 50%, transparent); border-radius: 1.75rem; background: var(--glass); -webkit-backdrop-filter: saturate(1.8) blur(22px); backdrop-filter: saturate(1.8) blur(22px); box-shadow: 0 10px 30px -8px rgb(10 20 25 / .3); max-width: 44rem; margin-inline: auto; }
+nav.tabs button { min-height: calc(var(--nav-h) - .6rem); border-radius: 1.45rem; padding-block: .35rem; transition: background .2s ease, color .2s ease; }
+nav.tabs button[aria-current="page"] { background: color-mix(in srgb, var(--accent) 15%, transparent); }
+nav.tabs button[aria-current="page"] span { text-decoration: none; }
+
+/* Éléments posés au-dessus de la barre flottante */
+.timer { left: max(12px, env(safe-area-inset-left, 0px)); right: max(12px, env(safe-area-inset-right, 0px)); bottom: var(--nav-off); border-radius: 1.2rem; overflow: hidden; box-shadow: 0 10px 30px -8px rgb(0 0 0 / .4); max-width: 44rem; margin-inline: auto; }
+.timer button { border-radius: 999px; }
+.toast { bottom: calc(var(--nav-off) + 4.5rem); border-radius: 999px; padding-inline: 1.1rem; }
+.stepbar { bottom: var(--nav-off); background: transparent; border-top: 0; padding-top: .5rem; }
+.stepbar::before { content: ""; position: absolute; inset: -.6rem -16px -.6rem; z-index: -1; background: linear-gradient(to top, var(--bg) 75%, transparent); }
+body:has(.timer) .stepbar { bottom: calc(var(--nav-off) + 4.6rem); }
+.sheet { border-radius: 1.6rem 1.6rem 0 0; }
+.gate-ring { box-shadow: var(--shadow-lg); }
+.gate-ring span { background: var(--surface); }
+.machine-pick button { border-radius: 1rem; border-color: color-mix(in srgb, var(--line) 80%, transparent); }
+.machine-pick button[aria-pressed="true"] { background: color-mix(in srgb, var(--accent) 12%, var(--surface)); }
+.seg { border-radius: 1.4rem; }
+.timer { gap: .45rem; padding: .55rem .75rem; }
+.timer button { min-width: 2.45rem; height: 2.45rem; }
+.timer .lbl { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; overflow-wrap: anywhere; }
 </style>
 <div id="app" class="app"></div>
 <script>
@@ -1390,7 +1473,7 @@ function videoBlock(k, ctx) {
 function viewProgramme() {
   const doneCount = SESSIONS.filter(s => sessionStatus(s.id) === 'done').length;
   const next = SESSIONS.find(s => sessionStatus(s.id) !== 'done');
-  let h = `${AUTH.user ? `<h2 class="hello">Bonjour ${esc(userName())}</h2>` : ''}<div class="card" style="margin-top:${AUTH.user ? '.5rem' : '1rem'}">
+  let h = `${AUTH.user ? `<h2 class="hello">Bonjour ${esc(userName())}</h2>` : ''}<div class="card hero" style="margin-top:${AUTH.user ? '.5rem' : '1rem'}">
     <div class="row"><div class="grow"><div class="faint small" style="font-weight:700;text-transform:uppercase;letter-spacing:.08em">${esc(PROGRAMS[programId()].label)} · Salle On Air</div>
     <div style="font-family:var(--f-display);font-size:1.5rem;font-weight:700;line-height:1.15"><span class="num">${doneCount}</span> / ${SESSIONS.length} séances terminées</div></div></div>
     <div class="progressbar" style="margin:.5rem 0"><i style="width:${doneCount / SESSIONS.length * 100}%"></i></div>
