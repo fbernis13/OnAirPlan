@@ -435,12 +435,12 @@
      "l": "G",
      "items": [
       {
-       "x": "ez_curl",
+       "x": "db_curl",
        "sets": 2,
        "reps": "10-15",
        "rest": 75,
        "label": "Curl biceps",
-       "note": "Barre EZ ou haltères · récup 1 min à 1 min 30"
+       "note": "Haltères ou barre EZ · récup 1 min à 1 min 30"
       }
      ]
     },
@@ -911,12 +911,12 @@
      "l": "G",
      "items": [
       {
-       "x": "ez_curl",
+       "x": "db_curl",
        "sets": 2,
        "reps": "10-15",
        "rest": 75,
        "label": "Curl biceps",
-       "note": "Barre EZ ou haltères · récup 1 min à 1 min 30"
+       "note": "Haltères ou barre EZ · récup 1 min à 1 min 30"
       }
      ]
     },
@@ -1387,12 +1387,12 @@
      "l": "G",
      "items": [
       {
-       "x": "ez_curl",
+       "x": "db_curl",
        "sets": 2,
        "reps": "10-15",
        "rest": 75,
        "label": "Curl biceps",
-       "note": "Barre EZ ou haltères · récup 1 min à 1 min 30"
+       "note": "Haltères ou barre EZ · récup 1 min à 1 min 30"
       }
      ]
     },
@@ -1863,12 +1863,12 @@
      "l": "G",
      "items": [
       {
-       "x": "ez_curl",
+       "x": "db_curl",
        "sets": 2,
        "reps": "10-15",
        "rest": 75,
        "label": "Curl biceps",
-       "note": "Barre EZ ou haltères · récup 1 min à 1 min 30"
+       "note": "Haltères ou barre EZ · récup 1 min à 1 min 30"
       }
      ]
     },

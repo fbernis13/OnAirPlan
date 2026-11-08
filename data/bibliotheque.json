@@ -3257,6 +3257,25 @@
     "file": "images/bike_recumb.jpg",
     "source": "free-exercise-db (domaine public, Unlicense)"
    }
+  },
+  "db_curl": {
+   "fr": "Curl biceps haltères",
+   "en": "Dumbbell Biceps Curl",
+   "mv": null,
+   "vid": [
+    "fr_db_curl"
+   ],
+   "kind": "force",
+   "unit": "reps",
+   "load": true,
+   "p": [
+    "bic"
+   ],
+   "s": [],
+   "img": {
+    "file": "images/db_curl.jpg",
+    "source": "Photo fournie par Spook (2026-11-08)"
+   }
   }
  },
  "videos": {
@@ -5842,6 +5861,16 @@
    "type": "video",
    "provider": "YouTube",
    "url": "https://www.youtube.com/watch?v=ElYkuaIYfUY",
+   "checkedAt": "2026-11-08",
+   "foundVia": "Recherche web (titre relevé dans les résultats)",
+   "lang": "fr"
+  },
+  "fr_db_curl": {
+   "videoId": "u9gpe8CHfjU",
+   "title": "Curl biceps avec haltères : la bonne technique",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=u9gpe8CHfjU",
    "checkedAt": "2026-11-08",
    "foundVia": "Recherche web (titre relevé dans les résultats)",
    "lang": "fr"
