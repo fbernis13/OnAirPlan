@@ -52,12 +52,6 @@ function viewProgramme() {
     <div class="progressbar" style="margin:.5rem 0"><i style="width:${doneCount / SESSIONS.length * 100}%"></i></div>
     ${next ? `<button class="btn primary" data-act="open-session" data-id="${next.id}" style="width:100%;margin-top:.3rem">${sessionStatus(next.id) === 'started' ? 'Reprendre' : 'Prochaine séance'} : ${esc(sessLabel(next))}, ${esc(next.title)}</button>` : '<p class="muted">Programme terminé. Prévois une semaine plus légère avant le prochain bloc.</p>'}
   </div>
-  ${MACHINE_PAIRS.length ? (() => { const used = MACHINE_PAIRS.filter(p => S.machines[p.id]); const all = v => MACHINE_PAIRS.every(p => S.machines[p.id] === v);
-    const H = MACHINE_PAIRS.filter(p => p.haltero); const allH = H.length && H.every(p => S.machines[p.id] === 'haltero') && used.length === H.length;
-    const cur = !used.length ? 'plan' : all('hammer') ? 'hammer' : all('guidee') ? 'guidee' : allH ? 'haltero' : 'mix';
-    return `<div class="card stack" style="margin-top:.8rem"><div class="row"><strong class="grow">Machines</strong>${cur === 'mix' ? '<span class="pill">choix par exercice</span>' : ''}</div>
-      <div class="seg" role="group" aria-label="Machines pour tout le programme">${[['plan', 'Comme prévu'], ['guidee', 'Tout guidé'], ['hammer', 'Tout Hammer']].concat(H.length ? [['haltero', 'Haltéro']] : []).map(([v, l]) => `<button data-act="machine-all" data-v="${v}" aria-pressed="${cur === v}">${l}</button>`).join('')}</div>
-      <p class="small muted" style="margin:0">S’applique à ${MACHINE_PAIRS.length} machines.${H.length ? ` Haltéro remplace ${H.length} d’entre elles par un mouvement du catalogue à partir du cycle ${Math.min(...H.map(p => p.halteroFrom || 1))} ; avant, la machine prévue reste.` : ''} Tu peux aussi choisir exercice par exercice dans la séance. Le choix est enregistré avec ta progression.</p></div>`; })() : ''}
   <details class="more" style="margin-top:.8rem"><summary>${IC.chev} Principes et signaux d’arrêt</summary>
     <div class="card stack small">${PROGRAM_RULES.map(r => `<p style="margin:0">${esc(r)}</p>`).join('')}</div></details>`;
   const curC = UI.progCycle || (next ? next.cycle : 4);
@@ -234,7 +228,7 @@ function wodBlock(s, bl) {
 }
 function exoCard(s, bl, it, i) {
   const key = itemKey(bl, i); const E = getExLog(s.id, key, it, false);
-  const eff = plannedEx(it, E, s.cycle); const d = exDef(eff); const orig = exDef(it.x); const pair = !(E && E.swap) && PAIR_OF[it.x];
+  const eff = plannedEx(it, E, s.cycle); const d = exDef(eff); const orig = exDef(it.x); const pair = null; /* choix guidée / Hammer retiré (demande de Spook) : l'exercice prévu s'affiche */
   const side = pair ? (eff === pair.hammer ? 'hammer' : eff === pair.guidee ? 'guidee' : eff === pair.haltero ? 'haltero' : '') : '';
   const sets = E ? E.sets : Array.from({ length: Math.max(1, it.sets || 1) }, () => ({}));
   const hist = exHistory(eff).filter(hh => hh.sid !== s.id); const last = hist[hist.length - 1];

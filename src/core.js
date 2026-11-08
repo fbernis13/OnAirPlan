@@ -115,7 +115,8 @@ function exDef(k) { return EXERCISES[k] || { fr: k, en: '', kind: 'force', unit:
 function sessLabel(s) { return `C${s.cycle} · ${SESSION_TYPES[s.slot].label}`; }
 /* Machine guidée ou Hammer : choix enregistré dans la progression, sinon la machine prévue */
 function machineOk(p, v, cycle) { return !!p[v] && (v !== 'haltero' || !cycle || cycle >= (p.halteroFrom || 1)); }
-function machineEx(k, cycle) { const p = PAIR_OF[k]; const c = p && S.machines && S.machines[p.id]; return c && machineOk(p, c, cycle) ? p[c] : k; }
+/* Choix guidée / Hammer retiré le 2026-11-08 : l'exercice prévu est toujours celui du programme (les séances déjà notées gardent leur machine) */
+function machineEx(k, cycle) { return k; }
 function plannedEx(it, E, cycle) { return (E && (E.swap || E.machine)) || machineEx(it.x, cycle); }
 /* Unité de saisie : celle de l'exercice, sauf si la séance la précise (intervalles en secondes, test au rameur) */
 function itemUnit(it) { return it.unit || exDef(it.x).unit; }
