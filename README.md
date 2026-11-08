@@ -1,6 +1,6 @@
 # Carnet On Air
 
-Carnet d'entraînement mobile pour le programme de reprise à la salle On Air (4 cycles × 5 séances).
+Carnet d'entraînement mobile pour le programme de reprise à la salle On Air (4 cycles × 3 séances : bas du corps, cardio, haut du corps).
 
 ## Données et affichage séparés
 
@@ -9,7 +9,7 @@ L'affichage (`src/`) ne contient aucune donnée d'entraînement. Il lit trois do
 | Fichier | `fileType` | Contenu |
 |---|---|---|
 | `data/bibliotheque.json` | `onair.bibliotheque` | groupes musculaires, exercices du programme (muscles principaux/secondaires, unité, variantes), vidéos vérifiées, catalogue des mouvements CrossFit |
-| `data/carnet.json` | `onair.carnet` | cycles, types de séance, 20 séances (mise en route, blocs, retour au calme, but), repères, consignes |
+| `data/carnet.json` | `onair.carnet` | cycles, types de séance, 12 séances (mise en route, blocs, retour au calme, but), repères, consignes |
 | `progression.json` | `onair.progression` | ce que tu notes : séries, charges, RPE, commentaires, repères, préférences de mouvements, réglages. Écrit par l'application (navigateur, et compte Claude sur claude.ai), exportable depuis l'onglet Sauvegarde |
 
 Servie par GitHub Pages, la page relit `data/*.json` à chaque ouverture : modifier ces fichiers suffit, sans reconstruire. Une copie est aussi intégrée à la page pour qu'elle fonctionne hors ligne.

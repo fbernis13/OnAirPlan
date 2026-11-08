@@ -2,47 +2,43 @@
  "fileType": "onair.carnet",
  "version": 2,
  "id": "crossfit",
- "title": "Programme de reprise – Salle On Air",
- "source": "programme-reprise-on-air.md",
+ "title": "Programme 3 séances – Salle On Air",
+ "source": "programme-fbernis-3-seances.md",
  "updatedAt": "2026-11-08",
  "cycles": [
   {
    "n": 1,
-   "name": "Reprise",
-   "intensity": "RPE 6, 3-4 RIR",
-   "scheme": "3 × 12-15, tempo contrôlé",
-   "goal": "Réhabituer tendons et articulations, retrouver les gestes, noter les charges de départ. Aucune série à l’échec.",
-   "hang": "Dead hang 3 × 10-15 s, prise large et relâchée · Ring row pieds loin, tirage poitrine machine"
+   "name": "Prise de repères",
+   "intensity": "≈ 3 répétitions en réserve",
+   "scheme": "Fourchettes du programme, charges de départ",
+   "goal": "Régler les machines et noter les charges de départ. Garde 3 répétitions en réserve."
   },
   {
    "n": 2,
    "name": "Construction",
-   "intensity": "RPE 7, 2-3 RIR",
-   "scheme": "4 × 10-12",
-   "goal": "Retour progressif de la barre, plus de volume, introduction de mouvements CrossFit simples.",
-   "hang": "Dead hang 3 × 20-30 s · Ring row plus horizontal, tractions avec élastique"
+   "intensity": "≈ 2 répétitions en réserve",
+   "scheme": "Fourchettes du programme, charges en hausse",
+   "goal": "Monte la charge dès que tu atteins le haut de la fourchette sur toutes les séries."
   },
   {
    "n": 3,
-   "name": "Développement",
-   "intensity": "RPE 7-8, 2 RIR",
-   "scheme": "4-5 × 6-8",
-   "goal": "Monter en charge sur les mouvements de base, réintroduire la gymnastique stricte et un peu d’haltérophilie légère.",
-   "hang": "Dead hang 3 × 30-40 s, puis active hang · Tractions strictes (élastique léger si besoin)"
+   "name": "Progression",
+   "intensity": "≈ 2 répétitions en réserve",
+   "scheme": "Fourchettes du programme, charges en hausse",
+   "goal": "Continue de monter les charges ; allonge un peu les efforts du cardio si tout va bien."
   },
   {
    "n": 4,
    "name": "Consolidation",
-   "intensity": "RPE 8, 1-2 RIR",
-   "scheme": "5 × 5 + travail de volume",
-   "goal": "Retrouver des séances CrossFit complètes, consolider les charges et mesurer les progrès (retests).",
-   "hang": "Dead hang 2 × 45 s + scapular pull-ups · Tractions strictes, kipping léger si tout va bien"
+   "intensity": "≈ 1-2 répétitions en réserve",
+   "scheme": "Fourchettes du programme, charges en hausse",
+   "goal": "Consolider les charges atteintes et comparer avec le cycle 1."
   }
  ],
  "sessionTypes": {
-  "R1": {
+  "B": {
    "label": "S1",
-   "name": "Jambes dominante genou + gainage",
+   "name": "Bas du corps",
    "type": "force"
   },
   "CA": {
@@ -50,84 +46,35 @@
    "name": "Cardio",
    "type": "cardio"
   },
-  "R2": {
+  "H": {
    "label": "S2",
-   "name": "Haut du corps + core + finisher",
-   "type": "force"
-  },
-  "WOD": {
-   "label": "WOD",
-   "name": "WOD",
-   "type": "wod"
-  },
-  "R3": {
-   "label": "S3",
-   "name": "Chaîne postérieure + dos + portés",
+   "name": "Haut du corps",
    "type": "force"
   }
  },
  "rules": [
   "Signaux d’arrêt : douleur inhabituelle, fourmillements ou engourdissement. On arrête l’exercice et on passe à une variante plus légère.",
-  "Base CrossFit : mouvements poly-articulaires d’abord. Sur chaque cycle, on vérifie l’équilibre des groupes musculaires ; l’isolation ne sert qu’à rattraper un groupe en retard (aux cycles 3 et 4 : leg curl pour les ischios, seul travail de flexion du genou).",
-  "Deux objectifs suivis sur tout le programme : tractions strictes et pompes. Test au début de chaque S2, puis travail spécifique en S1 (pompes) et S3 (tractions). Les résultats s’affichent dans l’onglet Progression.",
-  "Si une séance a été trop dure (RPE > 8 au cycle 1-2, ou courbatures plus de 3 jours), garde les mêmes charges à la séance suivante.",
-  "Si tout est facile, augmente de 2,5 à 5 kg sur le haut du corps et de 5 à 10 kg sur le bas du corps d’un cycle à l’autre.",
-  "Ordre type dans un cycle : S1 → Cardio → S2 → WOD → S3, avec au moins un jour de repos après le WOD ou une séance de jambes lourde.",
-  "3 à 4 séances par semaine. Si tu enchaînes deux jours, mets le cardio entre deux renforcements.",
-  "Step-up plutôt que box jump, et course sur tapis limitée au cycle 1.",
-  "Après le cycle 4, prévois une semaine plus légère avant le bloc suivant."
+  "Ordre dans un cycle : S1 bas du corps → Cardio → S2 haut du corps, avec un jour de repos quand c’est possible entre deux renforcements.",
+  "Garde environ 2 répétitions en réserve sur les séries de travail. Les séries d’échauffement ne comptent pas.",
+  "Entre deux exercices : environ 2 minutes, installation comprise, sans ajouter le repos de la dernière série.",
+  "Quand tu atteins le haut de la fourchette sur toutes les séries, augmente la charge à la séance suivante : 2,5 à 5 kg sur le haut du corps, 5 à 10 kg sur le bas du corps.",
+  "Si une séance a été trop dure (courbatures plus de 3 jours), garde les mêmes charges à la séance suivante.",
+  "Deux objectifs suivis sur tout le programme : tractions strictes et pompes, testées au début de chaque S2 après le cardio. Les résultats s’affichent dans l’onglet Progression."
  ],
- "benchmarks": [
-  {
-   "id": "amrap12",
-   "label": "AMRAP 12 (WOD C1 / retest C4)",
-   "unit": "tours + reps"
-  },
-  {
-   "id": "hang",
-   "label": "Dead hang max",
-   "unit": "s"
-  },
-  {
-   "id": "squat5rm",
-   "label": "Back squat",
-   "c1hint": "3 × 15 presse",
-   "c4hint": "5RM",
-   "unit": "kg"
-  },
-  {
-   "id": "deadlift",
-   "label": "Soulevé de terre",
-   "c1hint": "3 × 12 RDL haltères",
-   "c4hint": "3-5RM",
-   "unit": "kg"
-  },
-  {
-   "id": "row2k",
-   "label": "Rameur 2 000 m",
-   "unit": "mm:ss"
-  }
- ],
+ "benchmarks": [],
  "sessions": [
   {
-   "id": "c1-r1",
+   "id": "c1-bas",
    "cycle": 1,
-   "slot": "R1",
-   "title": "Jambes dominante genou + gainage",
+   "slot": "B",
+   "title": "Bas du corps + core + finisher vélo",
+   "gate": 120,
+   "warmTitle": "Mise en route · 5 min",
    "warmup": [
     {
-     "t": "5 min vélo, allure facile puis modérée",
+     "t": "5 min vélo facile, puis 1 série légère de presse avant la première série de travail",
      "x": [
       "bike"
-     ]
-    },
-    {
-     "t": "10 squats à l’air lents, 10 fentes arrière alternées, 10 ponts fessiers, rotations de chevilles, 1 série légère de presse",
-     "x": [
-      "air_squat",
-      "reverse_lunge",
-      "glute_bridge",
-      "ankle_mob"
      ]
     }
    ],
@@ -138,10 +85,9 @@
       {
        "x": "presse",
        "sets": 3,
-       "reps": "15",
-       "rest": 90,
-       "note": "Machine guidée ou Hammer · tempo 3 s à la descente",
-       "benchmark": "squat5rm"
+       "reps": "8-12",
+       "rest": 120,
+       "note": "Machine guidée ou Hammer"
       }
      ]
     },
@@ -149,11 +95,12 @@
      "l": "B",
      "items": [
       {
-       "x": "goblet",
+       "x": "hipthrust_mach",
        "sets": 3,
-       "reps": "12",
-       "rest": 90,
-       "note": "Kettlebell tenue par les cornes"
+       "reps": "10-12",
+       "rest": 105,
+       "label": "Hip thrust à la machine ou à la barre",
+       "note": "Machine guidée, ou barre sur un banc · récup 1 min 30 à 2 min"
       }
      ]
     },
@@ -161,31 +108,23 @@
      "l": "C",
      "items": [
       {
-       "x": "stepup",
+       "x": "legcurl_s",
        "sets": 3,
-       "reps": "10/jambe",
-       "rest": 60,
-       "note": "Box ~50 cm, sans charge puis haltères légers"
+       "reps": "10-15",
+       "rest": 90,
+       "label": "Leg curl"
       }
      ]
     },
     {
      "l": "D",
-     "type": "superset",
-     "rounds": 3,
      "items": [
       {
-       "x": "wall_ball",
-       "sets": 3,
-       "reps": "12",
-       "rest": 0,
-       "note": "Ballon 6 kg, cible 3 m"
-      },
-      {
-       "x": "db_deadlift",
-       "sets": 3,
-       "reps": "12",
-       "rest": 75
+       "x": "legext",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 75,
+       "note": "Récup 1 min à 1 min 30"
       }
      ]
     },
@@ -193,193 +132,226 @@
      "l": "E",
      "items": [
       {
-       "x": "lunge_bw",
+       "x": "calf_mach",
        "sets": 3,
-       "reps": "10/jambe",
-       "rest": 60
+       "reps": "12-20",
+       "rest": 60,
+       "label": "Mollets debout ou à la machine",
+       "note": "À la machine, ou debout sur une marche avec haltères"
       }
      ]
     },
     {
      "l": "F",
      "type": "circuit",
-     "title": "Gainage",
-     "rounds": 3,
+     "title": "Core · 10 à 12 min",
+     "rounds": 2,
      "items": [
       {
        "x": "situp",
-       "sets": 3,
-       "reps": "15",
-       "rest": 0
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 0,
+       "label": "Sit-up contrôlé",
+       "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
       },
       {
-       "x": "deadbug",
-       "sets": 3,
-       "reps": "10/côté",
-       "rest": 0
+       "x": "pallof",
+       "sets": 2,
+       "reps": "20-30 s",
+       "rest": 0,
+       "unit": "time",
+       "label": "Pallof statique à la poulie",
+       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
       },
       {
-       "x": "russian_twist",
-       "sets": 3,
-       "reps": "20",
-       "rest": 45
+       "x": "db_side_bend",
+       "sets": 2,
+       "reps": "10-15/côté",
+       "rest": 0,
+       "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
       },
       {
-       "x": "pushup_par",
-       "sets": 3,
-       "reps": "8",
-       "rest": 45
+       "x": "plank_fa",
+       "sets": 2,
+       "reps": "20-40 s",
+       "rest": 60,
+       "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
       }
      ]
     },
     {
      "l": "G",
-     "type": "superset",
-     "rounds": 3,
-     "title": "Mollets et fléchisseurs de hanche",
+     "title": "Finisher vélo · 6 min",
      "items": [
       {
-       "x": "calf_stand",
-       "sets": 3,
-       "reps": "15",
+       "x": "bike",
+       "sets": 4,
+       "reps": "30 s soutenu / 60 s facile",
        "rest": 0,
-       "note": "Avant du pied sur une marche, haltères en main, 2 s en haut"
-      },
-      {
-       "x": "vup",
-       "sets": 3,
-       "reps": "10",
-       "rest": 45
+       "unit": "time",
+       "label": "Vélo : 30 s soutenu, 60 s facile",
+       "note": "4 tours. Soutenu = 7/10, exigeant sans sprint maximal ; facile = 2-3/10, récupération."
       }
      ]
     }
    ],
+   "coolTitle": "Retour au calme · 5 min",
    "cooldown": [
     {
-     "t": "Vélo très facile 2 min",
-     "x": [
-      "bike"
-     ]
-    },
-    {
-     "t": "Étirements quadriceps, fessiers, mollets, psoas",
+     "t": "Étirements quadriceps, ischios, fessiers, mollets",
      "x": [
       "st_quad",
+      "st_ham",
       "st_glute",
-      "st_calf",
-      "st_hipflex"
+      "st_calf"
      ]
     }
    ],
-   "goal": "Réhabituer genoux et hanches au travail de jambes avec des mouvements simples (presse, goblet squat, step-up, soulevé de terre haltères) et relancer le gainage. Note tes charges de départ : elles servent de repère pour la suite. Aucune série à l’échec (3-4 répétitions en réserve)."
+   "goal": "Jambes complètes en machines (presse, hip thrust, leg curl, leg extension, mollets), 10 à 12 min de core et un finisher vélo de 6 min. Garde environ 2 répétitions en réserve ; entre deux exercices, environ 2 min, installation comprise."
   },
   {
-   "id": "c1-ca",
+   "id": "c1-cardio",
    "cycle": 1,
    "slot": "CA",
-   "title": "Endurance fondamentale (zone 2)",
-   "intro": "Allure où tu peux parler en phrases complètes (environ 65-75 % de la FC max).",
+   "title": "Cardio long + circuit",
    "warmup": [],
    "blocks": [
     {
      "l": "A",
      "items": [
       {
-       "x": "incline_walk",
+       "x": "bike",
        "sets": 1,
-       "reps": "15 min",
+       "reps": "10 min",
        "rest": 0,
-       "note": "Pente 8 à 12 %, comme en rando"
+       "label": "Vélo d’échauffement",
+       "note": "Augmente progressivement"
       }
      ]
     },
     {
      "l": "B",
+     "items": [
+      {
+       "x": "incline_walk",
+       "sets": 1,
+       "reps": "15 min",
+       "rest": 0,
+       "note": "Garde une allure qui te permet de parler en phrases"
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "items": [
+      {
+       "x": "rower",
+       "sets": 1,
+       "reps": "15 min",
+       "rest": 0,
+       "note": "Tant que la technique reste propre"
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "items": [
+      {
+       "x": "stairs",
+       "sets": 1,
+       "reps": "5 min",
+       "rest": 0
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "type": "circuit",
+     "title": "Stations",
+     "rounds": 3,
      "items": [
       {
        "x": "skierg",
-       "sets": 1,
-       "reps": "15 min",
-       "rest": 0,
-       "note": "Zone 2, tirage ample en poussant avec les jambes"
+       "sets": 3,
+       "reps": "1 min",
+       "rest": 30,
+       "note": "Allure contrôlée · 30 s pour changer"
+      },
+      {
+       "x": "stepup",
+       "sets": 3,
+       "reps": "1 min",
+       "rest": 30,
+       "label": "Box step-up, sans charge",
+       "note": "Alterne la jambe de départ ; box basse, contrôle la descente · 30 s pour changer"
+      },
+      {
+       "x": "rope_su",
+       "sets": 3,
+       "reps": "30 s",
+       "rest": 30,
+       "note": "Sauts simples · 30 s de récup"
       }
      ]
     },
     {
-     "l": "C",
+     "l": "F",
+     "items": [
+      {
+       "x": "assault",
+       "sets": 5,
+       "reps": "30 s / 90 s",
+       "rest": 0,
+       "unit": "time",
+       "note": "5 × 30 s d’effort soutenu sans sprint maximal, 90 s facile"
+      }
+     ]
+    }
+   ],
+   "coolTitle": "Retour au calme · 5 min",
+   "cooldown": [
+    {
+     "t": "5 min vélo assis, retour au calme progressif",
+     "x": [
+      "bike_recumb"
+     ]
+    }
+   ],
+   "goal": "Environ 72 min de travail (80 min avec les changements) : vélo, tapis incliné, rameur, escalier, un circuit de 3 tours et un fractionné court à l’Assault bike."
+  },
+  {
+   "id": "c1-haut",
+   "cycle": 1,
+   "slot": "H",
+   "title": "Haut du corps + core + finisher",
+   "gate": 120,
+   "warmTitle": "Mise en route",
+   "warmup": [
+    {
+     "t": "Le cardio du bloc A sert d’échauffement. Avant le développé : rotations d’épaules à l’élastique, 10 band pull-aparts, 1 série légère.",
+     "x": [
+      "shoulder_band",
+      "band_pull"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "title": "Cardio · 15 min",
      "items": [
       {
        "x": "bike",
        "sets": 1,
        "reps": "15 min",
-       "rest": 0
-      }
-     ]
-    },
-    {
-     "l": "D",
-     "items": [
-      {
-       "x": "rower",
-       "sets": 1,
-       "reps": "15 min",
        "rest": 0,
-       "note": "Cadence 20-22 coups/min, technique propre"
+       "label": "Cardio au choix",
+       "res": "km, cal ou FC",
+       "note": "5 min faciles, puis 10 min à intensité modérée. Vélo, rameur, tapis ou escalier : choisis dans « Variante » si ce n’est pas le vélo."
       }
      ]
     },
-    {
-     "l": "E",
-     "items": [
-      {
-       "x": "stairs",
-       "sets": 1,
-       "reps": "5 min",
-       "rest": 0,
-       "note": "Allure régulière"
-      }
-     ]
-    }
-   ],
-   "cooldown": [
-    {
-     "t": "Marche 2 min",
-     "x": []
-    },
-    {
-     "t": "Étirements mollets, ischios, fléchisseurs de hanche",
-     "x": [
-      "st_calf",
-      "st_ham",
-      "st_hipflex"
-     ]
-    }
-   ],
-   "goal": "Construire la base d’endurance en zone 2, en parlant en phrases complètes. La marche inclinée et l’escalier remplacent la course pour ménager les genoux au cycle 1."
-  },
-  {
-   "id": "c1-r2",
-   "cycle": 1,
-   "slot": "R2",
-   "title": "Haut du corps + core + finisher",
-   "warmup": [
-    {
-     "t": "5 min rameur ou SkiErg facile",
-     "x": [
-      "rower",
-      "skierg"
-     ]
-    },
-    {
-     "t": "Rotations d’épaules avec élastique, 10 band pull-aparts, dead hang 3 × 10-15 s, 1 série légère de développé couché",
-     "x": [
-      "shoulder_band",
-      "band_pull",
-      "dead_hang"
-     ]
-    }
-   ],
-   "blocks": [
     {
      "l": "T",
      "title": "Test du cycle",
@@ -391,7 +363,7 @@
        "rest": 180,
        "test": "pullups",
        "label": "Test : tractions strictes max",
-       "note": "Strictes, sans kipping. Si tu n’en fais aucune, note 0 : le travail du cycle sert à y arriver."
+       "note": "Strictes, sans kipping. Si tu n’en fais aucune, note 0."
       },
       {
        "x": "pushup_par",
@@ -405,7 +377,7 @@
      ]
     },
     {
-     "l": "A",
+     "l": "B",
      "items": [
       {
        "x": "chest_press",
@@ -418,7 +390,7 @@
      ]
     },
     {
-     "l": "B",
+     "l": "C",
      "items": [
       {
        "x": "seated_row",
@@ -431,7 +403,7 @@
      ]
     },
     {
-     "l": "C",
+     "l": "D",
      "items": [
       {
        "x": "latpull",
@@ -444,7 +416,7 @@
      ]
     },
     {
-     "l": "D",
+     "l": "E",
      "items": [
       {
        "x": "shoulder_mach",
@@ -457,7 +429,7 @@
      ]
     },
     {
-     "l": "E",
+     "l": "F",
      "items": [
       {
        "x": "lat_raise",
@@ -469,7 +441,7 @@
      ]
     },
     {
-     "l": "F",
+     "l": "G",
      "items": [
       {
        "x": "ez_curl",
@@ -482,7 +454,7 @@
      ]
     },
     {
-     "l": "G",
+     "l": "H",
      "items": [
       {
        "x": "rope_pd",
@@ -495,7 +467,7 @@
      ]
     },
     {
-     "l": "H",
+     "l": "I",
      "type": "circuit",
      "title": "Core · 10 à 12 min",
      "rounds": 2,
@@ -512,8 +484,8 @@
        "x": "pallof",
        "sets": 2,
        "reps": "20-30 s",
-       "unit": "time",
        "rest": 0,
+       "unit": "time",
        "label": "Pallof statique à la poulie",
        "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
       },
@@ -534,7 +506,7 @@
      ]
     },
     {
-     "l": "I",
+     "l": "J",
      "type": "wod",
      "title": "Finisher · 3 tours",
      "rounds": 3,
@@ -562,6 +534,7 @@
      ]
     }
    ],
+   "coolTitle": "Retour au calme · 5 min",
    "cooldown": [
     {
      "t": "Étirements pectoraux, épaules, dorsaux, triceps, avant-bras",
@@ -573,454 +546,172 @@
      ]
     }
    ],
-   "goal": "Haut du corps complet en 40 à 45 min (pousser, tirer, épaules, bras), puis 10 à 12 min de core et un finisher court. Séries de travail à RPE 6 (3-4 répétitions en réserve) ; les séries d’échauffement ne comptent pas. Entre deux exercices, environ 2 min, installation comprise.",
-   "gate": 120
+   "goal": "15 min de cardio, haut du corps complet en 40 à 45 min, 10 à 12 min de core et un finisher court. Les séries d’échauffement ne comptent pas ; entre deux exercices, environ 2 min, installation comprise."
   },
   {
-   "id": "c1-wod",
-   "cycle": 1,
-   "slot": "WOD",
-   "title": "Remise en route métabolique",
-   "warmup": [
-    {
-     "t": "5 min : 1 min rameur, 1 min vélo, 1 min SkiErg, 2 min mixte allure croissante",
-     "x": [
-      "rower",
-      "bike",
-      "skierg"
-     ]
-    },
-    {
-     "t": "2 tours de 5 deadlifts kettlebell légers + 5 goblet squats + 5 step-ups",
-     "x": [
-      "kb_dl",
-      "goblet",
-      "stepup"
-     ]
-    }
-   ],
-   "blocks": [
-    {
-     "l": "A",
-     "type": "wod",
-     "title": "EMOM 30 min",
-     "desc": "Une station par minute, 5 tours. Effort modéré, environ 40 s de travail max.",
-     "items": [
-      {
-       "x": "rower_wod",
-       "sets": 0,
-       "reps": "10-12 cal",
-       "rest": 0
-      },
-      {
-       "x": "kb_dl",
-       "sets": 0,
-       "reps": "12 · 24 kg",
-       "rest": 0
-      },
-      {
-       "x": "goblet_wod",
-       "sets": 0,
-       "reps": "10",
-       "rest": 0
-      },
-      {
-       "x": "stepup_wod",
-       "sets": 0,
-       "reps": "12 alternés",
-       "rest": 0
-      },
-      {
-       "x": "assault_wod",
-       "sets": 0,
-       "reps": "10-12 cal",
-       "rest": 0
-      },
-      {
-       "x": "situp",
-       "sets": 0,
-       "reps": "15",
-       "rest": 0
-      }
-     ]
-    },
-    {
-     "l": "B",
-     "type": "rest",
-     "title": "Repos 15 min"
-    },
-    {
-     "l": "C",
-     "type": "wod",
-     "title": "AMRAP 12 min",
-     "benchmark": "amrap12",
-     "desc": "Ce sera le retest du cycle 4 : note ton score.",
-     "items": [
-      {
-       "x": "wallball",
-       "sets": 0,
-       "reps": "10 · balle 6-9 kg, cible basse si besoin",
-       "rest": 0
-      },
-      {
-       "x": "kb_swing_wod",
-       "sets": 0,
-       "reps": "10 · 16-20 kg",
-       "rest": 0
-      },
-      {
-       "x": "skierg_wod",
-       "sets": 0,
-       "reps": "10 cal",
-       "rest": 0
-      }
-     ]
-    }
-   ],
-   "cooldown": [
-    {
-     "t": "Marche, étirements globaux, respiration",
-     "x": []
-    }
-   ],
-   "goal": "Retrouver l’enchaînement d’un WOD à effort modéré. L’AMRAP 12 sert de référence : note ton score, il sera retesté au cycle 4."
-  },
-  {
-   "id": "c1-r3",
-   "cycle": 1,
-   "slot": "R3",
-   "title": "Chaîne postérieure + dos + portés",
-   "warmup": [
-    {
-     "t": "5 min SkiErg ou rameur",
-     "x": [
-      "skierg",
-      "rower"
-     ]
-    },
-    {
-     "t": "Good mornings au bâton, cat-cow, ponts fessiers, hip hinge au mur, 1 série légère de soulevé de terre roumain",
-     "x": [
-      "gm_stick",
-      "cat_cow",
-      "glute_bridge",
-      "hip_hinge"
-     ]
-    }
-   ],
-   "blocks": [
-    {
-     "l": "A",
-     "items": [
-      {
-       "x": "db_rdl",
-       "sets": 3,
-       "reps": "12",
-       "rest": 90,
-       "benchmark": "deadlift"
-      }
-     ]
-    },
-    {
-     "l": "B",
-     "items": [
-      {
-       "x": "hipthrust",
-       "sets": 3,
-       "reps": "12",
-       "rest": 90,
-       "note": "Barre ou machine"
-      }
-     ]
-    },
-    {
-     "l": "C",
-     "items": [
-      {
-       "x": "db_row",
-       "sets": 3,
-       "reps": "12/bras",
-       "rest": 60
-      }
-     ]
-    },
-    {
-     "l": "D",
-     "type": "superset",
-     "rounds": 3,
-     "items": [
-      {
-       "x": "kb_swing_ru",
-       "sets": 3,
-       "reps": "15",
-       "rest": 0,
-       "note": "Kettlebell légère, poignée en crochet sans serrer fort"
-      },
-      {
-       "x": "back_ext",
-       "sets": 3,
-       "reps": "12",
-       "rest": 60
-      }
-     ]
-    },
-    {
-     "l": "E",
-     "items": [
-      {
-       "x": "farmer",
-       "sets": 4,
-       "reps": "20 m",
-       "rest": 60,
-       "note": "Haltères ou kettlebells légers, uniquement si la prise est confortable, sinon poids réduit"
-      }
-     ]
-    },
-    {
-     "l": "F",
-     "items": [
-      {
-       "x": "situp",
-       "sets": 3,
-       "reps": "15",
-       "rest": 30
-      }
-     ]
-    },
-    {
-     "l": "G",
-     "title": "Objectif tractions",
-     "items": [
-      {
-       "x": "neg_pu",
-       "sets": 3,
-       "reps": "3",
-       "rest": 90,
-       "note": "Descente lente et contrôlée"
-      }
-     ]
-    },
-    {
-     "l": "H",
-     "type": "circuit",
-     "rounds": 3,
-     "title": "Bras, mollets, fléchisseurs de hanche",
-     "items": [
-      {
-       "x": "hammer_curl",
-       "sets": 3,
-       "reps": "12",
-       "rest": 0
-      },
-      {
-       "x": "calf_stand",
-       "sets": 3,
-       "reps": "15",
-       "rest": 0
-      },
-      {
-       "x": "t2b",
-       "sets": 3,
-       "reps": "10",
-       "rest": 60,
-       "note": "Montées de genoux suspendu (genoux à la poitrine) si les toes-to-bar ne passent pas encore"
-      }
-     ]
-    }
-   ],
-   "cooldown": [
-    {
-     "t": "Marche",
-     "x": []
-    },
-    {
-     "t": "Étirements ischios, fessiers, dos (posture de l’enfant), avant-bras",
-     "x": [
-      "st_ham",
-      "st_glute",
-      "child_pose",
-      "st_forearm"
-     ]
-    }
-   ],
-   "goal": "Réactiver la chaîne postérieure (ischios, fessiers, lombaires) et le dos, et reprendre les portés. Charges légères."
-  },
-  {
-   "id": "c2-r1",
+   "id": "c2-bas",
    "cycle": 2,
-   "slot": "R1",
-   "title": "Jambes dominante genou + gainage",
+   "slot": "B",
+   "title": "Bas du corps + core + finisher vélo",
+   "gate": 120,
+   "warmTitle": "Mise en route · 5 min",
    "warmup": [
     {
-     "t": "5 min assault bike facile",
-     "x": [
-      "assault"
-     ]
-    },
-    {
-     "t": "Squats à l’air, fentes marchées, mobilité chevilles au mur, 2 séries d’approche de back squat barre vide",
-     "x": [
-      "air_squat",
-      "walk_lunge",
-      "ankle_mob"
-     ]
-    }
-   ],
-   "blocks": [
-    {
-     "l": "A",
-     "items": [
-      {
-       "x": "backsquat",
-       "sets": 4,
-       "reps": "10",
-       "rest": 120,
-       "note": "Barre haute · RPE 7"
-      }
-     ]
-    },
-    {
-     "l": "B",
-     "items": [
-      {
-       "x": "db_wlunge",
-       "sets": 3,
-       "reps": "10/jambe",
-       "rest": 90
-      }
-     ]
-    },
-    {
-     "l": "C",
-     "items": [
-      {
-       "x": "hack",
-       "sets": 3,
-       "reps": "12",
-       "rest": 90
-      }
-     ]
-    },
-    {
-     "l": "D",
-     "type": "superset",
-     "rounds": 3,
-     "items": [
-      {
-       "x": "db_stepover",
-       "sets": 3,
-       "reps": "10 alternés",
-       "rest": 0
-      },
-      {
-       "x": "db_thruster",
-       "sets": 3,
-       "reps": "10",
-       "note": "2 haltères de 12,5 à 15 kg",
-       "rest": 75
-      }
-     ]
-    },
-    {
-     "l": "E",
-     "items": [
-      {
-       "x": "rope_su",
-       "sets": 4,
-       "reps": "50",
-       "rest": 45
-      }
-     ]
-    },
-    {
-     "l": "F",
-     "type": "circuit",
-     "title": "Gainage",
-     "rounds": 3,
-     "items": [
-      {
-       "x": "vup",
-       "sets": 3,
-       "reps": "12",
-       "rest": 0
-      },
-      {
-       "x": "hollow",
-       "sets": 3,
-       "reps": "20 s",
-       "rest": 0,
-       "note": "Genoux pliés si besoin"
-      },
-      {
-       "x": "situp",
-       "sets": 3,
-       "reps": "20",
-       "rest": 45
-      },
-      {
-       "x": "pushup_par",
-       "sets": 3,
-       "reps": "10",
-       "rest": 45
-      }
-     ]
-    },
-    {
-     "l": "G",
-     "type": "superset",
-     "rounds": 3,
-     "title": "Mollets et fléchisseurs de hanche",
-     "items": [
-      {
-       "x": "calf_stand",
-       "sets": 3,
-       "reps": "15",
-       "rest": 0,
-       "note": "Avant du pied sur une marche, haltères en main, 2 s en haut"
-      },
-      {
-       "x": "k2e",
-       "sets": 3,
-       "reps": "8",
-       "rest": 45
-      }
-     ]
-    }
-   ],
-   "cooldown": [
-    {
-     "t": "Vélo très facile",
+     "t": "5 min vélo facile, puis 1 série légère de presse avant la première série de travail",
      "x": [
       "bike"
      ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "presse",
+       "sets": 3,
+       "reps": "8-12",
+       "rest": 120,
+       "note": "Machine guidée ou Hammer"
+      }
+     ]
     },
     {
-     "t": "Étirements quadriceps, adducteurs, fessiers",
-     "x": [
-      "st_quad",
-      "st_add",
-      "st_glute"
+     "l": "B",
+     "items": [
+      {
+       "x": "hipthrust_mach",
+       "sets": 3,
+       "reps": "10-12",
+       "rest": 105,
+       "label": "Hip thrust à la machine ou à la barre",
+       "note": "Machine guidée, ou barre sur un banc · récup 1 min 30 à 2 min"
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "items": [
+      {
+       "x": "legcurl_s",
+       "sets": 3,
+       "reps": "10-15",
+       "rest": 90,
+       "label": "Leg curl"
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "items": [
+      {
+       "x": "legext",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 75,
+       "note": "Récup 1 min à 1 min 30"
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "items": [
+      {
+       "x": "calf_mach",
+       "sets": 3,
+       "reps": "12-20",
+       "rest": 60,
+       "label": "Mollets debout ou à la machine",
+       "note": "À la machine, ou debout sur une marche avec haltères"
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "type": "circuit",
+     "title": "Core · 10 à 12 min",
+     "rounds": 2,
+     "items": [
+      {
+       "x": "situp",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 0,
+       "label": "Sit-up contrôlé",
+       "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
+      },
+      {
+       "x": "pallof",
+       "sets": 2,
+       "reps": "20-30 s",
+       "rest": 0,
+       "unit": "time",
+       "label": "Pallof statique à la poulie",
+       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
+      },
+      {
+       "x": "db_side_bend",
+       "sets": 2,
+       "reps": "10-15/côté",
+       "rest": 0,
+       "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
+      },
+      {
+       "x": "plank_fa",
+       "sets": 2,
+       "reps": "20-40 s",
+       "rest": 60,
+       "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
+      }
+     ]
+    },
+    {
+     "l": "G",
+     "title": "Finisher vélo · 6 min",
+     "items": [
+      {
+       "x": "bike",
+       "sets": 4,
+       "reps": "30 s soutenu / 60 s facile",
+       "rest": 0,
+       "unit": "time",
+       "label": "Vélo : 30 s soutenu, 60 s facile",
+       "note": "4 tours. Soutenu = 7/10, exigeant sans sprint maximal ; facile = 2-3/10, récupération."
+      }
      ]
     }
    ],
-   "goal": "Retour de la barre avec le back squat et plus de volume sur les jambes. RPE 7, 2-3 répétitions en réserve."
+   "coolTitle": "Retour au calme · 5 min",
+   "cooldown": [
+    {
+     "t": "Étirements quadriceps, ischios, fessiers, mollets",
+     "x": [
+      "st_quad",
+      "st_ham",
+      "st_glute",
+      "st_calf"
+     ]
+    }
+   ],
+   "goal": "Jambes complètes en machines (presse, hip thrust, leg curl, leg extension, mollets), 10 à 12 min de core et un finisher vélo de 6 min. Garde environ 2 répétitions en réserve ; entre deux exercices, environ 2 min, installation comprise."
   },
   {
-   "id": "c2-ca",
+   "id": "c2-cardio",
    "cycle": 2,
    "slot": "CA",
-   "title": "Zone 2 + fartlek",
+   "title": "Cardio long + circuit",
    "warmup": [],
    "blocks": [
     {
      "l": "A",
      "items": [
       {
-       "x": "rower",
+       "x": "bike",
        "sets": 1,
-       "reps": "15 min",
+       "reps": "10 min",
        "rest": 0,
-       "note": "Zone 2"
+       "label": "Vélo d’échauffement",
+       "note": "Augmente progressivement"
       }
      ]
     },
@@ -1028,11 +719,11 @@
      "l": "B",
      "items": [
       {
-       "x": "bike",
+       "x": "incline_walk",
        "sets": 1,
-       "reps": "20 min",
+       "reps": "15 min",
        "rest": 0,
-       "note": "4 × (3 min allure soutenue + 2 min facile)"
+       "note": "Garde une allure qui te permet de parler en phrases"
       }
      ]
     },
@@ -1040,11 +731,11 @@
      "l": "C",
      "items": [
       {
-       "x": "incline_walk",
+       "x": "rower",
        "sets": 1,
        "reps": "15 min",
        "rest": 0,
-       "note": "Marche inclinée 10 %, ou alternance 1 min petite course / 2 min marche si les genoux sont d’accord"
+       "note": "Tant que la technique reste propre"
       }
      ]
     },
@@ -1058,729 +749,94 @@
        "rest": 0
       }
      ]
-    }
-   ],
-   "cooldown": [
-    {
-     "t": "Marche",
-     "x": []
-    },
-    {
-     "t": "Étirements mollets, ischios, psoas",
-     "x": [
-      "st_calf",
-      "st_ham",
-      "st_hipflex"
-     ]
-    }
-   ],
-   "goal": "Garder la base en zone 2 et introduire des changements d’allure (fartlek) sur le vélo."
-  },
-  {
-   "id": "c2-r2",
-   "cycle": 2,
-   "slot": "R2",
-   "title": "Haut du corps + core + finisher",
-   "warmup": [
-    {
-     "t": "5 min rameur ou SkiErg facile",
-     "x": [
-      "rower",
-      "skierg"
-     ]
-    },
-    {
-     "t": "Rotations d’épaules avec élastique, 10 band pull-aparts, dead hang 3 × 20-30 s, 1 série légère de développé couché",
-     "x": [
-      "shoulder_band",
-      "band_pull",
-      "dead_hang"
-     ]
-    }
-   ],
-   "blocks": [
-    {
-     "l": "T",
-     "title": "Test du cycle",
-     "items": [
-      {
-       "x": "strict_pu",
-       "sets": 1,
-       "reps": "max",
-       "rest": 180,
-       "test": "pullups",
-       "label": "Test : tractions strictes max",
-       "note": "Strictes, sans kipping. Si tu n’en fais aucune, note 0 : le travail du cycle sert à y arriver."
-      },
-      {
-       "x": "pushup_par",
-       "sets": 1,
-       "reps": "max",
-       "rest": 120,
-       "test": "pushups",
-       "label": "Test : pompes max",
-       "note": "Poitrine au sol, corps gainé, sans pause."
-      }
-     ]
-    },
-    {
-     "l": "A",
-     "items": [
-      {
-       "x": "chest_press",
-       "sets": 3,
-       "reps": "8-12",
-       "rest": 120,
-       "label": "Développé couché haltères ou machine",
-       "note": "Machine (guidée ou Hammer) ou haltères sur banc plat"
-      }
-     ]
-    },
-    {
-     "l": "B",
-     "items": [
-      {
-       "x": "seated_row",
-       "sets": 3,
-       "reps": "8-12",
-       "rest": 105,
-       "label": "Rowing assis à la poulie",
-       "note": "Récup 1 min 30 à 2 min"
-      }
-     ]
-    },
-    {
-     "l": "C",
-     "items": [
-      {
-       "x": "latpull",
-       "sets": 3,
-       "reps": "8-12",
-       "rest": 105,
-       "label": "Tirage vertical",
-       "note": "Récup 1 min 30 à 2 min"
-      }
-     ]
-    },
-    {
-     "l": "D",
-     "items": [
-      {
-       "x": "shoulder_mach",
-       "sets": 2,
-       "reps": "8-12",
-       "rest": 105,
-       "label": "Développé épaules haltères ou machine",
-       "note": "Machine (guidée ou Hammer) ou haltères assis · récup 1 min 30 à 2 min"
-      }
-     ]
     },
     {
      "l": "E",
-     "items": [
-      {
-       "x": "lat_raise",
-       "sets": 2,
-       "reps": "12-20",
-       "rest": 75,
-       "note": "Récup 1 min à 1 min 30"
-      }
-     ]
-    },
-    {
-     "l": "F",
-     "items": [
-      {
-       "x": "ez_curl",
-       "sets": 2,
-       "reps": "10-15",
-       "rest": 75,
-       "label": "Curl biceps",
-       "note": "Barre EZ ou haltères · récup 1 min à 1 min 30"
-      }
-     ]
-    },
-    {
-     "l": "G",
-     "items": [
-      {
-       "x": "rope_pd",
-       "sets": 2,
-       "reps": "10-15",
-       "rest": 75,
-       "label": "Extension triceps à la poulie",
-       "note": "Récup 1 min à 1 min 30"
-      }
-     ]
-    },
-    {
-     "l": "H",
      "type": "circuit",
-     "title": "Core · 10 à 12 min",
-     "rounds": 2,
-     "items": [
-      {
-       "x": "situp",
-       "sets": 2,
-       "reps": "10-15",
-       "rest": 0,
-       "label": "Sit-up contrôlé",
-       "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
-      },
-      {
-       "x": "pallof",
-       "sets": 2,
-       "reps": "20-30 s",
-       "unit": "time",
-       "rest": 0,
-       "label": "Pallof statique à la poulie",
-       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
-      },
-      {
-       "x": "db_side_bend",
-       "sets": 2,
-       "reps": "10-15/côté",
-       "rest": 0,
-       "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
-      },
-      {
-       "x": "plank_fa",
-       "sets": 2,
-       "reps": "20-40 s",
-       "rest": 60,
-       "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
-      }
-     ]
-    },
-    {
-     "l": "I",
-     "type": "wod",
-     "title": "Finisher · 3 tours",
-     "rounds": 3,
-     "desc": "3 tours : corde à sauter, rameur, Assault bike, puis 60 s de récupération.",
-     "items": [
-      {
-       "x": "single_under",
-       "sets": 0,
-       "reps": "50 sauts simples",
-       "rest": 0
-      },
-      {
-       "x": "rower_wod",
-       "sets": 0,
-       "reps": "15 cal affichées",
-       "rest": 0
-      },
-      {
-       "x": "assault_wod",
-       "sets": 0,
-       "reps": "10 cal affichées",
-       "rest": 60,
-       "label": "Assault bike"
-      }
-     ]
-    }
-   ],
-   "cooldown": [
-    {
-     "t": "Étirements pectoraux, épaules, dorsaux, triceps, avant-bras",
-     "x": [
-      "st_pec",
-      "st_lat",
-      "st_tri",
-      "st_forearm"
-     ]
-    }
-   ],
-   "goal": "Haut du corps complet en 40 à 45 min (pousser, tirer, épaules, bras), puis 10 à 12 min de core et un finisher court. Séries de travail à RPE 7 (2-3 en réserve) ; les séries d’échauffement ne comptent pas. Entre deux exercices, environ 2 min, installation comprise.",
-   "gate": 120
-  },
-  {
-   "id": "c2-wod",
-   "cycle": 2,
-   "slot": "WOD",
-   "title": "Couplets et triplets",
-   "warmup": [
-    {
-     "t": "3 min rameur, 2 min corde à sauter (single unders) en douceur",
-     "x": [
-      "rower",
-      "single_under"
-     ]
-    },
-    {
-     "t": "2 tours à vide des mouvements du WOD",
-     "x": []
-    }
-   ],
-   "blocks": [
-    {
-     "l": "A",
-     "type": "wod",
-     "title": "For time, 5 tours (cap 20 min)",
-     "items": [
-      {
-       "x": "assault_wod",
-       "sets": 0,
-       "reps": "15 cal",
-       "rest": 0
-      },
-      {
-       "x": "kb_swing_am",
-       "sets": 0,
-       "reps": "12 · 16-20 kg",
-       "rest": 0
-      },
-      {
-       "x": "ringrow_wod",
-       "sets": 0,
-       "reps": "9",
-       "rest": 0
-      },
-      {
-       "x": "devil",
-       "sets": 0,
-       "reps": "6 · haltères 10-12,5 kg",
-       "rest": 0
-      }
-     ]
-    },
-    {
-     "l": "B",
-     "type": "rest",
-     "title": "Repos 15 min"
-    },
-    {
-     "l": "C",
-     "type": "wod",
-     "title": "AMRAP 15 min",
-     "items": [
-      {
-       "x": "rower_wod",
-       "sets": 0,
-       "reps": "200 m",
-       "rest": 0
-      },
-      {
-       "x": "db_thruster",
-       "sets": 0,
-       "reps": "10 · 2 × 12,5 kg",
-       "rest": 0
-      },
-      {
-       "x": "box_stepover",
-       "sets": 0,
-       "reps": "10",
-       "rest": 0
-      },
-      {
-       "x": "single_under",
-       "sets": 0,
-       "reps": "50",
-       "rest": 0
-      }
-     ]
-    }
-   ],
-   "cooldown": [
-    {
-     "t": "Marche, étirements globaux, respiration lente",
-     "x": []
-    }
-   ],
-   "goal": "Réintroduire des mouvements CrossFit simples en couplets et triplets (swings, devil press, thrusters haltères, corde à sauter)."
-  },
-  {
-   "id": "c2-r3",
-   "cycle": 2,
-   "slot": "R3",
-   "title": "Chaîne postérieure + dos + portés",
-   "warmup": [
-    {
-     "t": "5 min rameur",
-     "x": [
-      "rower"
-     ]
-    },
-    {
-     "t": "Mobilité hanches, hip hinge, ponts fessiers, 2 séries d’approche de soulevé de terre",
-     "x": [
-      "hip_opener",
-      "hip_hinge",
-      "glute_bridge"
-     ]
-    }
-   ],
-   "blocks": [
-    {
-     "l": "A",
-     "items": [
-      {
-       "x": "deadlift",
-       "sets": 4,
-       "reps": "8",
-       "rest": 120,
-       "note": "RPE 7"
-      }
-     ]
-    },
-    {
-     "l": "B",
-     "items": [
-      {
-       "x": "hipthrust",
-       "sets": 3,
-       "reps": "12",
-       "rest": 90,
-       "label": "Hip thrust barre"
-      }
-     ]
-    },
-    {
-     "l": "C",
-     "items": [
-      {
-       "x": "iso_row",
-       "sets": 3,
-       "reps": "12",
-       "rest": 75
-      }
-     ]
-    },
-    {
-     "l": "D",
+     "title": "Stations",
      "rounds": 3,
      "items": [
       {
-       "x": "good_morning",
+       "x": "skierg",
        "sets": 3,
-       "reps": "10",
-       "rest": 75
-      }
-     ]
-    },
-    {
-     "l": "E",
-     "items": [
-      {
-       "x": "kb_swing_ru",
-       "sets": 3,
-       "reps": "15",
-       "rest": 60
-      }
-     ]
-    },
-    {
-     "l": "F",
-     "items": [
-      {
-       "x": "farmer",
-       "sets": 4,
-       "reps": "30 m",
-       "rest": 60,
-       "note": "Charge modérée"
-      }
-     ]
-    },
-    {
-     "l": "G",
-     "items": [
-      {
-       "x": "back_ext",
-       "sets": 3,
-       "reps": "15",
-       "rest": 45,
-       "label": "Back extension au banc 45°"
-      }
-     ]
-    },
-    {
-     "l": "H",
-     "title": "Objectif tractions",
-     "items": [
-      {
-       "x": "strict_pu",
-       "sets": 4,
-       "reps": "2-3",
-       "rest": 90,
-       "note": "Strictes ; complète en négatives si besoin"
-      }
-     ]
-    },
-    {
-     "l": "I",
-     "type": "circuit",
-     "rounds": 3,
-     "title": "Bras, mollets, fléchisseurs de hanche",
-     "items": [
-      {
-       "x": "hammer_curl",
-       "sets": 3,
-       "reps": "12",
-       "rest": 0
+       "reps": "1 min",
+       "rest": 30,
+       "note": "Allure contrôlée · 30 s pour changer"
       },
       {
-       "x": "calf_stand",
+       "x": "stepup",
        "sets": 3,
-       "reps": "15",
-       "rest": 0
-      },
-      {
-       "x": "t2b",
-       "sets": 3,
-       "reps": "10",
-       "rest": 60,
-       "note": "Montées de genoux suspendu (genoux à la poitrine) si les toes-to-bar ne passent pas encore"
-      }
-     ]
-    }
-   ],
-   "cooldown": [
-    {
-     "t": "Étirements ischios, fessiers, lombaires, avant-bras",
-     "x": [
-      "st_ham",
-      "st_glute",
-      "child_pose",
-      "st_forearm"
-     ]
-    }
-   ],
-   "goal": "Retour du soulevé de terre à la barre (RPE 7) et plus de travail de portés pour reconstruire la prise."
-  },
-  {
-   "id": "c3-r1",
-   "cycle": 3,
-   "slot": "R1",
-   "title": "Jambes dominante genou + gainage",
-   "warmup": [
-    {
-     "t": "5 min assault bike",
-     "x": [
-      "assault"
-     ]
-    },
-    {
-     "t": "Mobilité chevilles, hanches et front rack, 3 séries d’approche montantes de squat",
-     "x": [
-      "ankle_mob",
-      "hip_opener"
-     ]
-    }
-   ],
-   "blocks": [
-    {
-     "l": "A",
-     "items": [
-      {
-       "x": "backsquat",
-       "sets": 5,
-       "reps": "6",
-       "rest": 150,
-       "note": "RPE 7-8 · récup 2-3 min"
-      }
-     ]
-    },
-    {
-     "l": "B",
-     "items": [
-      {
-       "x": "frontsquat",
-       "sets": 3,
-       "reps": "8",
-       "rest": 120
-      }
-     ]
-    },
-    {
-     "l": "C",
-     "items": [
-      {
-       "x": "bulgarian",
-       "sets": 3,
-       "reps": "8/jambe",
-       "rest": 90
-      }
-     ]
-    },
-    {
-     "l": "D",
-     "type": "superset",
-     "rounds": 3,
-     "items": [
-      {
-       "x": "wall_ball",
-       "sets": 3,
-       "reps": "12",
-       "rest": 0,
-       "note": "Ballon 6 kg, cible 3 m"
+       "reps": "1 min",
+       "rest": 30,
+       "label": "Box step-up, sans charge",
+       "note": "Alterne la jambe de départ ; box basse, contrôle la descente · 30 s pour changer"
       },
       {
        "x": "rope_su",
        "sets": 3,
-       "reps": "50",
-       "rest": 75
-      }
-     ]
-    },
-    {
-     "l": "E",
-     "type": "circuit",
-     "title": "Gainage",
-     "rounds": 3,
-     "items": [
-      {
-       "x": "t2b",
-       "sets": 3,
-       "reps": "6-8",
-       "rest": 0,
-       "note": "Genoux à la poitrine au début"
-      },
-      {
-       "x": "situp",
-       "sets": 3,
-       "reps": "20",
-       "rest": 0
-      },
-      {
-       "x": "russian_twist",
-       "sets": 3,
-       "reps": "20",
-       "rest": 45
-      },
-      {
-       "x": "pushup_par",
-       "sets": 3,
-       "reps": "12",
-       "rest": 45
+       "reps": "30 s",
+       "rest": 30,
+       "note": "Sauts simples · 30 s de récup"
       }
      ]
     },
     {
      "l": "F",
-     "type": "superset",
-     "rounds": 3,
-     "title": "Mollets et fléchisseurs de hanche",
      "items": [
       {
-       "x": "calf_stand",
-       "sets": 3,
-       "reps": "15",
+       "x": "assault",
+       "sets": 5,
+       "reps": "30 s / 90 s",
        "rest": 0,
-       "note": "Avant du pied sur une marche, haltères en main, 2 s en haut"
-      },
-      {
-       "x": "vup",
-       "sets": 3,
-       "reps": "12",
-       "rest": 45
+       "unit": "time",
+       "note": "5 × 30 s d’effort soutenu sans sprint maximal, 90 s facile"
       }
      ]
     }
    ],
+   "coolTitle": "Retour au calme · 5 min",
    "cooldown": [
     {
-     "t": "Vélo facile",
+     "t": "5 min vélo assis, retour au calme progressif",
      "x": [
-      "bike"
-     ]
-    },
-    {
-     "t": "Étirements quadriceps, fessiers, adducteurs",
-     "x": [
-      "st_quad",
-      "st_glute",
-      "st_add"
+      "bike_recumb"
      ]
     }
    ],
-   "goal": "Monter en charge sur le squat (5 × 6) et reprendre le front squat. Gainage plus exigeant avec les toes-to-bar."
+   "goal": "Environ 72 min de travail (80 min avec les changements) : vélo, tapis incliné, rameur, escalier, un circuit de 3 tours et un fractionné court à l’Assault bike."
   },
   {
-   "id": "c3-ca",
-   "cycle": 3,
-   "slot": "CA",
-   "title": "Fractionné au seuil",
-   "warmup": [],
+   "id": "c2-haut",
+   "cycle": 2,
+   "slot": "H",
+   "title": "Haut du corps + core + finisher",
+   "gate": 120,
+   "warmTitle": "Mise en route",
+   "warmup": [
+    {
+     "t": "Le cardio du bloc A sert d’échauffement. Avant le développé : rotations d’épaules à l’élastique, 10 band pull-aparts, 1 série légère.",
+     "x": [
+      "shoulder_band",
+      "band_pull"
+     ]
+    }
+   ],
    "blocks": [
     {
      "l": "A",
+     "title": "Cardio · 15 min",
      "items": [
       {
-       "x": "rower",
-       "sets": 5,
-       "reps": "4 min",
-       "rest": 120,
-       "note": "Allure soutenue mais tenable · récup 2 min facile"
-      }
-     ]
-    },
-    {
-     "l": "B",
-     "items": [
-      {
-       "x": "stairs",
+       "x": "bike",
        "sets": 1,
        "reps": "15 min",
        "rest": 0,
-       "label": "Escalier ou tapis incliné",
-       "note": "Zone 2"
+       "label": "Cardio au choix",
+       "res": "km, cal ou FC",
+       "note": "5 min faciles, puis 10 min à intensité modérée. Vélo, rameur, tapis ou escalier : choisis dans « Variante » si ce n’est pas le vélo."
       }
      ]
     },
-    {
-     "l": "C",
-     "items": [
-      {
-       "x": "assault",
-       "sets": 6,
-       "reps": "20 s fort / 40 s facile",
-       "rest": 0,
-       "unit": "time",
-       "note": "Une série = un effort fort, en secondes"
-      }
-     ]
-    }
-   ],
-   "cooldown": [
-    {
-     "t": "Marche",
-     "x": []
-    },
-    {
-     "t": "Étirements mollets, ischios, psoas",
-     "x": [
-      "st_calf",
-      "st_ham",
-      "st_hipflex"
-     ]
-    }
-   ],
-   "goal": "Travailler au seuil en fractionné sur le rameur et en sprints courts sur l’assault bike."
-  },
-  {
-   "id": "c3-r2",
-   "cycle": 3,
-   "slot": "R2",
-   "title": "Haut du corps + core + finisher",
-   "warmup": [
-    {
-     "t": "5 min rameur ou SkiErg facile",
-     "x": [
-      "rower",
-      "skierg"
-     ]
-    },
-    {
-     "t": "Rotations d’épaules avec élastique, 10 band pull-aparts, dead hang 3 × 30-40 s, 1 série légère de développé couché",
-     "x": [
-      "shoulder_band",
-      "band_pull",
-      "dead_hang"
-     ]
-    }
-   ],
-   "blocks": [
     {
      "l": "T",
      "title": "Test du cycle",
@@ -1792,7 +848,7 @@
        "rest": 180,
        "test": "pullups",
        "label": "Test : tractions strictes max",
-       "note": "Strictes, sans kipping. Si tu n’en fais aucune, note 0 : le travail du cycle sert à y arriver."
+       "note": "Strictes, sans kipping. Si tu n’en fais aucune, note 0."
       },
       {
        "x": "pushup_par",
@@ -1806,7 +862,7 @@
      ]
     },
     {
-     "l": "A",
+     "l": "B",
      "items": [
       {
        "x": "chest_press",
@@ -1819,7 +875,7 @@
      ]
     },
     {
-     "l": "B",
+     "l": "C",
      "items": [
       {
        "x": "seated_row",
@@ -1832,7 +888,7 @@
      ]
     },
     {
-     "l": "C",
+     "l": "D",
      "items": [
       {
        "x": "latpull",
@@ -1845,7 +901,7 @@
      ]
     },
     {
-     "l": "D",
+     "l": "E",
      "items": [
       {
        "x": "shoulder_mach",
@@ -1858,7 +914,7 @@
      ]
     },
     {
-     "l": "E",
+     "l": "F",
      "items": [
       {
        "x": "lat_raise",
@@ -1870,7 +926,7 @@
      ]
     },
     {
-     "l": "F",
+     "l": "G",
      "items": [
       {
        "x": "ez_curl",
@@ -1883,7 +939,7 @@
      ]
     },
     {
-     "l": "G",
+     "l": "H",
      "items": [
       {
        "x": "rope_pd",
@@ -1896,7 +952,7 @@
      ]
     },
     {
-     "l": "H",
+     "l": "I",
      "type": "circuit",
      "title": "Core · 10 à 12 min",
      "rounds": 2,
@@ -1913,8 +969,8 @@
        "x": "pallof",
        "sets": 2,
        "reps": "20-30 s",
-       "unit": "time",
        "rest": 0,
+       "unit": "time",
        "label": "Pallof statique à la poulie",
        "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
       },
@@ -1935,7 +991,7 @@
      ]
     },
     {
-     "l": "I",
+     "l": "J",
      "type": "wod",
      "title": "Finisher · 3 tours",
      "rounds": 3,
@@ -1963,6 +1019,7 @@
      ]
     }
    ],
+   "coolTitle": "Retour au calme · 5 min",
    "cooldown": [
     {
      "t": "Étirements pectoraux, épaules, dorsaux, triceps, avant-bras",
@@ -1974,131 +1031,20 @@
      ]
     }
    ],
-   "goal": "Haut du corps complet en 40 à 45 min (pousser, tirer, épaules, bras), puis 10 à 12 min de core et un finisher court. Séries de travail à RPE 7-8 (2 en réserve) ; les séries d’échauffement ne comptent pas. Entre deux exercices, environ 2 min, installation comprise.",
-   "gate": 120
+   "goal": "15 min de cardio, haut du corps complet en 40 à 45 min, 10 à 12 min de core et un finisher court. Les séries d’échauffement ne comptent pas ; entre deux exercices, environ 2 min, installation comprise."
   },
   {
-   "id": "c3-wod",
+   "id": "c3-bas",
    "cycle": 3,
-   "slot": "WOD",
-   "title": "Intensité et haltérophilie légère",
+   "slot": "B",
+   "title": "Bas du corps + core + finisher vélo",
+   "gate": 120,
+   "warmTitle": "Mise en route · 5 min",
    "warmup": [
     {
-     "t": "3 min rameur + 2 min corde",
+     "t": "5 min vélo facile, puis 1 série légère de presse avant la première série de travail",
      "x": [
-      "rower",
-      "single_under"
-     ]
-    },
-    {
-     "t": "Éducatifs de clean à la barre vide (deadlift, hang pull, hang power clean)",
-     "x": []
-    }
-   ],
-   "blocks": [
-    {
-     "l": "A",
-     "title": "Technique · 10 min",
-     "items": [
-      {
-       "x": "hpc",
-       "sets": 6,
-       "reps": "3",
-       "rest": 60,
-       "note": "Léger, focus vitesse et réception · sinon dumbbell hang clean"
-      }
-     ]
-    },
-    {
-     "l": "B",
-     "type": "wod",
-     "title": "For time 21-15-9 (cap 12 min)",
-     "items": [
-      {
-       "x": "wallball",
-       "sets": 0,
-       "reps": "9 kg",
-       "rest": 0
-      },
-      {
-       "x": "kb_swing_am",
-       "sets": 0,
-       "reps": "24 kg",
-       "rest": 0
-      },
-      {
-       "x": "rower_wod",
-       "sets": 0,
-       "reps": "cal",
-       "rest": 0
-      }
-     ]
-    },
-    {
-     "l": "C",
-     "type": "rest",
-     "title": "Repos 15 min"
-    },
-    {
-     "l": "D",
-     "type": "wod",
-     "title": "EMOM 16 min, 4 tours",
-     "items": [
-      {
-       "x": "assault_wod",
-       "sets": 0,
-       "reps": "12 cal",
-       "rest": 0
-      },
-      {
-       "x": "db_snatch",
-       "sets": 0,
-       "reps": "8 alternés · 22,5 kg",
-       "rest": 0
-      },
-      {
-       "x": "burpee",
-       "sets": 0,
-       "reps": "10",
-       "rest": 0
-      },
-      {
-       "x": "single_under",
-       "sets": 0,
-       "reps": "60",
-       "rest": 0
-      }
-     ]
-    }
-   ],
-   "cooldown": [
-    {
-     "t": "Marche, étirements globaux, avant-bras",
-     "x": [
-      "st_forearm"
-     ]
-    }
-   ],
-   "goal": "Réintroduire une haltérophilie légère (hang power clean), puis monter l’intensité des WODs."
-  },
-  {
-   "id": "c3-r3",
-   "cycle": 3,
-   "slot": "R3",
-   "title": "Chaîne postérieure + dos + portés",
-   "warmup": [
-    {
-     "t": "5 min rameur",
-     "x": [
-      "rower"
-     ]
-    },
-    {
-     "t": "Mobilité hanches, ponts fessiers, kettlebell swings légers, montée en charge sur le soulevé de terre",
-     "x": [
-      "hip_opener",
-      "glute_bridge",
-      "kb_swing_light"
+      "bike"
      ]
     }
    ],
@@ -2107,44 +1053,36 @@
      "l": "A",
      "items": [
       {
-       "x": "deadlift",
-       "sets": 5,
-       "reps": "5",
-       "rest": 150,
-       "label": "Soulevé de terre",
-       "note": "RPE 8 · récup 2-3 min"
-      }
-     ]
-    },
-    {
-     "l": "B",
-     "items": [
-      {
-       "x": "rdl",
+       "x": "presse",
        "sets": 3,
-       "reps": "8",
-       "rest": 90
+       "reps": "8-12",
+       "rest": 120,
+       "note": "Machine guidée ou Hammer"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "hipthrust_mach",
+       "sets": 3,
+       "reps": "10-12",
+       "rest": 105,
+       "label": "Hip thrust à la machine ou à la barre",
+       "note": "Machine guidée, ou barre sur un banc · récup 1 min 30 à 2 min"
       }
      ]
     },
     {
      "l": "C",
-     "type": "superset",
-     "rounds": 4,
      "items": [
       {
-       "x": "latpull",
-       "sets": 4,
-       "reps": "8",
-       "rest": 0,
-       "label": "Tractions ou lat pulldown lourd"
-      },
-      {
-       "x": "hipthrust",
-       "sets": 4,
-       "reps": "10",
+       "x": "legcurl_s",
+       "sets": 3,
+       "reps": "10-15",
        "rest": 90,
-       "label": "Hip thrust barre"
+       "label": "Leg curl"
       }
      ]
     },
@@ -2152,330 +1090,238 @@
      "l": "D",
      "items": [
       {
-       "x": "db_row",
-       "sets": 3,
-       "reps": "10/bras",
-       "rest": 60,
-       "label": "Rowing un bras haltère lourd"
+       "x": "legext",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 75,
+       "note": "Récup 1 min à 1 min 30"
       }
      ]
     },
     {
      "l": "E",
-     "type": "circuit",
-     "title": "Portés",
-     "rounds": 4,
      "items": [
       {
-       "x": "farmer",
-       "sets": 4,
-       "reps": "30 m",
-       "rest": 0,
-       "label": "Farmer’s carry lourd"
-      },
-      {
-       "x": "suitcase",
-       "sets": 4,
-       "reps": "20 m/côté",
-       "rest": 60
+       "x": "calf_mach",
+       "sets": 3,
+       "reps": "12-20",
+       "rest": 60,
+       "label": "Mollets debout ou à la machine",
+       "note": "À la machine, ou debout sur une marche avec haltères"
       }
      ]
     },
     {
      "l": "F",
+     "type": "circuit",
+     "title": "Core · 10 à 12 min",
+     "rounds": 2,
      "items": [
       {
-       "x": "legcurl_l",
-       "sets": 3,
-       "reps": "12",
+       "x": "situp",
+       "sets": 2,
+       "reps": "10-15",
        "rest": 0,
-       "note": "Isolation ciblée : les ischios en flexion du genou sont le groupe en retard du cycle"
+       "label": "Sit-up contrôlé",
+       "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
       },
       {
-       "x": "superman",
-       "sets": 3,
-       "reps": "12",
-       "rest": 60,
-       "label": "Superman ou back extension lestée",
-       "note": "Back extension lestée : note la charge"
-      }
-     ],
-     "type": "superset"
-    },
-    {
-     "l": "G",
-     "title": "Objectif tractions",
-     "items": [
+       "x": "pallof",
+       "sets": 2,
+       "reps": "20-30 s",
+       "rest": 0,
+       "unit": "time",
+       "label": "Pallof statique à la poulie",
+       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
+      },
       {
-       "x": "strict_pu",
-       "sets": 4,
-       "reps": "4",
-       "rest": 90,
-       "note": "Ajoute une répétition dès que les 4 séries passent"
+       "x": "db_side_bend",
+       "sets": 2,
+       "reps": "10-15/côté",
+       "rest": 0,
+       "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
+      },
+      {
+       "x": "plank_fa",
+       "sets": 2,
+       "reps": "20-40 s",
+       "rest": 60,
+       "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
       }
      ]
     },
     {
-     "l": "H",
-     "type": "circuit",
-     "rounds": 3,
-     "title": "Bras, mollets, fléchisseurs de hanche",
+     "l": "G",
+     "title": "Finisher vélo · 6 min",
      "items": [
       {
-       "x": "hammer_curl",
-       "sets": 3,
-       "reps": "10",
-       "rest": 0
-      },
-      {
-       "x": "calf_stand",
-       "sets": 3,
-       "reps": "15",
-       "rest": 0
-      },
-      {
-       "x": "t2b",
-       "sets": 3,
-       "reps": "6-8",
-       "rest": 60
+       "x": "bike",
+       "sets": 4,
+       "reps": "30 s soutenu / 60 s facile",
+       "rest": 0,
+       "unit": "time",
+       "label": "Vélo : 30 s soutenu, 60 s facile",
+       "note": "4 tours. Soutenu = 7/10, exigeant sans sprint maximal ; facile = 2-3/10, récupération."
       }
      ]
     }
    ],
+   "coolTitle": "Retour au calme · 5 min",
    "cooldown": [
     {
-     "t": "Étirements ischios, fessiers, dos, avant-bras",
+     "t": "Étirements quadriceps, ischios, fessiers, mollets",
      "x": [
+      "st_quad",
       "st_ham",
       "st_glute",
-      "child_pose",
-      "st_forearm"
+      "st_calf"
      ]
     }
    ],
-   "goal": "Monter en charge sur le soulevé de terre (5 × 5, RPE 8) et charger davantage les portés."
+   "goal": "Jambes complètes en machines (presse, hip thrust, leg curl, leg extension, mollets), 10 à 12 min de core et un finisher vélo de 6 min. Garde environ 2 répétitions en réserve ; entre deux exercices, environ 2 min, installation comprise."
   },
   {
-   "id": "c4-r1",
-   "cycle": 4,
-   "slot": "R1",
-   "title": "Jambes dominante genou + gainage",
-   "warmup": [
-    {
-     "t": "5 min assault bike",
-     "x": [
-      "assault"
-     ]
-    },
-    {
-     "t": "Mobilité, montée progressive au back squat",
-     "x": [
-      "ankle_mob",
-      "hip_opener"
-     ]
-    }
-   ],
-   "blocks": [
-    {
-     "l": "A",
-     "items": [
-      {
-       "x": "backsquat",
-       "sets": 3,
-       "reps": "5",
-       "rest": 180,
-       "note": "Montée jusqu’à un 5RM propre (RPE 8-9), puis 2 × 5 à 90 % de ce 5RM · récup 3 min",
-       "benchmark": "squat5rm"
-      }
-     ]
-    },
-    {
-     "l": "B",
-     "items": [
-      {
-       "x": "frontsquat",
-       "sets": 3,
-       "reps": "6",
-       "rest": 120,
-       "note": "Front rack barre si OK"
-      }
-     ]
-    },
-    {
-     "l": "C",
-     "items": [
-      {
-       "x": "lunge_heavy",
-       "sets": 3,
-       "reps": "8/jambe",
-       "rest": 90
-      }
-     ]
-    },
-    {
-     "l": "D",
-     "items": [
-      {
-       "x": "pistol_box",
-       "sets": 3,
-       "reps": "5/jambe",
-       "rest": 60
-      }
-     ]
-    },
-    {
-     "l": "E",
-     "items": [
-      {
-       "x": "rope_su",
-       "sets": 4,
-       "reps": "50",
-       "rest": 45
-      }
-     ]
-    },
-    {
-     "l": "F",
-     "type": "circuit",
-     "title": "Gainage",
-     "rounds": 3,
-     "items": [
-      {
-       "x": "t2b",
-       "sets": 3,
-       "reps": "8-10",
-       "rest": 0
-      },
-      {
-       "x": "vup",
-       "sets": 3,
-       "reps": "15",
-       "rest": 0
-      },
-      {
-       "x": "hollow_rock",
-       "sets": 3,
-       "reps": "15",
-       "rest": 45
-      },
-      {
-       "x": "pushup_par",
-       "sets": 3,
-       "reps": "15",
-       "rest": 45
-      }
-     ]
-    },
-    {
-     "l": "G",
-     "title": "Mollets",
-     "items": [
-      {
-       "x": "calf_stand",
-       "sets": 3,
-       "reps": "15",
-       "rest": 45,
-       "note": "Avant du pied sur une marche, haltères en main, 2 s en haut"
-      }
-     ]
-    }
-   ],
-   "cooldown": [
-    {
-     "t": "Vélo facile, étirements",
-     "x": [
-      "bike",
-      "st_quad",
-      "st_glute"
-     ]
-    }
-   ],
-   "goal": "Mesurer ta force au squat : 5RM propre puis séries à 90 %. Travail unilatéral (pistol sur box) et gainage complet."
-  },
-  {
-   "id": "c4-ca",
-   "cycle": 4,
+   "id": "c3-cardio",
+   "cycle": 3,
    "slot": "CA",
-   "title": "VO2 + endurance",
+   "title": "Cardio long + circuit",
    "warmup": [],
    "blocks": [
     {
      "l": "A",
      "items": [
       {
-       "x": "assault",
-       "sets": 10,
-       "reps": "30 s fort / 30 s facile",
+       "x": "bike",
+       "sets": 1,
+       "reps": "10 min",
        "rest": 0,
-       "note": "Puis 3 min facile · Une série = un effort fort, en secondes",
-       "unit": "time"
+       "label": "Vélo d’échauffement",
+       "note": "Augmente progressivement"
       }
      ]
     },
     {
      "l": "B",
-     "items": [
-      {
-       "x": "rower",
-       "sets": 1,
-       "reps": "2 000 m",
-       "rest": 0,
-       "label": "Rameur · test 2 000 m",
-       "note": "Note ton temps, ce sera ta référence",
-       "benchmark": "row2k",
-       "res": "temps mm:ss"
-      }
-     ]
-    },
-    {
-     "l": "C",
      "items": [
       {
        "x": "incline_walk",
        "sets": 1,
-       "reps": "25 min",
+       "reps": "15 min",
        "rest": 0,
-       "label": "Zone 2 au choix",
-       "note": "Tapis incliné, escalier ou course légère si les genoux l’acceptent"
+       "note": "Garde une allure qui te permet de parler en phrases"
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "items": [
+      {
+       "x": "rower",
+       "sets": 1,
+       "reps": "15 min",
+       "rest": 0,
+       "note": "Tant que la technique reste propre"
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "items": [
+      {
+       "x": "stairs",
+       "sets": 1,
+       "reps": "5 min",
+       "rest": 0
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "type": "circuit",
+     "title": "Stations",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "skierg",
+       "sets": 3,
+       "reps": "1 min",
+       "rest": 30,
+       "note": "Allure contrôlée · 30 s pour changer"
+      },
+      {
+       "x": "stepup",
+       "sets": 3,
+       "reps": "1 min",
+       "rest": 30,
+       "label": "Box step-up, sans charge",
+       "note": "Alterne la jambe de départ ; box basse, contrôle la descente · 30 s pour changer"
+      },
+      {
+       "x": "rope_su",
+       "sets": 3,
+       "reps": "30 s",
+       "rest": 30,
+       "note": "Sauts simples · 30 s de récup"
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "items": [
+      {
+       "x": "assault",
+       "sets": 5,
+       "reps": "30 s / 90 s",
+       "rest": 0,
+       "unit": "time",
+       "note": "5 × 30 s d’effort soutenu sans sprint maximal, 90 s facile"
       }
      ]
     }
    ],
+   "coolTitle": "Retour au calme · 5 min",
    "cooldown": [
     {
-     "t": "Marche, étirements",
+     "t": "5 min vélo assis, retour au calme progressif",
      "x": [
-      "st_calf",
-      "st_ham",
-      "st_hipflex"
+      "bike_recumb"
      ]
     }
    ],
-   "goal": "Travailler la VO2 sur l’assault bike et faire le test 2 000 m au rameur, qui devient ta référence."
+   "goal": "Environ 72 min de travail (80 min avec les changements) : vélo, tapis incliné, rameur, escalier, un circuit de 3 tours et un fractionné court à l’Assault bike."
   },
   {
-   "id": "c4-r2",
-   "cycle": 4,
-   "slot": "R2",
+   "id": "c3-haut",
+   "cycle": 3,
+   "slot": "H",
    "title": "Haut du corps + core + finisher",
+   "gate": 120,
+   "warmTitle": "Mise en route",
    "warmup": [
     {
-     "t": "5 min rameur ou SkiErg facile",
-     "x": [
-      "rower",
-      "skierg"
-     ]
-    },
-    {
-     "t": "Rotations d’épaules avec élastique, 10 band pull-aparts, dead hang 2 × 45 s, 1 série légère de développé couché",
+     "t": "Le cardio du bloc A sert d’échauffement. Avant le développé : rotations d’épaules à l’élastique, 10 band pull-aparts, 1 série légère.",
      "x": [
       "shoulder_band",
-      "band_pull",
-      "dead_hang"
+      "band_pull"
      ]
     }
    ],
    "blocks": [
+    {
+     "l": "A",
+     "title": "Cardio · 15 min",
+     "items": [
+      {
+       "x": "bike",
+       "sets": 1,
+       "reps": "15 min",
+       "rest": 0,
+       "label": "Cardio au choix",
+       "res": "km, cal ou FC",
+       "note": "5 min faciles, puis 10 min à intensité modérée. Vélo, rameur, tapis ou escalier : choisis dans « Variante » si ce n’est pas le vélo."
+      }
+     ]
+    },
     {
      "l": "T",
      "title": "Test du cycle",
@@ -2487,7 +1333,7 @@
        "rest": 180,
        "test": "pullups",
        "label": "Test : tractions strictes max",
-       "note": "Strictes, sans kipping. Si tu n’en fais aucune, note 0 : le travail du cycle sert à y arriver."
+       "note": "Strictes, sans kipping. Si tu n’en fais aucune, note 0."
       },
       {
        "x": "pushup_par",
@@ -2501,7 +1347,7 @@
      ]
     },
     {
-     "l": "A",
+     "l": "B",
      "items": [
       {
        "x": "chest_press",
@@ -2514,7 +1360,7 @@
      ]
     },
     {
-     "l": "B",
+     "l": "C",
      "items": [
       {
        "x": "seated_row",
@@ -2527,7 +1373,7 @@
      ]
     },
     {
-     "l": "C",
+     "l": "D",
      "items": [
       {
        "x": "latpull",
@@ -2540,7 +1386,7 @@
      ]
     },
     {
-     "l": "D",
+     "l": "E",
      "items": [
       {
        "x": "shoulder_mach",
@@ -2553,7 +1399,7 @@
      ]
     },
     {
-     "l": "E",
+     "l": "F",
      "items": [
       {
        "x": "lat_raise",
@@ -2565,7 +1411,7 @@
      ]
     },
     {
-     "l": "F",
+     "l": "G",
      "items": [
       {
        "x": "ez_curl",
@@ -2578,7 +1424,7 @@
      ]
     },
     {
-     "l": "G",
+     "l": "H",
      "items": [
       {
        "x": "rope_pd",
@@ -2591,7 +1437,7 @@
      ]
     },
     {
-     "l": "H",
+     "l": "I",
      "type": "circuit",
      "title": "Core · 10 à 12 min",
      "rounds": 2,
@@ -2608,8 +1454,8 @@
        "x": "pallof",
        "sets": 2,
        "reps": "20-30 s",
-       "unit": "time",
        "rest": 0,
+       "unit": "time",
        "label": "Pallof statique à la poulie",
        "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
       },
@@ -2630,7 +1476,7 @@
      ]
     },
     {
-     "l": "I",
+     "l": "J",
      "type": "wod",
      "title": "Finisher · 3 tours",
      "rounds": 3,
@@ -2658,6 +1504,7 @@
      ]
     }
    ],
+   "coolTitle": "Retour au calme · 5 min",
    "cooldown": [
     {
      "t": "Étirements pectoraux, épaules, dorsaux, triceps, avant-bras",
@@ -2669,145 +1516,172 @@
      ]
     }
    ],
-   "goal": "Haut du corps complet en 40 à 45 min (pousser, tirer, épaules, bras), puis 10 à 12 min de core et un finisher court. Séries de travail à RPE 8 (1-2 en réserve) ; les séries d’échauffement ne comptent pas. Entre deux exercices, environ 2 min, installation comprise.",
-   "gate": 120
+   "goal": "15 min de cardio, haut du corps complet en 40 à 45 min, 10 à 12 min de core et un finisher court. Les séries d’échauffement ne comptent pas ; entre deux exercices, environ 2 min, installation comprise."
   },
   {
-   "id": "c4-wod",
+   "id": "c4-bas",
    "cycle": 4,
-   "slot": "WOD",
-   "title": "Benchmark et retest",
+   "slot": "B",
+   "title": "Bas du corps + core + finisher vélo",
+   "gate": 120,
+   "warmTitle": "Mise en route · 5 min",
    "warmup": [
     {
-     "t": "3 min rameur + 2 min corde",
+     "t": "5 min vélo facile, puis 1 série légère de presse avant la première série de travail",
      "x": [
-      "rower",
-      "single_under"
+      "bike"
      ]
-    },
-    {
-     "t": "Montée en charge sur le thruster et éducatifs à vide des mouvements",
-     "x": []
     }
    ],
    "blocks": [
     {
      "l": "A",
-     "type": "wod",
-     "title": "« Fran » adapté · for time 21-15-9 (cap 10 min)",
      "items": [
       {
-       "x": "thruster",
-       "sets": 0,
-       "reps": "barre 30-40 kg",
-       "rest": 0
-      },
-      {
-       "x": "pullup_wod",
-       "sets": 0,
-       "reps": "élastique si besoin",
-       "rest": 0
+       "x": "presse",
+       "sets": 3,
+       "reps": "8-12",
+       "rest": 120,
+       "note": "Machine guidée ou Hammer"
       }
      ]
     },
     {
      "l": "B",
-     "type": "rest",
-     "title": "Repos 15 min (marche, rameur très facile)"
+     "items": [
+      {
+       "x": "hipthrust_mach",
+       "sets": 3,
+       "reps": "10-12",
+       "rest": 105,
+       "label": "Hip thrust à la machine ou à la barre",
+       "note": "Machine guidée, ou barre sur un banc · récup 1 min 30 à 2 min"
+      }
+     ]
     },
     {
      "l": "C",
-     "type": "wod",
-     "title": "Retest de l’AMRAP 12 du cycle 1",
-     "benchmark": "amrap12",
-     "desc": "Mêmes charges qu’au cycle 1 pour comparer le score, ou charges augmentées si le cycle 1 était trop facile (le noter).",
      "items": [
       {
-       "x": "wallball",
-       "sets": 0,
-       "reps": "10",
-       "rest": 0
-      },
-      {
-       "x": "kb_swing_wod",
-       "sets": 0,
-       "reps": "10",
-       "rest": 0
-      },
-      {
-       "x": "skierg_wod",
-       "sets": 0,
-       "reps": "10 cal",
-       "rest": 0
+       "x": "legcurl_s",
+       "sets": 3,
+       "reps": "10-15",
+       "rest": 90,
+       "label": "Leg curl"
       }
      ]
     },
     {
      "l": "D",
-     "type": "rest",
-     "title": "Repos 15 min"
+     "items": [
+      {
+       "x": "legext",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 75,
+       "note": "Récup 1 min à 1 min 30"
+      }
+     ]
     },
     {
      "l": "E",
-     "type": "wod",
-     "title": "Finisher · 5 min",
-     "desc": "1 tour = 5 burpees + 10 cal assault bike, allure constante.",
      "items": [
       {
-       "x": "burpee",
-       "sets": 0,
-       "reps": "5",
-       "rest": 0
+       "x": "calf_mach",
+       "sets": 3,
+       "reps": "12-20",
+       "rest": 60,
+       "label": "Mollets debout ou à la machine",
+       "note": "À la machine, ou debout sur une marche avec haltères"
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "type": "circuit",
+     "title": "Core · 10 à 12 min",
+     "rounds": 2,
+     "items": [
+      {
+       "x": "situp",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 0,
+       "label": "Sit-up contrôlé",
+       "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
       },
       {
-       "x": "assault_wod",
-       "sets": 0,
-       "reps": "10 cal",
-       "rest": 0
+       "x": "pallof",
+       "sets": 2,
+       "reps": "20-30 s",
+       "rest": 0,
+       "unit": "time",
+       "label": "Pallof statique à la poulie",
+       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
+      },
+      {
+       "x": "db_side_bend",
+       "sets": 2,
+       "reps": "10-15/côté",
+       "rest": 0,
+       "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
+      },
+      {
+       "x": "plank_fa",
+       "sets": 2,
+       "reps": "20-40 s",
+       "rest": 60,
+       "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
+      }
+     ]
+    },
+    {
+     "l": "G",
+     "title": "Finisher vélo · 6 min",
+     "items": [
+      {
+       "x": "bike",
+       "sets": 4,
+       "reps": "30 s soutenu / 60 s facile",
+       "rest": 0,
+       "unit": "time",
+       "label": "Vélo : 30 s soutenu, 60 s facile",
+       "note": "4 tours. Soutenu = 7/10, exigeant sans sprint maximal ; facile = 2-3/10, récupération."
       }
      ]
     }
    ],
+   "coolTitle": "Retour au calme · 5 min",
    "cooldown": [
     {
-     "t": "Marche, étirements globaux, respiration",
-     "x": []
+     "t": "Étirements quadriceps, ischios, fessiers, mollets",
+     "x": [
+      "st_quad",
+      "st_ham",
+      "st_glute",
+      "st_calf"
+     ]
     }
    ],
-   "goal": "Benchmark « Fran » adapté et retest de l’AMRAP 12 du cycle 1 pour mesurer le chemin parcouru."
+   "goal": "Jambes complètes en machines (presse, hip thrust, leg curl, leg extension, mollets), 10 à 12 min de core et un finisher vélo de 6 min. Garde environ 2 répétitions en réserve ; entre deux exercices, environ 2 min, installation comprise."
   },
   {
-   "id": "c4-r3",
+   "id": "c4-cardio",
    "cycle": 4,
-   "slot": "R3",
-   "title": "Chaîne postérieure + dos + portés",
-   "warmup": [
-    {
-     "t": "5 min rameur",
-     "x": [
-      "rower"
-     ]
-    },
-    {
-     "t": "Mobilité hanches, swings légers, montée en charge au soulevé de terre",
-     "x": [
-      "hip_opener",
-      "kb_swing_light"
-     ]
-    }
-   ],
+   "slot": "CA",
+   "title": "Cardio long + circuit",
+   "warmup": [],
    "blocks": [
     {
      "l": "A",
      "items": [
       {
-       "x": "deadlift",
-       "sets": 3,
-       "reps": "5",
-       "rest": 180,
-       "label": "Soulevé de terre",
-       "note": "Montée jusqu’à un 3-5RM propre, puis 2 × 5 à 85 %",
-       "benchmark": "deadlift"
+       "x": "bike",
+       "sets": 1,
+       "reps": "10 min",
+       "rest": 0,
+       "label": "Vélo d’échauffement",
+       "note": "Augmente progressivement"
       }
      ]
     },
@@ -2815,31 +1689,23 @@
      "l": "B",
      "items": [
       {
-       "x": "power_clean",
-       "sets": 5,
-       "reps": "3",
-       "rest": 90,
-       "note": "Léger et rapide"
+       "x": "incline_walk",
+       "sets": 1,
+       "reps": "15 min",
+       "rest": 0,
+       "note": "Garde une allure qui te permet de parler en phrases"
       }
      ]
     },
     {
      "l": "C",
-     "type": "superset",
-     "rounds": 4,
      "items": [
       {
-       "x": "bor",
-       "sets": 4,
-       "reps": "8",
-       "rest": 0
-      },
-      {
-       "x": "hipthrust",
-       "sets": 4,
-       "reps": "8",
-       "rest": 90,
-       "label": "Hip thrust lourd"
+       "x": "rower",
+       "sets": 1,
+       "reps": "15 min",
+       "rest": 0,
+       "note": "Tant que la technique reste propre"
       }
      ]
     },
@@ -2847,32 +1713,40 @@
      "l": "D",
      "items": [
       {
-       "x": "db_snatch",
-       "sets": 4,
-       "reps": "5/côté",
-       "rest": 75,
-       "note": "Haltère 15-22,5 kg, verrouillage 1 s au-dessus de la tête"
+       "x": "stairs",
+       "sets": 1,
+       "reps": "5 min",
+       "rest": 0
       }
      ]
     },
     {
      "l": "E",
      "type": "circuit",
-     "title": "Portés",
+     "title": "Stations",
      "rounds": 3,
      "items": [
       {
-       "x": "farmer",
+       "x": "skierg",
        "sets": 3,
-       "reps": "40 m",
-       "rest": 0,
-       "label": "Farmer’s carry lourd"
+       "reps": "1 min",
+       "rest": 30,
+       "note": "Allure contrôlée · 30 s pour changer"
       },
       {
-       "x": "kb_rack_carry",
+       "x": "stepup",
        "sets": 3,
-       "reps": "20 m/côté",
-       "rest": 60
+       "reps": "1 min",
+       "rest": 30,
+       "label": "Box step-up, sans charge",
+       "note": "Alterne la jambe de départ ; box basse, contrôle la descente · 30 s pour changer"
+      },
+      {
+       "x": "rope_su",
+       "sets": 3,
+       "reps": "30 s",
+       "rest": 30,
+       "note": "Sauts simples · 30 s de récup"
       }
      ]
     },
@@ -2880,74 +1754,254 @@
      "l": "F",
      "items": [
       {
-       "x": "legcurl_l",
-       "sets": 3,
-       "reps": "10",
+       "x": "assault",
+       "sets": 5,
+       "reps": "30 s / 90 s",
        "rest": 0,
-       "note": "Isolation ciblée : ischios en flexion du genou"
-      },
-      {
-       "x": "back_ext",
-       "sets": 3,
-       "reps": "12",
-       "rest": 60,
-       "label": "Back extension lestée"
+       "unit": "time",
+       "note": "5 × 30 s d’effort soutenu sans sprint maximal, 90 s facile"
       }
-     ],
-     "type": "superset"
+     ]
+    }
+   ],
+   "coolTitle": "Retour au calme · 5 min",
+   "cooldown": [
+    {
+     "t": "5 min vélo assis, retour au calme progressif",
+     "x": [
+      "bike_recumb"
+     ]
+    }
+   ],
+   "goal": "Environ 72 min de travail (80 min avec les changements) : vélo, tapis incliné, rameur, escalier, un circuit de 3 tours et un fractionné court à l’Assault bike."
+  },
+  {
+   "id": "c4-haut",
+   "cycle": 4,
+   "slot": "H",
+   "title": "Haut du corps + core + finisher",
+   "gate": 120,
+   "warmTitle": "Mise en route",
+   "warmup": [
+    {
+     "t": "Le cardio du bloc A sert d’échauffement. Avant le développé : rotations d’épaules à l’élastique, 10 band pull-aparts, 1 série légère.",
+     "x": [
+      "shoulder_band",
+      "band_pull"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "title": "Cardio · 15 min",
+     "items": [
+      {
+       "x": "bike",
+       "sets": 1,
+       "reps": "15 min",
+       "rest": 0,
+       "label": "Cardio au choix",
+       "res": "km, cal ou FC",
+       "note": "5 min faciles, puis 10 min à intensité modérée. Vélo, rameur, tapis ou escalier : choisis dans « Variante » si ce n’est pas le vélo."
+      }
+     ]
     },
     {
-     "l": "G",
-     "title": "Objectif tractions",
+     "l": "T",
+     "title": "Test du cycle",
      "items": [
       {
        "x": "strict_pu",
-       "sets": 6,
-       "reps": "3",
-       "rest": 60,
-       "note": "EMOM : 3 strictes au début de chaque minute, lesté si facile"
+       "sets": 1,
+       "reps": "max",
+       "rest": 180,
+       "test": "pullups",
+       "label": "Test : tractions strictes max",
+       "note": "Strictes, sans kipping. Si tu n’en fais aucune, note 0."
+      },
+      {
+       "x": "pushup_par",
+       "sets": 1,
+       "reps": "max",
+       "rest": 120,
+       "test": "pushups",
+       "label": "Test : pompes max",
+       "note": "Poitrine au sol, corps gainé, sans pause."
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "chest_press",
+       "sets": 3,
+       "reps": "8-12",
+       "rest": 120,
+       "label": "Développé couché haltères ou machine",
+       "note": "Machine (guidée ou Hammer) ou haltères sur banc plat"
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "items": [
+      {
+       "x": "seated_row",
+       "sets": 3,
+       "reps": "8-12",
+       "rest": 105,
+       "label": "Rowing assis à la poulie",
+       "note": "Récup 1 min 30 à 2 min"
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "items": [
+      {
+       "x": "latpull",
+       "sets": 3,
+       "reps": "8-12",
+       "rest": 105,
+       "label": "Tirage vertical",
+       "note": "Récup 1 min 30 à 2 min"
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "items": [
+      {
+       "x": "shoulder_mach",
+       "sets": 2,
+       "reps": "8-12",
+       "rest": 105,
+       "label": "Développé épaules haltères ou machine",
+       "note": "Machine (guidée ou Hammer) ou haltères assis · récup 1 min 30 à 2 min"
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "items": [
+      {
+       "x": "lat_raise",
+       "sets": 2,
+       "reps": "12-20",
+       "rest": 75,
+       "note": "Récup 1 min à 1 min 30"
+      }
+     ]
+    },
+    {
+     "l": "G",
+     "items": [
+      {
+       "x": "ez_curl",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 75,
+       "label": "Curl biceps",
+       "note": "Barre EZ ou haltères · récup 1 min à 1 min 30"
       }
      ]
     },
     {
      "l": "H",
-     "type": "circuit",
-     "rounds": 3,
-     "title": "Bras, mollets, fléchisseurs de hanche",
      "items": [
       {
-       "x": "incline_curl",
-       "sets": 3,
-       "reps": "10",
+       "x": "rope_pd",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 75,
+       "label": "Extension triceps à la poulie",
+       "note": "Récup 1 min à 1 min 30"
+      }
+     ]
+    },
+    {
+     "l": "I",
+     "type": "circuit",
+     "title": "Core · 10 à 12 min",
+     "rounds": 2,
+     "items": [
+      {
+       "x": "situp",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 0,
+       "label": "Sit-up contrôlé",
+       "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
+      },
+      {
+       "x": "pallof",
+       "sets": 2,
+       "reps": "20-30 s",
+       "rest": 0,
+       "unit": "time",
+       "label": "Pallof statique à la poulie",
+       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
+      },
+      {
+       "x": "db_side_bend",
+       "sets": 2,
+       "reps": "10-15/côté",
+       "rest": 0,
+       "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
+      },
+      {
+       "x": "plank_fa",
+       "sets": 2,
+       "reps": "20-40 s",
+       "rest": 60,
+       "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
+      }
+     ]
+    },
+    {
+     "l": "J",
+     "type": "wod",
+     "title": "Finisher · 3 tours",
+     "rounds": 3,
+     "desc": "3 tours : corde à sauter, rameur, Assault bike, puis 60 s de récupération.",
+     "items": [
+      {
+       "x": "single_under",
+       "sets": 0,
+       "reps": "50 sauts simples",
        "rest": 0
       },
       {
-       "x": "calf_stand",
-       "sets": 3,
-       "reps": "15",
+       "x": "rower_wod",
+       "sets": 0,
+       "reps": "15 cal affichées",
        "rest": 0
       },
       {
-       "x": "t2b",
-       "sets": 3,
-       "reps": "6-8",
-       "rest": 60
+       "x": "assault_wod",
+       "sets": 0,
+       "reps": "10 cal affichées",
+       "rest": 60,
+       "label": "Assault bike"
       }
      ]
     }
    ],
+   "coolTitle": "Retour au calme · 5 min",
    "cooldown": [
     {
-     "t": "Étirements ischios, fessiers, dos, avant-bras",
+     "t": "Étirements pectoraux, épaules, dorsaux, triceps, avant-bras",
      "x": [
-      "st_ham",
-      "st_glute",
-      "child_pose",
+      "st_pec",
+      "st_lat",
+      "st_tri",
       "st_forearm"
      ]
     }
    ],
-   "goal": "Trouver un 3-5RM au soulevé de terre, reprendre le power clean, et des portés lourds."
+   "goal": "15 min de cardio, haut du corps complet en 40 à 45 min, 10 à 12 min de core et un finisher court. Les séries d’échauffement ne comptent pas ; entre deux exercices, environ 2 min, installation comprise."
   }
  ],
  "objectives": [
@@ -2956,7 +2010,7 @@
    "label": "Tractions strictes",
    "unit": "répétitions",
    "ex": "strict_pu",
-   "how": "Test au début de chaque S2 : une série, bras tendus en bas, menton au-dessus de la barre, sans kipping."
+   "how": "Test au début de chaque S2, après le cardio : une série, bras tendus en bas, menton au-dessus de la barre, sans kipping."
   },
   {
    "id": "pushups",

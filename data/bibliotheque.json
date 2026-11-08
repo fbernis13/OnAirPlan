@@ -1248,7 +1248,10 @@
    "s": [
     "isch"
    ],
-   "vid": [],
+   "vid": [
+    "hipthrust_mach",
+    "fr_hipthrust_mach"
+   ],
    "img": {
     "file": "images/hipthrust_mach.jpg",
     "source": "fournie par Spook",
@@ -3151,7 +3154,12 @@
    ],
    "vid": [
     "fr_situp"
-   ]
+   ],
+   "img": {
+    "file": "images/situp.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)",
+    "note": "sit-up au sol (sans AbMat sur la photo)"
+   }
   },
   "vup": {
    "fr": "V-up",
@@ -3200,6 +3208,32 @@
    "s": [],
    "img": {
     "file": "images/db_side_bend.jpg",
+    "source": "free-exercise-db (domaine public, Unlicense)"
+   },
+   "vid": [
+    "fr_db_side_bend"
+   ]
+  },
+  "bike_recumb": {
+   "fr": "Vélo assis (semi-allongé)",
+   "en": "Recumbent Bike",
+   "mv": null,
+   "vid": [
+    "fr_bike_recumb"
+   ],
+   "kind": "cardio",
+   "unit": "min",
+   "load": false,
+   "p": [
+    "quad",
+    "fess"
+   ],
+   "s": [
+    "isch",
+    "mol"
+   ],
+   "img": {
+    "file": "images/bike_recumb.jpg",
     "source": "free-exercise-db (domaine public, Unlicense)"
    }
   }
@@ -5750,6 +5784,46 @@
    "url": "https://www.youtube.com/watch?v=5kvKmRGADlQ",
    "checkedAt": "2026-10-11",
    "foundVia": "Recherche web (titre relevé dans les résultats)"
+  },
+  "fr_db_side_bend": {
+   "videoId": "YyhZu9ucrjA",
+   "title": "ABDOMINAUX : Flexion latérale avec haltère",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=YyhZu9ucrjA",
+   "checkedAt": "2026-11-08",
+   "foundVia": "Recherche web (titre relevé dans les résultats)",
+   "lang": "fr"
+  },
+  "fr_hipthrust_mach": {
+   "videoId": "2Fz7YCbjMJM",
+   "title": "Hip Thrust à la machine",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=2Fz7YCbjMJM",
+   "checkedAt": "2026-11-08",
+   "foundVia": "Recherche web (titre relevé dans les résultats)",
+   "lang": "fr"
+  },
+  "hipthrust_mach": {
+   "videoId": "UVucPKyQVLU",
+   "title": "Hip Thrust Machine Quick Tutorial",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=UVucPKyQVLU",
+   "checkedAt": "2026-11-08",
+   "foundVia": "Recherche web (titre relevé dans les résultats)",
+   "lang": "en"
+  },
+  "fr_bike_recumb": {
+   "videoId": "ElYkuaIYfUY",
+   "title": "Comment régler correctement ton vélo semi-allongé (Basic-Fit / Matrix)",
+   "type": "video",
+   "provider": "YouTube",
+   "url": "https://www.youtube.com/watch?v=ElYkuaIYfUY",
+   "checkedAt": "2026-11-08",
+   "foundVia": "Recherche web (titre relevé dans les résultats)",
+   "lang": "fr"
   }
  },
  "catalogue": {
