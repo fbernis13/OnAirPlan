@@ -141,7 +141,8 @@ label.fld { display: grid; gap: .2rem; font-size: .8rem; color: var(--ink-2); fo
 .holdbtn { border: 0; background: var(--amber-soft); color: var(--amber); font-weight: 700; cursor: pointer; }
 .holdbtn.on { background: var(--amber); color: var(--surface); }
 
-.exo-actions { display: flex; gap: .4rem; flex-wrap: wrap; }
+.exo-actions { display: grid; grid-template-columns: repeat(4, auto); justify-content: start; gap: .35rem; }
+.exo-actions .btn.small { padding-inline: .5rem; }
 details.more > summary { cursor: pointer; font-size: .85rem; color: var(--ink-2); font-weight: 600; list-style: none; display: inline-flex; gap: .3rem; align-items: center; }
 details.more > summary::-webkit-details-marker { display: none; }
 details.more[open] > summary { margin-bottom: .5rem; }
