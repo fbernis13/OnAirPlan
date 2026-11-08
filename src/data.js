@@ -10,7 +10,7 @@
    la version d'origine sur cet appareil jusqu'à la remise à zéro. */
 
 let BIB = null, CAR = null;
-let MUSCLES = {}, EXERCISES = {}, VIDEOS = {}, CATALOG = { movements: [] }, MOVES = [], MOVE_BY_ID = {};
+let BIB_VER = '', MUSCLES = {}, EXERCISES = {}, VIDEOS = {}, CATALOG = { movements: [] }, MOVES = [], MOVE_BY_ID = {};
 let MACHINE_PAIRS = [], PAIR_OF = {};
 let CYCLES = [], SESSION_TYPES = {}, SESSIONS = [], SESSION_BY_ID = {}, BENCHMARKS = [], OBJECTIVES = [], PROGRAM_RULES = [], USAGE = {};
 const DATA_LS = { bib: 'onair-bibliotheque', car: 'onair-carnet', snaps: 'onair-sauvegardes' };
@@ -54,7 +54,7 @@ function missingExercises(car, bib) {
 
 function applyData(bib, car) {
   BIB = bib; CAR = car;
-  MUSCLES = bib.muscles || {}; EXERCISES = bib.exercises || {}; VIDEOS = bib.videos || {};
+  MUSCLES = bib.muscles || {}; EXERCISES = bib.exercises || {}; VIDEOS = bib.videos || {}; BIB_VER = bib.updatedAt || '';
   CATALOG = bib.catalogue || { movements: [] }; MOVES = CATALOG.movements || [];
   MOVE_BY_ID = Object.fromEntries(MOVES.map(m => [m.id, m]));
   MACHINE_PAIRS = (bib.machinePairs || []).filter(p => EXERCISES[p.guidee] && EXERCISES[p.hammer]);
