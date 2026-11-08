@@ -142,14 +142,25 @@
      ]
     },
     {
+     "type": "superset",
+     "rounds": 3,
      "items": [
       {
        "x": "situp",
        "sets": 3,
        "reps": "10",
-       "rest": 45,
+       "rest": 0,
        "label": "Sit-up contrôlé",
        "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
+      },
+      {
+       "x": "pallof",
+       "sets": 3,
+       "reps": "20-30 s",
+       "rest": 45,
+       "unit": "time",
+       "label": "Pallof statique à la poulie",
+       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
       }
      ],
      "l": "F",
@@ -161,15 +172,6 @@
      "title": "Core (suite)",
      "rounds": 2,
      "items": [
-      {
-       "x": "pallof",
-       "sets": 2,
-       "reps": "20-30 s",
-       "rest": 0,
-       "unit": "time",
-       "label": "Pallof statique à la poulie",
-       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
-      },
       {
        "x": "db_side_bend",
        "sets": 2,
@@ -473,14 +475,25 @@
      ]
     },
     {
+     "type": "superset",
+     "rounds": 3,
      "items": [
       {
        "x": "situp",
        "sets": 3,
        "reps": "10",
-       "rest": 45,
+       "rest": 0,
        "label": "Sit-up contrôlé",
        "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
+      },
+      {
+       "x": "pallof",
+       "sets": 3,
+       "reps": "20-30 s",
+       "rest": 45,
+       "unit": "time",
+       "label": "Pallof statique à la poulie",
+       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
       }
      ],
      "l": "I",
@@ -492,15 +505,6 @@
      "title": "Core (suite)",
      "rounds": 2,
      "items": [
-      {
-       "x": "pallof",
-       "sets": 2,
-       "reps": "20-30 s",
-       "rest": 0,
-       "unit": "time",
-       "label": "Pallof statique à la poulie",
-       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
-      },
       {
        "x": "db_side_bend",
        "sets": 2,
@@ -639,14 +643,25 @@
      ]
     },
     {
+     "type": "superset",
+     "rounds": 3,
      "items": [
       {
        "x": "situp",
        "sets": 3,
        "reps": "10",
-       "rest": 45,
+       "rest": 0,
        "label": "Sit-up contrôlé",
        "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
+      },
+      {
+       "x": "pallof",
+       "sets": 3,
+       "reps": "20-30 s",
+       "rest": 45,
+       "unit": "time",
+       "label": "Pallof statique à la poulie",
+       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
       }
      ],
      "l": "F",
@@ -658,15 +673,6 @@
      "title": "Core (suite)",
      "rounds": 2,
      "items": [
-      {
-       "x": "pallof",
-       "sets": 2,
-       "reps": "20-30 s",
-       "rest": 0,
-       "unit": "time",
-       "label": "Pallof statique à la poulie",
-       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
-      },
       {
        "x": "db_side_bend",
        "sets": 2,
@@ -970,14 +976,25 @@
      ]
     },
     {
+     "type": "superset",
+     "rounds": 3,
      "items": [
       {
        "x": "situp",
        "sets": 3,
        "reps": "10",
-       "rest": 45,
+       "rest": 0,
        "label": "Sit-up contrôlé",
        "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
+      },
+      {
+       "x": "pallof",
+       "sets": 3,
+       "reps": "20-30 s",
+       "rest": 45,
+       "unit": "time",
+       "label": "Pallof statique à la poulie",
+       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
       }
      ],
      "l": "I",
@@ -989,15 +1006,6 @@
      "title": "Core (suite)",
      "rounds": 2,
      "items": [
-      {
-       "x": "pallof",
-       "sets": 2,
-       "reps": "20-30 s",
-       "rest": 0,
-       "unit": "time",
-       "label": "Pallof statique à la poulie",
-       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
-      },
       {
        "x": "db_side_bend",
        "sets": 2,
@@ -1136,14 +1144,25 @@
      ]
     },
     {
+     "type": "superset",
+     "rounds": 3,
      "items": [
       {
        "x": "situp",
        "sets": 3,
        "reps": "10",
-       "rest": 45,
+       "rest": 0,
        "label": "Sit-up contrôlé",
        "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
+      },
+      {
+       "x": "pallof",
+       "sets": 3,
+       "reps": "20-30 s",
+       "rest": 45,
+       "unit": "time",
+       "label": "Pallof statique à la poulie",
+       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
       }
      ],
      "l": "F",
@@ -1155,15 +1174,6 @@
      "title": "Core (suite)",
      "rounds": 2,
      "items": [
-      {
-       "x": "pallof",
-       "sets": 2,
-       "reps": "20-30 s",
-       "rest": 0,
-       "unit": "time",
-       "label": "Pallof statique à la poulie",
-       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
-      },
       {
        "x": "db_side_bend",
        "sets": 2,
@@ -1467,14 +1477,25 @@
      ]
     },
     {
+     "type": "superset",
+     "rounds": 3,
      "items": [
       {
        "x": "situp",
        "sets": 3,
        "reps": "10",
-       "rest": 45,
+       "rest": 0,
        "label": "Sit-up contrôlé",
        "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
+      },
+      {
+       "x": "pallof",
+       "sets": 3,
+       "reps": "20-30 s",
+       "rest": 45,
+       "unit": "time",
+       "label": "Pallof statique à la poulie",
+       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
       }
      ],
      "l": "I",
@@ -1486,15 +1507,6 @@
      "title": "Core (suite)",
      "rounds": 2,
      "items": [
-      {
-       "x": "pallof",
-       "sets": 2,
-       "reps": "20-30 s",
-       "rest": 0,
-       "unit": "time",
-       "label": "Pallof statique à la poulie",
-       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
-      },
       {
        "x": "db_side_bend",
        "sets": 2,
@@ -1633,14 +1645,25 @@
      ]
     },
     {
+     "type": "superset",
+     "rounds": 3,
      "items": [
       {
        "x": "situp",
        "sets": 3,
        "reps": "10",
-       "rest": 45,
+       "rest": 0,
        "label": "Sit-up contrôlé",
        "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
+      },
+      {
+       "x": "pallof",
+       "sets": 3,
+       "reps": "20-30 s",
+       "rest": 45,
+       "unit": "time",
+       "label": "Pallof statique à la poulie",
+       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
       }
      ],
      "l": "F",
@@ -1652,15 +1675,6 @@
      "title": "Core (suite)",
      "rounds": 2,
      "items": [
-      {
-       "x": "pallof",
-       "sets": 2,
-       "reps": "20-30 s",
-       "rest": 0,
-       "unit": "time",
-       "label": "Pallof statique à la poulie",
-       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
-      },
       {
        "x": "db_side_bend",
        "sets": 2,
@@ -1964,14 +1978,25 @@
      ]
     },
     {
+     "type": "superset",
+     "rounds": 3,
      "items": [
       {
        "x": "situp",
        "sets": 3,
        "reps": "10",
-       "rest": 45,
+       "rest": 0,
        "label": "Sit-up contrôlé",
        "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
+      },
+      {
+       "x": "pallof",
+       "sets": 3,
+       "reps": "20-30 s",
+       "rest": 45,
+       "unit": "time",
+       "label": "Pallof statique à la poulie",
+       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
       }
      ],
      "l": "I",
@@ -1983,15 +2008,6 @@
      "title": "Core (suite)",
      "rounds": 2,
      "items": [
-      {
-       "x": "pallof",
-       "sets": 2,
-       "reps": "20-30 s",
-       "rest": 0,
-       "unit": "time",
-       "label": "Pallof statique à la poulie",
-       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
-      },
       {
        "x": "db_side_bend",
        "sets": 2,
