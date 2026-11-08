@@ -656,8 +656,8 @@
    ],
    "img": {
     "file": "images/iso_chest.jpg",
-    "source": "free-exercise-db (domaine public, Unlicense)",
-    "note": "développé assis machine à levier chargée en disques, équivalent Hammer ; pas forcément iso-latérale"
+    "source": "Photo fournie par Spook (2026-11-08)",
+    "note": "Développé couché Hammer (chargé de disques)"
    }
   },
   "latpull": {
@@ -2860,8 +2860,8 @@
    ],
    "img": {
     "file": "images/chest_press.jpg",
-    "source": "free-exercise-db (domaine public, Unlicense)",
-    "note": "Développé assis sur machine à leviers (équivalent machine guidée)."
+    "source": "Photo fournie par Spook (2026-11-08)",
+    "note": "Développé assis machine guidée"
    }
   },
   "sdhp": {
