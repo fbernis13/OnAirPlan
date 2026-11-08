@@ -1681,7 +1681,12 @@
    ],
    "vid": [
     "fr_assault"
-   ]
+   ],
+   "img": {
+    "file": "images/assault.jpg",
+    "source": "Photo fournie par Spook (2026-11-08)",
+    "note": "Assault bike"
+   }
   },
   "skierg": {
    "fr": "SkiErg",
@@ -2233,7 +2238,12 @@
    ],
    "vid": [
     "fr_assault_wod"
-   ]
+   ],
+   "img": {
+    "file": "images/assault_wod.jpg",
+    "source": "Photo fournie par Spook (2026-11-08)",
+    "note": "Assault bike"
+   }
   },
   "skierg_wod": {
    "fr": "SkiErg",
