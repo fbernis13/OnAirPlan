@@ -142,19 +142,25 @@
      ]
     },
     {
-     "l": "F",
-     "type": "circuit",
-     "title": "Core · 10 à 12 min",
-     "rounds": 2,
      "items": [
       {
        "x": "situp",
-       "sets": 2,
-       "reps": "10-15",
-       "rest": 0,
+       "sets": 3,
+       "reps": "10",
+       "rest": 45,
        "label": "Sit-up contrôlé",
        "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
-      },
+      }
+     ],
+     "l": "F",
+     "title": "Core · 10 à 12 min"
+    },
+    {
+     "l": "G",
+     "type": "circuit",
+     "title": "Core (suite)",
+     "rounds": 2,
+     "items": [
       {
        "x": "pallof",
        "sets": 2,
@@ -181,7 +187,7 @@
      ]
     },
     {
-     "l": "G",
+     "l": "H",
      "title": "Finisher vélo · 6 min",
      "items": [
       {
@@ -467,19 +473,25 @@
      ]
     },
     {
-     "l": "I",
-     "type": "circuit",
-     "title": "Core · 10 à 12 min",
-     "rounds": 2,
      "items": [
       {
        "x": "situp",
-       "sets": 2,
-       "reps": "10-15",
-       "rest": 0,
+       "sets": 3,
+       "reps": "10",
+       "rest": 45,
        "label": "Sit-up contrôlé",
        "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
-      },
+      }
+     ],
+     "l": "I",
+     "title": "Core · 10 à 12 min"
+    },
+    {
+     "l": "J",
+     "type": "circuit",
+     "title": "Core (suite)",
+     "rounds": 2,
+     "items": [
       {
        "x": "pallof",
        "sets": 2,
@@ -506,7 +518,7 @@
      ]
     },
     {
-     "l": "J",
+     "l": "K",
      "type": "wod",
      "title": "Finisher · 3 tours",
      "rounds": 3,
@@ -627,19 +639,25 @@
      ]
     },
     {
-     "l": "F",
-     "type": "circuit",
-     "title": "Core · 10 à 12 min",
-     "rounds": 2,
      "items": [
       {
        "x": "situp",
-       "sets": 2,
-       "reps": "10-15",
-       "rest": 0,
+       "sets": 3,
+       "reps": "10",
+       "rest": 45,
        "label": "Sit-up contrôlé",
        "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
-      },
+      }
+     ],
+     "l": "F",
+     "title": "Core · 10 à 12 min"
+    },
+    {
+     "l": "G",
+     "type": "circuit",
+     "title": "Core (suite)",
+     "rounds": 2,
+     "items": [
       {
        "x": "pallof",
        "sets": 2,
@@ -666,7 +684,7 @@
      ]
     },
     {
-     "l": "G",
+     "l": "H",
      "title": "Finisher vélo · 6 min",
      "items": [
       {
@@ -952,19 +970,25 @@
      ]
     },
     {
-     "l": "I",
-     "type": "circuit",
-     "title": "Core · 10 à 12 min",
-     "rounds": 2,
      "items": [
       {
        "x": "situp",
-       "sets": 2,
-       "reps": "10-15",
-       "rest": 0,
+       "sets": 3,
+       "reps": "10",
+       "rest": 45,
        "label": "Sit-up contrôlé",
        "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
-      },
+      }
+     ],
+     "l": "I",
+     "title": "Core · 10 à 12 min"
+    },
+    {
+     "l": "J",
+     "type": "circuit",
+     "title": "Core (suite)",
+     "rounds": 2,
+     "items": [
       {
        "x": "pallof",
        "sets": 2,
@@ -991,7 +1015,7 @@
      ]
     },
     {
-     "l": "J",
+     "l": "K",
      "type": "wod",
      "title": "Finisher · 3 tours",
      "rounds": 3,
@@ -1112,19 +1136,25 @@
      ]
     },
     {
-     "l": "F",
-     "type": "circuit",
-     "title": "Core · 10 à 12 min",
-     "rounds": 2,
      "items": [
       {
        "x": "situp",
-       "sets": 2,
-       "reps": "10-15",
-       "rest": 0,
+       "sets": 3,
+       "reps": "10",
+       "rest": 45,
        "label": "Sit-up contrôlé",
        "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
-      },
+      }
+     ],
+     "l": "F",
+     "title": "Core · 10 à 12 min"
+    },
+    {
+     "l": "G",
+     "type": "circuit",
+     "title": "Core (suite)",
+     "rounds": 2,
+     "items": [
       {
        "x": "pallof",
        "sets": 2,
@@ -1151,7 +1181,7 @@
      ]
     },
     {
-     "l": "G",
+     "l": "H",
      "title": "Finisher vélo · 6 min",
      "items": [
       {
@@ -1437,19 +1467,25 @@
      ]
     },
     {
-     "l": "I",
-     "type": "circuit",
-     "title": "Core · 10 à 12 min",
-     "rounds": 2,
      "items": [
       {
        "x": "situp",
-       "sets": 2,
-       "reps": "10-15",
-       "rest": 0,
+       "sets": 3,
+       "reps": "10",
+       "rest": 45,
        "label": "Sit-up contrôlé",
        "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
-      },
+      }
+     ],
+     "l": "I",
+     "title": "Core · 10 à 12 min"
+    },
+    {
+     "l": "J",
+     "type": "circuit",
+     "title": "Core (suite)",
+     "rounds": 2,
+     "items": [
       {
        "x": "pallof",
        "sets": 2,
@@ -1476,7 +1512,7 @@
      ]
     },
     {
-     "l": "J",
+     "l": "K",
      "type": "wod",
      "title": "Finisher · 3 tours",
      "rounds": 3,
@@ -1597,19 +1633,25 @@
      ]
     },
     {
-     "l": "F",
-     "type": "circuit",
-     "title": "Core · 10 à 12 min",
-     "rounds": 2,
      "items": [
       {
        "x": "situp",
-       "sets": 2,
-       "reps": "10-15",
-       "rest": 0,
+       "sets": 3,
+       "reps": "10",
+       "rest": 45,
        "label": "Sit-up contrôlé",
        "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
-      },
+      }
+     ],
+     "l": "F",
+     "title": "Core · 10 à 12 min"
+    },
+    {
+     "l": "G",
+     "type": "circuit",
+     "title": "Core (suite)",
+     "rounds": 2,
+     "items": [
       {
        "x": "pallof",
        "sets": 2,
@@ -1636,7 +1678,7 @@
      ]
     },
     {
-     "l": "G",
+     "l": "H",
      "title": "Finisher vélo · 6 min",
      "items": [
       {
@@ -1922,19 +1964,25 @@
      ]
     },
     {
-     "l": "I",
-     "type": "circuit",
-     "title": "Core · 10 à 12 min",
-     "rounds": 2,
      "items": [
       {
        "x": "situp",
-       "sets": 2,
-       "reps": "10-15",
-       "rest": 0,
+       "sets": 3,
+       "reps": "10",
+       "rest": 45,
        "label": "Sit-up contrôlé",
        "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
-      },
+      }
+     ],
+     "l": "I",
+     "title": "Core · 10 à 12 min"
+    },
+    {
+     "l": "J",
+     "type": "circuit",
+     "title": "Core (suite)",
+     "rounds": 2,
+     "items": [
       {
        "x": "pallof",
        "sets": 2,
@@ -1961,7 +2009,7 @@
      ]
     },
     {
-     "l": "J",
+     "l": "K",
      "type": "wod",
      "title": "Finisher · 3 tours",
      "rounds": 3,
