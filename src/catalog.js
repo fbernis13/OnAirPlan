@@ -12,7 +12,7 @@ function viewExercices() {
     h += `<h3>${KIND_LABELS[kind]} <span class="faint num small">${ks.length}</span></h3><div class="stack">`;
     ks.forEach(k => {
       const d = EXERCISES[k]; const nv = videosFor(k).length;
-      h += `<button class="listbtn" data-act="open-exo" data-id="${k}">${hasExThumb(k) ? `<span class="lthumb">${exThumb(k)}</span>` : ''}<span class="grow"><span class="t">${esc(d.fr)}</span><br>
+      h += `<button class="listbtn" data-act="open-exo" data-id="${k}"><span class="grow"><span class="t">${esc(d.fr)}</span><br>
         <span class="small faint">${esc(d.en)}${(d.p || []).length ? ' · ' + d.p.map(g => MUSCLES[g]).join(', ') : ''}</span></span>
         ${nv ? `<span class="pill acc">${nv} vidéo${nv > 1 ? 's' : ''}</span>` : '<span class="pill">Vidéo absente</span>'}<span class="chev">${IC.chev}</span></button>`;
     });
@@ -26,7 +26,7 @@ function viewExo(k) {
   const bySess = {}; uses.forEach(u => { (bySess[u.sid] = bySess[u.sid] || new Set()).add(u.where); });
   return `<h2 style="margin-top:1rem">${esc(d.fr)}</h2>
   <p class="exo-en" style="font-size:.95rem">${esc(d.en)}</p>
-  ${hasExThumb(k) ? `<figure class="bigthumb">${exThumb(k)}${d.img ? `<figcaption class="small faint">${d.img.note ? esc(d.img.note) + ' · ' : ''}Photo ${esc(d.img.source || '')}</figcaption>` : ''}</figure>` : ''}
+  ${hasExThumb(k) || videosFor(k).length ? mediaBar(k, 'exo:' + k) : '<div class="novid">Vidéo absente : aucune démonstration vérifiée pour cet exercice.</div>'}
   <dl class="kv card">
     <dt>Type</dt><dd>${KIND_LABELS[d.kind] || ''}</dd>
     ${d.unit ? `<dt>Unité</dt><dd>${UNIT_LABELS[d.unit]}</dd>` : ''}
@@ -38,7 +38,6 @@ function viewExo(k) {
   </dl>
   ${d.mv && MOVE_BY_ID[d.mv] ? `<button class="btn" data-act="open-move" data-id="${d.mv}" style="margin-top:.6rem">Fiche du catalogue : ${esc(MOVE_BY_ID[d.mv].name)}</button>` : ''}
   ${d.alt && MOVE_BY_ID[d.alt] ? `<button class="btn ghost" data-act="open-move" data-id="${d.alt}" style="margin-top:.6rem">Alternative : ${esc(MOVE_BY_ID[d.alt].name)}</button>` : ''}
-  <h3>Vidéos</h3>${videoBlock(k, 'exo')}
   <h3>Dans le programme</h3>
   <div class="chips">${Object.entries(bySess).map(([sid, w]) => `<button class="chip" data-act="open-session" data-id="${sid}">${esc(sessLabel(SESSION_BY_ID[sid]))} · ${[...w].join(', ')}</button>`).join('')}</div>
   ${d.kind !== 'mob' && d.kind !== 'wod' ? `<h3>Historique</h3>${hist.length ? `<div class="stack">${hist.map(x => `<div class="card"><div class="row"><strong class="grow">${esc(sessLabel(SESSION_BY_ID[x.sid]))}</strong><span class="faint small">${fmtDate(x.date)}</span></div>
@@ -70,6 +69,12 @@ function listOrAbsent(arr, field, m) {
   const missing = (m.sourceMissingFields || []).includes(field);
   return `<span class="absent">${missing ? 'Information absente de la source lors de la collecte.' : 'Aucune.'}</span>`;
 }
+/* Vidéos d'une fiche du catalogue : affichées seulement après appui sur le bouton */
+function moveVideos(m) {
+  const uid = 'mv:' + m.id; const n = m.media.length; const open = UI.exMedia && UI.exMedia.uid === uid;
+  return `<div class="row media-btns"><button class="btn small ${open ? 'primary' : ''}" data-act="exmedia" data-uid="${esc(uid)}" data-v="video" aria-pressed="${!!open}">${IC.video}${n > 1 ? `Vidéos (${n})` : 'Vidéo'}</button></div>`
+    + (open ? `<div class="media-panel"><div class="vids">${m.media.map((v, i) => videoCard(Object.assign({ origin: 'catalogue', checkedAt: v.metadataCheckedAt, ficheSource: v.sourceUrl, variantNote: m.editorialNote }, v), uid + ':' + i)).join('')}</div></div>` : '');
+}
 function viewMove(id) {
   const m = MOVE_BY_ID[id]; if (!m) return '<p>Fiche introuvable.</p>';
   const used = Object.entries(EXERCISES).filter(([k, d]) => (d.mv === id || d.alt === id) && USAGE[k]);
@@ -79,7 +84,7 @@ function viewMove(id) {
   <h4>Ma préférence</h4>
   <div class="prefsel">${PREF_ORDER.map(p => `<button class="chip" data-act="set-pref" data-id="${m.id}" data-v="${p}" aria-pressed="${prefOf(m) === p}">${PREF_LABELS[p]}</button>`).join('')}</div>
   <h3>Vidéo</h3>
-  ${(m.media || []).length ? `<div class="vids">${m.media.map((v, i) => videoCard(Object.assign({ origin: 'catalogue', checkedAt: v.metadataCheckedAt, ficheSource: v.sourceUrl, variantNote: m.editorialNote }, v), 'mv:' + id + ':' + i)).join('')}</div>` : '<div class="novid">Vidéo absente.</div>'}
+  ${(m.media || []).length ? moveVideos(m) : '<div class="novid">Vidéo absente.</div>'}
   <h3>Fiche</h3>
   <dl class="kv card">
     <dt>Muscles</dt><dd>${(m.muscleGroups || []).map(esc).join(', ') || '<span class="absent">Non renseigné</span>'}</dd>
