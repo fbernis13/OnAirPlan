@@ -2573,7 +2573,9 @@ const TABS = [
 ];
 /* Les membres (Alex, Arthur) ne voient que leur programme et leur progression */
 const MEMBER_TABS = ['programme', 'progression'];
-const visibleTabs = () => isAdmin() ? TABS : TABS.filter(x => MEMBER_TABS.includes(x[0]));
+/* Onglets masqués pour l'instant (demande de Spook, 2026-11-08) : le code reste, retirer un nom de cette liste les fait revenir */
+const HIDDEN_TABS = ['exercices', 'mouvements'];
+const visibleTabs = () => (isAdmin() ? TABS : TABS.filter(x => MEMBER_TABS.includes(x[0]))).filter(x => !HIDDEN_TABS.includes(x[0]));
 let renderQueued = false;
 function scheduleRender() { if (renderQueued) return; renderQueued = true; requestAnimationFrame(() => { renderQueued = false; render(); }); }
 
@@ -2639,8 +2641,8 @@ document.addEventListener('click', ev => {
   if (a === 'tab') { const t = el.dataset.v; if (t === UI.tab) go({ session: null, exo: null, move: null }); else go({ tab: t }); try { history.replaceState(null, '', '#' + t); } catch (e) {} return; }
   if (a === 'back') { if (UI.tab === 'programme') go({ session: null }); else if (UI.tab === 'exercices') go({ exo: null }); else go({ move: null }); return; }
   if (a === 'open-session') { go({ tab: 'programme', session: el.dataset.id, progCycle: SESSION_BY_ID[el.dataset.id].cycle }); return; }
-  if (a === 'open-exo') { go({ tab: 'exercices', exo: el.dataset.id }); return; }
-  if (a === 'open-move') { go({ tab: 'mouvements', move: el.dataset.id }); return; }
+  if (a === 'open-exo') { if (HIDDEN_TABS.includes('exercices')) return; go({ tab: 'exercices', exo: el.dataset.id }); return; }
+  if (a === 'open-move') { if (HIDDEN_TABS.includes('mouvements')) return; go({ tab: 'mouvements', move: el.dataset.id }); return; }
   if (a === 'settings') { UI.sheet = 'settings'; renderSheet(); return; }
   if (a === 'sheet-close') { stopDictation(); UI.sheet = null; renderSheet(); return; }
   if (a === 'set-theme') { S.settings.theme = el.dataset.v; applySettings(); touchMeta(); renderSheet(); return; }
