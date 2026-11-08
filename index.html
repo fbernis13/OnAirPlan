@@ -662,7 +662,8 @@ function exDef(k) { return EXERCISES[k] || { fr: k, en: '', kind: 'force', unit:
 function sessLabel(s) { return `C${s.cycle} · ${SESSION_TYPES[s.slot].label}`; }
 /* Machine guidée ou Hammer : choix enregistré dans la progression, sinon la machine prévue */
 function machineOk(p, v, cycle) { return !!p[v] && (v !== 'haltero' || !cycle || cycle >= (p.halteroFrom || 1)); }
-function machineEx(k, cycle) { const p = PAIR_OF[k]; const c = p && S.machines && S.machines[p.id]; return c && machineOk(p, c, cycle) ? p[c] : k; }
+/* Choix guidée / Hammer retiré le 2026-11-08 : l'exercice prévu est toujours celui du programme (les séances déjà notées gardent leur machine) */
+function machineEx(k, cycle) { return k; }
 function plannedEx(it, E, cycle) { return (E && (E.swap || E.machine)) || machineEx(it.x, cycle); }
 /* Unité de saisie : celle de l'exercice, sauf si la séance la précise (intervalles en secondes, test au rameur) */
 function itemUnit(it) { return it.unit || exDef(it.x).unit; }
@@ -1479,12 +1480,6 @@ function viewProgramme() {
     <div class="progressbar" style="margin:.5rem 0"><i style="width:${doneCount / SESSIONS.length * 100}%"></i></div>
     ${next ? `<button class="btn primary" data-act="open-session" data-id="${next.id}" style="width:100%;margin-top:.3rem">${sessionStatus(next.id) === 'started' ? 'Reprendre' : 'Prochaine séance'} : ${esc(sessLabel(next))}, ${esc(next.title)}</button>` : '<p class="muted">Programme terminé. Prévois une semaine plus légère avant le prochain bloc.</p>'}
   </div>
-  ${MACHINE_PAIRS.length ? (() => { const used = MACHINE_PAIRS.filter(p => S.machines[p.id]); const all = v => MACHINE_PAIRS.every(p => S.machines[p.id] === v);
-    const H = MACHINE_PAIRS.filter(p => p.haltero); const allH = H.length && H.every(p => S.machines[p.id] === 'haltero') && used.length === H.length;
-    const cur = !used.length ? 'plan' : all('hammer') ? 'hammer' : all('guidee') ? 'guidee' : allH ? 'haltero' : 'mix';
-    return `<div class="card stack" style="margin-top:.8rem"><div class="row"><strong class="grow">Machines</strong>${cur === 'mix' ? '<span class="pill">choix par exercice</span>' : ''}</div>
-      <div class="seg" role="group" aria-label="Machines pour tout le programme">${[['plan', 'Comme prévu'], ['guidee', 'Tout guidé'], ['hammer', 'Tout Hammer']].concat(H.length ? [['haltero', 'Haltéro']] : []).map(([v, l]) => `<button data-act="machine-all" data-v="${v}" aria-pressed="${cur === v}">${l}</button>`).join('')}</div>
-      <p class="small muted" style="margin:0">S’applique à ${MACHINE_PAIRS.length} machines.${H.length ? ` Haltéro remplace ${H.length} d’entre elles par un mouvement du catalogue à partir du cycle ${Math.min(...H.map(p => p.halteroFrom || 1))} ; avant, la machine prévue reste.` : ''} Tu peux aussi choisir exercice par exercice dans la séance. Le choix est enregistré avec ta progression.</p></div>`; })() : ''}
   <details class="more" style="margin-top:.8rem"><summary>${IC.chev} Principes et signaux d’arrêt</summary>
     <div class="card stack small">${PROGRAM_RULES.map(r => `<p style="margin:0">${esc(r)}</p>`).join('')}</div></details>`;
   const curC = UI.progCycle || (next ? next.cycle : 4);
@@ -1661,7 +1656,7 @@ function wodBlock(s, bl) {
 }
 function exoCard(s, bl, it, i) {
   const key = itemKey(bl, i); const E = getExLog(s.id, key, it, false);
-  const eff = plannedEx(it, E, s.cycle); const d = exDef(eff); const orig = exDef(it.x); const pair = !(E && E.swap) && PAIR_OF[it.x];
+  const eff = plannedEx(it, E, s.cycle); const d = exDef(eff); const orig = exDef(it.x); const pair = null; /* choix guidée / Hammer retiré (demande de Spook) : l'exercice prévu s'affiche */
   const side = pair ? (eff === pair.hammer ? 'hammer' : eff === pair.guidee ? 'guidee' : eff === pair.haltero ? 'haltero' : '') : '';
   const sets = E ? E.sets : Array.from({ length: Math.max(1, it.sets || 1) }, () => ({}));
   const hist = exHistory(eff).filter(hh => hh.sid !== s.id); const last = hist[hist.length - 1];
@@ -2590,7 +2585,9 @@ const TABS = [
 ];
 /* Les membres (Alex, Arthur) ne voient que leur programme et leur progression */
 const MEMBER_TABS = ['programme', 'progression'];
-const visibleTabs = () => isAdmin() ? TABS : TABS.filter(x => MEMBER_TABS.includes(x[0]));
+/* Onglets masqués pour l'instant (demande de Spook, 2026-11-08) : le code reste, retirer un nom de cette liste les fait revenir */
+const HIDDEN_TABS = ['exercices', 'mouvements'];
+const visibleTabs = () => (isAdmin() ? TABS : TABS.filter(x => MEMBER_TABS.includes(x[0]))).filter(x => !HIDDEN_TABS.includes(x[0]));
 let renderQueued = false;
 function scheduleRender() { if (renderQueued) return; renderQueued = true; requestAnimationFrame(() => { renderQueued = false; render(); }); }
 
@@ -2656,8 +2653,8 @@ document.addEventListener('click', ev => {
   if (a === 'tab') { const t = el.dataset.v; if (t === UI.tab) go({ session: null, exo: null, move: null }); else go({ tab: t }); try { history.replaceState(null, '', '#' + t); } catch (e) {} return; }
   if (a === 'back') { if (UI.tab === 'programme') go({ session: null }); else if (UI.tab === 'exercices') go({ exo: null }); else go({ move: null }); return; }
   if (a === 'open-session') { go({ tab: 'programme', session: el.dataset.id, progCycle: SESSION_BY_ID[el.dataset.id].cycle }); return; }
-  if (a === 'open-exo') { go({ tab: 'exercices', exo: el.dataset.id }); return; }
-  if (a === 'open-move') { go({ tab: 'mouvements', move: el.dataset.id }); return; }
+  if (a === 'open-exo') { if (HIDDEN_TABS.includes('exercices')) return; go({ tab: 'exercices', exo: el.dataset.id }); return; }
+  if (a === 'open-move') { if (HIDDEN_TABS.includes('mouvements')) return; go({ tab: 'mouvements', move: el.dataset.id }); return; }
   if (a === 'settings') { UI.sheet = 'settings'; renderSheet(); return; }
   if (a === 'sheet-close') { stopDictation(); UI.sheet = null; renderSheet(); return; }
   if (a === 'set-theme') { S.settings.theme = el.dataset.v; applySettings(); touchMeta(); renderSheet(); return; }
