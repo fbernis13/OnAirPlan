@@ -2,208 +2,104 @@
  "fileType": "onair.carnet",
  "version": 2,
  "id": "debutante",
- "title": "Programme débutante (Maelis) – Salle On Air",
- "source": "programme-debutante-maelis.md",
- "updatedAt": "2026-10-26",
+ "title": "Programme 3 séances (Maelys) – Salle On Air",
+ "source": "programme-3-seances-membres.md",
+ "updatedAt": "2026-11-08",
  "cycles": [
   {
    "n": 1,
-   "name": "Découverte",
-   "intensity": "Effort facile, 4-5 répétitions en réserve",
-   "scheme": "3 × 15 avec des charges légères, mouvement lent et contrôlé",
-   "goal": "Apprendre les machines et les bons réglages, trouver des charges de départ légères. Aucune série difficile."
+   "name": "Prise de repères",
+   "intensity": "≈ 3 répétitions en réserve",
+   "scheme": "Fourchettes du programme, charges de départ",
+   "goal": "Régler les machines et noter les charges de départ. Garde 3 répétitions en réserve."
   },
   {
    "n": 2,
-   "name": "Habitude",
-   "intensity": "Effort modéré, 3-4 répétitions en réserve",
-   "scheme": "3 × 12-15",
-   "goal": "Monter un peu les charges en gardant les mêmes exercices."
+   "name": "Construction",
+   "intensity": "≈ 2 répétitions en réserve",
+   "scheme": "Fourchettes du programme, charges en hausse",
+   "goal": "Monte la charge dès que tu atteins le haut de la fourchette sur toutes les séries."
   },
   {
    "n": 3,
    "name": "Progression",
-   "intensity": "Effort modéré à soutenu, 2-3 répétitions en réserve",
-   "scheme": "3 × 12",
-   "goal": "Monter les charges d’un cran. Le cardio passe aux intervalles."
+   "intensity": "≈ 2 répétitions en réserve",
+   "scheme": "Fourchettes du programme, charges en hausse",
+   "goal": "Continue de monter les charges ; allonge un peu les efforts du cardio si tout va bien."
   },
   {
    "n": 4,
    "name": "Consolidation",
-   "intensity": "Effort soutenu, 2 répétitions en réserve",
-   "scheme": "3 × 10-12",
-   "goal": "Consolider les charges du cycle 3 et mesurer les progrès depuis le cycle 1."
+   "intensity": "≈ 1-2 répétitions en réserve",
+   "scheme": "Fourchettes du programme, charges en hausse",
+   "goal": "Consolider les charges atteintes et comparer avec le cycle 1."
   }
  ],
  "sessionTypes": {
-  "CA": {
+  "B": {
    "label": "S1",
-   "name": "Cardio + gainage",
-   "type": "cardio"
-  },
-  "R2": {
-   "label": "S2",
    "name": "Bas du corps",
    "type": "force"
   },
-  "R1": {
-   "label": "S3",
+  "CA": {
+   "label": "Cardio",
+   "name": "Cardio",
+   "type": "cardio"
+  },
+  "H": {
+   "label": "S2",
    "name": "Haut du corps",
    "type": "force"
   }
  },
  "rules": [
-  "Un cycle = 3 séances : S1 cardio, S2 bas du corps, S3 haut du corps. Une semaine type : lundi, mercredi, vendredi, avec au moins un jour de repos entre deux séances. Compte 2 semaines par cycle, ou plus si besoin.",
-  "S1 (cardio) dure environ 45 min : vélo, tapis de marche et un peu d’escalier, puis quelques minutes de gainage. S2 et S3 commencent par 10 min de cardio d’échauffement et finissent par 5 min de retour au calme. Elles durent environ 45 min.",
-  "Que des machines dans S2 et S3, pas de charge libre. Chaque machine existe en version guidée ou Hammer (chargée avec des disques) : au début, préfère la version guidée. Ton choix est enregistré.",
-  "Règle la machine avant la première série : siège, dossier, poignées. La vidéo de chaque exercice montre le réglage. N’hésite pas à demander à un coach de la salle.",
-  "Tu dois finir chaque série en pouvant en faire encore plusieurs. Quand toutes les séries passent facilement, augmente la charge d’un cran à la séance suivante. Si un cycle te paraît dur, refais-le avant de passer au suivant.",
-  "Courbatures les premiers jours : c’est normal. Signaux d’arrêt : douleur articulaire, vertige ou essoufflement inhabituel. On arrête l’exercice et on reprend plus léger."
+  "Signaux d’arrêt : douleur inhabituelle, fourmillements ou engourdissement. On arrête l’exercice et on passe à une variante plus légère.",
+  "Ordre dans un cycle : S1 bas du corps → Cardio → S2 haut du corps, avec un jour de repos quand c’est possible entre deux renforcements.",
+  "Garde environ 2 répétitions en réserve sur les séries de travail. Les séries d’échauffement ne comptent pas.",
+  "Entre deux exercices : environ 2 minutes, installation comprise, sans ajouter le repos de la dernière série.",
+  "Quand tu atteins le haut de la fourchette sur toutes les séries, augmente la charge à la séance suivante : 2,5 à 5 kg sur le haut du corps, 5 à 10 kg sur le bas du corps.",
+  "Si une séance a été trop dure (courbatures plus de 3 jours), garde les mêmes charges à la séance suivante."
  ],
  "benchmarks": [],
- "objectives": [],
  "sessions": [
   {
-   "id": "d1-ca",
+   "id": "c1-bas",
    "cycle": 1,
-   "slot": "CA",
-   "title": "Cardio découverte",
-   "goal": "Effort facile et continu en parlant en phrases complètes, découverte de l’escalier, puis un peu de gainage.",
-   "warmup": [],
-   "blocks": [
-    {
-     "l": "A",
-     "items": [
-      {
-       "x": "bike",
-       "sets": 1,
-       "reps": "5 min",
-       "rest": 0,
-       "note": "Échauffement très facile"
-      }
-     ]
-    },
-    {
-     "l": "B",
-     "items": [
-      {
-       "x": "incline_walk",
-       "sets": 1,
-       "reps": "15 min",
-       "rest": 0,
-       "note": "Pente 4 à 6 %, vitesse où tu peux parler en phrases complètes"
-      }
-     ]
-    },
-    {
-     "l": "C",
-     "items": [
-      {
-       "x": "bike",
-       "sets": 1,
-       "reps": "13 min",
-       "rest": 0,
-       "note": "Allure régulière, facile"
-      }
-     ]
-    },
-    {
-     "l": "D",
-     "items": [
-      {
-       "x": "stairs",
-       "sets": 1,
-       "reps": "3 min",
-       "rest": 0,
-       "note": "Découverte de l’escalier : vitesse lente, tiens les rampes légèrement"
-      }
-     ]
-    },
-    {
-     "l": "E",
-     "type": "circuit",
-     "rounds": 2,
-     "items": [
-      {
-       "x": "plank_fa",
-       "sets": 2,
-       "reps": "20 s",
-       "rest": 0,
-       "note": "Genoux au sol si besoin au début"
-      },
-      {
-       "x": "situp",
-       "sets": 2,
-       "reps": "8",
-       "rest": 0,
-       "note": "Remonte en douceur sans tirer sur la nuque, mains vers les pieds"
-      },
-      {
-       "x": "hollow",
-       "sets": 2,
-       "reps": "15 s",
-       "rest": 45,
-       "note": "Version facile : genoux pliés au-dessus des hanches, bras le long du corps, bas du dos plaqué au sol. Tends les jambes peu à peu"
-      }
-     ]
-    }
-   ],
-   "coolTitle": "Retour au calme · 5 min",
-   "cooldown": [
-    {
-     "t": "2 min de marche lente",
-     "x": []
-    },
-    {
-     "t": "Étirements doux, 20-30 s chacun",
-     "x": [
-      "st_calf",
-      "st_ham",
-      "st_hipflex"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "d1-r2",
-   "cycle": 1,
-   "slot": "R2",
-   "title": "Bas du corps",
-   "goal": "Découvrir les machines des jambes : avant des cuisses, arrière des cuisses, fessiers et mollets. Aucune série difficile.",
-   "warmTitle": "Mise en route",
+   "slot": "B",
+   "title": "Bas du corps + core",
+   "gate": 120,
+   "warmTitle": "Mise en route · 5 min",
    "warmup": [
     {
-     "t": "Le cardio du bloc A sert d’échauffement. Avant la première machine : rotations d’épaules et balancés de jambes, puis une série très légère pour régler la machine.",
+     "t": "5 min vélo facile, puis 1 série légère de presse avant la première série de travail",
      "x": [
-      "shoulder_band",
-      "leg_swings"
+      "bike"
      ]
     }
    ],
    "blocks": [
     {
      "l": "A",
-     "title": "Cardio d’échauffement · 10 min",
-     "items": [
-      {
-       "x": "bike",
-       "sets": 1,
-       "reps": "10 min",
-       "rest": 0,
-       "res": "km, cal ou FC",
-       "note": "Vélo ou tapis de marche : choisis dans « Variante » si ce n’est pas le vélo. Allure très facile, tu dois pouvoir parler."
-      }
-     ]
-    },
-    {
-     "l": "B",
      "items": [
       {
        "x": "presse",
        "sets": 3,
-       "reps": "15",
-       "rest": 60,
-       "note": "Pieds largeur des hanches, descends jusqu’à 90° aux genoux, le bas du dos reste collé au dossier"
+       "reps": "8-12",
+       "rest": 120,
+       "note": "Machine guidée ou Hammer"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "hipthrust_mach",
+       "sets": 3,
+       "reps": "10-12",
+       "rest": 105,
+       "label": "Hip thrust à la machine ou à la barre",
+       "note": "Machine guidée, ou barre sur un banc · récup 1 min 30 à 2 min"
       }
      ]
     },
@@ -213,548 +109,96 @@
       {
        "x": "legcurl_s",
        "sets": 3,
-       "reps": "15",
-       "rest": 60,
-       "note": "Arrière des cuisses : règle le rouleau juste au-dessus des chevilles"
+       "reps": "10-15",
+       "rest": 90,
+       "label": "Leg curl"
       }
      ]
     },
     {
      "l": "D",
-     "items": [
-      {
-       "x": "hipthrust_mach",
-       "sets": 3,
-       "reps": "15",
-       "rest": 60,
-       "note": "Fessiers : règle le siège pour que la ceinture passe sur le haut des hanches. Commence léger, pause d’une seconde en haut"
-      }
-     ]
-    },
-    {
-     "l": "E",
      "items": [
       {
        "x": "legext",
        "sets": 2,
-       "reps": "15",
-       "rest": 60,
-       "note": "Avant des cuisses : remonte sans à-coup, descends lentement"
+       "reps": "10-15",
+       "rest": 75,
+       "note": "Récup 1 min à 1 min 30"
       }
      ]
     },
     {
-     "l": "F",
-     "items": [
-      {
-       "x": "legcurl_l",
-       "sets": 2,
-       "reps": "15",
-       "rest": 60,
-       "note": "Arrière des cuisses : hanches collées au banc, descends lentement"
-      }
-     ]
-    },
-    {
-     "l": "G",
-     "items": [
-      {
-       "x": "abductor",
-       "sets": 2,
-       "reps": "15",
-       "rest": 60,
-       "note": "Côté des fessiers : écarte les genoux en gardant le dos contre le dossier"
-      }
-     ]
-    },
-    {
-     "l": "H",
+     "l": "E",
      "items": [
       {
        "x": "calf_mach",
-       "sets": 2,
-       "reps": "15",
-       "rest": 45
-      }
-     ]
-    }
-   ],
-   "coolTitle": "Retour au calme · 5 min",
-   "cooldown": [
-    {
-     "t": "2 min de marche ou vélo très facile",
-     "x": [
-      "bike"
-     ]
-    },
-    {
-     "t": "Étirements doux, 20-30 s chacun",
-     "x": [
-      "st_quad",
-      "st_ham",
-      "st_glute"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "d1-r1",
-   "cycle": 1,
-   "slot": "R1",
-   "title": "Haut du corps",
-   "goal": "Découvrir les machines du haut du corps : réglages, trajectoire, charges de départ. Aucune série difficile.",
-   "warmTitle": "Mise en route",
-   "warmup": [
-    {
-     "t": "Le cardio du bloc A sert d’échauffement. Avant la première machine : rotations d’épaules et balancés de jambes, puis une série très légère pour régler la machine.",
-     "x": [
-      "shoulder_band",
-      "leg_swings"
-     ]
-    }
-   ],
-   "blocks": [
-    {
-     "l": "A",
-     "title": "Cardio d’échauffement · 10 min",
-     "items": [
-      {
-       "x": "bike",
-       "sets": 1,
-       "reps": "10 min",
-       "rest": 0,
-       "res": "km, cal ou FC",
-       "note": "Vélo ou tapis de marche : choisis dans « Variante » si ce n’est pas le vélo. Allure très facile, tu dois pouvoir parler."
-      }
-     ]
-    },
-    {
-     "l": "B",
-     "items": [
-      {
-       "x": "chest_press",
        "sets": 3,
-       "reps": "15",
+       "reps": "12-20",
        "rest": 60,
-       "note": "Poignées à hauteur de poitrine, pousse sans bloquer les coudes"
+       "label": "Mollets debout ou à la machine",
+       "note": "À la machine, ou debout sur une marche avec haltères"
       }
      ]
     },
     {
-     "l": "C",
-     "items": [
-      {
-       "x": "latpull",
-       "sets": 3,
-       "reps": "15",
-       "rest": 60,
-       "note": "Tirage vertical pour le dos : tire la barre vers le haut de la poitrine, buste droit, sans élan"
-      }
-     ]
-    },
-    {
-     "l": "D",
-     "items": [
-      {
-       "x": "shoulder_mach",
-       "sets": 3,
-       "reps": "15",
-       "rest": 60,
-       "note": "Commence très léger : les épaules fatiguent vite"
-      }
-     ]
-    },
-    {
-     "l": "E",
-     "items": [
-      {
-       "x": "seated_row",
-       "sets": 3,
-       "reps": "15",
-       "rest": 60,
-       "note": "Pour le dos : dos droit, omoplates serrées en fin de mouvement"
-      }
-     ]
-    },
-    {
-     "l": "F",
-     "items": [
-      {
-       "x": "dip_assist",
-       "sets": 3,
-       "reps": "15",
-       "rest": 60,
-       "note": "Triceps : plus le contrepoids est lourd, plus c’est facile. Commence avec beaucoup d’assistance"
-      }
-     ]
-    }
-   ],
-   "coolTitle": "Retour au calme · 5 min",
-   "cooldown": [
-    {
-     "t": "2 min de marche ou vélo très facile",
-     "x": [
-      "bike"
-     ]
-    },
-    {
-     "t": "Étirements doux, 20-30 s chacun",
-     "x": [
-      "st_pec",
-      "st_lat"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "d2-ca",
-   "cycle": 2,
-   "slot": "CA",
-   "title": "Cardio continu",
-   "goal": "Toujours en continu, un peu plus d’escalier.",
-   "warmup": [],
-   "blocks": [
-    {
-     "l": "A",
-     "items": [
-      {
-       "x": "bike",
-       "sets": 1,
-       "reps": "5 min",
-       "rest": 0,
-       "note": "Échauffement très facile"
-      }
-     ]
-    },
-    {
-     "l": "B",
-     "items": [
-      {
-       "x": "incline_walk",
-       "sets": 1,
-       "reps": "15 min",
-       "rest": 0,
-       "note": "Pente 6 à 8 %, tu dois encore pouvoir parler"
-      }
-     ]
-    },
-    {
-     "l": "C",
-     "items": [
-      {
-       "x": "bike",
-       "sets": 1,
-       "reps": "11 min",
-       "rest": 0,
-       "note": "Allure régulière, un peu plus soutenue qu’au cycle 1"
-      }
-     ]
-    },
-    {
-     "l": "D",
-     "items": [
-      {
-       "x": "stairs",
-       "sets": 1,
-       "reps": "5 min",
-       "rest": 0,
-       "note": "Allure régulière, sans t’appuyer sur les rampes si possible"
-      }
-     ]
-    },
-    {
-     "l": "E",
      "type": "circuit",
-     "rounds": 2,
+     "title": "Core · 10 à 12 min",
+     "rounds": 3,
      "items": [
-      {
-       "x": "plank_fa",
-       "sets": 2,
-       "reps": "25 s",
-       "rest": 0,
-       "note": "Genoux au sol si besoin au début"
-      },
       {
        "x": "situp",
-       "sets": 2,
-       "reps": "8",
+       "sets": 3,
+       "reps": "10",
        "rest": 0,
-       "note": "Remonte en douceur sans tirer sur la nuque, mains vers les pieds"
+       "label": "Sit-up contrôlé",
+       "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
       },
       {
-       "x": "hollow",
-       "sets": 2,
-       "reps": "15 s",
-       "rest": 45,
-       "note": "Version facile : genoux pliés au-dessus des hanches, bras le long du corps, bas du dos plaqué au sol. Tends les jambes peu à peu"
-      }
-     ]
-    }
-   ],
-   "coolTitle": "Retour au calme · 5 min",
-   "cooldown": [
-    {
-     "t": "2 min de marche lente",
-     "x": []
-    },
-    {
-     "t": "Étirements doux, 20-30 s chacun",
-     "x": [
-      "st_calf",
-      "st_ham",
-      "st_hipflex"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "d2-r2",
-   "cycle": 2,
-   "slot": "R2",
-   "title": "Bas du corps",
-   "goal": "Monter un peu les charges, surtout sur la presse et le hip thrust.",
-   "warmTitle": "Mise en route",
-   "warmup": [
-    {
-     "t": "Le cardio du bloc A sert d’échauffement. Avant la première machine : rotations d’épaules et balancés de jambes, puis une série très légère pour régler la machine.",
-     "x": [
-      "shoulder_band",
-      "leg_swings"
-     ]
-    }
-   ],
-   "blocks": [
-    {
-     "l": "A",
-     "title": "Cardio d’échauffement · 10 min",
-     "items": [
-      {
-       "x": "bike",
-       "sets": 1,
-       "reps": "10 min",
+       "x": "pallof",
+       "sets": 3,
+       "reps": "20-30 s",
        "rest": 0,
-       "res": "km, cal ou FC",
-       "note": "Vélo ou tapis de marche : choisis dans « Variante » si ce n’est pas le vélo. Allure très facile, tu dois pouvoir parler."
-      }
-     ]
-    },
-    {
-     "l": "B",
-     "items": [
+       "unit": "time",
+       "label": "Pallof statique à la poulie",
+       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
+      },
       {
-       "x": "presse",
+       "x": "db_side_bend",
        "sets": 3,
-       "reps": "12-15",
-       "rest": 60,
-       "note": "Pieds largeur des hanches, descends jusqu’à 90° aux genoux, le bas du dos reste collé au dossier"
-      }
-     ]
-    },
-    {
-     "l": "C",
-     "items": [
+       "reps": "10-15/côté",
+       "rest": 0,
+       "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
+      },
       {
-       "x": "legcurl_s",
+       "x": "plank_fa",
        "sets": 3,
-       "reps": "12-15",
+       "reps": "20-40 s",
        "rest": 60,
-       "note": "Arrière des cuisses : règle le rouleau juste au-dessus des chevilles"
+       "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
       }
-     ]
-    },
-    {
-     "l": "D",
-     "items": [
-      {
-       "x": "hipthrust_mach",
-       "sets": 3,
-       "reps": "12-15",
-       "rest": 60,
-       "note": "Fessiers : règle le siège pour que la ceinture passe sur le haut des hanches. Commence léger, pause d’une seconde en haut"
-      }
-     ]
-    },
-    {
-     "l": "E",
-     "items": [
-      {
-       "x": "legext",
-       "sets": 2,
-       "reps": "12-15",
-       "rest": 60,
-       "note": "Avant des cuisses : remonte sans à-coup, descends lentement"
-      }
-     ]
-    },
-    {
-     "l": "F",
-     "items": [
-      {
-       "x": "legcurl_l",
-       "sets": 2,
-       "reps": "12-15",
-       "rest": 60,
-       "note": "Arrière des cuisses : hanches collées au banc, descends lentement"
-      }
-     ]
-    },
-    {
-     "l": "G",
-     "items": [
-      {
-       "x": "abductor",
-       "sets": 2,
-       "reps": "12-15",
-       "rest": 60,
-       "note": "Côté des fessiers : écarte les genoux en gardant le dos contre le dossier"
-      }
-     ]
-    },
-    {
-     "l": "H",
-     "items": [
-      {
-       "x": "calf_mach",
-       "sets": 2,
-       "reps": "15",
-       "rest": 45
-      }
-     ]
+     ],
+     "l": "F"
     }
    ],
    "coolTitle": "Retour au calme · 5 min",
    "cooldown": [
     {
-     "t": "2 min de marche ou vélo très facile",
-     "x": [
-      "bike"
-     ]
-    },
-    {
-     "t": "Étirements doux, 20-30 s chacun",
+     "t": "Étirements quadriceps, ischios, fessiers, mollets",
      "x": [
       "st_quad",
       "st_ham",
-      "st_glute"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "d2-r1",
-   "cycle": 2,
-   "slot": "R1",
-   "title": "Haut du corps",
-   "goal": "Monter un peu les charges, en gardant le même travail pour pousser et pour tirer.",
-   "warmTitle": "Mise en route",
-   "warmup": [
-    {
-     "t": "Le cardio du bloc A sert d’échauffement. Avant la première machine : rotations d’épaules et balancés de jambes, puis une série très légère pour régler la machine.",
-     "x": [
-      "shoulder_band",
-      "leg_swings"
+      "st_glute",
+      "st_calf"
      ]
     }
    ],
-   "blocks": [
-    {
-     "l": "A",
-     "title": "Cardio d’échauffement · 10 min",
-     "items": [
-      {
-       "x": "bike",
-       "sets": 1,
-       "reps": "10 min",
-       "rest": 0,
-       "res": "km, cal ou FC",
-       "note": "Vélo ou tapis de marche : choisis dans « Variante » si ce n’est pas le vélo. Allure très facile, tu dois pouvoir parler."
-      }
-     ]
-    },
-    {
-     "l": "B",
-     "items": [
-      {
-       "x": "chest_press",
-       "sets": 3,
-       "reps": "12-15",
-       "rest": 60,
-       "note": "Poignées à hauteur de poitrine, pousse sans bloquer les coudes"
-      }
-     ]
-    },
-    {
-     "l": "C",
-     "items": [
-      {
-       "x": "latpull",
-       "sets": 3,
-       "reps": "12-15",
-       "rest": 60,
-       "note": "Tirage vertical pour le dos : tire la barre vers le haut de la poitrine, buste droit, sans élan"
-      }
-     ]
-    },
-    {
-     "l": "D",
-     "items": [
-      {
-       "x": "shoulder_mach",
-       "sets": 3,
-       "reps": "12-15",
-       "rest": 60,
-       "note": "Pousse sans cambrer le dos"
-      }
-     ]
-    },
-    {
-     "l": "E",
-     "items": [
-      {
-       "x": "seated_row",
-       "sets": 3,
-       "reps": "12-15",
-       "rest": 60,
-       "note": "Pour le dos : dos droit, omoplates serrées en fin de mouvement"
-      }
-     ]
-    },
-    {
-     "l": "F",
-     "items": [
-      {
-       "x": "dip_assist",
-       "sets": 3,
-       "reps": "12-15",
-       "rest": 60,
-       "note": "Triceps : plus le contrepoids est lourd, plus c’est facile. Commence avec beaucoup d’assistance"
-      }
-     ]
-    }
-   ],
-   "coolTitle": "Retour au calme · 5 min",
-   "cooldown": [
-    {
-     "t": "2 min de marche ou vélo très facile",
-     "x": [
-      "bike"
-     ]
-    },
-    {
-     "t": "Étirements doux, 20-30 s chacun",
-     "x": [
-      "st_pec",
-      "st_lat"
-     ]
-    }
-   ]
+   "goal": "Jambes complètes en machines (presse, hip thrust, leg curl, leg extension, mollets) et 10 à 12 min de core. Garde environ 2 répétitions en réserve ; entre deux exercices, environ 2 min, installation comprise."
   },
   {
-   "id": "d3-ca",
-   "cycle": 3,
+   "id": "c1-cardio",
+   "cycle": 1,
    "slot": "CA",
-   "title": "Premiers intervalles",
-   "goal": "Premiers intervalles : 1 min soutenue, 1 min facile.",
+   "title": "Cardio long + circuit",
    "warmup": [],
    "blocks": [
     {
@@ -763,9 +207,10 @@
       {
        "x": "bike",
        "sets": 1,
-       "reps": "5 min",
+       "reps": "10 min",
        "rest": 0,
-       "note": "Échauffement très facile"
+       "label": "Vélo d’échauffement",
+       "note": "Augmente progressivement"
       }
      ]
     },
@@ -773,11 +218,11 @@
      "l": "B",
      "items": [
       {
-       "x": "bike",
-       "sets": 5,
-       "reps": "2 min (1 soutenue, 1 facile)",
+       "x": "incline_walk",
+       "sets": 1,
+       "reps": "15 min",
        "rest": 0,
-       "note": "Une série = 1 min soutenue (on ne parle plus qu’en quelques mots) puis 1 min facile"
+       "note": "Garde une allure qui te permet de parler en phrases"
       }
      ]
     },
@@ -785,11 +230,11 @@
      "l": "C",
      "items": [
       {
-       "x": "incline_walk",
+       "x": "rower",
        "sets": 1,
        "reps": "15 min",
        "rest": 0,
-       "note": "Pente 8 à 10 %, allure régulière"
+       "note": "Tant que la technique reste propre"
       }
      ]
     },
@@ -800,132 +245,37 @@
        "x": "stairs",
        "sets": 1,
        "reps": "5 min",
-       "rest": 0,
-       "note": "Allure régulière"
+       "rest": 0
       }
      ]
     },
     {
      "l": "E",
      "type": "circuit",
-     "rounds": 2,
+     "title": "Stations",
+     "rounds": 3,
      "items": [
       {
-       "x": "plank_fa",
-       "sets": 2,
+       "x": "skierg",
+       "sets": 3,
+       "reps": "1 min",
+       "rest": 30,
+       "note": "Allure contrôlée · 30 s pour changer"
+      },
+      {
+       "x": "stepup",
+       "sets": 3,
+       "reps": "1 min",
+       "rest": 30,
+       "label": "Box step-up, sans charge",
+       "note": "Alterne la jambe de départ ; box basse, contrôle la descente · 30 s pour changer"
+      },
+      {
+       "x": "rope_su",
+       "sets": 3,
        "reps": "30 s",
-       "rest": 0,
-       "note": "Genoux au sol si besoin au début"
-      },
-      {
-       "x": "situp",
-       "sets": 2,
-       "reps": "12",
-       "rest": 0,
-       "note": "Remonte en douceur sans tirer sur la nuque, mains vers les pieds"
-      },
-      {
-       "x": "hollow",
-       "sets": 2,
-       "reps": "20 s",
-       "rest": 45,
-       "note": "Version facile : genoux pliés au-dessus des hanches, bras le long du corps, bas du dos plaqué au sol. Tends les jambes peu à peu"
-      }
-     ]
-    }
-   ],
-   "coolTitle": "Retour au calme · 5 min",
-   "cooldown": [
-    {
-     "t": "2 min de marche lente",
-     "x": []
-    },
-    {
-     "t": "Étirements doux, 20-30 s chacun",
-     "x": [
-      "st_calf",
-      "st_ham",
-      "st_hipflex"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "d3-r2",
-   "cycle": 3,
-   "slot": "R2",
-   "title": "Bas du corps",
-   "goal": "Monter les charges d’un cran sur toutes les machines.",
-   "warmTitle": "Mise en route",
-   "warmup": [
-    {
-     "t": "Le cardio du bloc A sert d’échauffement. Avant la première machine : rotations d’épaules et balancés de jambes, puis une série très légère pour régler la machine.",
-     "x": [
-      "shoulder_band",
-      "leg_swings"
-     ]
-    }
-   ],
-   "blocks": [
-    {
-     "l": "A",
-     "title": "Cardio d’échauffement · 10 min",
-     "items": [
-      {
-       "x": "bike",
-       "sets": 1,
-       "reps": "10 min",
-       "rest": 0,
-       "res": "km, cal ou FC",
-       "note": "Vélo ou tapis de marche : choisis dans « Variante » si ce n’est pas le vélo. Allure facile les 5 premières minutes, un peu plus soutenue ensuite."
-      }
-     ]
-    },
-    {
-     "l": "B",
-     "items": [
-      {
-       "x": "presse",
-       "sets": 3,
-       "reps": "12",
-       "rest": 60,
-       "note": "Pieds largeur des hanches, descends jusqu’à 90° aux genoux, le bas du dos reste collé au dossier"
-      }
-     ]
-    },
-    {
-     "l": "C",
-     "items": [
-      {
-       "x": "legcurl_s",
-       "sets": 3,
-       "reps": "12",
-       "rest": 60,
-       "note": "Arrière des cuisses : règle le rouleau juste au-dessus des chevilles"
-      }
-     ]
-    },
-    {
-     "l": "D",
-     "items": [
-      {
-       "x": "hipthrust_mach",
-       "sets": 3,
-       "reps": "12",
-       "rest": 60,
-       "note": "Fessiers : règle le siège pour que la ceinture passe sur le haut des hanches. Commence léger, pause d’une seconde en haut"
-      }
-     ]
-    },
-    {
-     "l": "E",
-     "items": [
-      {
-       "x": "legext",
-       "sets": 2,
-       "reps": "12",
-       "rest": 60,
-       "note": "Avant des cuisses : remonte sans à-coup, descends lentement"
+       "rest": 30,
+       "note": "Sauts simples · 30 s de récup"
       }
      ]
     },
@@ -933,34 +283,12 @@
      "l": "F",
      "items": [
       {
-       "x": "legcurl_l",
-       "sets": 2,
-       "reps": "12",
-       "rest": 60,
-       "note": "Arrière des cuisses : hanches collées au banc, descends lentement"
-      }
-     ]
-    },
-    {
-     "l": "G",
-     "items": [
-      {
-       "x": "abductor",
-       "sets": 2,
-       "reps": "12",
-       "rest": 60,
-       "note": "Côté des fessiers : écarte les genoux en gardant le dos contre le dossier"
-      }
-     ]
-    },
-    {
-     "l": "H",
-     "items": [
-      {
-       "x": "calf_mach",
-       "sets": 2,
-       "reps": "15",
-       "rest": 45
+       "x": "assault",
+       "sets": 5,
+       "reps": "30 s / 90 s",
+       "rest": 0,
+       "unit": "time",
+       "note": "5 × 30 s d’effort soutenu sans sprint maximal, 90 s facile"
       }
      ]
     }
@@ -968,49 +296,43 @@
    "coolTitle": "Retour au calme · 5 min",
    "cooldown": [
     {
-     "t": "2 min de marche ou vélo très facile",
+     "t": "5 min vélo assis, retour au calme progressif",
      "x": [
-      "bike"
-     ]
-    },
-    {
-     "t": "Étirements doux, 20-30 s chacun",
-     "x": [
-      "st_quad",
-      "st_ham",
-      "st_glute"
+      "bike_recumb"
      ]
     }
-   ]
+   ],
+   "goal": "Environ 72 min de travail (80 min avec les changements) : vélo, tapis incliné, rameur, escalier, un circuit de 3 tours et un fractionné court à l’Assault bike."
   },
   {
-   "id": "d3-r1",
-   "cycle": 3,
-   "slot": "R1",
-   "title": "Haut du corps",
-   "goal": "Monter les charges d’un cran sur toutes les machines.",
+   "id": "c1-haut",
+   "cycle": 1,
+   "slot": "H",
+   "title": "Haut du corps + core",
+   "gate": 120,
    "warmTitle": "Mise en route",
    "warmup": [
     {
-     "t": "Le cardio du bloc A sert d’échauffement. Avant la première machine : rotations d’épaules et balancés de jambes, puis une série très légère pour régler la machine.",
+     "t": "Le cardio du bloc A sert d’échauffement. Avant le développé : rotations d’épaules à l’élastique, 10 band pull-aparts, 1 série légère.",
      "x": [
       "shoulder_band",
-      "leg_swings"
+      "band_pull"
      ]
     }
    ],
    "blocks": [
     {
      "l": "A",
-     "title": "Cardio d’échauffement · 10 min",
+     "title": "Cardio · 15 min",
      "items": [
       {
        "x": "bike",
        "sets": 1,
-       "reps": "10 min",
+       "reps": "15 min",
        "rest": 0,
+       "label": "Cardio au choix",
        "res": "km, cal ou FC",
-       "note": "Vélo ou tapis de marche : choisis dans « Variante » si ce n’est pas le vélo. Allure facile les 5 premières minutes, un peu plus soutenue ensuite."
+       "note": "5 min faciles, puis 10 min à intensité modérée. Vélo, rameur, tapis ou escalier : choisis dans « Variante » si ce n’est pas le vélo."
       }
      ]
     },
@@ -1020,9 +342,10 @@
       {
        "x": "chest_press",
        "sets": 3,
-       "reps": "12",
-       "rest": 60,
-       "note": "Poignées à hauteur de poitrine, pousse sans bloquer les coudes"
+       "reps": "8-12",
+       "rest": 120,
+       "label": "Développé couché haltères ou machine",
+       "note": "Machine (guidée ou Hammer) ou haltères sur banc plat"
       }
      ]
     },
@@ -1030,11 +353,12 @@
      "l": "C",
      "items": [
       {
-       "x": "latpull",
+       "x": "seated_row",
        "sets": 3,
-       "reps": "12",
-       "rest": 60,
-       "note": "Tirage vertical pour le dos : tire la barre vers le haut de la poitrine, buste droit, sans élan"
+       "reps": "8-12",
+       "rest": 105,
+       "label": "Rowing assis à la poulie",
+       "note": "Récup 1 min 30 à 2 min"
       }
      ]
     },
@@ -1042,11 +366,12 @@
      "l": "D",
      "items": [
       {
-       "x": "shoulder_mach",
+       "x": "latpull",
        "sets": 3,
-       "reps": "12",
-       "rest": 60,
-       "note": "Pousse sans cambrer le dos"
+       "reps": "8-12",
+       "rest": 105,
+       "label": "Tirage vertical",
+       "note": "Récup 1 min 30 à 2 min"
       }
      ]
     },
@@ -1054,11 +379,12 @@
      "l": "E",
      "items": [
       {
-       "x": "seated_row",
-       "sets": 3,
-       "reps": "12",
-       "rest": 60,
-       "note": "Pour le dos : dos droit, omoplates serrées en fin de mouvement"
+       "x": "shoulder_mach",
+       "sets": 2,
+       "reps": "8-12",
+       "rest": 105,
+       "label": "Développé épaules haltères ou machine",
+       "note": "Machine (guidée ou Hammer) ou haltères assis · récup 1 min 30 à 2 min"
       }
      ]
     },
@@ -1066,38 +392,231 @@
      "l": "F",
      "items": [
       {
-       "x": "dip_assist",
-       "sets": 3,
-       "reps": "12",
-       "rest": 60,
-       "note": "Triceps : plus le contrepoids est lourd, plus c’est facile. Commence avec beaucoup d’assistance"
+       "x": "lat_raise",
+       "sets": 2,
+       "reps": "12-20",
+       "rest": 75,
+       "note": "Récup 1 min à 1 min 30"
       }
      ]
+    },
+    {
+     "l": "G",
+     "items": [
+      {
+       "x": "db_curl",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 75,
+       "label": "Curl biceps",
+       "note": "Haltères ou barre EZ · récup 1 min à 1 min 30"
+      }
+     ]
+    },
+    {
+     "l": "H",
+     "items": [
+      {
+       "x": "rope_pd",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 75,
+       "label": "Extension triceps à la poulie",
+       "note": "Récup 1 min à 1 min 30"
+      }
+     ]
+    },
+    {
+     "type": "circuit",
+     "title": "Core · 10 à 12 min",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "situp",
+       "sets": 3,
+       "reps": "10",
+       "rest": 0,
+       "label": "Sit-up contrôlé",
+       "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
+      },
+      {
+       "x": "pallof",
+       "sets": 3,
+       "reps": "20-30 s",
+       "rest": 0,
+       "unit": "time",
+       "label": "Pallof statique à la poulie",
+       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
+      },
+      {
+       "x": "db_side_bend",
+       "sets": 3,
+       "reps": "10-15/côté",
+       "rest": 0,
+       "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
+      },
+      {
+       "x": "plank_fa",
+       "sets": 3,
+       "reps": "20-40 s",
+       "rest": 60,
+       "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
+      }
+     ],
+     "l": "I"
     }
    ],
    "coolTitle": "Retour au calme · 5 min",
    "cooldown": [
     {
-     "t": "2 min de marche ou vélo très facile",
+     "t": "Étirements pectoraux, épaules, dorsaux, triceps, avant-bras",
+     "x": [
+      "st_pec",
+      "st_lat",
+      "st_tri",
+      "st_forearm"
+     ]
+    }
+   ],
+   "goal": "15 min de cardio, haut du corps complet en 40 à 45 min et 10 à 12 min de core. Les séries d’échauffement ne comptent pas ; entre deux exercices, environ 2 min, installation comprise."
+  },
+  {
+   "id": "c2-bas",
+   "cycle": 2,
+   "slot": "B",
+   "title": "Bas du corps + core",
+   "gate": 120,
+   "warmTitle": "Mise en route · 5 min",
+   "warmup": [
+    {
+     "t": "5 min vélo facile, puis 1 série légère de presse avant la première série de travail",
      "x": [
       "bike"
      ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "presse",
+       "sets": 3,
+       "reps": "8-12",
+       "rest": 120,
+       "note": "Machine guidée ou Hammer"
+      }
+     ]
     },
     {
-     "t": "Étirements doux, 20-30 s chacun",
+     "l": "B",
+     "items": [
+      {
+       "x": "hipthrust_mach",
+       "sets": 3,
+       "reps": "10-12",
+       "rest": 105,
+       "label": "Hip thrust à la machine ou à la barre",
+       "note": "Machine guidée, ou barre sur un banc · récup 1 min 30 à 2 min"
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "items": [
+      {
+       "x": "legcurl_s",
+       "sets": 3,
+       "reps": "10-15",
+       "rest": 90,
+       "label": "Leg curl"
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "items": [
+      {
+       "x": "legext",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 75,
+       "note": "Récup 1 min à 1 min 30"
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "items": [
+      {
+       "x": "calf_mach",
+       "sets": 3,
+       "reps": "12-20",
+       "rest": 60,
+       "label": "Mollets debout ou à la machine",
+       "note": "À la machine, ou debout sur une marche avec haltères"
+      }
+     ]
+    },
+    {
+     "type": "circuit",
+     "title": "Core · 10 à 12 min",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "situp",
+       "sets": 3,
+       "reps": "10",
+       "rest": 0,
+       "label": "Sit-up contrôlé",
+       "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
+      },
+      {
+       "x": "pallof",
+       "sets": 3,
+       "reps": "20-30 s",
+       "rest": 0,
+       "unit": "time",
+       "label": "Pallof statique à la poulie",
+       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
+      },
+      {
+       "x": "db_side_bend",
+       "sets": 3,
+       "reps": "10-15/côté",
+       "rest": 0,
+       "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
+      },
+      {
+       "x": "plank_fa",
+       "sets": 3,
+       "reps": "20-40 s",
+       "rest": 60,
+       "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
+      }
+     ],
+     "l": "F"
+    }
+   ],
+   "coolTitle": "Retour au calme · 5 min",
+   "cooldown": [
+    {
+     "t": "Étirements quadriceps, ischios, fessiers, mollets",
      "x": [
-      "st_pec",
-      "st_lat"
+      "st_quad",
+      "st_ham",
+      "st_glute",
+      "st_calf"
      ]
     }
-   ]
+   ],
+   "goal": "Jambes complètes en machines (presse, hip thrust, leg curl, leg extension, mollets) et 10 à 12 min de core. Garde environ 2 répétitions en réserve ; entre deux exercices, environ 2 min, installation comprise."
   },
   {
-   "id": "d4-ca",
-   "cycle": 4,
+   "id": "c2-cardio",
+   "cycle": 2,
    "slot": "CA",
-   "title": "Intervalles plus longs",
-   "goal": "Intervalles plus longs sur le vélo : compare ton souffle avec le cycle 1.",
+   "title": "Cardio long + circuit",
    "warmup": [],
    "blocks": [
     {
@@ -1106,9 +625,10 @@
       {
        "x": "bike",
        "sets": 1,
-       "reps": "5 min",
+       "reps": "10 min",
        "rest": 0,
-       "note": "Échauffement très facile"
+       "label": "Vélo d’échauffement",
+       "note": "Augmente progressivement"
       }
      ]
     },
@@ -1116,11 +636,11 @@
      "l": "B",
      "items": [
       {
-       "x": "bike",
-       "sets": 4,
-       "reps": "3 min (2 soutenues, 1 facile)",
+       "x": "incline_walk",
+       "sets": 1,
+       "reps": "15 min",
        "rest": 0,
-       "note": "Une série = 2 min soutenues puis 1 min facile"
+       "note": "Garde une allure qui te permet de parler en phrases"
       }
      ]
     },
@@ -1128,11 +648,11 @@
      "l": "C",
      "items": [
       {
-       "x": "incline_walk",
+       "x": "rower",
        "sets": 1,
-       "reps": "13 min",
+       "reps": "15 min",
        "rest": 0,
-       "note": "Pente 8 à 12 %, allure régulière"
+       "note": "Tant que la technique reste propre"
       }
      ]
     },
@@ -1143,132 +663,37 @@
        "x": "stairs",
        "sets": 1,
        "reps": "5 min",
-       "rest": 0,
-       "note": "Allure un peu plus soutenue, pour finir"
+       "rest": 0
       }
      ]
     },
     {
      "l": "E",
      "type": "circuit",
-     "rounds": 2,
+     "title": "Stations",
+     "rounds": 3,
      "items": [
       {
-       "x": "plank_fa",
-       "sets": 2,
-       "reps": "35 s",
-       "rest": 0,
-       "note": "Genoux au sol si besoin au début"
+       "x": "skierg",
+       "sets": 3,
+       "reps": "1 min",
+       "rest": 30,
+       "note": "Allure contrôlée · 30 s pour changer"
       },
       {
-       "x": "situp",
-       "sets": 2,
-       "reps": "12",
-       "rest": 0,
-       "note": "Remonte en douceur sans tirer sur la nuque, mains vers les pieds"
+       "x": "stepup",
+       "sets": 3,
+       "reps": "1 min",
+       "rest": 30,
+       "label": "Box step-up, sans charge",
+       "note": "Alterne la jambe de départ ; box basse, contrôle la descente · 30 s pour changer"
       },
       {
-       "x": "hollow",
-       "sets": 2,
-       "reps": "25 s",
-       "rest": 45,
-       "note": "Version facile : genoux pliés au-dessus des hanches, bras le long du corps, bas du dos plaqué au sol. Tends les jambes peu à peu"
-      }
-     ]
-    }
-   ],
-   "coolTitle": "Retour au calme · 5 min",
-   "cooldown": [
-    {
-     "t": "2 min de marche lente",
-     "x": []
-    },
-    {
-     "t": "Étirements doux, 20-30 s chacun",
-     "x": [
-      "st_calf",
-      "st_ham",
-      "st_hipflex"
-     ]
-    }
-   ]
-  },
-  {
-   "id": "d4-r2",
-   "cycle": 4,
-   "slot": "R2",
-   "title": "Bas du corps",
-   "goal": "Consolider les charges et comparer avec le cycle 1.",
-   "warmTitle": "Mise en route",
-   "warmup": [
-    {
-     "t": "Le cardio du bloc A sert d’échauffement. Avant la première machine : rotations d’épaules et balancés de jambes, puis une série très légère pour régler la machine.",
-     "x": [
-      "shoulder_band",
-      "leg_swings"
-     ]
-    }
-   ],
-   "blocks": [
-    {
-     "l": "A",
-     "title": "Cardio d’échauffement · 10 min",
-     "items": [
-      {
-       "x": "bike",
-       "sets": 1,
-       "reps": "10 min",
-       "rest": 0,
-       "res": "km, cal ou FC",
-       "note": "Vélo ou tapis de marche : choisis dans « Variante » si ce n’est pas le vélo. Allure facile les 5 premières minutes, un peu plus soutenue ensuite."
-      }
-     ]
-    },
-    {
-     "l": "B",
-     "items": [
-      {
-       "x": "presse",
+       "x": "rope_su",
        "sets": 3,
-       "reps": "10-12",
-       "rest": 60,
-       "note": "Pieds largeur des hanches, descends jusqu’à 90° aux genoux, le bas du dos reste collé au dossier"
-      }
-     ]
-    },
-    {
-     "l": "C",
-     "items": [
-      {
-       "x": "legcurl_s",
-       "sets": 3,
-       "reps": "10-12",
-       "rest": 60,
-       "note": "Arrière des cuisses : règle le rouleau juste au-dessus des chevilles"
-      }
-     ]
-    },
-    {
-     "l": "D",
-     "items": [
-      {
-       "x": "hipthrust_mach",
-       "sets": 3,
-       "reps": "10-12",
-       "rest": 60,
-       "note": "Fessiers : règle le siège pour que la ceinture passe sur le haut des hanches. Commence léger, pause d’une seconde en haut"
-      }
-     ]
-    },
-    {
-     "l": "E",
-     "items": [
-      {
-       "x": "legext",
-       "sets": 2,
-       "reps": "10-12",
-       "rest": 60,
-       "note": "Avant des cuisses : remonte sans à-coup, descends lentement"
+       "reps": "30 s",
+       "rest": 30,
+       "note": "Sauts simples · 30 s de récup"
       }
      ]
     },
@@ -1276,34 +701,12 @@
      "l": "F",
      "items": [
       {
-       "x": "legcurl_l",
-       "sets": 2,
-       "reps": "10-12",
-       "rest": 60,
-       "note": "Arrière des cuisses : hanches collées au banc, descends lentement"
-      }
-     ]
-    },
-    {
-     "l": "G",
-     "items": [
-      {
-       "x": "abductor",
-       "sets": 2,
-       "reps": "10-12",
-       "rest": 60,
-       "note": "Côté des fessiers : écarte les genoux en gardant le dos contre le dossier"
-      }
-     ]
-    },
-    {
-     "l": "H",
-     "items": [
-      {
-       "x": "calf_mach",
-       "sets": 2,
-       "reps": "15",
-       "rest": 45
+       "x": "assault",
+       "sets": 5,
+       "reps": "30 s / 90 s",
+       "rest": 0,
+       "unit": "time",
+       "note": "5 × 30 s d’effort soutenu sans sprint maximal, 90 s facile"
       }
      ]
     }
@@ -1311,49 +714,43 @@
    "coolTitle": "Retour au calme · 5 min",
    "cooldown": [
     {
-     "t": "2 min de marche ou vélo très facile",
+     "t": "5 min vélo assis, retour au calme progressif",
      "x": [
-      "bike"
-     ]
-    },
-    {
-     "t": "Étirements doux, 20-30 s chacun",
-     "x": [
-      "st_quad",
-      "st_ham",
-      "st_glute"
+      "bike_recumb"
      ]
     }
-   ]
+   ],
+   "goal": "Environ 72 min de travail (80 min avec les changements) : vélo, tapis incliné, rameur, escalier, un circuit de 3 tours et un fractionné court à l’Assault bike."
   },
   {
-   "id": "d4-r1",
-   "cycle": 4,
-   "slot": "R1",
-   "title": "Haut du corps",
-   "goal": "Consolider les charges et comparer avec le cycle 1.",
+   "id": "c2-haut",
+   "cycle": 2,
+   "slot": "H",
+   "title": "Haut du corps + core",
+   "gate": 120,
    "warmTitle": "Mise en route",
    "warmup": [
     {
-     "t": "Le cardio du bloc A sert d’échauffement. Avant la première machine : rotations d’épaules et balancés de jambes, puis une série très légère pour régler la machine.",
+     "t": "Le cardio du bloc A sert d’échauffement. Avant le développé : rotations d’épaules à l’élastique, 10 band pull-aparts, 1 série légère.",
      "x": [
       "shoulder_band",
-      "leg_swings"
+      "band_pull"
      ]
     }
    ],
    "blocks": [
     {
      "l": "A",
-     "title": "Cardio d’échauffement · 10 min",
+     "title": "Cardio · 15 min",
      "items": [
       {
        "x": "bike",
        "sets": 1,
-       "reps": "10 min",
+       "reps": "15 min",
        "rest": 0,
+       "label": "Cardio au choix",
        "res": "km, cal ou FC",
-       "note": "Vélo ou tapis de marche : choisis dans « Variante » si ce n’est pas le vélo. Allure facile les 5 premières minutes, un peu plus soutenue ensuite."
+       "note": "5 min faciles, puis 10 min à intensité modérée. Vélo, rameur, tapis ou escalier : choisis dans « Variante » si ce n’est pas le vélo."
       }
      ]
     },
@@ -1363,9 +760,10 @@
       {
        "x": "chest_press",
        "sets": 3,
-       "reps": "10-12",
-       "rest": 60,
-       "note": "Poignées à hauteur de poitrine, pousse sans bloquer les coudes"
+       "reps": "8-12",
+       "rest": 120,
+       "label": "Développé couché haltères ou machine",
+       "note": "Machine (guidée ou Hammer) ou haltères sur banc plat"
       }
      ]
     },
@@ -1373,11 +771,12 @@
      "l": "C",
      "items": [
       {
-       "x": "latpull",
+       "x": "seated_row",
        "sets": 3,
-       "reps": "10-12",
-       "rest": 60,
-       "note": "Tirage vertical pour le dos : tire la barre vers le haut de la poitrine, buste droit, sans élan"
+       "reps": "8-12",
+       "rest": 105,
+       "label": "Rowing assis à la poulie",
+       "note": "Récup 1 min 30 à 2 min"
       }
      ]
     },
@@ -1385,11 +784,12 @@
      "l": "D",
      "items": [
       {
-       "x": "shoulder_mach",
+       "x": "latpull",
        "sets": 3,
-       "reps": "10-12",
-       "rest": 60,
-       "note": "Pousse sans cambrer le dos"
+       "reps": "8-12",
+       "rest": 105,
+       "label": "Tirage vertical",
+       "note": "Récup 1 min 30 à 2 min"
       }
      ]
     },
@@ -1397,11 +797,12 @@
      "l": "E",
      "items": [
       {
-       "x": "seated_row",
-       "sets": 3,
-       "reps": "10-12",
-       "rest": 60,
-       "note": "Pour le dos : dos droit, omoplates serrées en fin de mouvement"
+       "x": "shoulder_mach",
+       "sets": 2,
+       "reps": "8-12",
+       "rest": 105,
+       "label": "Développé épaules haltères ou machine",
+       "note": "Machine (guidée ou Hammer) ou haltères assis · récup 1 min 30 à 2 min"
       }
      ]
     },
@@ -1409,11 +810,321 @@
      "l": "F",
      "items": [
       {
-       "x": "dip_assist",
+       "x": "lat_raise",
+       "sets": 2,
+       "reps": "12-20",
+       "rest": 75,
+       "note": "Récup 1 min à 1 min 30"
+      }
+     ]
+    },
+    {
+     "l": "G",
+     "items": [
+      {
+       "x": "db_curl",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 75,
+       "label": "Curl biceps",
+       "note": "Haltères ou barre EZ · récup 1 min à 1 min 30"
+      }
+     ]
+    },
+    {
+     "l": "H",
+     "items": [
+      {
+       "x": "rope_pd",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 75,
+       "label": "Extension triceps à la poulie",
+       "note": "Récup 1 min à 1 min 30"
+      }
+     ]
+    },
+    {
+     "type": "circuit",
+     "title": "Core · 10 à 12 min",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "situp",
+       "sets": 3,
+       "reps": "10",
+       "rest": 0,
+       "label": "Sit-up contrôlé",
+       "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
+      },
+      {
+       "x": "pallof",
+       "sets": 3,
+       "reps": "20-30 s",
+       "rest": 0,
+       "unit": "time",
+       "label": "Pallof statique à la poulie",
+       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
+      },
+      {
+       "x": "db_side_bend",
+       "sets": 3,
+       "reps": "10-15/côté",
+       "rest": 0,
+       "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
+      },
+      {
+       "x": "plank_fa",
+       "sets": 3,
+       "reps": "20-40 s",
+       "rest": 60,
+       "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
+      }
+     ],
+     "l": "I"
+    }
+   ],
+   "coolTitle": "Retour au calme · 5 min",
+   "cooldown": [
+    {
+     "t": "Étirements pectoraux, épaules, dorsaux, triceps, avant-bras",
+     "x": [
+      "st_pec",
+      "st_lat",
+      "st_tri",
+      "st_forearm"
+     ]
+    }
+   ],
+   "goal": "15 min de cardio, haut du corps complet en 40 à 45 min et 10 à 12 min de core. Les séries d’échauffement ne comptent pas ; entre deux exercices, environ 2 min, installation comprise."
+  },
+  {
+   "id": "c3-bas",
+   "cycle": 3,
+   "slot": "B",
+   "title": "Bas du corps + core",
+   "gate": 120,
+   "warmTitle": "Mise en route · 5 min",
+   "warmup": [
+    {
+     "t": "5 min vélo facile, puis 1 série légère de presse avant la première série de travail",
+     "x": [
+      "bike"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "presse",
+       "sets": 3,
+       "reps": "8-12",
+       "rest": 120,
+       "note": "Machine guidée ou Hammer"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "hipthrust_mach",
        "sets": 3,
        "reps": "10-12",
+       "rest": 105,
+       "label": "Hip thrust à la machine ou à la barre",
+       "note": "Machine guidée, ou barre sur un banc · récup 1 min 30 à 2 min"
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "items": [
+      {
+       "x": "legcurl_s",
+       "sets": 3,
+       "reps": "10-15",
+       "rest": 90,
+       "label": "Leg curl"
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "items": [
+      {
+       "x": "legext",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 75,
+       "note": "Récup 1 min à 1 min 30"
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "items": [
+      {
+       "x": "calf_mach",
+       "sets": 3,
+       "reps": "12-20",
        "rest": 60,
-       "note": "Triceps : plus le contrepoids est lourd, plus c’est facile. Commence avec beaucoup d’assistance"
+       "label": "Mollets debout ou à la machine",
+       "note": "À la machine, ou debout sur une marche avec haltères"
+      }
+     ]
+    },
+    {
+     "type": "circuit",
+     "title": "Core · 10 à 12 min",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "situp",
+       "sets": 3,
+       "reps": "10",
+       "rest": 0,
+       "label": "Sit-up contrôlé",
+       "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
+      },
+      {
+       "x": "pallof",
+       "sets": 3,
+       "reps": "20-30 s",
+       "rest": 0,
+       "unit": "time",
+       "label": "Pallof statique à la poulie",
+       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
+      },
+      {
+       "x": "db_side_bend",
+       "sets": 3,
+       "reps": "10-15/côté",
+       "rest": 0,
+       "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
+      },
+      {
+       "x": "plank_fa",
+       "sets": 3,
+       "reps": "20-40 s",
+       "rest": 60,
+       "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
+      }
+     ],
+     "l": "F"
+    }
+   ],
+   "coolTitle": "Retour au calme · 5 min",
+   "cooldown": [
+    {
+     "t": "Étirements quadriceps, ischios, fessiers, mollets",
+     "x": [
+      "st_quad",
+      "st_ham",
+      "st_glute",
+      "st_calf"
+     ]
+    }
+   ],
+   "goal": "Jambes complètes en machines (presse, hip thrust, leg curl, leg extension, mollets) et 10 à 12 min de core. Garde environ 2 répétitions en réserve ; entre deux exercices, environ 2 min, installation comprise."
+  },
+  {
+   "id": "c3-cardio",
+   "cycle": 3,
+   "slot": "CA",
+   "title": "Cardio long + circuit",
+   "warmup": [],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "bike",
+       "sets": 1,
+       "reps": "10 min",
+       "rest": 0,
+       "label": "Vélo d’échauffement",
+       "note": "Augmente progressivement"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "incline_walk",
+       "sets": 1,
+       "reps": "15 min",
+       "rest": 0,
+       "note": "Garde une allure qui te permet de parler en phrases"
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "items": [
+      {
+       "x": "rower",
+       "sets": 1,
+       "reps": "15 min",
+       "rest": 0,
+       "note": "Tant que la technique reste propre"
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "items": [
+      {
+       "x": "stairs",
+       "sets": 1,
+       "reps": "5 min",
+       "rest": 0
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "type": "circuit",
+     "title": "Stations",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "skierg",
+       "sets": 3,
+       "reps": "1 min",
+       "rest": 30,
+       "note": "Allure contrôlée · 30 s pour changer"
+      },
+      {
+       "x": "stepup",
+       "sets": 3,
+       "reps": "1 min",
+       "rest": 30,
+       "label": "Box step-up, sans charge",
+       "note": "Alterne la jambe de départ ; box basse, contrôle la descente · 30 s pour changer"
+      },
+      {
+       "x": "rope_su",
+       "sets": 3,
+       "reps": "30 s",
+       "rest": 30,
+       "note": "Sauts simples · 30 s de récup"
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "items": [
+      {
+       "x": "assault",
+       "sets": 5,
+       "reps": "30 s / 90 s",
+       "rest": 0,
+       "unit": "time",
+       "note": "5 × 30 s d’effort soutenu sans sprint maximal, 90 s facile"
       }
      ]
     }
@@ -1421,19 +1132,608 @@
    "coolTitle": "Retour au calme · 5 min",
    "cooldown": [
     {
-     "t": "2 min de marche ou vélo très facile",
+     "t": "5 min vélo assis, retour au calme progressif",
      "x": [
-      "bike"
+      "bike_recumb"
+     ]
+    }
+   ],
+   "goal": "Environ 72 min de travail (80 min avec les changements) : vélo, tapis incliné, rameur, escalier, un circuit de 3 tours et un fractionné court à l’Assault bike."
+  },
+  {
+   "id": "c3-haut",
+   "cycle": 3,
+   "slot": "H",
+   "title": "Haut du corps + core",
+   "gate": 120,
+   "warmTitle": "Mise en route",
+   "warmup": [
+    {
+     "t": "Le cardio du bloc A sert d’échauffement. Avant le développé : rotations d’épaules à l’élastique, 10 band pull-aparts, 1 série légère.",
+     "x": [
+      "shoulder_band",
+      "band_pull"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "title": "Cardio · 15 min",
+     "items": [
+      {
+       "x": "bike",
+       "sets": 1,
+       "reps": "15 min",
+       "rest": 0,
+       "label": "Cardio au choix",
+       "res": "km, cal ou FC",
+       "note": "5 min faciles, puis 10 min à intensité modérée. Vélo, rameur, tapis ou escalier : choisis dans « Variante » si ce n’est pas le vélo."
+      }
      ]
     },
     {
-     "t": "Étirements doux, 20-30 s chacun",
+     "l": "B",
+     "items": [
+      {
+       "x": "chest_press",
+       "sets": 3,
+       "reps": "8-12",
+       "rest": 120,
+       "label": "Développé couché haltères ou machine",
+       "note": "Machine (guidée ou Hammer) ou haltères sur banc plat"
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "items": [
+      {
+       "x": "seated_row",
+       "sets": 3,
+       "reps": "8-12",
+       "rest": 105,
+       "label": "Rowing assis à la poulie",
+       "note": "Récup 1 min 30 à 2 min"
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "items": [
+      {
+       "x": "latpull",
+       "sets": 3,
+       "reps": "8-12",
+       "rest": 105,
+       "label": "Tirage vertical",
+       "note": "Récup 1 min 30 à 2 min"
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "items": [
+      {
+       "x": "shoulder_mach",
+       "sets": 2,
+       "reps": "8-12",
+       "rest": 105,
+       "label": "Développé épaules haltères ou machine",
+       "note": "Machine (guidée ou Hammer) ou haltères assis · récup 1 min 30 à 2 min"
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "items": [
+      {
+       "x": "lat_raise",
+       "sets": 2,
+       "reps": "12-20",
+       "rest": 75,
+       "note": "Récup 1 min à 1 min 30"
+      }
+     ]
+    },
+    {
+     "l": "G",
+     "items": [
+      {
+       "x": "db_curl",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 75,
+       "label": "Curl biceps",
+       "note": "Haltères ou barre EZ · récup 1 min à 1 min 30"
+      }
+     ]
+    },
+    {
+     "l": "H",
+     "items": [
+      {
+       "x": "rope_pd",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 75,
+       "label": "Extension triceps à la poulie",
+       "note": "Récup 1 min à 1 min 30"
+      }
+     ]
+    },
+    {
+     "type": "circuit",
+     "title": "Core · 10 à 12 min",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "situp",
+       "sets": 3,
+       "reps": "10",
+       "rest": 0,
+       "label": "Sit-up contrôlé",
+       "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
+      },
+      {
+       "x": "pallof",
+       "sets": 3,
+       "reps": "20-30 s",
+       "rest": 0,
+       "unit": "time",
+       "label": "Pallof statique à la poulie",
+       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
+      },
+      {
+       "x": "db_side_bend",
+       "sets": 3,
+       "reps": "10-15/côté",
+       "rest": 0,
+       "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
+      },
+      {
+       "x": "plank_fa",
+       "sets": 3,
+       "reps": "20-40 s",
+       "rest": 60,
+       "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
+      }
+     ],
+     "l": "I"
+    }
+   ],
+   "coolTitle": "Retour au calme · 5 min",
+   "cooldown": [
+    {
+     "t": "Étirements pectoraux, épaules, dorsaux, triceps, avant-bras",
      "x": [
       "st_pec",
-      "st_lat"
+      "st_lat",
+      "st_tri",
+      "st_forearm"
      ]
     }
-   ]
+   ],
+   "goal": "15 min de cardio, haut du corps complet en 40 à 45 min et 10 à 12 min de core. Les séries d’échauffement ne comptent pas ; entre deux exercices, environ 2 min, installation comprise."
+  },
+  {
+   "id": "c4-bas",
+   "cycle": 4,
+   "slot": "B",
+   "title": "Bas du corps + core",
+   "gate": 120,
+   "warmTitle": "Mise en route · 5 min",
+   "warmup": [
+    {
+     "t": "5 min vélo facile, puis 1 série légère de presse avant la première série de travail",
+     "x": [
+      "bike"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "presse",
+       "sets": 3,
+       "reps": "8-12",
+       "rest": 120,
+       "note": "Machine guidée ou Hammer"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "hipthrust_mach",
+       "sets": 3,
+       "reps": "10-12",
+       "rest": 105,
+       "label": "Hip thrust à la machine ou à la barre",
+       "note": "Machine guidée, ou barre sur un banc · récup 1 min 30 à 2 min"
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "items": [
+      {
+       "x": "legcurl_s",
+       "sets": 3,
+       "reps": "10-15",
+       "rest": 90,
+       "label": "Leg curl"
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "items": [
+      {
+       "x": "legext",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 75,
+       "note": "Récup 1 min à 1 min 30"
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "items": [
+      {
+       "x": "calf_mach",
+       "sets": 3,
+       "reps": "12-20",
+       "rest": 60,
+       "label": "Mollets debout ou à la machine",
+       "note": "À la machine, ou debout sur une marche avec haltères"
+      }
+     ]
+    },
+    {
+     "type": "circuit",
+     "title": "Core · 10 à 12 min",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "situp",
+       "sets": 3,
+       "reps": "10",
+       "rest": 0,
+       "label": "Sit-up contrôlé",
+       "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
+      },
+      {
+       "x": "pallof",
+       "sets": 3,
+       "reps": "20-30 s",
+       "rest": 0,
+       "unit": "time",
+       "label": "Pallof statique à la poulie",
+       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
+      },
+      {
+       "x": "db_side_bend",
+       "sets": 3,
+       "reps": "10-15/côté",
+       "rest": 0,
+       "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
+      },
+      {
+       "x": "plank_fa",
+       "sets": 3,
+       "reps": "20-40 s",
+       "rest": 60,
+       "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
+      }
+     ],
+     "l": "F"
+    }
+   ],
+   "coolTitle": "Retour au calme · 5 min",
+   "cooldown": [
+    {
+     "t": "Étirements quadriceps, ischios, fessiers, mollets",
+     "x": [
+      "st_quad",
+      "st_ham",
+      "st_glute",
+      "st_calf"
+     ]
+    }
+   ],
+   "goal": "Jambes complètes en machines (presse, hip thrust, leg curl, leg extension, mollets) et 10 à 12 min de core. Garde environ 2 répétitions en réserve ; entre deux exercices, environ 2 min, installation comprise."
+  },
+  {
+   "id": "c4-cardio",
+   "cycle": 4,
+   "slot": "CA",
+   "title": "Cardio long + circuit",
+   "warmup": [],
+   "blocks": [
+    {
+     "l": "A",
+     "items": [
+      {
+       "x": "bike",
+       "sets": 1,
+       "reps": "10 min",
+       "rest": 0,
+       "label": "Vélo d’échauffement",
+       "note": "Augmente progressivement"
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "incline_walk",
+       "sets": 1,
+       "reps": "15 min",
+       "rest": 0,
+       "note": "Garde une allure qui te permet de parler en phrases"
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "items": [
+      {
+       "x": "rower",
+       "sets": 1,
+       "reps": "15 min",
+       "rest": 0,
+       "note": "Tant que la technique reste propre"
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "items": [
+      {
+       "x": "stairs",
+       "sets": 1,
+       "reps": "5 min",
+       "rest": 0
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "type": "circuit",
+     "title": "Stations",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "skierg",
+       "sets": 3,
+       "reps": "1 min",
+       "rest": 30,
+       "note": "Allure contrôlée · 30 s pour changer"
+      },
+      {
+       "x": "stepup",
+       "sets": 3,
+       "reps": "1 min",
+       "rest": 30,
+       "label": "Box step-up, sans charge",
+       "note": "Alterne la jambe de départ ; box basse, contrôle la descente · 30 s pour changer"
+      },
+      {
+       "x": "rope_su",
+       "sets": 3,
+       "reps": "30 s",
+       "rest": 30,
+       "note": "Sauts simples · 30 s de récup"
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "items": [
+      {
+       "x": "assault",
+       "sets": 5,
+       "reps": "30 s / 90 s",
+       "rest": 0,
+       "unit": "time",
+       "note": "5 × 30 s d’effort soutenu sans sprint maximal, 90 s facile"
+      }
+     ]
+    }
+   ],
+   "coolTitle": "Retour au calme · 5 min",
+   "cooldown": [
+    {
+     "t": "5 min vélo assis, retour au calme progressif",
+     "x": [
+      "bike_recumb"
+     ]
+    }
+   ],
+   "goal": "Environ 72 min de travail (80 min avec les changements) : vélo, tapis incliné, rameur, escalier, un circuit de 3 tours et un fractionné court à l’Assault bike."
+  },
+  {
+   "id": "c4-haut",
+   "cycle": 4,
+   "slot": "H",
+   "title": "Haut du corps + core",
+   "gate": 120,
+   "warmTitle": "Mise en route",
+   "warmup": [
+    {
+     "t": "Le cardio du bloc A sert d’échauffement. Avant le développé : rotations d’épaules à l’élastique, 10 band pull-aparts, 1 série légère.",
+     "x": [
+      "shoulder_band",
+      "band_pull"
+     ]
+    }
+   ],
+   "blocks": [
+    {
+     "l": "A",
+     "title": "Cardio · 15 min",
+     "items": [
+      {
+       "x": "bike",
+       "sets": 1,
+       "reps": "15 min",
+       "rest": 0,
+       "label": "Cardio au choix",
+       "res": "km, cal ou FC",
+       "note": "5 min faciles, puis 10 min à intensité modérée. Vélo, rameur, tapis ou escalier : choisis dans « Variante » si ce n’est pas le vélo."
+      }
+     ]
+    },
+    {
+     "l": "B",
+     "items": [
+      {
+       "x": "chest_press",
+       "sets": 3,
+       "reps": "8-12",
+       "rest": 120,
+       "label": "Développé couché haltères ou machine",
+       "note": "Machine (guidée ou Hammer) ou haltères sur banc plat"
+      }
+     ]
+    },
+    {
+     "l": "C",
+     "items": [
+      {
+       "x": "seated_row",
+       "sets": 3,
+       "reps": "8-12",
+       "rest": 105,
+       "label": "Rowing assis à la poulie",
+       "note": "Récup 1 min 30 à 2 min"
+      }
+     ]
+    },
+    {
+     "l": "D",
+     "items": [
+      {
+       "x": "latpull",
+       "sets": 3,
+       "reps": "8-12",
+       "rest": 105,
+       "label": "Tirage vertical",
+       "note": "Récup 1 min 30 à 2 min"
+      }
+     ]
+    },
+    {
+     "l": "E",
+     "items": [
+      {
+       "x": "shoulder_mach",
+       "sets": 2,
+       "reps": "8-12",
+       "rest": 105,
+       "label": "Développé épaules haltères ou machine",
+       "note": "Machine (guidée ou Hammer) ou haltères assis · récup 1 min 30 à 2 min"
+      }
+     ]
+    },
+    {
+     "l": "F",
+     "items": [
+      {
+       "x": "lat_raise",
+       "sets": 2,
+       "reps": "12-20",
+       "rest": 75,
+       "note": "Récup 1 min à 1 min 30"
+      }
+     ]
+    },
+    {
+     "l": "G",
+     "items": [
+      {
+       "x": "db_curl",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 75,
+       "label": "Curl biceps",
+       "note": "Haltères ou barre EZ · récup 1 min à 1 min 30"
+      }
+     ]
+    },
+    {
+     "l": "H",
+     "items": [
+      {
+       "x": "rope_pd",
+       "sets": 2,
+       "reps": "10-15",
+       "rest": 75,
+       "label": "Extension triceps à la poulie",
+       "note": "Récup 1 min à 1 min 30"
+      }
+     ]
+    },
+    {
+     "type": "circuit",
+     "title": "Core · 10 à 12 min",
+     "rounds": 3,
+     "items": [
+      {
+       "x": "situp",
+       "sets": 3,
+       "reps": "10",
+       "rest": 0,
+       "label": "Sit-up contrôlé",
+       "note": "Monte et descends lentement, sans élan ni tirer sur la nuque."
+      },
+      {
+       "x": "pallof",
+       "sets": 3,
+       "reps": "20-30 s",
+       "rest": 0,
+       "unit": "time",
+       "label": "Pallof statique à la poulie",
+       "note": "Par côté. Bras tendus devant toi, buste et bassin immobiles."
+      },
+      {
+       "x": "db_side_bend",
+       "sets": 3,
+       "reps": "10-15/côté",
+       "rest": 0,
+       "note": "Un seul haltère, amplitude confortable, sans te pencher vers l’avant."
+      },
+      {
+       "x": "plank_fa",
+       "sets": 3,
+       "reps": "20-40 s",
+       "rest": 60,
+       "note": "Serre les fessiers, garde le bassin stable et respire sans creuser le dos."
+      }
+     ],
+     "l": "I"
+    }
+   ],
+   "coolTitle": "Retour au calme · 5 min",
+   "cooldown": [
+    {
+     "t": "Étirements pectoraux, épaules, dorsaux, triceps, avant-bras",
+     "x": [
+      "st_pec",
+      "st_lat",
+      "st_tri",
+      "st_forearm"
+     ]
+    }
+   ],
+   "goal": "15 min de cardio, haut du corps complet en 40 à 45 min et 10 à 12 min de core. Les séries d’échauffement ne comptent pas ; entre deux exercices, environ 2 min, installation comprise."
   }
- ]
+ ],
+ "objectives": []
 }
